@@ -1,0 +1,85 @@
+2023-02-05 08:32:31,621 : INFO : root : Loading config.
+2023-02-05 08:32:31,621 : INFO : YamlMultifileConfigLoader : Machine config file #1: config.yaml
+2023-02-05 08:32:31,621 : INFO : ConfigProcessor : Loading config from cache: C:\Users\steel\AppData\Local\Temp\9014108be8bb19792bb5e6c9e9603b65.mpf_cache
+2023-02-05 08:32:31,699 : INFO : ConfigProcessor : Loading config from cache: C:\Users\steel\AppData\Local\Temp\0c159a05f39617a30cc1b279562f144f.mpf_cache
+2023-02-05 08:32:31,699 : INFO : ConfigProcessor : Loading config from cache: C:\Users\steel\AppData\Local\Temp\a4144dd661fe0832b800e50000db3090.mpf_cache
+2023-02-05 08:32:31,699 : INFO : ConfigProcessor : Loading config from cache: C:\Users\steel\AppData\Local\Temp\0c159a05f39617a30cc1b279562f144f.mpf_cache
+2023-02-05 08:32:31,715 : WARNING : ConfigProcessor : Config file in cache changed: C:\pinball\SAW\modes\base\config\base.yaml
+2023-02-05 08:32:31,715 : INFO : ConfigProcessor : Loading config from file C:\pinball\SAW\modes\base\config\base.yaml.
+2023-02-05 08:32:31,715 : INFO : ConfigProcessor : Loading config: C:\pinball\SAW\modes\base\config\base.yaml
+2023-02-05 08:32:31,715 : INFO : ConfigProcessor : Config file cache created: C:\Users\steel\AppData\Local\Temp\c84db42795c08bfb8e4272b3be41e3f4.mpf_cache
+2023-02-05 08:32:31,715 : INFO : ConfigProcessor : Loading config from cache: C:\Users\steel\AppData\Local\Temp\17aa0c884dad87b4b4047bafdeb78206.mpf_cache
+2023-02-05 08:32:31,715 : INFO : ConfigProcessor : Loading config from cache: C:\Users\steel\AppData\Local\Temp\6026628a89ebb09da8c65e4a804bb30f.mpf_cache
+2023-02-05 08:32:31,715 : INFO : Machine : Mission Pinball Framework Core Engine v0.56.0-dev33
+2023-02-05 08:32:31,715 : INFO : Machine : Command line arguments: {'no_load_cache': False, 'create_config_cache': True, 'bcp': True, 'configfile': ['config.yaml'], 'force_assets_load': False, 'jsonlogging': False, 'logfile': 'logs\\2023-02-05-08-32-31-mpf-MSI.log', 'pause': False, 'production': False, 'text_ui': True, 'loglevel': 15, 'consoleloglevel': 20, 'force_platform': 'virtual', 'syslog_address': None, 'mc_file_name': None, 'no_sound': False}
+2023-02-05 08:32:31,715 : INFO : Machine : MPF path: C:\Users\steel\AppData\Local\Programs\Python\Python39\lib\site-packages\mpf
+2023-02-05 08:32:31,715 : INFO : Machine : Machine path: C:\pinball\SAW
+2023-02-05 08:32:31,715 : INFO : Machine : Platform: win32
+2023-02-05 08:32:31,715 : INFO : Machine : Python executable location: C:\Users\steel\AppData\Local\Programs\Python\Python39\python.exe
+2023-02-05 08:32:31,715 : INFO : Machine : Python version: 3.9.13 (64-bit)
+2023-02-05 08:32:31,715 : INFO : Machine : Initialise MPF.
+2023-02-05 08:32:31,887 : INFO : EventManager : Event: ======'machine_var_credits_string'====== Args={'value': 'FREE PLAY', 'prev_value': None, 'change': True}
+2023-02-05 08:32:31,937 : INFO : EventManager : Event: ======'machine_var_master_volume'====== Args={'value': 0.5, 'prev_value': None, 'change': True}
+2023-02-05 08:32:31,937 : INFO : EventManager : Event: ======'machine_var_mpf_version'====== Args={'value': 'MPF v0.56.0-dev33', 'prev_value': None, 'change': True}
+2023-02-05 08:32:31,937 : INFO : EventManager : Event: ======'machine_var_mpf_extended_version'====== Args={'value': 'MPF v0.56.0-dev33, Config version:5, Show version: 5, BCP version:1.1', 'prev_value': None, 'change': True}
+2023-02-05 08:32:31,937 : INFO : EventManager : Event: ======'machine_var_python_version'====== Args={'value': '3.9.13', 'prev_value': None, 'change': True}
+2023-02-05 08:32:31,937 : INFO : EventManager : Event: ======'machine_var_platform'====== Args={'value': 'Windows-10-10.0.19044-SP0', 'prev_value': None, 'change': True}
+2023-02-05 08:32:31,937 : INFO : EventManager : Event: ======'machine_var_platform_system'====== Args={'value': 'Windows', 'prev_value': None, 'change': True}
+2023-02-05 08:32:31,937 : INFO : EventManager : Event: ======'machine_var_platform_release'====== Args={'value': '10', 'prev_value': None, 'change': True}
+2023-02-05 08:32:31,937 : INFO : EventManager : Event: ======'machine_var_platform_version'====== Args={'value': '10.0.19044', 'prev_value': None, 'change': True}
+2023-02-05 08:32:31,937 : INFO : EventManager : Event: ======'machine_var_platform_machine'====== Args={'value': 'AMD64', 'prev_value': None, 'change': True}
+2023-02-05 08:32:31,937 : INFO : EventManager : Event: ======'init_phase_1'====== Args={}
+2023-02-05 08:32:31,953 : ERROR : ConfigValidator : Your config contains a value for the setting "mode:base:shots:skillshot_failed:skillshot_timing_crawl", but this is not a valid setting name.
+2023-02-05 08:32:31,968 : ERROR : asyncio : Exception in callback EventManager._async_handler_done(<QueuedEvent>)(<Task finishe...tting name.')>) at C:\Users\steel\AppData\Local\Programs\Python\Python39\lib\site-packages\mpf\core\events.py:118
+handle: <Handle EventManager._async_handler_done(<QueuedEvent>)(<Task finishe...tting name.')>) at C:\Users\steel\AppData\Local\Programs\Python\Python39\lib\site-packages\mpf\core\events.py:118>
+Traceback (most recent call last):
+  File "C:\Users\steel\AppData\Local\Programs\Python\Python39\lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\steel\AppData\Local\Programs\Python\Python39\lib\site-packages\mpf\core\events.py", line 121, in _async_handler_done
+    future.result()
+  File "C:\Users\steel\AppData\Local\Programs\Python\Python39\lib\site-packages\mpf\core\device_manager.py", line 90, in _load_device_modules
+    await self.machine.mode_controller.load_mode_devices()
+  File "C:\Users\steel\AppData\Local\Programs\Python\Python39\lib\site-packages\mpf\core\mode_controller.py", line 86, in load_mode_devices
+    await mode.load_mode_devices()
+  File "C:\Users\steel\AppData\Local\Programs\Python\Python39\lib\site-packages\mpf\core\mode.py", line 433, in load_mode_devices
+    settings = device.validate_and_parse_config(settings, True, "mode:" + self.name)
+  File "C:\Users\steel\AppData\Local\Programs\Python\Python39\lib\site-packages\mpf\devices\shot.py", line 72, in validate_and_parse_config
+    config = super().validate_and_parse_config(config, is_mode_config, debug_prefix)
+  File "C:\Users\steel\AppData\Local\Programs\Python\Python39\lib\site-packages\mpf\core\device.py", line 108, in validate_and_parse_config
+    self.machine.config_validator.validate_config(
+  File "C:\Users\steel\AppData\Local\Programs\Python\Python39\lib\site-packages\mpf\core\config_validator.py", line 164, in validate_config
+    return self._validate_config(config_spec, source, base_spec=base_spec, add_missing_keys=add_missing_keys,
+  File "C:\Users\steel\AppData\Local\Programs\Python\Python39\lib\site-packages\mpf\core\config_validator.py", line 177, in _validate_config
+    self.check_for_invalid_sections(this_spec, source, validation_failure_info)
+  File "C:\Users\steel\AppData\Local\Programs\Python\Python39\lib\site-packages\mpf\core\config_validator.py", line 342, in check_for_invalid_sections
+    raise ConfigFileError('Your config contains a value for the '
+mpf.exceptions.config_file_error.ConfigFileError: Config File Error in ConfigValidator: Your config contains a value for the setting "mode:base:shots:skillshot_failed:skillshot_timing_crawl", but this is not a valid setting name. Error Code: CFE-ConfigValidator-2 (https://docs.missionpinball.org/en/dev/logs/CFE-ConfigValidator-2.html)
+2023-02-05 08:32:31,985 : INFO : Machine : Starting the main run loop.
+2023-02-05 08:32:31,989 : INFO : Machine : Shutting down...
+2023-02-05 08:32:31,989 : INFO : EventManager : Event: ======'shutdown'====== Args={}
+2023-02-05 08:32:33,001 : ERROR : Machine : Runtime Exception
+Traceback (most recent call last):
+  File "C:\Users\steel\AppData\Local\Programs\Python\Python39\lib\site-packages\mpf\core\machine.py", line 797, in _run_loop
+    raise self._exception['exception']
+  File "C:\Users\steel\AppData\Local\Programs\Python\Python39\lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\steel\AppData\Local\Programs\Python\Python39\lib\site-packages\mpf\core\events.py", line 121, in _async_handler_done
+    future.result()
+  File "C:\Users\steel\AppData\Local\Programs\Python\Python39\lib\site-packages\mpf\core\device_manager.py", line 90, in _load_device_modules
+    await self.machine.mode_controller.load_mode_devices()
+  File "C:\Users\steel\AppData\Local\Programs\Python\Python39\lib\site-packages\mpf\core\mode_controller.py", line 86, in load_mode_devices
+    await mode.load_mode_devices()
+  File "C:\Users\steel\AppData\Local\Programs\Python\Python39\lib\site-packages\mpf\core\mode.py", line 433, in load_mode_devices
+    settings = device.validate_and_parse_config(settings, True, "mode:" + self.name)
+  File "C:\Users\steel\AppData\Local\Programs\Python\Python39\lib\site-packages\mpf\devices\shot.py", line 72, in validate_and_parse_config
+    config = super().validate_and_parse_config(config, is_mode_config, debug_prefix)
+  File "C:\Users\steel\AppData\Local\Programs\Python\Python39\lib\site-packages\mpf\core\device.py", line 108, in validate_and_parse_config
+    self.machine.config_validator.validate_config(
+  File "C:\Users\steel\AppData\Local\Programs\Python\Python39\lib\site-packages\mpf\core\config_validator.py", line 164, in validate_config
+    return self._validate_config(config_spec, source, base_spec=base_spec, add_missing_keys=add_missing_keys,
+  File "C:\Users\steel\AppData\Local\Programs\Python\Python39\lib\site-packages\mpf\core\config_validator.py", line 177, in _validate_config
+    self.check_for_invalid_sections(this_spec, source, validation_failure_info)
+  File "C:\Users\steel\AppData\Local\Programs\Python\Python39\lib\site-packages\mpf\core\config_validator.py", line 342, in check_for_invalid_sections
+    raise ConfigFileError('Your config contains a value for the '
+mpf.exceptions.config_file_error.ConfigFileError: Config File Error in ConfigValidator: Your config contains a value for the setting "mode:base:shots:skillshot_failed:skillshot_timing_crawl", but this is not a valid setting name. Error Code: CFE-ConfigValidator-2 (https://docs.missionpinball.org/en/dev/logs/CFE-ConfigValidator-2.html)
+2023-02-05 08:32:40,560 : INFO : root : MPF run loop ended.

@@ -1,0 +1,60 @@
+#config_version=5
+mode:
+  start_events: ball_starting
+  stop_events: skillshot_award , standups_skill_hit
+  priority: 100
+
+timers:
+  mode_timer:
+    start_value: 3
+    end_value: 0
+    direction: down
+    tick_interval: 1s
+    control_events:
+    - event: balldevice_playfield_ball_enter
+      action: start
+    start_running: false
+  target_rotator:
+    start_running: true
+    tick_interval: 1s
+
+shot_profiles:
+  skill:
+    rotation_pattern: r, r, l, l
+    states:
+    - name: unlit
+      show: off
+    - name: lit
+      show: flash
+      loops: -1
+      speed: 10
+    - name: hit
+      show: on
+
+shot_groups:
+  standups_skill:
+    shots: standup_1, standup_2, standup_3
+    rotate_events: timer_target_rotator_tick
+    reset_events: mode_skillshot_started|1
+
+variable_player:
+  standups_skill_hit_hit:
+    int: 200000
+
+shots:
+  standup_1_skill:
+    switch: 3_bank_drop_target_opto_upper
+    profile: skill
+    advance_events: mode_skillshot_started
+    show_tokens:
+      light: l_3_bank_drop_target_opto_upper
+  standup_2_skill:
+    switch: 3_bank_drop_target_opto_middle
+    profile: skill
+    show_tokens:
+      light: l_3_bank_drop_target_opto_middle
+  standup_3_skill:
+    switch: 3_bank_drop_target_opto_lower
+    profile: skill
+    show_tokens:
+      light: l_3_bank_drop_target_opto_lower

@@ -1,0 +1,99 @@
+#show_version=5
+
+- duration: 2.6s
+  slides:
+    slide1:
+      widgets:
+      - type: image
+        image: twisted_pictures
+        expire: 2.6
+
+        
+- duration: 2.5s
+  slides:
+    slide2:
+      widgets:
+      - type: image
+        image: logo_fullscreen
+        
+#- duration: 3s
+#  slides:
+#    slide3:
+#      widgets: 
+#      - type: image
+#        image: main_saw
+#        adjust_bottom: 200
+#        adjust_right: 100
+#        opacity: 0.5
+       
+- duration: 12s
+  slides:
+    slide4:
+      widgets:
+      - type: image
+        image: main_saw
+        adjust_bottom: 200
+        adjust_right: 100
+        opacity: 0.5
+      - type: Text
+        text: PRESS START
+        font_name: TrajanProRegular
+        font_size: 60
+        animations:
+          pre_show_slide:
+          - property: opacity
+            value: 0
+            duration: 1s
+          - property: opacity
+            value: 1
+            duration: 1s
+            repeat: true
+      - type: Text
+        text: DO YOU WANT TO PLAY A GAME?
+        font_name: TrajanProRegular
+        font_size: 20
+        y: 70
+      - type: Text
+        text: FREE PLAY
+        color: green
+        font_size: 30
+        y: 10
+        anchor_y: bottom
+        animations:
+          pre_show_slide:
+          - property: opacity
+            value: 0
+            duration: 1s
+          - property: opacity
+            value: 1
+            duration: 1s
+            repeat: true
+#       transition:
+#       type: move_in
+#       duration: 1s
+#       direction: right
+
+- duration: 3
+  slides:
+    slide5:
+      widgets:
+      - type: text
+        text: LAST GAME SCORES
+        font_name: TrajanProRegular
+        font_size: 50
+        y: 60%
+      - type: text
+        text: (machine|player1_score)
+        number_grouping: true
+        min_digits: 2
+        font_size: 50
+        y: 40%
+      - type: text
+        text: (machine|player2_score)
+        number_grouping: true
+        min_digits: 2
+        font_size: 50
+        y: 20%
+
+
+

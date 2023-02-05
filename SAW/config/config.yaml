@@ -1,0 +1,297 @@
+#config_version=5
+
+hardware:
+  platform: smart_virtual
+
+modes:
+  - attract
+  - base
+#  - skill_shot
+
+switches:
+  s_plumb_bob_tilt:
+    number: 
+    tags: tilt_bob
+  s_left_flipper:
+    number:
+    tags: left_flipper
+  s_right_flipper:
+    number:
+    tags: right_flipper
+  s_upper_right_flipper:
+    number:
+    tags: upper_right_flipper
+  #Ball Trough #1 (left)
+  s_trough1:
+    number:
+  #Ball Trough #2 (mdl)
+  s_trough2:
+    number:
+  #Ball Trough #3 (right)
+  s_trough3:
+    number:
+  s_trough_jam:
+    number:
+  s_plunger:
+    number:
+  s_outhole:
+    number: 
+  s_start:
+    number:
+    tags: start
+  s_left_inlane:
+    number: 18
+    tags: left_return_lane
+  s_left_outlane:
+    number: 17
+    tags: left_out_lane
+  s_right_inlane:
+    number: 15
+    tags: right_return_lane
+  s_right_outlane:
+    number: 16
+    tags: right_out_lane
+  s_right_cellar:
+    number: 19
+    tags: right_cellar
+  s_left_cellar:
+    number: 20
+    tags: left_cellar
+  s_left_standup:
+    number: 21
+    tags: left_standup
+# Left Lock 1 (lwr)
+  s_left_lock_1:
+    number: 22
+    tags: left_lock_1
+# Left Lock 2 (mid)
+  s_left_lock_2:
+    number: 23
+    tags: left_lock_2
+# Left Lock 3 (upr)
+  s_left_lock_3:
+    number: 24
+    tags: left_lock_3
+  s_right_standup:
+    number: 25
+    tags: right_standup
+  s_upper_bank_drop_target_opto:
+    number: 26
+    tags: 1_bank_drop_target_opto
+  s_lower_bank_drop_target_opto_upper:
+    number: 27
+    tags: 3_bank_drop_target_opto_upper
+  s_lower_bank_drop_target_opto_middle:
+    number: 28
+    tags: 3_bank_drop_target_opto_middle
+  s_lower_bank_drop_target_opto_lower:
+    number: 29
+    tags: 3_bank_drop_target_opto_lower
+  s_middle_standup:
+    number: 30
+    tags: middle_standup
+  s_enter_left_ramp:
+    number: 33
+    tags: left_ramp_enter
+  s_left_ramp_score_top:
+    number: 34
+    tags: left_ramp_score_top
+  s_left_ramp_score_bottom:
+    number: 35
+    tags: left_ramp_score_bottom
+  s_left_loop_top:
+    number: 36
+    tags: left_loop_top
+  s_left_loop_bottom:
+    number: 37
+    tags: left_loop_bottom
+  s_right_loop_top:
+    number: 38
+    tags: right_loop_top
+  s_right_loop_bottom:
+    number: 39
+    tags: right_loop_bottom
+  s_inner_loop:
+    number: 40
+    tags: inner_loop
+  s_spinner:
+    number: 41
+    tags: spinner
+  s_right_ramp_down:
+    number: 42
+    tags: right_ramp_down
+  s_top_right_reject:
+    number: 43
+    tags: top_right_reject
+  s_right_ramp_score_top:
+    number: 44
+    tags: right_ramp_score_top
+  s_right_ramp_score_bottom:
+    number: 45
+    tags: right_ramp_score_bottom
+  s_left_standup_right_ramp:
+    number: 47
+    tags: left_standup_right_ramp
+  s_right_standup_right_ramp:
+    number: 48
+    tags: right_standup_right_ramp
+  s_left_top_jet_bumper:
+    number: 49
+    tags: left_top_pop_bumper
+  s_right_top_jet_bumper:
+    number: 50
+    tags: right_top_pop_bumper
+  s_lower_top_jet_bumper:
+    number: 51
+    tags: lower_top_pop_bumper
+  s_left_bottom_jet_bumper:
+    number: 52
+    tags: left_bottom_pop_bumper
+  s_right_bottom_jet_bumper:
+    number: 53
+    tags: right_bottom_pop_bumper
+  s_upper_bottom_jet_bumper:
+    number: 54
+    tags: upper_bottom_pop_bumper
+  s_ball_shooter_lane:
+    number: 59 
+  s_elevator_hold:
+    number:
+  s_eject:
+    number: 
+  s_left_slingshot:
+    number:
+    tags: left_slingshot
+  s_right_slingshot:
+    number:
+    tags: right_slingshot
+
+virtual_platform_start_active_switches:
+  - s_left_flipper
+  - s_right_flipper
+  - s_trough1
+  - s_trough2
+  - s_trough3
+
+keyboard:
+  z:
+    switch: s_left_flipper
+  '?':
+    switch: s_right_flipper
+  s:
+    switch: s_start
+  1:
+    switch: s_trough1
+  2:
+    switch: s_trough2 
+  3:
+    switch: s_trough3 
+  f:
+    switch: s_left_inlane
+
+coils:
+  c_flipper_left_main:
+    number: 
+    default_pulse_ms: 20
+  c_flipper_left_hold:
+    number:
+    default_pulse_ms: 20
+    allow_enable: true
+  c_flipper_right_main:
+    number:
+  c_flipper_right_hold:
+    number:
+    allow_enable: true
+  c_trough_eject:
+    number:
+  c_retina_eject:
+    number:
+  c_bottom_popper:
+    number:
+  c_top_popper:
+    number:
+  c_left_slingshot:
+    number:
+  c_right_slingshot:
+    number:
+  c_top_slingshot:
+    number:
+  c_left_jet_bumper:
+    number:
+  c_right_jet_bumper:
+    number:
+
+ball_devices:
+  bd_trough:
+    ball_switches: s_trough1, s_trough2, s_trough3, s_trough_jam
+    eject_coil: c_trough_eject
+    tags: trough, home, drain
+    jam_switch: s_trough_jam
+    eject_coil_jam_pulse: 15ms
+    eject_targets: bd_plunger
+    debug: true
+  bd_plunger:
+    ball_switches: s_plunger
+    mechanical_eject: true
+  bd_retina_hole:
+    ball_switches: s_eject
+    eject_coil: c_retina_eject
+    eject_timeouts: 1s
+  bd_elevator:
+    ball_switches: s_elevator_hold
+    mechanical_eject: true
+    eject_timeouts: 500ms
+
+playfields:
+  playfield:
+    tags: default
+    default_source_device: bd_plunger
+
+flippers:
+  left_flipper:
+    main_coil: c_flipper_left_main
+    hold_coil: c_flipper_left_hold
+    activation_switch: s_left_flipper
+  right_flipper:
+    main_coil: c_flipper_right_main
+    hold_coil: c_flipper_right_hold
+    activation_switch: s_right_flipper
+
+autofire_coils:
+  left_slingshot:
+    coil: c_left_slingshot
+    switch: s_left_slingshot
+  right_slingshot:
+    coil: c_right_slingshot
+    switch: s_right_slingshot
+
+
+lights:
+  l_led1:
+    number:
+  l_led2:
+    number:
+  l_led3:
+    number:
+  l_3_bank_drop_target_opto_upper:
+    number:
+  l_3_bank_drop_target_opto_middle:
+    number:
+  l_3_bank_drop_target_opto_lower:
+    number:
+
+window:
+  width: 1366
+  height: 768
+  title: Mission Pinball Framework - SAW
+  resizable: false
+  fullscreen: false
+  borderless: false
+  exit_on_escape: true
+  source_display: lcd
+
+displays:
+  lcd:
+    width: 1366
+    height: 768
+

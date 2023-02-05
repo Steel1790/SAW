@@ -1,0 +1,87 @@
+2023-02-05 08:42:16,938 : INFO : root : Loading config.
+2023-02-05 08:42:16,938 : INFO : YamlMultifileConfigLoader : Machine config file #1: config.yaml
+2023-02-05 08:42:16,938 : WARNING : ConfigProcessor : Config file in cache changed: C:\pinball\SAW\config\config.yaml
+2023-02-05 08:42:16,938 : INFO : ConfigProcessor : Loading config from file C:\Users\steel\AppData\Local\Programs\Python\Python39\lib\site-packages\mpf\mpfconfig.yaml.
+2023-02-05 08:42:16,985 : INFO : ConfigProcessor : Loading config: C:\Users\steel\AppData\Local\Programs\Python\Python39\lib\site-packages\mpf\mpfconfig.yaml
+2023-02-05 08:42:16,985 : INFO : ConfigProcessor : Loading config from file C:\pinball\SAW\config\config.yaml.
+2023-02-05 08:42:17,014 : INFO : ConfigProcessor : Loading config: C:\pinball\SAW\config\config.yaml
+2023-02-05 08:42:17,014 : INFO : ConfigProcessor : Config file cache created: C:\Users\steel\AppData\Local\Temp\9014108be8bb19792bb5e6c9e9603b65.mpf_cache
+2023-02-05 08:42:17,092 : INFO : ConfigProcessor : Loading config from cache: C:\Users\steel\AppData\Local\Temp\0c159a05f39617a30cc1b279562f144f.mpf_cache
+2023-02-05 08:42:17,092 : INFO : ConfigProcessor : Loading config from cache: C:\Users\steel\AppData\Local\Temp\a4144dd661fe0832b800e50000db3090.mpf_cache
+2023-02-05 08:42:17,092 : INFO : ConfigProcessor : Loading config from cache: C:\Users\steel\AppData\Local\Temp\0c159a05f39617a30cc1b279562f144f.mpf_cache
+2023-02-05 08:42:17,092 : WARNING : ConfigProcessor : Config file in cache changed: C:\pinball\SAW\modes\base\config\base.yaml
+2023-02-05 08:42:17,092 : INFO : ConfigProcessor : Loading config from file C:\pinball\SAW\modes\base\config\base.yaml.
+2023-02-05 08:42:17,092 : INFO : ConfigProcessor : Loading config: C:\pinball\SAW\modes\base\config\base.yaml
+2023-02-05 08:42:17,092 : INFO : ConfigProcessor : Config file cache created: C:\Users\steel\AppData\Local\Temp\c84db42795c08bfb8e4272b3be41e3f4.mpf_cache
+2023-02-05 08:42:17,092 : INFO : ConfigProcessor : Loading config from cache: C:\Users\steel\AppData\Local\Temp\17aa0c884dad87b4b4047bafdeb78206.mpf_cache
+2023-02-05 08:42:17,092 : INFO : ConfigProcessor : Loading config from cache: C:\Users\steel\AppData\Local\Temp\6026628a89ebb09da8c65e4a804bb30f.mpf_cache
+2023-02-05 08:42:17,092 : INFO : Machine : Mission Pinball Framework Core Engine v0.56.0-dev33
+2023-02-05 08:42:17,092 : INFO : Machine : Command line arguments: {'no_load_cache': False, 'create_config_cache': True, 'bcp': True, 'configfile': ['config.yaml'], 'force_assets_load': False, 'jsonlogging': False, 'logfile': 'logs\\2023-02-05-08-42-16-mpf-MSI.log', 'pause': False, 'production': False, 'text_ui': True, 'loglevel': 15, 'consoleloglevel': 20, 'force_platform': 'virtual', 'syslog_address': None, 'mc_file_name': None, 'no_sound': False}
+2023-02-05 08:42:17,092 : INFO : Machine : MPF path: C:\Users\steel\AppData\Local\Programs\Python\Python39\lib\site-packages\mpf
+2023-02-05 08:42:17,092 : INFO : Machine : Machine path: C:\pinball\SAW
+2023-02-05 08:42:17,092 : INFO : Machine : Platform: win32
+2023-02-05 08:42:17,092 : INFO : Machine : Python executable location: C:\Users\steel\AppData\Local\Programs\Python\Python39\python.exe
+2023-02-05 08:42:17,092 : INFO : Machine : Python version: 3.9.13 (64-bit)
+2023-02-05 08:42:17,108 : INFO : Machine : Initialise MPF.
+2023-02-05 08:42:17,285 : INFO : EventManager : Event: ======'machine_var_credits_string'====== Args={'value': 'FREE PLAY', 'prev_value': None, 'change': True}
+2023-02-05 08:42:17,326 : INFO : EventManager : Event: ======'machine_var_master_volume'====== Args={'value': 0.5, 'prev_value': None, 'change': True}
+2023-02-05 08:42:17,326 : INFO : EventManager : Event: ======'machine_var_mpf_version'====== Args={'value': 'MPF v0.56.0-dev33', 'prev_value': None, 'change': True}
+2023-02-05 08:42:17,326 : INFO : EventManager : Event: ======'machine_var_mpf_extended_version'====== Args={'value': 'MPF v0.56.0-dev33, Config version:5, Show version: 5, BCP version:1.1', 'prev_value': None, 'change': True}
+2023-02-05 08:42:17,326 : INFO : EventManager : Event: ======'machine_var_python_version'====== Args={'value': '3.9.13', 'prev_value': None, 'change': True}
+2023-02-05 08:42:17,337 : INFO : EventManager : Event: ======'machine_var_platform'====== Args={'value': 'Windows-10-10.0.19044-SP0', 'prev_value': None, 'change': True}
+2023-02-05 08:42:17,337 : INFO : EventManager : Event: ======'machine_var_platform_system'====== Args={'value': 'Windows', 'prev_value': None, 'change': True}
+2023-02-05 08:42:17,338 : INFO : EventManager : Event: ======'machine_var_platform_release'====== Args={'value': '10', 'prev_value': None, 'change': True}
+2023-02-05 08:42:17,338 : INFO : EventManager : Event: ======'machine_var_platform_version'====== Args={'value': '10.0.19044', 'prev_value': None, 'change': True}
+2023-02-05 08:42:17,338 : INFO : EventManager : Event: ======'machine_var_platform_machine'====== Args={'value': 'AMD64', 'prev_value': None, 'change': True}
+2023-02-05 08:42:17,338 : INFO : EventManager : Event: ======'init_phase_1'====== Args={}
+2023-02-05 08:42:17,356 : INFO : EventManager : Event: ======'init_phase_2'====== Args={}
+2023-02-05 08:42:17,356 : INFO : SwitchController : Found active switch: (1002, <Platform.Virtual>) <switch.s_left_flipper>
+2023-02-05 08:42:17,356 : INFO : SwitchController : Found active switch: (1003, <Platform.Virtual>) <switch.s_right_flipper>
+2023-02-05 08:42:17,356 : INFO : SwitchController : Found active switch: (1000, <Platform.Virtual>) <switch.s_trough1>
+2023-02-05 08:42:17,357 : INFO : SwitchController : Found active switch: (1005, <Platform.Virtual>) <switch.s_trough2>
+2023-02-05 08:42:17,357 : INFO : SwitchController : Found active switch: (1006, <Platform.Virtual>) <switch.s_trough3>
+2023-02-05 08:42:17,358 : ERROR : asyncio : Exception in callback EventManager._queue_task_done(<Task finishe...t are: None')>)
+handle: <Handle EventManager._queue_task_done(<Task finishe...t are: None')>)>
+Traceback (most recent call last):
+  File "C:\Users\steel\AppData\Local\Programs\Python\Python39\lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\steel\AppData\Local\Programs\Python\Python39\lib\site-packages\mpf\core\events.py", line 744, in _queue_task_done
+    future.result()
+  File "C:\Users\steel\AppData\Local\Programs\Python\Python39\lib\site-packages\mpf\core\events.py", line 657, in _run_handlers_sequential
+    handler.callback(queue=queue, **merged_kwargs)
+  File "C:\Users\steel\AppData\Local\Programs\Python\Python39\lib\site-packages\mpf\core\mode_controller.py", line 97, in initialise_modes
+    item.method(config=mode.config[item.config_section],
+  File "C:\Users\steel\AppData\Local\Programs\Python\Python39\lib\site-packages\mpf\core\config_player.py", line 150, in process_mode_config
+    config = self.validate_config(config)
+  File "C:\Users\steel\AppData\Local\Programs\Python\Python39\lib\site-packages\mpf\core\config_player.py", line 113, in validate_config
+    validated_config[event] = self.validate_config_entry(settings, event)
+  File "C:\Users\steel\AppData\Local\Programs\Python\Python39\lib\site-packages\mpf\config_players\variable_player.py", line 156, in validate_config_entry
+    self.raise_config_error("Settings of variable_player should "
+  File "C:\Users\steel\AppData\Local\Programs\Python\Python39\lib\site-packages\mpf\core\logging.py", line 174, in raise_config_error
+    raise ConfigFileError(msg, error_no, self.log.name if self.log else "", context, self._url_base) \
+mpf.exceptions.config_file_error.ConfigFileError: Config File Error in variable_player: Settings of variable_player should be a dict. But are: None Context: s_flipper_lower_right_active Error Code: CFE-variable_player-5 (https://docs.missionpinball.org/en/dev/logs/CFE-variable_player-5.html)
+2023-02-05 08:42:17,373 : INFO : Machine : Starting the main run loop.
+2023-02-05 08:42:17,376 : INFO : Machine : Shutting down...
+2023-02-05 08:42:17,376 : INFO : EventManager : Event: ======'shutdown'====== Args={}
+2023-02-05 08:42:18,381 : ERROR : Machine : Runtime Exception
+Traceback (most recent call last):
+  File "C:\Users\steel\AppData\Local\Programs\Python\Python39\lib\site-packages\mpf\core\machine.py", line 797, in _run_loop
+    raise self._exception['exception']
+  File "C:\Users\steel\AppData\Local\Programs\Python\Python39\lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\steel\AppData\Local\Programs\Python\Python39\lib\site-packages\mpf\core\events.py", line 744, in _queue_task_done
+    future.result()
+  File "C:\Users\steel\AppData\Local\Programs\Python\Python39\lib\site-packages\mpf\core\events.py", line 657, in _run_handlers_sequential
+    handler.callback(queue=queue, **merged_kwargs)
+  File "C:\Users\steel\AppData\Local\Programs\Python\Python39\lib\site-packages\mpf\core\mode_controller.py", line 97, in initialise_modes
+    item.method(config=mode.config[item.config_section],
+  File "C:\Users\steel\AppData\Local\Programs\Python\Python39\lib\site-packages\mpf\core\config_player.py", line 150, in process_mode_config
+    config = self.validate_config(config)
+  File "C:\Users\steel\AppData\Local\Programs\Python\Python39\lib\site-packages\mpf\core\config_player.py", line 113, in validate_config
+    validated_config[event] = self.validate_config_entry(settings, event)
+  File "C:\Users\steel\AppData\Local\Programs\Python\Python39\lib\site-packages\mpf\config_players\variable_player.py", line 156, in validate_config_entry
+    self.raise_config_error("Settings of variable_player should "
+  File "C:\Users\steel\AppData\Local\Programs\Python\Python39\lib\site-packages\mpf\core\logging.py", line 174, in raise_config_error
+    raise ConfigFileError(msg, error_no, self.log.name if self.log else "", context, self._url_base) \
+mpf.exceptions.config_file_error.ConfigFileError: Config File Error in variable_player: Settings of variable_player should be a dict. But are: None Context: s_flipper_lower_right_active Error Code: CFE-variable_player-5 (https://docs.missionpinball.org/en/dev/logs/CFE-variable_player-5.html)
+2023-02-05 08:43:02,843 : INFO : root : MPF run loop ended.
