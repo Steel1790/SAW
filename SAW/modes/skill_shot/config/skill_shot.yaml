@@ -1,7 +1,7 @@
 #config_version=5
 mode:
   start_events: ball_starting
-  stop_events: skillshot_award , standups_skill_hit
+  stop_events: skillshot_award , droptargets_skill_hit
   priority: 100
 
 timers:
@@ -32,29 +32,29 @@ shot_profiles:
       show: on
 
 shot_groups:
-  standups_skill:
-    shots: standup_1, standup_2, standup_3
+  droptargets_skill:
+    shots: droptarget_1, droptarget_2, droptarget_3
     rotate_events: timer_target_rotator_tick
     reset_events: mode_skillshot_started|1
 
 variable_player:
-  standups_skill_hit_hit:
+  droptarget_skill_hit_hit:
     int: 200000
 
 shots:
-  standup_1_skill:
-    switch: 3_bank_drop_target_opto_upper
+  droptarget_1_skill:
+    switch: s_lower_bank_drop_target_opto_upper
     profile: skill
     advance_events: mode_skillshot_started
     show_tokens:
       light: l_3_bank_drop_target_opto_upper
-  standup_2_skill:
-    switch: 3_bank_drop_target_opto_middle
+  droptarget_2_skill:
+    switch: s_lower_bank_drop_target_opto_middle
     profile: skill
     show_tokens:
       light: l_3_bank_drop_target_opto_middle
-  standup_3_skill:
-    switch: 3_bank_drop_target_opto_lower
+  droptarget_3_skill:
+    switch: s_lower_bank_drop_target_opto_lower
     profile: skill
     show_tokens:
       light: l_3_bank_drop_target_opto_lower
