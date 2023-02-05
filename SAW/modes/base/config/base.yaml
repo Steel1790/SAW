@@ -3,38 +3,43 @@ mode:
   start_events: ball_starting
   priority: 100
 
-variable_player:
-  my_first_shot_my_first_profile_unlit_hit:
-    score: 100
-  my_first_shot_my_first_profile_flashing_hit:
-    score: 1000
-  s_flipper_lower_left_active:
-    score: 1000  
-  s_flipper_lower_right_active:
-    score: 100
+#variable_player:
+#  my_first_shot_my_first_profile_unlit_hit:
+#    score: 100
+#  my_first_shot_my_first_profile_flashing_hit:
+#    score: 1000
+#  s_flipper_lower_left_active:
+#    score: 1000  
+#  s_flipper_lower_right_active:
+#    score: 100
 
-shots:
-  my_first_shot:
-    switch: s_left_inlane  # pick a switch that's valid in your machine
-    show_tokens:
-        led: l_led1 # pick an LED that's valid in your machine
-    profile: my_first_profile 
+#shots:
+#  my_first_shot:
+#    switch: s_left_inlane  # pick a switch that's valid in your machine
+#    show_tokens:
+#        led: l_led1 # pick an LED that's valid in your machine
+#    profile: my_first_profile 
 
     
-shot_profiles:
-  my_first_profile:
-    states:
-      - name: unlit  # step 1
-        show: off
-      - name: flashing  # step 2
-        show: flash
-      - name: lit  # step 3
-        show: on
-    loop: true
+#shot_profiles:
+#  my_first_profile:
+#    states:
+#      - name: unlit  # step 1
+#        show: off
+#      - name: flashing  # step 2
+#        show: flash
+#      - name: lit  # step 3
+#        show: on
+#    loop: true
 
-#  shot_groups:
-#    droptargets:
-#    shots: droptarget_1, droptarget_2, droptarget_3,
+#show_player:
+#  mode_skill_shot_started:
+#    skillshot_timing_crawl:
+#      loops: -1
+#      speed: 4
+#  skillshot_failed:
+#    skillshot_timing_crawl:
+#      action: stop
   
 
 slide_player:
