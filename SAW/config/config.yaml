@@ -1,4 +1,9 @@
 #config_version=5
+ 
+game:
+  balls_per_game: 3
+  allow_start_with_ball_in_drain: true
+  allow_start_with_loose_balls: true 
   
 config:
 - hardware.yaml
