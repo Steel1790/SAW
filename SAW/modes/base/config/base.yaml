@@ -17,21 +17,9 @@ shots:
   my_first_shot:
     switch: s_left_inlane  # pick a switch that's valid in your machine
     show_tokens:
-      led: l_led1 # pick an LED that's valid in your machine
+        led: l_led1 # pick an LED that's valid in your machine
     profile: my_first_profile 
- #droptargets 1-3 are not working to get the skillshot mode functional 
- #droptarget_1:
- #  switch: 3_bank_drop_target_opto_upper
- #    show_tokens:
- #    light: l_3_bank_drop_target_opto_upper
- # droptarget_2:
- #  switch: s_lower_bank_drop_target_opto_middle
- #    show_tokens:
- #     light: l_3_bank_drop_target_opto_middle
- # droptarget_3:
- #   switch: s_lower_bank_drop_target_opto_lower
- #     show_tokens:
- #     light: l_3_bank_drop_target_opto_lower
+
     
 shot_profiles:
   my_first_profile:
