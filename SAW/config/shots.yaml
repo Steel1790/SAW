@@ -1,0 +1,7 @@
+#config_version=5
+sequence_shots:
+  left_ramp:
+    switch_sequence: s_enter_left_ramp, s_left_ramp_score_top, s_left_ramp_score_bottom
+    sequence_timeout: 4s
+  left_top_pop:
+    switch_sequence: s_left_top_jet_bumper
