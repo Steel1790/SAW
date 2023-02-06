@@ -195,6 +195,14 @@ keyboard:
     switch: s_lower_bank_drop_target_opto_middle
   i:
     switch: s_lower_bank_drop_target_opto_lower
+  c:
+    switch: s_enter_left_ramp
+  v:
+    switch: s_left_ramp_score_top 
+  b:
+    switch: s_left_ramp_score_bottom
+  n:
+    switch: s_left_top_jet_bumper
 
 coils:
   c_flipper_left_main:
