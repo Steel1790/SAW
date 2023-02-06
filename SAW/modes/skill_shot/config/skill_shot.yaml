@@ -1,7 +1,7 @@
 #config_version=5
 mode:
   start_events: ball_starting
-  stop_events: skillshot_award 
+  stop_events: timer_mode_timer_complete, droptargets_skill_hit
   priority: 100
 
 timers:
@@ -38,10 +38,9 @@ shot_groups:
     reset_events: mode_skillshot_started|1
 
 variable_player:
-  droptarget_skill_hit:
-    int: 200000
-  droptarget_skill_miss:
-    int: 5000
+  droptargets_skill_hit:
+    score: 250000
+
 
 shots:
   dt_drop2:
