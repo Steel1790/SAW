@@ -3,45 +3,6 @@ mode:
   start_events: ball_starting
   priority: 100
 
-#variable_player:
-#  my_first_shot_my_first_profile_unlit_hit:
-#    score: 100
-#  my_first_shot_my_first_profile_flashing_hit:
-#    score: 1000
-#  s_flipper_lower_left_active:
-#    score: 1000  
-#  s_flipper_lower_right_active:
-#    score: 100
-
-#shots:
-#  my_first_shot:
-#    switch: s_left_inlane  # pick a switch that's valid in your machine
-#    show_tokens:
-#        led: l_led1 # pick an LED that's valid in your machine
-#    profile: my_first_profile 
-
-    
-#shot_profiles:
-#  my_first_profile:
-#    states:
-#      - name: unlit  # step 1
-#        show: off
-#      - name: flashing  # step 2
-#        show: flash
-#      - name: lit  # step 3
-#        show: on
-#    loop: true
-
-#show_player:
-#  mode_skill_shot_started:
-#    skillshot_timing_crawl:
-#      loops: -1
-#      speed: 4
-#  skillshot_failed:
-#    skillshot_timing_crawl:
-#      action: stop
-  
-
 slide_player:
   mode_base_started:
     widgets:
@@ -71,3 +32,12 @@ slide_player:
         text: 'Current Score:'
         font_size: 70
         y: 40%
+      - type: image
+        image: gordonsaw
+
+
+variable_player:
+  left_ramp_hit:
+    score: 75000
+  left_top_pop_hit:
+    score: 573
