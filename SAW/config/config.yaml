@@ -16,8 +16,8 @@ modes:
   - base
   - skill_shot
   - music_player
-#  - cellar
-  - razorwire
+  - cellar
+#  - razorwire
 
 
 window:
