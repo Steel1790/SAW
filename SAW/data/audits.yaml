@@ -1,45 +1,49 @@
 events:
   game_ended: 0
-  game_started: 7
+  game_started: 153
 player:
   score:
     average: 0
     top: []
     total: 0
 shots:
-  my_first_shot: 71
+  cellar: 4
+  dt_drop2: 287
+  dt_drop3: 257
+  dt_drop4: 170
+  my_first_shot: 160
 switches:
   s_ball_shooter_lane: 0
   s_eject: 0
   s_elevator_hold: 0
-  s_enter_left_ramp: 0
+  s_enter_left_ramp: 219
   s_inner_loop: 0
   s_left_bottom_jet_bumper: 0
   s_left_cellar: 0
-  s_left_flipper: 11
-  s_left_inlane: 71
+  s_left_flipper: 22
+  s_left_inlane: 249
   s_left_lock_1: 0
   s_left_lock_2: 0
   s_left_lock_3: 0
   s_left_loop_bottom: 0
   s_left_loop_top: 0
   s_left_outlane: 0
-  s_left_ramp_score_bottom: 0
-  s_left_ramp_score_top: 0
+  s_left_ramp_score_bottom: 220
+  s_left_ramp_score_top: 228
   s_left_slingshot: 0
   s_left_standup: 0
   s_left_standup_right_ramp: 0
-  s_left_top_jet_bumper: 0
-  s_lower_bank_drop_target_opto_lower: 0
-  s_lower_bank_drop_target_opto_middle: 0
-  s_lower_bank_drop_target_opto_upper: 0
+  s_left_top_jet_bumper: 195
+  s_lower_bank_drop_target_opto_lower: 290
+  s_lower_bank_drop_target_opto_middle: 436
+  s_lower_bank_drop_target_opto_upper: 437
   s_lower_top_jet_bumper: 0
   s_middle_standup: 0
   s_outhole: 0
   s_plumb_bob_tilt: 0
   s_plunger: 0
   s_right_bottom_jet_bumper: 0
-  s_right_cellar: 0
+  s_right_cellar: 306
   s_right_flipper: 0
   s_right_inlane: 0
   s_right_loop_bottom: 0
@@ -52,12 +56,12 @@ switches:
   s_right_standup: 0
   s_right_standup_right_ramp: 0
   s_right_top_jet_bumper: 0
-  s_spinner: 0
-  s_start: 6
+  s_spinner: 70
+  s_start: 9
   s_top_right_reject: 0
-  s_trough1: 5
-  s_trough2: 2
-  s_trough3: 2
+  s_trough1: 7
+  s_trough2: 5
+  s_trough3: 5
   s_trough_jam: 0
   s_upper_bank_drop_target_opto: 0
   s_upper_bottom_jet_bumper: 0

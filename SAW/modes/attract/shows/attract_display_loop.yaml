@@ -6,7 +6,9 @@
       widgets:
       - type: image
         image: twisted_pictures
-        expire: 2.6
+      transition:
+         type: fade
+         duration: 0.1s
 
         
 - duration: 2.5s
@@ -15,6 +17,9 @@
       widgets:
       - type: image
         image: logo_fullscreen
+      transition:
+         type: fade
+         duration: 0.1s
         
 #- duration: 3s
 #  slides:
@@ -38,7 +43,8 @@
       - type: Text
         text: PRESS START
         font_name: TrajanProRegular
-        font_size: 60
+        font_size: 75
+        color: yellow
         animations:
           pre_show_slide:
           - property: opacity
@@ -51,23 +57,18 @@
       - type: Text
         text: DO YOU WANT TO PLAY A GAME?
         font_name: TrajanProRegular
-        font_size: 20
-        y: 70
+        font_size: 35
+        y: 90
       - type: Text
         text: FREE PLAY
         color: green
         font_size: 30
         y: 10
         anchor_y: bottom
-        animations:
-          pre_show_slide:
-          - property: opacity
-            value: 0
-            duration: 1s
-          - property: opacity
-            value: 1
-            duration: 1s
-            repeat: true
+      transition:
+         type: fade
+         duration: 0.2s
+
 #       transition:
 #       type: move_in
 #       duration: 1s
@@ -80,20 +81,29 @@
       - type: text
         text: LAST GAME SCORES
         font_name: TrajanProRegular
-        font_size: 50
-        y: 60%
+        font_size: 70
+        color: yellow
+        y: 80%
       - type: text
         text: (machine|player1_score)
         number_grouping: true
         min_digits: 2
         font_size: 50
+        color: yellow
         y: 40%
       - type: text
         text: (machine|player2_score)
         number_grouping: true
         min_digits: 2
         font_size: 50
+        color: yellow
         y: 20%
+      - type: image
+        opacity: 0.65
+        image: lastgamescores
+      transition:
+         type: fade
+         duration: 0.2s
 
 
 

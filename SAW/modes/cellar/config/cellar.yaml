@@ -1,0 +1,35 @@
+#config_version=5
+mode:
+  start_events: start_mode_cellar
+  stop_events: 
+
+##! mode: qualify
+# mode: qualify
+  
+shot_groups:
+  cellar:
+    shots: cellar
+  
+shots:
+  cellar:
+    switch: s_right_cellar
+
+
+variable_player:
+  cellar_hit:
+    score: 300000
+    
+counters:
+  cellar_qualify_counter:
+    starting_count: 0
+    direction: up
+    count_complete_value: 2
+    events_when_complete: disable_qualify, mode_cellar_complete
+    enable_events: enable_qualify
+    disable_events: disable_qualify
+    start_enabled: true
+    persist_state: true
+    reset_on_complete: true
+#    restart_events: reset_qualify_modes
+    count_events: cellar_hit
+    

@@ -7,10 +7,9 @@ slide_player:
   mode_base_started:
     widgets:
       - type: text
-        text: (score)
-        number_grouping: true
-        min_digits: 2
-        font_size: 100
+        font_name: TrajanProRegular
+        text: 'Current Score:'
+        font_size: 70
       - type: text
         font_name: TrajanProRegular
         text: PLAYER (number)
@@ -28,10 +27,11 @@ slide_player:
         anchor_y: bottom
         font_size: 50
       - type: text
-        font_name: TrajanProRegular
-        text: 'Current Score:'
-        font_size: 70
-        y: 40%
+        text: (score)
+        number_grouping: true
+        min_digits: 2
+        font_size: 100
+        y: 38%
       - type: image
         image: gordonsaw
 
@@ -41,3 +41,8 @@ variable_player:
     score: 75000
   left_top_pop_hit:
     score: 573
+  cellar_hit:
+    score: 100000
+  spinner_hit:
+    score: 5000
+ 

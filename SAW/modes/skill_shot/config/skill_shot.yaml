@@ -1,8 +1,26 @@
 #config_version=5
 mode:
-  start_events: ball_starting
-  stop_events: timer_mode_timer_complete, droptargets_skill_hit
+  start_events: ball_starting, start_mode_skillshot
+  stop_events: stop_mode_skillshot
   priority: 100
+
+#sound_player:
+#  mode_skillshot_started:
+#    playagame:
+#      action: play
+      
+slides:
+  wanttoplayagame:
+    widgets:
+      - type: video
+        video: wanttoplayagame
+        width: 1366
+        height: 768
+        control_events:
+        - event: mode_skillshot_started
+          action: play
+          
+
 
 timers:
   mode_timer:
@@ -30,6 +48,7 @@ shot_profiles:
       speed: 10
     - name: hit
       show: on
+      
 
 shot_groups:
   droptargets_skill:
@@ -41,7 +60,11 @@ variable_player:
   droptargets_skill_hit:
     score: 250000
 
-
+event_player:
+  skillshot_hit: stop_mode_skillshot
+  playfield_active: stop_mode_skillshot|2s
+ 
+  
 shots:
   dt_drop2:
     switch: s_lower_bank_drop_target_opto_upper
@@ -59,3 +82,10 @@ shots:
     profile: skill
     show_tokens:
       light: l_3_bank_drop_target_opto_lower
+      
+show_player: 
+
+  mode_skill_shot_started:
+    ss_show: 
+      priority: 900
+      loops: 0

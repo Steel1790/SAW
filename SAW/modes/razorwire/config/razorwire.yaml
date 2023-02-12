@@ -1,0 +1,60 @@
+#config_version=5                 
+mode:
+  start_events: mode_razorwire_started, cellar_counter_count_complete
+  stop_events: stop_mode_razorwire, ball_ended 
+
+      
+slides:
+  razorwirevideo:
+    widgets:
+      - type: video
+        video: razorwirevideo
+        width: 1366
+        height: 768
+        control_events:
+        - event: mode_razorwire_started
+          action: play
+          
+
+
+#timers:
+#  mode_timer:
+#    start_value: 3
+#    end_value: 0
+#    direction: down
+#    tick_interval: 1s
+#    control_events:
+#    - event: balldevice_playfield_ball_enter
+#      action: start
+#    start_running: false
+#  target_rotator:
+#    start_running: true
+#    tick_interval: 1s
+
+
+      
+
+shot_groups:
+  spinner:
+    shots: spinner
+
+variable_player:
+  spinner_hit:
+    score: 2000000
+
+#event_player:
+#  razorwire_hit: stop_mode_razorwire
+ 
+  
+shots:
+  spinner:
+    switch: s_spinner
+
+
+      
+show_player: 
+
+  mode_razorwire_started:
+    razorwire_show: 
+      priority: 900
+      loops: 0
