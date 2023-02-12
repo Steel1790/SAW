@@ -1,0 +1,34 @@
+#config_version=5
+keyboard:
+  z:
+    switch: s_left_flipper
+  '?':
+    switch: s_right_flipper
+  s:
+    switch: s_start
+  1:
+    switch: s_trough1
+  2:
+    switch: s_trough2 
+  3:
+    switch: s_trough3 
+  f:
+    switch: s_left_inlane
+  g: 
+    switch: s_lower_bank_drop_target_opto_upper
+  h:
+    switch: s_lower_bank_drop_target_opto_middle
+  i:
+    switch: s_lower_bank_drop_target_opto_lower
+  c:
+    switch: s_enter_left_ramp
+  v:
+    switch: s_left_ramp_score_top 
+  b:
+    switch: s_left_ramp_score_bottom
+  n:
+    switch: s_left_top_jet_bumper
+  t:
+    switch: s_right_cellar
+  y:
+    switch: s_spinner

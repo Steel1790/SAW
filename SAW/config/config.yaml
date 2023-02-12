@@ -7,12 +7,17 @@ game:
   
 config:
 - hardware.yaml
+- keyboard.yaml
 - shots.yaml
+- videos.yaml
 
 modes:
   - attract
   - base
   - skill_shot
+  - music_player
+#  - cellar
+  - razorwire
 
 
 window:
@@ -29,3 +34,50 @@ displays:
   lcd:
     width: 1366
     height: 768
+
+
+
+sound_player:
+  mode_attract_started:
+    themesong:
+      action: play
+      loops: -1
+  mode_attract_stopped:
+    themesong:
+      action: stop
+  ball_starting: playagame
+#  mode_razorwire_started:
+#    razorwire:
+#      action: play
+      
+    
+
+      
+sound_system:
+    tracks:
+       music:
+          simultaneous_sounds: 3
+          volume: 1.0
+       voice:
+          simultaneous_sounds: 1
+          volume: 0.7
+       sfx:
+          simultaneous_sounds: 8
+          volume: 0.9
+
+sounds:
+
+assets:
+    sounds:
+        default:
+            load: preload
+        music:
+            track: music
+        sfx:
+            track: sfx
+        voice:
+            track: voice
+    videos:
+        default:
+            load: preload
+            

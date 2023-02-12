@@ -5,3 +5,7 @@ sequence_shots:
     sequence_timeout: 4s
   left_top_pop:
     switch_sequence: s_left_top_jet_bumper
+  cellar:
+    switch_sequence: s_right_cellar
+  spinner:
+    switch_sequence: s_spinner
