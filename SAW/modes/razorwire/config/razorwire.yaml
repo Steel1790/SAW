@@ -1,60 +1,129 @@
 #config_version=5                 
 mode:
-  start_events: mode_razorwire_started, cellar_counter_count_complete
-  stop_events: stop_mode_razorwire, ball_ended 
+  start_events: mode_cellar_complete, stop_mode_cellar, stop_cellar_qualify_counter
+  stop_events: stop_mode_razorwire, ball_ended, stop_mode_cellar
+ 
+timers:
+  60s_timer:
+    start_value: 69
+    end_value: 0
+    direction: down
+    control_events:
+      - action: start
+        event: mode_razorwire_started
 
-      
-slides:
-  razorwirevideo:
-    widgets:
-      - type: video
-        video: razorwirevideo
-        width: 1366
-        height: 768
-        control_events:
-        - event: mode_razorwire_started
-          action: play
-          
+counters:
+  razorwire_spinner_counter:
+    starting_count: 0
+    count_complete_value: 30
+    enable_events: enable_qualify
+    disable_events: disable_qualify
+    start_enabled: true
+#    persist_state: true
+    reset_on_complete: false
+    events_when_complete: mode_razorwire_complete, stop_mode_razorwire
+    count_events: spinner_hit
+ 
 
-
-#timers:
-#  mode_timer:
-#    start_value: 3
-#    end_value: 0
-#    direction: down
-#    tick_interval: 1s
-#    control_events:
-#    - event: balldevice_playfield_ball_enter
-#      action: start
-#    start_running: false
-#  target_rotator:
-#    start_running: true
-#    tick_interval: 1s
-
-
-      
-
-shot_groups:
-  spinner:
-    shots: spinner
+#shot_groups:
+#  spinner:
+#    shots: spinner
+    
 
 variable_player:
   spinner_hit:
     score: 2000000
-
-#event_player:
-#  razorwire_hit: stop_mode_razorwire
+  counter_razorwire_spinner_counter_hit:
+    razorwire_spinner_counter:
+      action: set
+      int: (count)
+       
+  timer_your_timer_tick:
+    60s_timer:
+      int: device.timers.your_timer.ticks_remaining
+      action: set
  
-  
-shots:
-  spinner:
-    switch: s_spinner
+slides:
+  razorwirevideo:
+    widgets:
+    - type: video
+      video: razorwirevideo  
+      
+  Spinner1:
+    widgets:
+    - type: Text
+      text: Shoot The Spinners!
+      font_name: TrajanProRegular
+      font_size: 75
+      color: 65fe08
+    - type: image
+      image: hacksawUI
+      opacity: 0.5
+      y: 1
+      x: 1
+      anchor_x: left
+      anchor_y: bottom
+    - type: text
+      text: (score)
+      number_grouping: true
+      y: 16
+      x: 25
+      font_size: 36
+      anchor_x: left
+      anchor_y: bottom
+      font_name: TrajanProRegular
+      color: 65fe08
+    - type: Text
+      text: (player|razorwire_60s_timer_tick) Seconds Left
+      font_size: 50
+      font_name: TrajanProRegular
+      color: 65fe08
+      y: 85%
+    - type: Text
+# work on displaying the count of spins
+      text: (player|razorwire_spinner_counter) / 30 Spins
+      font_size: 50
+      font_name: TrajanProRegular
+      color: 65fe08
+      y: 65%
+    - type: Text
+      text: You Have 60 Seconds To Hit 30 Spins
+      color: yellow
+      font_name: TrajanProRegular
+      font_size: 35
+      y: 90
+      animations:
+       pre_show_slide:
+        - property: opacity
+          value: 0
+          duration: 1s
+        - property: opacity
+          value: 1
+          duration: 1s
+          repeat: true
+    - type: image
+      image: razorwireimg
+      opacity: 0.65
+    transition:
+     type: fade
+     duration: 0.2s
+ 
 
+
+
+  
+#shots:
+#  spinner:
+#    switch: s_spinner
 
       
-show_player: 
-
-  mode_razorwire_started:
-    razorwire_show: 
-      priority: 900
-      loops: 0
+slide_player:
+  mode_razorwire_started: 
+    razorwirevideo:
+      priority: 500
+      expire: 8.7s
+  slide_razorwirevideo_removed: 
+    Spinner1:
+      priority: 400
+      expire: 66.5s
+ 

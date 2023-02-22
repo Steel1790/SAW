@@ -1,23 +1,20 @@
 #config_version=5
 mode:
-  start_events: base_mode_started, start_mode_cellar
-  stop_events: stop_mode_cellar
+  start_events: mode_skill_shot_stopped
+  stop_events: stop_mode_cellar, stop_cellar_qualify_counter, mode_razorwire_started
 
 ##! mode: qualify
 # mode: qualify
   
-shot_groups:
-  cellar:
-    shots: cellar
-    enable_events: cellar_qualify_counter
+
   
-shots:
-  cellar:
-    switch: s_right_cellar
+#shots:
+#  cellar:
+#    switch: s_right_cellar
 
 
 variable_player:
-  cellar_hit:
+  mode_cellar_complete:
     score: 300000
     
 counters:
@@ -28,8 +25,8 @@ counters:
     enable_events: enable_qualify
     disable_events: disable_qualify
     start_enabled: true
-    persist_state: true
+#    persist_state: true
     reset_on_complete: false
-    restart_events: reset_qualify_modes
+#    restart_events: reset_qualify_modes
     count_events: cellar_hit
     

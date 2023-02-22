@@ -17,7 +17,7 @@ modes:
   - skill_shot
   - music_player
   - cellar
-#  - razorwire
+  - razorwire
 
 
 window:
@@ -46,9 +46,9 @@ sound_player:
     themesong:
       action: stop
   ball_starting: playagame
-#  mode_razorwire_started:
-#    razorwire:
-#      action: play
+  mode_razorwire_started:
+    razorwire:
+      action: play
       
     
 
@@ -60,10 +60,10 @@ sound_system:
           volume: 1.0
        voice:
           simultaneous_sounds: 1
-          volume: 0.7
+          volume: 1.0
        sfx:
           simultaneous_sounds: 8
-          volume: 0.9
+          volume: 1.0
 
 sounds:
 

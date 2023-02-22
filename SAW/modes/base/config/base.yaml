@@ -6,32 +6,133 @@ mode:
 slide_player:
   mode_base_started:
     widgets:
-      - type: text
-        font_name: TrajanProRegular
-        text: 'Current Score:'
-        font_size: 70
+
+      - type: image
+        image: spiral
+        opacity: 0.7
+        y: top-20
+        x: right-165
+
       - type: text
         font_name: TrajanProRegular
         text: PLAYER (number)
-        y: 10
-        x: 10
-        font_size: 50
-        anchor_x: left
-        anchor_y: bottom
+        y: top-25
+        x: left+105
+        font_size: 38
+        color: C2E3E0
+
+      - type: image
+        image: rustpipe2
+        y: top-44
+        x: left+95
+        opacity: 0.5
+        
       - type: text
         text: BALL (ball)
         font_name: TrajanProRegular
-        y: 10
-        x: right-10
-        anchor_x: right
-        anchor_y: bottom
-        font_size: 50
+        y: top-25
+        x: right-70
+        color: C2E3E0
+        font_size: 38
+        
+      - type: image
+        image: rustpipe2
+        y: top-44
+        x: right-90
+        opacity: 0.5
+ 
+#player 1 
       - type: text
         text: (score)
         number_grouping: true
-        min_digits: 2
-        font_size: 100
-        y: 38%
+        y: 16
+        x: 25
+        font_size: 36
+        anchor_x: left
+        anchor_y: bottom
+        font_name: TrajanProRegular
+        color: C2E3E0
+        
+      - type: image
+        image: hacksawUI
+        opacity: 0.9
+        y: 1
+        x: 1
+        anchor_x: left
+        anchor_y: bottom
+        
+#player 2      
+      - type: Text
+        text: PRESS START
+        font_name: TrajanProRegular
+        font_size: 28
+        y: 35
+        x: left+490
+        color: red
+        animations:
+          pre_show_slide:
+          - property: opacity
+            value: 0
+            duration: 1.5s
+          - property: opacity
+            value: 1
+            duration: 1.5s
+            repeat: true
+      - type: image
+        image: hacksawUI
+        opacity: 0.9
+        y: 1
+        x: left+520
+        anchor_y: bottom
+            
+#player 3   
+      - type: Text
+        text: PRESS START
+        font_name: TrajanProRegular
+        font_size: 28
+        y: 35
+        x: left+840
+        color: red
+        animations:
+          pre_show_slide:
+          - property: opacity
+            value: 0
+            duration: 1.5s
+          - property: opacity
+            value: 1
+            duration: 1.5s
+            repeat: true 
+      - type: image
+        image: hacksawUI
+        opacity: 0.9
+        y: 1
+        x: left+870
+        anchor_y: bottom
+       
+#player 4   
+      - type: Text
+        text: PRESS START
+        font_name: TrajanProRegular
+        font_size: 28
+        y: 35
+        x: left+1180
+        color: red
+        animations:
+          pre_show_slide:
+          - property: opacity
+            value: 0
+            duration: 1.5s
+          - property: opacity
+            value: 1
+            duration: 1.5s
+            repeat: true 
+      - type: image
+        image: hacksawUI
+        opacity: 0.9
+        y: 1
+        x: left+1210
+        anchor_y: bottom
+        
       - type: image
         image: gordonsaw
 
