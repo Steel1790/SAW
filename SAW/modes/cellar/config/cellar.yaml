@@ -1,7 +1,7 @@
 #config_version=5
 mode:
   start_events: mode_skill_shot_stopped
-  stop_events: stop_mode_cellar, stop_cellar_qualify_counter, mode_razorwire_started
+  stop_events: stop_mode_cellar, stop_cellar_qualify_counter, mode_selection_mode_started
 
 ##! mode: qualify
 # mode: qualify

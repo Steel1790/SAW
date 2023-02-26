@@ -2,7 +2,7 @@
 keyboard:
   z:
     switch: s_left_flipper
-  '?':
+  'x':
     switch: s_right_flipper
   s:
     switch: s_start

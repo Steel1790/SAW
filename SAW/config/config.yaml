@@ -17,7 +17,9 @@ modes:
   - skill_shot
   - music_player
   - cellar
+  - selection_mode
   - razorwire
+  - reversebeartrap
 
 
 window:
