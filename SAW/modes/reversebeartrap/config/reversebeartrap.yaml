@@ -1,8 +1,17 @@
 #config_version=5                 
 mode:
   start_events: selection_mode_reversebeartrap_selected
-  stop_events: stop_mode_reversebeartrap, ball_ended, stop_mode_cellar, stop_mode_selection_mode
+  stop_events: stop_mode_reversebeartrap, ball_ended
  
+#sequences:
+#  finish_world_tour:
+#    events:
+#      - shot_north_america_hit
+#      - shot_south_america_hit
+#      - shot_europe_hit
+#      - shot_australia_hit
+#    events_when_complete: wt_done
+
 #timers:
 #  60s_timer:
 #    start_value: 69

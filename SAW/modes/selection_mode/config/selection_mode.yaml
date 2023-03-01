@@ -1,7 +1,7 @@
 #config_version=5                 
 mode:
-  start_events: start_selection_mode, mode_cellar_complete, stop_mode_cellar, stop_cellar_qualify_counter
-  stop_events: carousel_item_selected, ball_ended, stop_mode_cellar, 
+  start_events: start_selection_mode, mode_cellar_complete
+  stop_events: carousel_item_selected, ball_ended, stop_mode_cellar, slide_Spinner1_removed
   code: mpf.modes.carousel.code.carousel.Carousel
 mode_settings:
   selectable_items: 
@@ -234,27 +234,27 @@ slide_player:
   selection_mode_razorwire_highlighted: 
     razorwire:
       priority: 400
-      expire: 10s
+#      expire: 10s
   selection_mode_reversebeartrap_highlighted: 
     reversebeartrap:
       priority: 400
-      expire: 10s
+#      expire: 10s
   selection_mode_flammablejelly_highlighted: 
     flammablejelly:
       priority: 400
-      expire: 10s
+#      expire: 10s
   selection_mode_drillchair_highlighted: 
     drillchair:
       priority: 400
-      expire: 10s
+#      expire: 10s
   selection_mode_quadshotgun_highlighted: 
     quadshotgun:
       priority: 400
-      expire: 10s
+#      expire: 10s
   selection_mode_zeptest_highlighted: 
     zeptest:
       priority: 400
-      expire: 10s
+#      expire: 10s
 #  carousel_mission2_highlighted: select_mission2
 #  carousel_mission3_highlighted: select_mission3
 

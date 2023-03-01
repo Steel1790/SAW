@@ -14,7 +14,7 @@ config:
 modes:
   - attract
   - base
-  - skill_shot
+  - skillshot
   - music_player
   - cellar
   - selection_mode
@@ -51,8 +51,48 @@ sound_player:
   mode_razorwire_started:
     razorwire:
       action: play
-      
-    
+  mode_razorwire_complete:
+    trapcomplete:
+      action: play
+ 
+slides:
+  trapcomplete:
+    widgets:
+    - type: Text
+      text: You Survived
+      color: AD1400
+      font_name: TrajanProRegular
+      font_size: 100
+      x: 35%
+      y: 50%
+      animations:
+       pre_show_slide:
+        - property: opacity
+          value: 0
+          duration: 1s
+        - property: opacity
+          value: 1
+          duration: 1s
+          repeat: true
+    - type: image
+      image: trapcomplete 
+   
+  skillshotcomplete:
+    widgets:
+    - type: image
+      image: billyskillshot  
+       
+slide_player: 
+  slide_Spinner1_removed: 
+    trapcomplete:
+      priority: 400
+      expire: 8s   
+
+  mode_skillshot_complete:
+    skillshotcomplete:
+      action: play
+      priority: 400
+      expire: 3s
 
       
 sound_system:

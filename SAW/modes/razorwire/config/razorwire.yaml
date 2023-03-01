@@ -2,7 +2,7 @@
 mode:
 #  start_events: mode_cellar_complete, stop_mode_cellar, stop_cellar_qualify_counter
   start_events: selection_mode_razorwire_selected
-  stop_events: stop_mode_razorwire, ball_ended, stop_mode_cellar, stop_mode_selection_mode
+  stop_events: stop_mode_razorwire, ball_ended, mode_selection_mode_stopped, stop_selection_mode
  
 timers:
   60s_timer:
@@ -37,6 +37,9 @@ variable_player:
   counter_razorwire_spinner_counter_hit:
     razorwire_spinner_counter:
       action: set
+      int: (count)*23
+    razorwire_visual_spinner_counter:
+      action: set
       int: (count)
        
   timer_your_timer_tick:
@@ -57,6 +60,7 @@ slides:
       font_name: TrajanProRegular
       font_size: 75
       color: 65fe08
+      
     - type: image
       image: hacksawUI
       opacity: 0.5
@@ -74,41 +78,65 @@ slides:
       anchor_y: bottom
       font_name: TrajanProRegular
       color: 65fe08
+      
     - type: Text
       text: 00:(player|razorwire_60s_timer_tick)
-      font_size: 50
+      font_size: 100
       font_name: digitalclockfont
       color: red
-      x: 490
-      y: 85%
+      x: 50%
+      y: 83.2%
     - type: rectangle
-      width: 210
-      height: 65
-      x: 490
-      y: 85%
+      width: 420
+      height: 130
+      x: 50%
+      y: 84.5%
+      corner_radius: 20
+      corner_segments: 20
+      color: black
+      
+    - type: rectangle
+      width: 0
+      height: 45
+      x: 25%
+      y: 180
+      anchor_x: left
       corner_radius: 10
       corner_segments: 10
-      color: black
-    - type: Text
-      text: Seconds Left
-      font_size: 50
-      font_name: TrajanProRegular
       color: 65fe08
-      x: 825
-      y: 85%
+      animations:
+        player_razorwire_spinner_counter:
+         - property: width
+           value: (value)           
+    - type: rectangle
+      width: 685
+      height: 46
+      x: 50%
+      y: 180
+      color: black
+      corner_radius: 10
+      corner_segments: 10
+      
+#    - type: Text
+#      text: Seconds Left
+#      font_size: 50
+#      font_name: TrajanProRegular
+#      color: 65fe08
+#      x: 825
+#      y: 85%
     - type: Text
 # work on displaying the count of spins
-      text: (player|razorwire_spinner_counter) / 30 Spins
+      text: (player|razorwire_visual_spinner_counter) / 30 Spins
       font_size: 50
       font_name: TrajanProRegular
       color: 65fe08
-      y: 65%
+      y: 35%
     - type: Text
       text: You Have 60 Seconds To Hit 30 Spins
       color: yellow
       font_name: TrajanProRegular
       font_size: 35
-      y: 90
+      y: 15%
       animations:
        pre_show_slide:
         - property: opacity
@@ -124,10 +152,6 @@ slides:
     transition:
      type: fade
      duration: 0.2s
- 
-
-
-
   
 #shots:
 #  spinner:
@@ -143,4 +167,3 @@ slide_player:
     Spinner1:
       priority: 400
       expire: 66.5s
- 
