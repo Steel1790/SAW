@@ -20,23 +20,23 @@ slides:
         - event: mode_skillshot_started
           action: play
           
-  skillshotcomplete:
-    widgets:
-    - type: Text
-      text: "Skillshot\nSuccess!"
-      color: black
-      font_name: TrajanProRegular
-      font_size: 100
-      x: 50%
-      y: 50%
-      animations:
-       pre_show_slide:
-        - property: rotation
-          value: -360
-          duration: 2s
+#  skillshotcomplete:
+#    widgets:
+#    - type: Text
+#      text: "Skillshot\nSuccess!"
+#      color: black
+#      font_name: TrajanProRegular
+#      font_size: 100
+#      x: 50%
+#      y: 50%
+#      animations:
+#       pre_show_slide:
+#        - property: rotation
+#          value: -360
+#          duration: 2s
           
-    - type: image
-      image: spiralskillshot  
+#    - type: image
+#      image: spiralskillshot  
 
       
 
@@ -110,9 +110,10 @@ show_player:
       priority: 900
       loops: 0  
       
-slide_player:
-  mode_skillshot_complete:
-    skillshotcomplete:
-      action: play
-      priority: 400
-      expire: 3s
+#slide_player:
+#  mode_skillshot_complete:
+#    skillshotcomplete:
+#      action: play
+#      priority: 400
+#      expire: 3s
+

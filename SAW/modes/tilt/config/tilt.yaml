@@ -1,0 +1,21 @@
+#config_version=5
+tilt:    # the following are the defaults only copy those if you want to change them
+  multiple_hit_window: 300ms
+  settle_time: 5s
+  warnings_to_tilt: 3
+  
+slides:
+  _overwrite: true   # this is important to overwrite the existing slides
+  tilt_warning_1:
+    widgets:
+      - type: video
+        video: tiltwarning
+    expire: 8s
+  tilt_warning_2:
+    widgets:
+      - type: video
+        video: tiltwarning
+    expire: 8s
+  tilt:
+    - type: text
+      text: TILT

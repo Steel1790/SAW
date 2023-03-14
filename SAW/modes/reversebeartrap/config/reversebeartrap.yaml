@@ -1,25 +1,26 @@
 #config_version=5                 
 mode:
   start_events: selection_mode_reversebeartrap_selected
-  stop_events: stop_mode_reversebeartrap, ball_ended
+  stop_events: stop_mode_reversebeartrap, ball_ended 
  
-#sequences:
-#  finish_world_tour:
-#    events:
-#      - shot_north_america_hit
-#      - shot_south_america_hit
-#      - shot_europe_hit
-#      - shot_australia_hit
-#    events_when_complete: wt_done
+sequences:
+  reversebeartrap:
+    events:
+      - upper_drop_target_hit
+      - left_ramp_hit
+      - right_ramp_hit
+      - upper_drop_target_hit
+    reset_on_complete: false
+    events_when_complete: mode_reversebeartrap_complete, stop_mode_reversebeartrap
 
-#timers:
-#  60s_timer:
-#    start_value: 69
-#    end_value: 0
-#    direction: down
-#    control_events:
-#      - action: start
-#        event: mode_razorwire_started
+timers:
+  120s_reversebeartrap_timer:
+    start_value: 129
+    end_value: 0
+    direction: down
+    control_events:
+      - action: start
+        event: mode_reversebeartrap_started
 
 #counters:
 #  razorwire_spinner_counter:
@@ -33,92 +34,214 @@ mode:
 #    count_events: spinner_hit
     
 
-#variable_player:
-#  spinner_hit:
-#    score: 2000000
-#  counter_razorwire_spinner_counter_hit:
-#    razorwire_spinner_counter:
-#      action: set
-#      int: (count)
+variable_player:
+  upper_drop_target_hit:
+    score: 345678
+  left_ramp_hit:
+    score: 456789
+  right_ramp_hit:
+    score: 567890
+  mode_reversebeartrap_complete:
+    score: 5000000
+    
+
        
-#  timer_your_timer_tick:
-#    60s_timer:
-#      int: device.timers.your_timer.ticks_remaining
-#      action: set
+  timer_your_timer_tick:
+    120s_reversebeartrap_timer:
+      int: device.timers.your_timer.ticks_remaining
+      action: set
  
-#slides:
-#  razorwirevideo:
-#    widgets:
-#    - type: video
-#      video: razorwirevideo  
+widgets:
+   shotupdate1:
+    - type: Text
+      text: X
+      color: ad1400
+      x: 3.5%
+      y: 68%
+      font_size: 35
+      font_name: TrajanProRegular
+   shotupdate2:
+    - type: Text
+      text: X
+      color: ad1400
+      x: 3.5%
+      y: 62%
+      font_size: 35
+      font_name: TrajanProRegular
+   shotupdate3:
+    - type: Text
+      text: X
+      color: ad1400
+      x: 3.5%
+      y: 56%
+      font_size: 35
+      font_name: TrajanProRegular
+   shotupdate4:
+    - type: Text
+      text: X
+      color: ad1400
+      x: 3.5%
+      y: 50%
+      font_size: 35
+      font_name: TrajanProRegular
       
-#  Spinner1:
-#   widgets:
+widget_player:
+ logicblock_reversebeartrap_hit{step==1}: 
+  shotupdate1:
+    slide: reversebeartrapUI
+ logicblock_reversebeartrap_hit{step==2}: 
+  shotupdate2:
+    slide: reversebeartrapUI
+ logicblock_reversebeartrap_hit{step==3}: 
+  shotupdate3:
+    slide: reversebeartrapUI
+ logicblock_reversebeartrap_hit{step==4}: 
+  shotupdate4:
+    slide: reversebeartrapUI 
+ 
+slides:
+  reversebeartrapvideo:
+    widgets:
+    - type: video
+      video: reversebeartrapvideo 
+      width: 1366
+      height: 768      
+      
+  reversebeartrapUI:
+   widgets:
 #    - type: Text
 #      text: Shoot The Spinners!
 #      font_name: TrajanProRegular
 #      font_size: 75
 #      color: 65fe08
-#    - type: image
-#      image: hacksawUI
-#      opacity: 0.5
-#      y: 1
-#      x: 1
-#      anchor_x: left
-#      anchor_y: bottom
-#    - type: text
-#      text: (score)
-#      number_grouping: true
-#      y: 16
-#      x: 25
-#      font_size: 36
-#      anchor_x: left
-#      anchor_y: bottom
-#      font_name: TrajanProRegular
-#      color: 65fe08
+    - type: image
+      image: hacksawUI
+      opacity: 0.5
+      y: 1
+      x: 1
+      anchor_x: left
+      anchor_y: bottom
+    - type: text
+      text: (score)
+      number_grouping: true
+      y: 16
+      x: 25
+      font_size: 36
+      anchor_x: left
+      anchor_y: bottom
+      font_name: TrajanProRegular
+      color: F5FBFF
+    - type: Text
+      text: (player|reversebeartrap_120s_reversebeartrap_timer_tick) Seconds Left
+      font_size: 55
+      font_name: TrajanProRegular
+      color: E5F3FD
+      y: 90%
+
 #    - type: Text
-#      text: (player|razorwire_60s_timer_tick) Seconds Left
-#      font_size: 50
-#      font_name: TrajanProRegular
-#      color: 65fe08
-#      y: 85%
-#    - type: Text
+#      text: 00:(player|reversebeartrap_120s_reversebeartrap_timer_tick)
+#      font_size: 100
+#      font_name: digitalclockfont
+#      color: red
+#      x: 50%
+#      y: 83.2%
+#    - type: rectangle
+#      width: 420
+#      height: 130
+#      x: 50%
+#      y: 84.5%
+#      corner_radius: 20
+#      corner_segments: 20
+#      color: black
+      
+    - type: Text
 # work on displaying the count of spins
-#      text: (player|razorwire_spinner_counter) / 30 Spins
-#      font_size: 50
-#      font_name: TrajanProRegular
-#      color: 65fe08
-#      y: 65%
-#    - type: Text
-#      text: You Have 60 Seconds To Hit 30 Spins
-#      color: yellow
-#      font_name: TrajanProRegular
-#      font_size: 35
-#      y: 90
-#      animations:
-#       pre_show_slide:
-#        - property: opacity
-#          value: 0
-#          duration: 1s
-#        - property: opacity
-#          value: 1
-#          duration: 1s
-#          repeat: true
-#    - type: image
-#      image: razorwireimg
-#      opacity: 0.65
+      text: "To Find the Key:"
+      font_size: 42
+      font_name: TrajanProRegular
+      color: AECCE4
+      x: 275
+      y: 75%
+      
+    - type: Text
+      text: "- Hit The Upper Drop Target"
+      font_size: 32
+      font_name: TrajanProRegular
+      color: BDD5E7
+      x: 320
+      y: 68%
+      
+    - type: Text
+      text: "- Hit The Left Ramp"
+      font_size: 32
+      font_name: TrajanProRegular
+      color: BDD5E7
+      x: 238
+      y: 62%
+      
+    - type: Text
+      text: "- Hit The Right Ramp"
+      font_size: 32
+      font_name: TrajanProRegular
+      color: BDD5E7
+      x: 255
+      y: 56%
+      
+    - type: Text
+      text: "- Hit The Upper Drop Target"
+      font_size: 32
+      font_name: TrajanProRegular
+      color: BDD5E7
+      x: 320
+      y: 50%      
+      
+    - type: Text
+      text: "You Have 120 Seconds To Find The Key & Earn Your Salvation"
+      color: D1E5F4
+      font_name: TrajanProRegular
+      font_size: 35
+      y: 90
+      animations:
+       pre_show_slide:
+        - property: opacity
+          value: 0
+          duration: 1s
+        - property: opacity
+          value: 1
+          duration: 1s
+          repeat: true
+    - type: image
+      image: reversebeartrap
+      opacity: 0.45
+#      width: 1366
+#      height: 768 
 #    transition:
 #     type: fade
 #     duration: 0.2s
 
-      
-#slide_player:
-#  mode_razorwire_started: 
-#    razorwirevideo:
-#      priority: 500
-#      expire: 8.7s
-#  slide_razorwirevideo_removed: 
-#    Spinner1:
+
+
+#  ShotUpdated:
+#    widgets:
+#    - type: Text
+#      text: X
+#      color: red
+#      x: 4%
+#      y: 68%
+#      font_size: 32
+#      font_name: TrajanProRegular
+
+slide_player:
+  mode_reversebeartrap_started: 
+    reversebeartrapvideo:
+      priority: 500
+      expire: 8s
+  slide_reversebeartrapvideo_removed: 
+    reversebeartrapUI:
+      priority: 400
+      expire: 126.5s
+  
+#  logicblock_reversebeartrap_hit:
+#    ShotUpdated:
 #      priority: 400
-#      expire: 66.5s
- 
+      

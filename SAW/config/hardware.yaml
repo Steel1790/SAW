@@ -283,6 +283,11 @@ ball_devices:
     ball_switches: s_elevator_hold
     mechanical_eject: true
     eject_timeouts: 500ms
+    
+  bd_mystery:
+    ball_switches: s_left_cellar
+    mechanical_eject: true
+    eject_timeouts: 8000ms
 
 playfields:
     playfield:

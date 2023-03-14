@@ -20,7 +20,8 @@ modes:
   - selection_mode
   - razorwire
   - reversebeartrap
-
+  - tilt
+  - mystery
 
 window:
   width: 1366
@@ -54,6 +55,13 @@ sound_player:
   mode_razorwire_complete:
     trapcomplete:
       action: play
+      
+  mode_reversebeartrap_started:
+    reversebeartrap:
+      action: play
+  mode_reversebeartrap_complete:
+    trapcomplete:
+      action: play
  
 slides:
   trapcomplete:
@@ -76,23 +84,78 @@ slides:
           repeat: true
     - type: image
       image: trapcomplete 
-   
-  skillshotcomplete:
+      
+  skillshotvideo:
     widgets:
-    - type: image
-      image: billyskillshot  
+    - type: video
+      video: skillshotvideo
+      width: 1366
+      height: 768
+      
+
+  ballsavevideo:
+    widgets:
+    - type: video
+      video: ballsave
+      width: 1366
+      height: 768
+  tiltwarningvideo:
+    widgets:
+    - type: video
+      video: tiltwarning
+      width: 1366
+      height: 768
+  mysteryawardvideo:
+    widgets:
+    - type: video
+      video: mysteryaward
+      width: 1366
+      height: 768
+  extraballvideo:
+    widgets:
+    - type: video
+      video: extraball
+      width: 1366
+      height: 768
        
 slide_player: 
-  slide_Spinner1_removed: 
+  mode_razorwire_complete: 
     trapcomplete:
       priority: 400
       expire: 8s   
-
+      
+  mode_reversebeartrap_complete: 
+    trapcomplete:
+      priority: 400
+      expire: 8s   
+      
   mode_skillshot_complete:
-    skillshotcomplete:
+    skillshotvideo:
       action: play
       priority: 400
-      expire: 3s
+      expire: 8s
+
+  ballsavetemp_hit:
+    ballsavevideo:
+      action: play
+      priority: 400
+      expire: 8s
+  tiltwarningtemp_hit:
+    tiltwarningvideo:
+      action: play
+      priority: 400
+      expire: 8s
+  mysteryawardtemp_hit:
+    mysteryawardvideo:
+      action: play
+      priority: 400
+      expire: 8s
+  extraballtemp_hit:
+    extraballvideo:
+      action: play
+      priority: 400
+      expire: 8s
+
 
       
 sound_system:

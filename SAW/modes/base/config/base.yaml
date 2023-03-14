@@ -140,6 +140,10 @@ slide_player:
 variable_player:
   left_ramp_hit:
     score: 75000
+  right_ramp_hit:
+    score: 115000
+  upper_drop_target_hit:
+    score: 145000
   left_top_pop_hit:
     score: 573
   cellar_hit:

@@ -20,11 +20,11 @@ keyboard:
     switch: s_lower_bank_drop_target_opto_middle
   i:
     switch: s_lower_bank_drop_target_opto_lower
-  c:
+  4:
     switch: s_enter_left_ramp
-  v:
+  5:
     switch: s_left_ramp_score_top 
-  b:
+  6:
     switch: s_left_ramp_score_bottom
   n:
     switch: s_left_top_jet_bumper
@@ -35,3 +35,20 @@ keyboard:
   p:
     switch: s_plunger
     toggle: true
+  7:
+    switch: s_right_ramp_down
+  8:
+    switch: s_right_ramp_score_top
+  9:
+    switch: s_right_ramp_score_bottom
+  0:
+    switch: s_upper_bank_drop_target_opto
+# temp for demo
+  q:
+    switch: s_lower_top_jet_bumper
+  w:
+    switch: s_left_bottom_jet_bumper
+  e:
+    switch: s_right_bottom_jet_bumper
+  r:
+    switch: s_upper_bottom_jet_bumper

@@ -1,6 +1,6 @@
 events:
   game_ended: 0
-  game_started: 550
+  game_started: 613
 player:
   score:
     average: 0
@@ -8,7 +8,7 @@ player:
     total: 0
 shots:
   cellar: 187
-  dt_drop2: 687
+  dt_drop2: 707
   dt_drop3: 298
   dt_drop4: 170
   my_first_shot: 160
@@ -17,11 +17,11 @@ switches:
   s_ball_shooter_lane: 0
   s_eject: 0
   s_elevator_hold: 0
-  s_enter_left_ramp: 613
+  s_enter_left_ramp: 650
   s_inner_loop: 0
-  s_left_bottom_jet_bumper: 0
+  s_left_bottom_jet_bumper: 6
   s_left_cellar: 0
-  s_left_flipper: 207
+  s_left_flipper: 272
   s_left_inlane: 293
   s_left_lock_1: 0
   s_left_lock_2: 0
@@ -29,41 +29,41 @@ switches:
   s_left_loop_bottom: 0
   s_left_loop_top: 0
   s_left_outlane: 0
-  s_left_ramp_score_bottom: 596
-  s_left_ramp_score_top: 626
+  s_left_ramp_score_bottom: 634
+  s_left_ramp_score_top: 663
   s_left_slingshot: 0
   s_left_standup: 0
   s_left_standup_right_ramp: 0
-  s_left_top_jet_bumper: 289
+  s_left_top_jet_bumper: 384
   s_lower_bank_drop_target_opto_lower: 291
   s_lower_bank_drop_target_opto_middle: 495
-  s_lower_bank_drop_target_opto_upper: 895
-  s_lower_top_jet_bumper: 0
+  s_lower_bank_drop_target_opto_upper: 916
+  s_lower_top_jet_bumper: 6
   s_middle_standup: 0
   s_outhole: 0
   s_plumb_bob_tilt: 0
-  s_plunger: 6
-  s_right_bottom_jet_bumper: 0
-  s_right_cellar: 1682
-  s_right_flipper: 186
+  s_plunger: 7
+  s_right_bottom_jet_bumper: 6
+  s_right_cellar: 1805
+  s_right_flipper: 240
   s_right_inlane: 0
   s_right_loop_bottom: 0
   s_right_loop_top: 0
   s_right_outlane: 0
-  s_right_ramp_down: 0
-  s_right_ramp_score_bottom: 0
-  s_right_ramp_score_top: 0
+  s_right_ramp_down: 26
+  s_right_ramp_score_bottom: 24
+  s_right_ramp_score_top: 26
   s_right_slingshot: 0
   s_right_standup: 0
   s_right_standup_right_ramp: 0
   s_right_top_jet_bumper: 0
-  s_spinner: 4113
-  s_start: 177
+  s_spinner: 4450
+  s_start: 237
   s_top_right_reject: 0
   s_trough1: 7
   s_trough2: 5
   s_trough3: 5
   s_trough_jam: 0
-  s_upper_bank_drop_target_opto: 0
-  s_upper_bottom_jet_bumper: 0
+  s_upper_bank_drop_target_opto: 56
+  s_upper_bottom_jet_bumper: 6
   s_upper_right_flipper: 0
