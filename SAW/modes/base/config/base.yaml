@@ -132,9 +132,14 @@ slide_player:
         y: 1
         x: left+1210
         anchor_y: bottom
-        
-      - type: image
-        image: gordonsaw
+
+      - type: video
+        video: gordonsaw 
+        width: 1366
+        height: 768
+        end_behavior: loop
+#      - type: image
+#        image: gordonsaw
 
 
 variable_player:

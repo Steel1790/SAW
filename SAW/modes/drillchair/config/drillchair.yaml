@@ -1,37 +1,29 @@
 #config_version=5                 
 mode:
-#  start_events: mode_cellar_complete, stop_mode_cellar, stop_cellar_qualify_counter
-  start_events: selection_mode_razorwire_selected
-  stop_events: stop_mode_razorwire, ball_ended
+  start_events: selection_mode_drillchair_selected
+  stop_events: stop_mode_drillchair, mode_drillchair_complete, ball_ended
  
 timers:
-  60s_timer:
+  drillchair_60s_timer:
     start_value: 69
     end_value: 0
     direction: down
     control_events:
       - action: start
-        event: mode_razorwire_started
+        event: mode_drillchair_started
 
 counters:
-  razorwire_pops_counter:
+  drillchair_spinner_counter:
     starting_count: 0
-    count_complete_value: 25
+    count_complete_value: 30
     enable_events: enable_qualify
     disable_events: disable_qualify
     start_enabled: true
 #    persist_state: true
     reset_on_complete: false
-    events_when_complete: mode_razorwire_complete, stop_mode_razorwire
-    count_events: upper_l_pop_hit, upper_r_pop_hit, upper_b_pop_hit
-
-shots:
-  upper_l_pop:
-    switch: s_left_top_jet_bumper
-  upper_r_pop:
-    switch: s_right_top_jet_bumper
-  upper_b_pop:
-    switch: s_lower_top_jet_bumper 
+    events_when_complete: mode_drillchair_complete, stop_mode_drillchair
+    count_events: spinner_hit
+ 
 
 #shot_groups:
 #  spinner:
@@ -39,38 +31,34 @@ shots:
     
 
 variable_player:
-  upper_l_pop_hit:
-    score: 2150
-  upper_r_pop_hit:
-    score: 2150
-  upper_b_pop_hit:
-    score: 2150
-  counter_razorwire_pops_counter_hit:
-    razorwire_pops_counter:
+  spinner_hit:
+    score: 20
+  counter_drillchair_spinner_counter_hit:
+    drillchair_spinner_counter:
       action: set
-      int: (count)*27.5
-    razorwire_visual_pops_counter:
+      int: (count)*23
+    drillchair_visual_spinner_counter:
       action: set
       int: (count)
        
   timer_your_timer_tick:
-    60s_timer:
+    drillchair_60s_timer:
       int: device.timers.your_timer.ticks_remaining
       action: set
  
 slides:
-  razorwirevideo:
+  drillchairvideo:
     widgets:
     - type: video
-      video: razorwirevideo  
+      video: drillchairvideo  
       
-  razorwire_pops:
+  drillchair_spinner:
     widgets:
     - type: Text
-      text: Aim for the Upper Pop Bumpers!
+      text: Shoot The Spinners!
       font_name: TrajanProRegular
       font_size: 75
-      color: 65fe08
+      color: d8d8d8
       
     - type: image
       image: hacksawUI
@@ -88,10 +76,10 @@ slides:
       anchor_x: left
       anchor_y: bottom
       font_name: TrajanProRegular
-      color: 65fe08
+      color: d8d8d8
       
     - type: Text
-      text: 00:(player|razorwire_60s_timer_tick)
+      text: 00:(player|drillchair_drillchair_60s_timer_tick)
       font_size: 100
       font_name: digitalclockfont
       color: red
@@ -114,9 +102,9 @@ slides:
       anchor_x: left
       corner_radius: 10
       corner_segments: 10
-      color: 65fe08
+      color: 940008
       animations:
-        player_razorwire_pops_counter:
+        player_drillchair_spinner_counter:
          - property: width
            value: (value)           
     - type: rectangle
@@ -137,17 +125,17 @@ slides:
 #      y: 85%
     - type: Text
 # work on displaying the count of spins
-      text: (player|razorwire_visual_pops_counter) / 25 Pops Hit
+      text: (player|drillchair_visual_spinner_counter) / 30 Spins
       font_size: 50
       font_name: TrajanProRegular
-      color: 65fe08
+      color: d8d8d8
       y: 35%
     - type: Text
-      text: You Have 60 Seconds To Hit 25 Pop Bumpers!
-      color: yellow
+      text: You Have 60 Seconds To Hit 30 Spins
+      color: 940008
       font_name: TrajanProRegular
       font_size: 35
-      y: 15%
+      y: 17%
       animations:
        pre_show_slide:
         - property: opacity
@@ -158,7 +146,7 @@ slides:
           duration: 1s
           repeat: true
     - type: image
-      image: razorwireimg
+      image: drillchairimg
       opacity: 0.65
     transition:
      type: fade
@@ -170,11 +158,11 @@ slides:
 
       
 slide_player:
-  mode_razorwire_started: 
-    razorwirevideo:
+  mode_drillchair_started: 
+    drillchairvideo:
       priority: 500
       expire: 8.7s
-  slide_razorwirevideo_removed: 
-    razorwire_pops:
+  slide_drillchairvideo_removed: 
+    drillchair_spinner:
       priority: 400
       expire: 66.5s

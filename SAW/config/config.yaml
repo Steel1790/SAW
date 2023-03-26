@@ -19,6 +19,7 @@ modes:
   - cellar
   - selection_mode
   - razorwire
+  - drillchair
   - reversebeartrap
   - tilt
   - mystery
@@ -49,10 +50,18 @@ sound_player:
     themesong:
       action: stop
   ball_starting: playagame
+  
   mode_razorwire_started:
     razorwire:
       action: play
   mode_razorwire_complete:
+    trapcomplete:
+      action: play
+  
+  mode_drillchair_started:
+    drillchair:
+      action: play  
+  mode_drillchair_complete:
     trapcomplete:
       action: play
       
@@ -123,6 +132,11 @@ slide_player:
     trapcomplete:
       priority: 400
       expire: 8s   
+      
+  mode_drillchair_complete: 
+    trapcomplete:
+      priority: 400
+      expire: 8s  
       
   mode_reversebeartrap_complete: 
     trapcomplete:

@@ -44,11 +44,15 @@ keyboard:
   0:
     switch: s_upper_bank_drop_target_opto
 # temp for demo
-  q:
-    switch: s_lower_top_jet_bumper
   w:
     switch: s_left_bottom_jet_bumper
   e:
     switch: s_right_bottom_jet_bumper
   r:
     switch: s_upper_bottom_jet_bumper
+  j:
+    switch: s_left_top_jet_bumper
+  k:
+    switch: s_right_top_jet_bumper
+  l:
+    switch: s_lower_top_jet_bumper
