@@ -4,6 +4,15 @@ mode:
   start_events: selection_mode_razorwire_selected
   stop_events: stop_mode_razorwire, ball_ended
  
+sequences:
+  razorwire:
+    events:
+      - razorwire_pops_complete
+      - upper_drop_target_hit
+      - left_ramp_hit
+    reset_on_complete: false
+    events_when_complete: mode_razorwire_complete, stop_mode_razorwire
+ 
 timers:
   60s_timer:
     start_value: 69
@@ -22,7 +31,8 @@ counters:
     start_enabled: true
 #    persist_state: true
     reset_on_complete: false
-    events_when_complete: mode_razorwire_complete, stop_mode_razorwire
+#    events_when_complete: mode_razorwire_complete, stop_mode_razorwire
+    events_when_complete: razorwire_pops_complete   
     count_events: upper_l_pop_hit, upper_r_pop_hit, upper_b_pop_hit
 
 shots:
@@ -163,7 +173,73 @@ slides:
     transition:
      type: fade
      duration: 0.2s
-  
+ 
+
+  razorwire_phase2:
+    widgets:
+    - type: Text
+      text: "- X Marks The Spot ..."
+      font_name: TrajanProRegular
+      font_size: 52
+      x: 425
+      y: 62%
+      color: 65fe08       
+    - type: Text
+      text: "- Hit The Left Ramp To Escape"
+      font_size: 52
+      font_name: TrajanProRegular
+      color: 65fe08 
+      x: 552
+      y: 52%
+    - type: Text
+      text: " & Complete The Trap"
+      font_size: 52
+      font_name: TrajanProRegular
+      color: 65fe08 
+      x: 452
+      y: 46%
+      
+    - type: image
+      image: hacksawUI
+      opacity: 0.5
+      y: 1
+      x: 1
+      anchor_x: left
+      anchor_y: bottom
+    - type: text
+      text: (score)
+      number_grouping: true
+      y: 16
+      x: 25
+      font_size: 36
+      anchor_x: left
+      anchor_y: bottom
+      font_name: TrajanProRegular
+      color: 65fe08
+      
+    - type: Text
+      text: 00:(player|razorwire_60s_timer_tick)
+      font_size: 100
+      font_name: digitalclockfont
+      color: red
+      x: 50%
+      y: 83.2%
+    - type: rectangle
+      width: 420
+      height: 130
+      x: 50%
+      y: 84.5%
+      corner_radius: 20
+      corner_segments: 20
+      color: black
+                
+    - type: image
+      image: razorwireimg
+      opacity: 0.4
+    transition:
+     type: fade
+     duration: 0.2s
+
 #shots:
 #  spinner:
 #    switch: s_spinner
@@ -178,3 +254,33 @@ slide_player:
     razorwire_pops:
       priority: 400
       expire: 66.5s
+  razorwire_pops_complete:
+    razorwire_phase2:
+      priority: 405
+      expire: 60.5s
+ 
+widgets:
+   rw_shot_update2:
+    - type: Text
+      text: X
+      color: ad1400
+      x: 5.5%
+      y: 62%
+      font_size: 70
+      font_name: TrajanProRegular
+   rw_shot_update3:
+    - type: Text
+      text: X
+      color: ad1400
+      x: 5.5%
+      y: 52%
+      font_size: 70
+      font_name: TrajanProRegular
+ 
+widget_player:
+ logicblock_razorwire_hit{step==2}: 
+  rw_shot_update2:
+    slide: razorwire_phase2
+ logicblock_razorwire_hit{step==3}: 
+  rw_shot_update3:
+    slide: razorwire_phase2

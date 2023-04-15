@@ -53,6 +53,16 @@ slides:
     widgets:
     - type: video
       video: razorwirepuzzle
+#  razorwirecassette:
+#    widgets:
+#    - type: video
+#      video: razorwirecassette
+#      width: 400
+#      height: 230
+#      x: 50%
+#      y: 10.5%
+#      opacity: 0.7
+#      expire: 5s
   reversebeartrap:
     widgets:
     - type: video
@@ -245,6 +255,8 @@ slides:
 #add logic later to remove after selected. temp. on a 15s timer 
 slide_player:
   selection_mode_razorwire_highlighted: 
+#    razorwirecassette:
+#      priority: 410
     razorwire:
       priority: 400
 #      expire: 10s
