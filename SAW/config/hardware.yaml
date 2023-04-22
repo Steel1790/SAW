@@ -317,23 +317,5 @@ autofire_coils:
     switch: s_right_slingshot
 
 
-lights:
-  l_led1:
-    number:
-  l_led2:
-    number:
-  l_led3:
-    number:
-  l_3_bank_drop_target_opto_upper:
-    type: rgb
-    number:
-    tags: drop_target_lights
-  l_3_bank_drop_target_opto_middle:
-    type: rgb
-    number:
-    tags: drop_target_lights
-  l_3_bank_drop_target_opto_lower:
-    type: rgb
-    number:
-    tags: drop_target_lights
+
 
