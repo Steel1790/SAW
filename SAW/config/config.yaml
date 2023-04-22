@@ -10,6 +10,7 @@ config:
 - keyboard.yaml
 - shots.yaml
 - videos.yaml
+- lights.yaml
 
 modes:
   - attract
