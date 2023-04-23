@@ -1,6 +1,0 @@
-#config_version=5
-
-mode: 
-  start_events: game_started
-  stop_events: game_ending
-

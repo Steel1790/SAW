@@ -1,8 +1,0 @@
-2023-02-05 09:56:18,540 : INFO : root : Loading config.
-2023-02-05 09:56:18,543 : INFO : YamlMultifileConfigLoader : Machine config file #1: config.yaml
-2023-02-05 09:56:18,544 : INFO : ConfigProcessor : Loading config from cache: C:\Users\steel\AppData\Local\Temp\9014108be8bb19792bb5e6c9e9603b65.mpf_cache
-2023-02-05 09:56:18,640 : INFO : ConfigProcessor : Loading config from cache: C:\Users\steel\AppData\Local\Temp\0c159a05f39617a30cc1b279562f144f.mpf_cache
-2023-02-05 09:56:18,641 : INFO : ConfigProcessor : Loading config from cache: C:\Users\steel\AppData\Local\Temp\a4144dd661fe0832b800e50000db3090.mpf_cache
-2023-02-05 09:56:18,642 : INFO : ConfigProcessor : Loading config from cache: C:\Users\steel\AppData\Local\Temp\0c159a05f39617a30cc1b279562f144f.mpf_cache
-2023-02-05 09:56:18,643 : WARNING : ConfigProcessor : Config file in cache changed: C:\pinball\SAW\modes\base\config\base.yaml
-2023-02-05 09:56:18,643 : INFO : ConfigProcessor : Loading config from file C:\pinball\SAW\modes\base\config\base.yaml.
