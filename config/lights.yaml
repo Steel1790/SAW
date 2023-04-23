@@ -1,0 +1,222 @@
+#config_version=5
+
+lights:
+  l_middle_standup:
+    number: 1
+    type: grb
+    tags: insert
+  l_left_outlane:
+    number: 9
+    type: grb
+    tags: insert
+  l_right_outlane:
+    number: 10
+    type: grb
+    tags: insert
+  l_top_drop1:
+    number: 11
+    type: grb
+    tags: insert
+  l_top_drop2:
+    number: 12
+    type: grb
+    tags: insert
+  l_top_drop3:
+    number: 13
+    type: grb
+    tags: insert
+  l_top_drop4:
+    number: 14
+    type: grb
+    tags: insert
+  l_top_drop5:
+    number: 15
+    type: grb
+    tags: insert
+  l_top_drop_triangle:
+    number: 16
+    type: grb
+    tags: insert
+
+# circle of 8 round inserts
+  l_circle1:
+    number: 25
+    type: grb
+    tags: insert
+  l_circle2:
+    number: 26
+    type: grb
+    tags: insert
+  l_circle3:
+    number: 27
+    type: grb
+    tags: insert
+  l_circle4:
+    number: 28
+    type: grb
+    tags: insert
+  l_circle5:
+    number: 29
+    type: grb
+    tags: insert
+  l_circle6:
+    number: 30
+    type: grb
+    tags: insert
+  l_circle7:
+    number: 31
+    type: grb
+    tags: insert
+  l_circle8:
+    number: 32
+    type: grb
+    tags: insert
+
+# jet bumpers
+  l_left_bottom_bumper:
+    number: 33
+    type: grb
+    tags: jet_bumper
+  l_top_bottom_bumper:
+    number: 34
+    type: grb
+    tags: jet_bumper
+  l_right_bottom_bumper:
+    number: 35
+    type: grb
+    tags: jet_bumper
+  l_left_top_bumper:
+    number: 36
+    type: grb
+    tags: jet_bumper
+  l_right_top_bumper:
+    number: 37
+    type: grb
+    tags: jet_bumper
+  l_lower_top_bumper:
+    number: 38
+    type: grb
+    tags: jet_bumper
+
+
+  l_left_cellar_sign:
+    number: 39
+    type: grb
+    tags: 
+  l_right_cellar_sign:
+    number: 40
+    type: grb
+    tags: 
+
+  l_right_ramp_trangle1:
+    number: 41
+    type: grb
+    tags: insert
+  l_right_ramp_trangle2:
+    number: 42
+    type: grb
+    tags: insert
+  l_left_ramp_trangle1:
+    number: 43
+    type: grb
+    tags: insert
+  l_left_ramp_trangle2:
+    number: 44
+    type: grb
+    tags: insert
+  l_left_ramp_trangle3:
+    number: 45
+    type: grb
+    tags: insert
+
+# skillshot lights
+  l_skill_shot1:
+    number: 46
+    type: grb
+    tags: insert
+  l_skill_shot2:
+    number: 47
+    type: grb
+    tags: insert
+  l_skill_shot3:
+    number: 48
+    type: grb
+    tags: insert
+
+  l_left_return_lane:
+    number: 49
+    type: grb
+    tags: insert
+  l_left_loop_arrow:
+    number: 50
+    type: grb
+    tags: insert
+  l_left_standup_arrow:
+    number: 51
+    type: grb
+    tags: insert
+  l_inner_loop_arrow:
+    number: 52
+    type: grb
+    tags: insert
+  l_left_standup_right_ramp_arrow:
+    number: 53
+    type: grb
+    tags: insert
+  l_right_standup_right_ramp_arrow:
+    number: 54
+    type: grb
+    tags: insert
+  l_right_loop_arrow:
+    number: 55
+    type: grb
+    tags: insert
+  l_right_standup_arrow:
+    number: 56
+    type: grb
+    tags: insert
+  l_shoot_again:
+    number: 57
+    type: grb
+    tags: insert
+
+ # bonus lights
+  l_bonus_x1:
+    number: 58
+    type: grb
+    tags: insert
+  l_bonus_x2:
+    number: 59
+    type: grb
+    tags: insert
+  l_bonus_x3:
+    number: 60
+    type: grb
+    tags: insert
+  l_bonus_x4:
+    number: 61
+    type: grb
+    tags: insert
+  l_bonus_x5:
+    number: 62
+    type: grb
+    tags: insert
+  l_bonus_x6:
+    number: 63
+    type: grb
+    tags: insert
+
+
+  l_3_bank_drop_target_opto_upper:
+    type: rgb
+    number:
+    tags: drop_target_lights
+  l_3_bank_drop_target_opto_middle:
+    type: rgb
+    number:
+    tags: drop_target_lights
+  l_3_bank_drop_target_opto_lower:
+    type: rgb
+    number:
+    tags: drop_target_lights
+
