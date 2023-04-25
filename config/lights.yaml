@@ -76,27 +76,27 @@ lights:
   l_left_bottom_bumper:
     number: 33
     type: grb
-    tags: jet_bumper
+    tags: jet_bumper, bottom_bumper
   l_top_bottom_bumper:
     number: 34
     type: grb
-    tags: jet_bumper
+    tags: jet_bumper, bottom_bumper
   l_right_bottom_bumper:
     number: 35
     type: grb
-    tags: jet_bumper
+    tags: jet_bumper, bottom_bumper
   l_left_top_bumper:
     number: 36
     type: grb
-    tags: jet_bumper
+    tags: jet_bumper, top_bumper
   l_right_top_bumper:
     number: 37
     type: grb
-    tags: jet_bumper
+    tags: jet_bumper, top_bumper
   l_lower_top_bumper:
     number: 38
     type: grb
-    tags: jet_bumper
+    tags: jet_bumper, top_bumper
 
 
   l_left_cellar_sign:
@@ -205,18 +205,4 @@ lights:
     number: 63
     type: grb
     tags: insert
-
-
-  l_3_bank_drop_target_opto_upper:
-    type: rgb
-    number:
-    tags: drop_target_lights
-  l_3_bank_drop_target_opto_middle:
-    type: rgb
-    number:
-    tags: drop_target_lights
-  l_3_bank_drop_target_opto_lower:
-    type: rgb
-    number:
-    tags: drop_target_lights
 
