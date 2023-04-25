@@ -70,36 +70,6 @@ light:
     shape: ARROW
     x: 0.42871705257026355
     y: 0.2464285714285714
-  l_led1:
-    shape: SQUARE
-    size: 0.03
-    x: 0.3609867277520058
-    y: 0.7754077791718945
-  l_led2:
-    shape: SQUARE
-    size: 0.03
-    x: 0.4174676443390543
-    y: 0.7829360100376411
-  l_led3:
-    shape: SQUARE
-    size: 0.03
-    x: 0.4739485609261028
-    y: 0.7904642409033876
-  l_led4:
-    shape: SQUARE
-    size: 0.03
-    x: 0.5318207661744767
-    y: 0.7909790979097909
-  l_led5:
-    shape: SQUARE
-    size: 0.03
-    x: 0.5856487789451728
-    y: 0.7832783278327832
-  l_led6:
-    shape: SQUARE
-    size: 0.03
-    x: 0.6394767917158688
-    y: 0.7755775577557755
   l_left_bottom_bumper:
     size: 0.04
     x: 0.08154943934760449
@@ -175,6 +145,7 @@ light:
   l_right_loop_arrow:
     rotation: 20
     shape: ARROW
+    size: 0.05
     x: 0.8644240570846076
     y: 0.35
   l_right_outlane:
@@ -273,6 +244,7 @@ switch:
   s_enter_left_ramp:
     rotation: 300
     shape: RECTANGLE
+    size: 0.05
     x: 0.28192806174457546
     y: 0.2738095238095238
   s_inner_loop:
