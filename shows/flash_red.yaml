@@ -1,0 +1,7 @@
+#show_version=5
+- time: 0
+  lights:
+    (led): red
+- time: 1
+  lights:
+    (led): off

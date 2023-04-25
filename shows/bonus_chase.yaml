@@ -1,0 +1,27 @@
+#show_version=5
+- time: 0
+  lights:
+    l_bonus_x1: ff
+- time: '+1'
+  lights:
+    l_bonus_x2: ff
+- time: '+1'
+  lights:
+    l_bonus_x3: ff
+- time: '+1'
+  lights:
+    l_bonus_x4: ff
+- time: '+1'
+  lights:
+    l_bonus_x5: ff
+- time: '+1'
+  lights:
+    l_bonus_x6: ff
+- time: '+1'
+  lights:
+    l_bonus_x1: 0
+    l_bonus_x2: 0
+    l_bonus_x3: 0
+    l_bonus_x4: 0
+    l_bonus_x5: 0
+    l_bonus_x6: 0
