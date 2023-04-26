@@ -91,24 +91,29 @@ shots:
     switch: s_lower_bank_drop_target_opto_upper
     profile: skill
 #    advance_events: mode_skillshot_started, mode_skillshot_complete
-    show_tokens:
-      light: l_3_bank_drop_target_opto_upper
+#    show_tokens:
+#      light: l_3_bank_drop_target_opto_upper
   dt_drop3:
     switch: s_lower_bank_drop_target_opto_middle
     profile: skill
-    show_tokens:
-      light: l_3_bank_drop_target_opto_middle
+#    show_tokens:
+#      light: l_3_bank_drop_target_opto_middle
   dt_drop4:
     switch: s_lower_bank_drop_target_opto_lower
     profile: skill
-    show_tokens:
-      light: l_3_bank_drop_target_opto_lower
+#    show_tokens:
+#      light: l_3_bank_drop_target_opto_lower
       
 show_player: 
   mode_skillshot_started:
     ss_show: 
       priority: 900
       loops: 0  
+    flash_token:
+      loops: -1
+      show_tokens:
+        led: l_skill_shot1, l_skill_shot2, l_skill_shot3
+        color1: blue
       
 #slide_player:
 #  mode_skillshot_complete:
