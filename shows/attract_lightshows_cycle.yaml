@@ -16,12 +16,6 @@
         speed: 3
 - duration: 5s
   shows: 
-      flash_red:
-        loops: 3
-        show_tokens:
-          led: insert
-- duration: 5s
-  shows: 
       attract_color_wash:
         loops: 1
         speed: 20
