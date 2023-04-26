@@ -62,6 +62,7 @@ variable_player:
     razorwire_visual_pops_counter:
       action: set
       int: (count)
+    
        
   timer_your_timer_tick:
     60s_timer:
@@ -284,3 +285,36 @@ widget_player:
  logicblock_razorwire_hit{step==3}: 
   rw_shot_update3:
     slide: razorwire_phase2
+
+
+#EK added 
+
+show_player:
+  upper_l_pop_hit:
+      flash_token:
+        loops: 5
+        speed: 20
+        show_tokens:
+          led: l_left_top_bumper
+          color1: 46eb34
+  upper_r_pop_hit:
+      flash_token:
+        loops: 5
+        speed: 20
+        show_tokens:
+          led: l_right_top_bumper
+          color1: 46eb34
+  upper_b_pop_hit:
+      flash_token:
+        loops: 5
+        speed: 20
+        show_tokens:
+          led: l_lower_top_bumper
+          color1: 46eb34
+  razorwire_pops_complete:
+      top_drop_chase:
+        loops: -1
+        speed: 20
+        show_tokens:
+          color1: red
+
