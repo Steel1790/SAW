@@ -109,11 +109,18 @@ show_player:
     ss_show: 
       priority: 900
       loops: 0  
-    flash_token:
+    skillshot_chase:
       loops: -1
+      speed: 5
       show_tokens:
-        led: l_skill_shot1, l_skill_shot2, l_skill_shot3
         color1: blue
+  mode_skillshot_complete:
+    attract_flash_all:
+      loops: 2
+      speed: 3
+      show_tokens:
+        color1: blue
+
       
 #slide_player:
 #  mode_skillshot_complete:
