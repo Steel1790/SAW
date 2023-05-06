@@ -154,8 +154,6 @@ switches:
     tags: bottom_pops, pops, switch_hit
   s_ball_shooter_lane:
     number: 59
-  s_elevator_hold:
-    number:
   s_eject:
     number:
   s_left_slingshot:
@@ -171,8 +169,6 @@ virtual_platform_start_active_switches:
   - s_trough1
   - s_trough2
   - s_trough3
-
-
 
 coils:
   c_flipper_left_main:
@@ -276,11 +272,6 @@ ball_devices:
     ball_switches: s_eject
     eject_coil: c_retina_eject
     eject_timeouts: 1s
-
-  bd_elevator:
-    ball_switches: s_elevator_hold
-    mechanical_eject: true
-    eject_timeouts: 500ms
 
   bd_mystery:
     ball_switches: s_left_cellar
