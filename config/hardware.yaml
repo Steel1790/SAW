@@ -134,6 +134,12 @@ switches:
   s_right_standup_right_ramp:
     number: 48
     tags: standup, switch_hit
+  s_left_110_point:
+    number:
+    tags: standup, switch_hit
+  s_right_110_point:
+    number:
+    tags: standup, switch_hit
   s_left_top_jet_bumper:
     number: 49
     tags: top_pops, pops, switch_hit
