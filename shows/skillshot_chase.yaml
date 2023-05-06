@@ -2,12 +2,12 @@
 - time: 0
   lights:
     l_skill_shot3: off    
-    l_skill_shot1: ff
+    l_skill_shot1: (color1)
 - time: '+1'
   lights:
     l_skill_shot1: off
-    l_skill_shot2: ff
+    l_skill_shot2: (color1)
 - time: '+1'
   lights:
     l_skill_shot2: off
-    l_skill_shot3: ff
+    l_skill_shot3: (color1)

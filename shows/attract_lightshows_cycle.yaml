@@ -1,26 +1,31 @@
 #show_version=5
-- duration: 5s
-  shows:
-      bonus_chase:
-        loops: 3
-        speed: 3
-- duration: 5s
-  shows:       
-      skillshot_chase:
-        loops: 3
-        speed: 3
-- duration: 5s
-  shows:       
-      jet_bumpers_flash:
-        loops: 3
-        speed: 3
-- duration: 5s
+- duration: 20s
   shows: 
-      attract_color_wash:
-        loops: 1
-        speed: 20
-- duration: 5s
-  shows: 
-      attract_flash_all:
-        loops: 3
-        speed: 5
+      output1:
+        loops: -1
+        speed: 40
+#- duration: 2s
+#  shows:
+#      bonus_chase:
+#        loops: 3
+#        speed: 3
+#- duration: 5s
+#  shows:       
+#      skillshot_chase:
+#        loops: 3
+#        speed: 3
+#- duration: 5s
+#  shows:       
+#      jet_bumpers_flash:
+#        loops: 3
+#        speed: 3
+#- duration: 5s
+#  shows: 
+#      attract_color_wash:
+#        loops: 1
+#        speed: 20
+#- duration: 5s
+#  shows: 
+#      attract_flash_all:
+#        loops: 3
+#        speed: 5

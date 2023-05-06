@@ -1,30 +1,30 @@
 #show_version=5
 - time: 0
   lights:
-    insert: ff
+    insert: (color1)
     jet_bumper: 0
 - time: '+1'
   lights:
     insert: 0
-    jet_bumper: ff
+    jet_bumper: (color1)
 - time: '+1'  
   lights:
-    l_bonus_x1: ff
+    l_bonus_x1: (color1)
 - time: '+1'
   lights:
-    l_bonus_x2: ff
+    l_bonus_x2: (color1)
 - time: '+1'
   lights:
-    l_bonus_x3: ff
+    l_bonus_x3: (color1)
 - time: '+1'
   lights:
-    l_bonus_x4: ff
+    l_bonus_x4: (color1)
 - time: '+1'
   lights:
-    l_bonus_x5: ff
+    l_bonus_x5: (color1)
 - time: '+1'
   lights:
-    l_bonus_x6: ff
+    l_bonus_x6: (color1)
 - time: '+1'
   lights:
     l_bonus_x1: 0
