@@ -224,34 +224,37 @@ coils:
     number:
   c_right_slingshot:
     number:
-  c_top_slingshot:
-    number:
-  c_left_jet_bumper:
-    number:
-  c_right_jet_bumper:
-    number:
-  c_droptargetreset:
+  c_lower_droptargetreset:
     number: 12
+    default_pulse_ms: 250
+  c_upper_droptargetreset:
+    number: 15
     default_pulse_ms: 250
 
 drop_targets:
-  dt_drop1:
+  dt_upper_drop1:
     switch: s_upper_bank_drop_target_opto
-  dt_drop2:
+  dt_lower_drop1:
     switch: s_lower_bank_drop_target_opto_upper
-  dt_drop3:
+  dt_lower_drop2:
     switch: s_lower_bank_drop_target_opto_middle
-  dt_drop4:
+  dt_lower_drop3:
     switch: s_lower_bank_drop_target_opto_lower
 
 drop_target_banks:
-  maindrop:
+  lower_dropbank:
     drop_targets:
-      - dt_drop2
-      - dt_drop3
-      - dt_drop4
+      - dt_lower_drop1
+      - dt_lower_drop2
+      - dt_lower_drop3
     reset_on_complete: 1s
-    reset_coils: c_droptargetreset
+    reset_coils: c_lower_droptargetreset
+    reset_events: ball_starting
+  upper_dropbank:
+    drop_targets:
+      - dt_upper_drop1
+    reset_on_complete: 1s
+    reset_coils: c_upper_droptargetreset
     reset_events: ball_starting
 
 ball_devices:
