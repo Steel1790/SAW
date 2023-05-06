@@ -154,8 +154,6 @@ switches:
     tags: bottom_pops, pops, switch_hit
   s_ball_shooter_lane:
     number: 59
-  s_eject:
-    number:
   s_left_slingshot:
     number:
     tags: slingshot
@@ -203,8 +201,6 @@ coils:
     default_pulse_ms: 20
     default_hold_power: 1.0
   c_trough_eject:
-    number:
-  c_retina_eject:
     number:
   c_bottom_popper:
     number:
@@ -267,11 +263,6 @@ ball_devices:
   bd_plunger:
     ball_switches: s_ball_shooter_lane
     mechanical_eject: true
-
-  bd_retina_hole:
-    ball_switches: s_eject
-    eject_coil: c_retina_eject
-    eject_timeouts: 1s
 
   bd_mystery:
     ball_switches: s_left_cellar
