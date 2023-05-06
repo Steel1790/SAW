@@ -208,9 +208,17 @@ coils:
     default_hold_power: 1.0
   c_trough_eject:
     number:
-  c_bottom_popper:
+  c_left_top_jet_bumper:
     number:
-  c_top_popper:
+  c_right_top_jet_bumper:
+    number:
+  c_lower_top_jet_bumper:
+    number:
+  c_left_bottom_jet_bumper:
+    number:
+  c_right_bottom_jet_bumper:
+    number:
+  c_upper_bottom_jet_bumper:
     number:
   c_left_slingshot:
     number:
