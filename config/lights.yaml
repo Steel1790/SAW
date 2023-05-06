@@ -108,23 +108,23 @@ lights:
     type: grb
     tags: 
 
-  l_right_ramp_trangle1:
+  l_right_ramp_triangle1:
     number: 41
     type: grb
     tags: insert
-  l_right_ramp_trangle2:
+  l_right_ramp_triangle2:
     number: 42
     type: grb
     tags: insert
-  l_left_ramp_trangle1:
+  l_left_ramp_triangle1:
     number: 43
     type: grb
     tags: insert
-  l_left_ramp_trangle2:
+  l_left_ramp_triangle2:
     number: 44
     type: grb
     tags: insert
-  l_left_ramp_trangle3:
+  l_left_ramp_triangle3:
     number: 45
     type: grb
     tags: insert
@@ -205,4 +205,133 @@ lights:
     number: 63
     type: grb
     tags: insert
+
+# gi lights
+
+# left_inlane_plastic:
+  l_gi_1:
+    number: 101
+    type: grb
+    tags: gi, gi_left, gi_lower, gi_left_inlane
+  l_gi_2:
+    number: 102
+    type: grb
+    tags: gi, gi_left, gi_lower, gi_left_inlane
+
+# left_slingshot_plastic:
+  l_gi_3:
+    number: 103
+    type: grb
+    tags: gi, gi_left, gi_lower, gi_left_sling    
+
+# left_side_middle:
+  l_gi_4:
+    number: 104
+    type: grb
+    tags: gi, gi_left, gi_middle
+  l_gi_5:
+    number: 105
+    type: grb
+    tags: gi, gi_left, gi_middle
+  l_gi_6:
+    number: 106
+    type: grb
+    tags: gi, gi_left, gi_middle
+
+# left_side_top:
+  l_gi_7:
+    number: 107
+    type: grb
+    tags: gi, gi_left, gi_top
+  l_gi_8:
+    number: 108
+    type: grb
+    tags: gi, gi_left, gi_top
+  l_gi_9:
+    number: 109
+    type: grb
+    tags: gi, gi_left, gi_top
+  l_gi_10:
+    number: 110
+    type: grb
+    tags: gi, gi_left, gi_top
+  l_gi_11:
+    number: 111
+    type: grb
+    tags: gi, gi_left, gi_top
+
+# right_side_top:
+  l_gi_12:
+    number: 112
+    type: grb
+    tags: gi, gi_right, gi_top
+  l_gi_13:
+    number: 113
+    type: grb
+    tags: gi, gi_right, gi_top
+  l_gi_14:
+    number: 114
+    type: grb
+    tags: gi, gi_right, gi_top
+  l_gi_15:
+    number: 115
+    type: grb
+    tags: gi, gi_right, gi_top
+  l_gi_16:
+    number: 116
+    type: grb
+    tags: gi, gi_left, gi_top
+
+# right_side_middle:
+  l_gi_17:
+    number: 117
+    type: grb
+    tags: gi, gi_right, gi_middle
+  l_gi_18:
+    number: 118
+    type: grb
+    tags: gi, gi_right, gi_middle
+  l_gi_19:
+    number: 119
+    type: grb
+    tags: gi, gi_right, gi_middle
+
+# right_slingshot_plastic:
+  l_gi_20:
+    number: 120
+    type: grb
+    tags: gi, gi_right, gi_lower, gi_right_sling
+
+# right_inlane_plastic:
+  l_gi_21:
+    number: 121
+    type: grb
+    tags: gi, gi_right, gi_lower, gi_right_inlane
+  l_gi_22:
+    number: 122
+    type: grb
+    tags: gi, gi_right, gi_lower, gi_right_inlane
+
+# flashers
+
+  l_flasher_1:
+    number: 201
+    type: grb
+    tags: flasher
+  l_flasher_2:
+    number: 202
+    type: grb
+    tags: flasher
+  l_flasher_3:
+    number: 203
+    type: grb
+    tags: flasher
+  l_flasher_4:
+    number: 204
+    type: grb
+    tags: flasher
+  l_flasher_5:
+    number: 205
+    type: grb
+    tags: flasher
 
