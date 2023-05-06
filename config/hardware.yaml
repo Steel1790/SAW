@@ -2,13 +2,13 @@
 
 hardware:
   platform: smart_virtual
-  
+
 machine:
   min_balls: 3
 
 switches:
   s_plumb_bob_tilt:
-    number: 
+    number:
     tags: tilt_bob
   s_left_flipper:
     number:
@@ -33,10 +33,8 @@ switches:
     tags: right_trough
   s_trough_jam:
     number:
-  s_plunger:
-    number:
   s_outhole:
-    number: 
+    number:
   s_start:
     number:
     tags: start
@@ -155,11 +153,11 @@ switches:
     number: 54
     tags: bottom_pops, pops, switch_hit
   s_ball_shooter_lane:
-    number: 59 
+    number: 59
   s_elevator_hold:
     number:
   s_eject:
-    number: 
+    number:
   s_left_slingshot:
     number:
     tags: slingshot
@@ -178,7 +176,7 @@ virtual_platform_start_active_switches:
 
 coils:
   c_flipper_left_main:
-    number: 
+    number:
     default_pulse_ms: 20
     tags: coils
   c_flipper_left_hold:
@@ -205,7 +203,7 @@ coils:
     default_hold_power: 1.0
     tags: coils
   c_draineject:
-    number: 
+    number:
     default_pulse_ms: 20
     default_hold_power: 1.0
   c_trough_eject:
@@ -229,7 +227,7 @@ coils:
   c_droptargetreset:
     number: 12
     default_pulse_ms: 250
-    
+
 drop_targets:
   dt_drop1:
     switch: s_upper_bank_drop_target_opto
@@ -239,20 +237,20 @@ drop_targets:
     switch: s_lower_bank_drop_target_opto_middle
   dt_drop4:
     switch: s_lower_bank_drop_target_opto_lower
-    
+
 drop_target_banks:
   maindrop:
     drop_targets:
-    - dt_drop2
-    - dt_drop3
-    - dt_drop4
+      - dt_drop2
+      - dt_drop3
+      - dt_drop4
     reset_on_complete: 1s
     reset_coils: c_droptargetreset
     reset_events: ball_starting
 
 ball_devices:
   bd_drain:
-    ball_switches: s_trough1 
+    ball_switches: s_trough1
     eject_coil: c_draineject
     eject_targets: bd_trough
     eject_timeouts: 1s
@@ -269,34 +267,34 @@ ball_devices:
     eject_coil_jam_pulse: 15ms
     eject_targets: bd_plunger
     debug: true
-    
+
   bd_plunger:
-    ball_switches: s_plunger
+    ball_switches: s_ball_shooter_lane
     mechanical_eject: true
-    
+
   bd_retina_hole:
     ball_switches: s_eject
     eject_coil: c_retina_eject
     eject_timeouts: 1s
-    
+
   bd_elevator:
     ball_switches: s_elevator_hold
     mechanical_eject: true
     eject_timeouts: 500ms
-    
+
   bd_mystery:
     ball_switches: s_left_cellar
     mechanical_eject: true
     eject_timeouts: 8000ms
 
 playfields:
-    playfield:
-        tags: default
-        default_source_device: bd_plunger
-        enable_ball_search: True
-        ball_search_timeout: 20s
-        ball_search_wait_after_iteration: 10s
-        ball_search_interval: 250ms
+  playfield:
+    tags: default
+    default_source_device: bd_plunger
+    enable_ball_search: True
+    ball_search_timeout: 20s
+    ball_search_wait_after_iteration: 10s
+    ball_search_interval: 250ms
 
 flippers:
   left_flipper:
@@ -315,7 +313,3 @@ autofire_coils:
   right_slingshot:
     coil: c_right_slingshot
     switch: s_right_slingshot
-
-
-
-

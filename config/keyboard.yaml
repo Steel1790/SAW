@@ -9,12 +9,12 @@ keyboard:
   1:
     switch: s_trough1
   2:
-    switch: s_trough2 
+    switch: s_trough2
   3:
-    switch: s_trough3 
+    switch: s_trough3
   f:
     switch: s_left_inlane
-  g: 
+  g:
     switch: s_lower_bank_drop_target_opto_upper
   h:
     switch: s_lower_bank_drop_target_opto_middle
@@ -23,7 +23,7 @@ keyboard:
   4:
     switch: s_enter_left_ramp
   5:
-    switch: s_left_ramp_score_top 
+    switch: s_left_ramp_score_top
   6:
     switch: s_left_ramp_score_bottom
   n:
@@ -33,7 +33,7 @@ keyboard:
   y:
     switch: s_spinner
   p:
-    switch: s_plunger
+    switch: s_ball_shooter_lane
     toggle: true
   7:
     switch: s_right_ramp_down
