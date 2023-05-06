@@ -155,4 +155,14 @@ variable_player:
     score: 100000
   spinner_hit:
     score: 5000
+
+# EK testing lightshow on shot action
+show_player:
+  spinner_hit:
+    flash_token:
+      loops: 5
+      speed: 20
+      show_tokens:
+        led: l_circle5
+        color1: 46eb34
  
