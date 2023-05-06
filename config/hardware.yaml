@@ -208,6 +208,20 @@ coils:
     default_hold_power: 1.0
   c_trough_eject:
     number:
+  c_diverter:
+    number:
+  c_right_ramp_lift:
+    number:
+  c_right_ramp_down:
+    number:
+  c_left_spin_disc:
+    number:
+  c_middle_spin_disc:
+    number:
+  c_right_spin_disc:
+    number:
+  c_left_lock_kickback:
+    number:
   c_left_top_jet_bumper:
     number:
   c_right_top_jet_bumper:
@@ -228,8 +242,7 @@ coils:
     number: 12
     default_pulse_ms: 250
   c_upper_droptargetreset:
-    number: 15
-    default_pulse_ms: 250
+    number:
 
 drop_targets:
   dt_upper_drop1:
