@@ -210,6 +210,8 @@ coils:
     number:
   c_diverter:
     number:
+  c_top_eject:
+    number:
   c_right_ramp_lift:
     number:
   c_right_ramp_down:
