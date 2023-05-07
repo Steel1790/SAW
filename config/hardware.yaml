@@ -212,6 +212,8 @@ coils:
     number:
   c_top_eject:
     number:
+  c_mystery_eject:
+    number:
   c_right_ramp_lift:
     number:
   c_right_ramp_down:
@@ -331,6 +333,7 @@ ball_devices:
 
   bd_mystery:
     ball_switches: s_left_cellar
+    eject_coil: c_mystery_eject
     mechanical_eject: true
     eject_timeouts: 8000ms
 
