@@ -243,6 +243,39 @@ coils:
     default_pulse_ms: 250
   c_upper_droptargetreset:
     number:
+  flasher_c_bottom_right:
+    number:
+    allow_enable: true
+  flasher_c_spinner:
+    number:
+    allow_enable: true
+  flasher_c_right_ramp_top:
+    number:
+    allow_enable: true
+  flasher_c_right_ramp_upr_mid:
+    number:
+    allow_enable: true
+  flasher_c_right_ramp_lwr_mid:
+    number:
+    allow_enable: true
+  flasher_c_right_ramp_bottom:
+    number:
+    allow_enable: true
+  flasher_c_lower_drop:
+    number:
+    allow_enable: true
+  flasher_c_compass:
+    number:
+    allow_enable: true
+  flasher_c_bp_left:
+    number:
+    allow_enable: true
+  flasher_c_bp_mid:
+    number:
+    allow_enable: true
+  flasher_c_bp_right:
+    number:
+    allow_enable: true
 
 drop_targets:
   dt_upper_drop1:
