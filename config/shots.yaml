@@ -16,6 +16,8 @@ sequence_shots:
     switch_sequence: s_spinner
   upper_drop_target:
     switch_sequence: s_upper_bank_drop_target_opto
+  left_loop:
+    switch_sequence: s_left_loop_bottom
 
 #temp for demo    
 #  ballsavetemp:
