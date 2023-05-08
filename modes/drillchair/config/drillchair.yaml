@@ -3,6 +3,14 @@ mode:
   start_events: selection_mode_drillchair_selected
   stop_events: stop_mode_drillchair, mode_drillchair_complete, ball_ended
  
+sequences:
+  drillchair:
+    events:
+      - drillchair_pops_complete
+      - left_loop_hit
+    reset_on_complete: false
+    events_when_complete: mode_drillchair_complete, stop_mode_drillchair
+ 
 timers:
   drillchair_60s_timer:
     start_value: 69
@@ -13,31 +21,39 @@ timers:
         event: mode_drillchair_started
 
 counters:
-  drillchair_spinner_counter:
+  drillchair_pops_counter:
     starting_count: 0
-    count_complete_value: 30
+    count_complete_value: 20
     enable_events: enable_qualify
     disable_events: disable_qualify
     start_enabled: true
 #    persist_state: true
     reset_on_complete: false
-    events_when_complete: mode_drillchair_complete, stop_mode_drillchair
-    count_events: spinner_hit
- 
+    events_when_complete: drillchair_pops_complete   
+    count_events: lower_l_pop_hit, lower_r_pop_hit, up_b_pop_hit
 
-#shot_groups:
-#  spinner:
-#    shots: spinner
+shots:
+  lower_l_pop:
+    switch: s_left_bottom_jet_bumper
+  lower_r_pop:
+    switch: s_right_bottom_jet_bumper
+  up_b_pop:
+    switch: s_upper_bottom_jet_bumper 
+
     
 
 variable_player:
-  spinner_hit:
+  lower_l_pop_hit:
     score: 20
-  counter_drillchair_spinner_counter_hit:
-    drillchair_spinner_counter:
+  lower_r_pop_hit:
+    score: 21
+  up_b_pop_hit:
+    score: 22
+  counter_drillchair_pops_counter_hit:
+    drillchair_pops_counter:
       action: set
-      int: (count)*23
-    drillchair_visual_spinner_counter:
+      int: (count)*34
+    drillchair_visual_pops_counter:
       action: set
       int: (count)
        
@@ -52,10 +68,10 @@ slides:
     - type: video
       video: drillchairvideo  
       
-  drillchair_spinner:
+  drillchair_pops:
     widgets:
     - type: Text
-      text: Shoot The Spinners!
+      text: Aim for the Lower Pop Bumpers!
       font_name: TrajanProRegular
       font_size: 75
       color: d8d8d8
@@ -104,7 +120,7 @@ slides:
       corner_segments: 10
       color: 940008
       animations:
-        player_drillchair_spinner_counter:
+        player_drillchair_pops_counter:
          - property: width
            value: (value)           
     - type: rectangle
@@ -124,14 +140,13 @@ slides:
 #      x: 825
 #      y: 85%
     - type: Text
-# work on displaying the count of spins
-      text: (player|drillchair_visual_spinner_counter) / 30 Spins
+      text: (player|drillchair_visual_pops_counter) / 20 lower pops
       font_size: 50
       font_name: TrajanProRegular
       color: d8d8d8
       y: 35%
     - type: Text
-      text: You Have 60 Seconds To Hit 30 Spins
+      text: You Have 60 Seconds To Hit 20 Lower Pop Bumpers!
       color: 940008
       font_name: TrajanProRegular
       font_size: 35
@@ -151,10 +166,65 @@ slides:
     transition:
      type: fade
      duration: 0.2s
-  
-#shots:
-#  spinner:
-#    switch: s_spinner
+ 
+  drillchair_phase2:
+    widgets:     
+    - type: Text
+      text: "- Hit The Left Loop To Escape"
+      font_size: 52
+      font_name: TrajanProRegular
+      color: d8d8d8 
+      x: 552
+      y: 52%
+    - type: Text
+      text: " & Complete The Trap"
+      font_size: 52
+      font_name: TrajanProRegular
+      color: d8d8d8 
+      x: 467
+      y: 46%
+      
+    - type: image
+      image: hacksawUI
+      opacity: 0.5
+      y: 1
+      x: 1
+      anchor_x: left
+      anchor_y: bottom
+    - type: text
+      text: (score)
+      number_grouping: true
+      y: 16
+      x: 25
+      font_size: 36
+      anchor_x: left
+      anchor_y: bottom
+      font_name: TrajanProRegular
+      color: d8d8d8
+      
+    - type: Text
+      text: 00:(player|drillchair_drillchair_60s_timer_tick)
+      font_size: 100
+      font_name: digitalclockfont
+      color: red
+      x: 50%
+      y: 83.2%
+    - type: rectangle
+      width: 420
+      height: 130
+      x: 50%
+      y: 84.5%
+      corner_radius: 20
+      corner_segments: 20
+      color: black
+                
+    - type: image
+      image: drillchairimg
+      opacity: 0.4
+    transition:
+     type: fade
+     duration: 0.2s
+
 
       
 slide_player:
@@ -163,6 +233,26 @@ slide_player:
       priority: 500
       expire: 8.7s
   slide_drillchairvideo_removed: 
-    drillchair_spinner:
+    drillchair_pops:
       priority: 400
       expire: 66.5s
+  drillchair_pops_complete:
+    drillchair_phase2:
+      priority: 405
+      expire: 60.5s
+      
+widgets:
+   dc_shot_update2:
+    - type: Text
+      text: X
+      color: ad1400
+      x: 5.5%
+      y: 52%
+      font_size: 70
+      font_name: TrajanProRegular
+
+ 
+widget_player:
+ logicblock_drillchair_hit{step==2}: 
+  dc_shot_update2:
+    slide: drillchair_phase2
