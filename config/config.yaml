@@ -20,6 +20,7 @@ modes:
   - selection_mode
   - razorwire
   - drillchair
+  - quadshotgun
   - reversebeartrap
   - tilt
   - mystery
@@ -64,6 +65,10 @@ sound_player:
     reversebeartrap:
       action: play
   mode_reversebeartrap_complete:
+    trapcomplete:
+      action: play
+ 
+  mode_quadshotgun_complete:
     trapcomplete:
       action: play
  
