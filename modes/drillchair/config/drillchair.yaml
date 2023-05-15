@@ -92,7 +92,7 @@ slides:
       anchor_x: left
       anchor_y: bottom
       font_name: TrajanProRegular
-      color: d8d8d8
+      color: ff6700
       
     - type: Text
       text: 00:(player|drillchair_drillchair_60s_timer_tick)
@@ -118,7 +118,7 @@ slides:
       anchor_x: left
       corner_radius: 10
       corner_segments: 10
-      color: 940008
+      color: ff6700
       animations:
         player_drillchair_pops_counter:
          - property: width
@@ -147,7 +147,7 @@ slides:
       y: 35%
     - type: Text
       text: You Have 60 Seconds To Hit 20 Lower Pop Bumpers!
-      color: 940008
+      color: ff6700
       font_name: TrajanProRegular
       font_size: 35
       y: 17%
@@ -200,7 +200,7 @@ slides:
       anchor_x: left
       anchor_y: bottom
       font_name: TrajanProRegular
-      color: d8d8d8
+      color: ff6700
       
     - type: Text
       text: 00:(player|drillchair_drillchair_60s_timer_tick)
@@ -245,7 +245,7 @@ widgets:
    dc_shot_update2:
     - type: Text
       text: X
-      color: ad1400
+      color: ff6700
       x: 5.5%
       y: 52%
       font_size: 70
