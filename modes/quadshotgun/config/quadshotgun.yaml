@@ -1,0 +1,250 @@
+#config_version=5                 
+mode:
+  start_events: selection_mode_quadshotgun_selected
+  stop_events: stop_mode_quadshotgun, mode_quadshotgun_complete, ball_ended
+ 
+sequences:
+  quadshotgun:
+    events:
+      - quadshotgun_spinner_complete
+      - left_loop_hit
+    reset_on_complete: false
+    events_when_complete: mode_quadshotgun_complete, stop_mode_quadshotgun
+ 
+timers:
+  quadshotgun_60s_timer:
+    start_value: 68
+    end_value: 0
+    direction: down
+    control_events:
+      - action: start
+        event: mode_quadshotgun_started
+
+counters:
+  quadshotgun_spinner_counter:
+    starting_count: 0
+    count_complete_value: 30
+    enable_events: enable_qualify
+    disable_events: disable_qualify
+    start_enabled: true
+#    persist_state: true
+    reset_on_complete: false
+    events_when_complete: quadshotgun_spinner_complete   
+    count_events: spinner_hit
+
+#shots:
+#  spinner:
+#    switch: s_spinner   
+
+variable_player:
+  spinner_hit:
+    score: 95000
+  counter_quadshotgun_spinner_counter_hit:
+    quadshotgun_spinner_counter:
+      action: set
+      int: (count)*22
+    quadshotgun_visual_spinner_counter:
+      action: set
+      int: (count)
+       
+  timer_your_timer_tick:
+    quadshotgun_60s_timer:
+      int: device.timers.your_timer.ticks_remaining
+      action: set
+ 
+slides:
+  quadshotgunvideo:
+    widgets:
+    - type: video
+      video: quadshotgunvideo  
+      width: 1366
+      height: 768      
+      
+  quadshotgun_spinner:
+    widgets:
+    - type: Text
+      text: Rip the Spinner!
+      font_name: TrajanProRegular
+      font_size: 75
+      color: d8d8d8
+      
+    - type: image
+      image: hacksawUI
+      opacity: 0.5
+      y: 1
+      x: 1
+      anchor_x: left
+      anchor_y: bottom
+    - type: text
+      text: (score)
+      number_grouping: true
+      y: 16
+      x: 25
+      font_size: 36
+      anchor_x: left
+      anchor_y: bottom
+      font_name: TrajanProRegular
+      color: 006ee6
+      
+    - type: Text
+      text: 00:(player|quadshotgun_quadshotgun_60s_timer_tick)
+      font_size: 100
+      font_name: digitalclockfont
+      color: red
+      x: 50%
+      y: 83.2%
+    - type: rectangle
+      width: 420
+      height: 130
+      x: 50%
+      y: 84.5%
+      corner_radius: 20
+      corner_segments: 20
+      color: black
+      
+    - type: rectangle
+      width: 0
+      height: 45
+      x: 25%
+      y: 180
+      anchor_x: left
+      corner_radius: 10
+      corner_segments: 10
+      color: 006ee6
+      animations:
+        player_quadshotgun_spinner_counter:
+         - property: width
+           value: (value)           
+    - type: rectangle
+      width: 685
+      height: 46
+      x: 50%
+      y: 180
+      color: black
+      corner_radius: 10
+      corner_segments: 10
+      
+#    - type: Text
+#      text: Seconds Left
+#      font_size: 50
+#      font_name: TrajanProRegular
+#      color: 65fe08
+#      x: 825
+#      y: 85%
+    - type: Text
+      text: (player|quadshotgun_visual_spinner_counter) / 30 spins
+      font_size: 50
+      font_name: TrajanProRegular
+      color: d8d8d8
+      y: 35%
+    - type: Text
+      text: You Have 60 Seconds To Hit 30 Spins!
+      color: 006ee6
+      font_name: TrajanProRegular
+      font_size: 35
+      y: 17%
+      animations:
+       pre_show_slide:
+        - property: opacity
+          value: 0
+          duration: 1s
+        - property: opacity
+          value: 1
+          duration: 1s
+          repeat: true
+    - type: image
+      image: quadshotgunimg
+      opacity: 0.65
+    transition:
+     type: fade
+     duration: 0.2s
+ 
+  quadshotgun_phase2:
+    widgets:     
+    - type: Text
+      text: "- Hit The Left Loop To Escape"
+      font_size: 52
+      font_name: TrajanProRegular
+      color: d8d8d8 
+      x: 552
+      y: 52%
+    - type: Text
+      text: " & Complete The Trap"
+      font_size: 52
+      font_name: TrajanProRegular
+      color: d8d8d8
+      x: 467
+      y: 46%
+      
+    - type: image
+      image: hacksawUI
+      opacity: 0.5
+      y: 1
+      x: 1
+      anchor_x: left
+      anchor_y: bottom
+    - type: text
+      text: (score)
+      number_grouping: true
+      y: 16
+      x: 25
+      font_size: 36
+      anchor_x: left
+      anchor_y: bottom
+      font_name: TrajanProRegular
+      color: 006ee6
+      
+    - type: Text
+      text: 00:(player|quadshotgun_quadshotgun_60s_timer_tick)
+      font_size: 100
+      font_name: digitalclockfont
+      color: red
+      x: 50%
+      y: 83.2%
+    - type: rectangle
+      width: 420
+      height: 130
+      x: 50%
+      y: 84.5%
+      corner_radius: 20
+      corner_segments: 20
+      color: black
+                
+    - type: image
+      image: quadshotgunimg
+      opacity: 0.4
+    transition:
+     type: fade
+     duration: 0.2s
+
+
+      
+slide_player:
+  mode_quadshotgun_started: 
+    quadshotgunvideo:
+      priority: 500
+      expire: 7.8s 
+  slide_quadshotgunvideo_removed:  
+    quadshotgun_spinner:
+      priority: 400
+      expire: 64.5s
+  quadshotgun_spinner_complete:
+    quadshotgun_phase2:
+      priority: 405
+      expire: 49.5s
+      
+widgets:
+   quadshotgun_shot_update2:
+    - type: Text
+      text: X
+      color: 006ee6
+      x: 5.5%
+      y: 52%
+      font_size: 70
+      font_name: TrajanProRegular
+
+ 
+widget_player:
+ logicblock_quadshotgun_hit{step==2}: 
+  quadshotgun_shot_update2:
+    slide: quadshotgun_phase2
