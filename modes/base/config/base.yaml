@@ -158,11 +158,28 @@ variable_player:
 
 # EK testing lightshow on shot action
 show_player:
+#  mode_skillshot_complete:
+  mode_base_started:   
+    flash_token:
+      loops: -1
+      speed: 2
+      show_tokens:
+        led: arrow
+        color1: ffffff
+
+# mode_base_started.1:       
+#    flash_token:
+#      loops: -1
+#      speed: 3
+#      show_tokens:
+#        led: l_left_return_lane
+#        color1: red
+
   spinner_hit:
     flash_token:
-      loops: 5
-      speed: 20
+      loops: 2
+      speed: 8
       show_tokens:
-        led: l_circle5
+        led: l_right_loop_arrow
         color1: 46eb34
  
