@@ -290,27 +290,46 @@ widget_player:
 #EK added 
 
 show_player:
+  mode_razorwire_started:     
+    gi_on:
+      show_tokens:
+        color1: 46eb34
   upper_l_pop_hit:
-      flash_token:
-        loops: 5
-        speed: 20
+      attract_flash_all:
+        loops: 1
+        speed: 10
         show_tokens:
-          led: l_left_top_bumper
           color1: 46eb34
+  #    flash_token:
+  #      loops: 5
+  #      speed: 20
+  #      show_tokens:
+  #        led: l_left_top_bumper
+  #        color1: 46eb34
   upper_r_pop_hit:
-      flash_token:
-        loops: 5
-        speed: 20
+      attract_flash_all:
+        loops: 1
+        speed: 10
         show_tokens:
-          led: l_right_top_bumper
-          color1: 46eb34
+          color1: ffffff
+#      flash_token:
+#        loops: 5
+#        speed: 20
+#        show_tokens:
+#          led: l_right_top_bumper
+#          color1: 46eb34
   upper_b_pop_hit:
-      flash_token:
-        loops: 5
-        speed: 20
+      attract_flash_all:
+        loops: 1
+        speed: 10
         show_tokens:
-          led: l_lower_top_bumper
-          color1: 46eb34
+          color1: 35b027
+#      flash_token:
+#        loops: 5
+#        speed: 20
+#        show_tokens:
+#          led: l_lower_top_bumper
+#          color1: 46eb34
   razorwire_pops_complete:
       top_drop_chase:
         loops: -1
