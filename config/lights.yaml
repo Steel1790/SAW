@@ -150,31 +150,31 @@ lights:
   l_left_loop_arrow:
     number: 50
     type: grb
-    tags: insert
+    tags: insert, arrow
   l_left_standup_arrow:
     number: 51
     type: grb
-    tags: insert
+    tags: insert, arrow
   l_inner_loop_arrow:
     number: 52
     type: grb
-    tags: insert
+    tags: insert, arrow
   l_left_standup_right_ramp_arrow:
     number: 53
     type: grb
-    tags: insert
+    tags: insert, arrow
   l_right_standup_right_ramp_arrow:
     number: 54
     type: grb
-    tags: insert
+    tags: insert, arrow
   l_right_loop_arrow:
     number: 55
     type: grb
-    tags: insert
+    tags: insert, arrow
   l_right_standup_arrow:
     number: 56
     type: grb
-    tags: insert
+    tags: insert, arrow
   l_shoot_again:
     number: 57
     type: grb
