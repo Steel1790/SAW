@@ -7,29 +7,3 @@
   lights:
     insert: 0
     jet_bumper: (color1)
-- time: '+1'  
-  lights:
-    l_bonus_x1: (color1)
-- time: '+1'
-  lights:
-    l_bonus_x2: (color1)
-- time: '+1'
-  lights:
-    l_bonus_x3: (color1)
-- time: '+1'
-  lights:
-    l_bonus_x4: (color1)
-- time: '+1'
-  lights:
-    l_bonus_x5: (color1)
-- time: '+1'
-  lights:
-    l_bonus_x6: (color1)
-- time: '+1'
-  lights:
-    l_bonus_x1: 0
-    l_bonus_x2: 0
-    l_bonus_x3: 0
-    l_bonus_x4: 0
-    l_bonus_x5: 0
-    l_bonus_x6: 0
