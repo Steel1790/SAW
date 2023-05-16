@@ -1,8 +1,13 @@
 #config_version=5
 
 show_player:
-  mode_attract_started:
-    attract_display_loop:
-      speed: 1
-    attract_lightshows_cycle:
-      speed: 4
+  mode_attract_started: attract_display_loop
+  mode_attract_started.1: attract_lightshows_loop
+
+#ORIGINAL CODE. Changed since attract light show was not playing in sequence. 
+#show_player:
+#  mode_attract_started:
+#    attract_display_loop:
+#      speed: 1
+#    attract_lightshows_loop:
+#      speed: 4
