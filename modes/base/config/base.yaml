@@ -155,6 +155,10 @@ variable_player:
     score: 100000
   spinner_hit:
     score: 5000
+  left_inlane_hit:
+    score: 1300
+  left_outlane_hit:
+    score: 1700
 
 # EK testing lightshow on shot action
 show_player:
@@ -167,11 +171,11 @@ show_player:
         led: arrow
         color1: ffffff
 
-# mode_base_started.1:       
-#    flash_token:
+#  mode_base_started.1:       
+#   flash_token2:
 #      loops: -1
 #      speed: 3
-#      show_tokens:
+#     show_tokens:
 #        led: l_left_return_lane
 #        color1: red
 
@@ -182,4 +186,27 @@ show_player:
       show_tokens:
         led: l_right_loop_arrow
         color1: 46eb34
+
+  left_inlane_hit:
+    flash_token:
+      loops: 2
+      speed: 8
+      show_tokens:
+        led: l_left_return_lane
+        color1: red
+
+  mysteryawardtemp_hit:
+    mystery_flash:
+       loops: 0
+       show_tokens:
+        led: insert, gi, jet_bumper, flasher
+        color1: white
+
+#  trap completed
+  slide_trapcomplete_active:
+    rw_complete:
+      loops: 2
+      speed: 25
+
+ 
  
