@@ -14,3 +14,14 @@ ball_holds:
     enable_events: enable_mystery
     disable_events: end_mystery, multiball_active
     release_one_events: end_mystery
+
+
+#EK added 
+# this is not working but I don't know why. The show in the base.yaml is working
+
+#show_player:
+#  mystery_hit:     
+#    mystery_flash:
+#      show_tokens:
+#        led: insert
+#        color1: orange
