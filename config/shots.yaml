@@ -1,10 +1,10 @@
 #config_version=5
 sequence_shots:
   left_ramp:
-    switch_sequence: s_enter_left_ramp, s_left_ramp_score_top, s_left_ramp_score_bottom
+    switch_sequence: s_enter_left_ramp, s_left_ramp_score_bottom, s_left_ramp_score_top
     sequence_timeout: 4s
   right_ramp:
-    switch_sequence: s_right_ramp_down, s_right_ramp_score_top, s_right_ramp_score_bottom
+    switch_sequence: s_right_ramp_down, s_right_ramp_score_bottom, s_right_ramp_score_top
     sequence_timeout: 4s
 #  left_pop:
 #    switch_sequence: s_left_bottom_jet_bumper
@@ -18,6 +18,10 @@ sequence_shots:
     switch_sequence: s_upper_bank_drop_target_opto
   left_loop:
     switch_sequence: s_left_loop_bottom
+  left_outlane:
+    switch_sequence: s_left_outlane
+  left_inlane:
+    switch_sequence: s_left_inlane
 
 #temp for demo    
 #  ballsavetemp:

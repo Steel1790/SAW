@@ -130,7 +130,7 @@ slide_player:
   mode_razorwire_complete: 
     trapcomplete:
       priority: 400
-      expire: 8s   
+      expire: 5s   #EK shortened to time with lightshow
 
   mode_drillchair_complete: 
     trapcomplete:
@@ -193,4 +193,5 @@ assets:
     videos:
         default:
             load: preload
-            
+
+
