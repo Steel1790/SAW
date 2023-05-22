@@ -319,11 +319,9 @@ show_player:
 #          led: l_right_top_bumper
 #          color1: 46eb34
   upper_b_pop_hit:
-      attract_flash_all:
-        loops: 1
-        speed: 10
-        show_tokens:
-          color1: 35b027
+      rw_white_sweeps:
+        loops: 0
+        speed: 30
 #      flash_token:
 #        loops: 5
 #        speed: 20
@@ -336,4 +334,21 @@ show_player:
         speed: 20
         show_tokens:
           color1: red
+
+      gi_flicker:
+        loops: -1
+        speed: 20
+        show_tokens:
+          color1: ffffff
+
+  upper_drop_target_hit:
+      attract_flash_all:
+        loops: 1
+        speed: 10
+        show_tokens:
+          color1: ffffff
+#      stop_top_drop_chase:
+#        top_drop_chase: stop
+
+
 
