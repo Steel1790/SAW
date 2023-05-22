@@ -248,3 +248,27 @@ widget_player:
  logicblock_quadshotgun_hit{step==2}: 
   quadshotgun_shot_update2:
     slide: quadshotgun_phase2
+
+
+#EK added 
+
+show_player:
+  mode_quadshotgun_started:     
+    gi_on:
+      show_tokens:
+        color1: 006ee6
+    flash_token:
+      loops: -1
+      speed: 8
+      show_tokens:
+        led: l_right_loop_arrow
+        color1: ffffff
+
+  spinner_hit:
+    flash_token:
+      loops: 2
+      speed: 8
+      show_tokens:
+        led: l_flasher_4
+        color1: 006ee6
+
