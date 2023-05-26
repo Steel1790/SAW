@@ -1,0 +1,126 @@
+#config_version=5
+##! mode: saw_qualify
+mode:
+  start_events: ball_starting
+  priority: 120
+
+shots:
+  shot_left_return_lane:
+    switches: s_left_inlane
+    profile: saw_qualify_profile
+    show_tokens:
+      leds: l_left_return_lane
+  shot_left_loop:
+    switches: s_left_loop_bottom, s_left_loop_top
+    profile: saw_qualify_profile
+    show_tokens:
+      leds: l_left_loop_arrow
+  shot_left_standup:
+    switches: s_left_standup
+    profile: saw_qualify_profile
+    show_tokens:
+      leds: l_left_standup_arrow
+  shot_inner_loop:
+    switches: s_inner_loop
+    profile: saw_qualify_profile
+    show_tokens:
+      leds: l_inner_loop_arrow
+  shot_left_standup_rightramp:
+    switches: s_left_standup_right_ramp
+    profile: saw_qualify_profile
+    show_tokens:
+      leds: l_left_standup_right_ramp_arrow
+  shot_right_standup_rightramp:
+    switches: s_right_standup_right_ramp
+    profile: saw_qualify_profile
+    show_tokens:
+      leds: l_right_standup_right_ramp_arrow
+  shot_right_standup:
+    switches: s_right_standup
+    profile: saw_qualify_profile
+    show_tokens:
+      leds: l_right_standup_arrow
+
+shot_profiles:
+  saw_qualify_profile:
+    states:
+      - name: lit
+        show: "shot_on"           # a default show to turn of the led. change if you want to do something on unlit shots
+      - name: hit
+        show: "shot_hit"           # a default show to turn of the led. change if you want to do something on unlit shots
+      - name: subtract
+        show: "shot_substract"      # our show to indicate an lit shot
+
+shot_groups:
+  sg_saw_qualify:
+    shots: shot_left_return_lane, shot, shot_left_loop, shot_left_standup, shot_inner_loop, shot_left_standup_rightramp, shot_right_standup_rightramp, shot_right_standup
+    reset_events:
+      sg_saw_qualify_lit_complete: 1s
+
+shows:
+  shot_on:    # define our show to indicate the state
+    - duration: -1      # this show step will run permanently
+      lights:     # turn the light purple
+        (leds): white
+  shot_hit:    # define our show to communicate success to the player
+    - duration: 1s      # this show step lasts 1s
+        # add sounds here or videos
+        # add scoring here
+      shows:      # run another (built-in) show to flash the light
+        flash_color:
+          show_tokens:
+            color: white
+            leds: (leds)
+          speed: 4
+  saw_qualify_complete:    # define our show to communicate success on completing all shots
+    - duration: 1s
+        # add scoring, sounds and video
+      shows:
+        flash_color:
+          priority: 10     # higher priority as the shots
+          show_tokens:
+            color: red
+            leds: l_left_standup_arrow, l_left_loop_arrow, l_inner_loop_arrow, l_left_standup_right_ramp_arrow, l_right_standup_right_ramp_arrow, l_right_standup_arrow
+          speed: 4
+
+show_player:
+   # play a show once a each shot is lit
+  shot_left_standup_hit{state=="lit"}:
+    shot_hit:
+      show_tokens:
+        leds: l_left_standup_arrow
+      loops: 0
+  shot_left_loop_hit{state=="lit"}:
+    shot_hit:
+      show_tokens:
+        leds: l_left_loop_arrow
+      loops: 0
+  shot_left_standup_hit{state=="lit"}:
+    shot_hit:
+      show_tokens:
+        leds: l_left_standup_arrow
+      loops: 0
+  shot_inner_loop_hit{state=="lit"}:
+    shot_hit:
+      show_tokens:
+        leds: l_inner_loop_arrow
+      loops: 0
+  shot_left_standup_rightramp{state=="lit"}:
+    shot_hit:
+      show_tokens:
+        leds: l_left_standup_right_ramp_arrow
+      loops: 0
+  shot_right_standup_rightramp{state=="lit"}:
+    shot_hit:
+      show_tokens:
+        leds: l_right_standup_right_ramp_arrow
+      loops: 0
+  shot_right_standup_hit{state=="lit"}:
+    shot_hit:
+      show_tokens:
+        leds: l_right_standup_arrow
+      loops: 0
+   # play a show when the group completes
+  sg_saw_qualify_complete{state=="lit"}:
+    saw_qualify_complete:
+      loops: 0
