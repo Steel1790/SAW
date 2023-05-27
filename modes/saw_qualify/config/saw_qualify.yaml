@@ -10,6 +10,9 @@ shots:
     profile: saw_qualify_profile
     show_tokens:
       leds: l_left_return_lane
+    control_events:
+      - events: ball_starting
+        state: 2
   shot_left_loop:
     switches: s_left_loop_bottom, s_left_loop_top
     profile: saw_qualify_profile
@@ -49,11 +52,11 @@ shot_profiles:
       - name: hit
         show: "shot_hit"           # a default show to turn of the led. change if you want to do something on unlit shots
       - name: subtract
-        show: "shot_substract"      # our show to indicate an lit shot
+        show: "shot_subtract"      # our show to indicate an lit shot
 
 shot_groups:
   sg_saw_qualify:
-    shots: shot_left_return_lane, shot, shot_left_loop, shot_left_standup, shot_inner_loop, shot_left_standup_rightramp, shot_right_standup_rightramp, shot_right_standup
+    shots: shot_left_return_lane, shot_left_loop, shot_left_standup, shot_inner_loop, shot_left_standup_rightramp, shot_right_standup_rightramp, shot_right_standup
     reset_events:
       sg_saw_qualify_lit_complete: 1s
 
@@ -62,6 +65,10 @@ shows:
     - duration: -1      # this show step will run permanently
       lights:     # turn the light purple
         (leds): white
+  shot_subtract:    # define our show to indicate the state
+    - duration: -1      # this show step will run permanently
+      lights:     # turn the light purple
+        (leds): red
   shot_hit:    # define our show to communicate success to the player
     - duration: 1s      # this show step lasts 1s
         # add sounds here or videos
@@ -80,12 +87,12 @@ shows:
           priority: 10     # higher priority as the shots
           show_tokens:
             color: red
-            leds: l_left_standup_arrow, l_left_loop_arrow, l_inner_loop_arrow, l_left_standup_right_ramp_arrow, l_right_standup_right_ramp_arrow, l_right_standup_arrow
+            leds: l_left_return_lane, l_left_standup_arrow, l_left_loop_arrow, l_inner_loop_arrow, l_left_standup_right_ramp_arrow, l_right_standup_right_ramp_arrow, l_right_standup_arrow
           speed: 4
 
 show_player:
    # play a show once a each shot is lit
-  shot_left_standup_hit{state=="lit"}:
+  shot_left_return_lane_hit{state=="lit"}:
     shot_hit:
       show_tokens:
         leds: l_left_standup_arrow
@@ -105,12 +112,12 @@ show_player:
       show_tokens:
         leds: l_inner_loop_arrow
       loops: 0
-  shot_left_standup_rightramp{state=="lit"}:
+  shot_left_standup_rightramp_hit{state=="lit"}:
     shot_hit:
       show_tokens:
         leds: l_left_standup_right_ramp_arrow
       loops: 0
-  shot_right_standup_rightramp{state=="lit"}:
+  shot_right_standup_rightramp_hit{state=="lit"}:
     shot_hit:
       show_tokens:
         leds: l_right_standup_right_ramp_arrow
