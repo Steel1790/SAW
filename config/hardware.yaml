@@ -309,7 +309,7 @@ drop_target_banks:
 
 ball_devices:
   bd_drain:
-    ball_switches: s_trough1
+    ball_switches: s_outhole
     eject_coil: c_draineject
     eject_targets: bd_trough
     eject_timeouts: 1s
