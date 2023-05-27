@@ -131,3 +131,19 @@ show_player:
   sg_saw_qualify_complete{state=="lit"}:
     saw_qualify_complete:
       loops: 0
+
+counters:
+  saw_qualify_counter:
+    starting_count: 0
+    count_complete_value: 3
+    enable_events: enable_qualify
+    disable_events: disable_qualify
+    start_enabled: true
+#    persist_state: true
+    reset_on_complete: true
+    events_when_complete: saw_qualify_complete   
+    count_events: sg_saw_qualify_lit_hit
+    control_events:
+      - event: sg_saw_qualify_subtract_hit
+        action: subtract
+        value: 1
