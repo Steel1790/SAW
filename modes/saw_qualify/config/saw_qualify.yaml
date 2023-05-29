@@ -12,7 +12,7 @@ shots:
       leds: l_left_return_lane
     control_events:
       - events: ball_starting
-        state: 2
+        state: 1
   shot_left_loop:
     switches: s_left_loop_bottom, s_left_loop_top
     profile: saw_qualify_profile
@@ -52,12 +52,14 @@ shots:
 shot_profiles:
   saw_qualify_profile:
     states:
-      - name: lit
-        show: "shot_on"           # a default show to turn of the led. change if you want to do something on unlit shots
+#      - name: lit
+#        show: "shot_on"           # a default show to turn of the led. change if you want to do something on unlit shots
       - name: hit
         show: "shot_hit"           # a default show to turn of the led. change if you want to do something on unlit shots
       - name: subtract
         show: "shot_subtract"      # our show to indicate an lit shot
+      - name: hit
+        show: "shot_hit"           # our show to indicate an lit shot
     state_names_to_not_rotate: subtract
 
 shot_groups:
@@ -65,10 +67,10 @@ shot_groups:
     shots: shot_left_return_lane, shot_left_loop, shot_left_standup, shot_inner_loop, shot_left_standup_rightramp, shot_right_standup_rightramp, shot_right_loop, shot_right_standup
 
 shows:
-  shot_on:    # define our show to indicate the state
-    - duration: -1      # this show step will run permanently
-      lights:     # turn the light purple
-        (leds): white
+#  shot_on:    # define our show to indicate the state
+#    - duration: -1      # this show step will run permanently
+#      lights:     # turn the light purple
+#        (leds): white
   shot_subtract:    # define our show to indicate the state
     - duration: -1      # this show step will run permanently
       lights:     # turn the light purple
@@ -96,48 +98,48 @@ shows:
 
 show_player:
    # play a show once a each shot is lit
-  shot_left_return_lane_hit{state=="lit"}:
+  shot_left_return_lane_hit{state=="hit"}:
     shot_hit:
       show_tokens:
         leds: l_left_standup_arrow
       loops: 0
-  shot_left_loop_hit{state=="lit"}:
+  shot_left_loop_hit{state=="hit"}:
     shot_hit:
       show_tokens:
         leds: l_left_loop_arrow
       loops: 0
-  shot_left_standup_hit{state=="lit"}:
+  shot_left_standup_hit{state=="hit"}:
     shot_hit:
       show_tokens:
         leds: l_left_standup_arrow
       loops: 0
-  shot_inner_loop_hit{state=="lit"}:
+  shot_inner_loop_hit{state=="hit"}:
     shot_hit:
       show_tokens:
         leds: l_inner_loop_arrow
       loops: 0
-  shot_left_standup_rightramp_hit{state=="lit"}:
+  shot_left_standup_rightramp_hit{state=="hit"}:
     shot_hit:
       show_tokens:
         leds: l_left_standup_right_ramp_arrow
       loops: 0
-  shot_right_standup_rightramp_hit{state=="lit"}:
+  shot_right_standup_rightramp_hit{state=="hit"}:
     shot_hit:
       show_tokens:
         leds: l_right_standup_right_ramp_arrow
       loops: 0
-  shot_right_loop_hit{state=="lit"}:
+  shot_right_loop_hit{state=="hit"}:
     shot_hit:
       show_tokens:
         leds: l_right_loop_arrow
       loops: 0
-  shot_right_standup_hit{state=="lit"}:
+  shot_right_standup_hit{state=="hit"}:
     shot_hit:
       show_tokens:
         leds: l_right_standup_arrow
       loops: 0
    # play a show when the group completes
-  sg_saw_qualify_complete{state=="lit"}:
+  sg_saw_qualify_complete{state=="hit"}:
     saw_qualify_complete:
       loops: 0
 
@@ -151,7 +153,7 @@ counters:
 #    persist_state: true
     reset_on_complete: true
     events_when_complete: saw_qualify_complete   
-    count_events: sg_saw_qualify_lit_hit
+    count_events: sg_saw_qualify_hit_hit
     control_events:
       - event: sg_saw_qualify_subtract_hit
         action: subtract
