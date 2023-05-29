@@ -1,15 +1,15 @@
 #config_version=5                 
 mode:
-  start_events: start_selection_mode, saw_qualify_complete
+  start_events: start_selection_mode, mode_cellar_complete
   stop_events: carousel_item_selected, ball_ended, stop_mode_cellar, slide_razorwire_pops_removed, slide_reversebeartrapvideo_removed, slide_drillchair_pops_removed, slide_quadshotgun_spinner_removed
   code: mpf.modes.carousel.code.carousel.Carousel
 mode_settings:
   selectable_items: 
     - razorwire
-    - reversebeartrap
-    - flammablejelly
     - drillchair
+    - reversebeartrap
     - quadshotgun
+    - flammablejelly
     - zeptest
   select_item_events: s_start_active
   next_item_events: s_left_flipper_active
@@ -20,27 +20,26 @@ variable_player:
     selected_mode:
       action: set
       string: 'selection_mode_razorwire_highlighted'
-#      string: "mode_razorwire_started"
+
+  carousel_drillchair_selected:
+    selected_mode:
+      action: set
+      string: 'selection_mode_drillchair_highlighted'
       
   carousel_reversebeartrap_selected:
     selected_mode:
       action: set
       string: 'selection_mode_reversebeartrap_highlighted'
       
-  carousel_flammablejelly_selected:
-    selected_mode:
-      action: set
-      string: 'selection_mode_flammablejelly_highlighted'
-      
-  carousel_drillchair_selected:
-    selected_mode:
-      action: set
-      string: 'selection_mode_drillchair_highlighted'
-      
   carousel_quadshotgun_selected:
     selected_mode:
       action: set
       string: 'selection_mode_quadshotgun_highlighted'
+      
+  carousel_flammablejelly_selected:
+    selected_mode:
+      action: set
+      string: 'selection_mode_flammablejelly_highlighted'
       
   carousel_zeptest_selected:
     selected_mode:
@@ -282,4 +281,3 @@ slide_player:
 #      expire: 10s
 #  carousel_mission2_highlighted: select_mission2
 #  carousel_mission3_highlighted: select_mission3
-
