@@ -153,6 +153,10 @@ show_player:
     saw_qualify_complete:
       loops: 0
 
+event_player:
+  sg_saw_qualify_subtract_hit{device.counters.saw_qualify_counter.value > 0}:
+    - subtract_a_saw_letter
+    
 counters:
   saw_qualify_counter:
     starting_count: 0
@@ -165,7 +169,7 @@ counters:
     events_when_complete: saw_qualify_complete   
     count_events: sg_saw_qualify_lit_hit
     control_events:
-      - event: sg_saw_qualify_subtract_hit
+      - event: subtract_a_saw_letter
         action: subtract
         value: 1
 
@@ -205,4 +209,11 @@ slide_player:
     saw_collect:
       priority: 190
       expire: 3s      
-     
+  sg_saw_qualify_subtract_hit{device.counters.saw_qualify_counter.value==1}:
+    s_subtract:
+      priority: 185
+      expire: 3s
+  sg_saw_qualify_subtract_hit{device.counters.saw_qualify_counter.value==2}:
+    sa_subtract:
+      priority: 185
+      expire: 3s     
