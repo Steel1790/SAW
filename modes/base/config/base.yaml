@@ -4,6 +4,47 @@ mode:
   priority: 100
 
 slide_player:
+  mode_razorwire_complete: 
+    trapcomplete:
+      priority: 400
+      expire: 5s   #EK shortened to time with lightshow
+
+  mode_drillchair_complete: 
+    trapcomplete:
+      priority: 400
+      expire: 8s  
+
+  mode_reversebeartrap_complete: 
+    trapcomplete:
+      priority: 400
+      expire: 8s   
+      
+  mode_skillshot_complete:
+    skillshotvideo:
+      action: play
+      priority: 400
+      expire: 8s
+  ballsavetemp_hit:
+    ballsavevideo:
+      action: play
+      priority: 400
+      expire: 8s
+  tiltwarningtemp_hit:
+    tiltwarningvideo:
+      action: play
+      priority: 400
+      expire: 8s
+  mysteryawardtemp_hit:
+    mysteryawardvideo:
+      action: play
+      priority: 400
+      expire: 8s
+  extraballtemp_hit:
+    extraballvideo:
+      action: play
+      priority: 400
+      expire: 8s
+      
   mode_base_started:
     widgets:
 
@@ -210,3 +251,93 @@ show_player:
 
  
  
+sound_player:
+  base_mode_started:
+    playagame:
+      action: play
+  mode_razorwire_started:
+    razorwire:
+      action: play
+  mode_razorwire_complete:
+    trapcomplete:
+      action: play
+
+  mode_drillchair_started:
+    drillchair:
+      action: play  
+  mode_drillchair_complete:
+    trapcomplete:
+      action: play
+
+  mode_reversebeartrap_started:
+    reversebeartrap:
+      action: play
+  mode_reversebeartrap_complete:
+    trapcomplete:
+      action: play
+ 
+  mode_quadshotgun_complete:
+    trapcomplete:
+      action: play
+ 
+slides:
+#  trapcomplete:
+#    widgets:
+#    - type: Text
+#      text: You Survived
+#      color: AD1400
+#      font_name: TrajanProRegular
+#      font_size: 100
+#      x: 35%
+#      y: 50%
+#      animations:
+#       pre_show_slide:
+#        - property: opacity
+#          value: 0
+#          duration: 1s
+#        - property: opacity
+#          value: 1
+#          duration: 1s
+#          repeat: true
+#    - type: image
+#      image: trapcomplete 
+      
+  trapcomplete:
+    widgets:
+    - type: video
+      video: trapcomplete
+      width: 1366
+      height: 768      
+      
+  skillshotvideo:
+    widgets:
+    - type: video
+      video: skillshotvideo
+      width: 1366
+      height: 768
+      
+  ballsavevideo:
+    widgets:
+    - type: video
+      video: ballsave
+      width: 1366
+      height: 768
+  tiltwarningvideo:
+    widgets:
+    - type: video
+      video: tiltwarning
+      width: 1366
+      height: 768
+  mysteryawardvideo:
+    widgets:
+    - type: video
+      video: mysteryaward
+      width: 1366
+      height: 768
+  extraballvideo:
+    widgets:
+    - type: video
+      video: extraball
+      width: 1366
+      height: 768
+       
