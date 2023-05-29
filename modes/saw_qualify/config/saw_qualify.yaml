@@ -168,3 +168,41 @@ counters:
       - event: sg_saw_qualify_subtract_hit
         action: subtract
         value: 1
+
+slides:    
+  s_collect:
+    widgets:
+    - type: video
+      video: s_collect   
+  sa_collect:
+    widgets:
+    - type: video
+      video: sa_collect 
+  saw_collect:
+    widgets:
+    - type: video
+      video: saw_collect
+  sa_subtract:
+    widgets:
+    - type: video
+      video: sa_subtract
+  s_subtract:
+    widgets:
+    - type: video
+      video: s_subtract      
+
+    
+slide_player:
+  logicblock_saw_qualify_counter_updated{value==1}:
+    s_collect:
+      priority: 190
+      expire: 3s
+  logicblock_saw_qualify_counter_updated{value==2}:
+    sa_collect:
+      priority: 190
+      expire: 3s
+  logicblock_saw_qualify_counter_updated{value==3}:
+    saw_collect:
+      priority: 190
+      expire: 3s      
+     
