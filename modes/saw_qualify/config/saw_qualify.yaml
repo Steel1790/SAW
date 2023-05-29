@@ -38,6 +38,11 @@ shots:
     profile: saw_qualify_profile
     show_tokens:
       leds: l_right_standup_right_ramp_arrow
+  shot_right_loop:
+    switches: s_right_loop_bottom, s_right_loop_top
+    profile: saw_qualify_profile
+    show_tokens:
+      leds: l_right_loop_arrow
   shot_right_standup:
     switches: s_right_standup
     profile: saw_qualify_profile
@@ -53,12 +58,11 @@ shot_profiles:
         show: "shot_hit"           # a default show to turn of the led. change if you want to do something on unlit shots
       - name: subtract
         show: "shot_subtract"      # our show to indicate an lit shot
+    state_names_to_not_rotate: subtract
 
 shot_groups:
   sg_saw_qualify:
-    shots: shot_left_return_lane, shot_left_loop, shot_left_standup, shot_inner_loop, shot_left_standup_rightramp, shot_right_standup_rightramp, shot_right_standup
-    reset_events:
-      sg_saw_qualify_lit_complete: 1s
+    shots: shot_left_return_lane, shot_left_loop, shot_left_standup, shot_inner_loop, shot_left_standup_rightramp, shot_right_standup_rightramp, shot_right_loop, shot_right_standup
 
 shows:
   shot_on:    # define our show to indicate the state
@@ -87,7 +91,7 @@ shows:
           priority: 10     # higher priority as the shots
           show_tokens:
             color: red
-            leds: l_left_return_lane, l_left_standup_arrow, l_left_loop_arrow, l_inner_loop_arrow, l_left_standup_right_ramp_arrow, l_right_standup_right_ramp_arrow, l_right_standup_arrow
+            leds: l_left_return_lane, l_left_standup_arrow, l_left_loop_arrow, l_inner_loop_arrow, l_left_standup_right_ramp_arrow, l_right_standup_right_ramp_arrow, l_right_loop, l_right_standup_arrow
           speed: 4
 
 show_player:
@@ -121,6 +125,11 @@ show_player:
     shot_hit:
       show_tokens:
         leds: l_right_standup_right_ramp_arrow
+      loops: 0
+  shot_right_loop_hit{state=="lit"}:
+    shot_hit:
+      show_tokens:
+        leds: l_right_loop_arrow
       loops: 0
   shot_right_standup_hit{state=="lit"}:
     shot_hit:
