@@ -1,7 +1,7 @@
 #config_version=5
 mode:
-  start_events: mode_skillshot_stopped, mode_base_started, mode_razorwire_complete
-  stop_events: 
+  start_events: slide_saw_collect_created
+  stop_events: mode_cellar_complete
 
 ##! mode: qualify
 # mode: qualify
@@ -20,14 +20,14 @@ variable_player:
 counters:
   cellar_qualify_counter:
     starting_count: 0
-    count_complete_value: 2
+    count_complete_value: 1
     events_when_complete: mode_cellar_complete
 #    reset_events: 
 #    enable_events:
  #   disable_events: disable_qualify
 #    start_enabled: true
 #    persist_state: true
-    reset_on_complete: true
+#    reset_on_complete: true
     disable_on_complete: false
 #    reset_events: mode_cellar_started, cellar_qualify_counter_started
 #    restart_events: reset_qualify_modes, mode_cellar_started, cellar_qualify_counter_started
