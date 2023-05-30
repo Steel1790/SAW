@@ -46,8 +46,250 @@ slide_player:
       expire: 8s
       
   mode_base_started:
-    widgets:
+    base_slide_main:
+      action: play
 
+
+variable_player:
+  left_ramp_hit:
+    score: 75000
+  right_ramp_hit:
+    score: 115000
+  upper_drop_target_hit:
+    score: 145000
+  left_top_pop_hit:
+    score: 573
+  cellar_hit:
+    score: 100000
+  spinner_hit:
+    score: 5000
+  left_inlane_hit:
+    score: 1300
+  left_outlane_hit:
+    score: 1700
+
+# EK testing lightshow on shot action
+show_player:
+#  mode_skillshot_complete:
+  mode_base_started:   
+    flash_token:
+      loops: -1
+      speed: 2
+      show_tokens:
+        led: arrow
+        color1: ffffff
+
+#  mode_base_started.1:       
+#   flash_token2:
+#      loops: -1
+#      speed: 3
+#     show_tokens:
+#        led: l_left_return_lane
+#        color1: red
+
+  spinner_hit:
+    flash_token:
+      loops: 2
+      speed: 8
+      show_tokens:
+        led: l_right_loop_arrow
+        color1: 46eb34
+
+  left_inlane_hit:
+    flash_token:
+      loops: 2
+      speed: 8
+      show_tokens:
+        led: l_left_return_lane
+        color1: red
+
+  mysteryawardtemp_hit:
+    mystery_flash:
+       loops: 0
+       show_tokens:
+        led: insert, gi, jet_bumper, flasher
+        color1: white
+
+#  trap completed
+  slide_trapcomplete_active:
+    rw_complete:
+      loops: 2
+      speed: 25
+
+ 
+ 
+sound_player:
+  base_mode_started:
+    playagame:
+      action: play
+  mode_razorwire_started:
+    razorwire:
+      action: play
+  mode_razorwire_complete:
+    trapcomplete:
+      action: play
+
+  mode_drillchair_started:
+    drillchair:
+      action: play  
+  mode_drillchair_complete:
+    trapcomplete:
+      action: play
+
+  mode_reversebeartrap_started:
+    reversebeartrap:
+      action: play
+  mode_reversebeartrap_complete:
+    trapcomplete:
+      action: play
+ 
+  mode_quadshotgun_complete:
+    trapcomplete:
+      action: play
+ 
+widgets:
+  saw_letters:
+    - type: Text
+      text: Shoot WHITE ARROWS to spell SAW!
+      color: white
+      x: 50%
+      y: 85%
+      z: 2
+      font_size: 60
+      font_name: Skilt Gothic W04 Thin
+    - type: Text
+      text: SAW
+      color: white
+      x: 50%
+      y: 20%
+      z: 2
+      font_size: 110
+      font_name: sawesome      
+
+  cellar_start:
+    - type: Text
+      text: Get to the BATHROOM to Select A Mode!
+      color: white
+      x: 50%
+      y: 85%
+      z: 2
+      font_size: 60
+      font_name: Skilt Gothic W04 Thin
+      
+  saw_s_letters:
+     - type: Text
+       text: S
+       color: red
+       x: 44.6%
+       y: 20%
+       z: 3
+       font_size: 110
+       font_name: sawesome
+  saw_sa_letters:
+     - type: Text
+       text: S
+       color: red
+       x: 44.6%
+       y: 20%
+       z: 3
+       font_size: 110
+       font_name: sawesome
+     - type: Text
+       text: A
+       color: red
+       x: 50%
+       y: 20%
+       z: 3
+       font_size: 110
+       font_name: sawesome     
+  saw_saw_letters:
+     - type: Text
+       text: S
+       color: red
+       x: 44.6%
+       y: 20%
+       z: 3
+       font_size: 110
+       font_name: sawesome
+     - type: Text
+       text: A
+       color: red
+       x: 50%
+       y: 20%
+       z: 3
+       font_size: 110
+       font_name: sawesome    
+     - type: Text
+       text: W
+       color: red
+       x: 55.4%
+       y: 20%
+       z: 3
+       font_size: 110
+       font_name: sawesome        
+
+widget_player:
+  mode_saw_qualify_started:
+    saw_letters:
+      slide: base_slide_main
+      action: add
+  saw_qualify_complete:
+    saw_letters:
+      action: remove
+    saw_s_letters:
+      action: remove
+    saw_sa_letters:
+      action: remove
+  sg_saw_qualify_subtract_hit{device.counters.saw_qualify_counter.value==1}:
+    saw_s_letters:
+      action: remove    
+  sg_saw_qualify_subtract_hit{device.counters.saw_qualify_counter.value==2}:
+    saw_sa_letters:
+      action: remove    
+  mode_cellar_started:
+    cellar_start:
+      slide: base_slide_main
+      action: add
+  mode_cellar_complete:
+    cellar_start:
+      action: remove
+      
+  logicblock_saw_qualify_counter_updated{value==1}:
+    saw_s_letters:
+      slide: base_slide_main
+      action: add   
+  logicblock_saw_qualify_counter_updated{value==2}:
+    saw_sa_letters:
+      slide: base_slide_main
+      action: add  
+  logicblock_saw_qualify_counter_updated{value==3}:
+    saw_saw_letters:
+      slide: base_slide_main
+      action: add      
+ 
+slides:
+#  trapcomplete:
+#    widgets:
+#    - type: Text
+#      text: You Survived
+#      color: AD1400
+#      font_name: TrajanProRegular
+#      font_size: 100
+#      x: 35%
+#      y: 50%
+#      animations:
+#       pre_show_slide:
+#        - property: opacity
+#          value: 0
+#          duration: 1s
+#        - property: opacity
+#          value: 1
+#          duration: 1s
+#          repeat: true
+#    - type: image
+#      image: trapcomplete 
+  base_slide_main: 
+    widgets:
       - type: image
         image: spiral
         opacity: 0.7
@@ -172,7 +414,7 @@ slide_player:
         opacity: 0.9
         y: 1
         x: left+1210
-        anchor_y: bottom
+        anchor_y: bottom           
 
       - type: video
         video: gordonsaw 
@@ -181,127 +423,7 @@ slide_player:
         end_behavior: loop
 #      - type: image
 #        image: gordonsaw
-
-
-variable_player:
-  left_ramp_hit:
-    score: 75000
-  right_ramp_hit:
-    score: 115000
-  upper_drop_target_hit:
-    score: 145000
-  left_top_pop_hit:
-    score: 573
-  cellar_hit:
-    score: 100000
-  spinner_hit:
-    score: 5000
-  left_inlane_hit:
-    score: 1300
-  left_outlane_hit:
-    score: 1700
-
-# EK testing lightshow on shot action
-show_player:
-#  mode_skillshot_complete:
-  mode_base_started:   
-    flash_token:
-      loops: -1
-      speed: 2
-      show_tokens:
-        led: arrow
-        color1: ffffff
-
-#  mode_base_started.1:       
-#   flash_token2:
-#      loops: -1
-#      speed: 3
-#     show_tokens:
-#        led: l_left_return_lane
-#        color1: red
-
-  spinner_hit:
-    flash_token:
-      loops: 2
-      speed: 8
-      show_tokens:
-        led: l_right_loop_arrow
-        color1: 46eb34
-
-  left_inlane_hit:
-    flash_token:
-      loops: 2
-      speed: 8
-      show_tokens:
-        led: l_left_return_lane
-        color1: red
-
-  mysteryawardtemp_hit:
-    mystery_flash:
-       loops: 0
-       show_tokens:
-        led: insert, gi, jet_bumper, flasher
-        color1: white
-
-#  trap completed
-  slide_trapcomplete_active:
-    rw_complete:
-      loops: 2
-      speed: 25
-
  
- 
-sound_player:
-  base_mode_started:
-    playagame:
-      action: play
-  mode_razorwire_started:
-    razorwire:
-      action: play
-  mode_razorwire_complete:
-    trapcomplete:
-      action: play
-
-  mode_drillchair_started:
-    drillchair:
-      action: play  
-  mode_drillchair_complete:
-    trapcomplete:
-      action: play
-
-  mode_reversebeartrap_started:
-    reversebeartrap:
-      action: play
-  mode_reversebeartrap_complete:
-    trapcomplete:
-      action: play
- 
-  mode_quadshotgun_complete:
-    trapcomplete:
-      action: play
- 
-slides:
-#  trapcomplete:
-#    widgets:
-#    - type: Text
-#      text: You Survived
-#      color: AD1400
-#      font_name: TrajanProRegular
-#      font_size: 100
-#      x: 35%
-#      y: 50%
-#      animations:
-#       pre_show_slide:
-#        - property: opacity
-#          value: 0
-#          duration: 1s
-#        - property: opacity
-#          value: 1
-#          duration: 1s
-#          repeat: true
-#    - type: image
-#      image: trapcomplete 
-      
   trapcomplete:
     widgets:
     - type: video
@@ -340,4 +462,3 @@ slides:
       video: extraball
       width: 1366
       height: 768
-       
