@@ -240,6 +240,8 @@ widget_player:
       action: remove
     saw_sa_letters:
       action: remove
+    saw_saw_letters:
+      action: remove      
   sg_saw_qualify_subtract_hit{device.counters.saw_qualify_counter.value==1}:
     saw_s_letters:
       action: remove    
@@ -253,6 +255,10 @@ widget_player:
   mode_cellar_complete:
     cellar_start:
       action: remove
+  mode_selection_mode_stopped:
+    saw_letters:
+      slide: base_slide_main
+      action: add      
       
   logicblock_saw_qualify_counter_updated{value==1}:
     saw_s_letters:
