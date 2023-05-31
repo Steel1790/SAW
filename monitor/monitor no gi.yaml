@@ -1,0 +1,525 @@
+device_size: 0.05
+flipper: {}
+light:
+  l_bonus_x1:
+    shape: SQUARE
+    size: 0.03
+    x: 0.36550191570881224
+    y: 0.7763845350052246
+  l_bonus_x2:
+    shape: SQUARE
+    size: 0.03
+    x: 0.42246325322187395
+    y: 0.7847439916405434
+  l_bonus_x3:
+    shape: SQUARE
+    size: 0.03
+    x: 0.4770512016718913
+    y: 0.793103448275862
+  l_bonus_x4:
+    shape: SQUARE
+    size: 0.03
+    x: 0.5340125391849531
+    y: 0.793103448275862
+  l_bonus_x5:
+    shape: SQUARE
+    size: 0.03
+    x: 0.5886004876349704
+    y: 0.7847439916405434
+  l_bonus_x6:
+    shape: SQUARE
+    size: 0.03
+    x: 0.6455618251480321
+    y: 0.7763845350052246
+  l_circle1:
+    shape: CIRCLE
+    size: 0.03
+    x: 0.6832466124661246
+    y: 0.41695702671312423
+  l_circle2:
+    shape: CIRCLE
+    size: 0.03
+    x: 0.7254548974061169
+    y: 0.4308943089430894
+  l_circle3:
+    size: 0.03
+    x: 0.7333689508323653
+    y: 0.45296167247386754
+  l_circle4:
+    size: 0.03
+    x: 0.7017127371273713
+    y: 0.47270615563298485
+  l_circle5:
+    size: 0.03
+    x: 0.6489523809523808
+    y: 0.4750290360046457
+  l_circle6:
+    size: 0.03
+    x: 0.6067440960123887
+    y: 0.4610917537746806
+  l_circle7:
+    size: 0.03
+    x: 0.6014680603948896
+    y: 0.43902439024390244
+  l_circle8:
+    size: 0.03
+    x: 0.6290956749672346
+    y: 0.42142857142857143
+  l_flasher_1:
+    size: 0.05
+    x: 0.08382301587301588
+    y: 0.5095238095238096
+  l_flasher_2:
+    x: 0.07571111111111112
+    y: 0.2916666666666667
+  l_flasher_3:
+    x: 0.3055484126984127
+    y: 0.08452380952380953
+  l_flasher_4:
+    size: 0.05
+    x: 0.6165047619047619
+    y: 0.058333333333333334
+  l_flasher_5:
+    x: 0.9004214285714287
+    y: 0.617857142857143
+  l_inner_loop_arrow:
+    rotation: 310
+    shape: ARROW
+    size: 0.05
+    x: 0.42721003134796237
+    y: 0.2424242424242424
+  l_left_bottom_bumper:
+    size: 0.04
+    x: 0.08069522814350401
+    y: 0.3824451410658307
+  l_left_cellar_sign:
+    size: 0.03
+    x: 0.1352831765935214
+    y: 0.4681295715778474
+  l_left_loop_arrow:
+    rotation: 340
+    shape: ARROW
+    size: 0.05
+    x: 0.2329983981360128
+    y: 0.44285714285714284
+  l_left_outlane:
+    size: 0.05
+    x: 0.1400299547196099
+    y: 0.7053291536050157
+  l_left_ramp_triangle1:
+    rotation: 300
+    shape: TRIANGLE
+    size: 0.05
+    x: 0.5957206548241031
+    y: 0.3448275862068965
+  l_left_ramp_triangle2:
+    rotation: 300
+    shape: TRIANGLE
+    size: 0.05
+    x: 0.4960383141762452
+    y: 0.31974921630094044
+  l_left_ramp_triangle3:
+    rotation: 290
+    shape: TRIANGLE
+    size: 0.04
+    x: 0.4082229188436085
+    y: 0.29780564263322884
+  l_left_return_lane:
+    rotation: 210
+    shape: ARROW
+    size: 0.05
+    x: 0.2702781418377748
+    y: 0.6464285714285714
+  l_left_standup_arrow:
+    rotation: 350
+    shape: ARROW
+    size: 0.05
+    x: 0.42483664228491813
+    y: 0.47962382445141066
+  l_left_standup_right_ramp_arrow:
+    rotation: 20
+    shape: ARROW
+    size: 0.05
+    x: 0.6692957157784744
+    y: 0.3166144200626959
+  l_left_top_bumper:
+    size: 0.04
+    x: 0.36550191570881224
+    y: 0.1264367816091954
+  l_lower_top_bumper:
+    size: 0.04
+    x: 0.5292657610588645
+    y: 0.1954022988505747
+  l_middle_standup:
+    size: 0.06
+    x: 0.5316391501219088
+    y: 0.26436781609195403
+  l_right_bottom_bumper:
+    size: 0.04
+    x: 0.30142041100661787
+    y: 0.3991640543364681
+  l_right_cellar_sign:
+    size: 0.03
+    x: 0.34017766127857874
+    y: 0.42738095238095236
+  l_right_loop_arrow:
+    rotation: 20
+    shape: ARROW
+    size: 0.05
+    x: 0.8644240570846076
+    y: 0.3499999999999999
+  l_right_outlane:
+    size: 0.05
+    x: 0.8710337861372344
+    y: 0.7042842215256008
+  l_right_ramp_triangle1:
+    rotation: 20
+    shape: TRIANGLE
+    size: 0.04
+    x: 0.7096433298502264
+    y: 0.3709508881922675
+  l_right_ramp_triangle2:
+    rotation: 20
+    shape: TRIANGLE
+    size: 0.04
+    x: 0.7286304423545803
+    y: 0.3343782654127482
+  l_right_standup_arrow:
+    rotation: 30
+    shape: ARROW
+    x: 0.8283127830024382
+    y: 0.5412748171368861
+  l_right_standup_right_ramp_arrow:
+    rotation: 20
+    shape: ARROW
+    x: 0.7875345856997235
+    y: 0.3607142857142857
+  l_right_top_bumper:
+    size: 0.04
+    x: 0.5672399860675722
+    y: 0.10867293625914316
+  l_shoot_again:
+    shape: CIRCLE
+    size: 0.05
+    x: 0.5055318704284222
+    y: 0.8672936259143156
+  l_skill_shot1:
+    rotation: 310
+    shape: TRIANGLE
+    size: 0.04
+    x: 0.8639136189481017
+    y: 0.45141065830721
+  l_skill_shot2:
+    rotation: 300
+    shape: TRIANGLE
+    size: 0.04
+    x: 0.7404973876698016
+    y: 0.4043887147335423
+  l_skill_shot3:
+    rotation: 260
+    shape: TRIANGLE
+    size: 0.04
+    x: 0.5862270985719262
+    y: 0.3887147335423198
+  l_top_bottom_bumper:
+    size: 0.04
+    x: 0.23021873911529084
+    y: 0.3176593521421108
+  l_top_drop1:
+    size: 0.03
+    x: 0.6075876001393242
+    y: 0.30929989550679204
+  l_top_drop2:
+    size: 0.03
+    x: 0.614707767328457
+    y: 0.2884012539184953
+  l_top_drop3:
+    size: 0.03
+    x: 0.6218279345175897
+    y: 0.2675026123301985
+  l_top_drop4:
+    size: 0.03
+    x: 0.6289481017067223
+    y: 0.2445141065830721
+  l_top_drop5:
+    size: 0.04
+    x: 0.6384416579588994
+    y: 0.22048066875653083
+  l_top_drop_triangle:
+    rotation: 10
+    shape: TRIANGLE
+    size: 0.04
+    x: 0.6455618251480321
+    y: 0.19331243469174506
+switch:
+  s_ball_shooter_lane:
+    shape: RECTANGLE
+    x: 0.9366535605067714
+    y: 0.888095238095238
+  s_eject:
+    rotation: 90
+    shape: RECTANGLE
+    x: 0.8294742973642055
+    y: 0.882142857142857
+  s_enter_left_ramp:
+    rotation: 300
+    shape: RECTANGLE
+    size: 0.05
+    x: 0.28192806174457546
+    y: 0.2738095238095238
+  s_inner_loop:
+    rotation: 310
+    shape: RECTANGLE
+    x: 0.29357798165137616
+    y: 0.1988095238095238
+  s_left_bottom_jet_bumper:
+    shape: CIRCLE
+    size: 0.08
+    x: 0.08069522814350401
+    y: 0.3814002089864159
+  s_left_cellar:
+    rotation: 340
+    shape: SQUARE
+    size: 0.05
+    x: 0.15901706722396378
+    y: 0.4942528735632184
+  s_left_flipper:
+    rotation: 310
+    shape: RECTANGLE
+    size: 0.07
+    x: 0.3983272945031506
+    y: 0.8525852585258525
+  s_left_inlane:
+    shape: RECTANGLE
+    size: 0.05
+    x: 0.211189514195051
+    y: 0.7340025094102886
+  s_left_lock_1:
+    shape: RECTANGLE
+    x: 0.05591961555264307
+    y: 0.8345238095238096
+  s_left_lock_2:
+    shape: RECTANGLE
+    x: 0.05591961555264307
+    y: 0.8047619047619049
+  s_left_lock_3:
+    shape: RECTANGLE
+    x: 0.05591961555264307
+    y: 0.7761904761904763
+  s_left_loop_bottom:
+    shape: RECTANGLE
+    size: 0.05
+    x: 0.0582495995340032
+    y: 0.18214285714285716
+  s_left_loop_top:
+    shape: RECTANGLE
+    x: 0.05591961555264307
+    y: 0.12976190476190477
+  s_left_outlane:
+    shape: RECTANGLE
+    x: 0.13751875342933556
+    y: 0.7641154328732749
+  s_left_ramp_score_bottom:
+    rotation: 320
+    shape: RECTANGLE
+    size: 0.05
+    x: 0.1840687345274501
+    y: 0.24047619047619045
+  s_left_ramp_score_top:
+    rotation: 350
+    shape: RECTANGLE
+    size: 0.05
+    x: 0.12814911897480705
+    y: 0.1857142857142857
+  s_left_slingshot:
+    rotation: 70
+    shape: RECTANGLE
+    size: 0.05
+    x: 0.28480668756530825
+    y: 0.7272727272727273
+  s_left_standup:
+    rotation: 80
+    shape: RECTANGLE
+    size: 0.04
+    x: 0.4115307781649245
+    y: 0.4471544715447154
+  s_left_standup_right_ramp:
+    rotation: 290
+    shape: RECTANGLE
+    size: 0.04
+    x: 0.6835360501567398
+    y: 0.28735632183908044
+  s_left_top_jet_bumper:
+    shape: CIRCLE
+    size: 0.08
+    x: 0.36550191570881224
+    y: 0.1264367816091954
+  s_lower_bank_drop_target_opto_lower:
+    rotation: 10
+    shape: RECTANGLE
+    size: 0.04
+    x: 0.4333770205329838
+    y: 0.4261904761904762
+  s_lower_bank_drop_target_opto_middle:
+    rotation: 10
+    shape: RECTANGLE
+    size: 0.04
+    x: 0.4426969564584244
+    y: 0.40119047619047615
+  s_lower_bank_drop_target_opto_upper:
+    rotation: 10
+    shape: RECTANGLE
+    size: 0.04
+    x: 0.45201689238386483
+    y: 0.3773809523809524
+  s_lower_top_jet_bumper:
+    shape: CIRCLE
+    size: 0.08
+    x: 0.5292657610588645
+    y: 0.1954022988505747
+  s_outhole:
+    shape: RECTANGLE
+    x: 0.48875835595791983
+    y: 0.957095709570957
+  s_plumb_bob_tilt:
+    shape: TRIANGLE
+    size: 0.05
+    x: 0.04659967962720256
+    y: 0.9523809523809523
+  s_plunger:
+    size: 0.05
+    x: 0.9559855068075614
+    y: 0.9592959295929593
+  s_right_bottom_jet_bumper:
+    shape: CIRCLE
+    size: 0.08
+    x: 0.30142041100661787
+    y: 0.3991640543364681
+  s_right_cellar:
+    rotation: 350
+    shape: SQUARE
+    size: 0.05
+    x: 0.3512615813305468
+    y: 0.4493207941483804
+  s_right_flipper:
+    rotation: 60
+    shape: RECTANGLE
+    size: 0.07
+    x: 0.6071799840534512
+    y: 0.8492849284928493
+  s_right_inlane:
+    shape: RECTANGLE
+    x: 0.8009608300279568
+    y: 0.7337733773377337
+  s_right_loop_bottom:
+    rotation: 340
+    shape: RECTANGLE
+    x: 0.9180136886558904
+    y: 0.11904761904761904
+  s_right_loop_top:
+    rotation: 310
+    shape: RECTANGLE
+    size: 0.05
+    x: 0.8644240570846076
+    y: 0.07857142857142857
+  s_right_outlane:
+    shape: RECTANGLE
+    size: 0.05
+    x: 0.8720138068852757
+    y: 0.7612761276127612
+  s_right_ramp_down:
+    rotation: 20
+    shape: RECTANGLE
+    size: 0.05
+    x: 0.7153050822775593
+    y: 0.23452380952380952
+  s_right_ramp_score_bottom:
+    rotation: 20
+    shape: RECTANGLE
+    size: 0.05
+    x: 0.7549148099606815
+    y: 0.2928571428571428
+  s_right_ramp_score_top:
+    rotation: 20
+    shape: RECTANGLE
+    size: 0.05
+    x: 0.7945245376438036
+    y: 0.23928571428571427
+  s_right_slingshot:
+    rotation: 290
+    shape: RECTANGLE
+    x: 0.7262570532915361
+    y: 0.7283176593521421
+  s_right_standup:
+    rotation: 300
+    shape: RECTANGLE
+    size: 0.04
+    x: 0.8615402298850575
+    y: 0.5141065830721003
+  s_right_standup_right_ramp:
+    rotation: 110
+    shape: RECTANGLE
+    size: 0.04
+    x: 0.8093256704980843
+    y: 0.3270637408568443
+  s_right_top_jet_bumper:
+    shape: CIRCLE
+    size: 0.08
+    x: 0.5672399860675722
+    y: 0.10762800417972831
+  s_spinner:
+    shape: SQUARE
+    size: 0.04
+    x: 0.9226736566186107
+    y: 0.2357142857142857
+  s_start:
+    shape: CIRCLE
+    size: 0.06
+    x: 0.24445907349355625
+    y: 0.9571577847439917
+  s_top_right_reject:
+    shape: CIRCLE
+    size: 0.04
+    x: 0.8274142857142858
+    y: 0.1761904761904762
+  s_trough1:
+    rotation: 60
+    shape: CIRCLE
+    size: 0.04
+    x: 0.6197757390417941
+    y: 0.9345238095238095
+  s_trough2:
+    rotation: 60
+    shape: CIRCLE
+    size: 0.04
+    x: 0.6943352264453182
+    y: 0.9142857142857143
+  s_trough3:
+    rotation: 60
+    shape: CIRCLE
+    size: 0.04
+    x: 0.7595747779234018
+    y: 0.8976190476190474
+  s_trough_jam:
+    rotation: 60
+    shape: RECTANGLE
+    size: 0.05
+    x: 0.5498762196009903
+    y: 0.9511904761904761
+  s_upper_bank_drop_target_opto:
+    rotation: 310
+    shape: RECTANGLE
+    size: 0.04
+    x: 0.6640454346876365
+    y: 0.14404761904761904
+  s_upper_bottom_jet_bumper:
+    shape: CIRCLE
+    size: 0.08
+    x: 0.23021873911529084
+    y: 0.3166144200626959
+  s_upper_right_flipper:
+    rotation: 20
+    shape: RECTANGLE
+    size: 0.07
+    x: 0.9323011811884552
+    y: 0.34543454345434543
