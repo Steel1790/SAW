@@ -2,7 +2,7 @@
 mode:
 #  start_events: mode_cellar_complete, stop_mode_cellar, stop_cellar_qualify_counter
   start_events: selection_mode_razorwire_selected
-  stop_events: stop_mode_razorwire, ball_ended
+  stop_events: stop_mode_razorwire, ball_ended, player_razorwire_60s_timer_tick{value < 1}
  
 sequences:
   razorwire:
