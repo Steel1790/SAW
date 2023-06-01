@@ -6,7 +6,7 @@ mode:
 
 shots:
   shot_left_return_lane:
-    advance_events: shot_left_return_lane_saw_qualify_profile_lit_hit  
+    advance_events: shot_left_return_lane_saw_qualify_profile_lit_hit 
     switches: s_left_inlane
     profile: saw_qualify_profile
     show_tokens:
@@ -15,43 +15,50 @@ shots:
       - events: ball_starting
         state: 2
   shot_left_loop:
-    advance_events: shot_left_loop_saw_qualify_profile_lit_hit  
+    advance_events: shot_left_loop_saw_qualify_profile_lit_hit 
+    reset_events: slide_trapcomplete_removed, mode_razorwire_stopped, mode_drillchair_stopped, mode_quadshotgun_stopped, mode_reversebeartrap_stopped, mode_zepstest_stopped, mode_flammablejelly_stopped   
     switches: s_left_loop_bottom, s_left_loop_top
     profile: saw_qualify_profile
     show_tokens:
       leds: l_left_loop_arrow
   shot_left_standup:
     advance_events: shot_left_standup_saw_qualify_profile_lit_hit  
+    reset_events: slide_trapcomplete_removed, sg_saw_reset_complete, mode_razorwire_stopped, mode_drillchair_stopped, mode_quadshotgun_stopped, mode_reversebeartrap_stopped, mode_zepstest_stopped, mode_flammablejelly_stopped    
     switches: s_left_standup
     profile: saw_qualify_profile
     show_tokens:
       leds: l_left_standup_arrow
   shot_inner_loop:
     advance_events: shot_inner_loop_saw_qualify_profile_lit_hit  
+    reset_events: slide_trapcomplete_removed, sg_saw_reset_complete, mode_razorwire_stopped, mode_drillchair_stopped, mode_quadshotgun_stopped, mode_reversebeartrap_stopped, mode_zepstest_stopped, mode_flammablejelly_stopped 
     switches: s_inner_loop
     profile: saw_qualify_profile
     show_tokens:
       leds: l_inner_loop_arrow
   shot_left_standup_rightramp:
     advance_events: shot_left_standup_rightramp_saw_qualify_profile_lit_hit  
+    reset_events: slide_trapcomplete_removed, sg_saw_reset_complete, mode_razorwire_stopped, mode_drillchair_stopped, mode_quadshotgun_stopped, mode_reversebeartrap_stopped, mode_zepstest_stopped, mode_flammablejelly_stopped 
     switches: s_left_standup_right_ramp
     profile: saw_qualify_profile
     show_tokens:
       leds: l_left_standup_right_ramp_arrow
   shot_right_standup_rightramp:
     advance_events: shot_right_standup_rightramp_saw_qualify_profile_lit_hit
+    reset_events: slide_trapcomplete_removed, sg_saw_reset_complete, mode_razorwire_stopped, mode_drillchair_stopped, mode_quadshotgun_stopped, mode_reversebeartrap_stopped, mode_zepstest_stopped, mode_flammablejelly_stopped   
     switches: s_right_standup_right_ramp
     profile: saw_qualify_profile
     show_tokens:
       leds: l_right_standup_right_ramp_arrow
   shot_right_loop:
     advance_events: shot_right_loop_saw_qualify_profile_lit_hit
+    reset_events: slide_trapcomplete_removed, sg_saw_reset_complete, mode_razorwire_stopped, mode_drillchair_stopped, mode_quadshotgun_stopped, mode_reversebeartrap_stopped, mode_zepstest_stopped, mode_flammablejelly_stopped    
     switches: s_right_loop_bottom, s_right_loop_top
     profile: saw_qualify_profile
     show_tokens:
       leds: l_right_loop_arrow
   shot_right_standup:
     advance_events: shot_right_standup_saw_qualify_profile_lit_hit
+    reset_events: slide_trapcomplete_removed, sg_saw_reset_complete, mode_razorwire_stopped, mode_drillchair_stopped, mode_quadshotgun_stopped, mode_reversebeartrap_stopped, mode_zepstest_stopped, mode_flammablejelly_stopped   
     switches: s_right_standup
     profile: saw_qualify_profile
     show_tokens:
@@ -74,6 +81,9 @@ shot_profiles:
 shot_groups:
   sg_saw_qualify:
     shots: shot_left_return_lane, shot_left_loop, shot_left_standup, shot_inner_loop, shot_left_standup_rightramp, shot_right_standup_rightramp, shot_right_loop, shot_right_standup
+  sg_saw_reset:
+    shots: shot_left_loop, shot_left_standup, shot_inner_loop, shot_left_standup_rightramp, shot_right_standup_rightramp, shot_right_loop, shot_right_standup
+
 
 shows:
   shot_on:    # define our show to indicate the state
@@ -156,7 +166,7 @@ show_player:
 event_player:
   sg_saw_qualify_subtract_hit{device.counters.saw_qualify_counter.value > 0}:
     - subtract_a_saw_letter
-    
+
 counters:
   saw_qualify_counter:
     starting_count: 0
@@ -165,7 +175,9 @@ counters:
     disable_events: disable_qualify
     start_enabled: true
 #    persist_state: true
-    reset_on_complete: true
+    reset_events:
+      slide_trapcomplete_removed, mode_razorwire_stopped, mode_drillchair_stopped, mode_quadshotgun_stopped, mode_reversebeartrap_stopped, mode_zepstest_stopped, mode_flammablejelly_stopped
+    disable_on_complete: false
     events_when_complete: saw_qualify_complete   
     count_events: sg_saw_qualify_lit_hit
     control_events:
@@ -193,8 +205,7 @@ slides:
   s_subtract:
     widgets:
     - type: video
-      video: s_subtract      
-
+      video: s_subtract     
     
 slide_player:
   logicblock_saw_qualify_counter_updated{value==1}:
@@ -208,7 +219,7 @@ slide_player:
   logicblock_saw_qualify_counter_updated{value==3}:
     saw_collect:
       priority: 190
-      expire: 3s      
+      expire: 3s         
   sg_saw_qualify_subtract_hit{device.counters.saw_qualify_counter.value==1}:
     s_subtract:
       priority: 185
@@ -216,4 +227,4 @@ slide_player:
   sg_saw_qualify_subtract_hit{device.counters.saw_qualify_counter.value==2}:
     sa_subtract:
       priority: 185
-      expire: 3s     
+      expire: 3s
