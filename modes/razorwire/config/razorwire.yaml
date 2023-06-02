@@ -347,8 +347,7 @@ show_player:
         speed: 10
         show_tokens:
           color1: ffffff
-#      stop_top_drop_chase:
-#        top_drop_chase: stop
+      top_drop_chase: stop
 
 
 
