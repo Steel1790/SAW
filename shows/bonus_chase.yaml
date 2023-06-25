@@ -1,27 +1,27 @@
 #show_version=5
 - time: 0
   lights:
-    l_bonus_x1: ff
+    l_drillchair: ff
 - time: '+1'
   lights:
-    l_bonus_x2: ff
+    l_beartrap: ff
 - time: '+1'
   lights:
-    l_bonus_x3: ff
+    l_zeptest: ff
 - time: '+1'
   lights:
-    l_bonus_x4: ff
+    l_jelly: ff
 - time: '+1'
   lights:
-    l_bonus_x5: ff
+    l_quadshotgun: ff
 - time: '+1'
   lights:
-    l_bonus_x6: ff
+    l_razorwire: ff
 - time: '+1'
   lights:
-    l_bonus_x1: 0
-    l_bonus_x2: 0
-    l_bonus_x3: 0
-    l_bonus_x4: 0
-    l_bonus_x5: 0
-    l_bonus_x6: 0
+    l_drillchair: 0
+    l_beartrap: 0
+    l_zeptest: 0
+    l_jelly: 0
+    l_quadshotgun: 0
+    l_razorwire: 0
