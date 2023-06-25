@@ -91,11 +91,11 @@
     
 - time: '+1'
   lights:
-    l_bonus_x1: '29292A'
-    l_bonus_x2: '6F6F6F'
-    l_bonus_x3: 'B6B6B6'
-    l_bonus_x4: 'E4E4E4'
-    l_bonus_x5: 'F9F9F9'
+    l_drillchair: '29292A'
+    l_beartrap: '6F6F6F'
+    l_zeptest: 'B6B6B6'
+    l_jelly: 'E4E4E4'
+    l_quadshotgun: 'F9F9F9'
     l_circle3: '000000'
     l_circle4: '000000'
     l_flasher_5: 'BDBDBD'
@@ -105,11 +105,11 @@
     
 - time: '+1'
   lights:
-    l_bonus_x1: '000000'
-    l_bonus_x2: '000000'
+    l_drillchair: '000000'
+    l_beartrap: '000000'
     l_bonus_x3: '000000'
-    l_bonus_x4: '000000'
-    l_bonus_x5: '000000'
+    l_jelly: '000000'
+    l_quadshotgun: '000000'
     l_flasher_5: '000000'
     l_right_outlane: '1B1B1B'
     l_shoot_again: '2D2D2D'
@@ -121,16 +121,16 @@
     
 - time: '+1'
   lights:
-    l_bonus_x1: '00B301'
+    l_drillchair: '00B301'
     l_left_outlane: '009301'
     l_shoot_again: '008101'
     
 - time: '+1'
   lights:
-    l_bonus_x1: '000000'
-    l_bonus_x4: '000600'
-    l_bonus_x5: '003101'
-    l_bonus_x6: '006802'
+    l_drillchair: '000000'
+    l_jelly: '000600'
+    l_quadshotgun: '003101'
+    l_razorwire: '006802'
     l_flasher_1: '00A102'
     l_left_outlane: '000000'
     l_left_return_lane: '003901'
@@ -138,9 +138,9 @@
     
 - time: '+1'
   lights:
-    l_bonus_x4: '000000'
-    l_bonus_x5: '000000'
-    l_bonus_x6: '000000'
+    l_jelly: '000000'
+    l_quadshotgun: '000000'
+    l_razorwire: '000000'
     l_flasher_1: '000000'
     l_left_bottom_bumper: '005F02'
     l_left_loop_arrow: '006202'
