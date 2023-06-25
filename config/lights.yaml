@@ -180,31 +180,31 @@ lights:
     type: grb
     tags: insert
 
- # bonus lights
-  l_bonus_x1:
+ # trap lights
+  l_drillchair:
     number: 58
     type: grb
-    tags: insert
-  l_bonus_x2:
+    tags: insert, trap
+  l_beartrap:
     number: 59
     type: grb
-    tags: insert
-  l_bonus_x3:
+    tags: insert, trap
+  l_zeptest:
     number: 60
     type: grb
-    tags: insert
-  l_bonus_x4:
+    tags: insert, trap
+  l_jelly:
     number: 61
     type: grb
-    tags: insert
-  l_bonus_x5:
+    tags: insert, trap
+  l_quadshotgun:
     number: 62
     type: grb
-    tags: insert
-  l_bonus_x6:
+    tags: insert, trap
+  l_razorwire:
     number: 63
     type: grb
-    tags: insert
+    tags: insert, trap
 
 # gi lights
 
