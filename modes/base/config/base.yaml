@@ -51,22 +51,24 @@ slide_player:
 
 
 variable_player:
-  left_ramp_hit:
-    score: 75000
-  right_ramp_hit:
-    score: 115000
-  upper_drop_target_hit:
-    score: 145000
-  left_top_pop_hit:
-    score: 573
   cellar_hit:
     score: 100000
-  spinner_hit:
-    score: 5000
-  left_inlane_hit:
-    score: 1300
-  left_outlane_hit:
-    score: 1700
+  sw_pops:
+    score: 50000
+  sw_slingshot:
+    score: 333
+  sw_inlane:
+    score: 25000
+  sw_outlane:
+    score: 100000
+  sw_standup:
+    score: 75000
+  sw_ramp:
+    score: 125000
+  sw_spinner:
+    score: 30000
+  sw_loop:
+    score: 115000
 
 # EK testing lightshow on shot action
 show_player:
