@@ -91,43 +91,43 @@ switches:
     tags: middle_standup, standup, switch_hit
   s_enter_left_ramp:
     number: 33
-    tags: left_ramp, ramp_hit, switch_hit
+    tags: left_ramp, ramp_hit, switch_hit, ramp
   s_left_ramp_score_top:
     number: 34
-    tags: left_ramp, ramp_hit, switch_hit
+    tags: left_ramp, ramp_hit, switch_hit, ramp
   s_left_ramp_score_bottom:
     number: 35
-    tags: left_ramp, ramp_hit, switch_hit
+    tags: left_ramp, ramp_hit, switch_hit, ramp
   s_left_loop_top:
     number: 36
-    tags: left_loop, loop_hit, switch_hit
+    tags: left_loop, loop_hit, switch_hit, loop
   s_left_loop_bottom:
     number: 37
-    tags: left_loop, loop_hit, switch_hit
+    tags: left_loop, loop_hit, switch_hit, loop
   s_right_loop_top:
     number: 38
-    tags: right_loop, loop_hit, switch_hit
+    tags: right_loop, loop_hit, switch_hit, loop
   s_right_loop_bottom:
     number: 39
-    tags: right_loop, loop_hit, switch_hit
+    tags: right_loop, loop_hit, switch_hit, loop
   s_inner_loop:
     number: 40
-    tags: inner_loop, loop_hit, switch_hit
+    tags: inner_loop, loop_hit, switch_hit, loop
   s_spinner:
     number: 41
     tags: spinner
   s_right_ramp_down:
     number: 42
-    tags: right_ramp, ramp_hit, switch_hit
+    tags: right_ramp, ramp_hit, switch_hit, ramp
   s_top_right_reject:
     number: 43
     tags: right_ramp, ramp_hit, switch_hit
   s_right_ramp_score_top:
     number: 44
-    tags: right_ramp, ramp_hit, switch_hit
+    tags: right_ramp, ramp_hit, switch_hit, ramp
   s_right_ramp_score_bottom:
     number: 45
-    tags: right_ramp, switch_hit, switch_hit
+    tags: right_ramp, switch_hit, switch_hit, ramp
   s_left_standup_right_ramp:
     number: 47
     tags: standup, switch_hit
