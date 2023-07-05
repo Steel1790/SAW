@@ -1,34 +1,34 @@
 #show_version=5
 - duration: 1
   lights:
-    l_bonus_x1: red
-    l_bonus_x2: red
-    l_bonus_x3: ff0000
+    l_drillchair: red
+    l_beartrap: red
+    l_zeptest: ff0000
 - duration: 1
   lights:
-    l_bonus_x1: ff6600
-    l_bonus_x2: ff6600
-    l_bonus_x3: ff6600
+    l_drillchair: ff6600
+    l_beartrap: ff6600
+    l_zeptest: ff6600
 - duration: 1
   lights:
-    l_bonus_x1: ffcc00
-    l_bonus_x2: ffcc00
-    l_bonus_x3: ffcc00
+    l_drillchair: ffcc00
+    l_beartrap: ffcc00
+    l_zeptest: ffcc00
 - duration: 1
   lights:
-    l_bonus_x1: lime
-    l_bonus_x2: 00ff00
-    l_bonus_x3: 00ff00
+    l_drillchair: lime
+    l_beartrap: 00ff00
+    l_zeptest: 00ff00
 - duration: 1
   lights:
-    l_bonus_x1: blue
-    l_bonus_x2: 0000ff
-    l_bonus_x3: 0000ff
+    l_drillchair: blue
+    l_beartrap: 0000ff
+    l_zeptest: 0000ff
 - duration: 1
   lights:
-    l_bonus_x1: ff00aa
-    l_bonus_x2: ff00aa
-    l_bonus_x3: ff00aa
+    l_drillchair: ff00aa
+    l_beartrap: ff00aa
+    l_zeptest: ff00aa
 - duration: 5
   lights:
     l_middle_standup: ff00aa
