@@ -67,8 +67,115 @@ variable_player:
     score: 125000
   sw_spinner:
     score: 30000
+  sw_drop_target:
+    score: 95000
   sw_loop:
     score: 115000
+  minimode_pops_complete:
+    score: 3000000
+  minimode_standups_complete:
+    score: 3000000
+  minimode_scoops_complete:
+    score: 3000000
+  minimode_inlanes_complete:
+    score: 3000000
+  minimode_spinners_complete:
+    score: 3000000
+  minimode_ramps_complete:
+    score: 3000000
+  minimode_loops_complete:
+    score: 3000000
+  minimode_drops_complete:
+    score: 3000000
+
+counters:
+  minimode_pops_counter:
+    starting_count: 0
+    count_complete_value: 30
+    enable_events: 
+    disable_events: 
+    start_enabled: true
+#    persist_state: true
+    reset_on_complete: false
+    events_when_complete: minimode_pops_complete 
+    count_events: sw_pops
+
+  minimode_standups_counter:
+    starting_count: 0
+    count_complete_value: 10
+    enable_events: 
+    disable_events: 
+    start_enabled: true
+#    persist_state: true
+    reset_on_complete: false
+    events_when_complete: minimode_standups_complete 
+    count_events: sw_standup  
+    
+  minimode_scoops_counter:
+    starting_count: 0
+    count_complete_value: 10
+    enable_events: 
+    disable_events: 
+    start_enabled: true
+#    persist_state: true
+    reset_on_complete: false
+    events_when_complete: minimode_scoops_complete 
+    count_events: cellar_hit    
+
+  minimode_inlanes_counter:
+    starting_count: 0
+    count_complete_value: 6
+    enable_events: 
+    disable_events: 
+    start_enabled: true
+#    persist_state: true
+    reset_on_complete: false
+    events_when_complete: minimode_inlanes_complete 
+    count_events: sw_inlane    
+    
+  minimode_spinners_counter:
+    starting_count: 0
+    count_complete_value: 50
+    enable_events: 
+    disable_events: 
+    start_enabled: true
+#    persist_state: true
+    reset_on_complete: false
+    events_when_complete: minimode_spinners_complete 
+    count_events: sw_spinner 
+
+  minimode_ramps_counter:
+    starting_count: 0
+    count_complete_value: 10
+    enable_events: 
+    disable_events: 
+    start_enabled: true
+#    persist_state: true
+    reset_on_complete: false
+    events_when_complete: minimode_ramps_complete 
+    count_events: sw_ramp      
+    
+  minimode_loops_counter:
+    starting_count: 0
+    count_complete_value: 10
+    enable_events: 
+    disable_events: 
+    start_enabled: true
+#    persist_state: true
+    reset_on_complete: false
+    events_when_complete: minimode_loops_complete 
+    count_events: sw_loop   
+
+  minimode_drops_counter:
+    starting_count: 0
+    count_complete_value: 8
+    enable_events: 
+    disable_events: 
+    start_enabled: true
+#    persist_state: true
+    reset_on_complete: false
+    events_when_complete: minimode_drops_complete 
+    count_events: sw_drop_target  
 
 # EK testing lightshow on shot action
 show_player:
