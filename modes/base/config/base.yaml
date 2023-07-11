@@ -177,6 +177,40 @@ counters:
     events_when_complete: minimode_drops_complete 
     count_events: sw_drop_target  
 
+shows:
+  minimode_pops_show_complete:    
+    - duration: -1      
+      lights:    
+        (leds): red
+  minimode_standups_show_complete:    
+    - duration: -1      
+      lights:    
+        (leds): red   
+  minimode_scoops_show_complete:    
+    - duration: -1      
+      lights:    
+        (leds): red  
+  minimode_inlanes_show_complete:    
+    - duration: -1      
+      lights:    
+        (leds): red  
+  minimode_spinners_show_complete:    
+    - duration: -1      
+      lights:    
+        (leds): red  
+  minimode_ramps_show_complete:    
+    - duration: -1      
+      lights:    
+        (leds): red  
+  minimode_loops_show_complete:    
+    - duration: -1      
+      lights:    
+        (leds): red   
+  minimode_drops_show_complete:    
+    - duration: -1      
+      lights:    
+        (leds): red           
+ 
 # EK testing lightshow on shot action
 show_player:
 #  mode_skillshot_complete:
@@ -187,6 +221,47 @@ show_player:
       show_tokens:
         led: arrow
         color1: ffffff
+        
+  minimode_pops_complete:
+    minimode_pops_show_complete:
+      show_tokens:
+        leds: l_circle8
+      loops: -1   
+  minimode_drops_complete:
+    minimode_drops_show_complete:
+      show_tokens:
+        leds: l_circle7
+      loops: -1  
+  minimode_scoops_complete:
+    minimode_scoops_show_complete:
+      show_tokens:
+        leds: l_circle6
+      loops: -1  
+  minimode_inlanes_complete:
+    minimode_inlanes_show_complete:
+      show_tokens:
+        leds: l_circle5
+      loops: -1  
+  minimode_standups_complete:
+    minimode_standups_show_complete:
+      show_tokens:
+        leds: l_circle4
+      loops: -1  
+  minimode_loops_complete:
+    minimode_loops_show_complete:
+      show_tokens:
+        leds: l_circle3
+      loops: -1  
+  minimode_spinners_complete:
+    minimode_spinners_show_complete:
+      show_tokens:
+        leds: l_circle2
+      loops: -1  
+  minimode_ramps_complete:
+    minimode_ramps_show_complete:
+      show_tokens:
+        leds: l_circle1
+      loops: -1                
 
 #  mode_base_started.1:       
 #   flash_token2:
