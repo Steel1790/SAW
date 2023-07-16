@@ -309,10 +309,20 @@ sound_player:
   mode_razorwire_started:
     razorwire:
       action: play
+    RWModeStart:
+      delay: 4s
+      action: play
+
   mode_razorwire_complete:
     trapcomplete:
       action: play
-
+    RWModeStart:
+      action: stop
+      
+  upper_drop_target_hit:
+    SingleDropGlassBreak:
+      action: play
+      
   mode_drillchair_started:
     drillchair:
       action: play  
