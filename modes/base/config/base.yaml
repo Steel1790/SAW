@@ -299,9 +299,44 @@ show_player:
     rw_complete:
       loops: 2
       speed: 25
+      
+sound_pools:
+  razorwirepops:
+    load: preload
+    type: random
+    track: sfx
+    sounds:
+      - UpPops1
+      - UpPops2
+      - UpPops3
+      - UpPops4
+      
+  slingsaudio:
+    load: preload
+    type: random
+    track: sfx
+    sounds:
+      - LSling1
+      - LSling2
+      - LSling3
+      - LSling4
+      - LSling5
+      - LSling6
+      - RSling1
+      - RSling2
+      - RSling3
+ 
+  standupaudio:
+    load: preload
+    type: random
+    track: sfx
+    sounds:
+      - DropsCameraShutter1
+      - DropsCameraShutter2
+      - DropsCameraShutter3
+      - DropsCameraShutter4
+      - DropsCameraShutter5
 
- 
- 
 sound_player:
   mode_base_started:
     playagame:
@@ -321,7 +356,21 @@ sound_player:
       
   upper_drop_target_hit:
     SingleDropGlassBreak:
+      action: play 
+      
+  sw_pops:
+    razorwirepops:
       action: play
+  sw_slingshot:
+    slingsaudio:
+      action: play    
+  sw_spinner:
+    SpinnerShotgunLoading:
+      action: play
+  sw_standup:
+    standupaudio:
+      action: play
+    
       
   mode_drillchair_started:
     drillchair:
