@@ -341,6 +341,14 @@ sound_player:
   mode_base_started:
     playagame:
       action: play
+    BaseMusic:
+      delay: 5s
+      action: play
+      loops: -1
+  mode_selection_mode_started:
+    BaseMusic:
+      action: stop    
+ 
   mode_razorwire_started:
     razorwire:
       action: play
@@ -352,7 +360,11 @@ sound_player:
     trapcomplete:
       action: play
     RWModeStart:
-      action: stop
+      action: stop 
+    BaseMusic:
+      delay: 10s
+      action: play
+      loops: -1      
       
   upper_drop_target_hit:
     SingleDropGlassBreak:
@@ -378,6 +390,10 @@ sound_player:
   mode_drillchair_complete:
     trapcomplete:
       action: play
+    BaseMusic:
+      delay: 10s
+      action: play
+      loops: -1          
 
   mode_reversebeartrap_started:
     reversebeartrap:
@@ -385,10 +401,18 @@ sound_player:
   mode_reversebeartrap_complete:
     trapcomplete:
       action: play
+    BaseMusic:
+      delay: 10s
+      action: play
+      loops: -1          
  
   mode_quadshotgun_complete:
     trapcomplete:
       action: play
+    BaseMusic:
+      delay: 10s
+      action: play
+      loops: -1          
  
 widgets:
   saw_letters:
