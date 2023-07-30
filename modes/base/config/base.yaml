@@ -406,13 +406,18 @@ sound_player:
       action: play
       loops: -1          
  
+  mode_quadshotgun_started:
+    QuadShotgunModeStart:
+      action: play
   mode_quadshotgun_complete:
     trapcomplete:
       action: play
+    QuadShotgunModeStart:
+      action: stop
     BaseMusic:
       delay: 10s
       action: play
-      loops: -1          
+      loops: -1         
  
 widgets:
   saw_letters:
