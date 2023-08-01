@@ -42,12 +42,12 @@ displays:
     
 sound_player:
   mode_attract_started:
-    themesong:
+    HelloZeppPt1:
       action: play
-      loops: -1
+      loops: 3
   mode_attract_stopped:
-    themesong:
-      action: stop    
+    HelloZeppPt1:
+      action: stop 
       
 sound_system:
     tracks:
