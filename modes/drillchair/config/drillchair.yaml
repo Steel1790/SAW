@@ -8,6 +8,8 @@ sequences:
     events:
       - drillchair_pops_complete
       - left_loop_hit
+      - drillchair_pops2_complete
+      - left_loop_hit
     reset_on_complete: false
     events_when_complete: mode_drillchair_complete, stop_mode_drillchair
  
@@ -31,6 +33,17 @@ counters:
     reset_on_complete: false
     events_when_complete: drillchair_pops_complete   
     count_events: lower_l_pop_hit, lower_r_pop_hit, up_b_pop_hit
+  drillchair_pops2_counter:
+    starting_count: 0
+    count_complete_value: 20
+    enable_events: logicblock_drillchair_hit{step==2}
+    disable_events: disable_qualify
+    start_enabled: false
+#    persist_state: true
+    reset_on_complete: false
+    events_when_complete: drillchair_pops2_complete   
+    count_events: lower_l_pop_hit, lower_r_pop_hit, up_b_pop_hit    
+    
 
 shots:
   lower_l_pop:
@@ -56,6 +69,10 @@ variable_player:
     drillchair_visual_pops_counter:
       action: set
       int: (count)
+  counter_drillchair_pops2_counter_hit:    
+    drillchair_visual_pops2_counter:
+      action: set
+      int: (count)      
        
   timer_your_timer_tick:
     drillchair_60s_timer:
@@ -168,21 +185,42 @@ slides:
      duration: 0.2s
  
   drillchair_phase2:
-    widgets:     
+    widgets:   
+    - type: Text
+      text: "- Hit The Left Loop"
+      font_size: 52
+      font_name: TrajanProRegular
+      color: d8d8d8 
+      x: 405
+      y: 66%    
+    - type: Text
+      text: "- (player|drillchair_visual_pops2_counter) /20 lower pops"
+      font_size: 52
+      font_name: TrajanProRegular
+      color: d8d8d8 
+      x: 385
+      y: 56%    
+    - type: Text
+      text: " to disable the right drill!"
+      font_size: 52
+      font_name: TrajanProRegular
+      color: d8d8d8 
+      x: 552
+      y: 50%          
     - type: Text
       text: "- Hit The Left Loop To Escape"
       font_size: 52
       font_name: TrajanProRegular
       color: d8d8d8 
       x: 552
-      y: 52%
+      y: 40%
     - type: Text
       text: " & Complete The Trap"
       font_size: 52
       font_name: TrajanProRegular
       color: d8d8d8 
       x: 467
-      y: 46%
+      y: 34%
       
     - type: image
       image: hacksawUI
@@ -247,12 +285,23 @@ widgets:
       text: X
       color: ff6700
       x: 5.5%
-      y: 52%
+      y: 66%
       font_size: 70
       font_name: TrajanProRegular
+   dc_shot_update3:
+    - type: Text
+      text: X
+      color: ff6700
+      x: 5.5%
+      y: 56%
+      font_size: 70
+      font_name: TrajanProRegular      
 
  
 widget_player:
  logicblock_drillchair_hit{step==2}: 
   dc_shot_update2:
     slide: drillchair_phase2
+ logicblock_drillchair_hit{step==3}: 
+  dc_shot_update3:
+    slide: drillchair_phase2    
