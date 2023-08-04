@@ -1,7 +1,16 @@
 #config_version=5
 
 hardware:
-  platform: smart_virtual
+  fast:
+    net:
+      controller: neuron
+      port: /dev/tty.usbmodem11101
+    exp:
+      port: /dev/tty.usbmodem11102
+      boards:
+        LED_256:
+          model: FP-EXP-0081
+          order: 1
 
 machine:
   min_balls: 3
