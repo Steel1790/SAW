@@ -3,12 +3,24 @@ mode:
   start_events: selection_mode_reversebeartrap_selected
   stop_events: stop_mode_reversebeartrap, ball_ended 
  
+sequence_shots:
+  leftloop_leftramp:
+    switch_sequence: s_left_loop_bottom, s_left_loop_top, s_enter_left_ramp, s_left_ramp_score_bottom, s_left_ramp_score_top
+    sequence_timeout: 6s
+  rightramp_rightloop:
+    switch_sequence: s_right_ramp_score_bottom, s_right_ramp_score_top, s_right_loop_bottom, s_right_loop_top
+    sequence_timeout: 6s 
+ 
+ 
 sequences:
   reversebeartrap:
     events:
-      - upper_drop_target_hit
-      - left_ramp_hit
-      - right_ramp_hit
+      - leftloop_leftramp_hit
+      - rightramp_rightloop_hit
+      - shot_left_standup_hit
+      - shot_left_standup_rightramp_hit
+      - shot_right_standup_rightramp_hit
+      - shot_right_standup_hit
       - upper_drop_target_hit
     reset_on_complete: false
     events_when_complete: mode_reversebeartrap_complete, stop_mode_reversebeartrap
@@ -35,69 +47,19 @@ timers:
     
 
 variable_player:
-  upper_drop_target_hit:
-    score: 345678
-  left_ramp_hit:
-    score: 456789
-  right_ramp_hit:
-    score: 567890
+  logicblock_reversebeartrap_hit{step==1}:
+    score: 500000
+  logicblock_reversebeartrap_hit{step==2}:
+    score: 1000000
+  logicblock_reversebeartrap_hit{step==6}:
+    score: 2000000
   mode_reversebeartrap_complete:
     score: 5000000
-    
-
        
   timer_your_timer_tick:
     120s_reversebeartrap_timer:
       int: device.timers.your_timer.ticks_remaining
-      action: set
- 
-widgets:
-   shotupdate1:
-    - type: Text
-      text: X
-      color: ad1400
-      x: 3.5%
-      y: 68%
-      font_size: 35
-      font_name: TrajanProRegular
-   shotupdate2:
-    - type: Text
-      text: X
-      color: ad1400
-      x: 3.5%
-      y: 62%
-      font_size: 35
-      font_name: TrajanProRegular
-   shotupdate3:
-    - type: Text
-      text: X
-      color: ad1400
-      x: 3.5%
-      y: 56%
-      font_size: 35
-      font_name: TrajanProRegular
-   shotupdate4:
-    - type: Text
-      text: X
-      color: ad1400
-      x: 3.5%
-      y: 50%
-      font_size: 35
-      font_name: TrajanProRegular
-      
-widget_player:
- logicblock_reversebeartrap_hit{step==1}: 
-  shotupdate1:
-    slide: reversebeartrapUI
- logicblock_reversebeartrap_hit{step==2}: 
-  shotupdate2:
-    slide: reversebeartrapUI
- logicblock_reversebeartrap_hit{step==3}: 
-  shotupdate3:
-    slide: reversebeartrapUI
- logicblock_reversebeartrap_hit{step==4}: 
-  shotupdate4:
-    slide: reversebeartrapUI 
+      action: set     
  
 slides:
   reversebeartrapvideo:
@@ -164,35 +126,35 @@ slides:
       y: 75%
       
     - type: Text
-      text: "- Hit The Upper Drop Target"
+      text: "- Combo the Left Loop into the Left Ramp"
       font_size: 32
       font_name: TrajanProRegular
       color: BDD5E7
-      x: 320
+      x: 480
       y: 68%
       
     - type: Text
-      text: "- Hit The Left Ramp"
+      text: "- Combo the Right Ramp into the Right Loop"
       font_size: 32
       font_name: TrajanProRegular
       color: BDD5E7
-      x: 238
+      x: 510
       y: 62%
       
     - type: Text
-      text: "- Hit The Right Ramp"
+      text: "- Hit the 4 Stand-ups in Order Left to Right"
       font_size: 32
       font_name: TrajanProRegular
       color: BDD5E7
-      x: 255
+      x: 500
       y: 56%
       
     - type: Text
-      text: "- Hit The Upper Drop Target"
+      text: "- X marks the Spot to Find the Key"
       font_size: 32
       font_name: TrajanProRegular
       color: BDD5E7
-      x: 320
+      x: 408
       y: 50%      
       
     - type: Text
@@ -219,17 +181,44 @@ slides:
 #     type: fade
 #     duration: 0.2s
 
-
-
-#  ShotUpdated:
-#    widgets:
-#    - type: Text
-#      text: X
-#      color: red
-#      x: 4%
-#      y: 68%
-#      font_size: 32
-#      font_name: TrajanProRegular
+widgets:
+   rbt_shot_update1:
+    - type: Text
+      text: X
+      color: ad1400
+      x: 4%
+      y: 68%
+      font_size: 50
+      font_name: TrajanProRegular
+   rbt_shot_update2:
+    - type: Text
+      text: X
+      color: ad1400
+      x: 4%
+      y: 62%
+      font_size: 50
+      font_name: TrajanProRegular
+   rbt_shot_update6:
+    - type: Text
+      text: X
+      color: ad1400
+      x: 4%
+      y: 56%
+      font_size: 50
+      font_name: TrajanProRegular
+    
+ 
+widget_player:
+ logicblock_reversebeartrap_hit{step==1}: 
+  rbt_shot_update1:
+    slide: reversebeartrapUI
+ logicblock_reversebeartrap_hit{step==2}: 
+  rbt_shot_update2:
+    slide: reversebeartrapUI
+ logicblock_reversebeartrap_hit{step==6}: 
+  rbt_shot_update6:
+    slide: reversebeartrapUI
+   
 
 slide_player:
   mode_reversebeartrap_started: 
@@ -240,6 +229,10 @@ slide_player:
     reversebeartrapUI:
       priority: 400
       expire: 126.5s
+  logicblock_reversebeartrap_hit{step==6}:
+    XMarksTheSpotVideo:
+      priority: 406
+      expire: 2.1s      
   
 #  logicblock_reversebeartrap_hit:
 #    ShotUpdated:
