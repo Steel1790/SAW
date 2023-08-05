@@ -76,17 +76,17 @@ variable_player:
   minimode_standups_complete:
     score: 3000000
   minimode_scoops_complete:
-    score: 3000000
+    score: 3000000   
   minimode_inlanes_complete:
-    score: 3000000
+    score: 3000000   
   minimode_spinners_complete:
-    score: 3000000
+    score: 3000000       
   minimode_ramps_complete:
-    score: 3000000
+    score: 3000000         
   minimode_loops_complete:
-    score: 3000000
+    score: 3000000       
   minimode_drops_complete:
-    score: 3000000
+    score: 3000000           
 
 counters:
   minimode_pops_counter:
@@ -175,8 +175,8 @@ counters:
 #    persist_state: true
     reset_on_complete: false
     events_when_complete: minimode_drops_complete 
-    count_events: sw_drop_target  
-
+    count_events: sw_drop_target 
+ 
 shows:
   minimode_pops_show_complete:    
     - duration: -1      
@@ -209,7 +209,31 @@ shows:
   minimode_drops_show_complete:    
     - duration: -1      
       lights:    
-        (leds): red           
+        (leds): red      
+  mode_razorwire_show_complete:
+    - duration: -1      
+      lights:    
+        (leds): red 
+  mode_drillchair_show_complete:
+    - duration: -1      
+      lights:    
+        (leds): red 
+  mode_quadshotgun_show_complete:
+    - duration: -1      
+      lights:    
+        (leds): red 
+  mode_reversebeartrap_show_complete:
+    - duration: -1      
+      lights:    
+        (leds): red 
+#  mode_flammablejelly_show_complete:
+#    - duration: -1      
+#      lights:    
+#        (leds): red 
+#  mode_zeptest_show_complete:
+#    - duration: -1      
+#      lights:    
+#        (leds): red         
  
 # EK testing lightshow on shot action
 show_player:
@@ -221,7 +245,7 @@ show_player:
       show_tokens:
         led: arrow
         color1: ffffff
-        
+
   minimode_pops_complete:
     minimode_pops_show_complete:
       show_tokens:
@@ -261,8 +285,38 @@ show_player:
     minimode_ramps_show_complete:
       show_tokens:
         leds: l_circle1
-      loops: -1                
-
+      loops: -1        
+  mode_razorwire_complete:
+    mode_razorwire_show_complete:
+      show_tokens:
+        leds: l_razorwire
+      loops: -1   
+  mode_drillchair_complete:
+    mode_drillchair_show_complete:
+      show_tokens:
+        leds: l_drillchair
+      loops: -1  
+  mode_quadshotgun_complete:
+    mode_quadshotgun_show_complete:
+      show_tokens:
+        leds: l_quadshotgun
+      loops: -1        
+  mode_reversebeartrap_complete:
+    mode_reversebeartrap_show_complete:
+      show_tokens:
+        leds: l_beartrap
+      loops: -1  
+#    mode_zeptest_complete:
+#    mode_zeptest_show_complete:
+#      show_tokens:
+#        leds: l_zeptest
+#      loops: -1  
+#  mode_flammablejelly_complete:
+#    mode_flammablejelly_show_complete:
+#      show_tokens:
+#        leds: l_jelly
+#      loops: -1        
+      
 #  mode_base_started.1:       
 #   flash_token2:
 #      loops: -1
@@ -336,7 +390,7 @@ sound_pools:
       - DropsCameraShutter3
       - DropsCameraShutter4
       - DropsCameraShutter5
-
+ 
 sound_player:
   mode_base_started:
     playagame:
@@ -365,7 +419,7 @@ sound_player:
       delay: 10s
       action: play
       loops: -1      
-      
+    
   upper_drop_target_hit:
     SingleDropGlassBreak:
       action: play 
@@ -405,7 +459,7 @@ sound_player:
       delay: 10s
       action: play
       loops: -1          
- 
+  
   mode_quadshotgun_started:
     QuadShotgunModeStart:
       action: play
@@ -417,7 +471,7 @@ sound_player:
     BaseMusic:
       delay: 10s
       action: play
-      loops: -1         
+      loops: -1          
  
 widgets:
   saw_letters:
