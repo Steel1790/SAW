@@ -15,7 +15,7 @@ sequences:
  
 timers:
   60s_timer:
-    start_value: 69
+    start_value: 73
     end_value: 0
     direction: down
     control_events:
@@ -74,6 +74,10 @@ slides:
     widgets:
     - type: video
       video: razorwirevideo  
+  XMarksTheSpotVideo:
+    widgets:
+    - type: video
+      video: XMarksTheSpotVideo
       
   razorwire_pops:
     widgets:
@@ -244,18 +248,19 @@ slides:
 #shots:
 #  spinner:
 #    switch: s_spinner
-
-      
 slide_player:
   mode_razorwire_started: 
     razorwirevideo:
       priority: 500
-      expire: 8.7s
+      expire: 12.7s
   slide_razorwirevideo_removed: 
     razorwire_pops:
       priority: 400
-      expire: 66.5s
+      expire: 70.5s
   razorwire_pops_complete:
+    XMarksTheSpotVideo:
+      priority: 406
+      expire: 2.1s
     razorwire_phase2:
       priority: 405
       expire: 60.5s
@@ -348,6 +353,3 @@ show_player:
         show_tokens:
           color1: ffffff
       top_drop_chase: stop
-
-
-
