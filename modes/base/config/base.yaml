@@ -19,6 +19,11 @@ slide_player:
       priority: 400
       expire: 8s   
       
+  mode_zeptest_complete: 
+    trapcomplete:
+      priority: 400
+      expire: 8s         
+      
   mode_skillshot_complete:
     skillshotvideo:
       action: play
@@ -230,10 +235,10 @@ shows:
 #    - duration: -1      
 #      lights:    
 #        (leds): red 
-#  mode_zeptest_show_complete:
-#    - duration: -1      
-#      lights:    
-#        (leds): red         
+  mode_zeptest_show_complete:
+    - duration: -1      
+      lights:    
+        (leds): red         
  
 # EK testing lightshow on shot action
 show_player:
@@ -306,11 +311,11 @@ show_player:
       show_tokens:
         leds: l_beartrap
       loops: -1  
-#    mode_zeptest_complete:
-#    mode_zeptest_show_complete:
-#      show_tokens:
-#        leds: l_zeptest
-#      loops: -1  
+  mode_zeptest_complete:
+    mode_zeptest_show_complete:
+      show_tokens:
+        leds: l_zeptest
+      loops: -1  
 #  mode_flammablejelly_complete:
 #    mode_flammablejelly_show_complete:
 #      show_tokens:
@@ -471,7 +476,18 @@ sound_player:
     BaseMusic:
       delay: 10s
       action: play
-      loops: -1          
+      loops: -1      
+      
+  mode_zeptest_started:
+    zeptest:
+      action: play
+  mode_zeptest_complete:
+    trapcomplete:
+      action: play
+    BaseMusic:
+      delay: 10s
+      action: play
+      loops: -1             
  
 widgets:
   saw_letters:
