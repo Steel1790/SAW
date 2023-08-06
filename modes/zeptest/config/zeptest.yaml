@@ -1,0 +1,229 @@
+#config_version=5                 
+mode:
+  start_events: selection_mode_zeptest_selected
+  stop_events: stop_mode_zeptest, ball_ended, player_zeptest_60s_zeptest_timer_tick{value < 1}
+ 
+sequences:
+  zeptest:
+    events:
+      - machine_var_audits_switches_s_lower_bank_drop_target_opto_upper
+      - machine_var_audits_switches_s_lower_bank_drop_target_opto_middle
+      - machine_var_audits_switches_s_lower_bank_drop_target_opto_lower
+      - upper_drop_target_hit
+      - left_ramp_hit
+      - machine_var_audits_switches_s_right_ramp_score_top
+      - upper_drop_target_hit     
+    reset_on_complete: false
+    events_when_complete: mode_zeptest_complete, stop_mode_zeptest
+
+timers:
+  60s_zeptest_timer:
+    start_value: 68
+    end_value: 0
+    direction: down
+    control_events:
+      - action: start
+        event: mode_zeptest_started
+        
+variable_player:
+  logicblock_zeptest_hit{step==3}:
+    score: 500000
+  logicblock_zeptest_hit{step==4}:
+    score: 1000000
+  logicblock_zeptest_hit{step==5}:
+    score: 1000000
+  logicblock_zeptest_hit{step==6}:
+    score: 1000000    
+  mode_zeptest_complete:
+    score: 5000000      
+  timer_your_timer_tick:
+    60s_zeptest_timer:
+      int: device.timers.your_timer.ticks_remaining
+      action: set        
+    
+slides:
+  zeptestvideo:
+    widgets:
+    - type: video
+      video: zeptestvideo 
+      width: 1366
+      height: 768      
+      
+  zeptestUI:
+   widgets:
+    - type: image
+      image: hacksawUI
+      opacity: 0.5
+      y: 1
+      x: 1
+      anchor_x: left
+      anchor_y: bottom
+    - type: text
+      text: (score)
+      number_grouping: true
+      y: 16
+      x: 25
+      font_size: 36
+      anchor_x: left
+      anchor_y: bottom
+      font_name: TrajanProRegular
+      color: B17BE3
+    - type: Text
+      text: (player|zeptest_60s_zeptest_timer_tick) Seconds Left
+      font_size: 55
+      font_name: TrajanProRegular
+      color: CC8899
+      y: 90%
+      
+    - type: Text
+      text: "To find the Poison Antidote:"
+      font_size: 42
+      font_name: TrajanProRegular
+      color: AECCE4
+      x: 400
+      y: 75%    
+    - type: Text
+      text: "- Hit All 3 Drop Targets"
+      font_size: 32
+      font_name: TrajanProRegular
+      color: BDD5E7
+      x: 330
+      y: 68%   
+    - type: Text
+      text: "- Hit X Marks the Spot"
+      font_size: 32
+      font_name: TrajanProRegular
+      color: BDD5E7
+      x: 313
+      y: 62%   
+    - type: Text
+      text: "- Hit the Left Ramp"
+      font_size: 32
+      font_name: TrajanProRegular
+      color: BDD5E7
+      x: 281
+      y: 56%    
+    - type: Text
+      text: "- Hit the Right Ramp"
+      font_size: 32
+      font_name: TrajanProRegular
+      color: BDD5E7
+      x: 294
+      y: 50%           
+    - type: Text
+      text: "- X marks the Spot to Collect the Antidote"
+      font_size: 32
+      font_name: TrajanProRegular
+      color: BDD5E7
+      x: 499
+      y: 44%         
+      
+    - type: Text
+      text: "You Have 60 Seconds To Enable The Cameras"
+      color: CC8899
+      font_name: TrajanProRegular
+      font_size: 35
+      y: 145
+      animations:
+       pre_show_slide:
+        - property: opacity
+          value: 0
+          duration: 1s
+        - property: opacity
+          value: 1
+          duration: 1s
+          repeat: true
+    - type: Text
+      text: "and Collect the Antidote"
+      color: CC8899
+      font_name: TrajanProRegular
+      font_size: 35
+      y: 110
+      animations:
+       pre_show_slide:
+        - property: opacity
+          value: 0
+          duration: 1s
+        - property: opacity
+          value: 1
+          duration: 1s
+          repeat: true          
+    - type: image
+      image: zeptest
+      opacity: 0.45
+#      width: 1366
+#      height: 768 
+#    transition:
+#     type: fade
+#     duration: 0.2s
+
+widgets:
+   zep_shot_update3:
+    - type: Text
+      text: X
+      color: ad1400
+      x: 4%
+      y: 68%
+      font_size: 50
+      font_name: TrajanProRegular
+   zep_shot_update4:
+    - type: Text
+      text: X
+      color: ad1400
+      x: 4%
+      y: 62%
+      font_size: 50
+      font_name: TrajanProRegular
+   zep_shot_update5:
+    - type: Text
+      text: X
+      color: ad1400
+      x: 4%
+      y: 56%
+      font_size: 50
+      font_name: TrajanProRegular
+   zep_shot_update6:
+    - type: Text
+      text: X
+      color: ad1400
+      x: 4%
+      y: 50%
+      font_size: 50
+      font_name: TrajanProRegular      
+    
+ 
+widget_player:
+ logicblock_zeptest_hit{step==3}: 
+  zep_shot_update3:
+    slide: zeptestUI
+ logicblock_zeptest_hit{step==4}: 
+  zep_shot_update4:
+    slide: zeptestUI
+ logicblock_zeptest_hit{step==5}: 
+  zep_shot_update5:
+    slide: zeptestUI
+ logicblock_zeptest_hit{step==6}: 
+  zep_shot_update6:
+    slide: zeptestUI   
+
+slide_player:
+  mode_zeptest_started: 
+    zeptestvideo:
+      priority: 500
+      expire: 8s
+  slide_zeptestvideo_removed: 
+    zeptestUI:
+      priority: 400
+      expire: 60.5s
+  logicblock_zeptest_hit{step==6}:
+    XMarksTheSpotVideo:
+      priority: 406
+      expire: 2.1s      
+
+show_player:
+  logicblock_zeptest_hit{step==6}:
+      top_drop_chase:
+        loops: -1
+        speed: 20
+        show_tokens:
+          color1: red          
