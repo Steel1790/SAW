@@ -220,13 +220,13 @@ slide_player:
     saw_collect:
       priority: 200
       expire: 3s         
-  logicblock_saw_qualify_counter_updated{value==0}:
+  sg_saw_qualify_subtract_hit:
     s_subtract:
       priority: 195
       expire: 3s
   sg_saw_qualify_subtract_hit{device.counters.saw_qualify_counter.value==2}:
     sa_subtract:
-      priority: 195
+      priority: 196
       expire: 3s
 
 #sound_player:
