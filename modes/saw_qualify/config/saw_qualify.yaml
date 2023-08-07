@@ -218,13 +218,35 @@ slide_player:
       expire: 3s
   logicblock_saw_qualify_counter_updated{value==3}:
     saw_collect:
-      priority: 190
+      priority: 200
       expire: 3s         
-  sg_saw_qualify_subtract_hit{device.counters.saw_qualify_counter.value==1}:
+  logicblock_saw_qualify_counter_updated{value==0}:
     s_subtract:
-      priority: 185
+      priority: 195
       expire: 3s
   sg_saw_qualify_subtract_hit{device.counters.saw_qualify_counter.value==2}:
     sa_subtract:
-      priority: 185
+      priority: 195
       expire: 3s
+
+#sound_player:
+#  logicblock_saw_qualify_counter_updated{value==1}:
+#    SawLetterS:
+#      action: play
+#      block: true      
+#  logicblock_saw_qualify_counter_updated{value==2}:
+#    SawLetterA:
+#      action: play     
+#      block: true      
+#  logicblock_saw_qualify_counter_updated{value==3}:
+#    SawLetterW:
+#      action: play
+#      block: true      
+#  sg_saw_qualify_subtract_hit{device.counters.saw_qualify_counter.value==2}:
+#    SawLetterNegative:
+#      action: play
+#      block: true      
+#  sg_saw_qualify_subtract_hit{device.counters.saw_qualify_counter.value==1}:
+#    SawLetterNegative:
+#      action: play
+#      block: true            
