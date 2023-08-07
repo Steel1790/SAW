@@ -22,7 +22,12 @@ slide_player:
   mode_zeptest_complete: 
     trapcomplete:
       priority: 400
-      expire: 8s         
+      expire: 8s    
+
+  mode_flammablejelly_complete: 
+    trapcomplete:
+      priority: 400
+      expire: 8s              
       
   mode_skillshot_complete:
     skillshotvideo:
@@ -231,10 +236,10 @@ shows:
     - duration: -1      
       lights:    
         (leds): red 
-#  mode_flammablejelly_show_complete:
-#    - duration: -1      
-#      lights:    
-#        (leds): red 
+  mode_flammablejelly_show_complete:
+    - duration: -1      
+      lights:    
+        (leds): red 
   mode_zeptest_show_complete:
     - duration: -1      
       lights:    
@@ -316,11 +321,11 @@ show_player:
       show_tokens:
         leds: l_zeptest
       loops: -1  
-#  mode_flammablejelly_complete:
-#    mode_flammablejelly_show_complete:
-#      show_tokens:
-#        leds: l_jelly
-#      loops: -1        
+  mode_flammablejelly_complete:
+    mode_flammablejelly_show_complete:
+      show_tokens:
+        leds: l_jelly
+      loops: -1        
       
 #  mode_base_started.1:       
 #   flash_token2:
@@ -369,6 +374,29 @@ sound_pools:
       - UpPops2
       - UpPops3
       - UpPops4
+
+  drillchairpops:
+    load: preload
+    type: random
+    track: sfx
+    sounds:
+      - LowerPops1
+      - LowerPops2
+      - LowerPops3
+      - LowerPops4
+      - LowerPops5
+      - LowerPops6
+      - LowerPops7
+      - LowerPops8
+      - LowerPops9
+      - LowerPops10
+      - LowerPops11
+      - LowerPops12
+      - LowerPops13
+      - LowerPops14
+      - LowerPops15
+      - LowerPops16
+      - LowerPops17
       
   slingsaudio:
     load: preload
@@ -429,8 +457,11 @@ sound_player:
     SingleDropGlassBreak:
       action: play 
       
-  sw_pops:
+  sw_top_pops:
     razorwirepops:
+      action: play
+  sw_bottom_pops:
+    drillchairpops:
       action: play
   sw_slingshot:
     slingsaudio:
@@ -482,6 +513,17 @@ sound_player:
     zeptest:
       action: play
   mode_zeptest_complete:
+    trapcomplete:
+      action: play
+    BaseMusic:
+      delay: 10s
+      action: play
+      loops: -1           
+
+  mode_flammablejelly_started:
+    flammablejelly:
+      action: play
+  mode_flammablejelly_complete:
     trapcomplete:
       action: play
     BaseMusic:
