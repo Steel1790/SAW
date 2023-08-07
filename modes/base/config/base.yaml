@@ -398,6 +398,15 @@ sound_pools:
       - LowerPops16
       - LowerPops17
       
+  loopsaudio:
+    load: preload
+    type: random
+    track: sfx
+    sounds:
+      - OrbitWoosh
+      - OrbitWoosh4
+      - OrbitWoosh6
+      
   slingsaudio:
     load: preload
     type: random
@@ -472,6 +481,9 @@ sound_player:
   sw_standup:
     standupaudio:
       action: play
+  sw_loop:
+    loopsaudio:
+      action: play
     
       
   mode_drillchair_started:
@@ -523,13 +535,21 @@ sound_player:
   mode_flammablejelly_started:
     flammablejelly:
       action: play
+    FlammableJellyModeStart:
+      delay: 10s
+      action: play
   mode_flammablejelly_complete:
     trapcomplete:
       action: play
+    FlammableJellyModeStart:
+      action: stop    
     BaseMusic:
       delay: 10s
       action: play
       loops: -1             
+  slide_flammablejellyUI_removed:
+    FlammableJellyModeStart:
+      action: stop
  
 widgets:
   saw_letters:
