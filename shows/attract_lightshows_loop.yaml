@@ -22,6 +22,12 @@
         speed: 40
 
 - duration: 5s
+  shows: 
+      disc_middle_hot_saw:
+        loops: 1
+        speed: 40
+
+- duration: 5s
   shows:
       bonus_chase:
         loops: 1
