@@ -1,6 +1,6 @@
 events:
   game_ended: 0
-  game_started: 669
+  game_started: 670
 player:
   score:
     average: 0
@@ -20,11 +20,12 @@ shots:
   upper_l_pop: 513
   upper_r_pop: 20
 switches:
-  s_ball_shooter_lane: 0
+  s_ball_shooter_lane: 1
   s_eject: 0
   s_elevator_hold: 0
   s_enter_left_ramp: 656
   s_inner_loop: 0
+  s_left_110_point: 0
   s_left_bottom_jet_bumper: 44
   s_left_cellar: 0
   s_left_flipper: 327
@@ -49,6 +50,7 @@ switches:
   s_outhole: 0
   s_plumb_bob_tilt: 0
   s_plunger: 7
+  s_right_110_point: 0
   s_right_bottom_jet_bumper: 17
   s_right_cellar: 1916
   s_right_flipper: 289
@@ -64,7 +66,7 @@ switches:
   s_right_standup_right_ramp: 0
   s_right_top_jet_bumper: 20
   s_spinner: 4768
-  s_start: 283
+  s_start: 284
   s_top_right_reject: 0
   s_trough1: 7
   s_trough2: 5

@@ -2,33 +2,18 @@
   
 game:
   balls_per_game: 3
-  max_players: 4
+  max_players: 4  
   allow_start_with_ball_in_drain: true
   allow_start_with_loose_balls: true 
   
 config:
 - hardware.yaml
 - keyboard.yaml
-- shots.yaml
 - videos.yaml
 - lights.yaml
 modes:
   - attract
   - base
-  - skillshot
-  - music_player
-  - cellar
-  - selection_mode
-  - razorwire
-  - drillchair
-  - quadshotgun
-  - flammablejelly
-  - reversebeartrap
-  - zeptest
-  - tilt
-  - mystery
-  - saw_qualify
-  - mode_tracking
 
 window:
   width: 1366
@@ -51,20 +36,20 @@ sound_player:
       loops: 3
   mode_attract_stopped:
     HelloZeppPt1:
-      action: stop    
+      action: stop 
       
 sound_system:
     tracks:
        music:
-          simultaneous_sounds: 8
+          simultaneous_sounds: 3
           volume: 1.0
        voice:
-          simultaneous_sounds: 8
+          simultaneous_sounds: 1
           volume: 1.0
        sfx:
-          simultaneous_sounds: 16
+          simultaneous_sounds: 8
           volume: 1.0
-sounds:  
+sounds:
 assets:
     sounds:
         default:
@@ -78,3 +63,5 @@ assets:
     videos:
         default:
             load: preload
+
+

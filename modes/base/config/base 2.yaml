@@ -1,0 +1,948 @@
+#config_version=5
+mode:
+  start_events: ball_starting, mode_skillshot_started
+  priority: 100
+
+slide_player:
+  mode_razorwire_complete: 
+    trapcomplete:
+      priority: 400
+      expire: 5s   #EK shortened to time with lightshow
+
+  mode_drillchair_complete: 
+    trapcomplete:
+      priority: 400
+      expire: 8s  
+
+  mode_reversebeartrap_complete: 
+    trapcomplete:
+      priority: 400
+      expire: 8s   
+      
+  mode_zeptest_complete: 
+    trapcomplete:
+      priority: 400
+      expire: 8s    
+
+  mode_flammablejelly_complete: 
+    trapcomplete:
+      priority: 400
+      expire: 8s              
+      
+  mode_skillshot_complete:
+    skillshotvideo:
+      action: play
+      priority: 400
+      expire: 8s
+  ballsavetemp_hit:
+    ballsavevideo:
+      action: play
+      priority: 400
+      expire: 8s
+  tiltwarningtemp_hit:
+    tiltwarningvideo:
+      action: play
+      priority: 400
+      expire: 8s
+  mysteryawardtemp_hit:
+    mysteryawardvideo:
+      action: play
+      priority: 400
+      expire: 8s
+  extraballtemp_hit:
+    extraballvideo:
+      action: play
+      priority: 400
+      expire: 8s
+      
+  mode_base_started:
+    base_slide_main:
+      action: play    
+      
+variable_player:
+  cellar_hit:
+    score: 100000
+  sw_pops:
+    score: 50000
+  sw_slingshot:
+    score: 333
+  sw_inlane:
+    score: 25000
+  sw_outlane:
+    score: 100000
+  sw_standup:
+    score: 75000
+  sw_ramp:
+    score: 125000
+  sw_spinner:
+    score: 30000
+  sw_drop_target:
+    score: 95000
+  sw_loop:
+    score: 115000
+  minimode_pops_complete:
+    score: 3000000
+  minimode_standups_complete:
+    score: 3000000
+  minimode_scoops_complete:
+    score: 3000000   
+  minimode_inlanes_complete:
+    score: 3000000   
+  minimode_spinners_complete:
+    score: 3000000       
+  minimode_ramps_complete:
+    score: 3000000         
+  minimode_loops_complete:
+    score: 3000000       
+  minimode_drops_complete:
+    score: 3000000           
+
+counters:
+  minimode_pops_counter:
+    starting_count: 0
+    count_complete_value: 30
+    enable_events: 
+    disable_events: 
+    start_enabled: true
+#    persist_state: true
+    reset_on_complete: false
+    events_when_complete: minimode_pops_complete 
+    count_events: sw_pops
+
+  minimode_standups_counter:
+    starting_count: 0
+    count_complete_value: 10
+    enable_events: 
+    disable_events: 
+    start_enabled: true
+#    persist_state: true
+    reset_on_complete: false
+    events_when_complete: minimode_standups_complete 
+    count_events: sw_standup  
+    
+  minimode_scoops_counter:
+    starting_count: 0
+    count_complete_value: 10
+    enable_events: 
+    disable_events: 
+    start_enabled: true
+#    persist_state: true
+    reset_on_complete: false
+    events_when_complete: minimode_scoops_complete 
+    count_events: cellar_hit    
+
+  minimode_inlanes_counter:
+    starting_count: 0
+    count_complete_value: 6
+    enable_events: 
+    disable_events: 
+    start_enabled: true
+#    persist_state: true
+    reset_on_complete: false
+    events_when_complete: minimode_inlanes_complete 
+    count_events: sw_inlane    
+    
+  minimode_spinners_counter:
+    starting_count: 0
+    count_complete_value: 50
+    enable_events: 
+    disable_events: 
+    start_enabled: true
+#    persist_state: true
+    reset_on_complete: false
+    events_when_complete: minimode_spinners_complete 
+    count_events: sw_spinner 
+
+  minimode_ramps_counter:
+    starting_count: 0
+    count_complete_value: 10
+    enable_events: 
+    disable_events: 
+    start_enabled: true
+#    persist_state: true
+    reset_on_complete: false
+    events_when_complete: minimode_ramps_complete 
+    count_events: sw_ramp      
+    
+  minimode_loops_counter:
+    starting_count: 0
+    count_complete_value: 10
+    enable_events: 
+    disable_events: 
+    start_enabled: true
+#    persist_state: true
+    reset_on_complete: false
+    events_when_complete: minimode_loops_complete 
+    count_events: sw_loop   
+
+  minimode_drops_counter:
+    starting_count: 0
+    count_complete_value: 8
+    enable_events: 
+    disable_events: 
+    start_enabled: true
+#    persist_state: true
+    reset_on_complete: false
+    events_when_complete: minimode_drops_complete 
+    count_events: sw_drop_target 
+ 
+shows:
+  minimode_pops_show_complete:    
+    - duration: -1      
+      lights:    
+        (leds): red
+  minimode_standups_show_complete:    
+    - duration: -1      
+      lights:    
+        (leds): red   
+  minimode_scoops_show_complete:    
+    - duration: -1      
+      lights:    
+        (leds): red  
+  minimode_inlanes_show_complete:    
+    - duration: -1      
+      lights:    
+        (leds): red  
+  minimode_spinners_show_complete:    
+    - duration: -1      
+      lights:    
+        (leds): red  
+  minimode_ramps_show_complete:    
+    - duration: -1      
+      lights:    
+        (leds): red  
+  minimode_loops_show_complete:    
+    - duration: -1      
+      lights:    
+        (leds): red   
+  minimode_drops_show_complete:    
+    - duration: -1      
+      lights:    
+        (leds): red      
+  mode_razorwire_show_complete:
+    - duration: -1      
+      lights:    
+        (leds): red 
+  mode_drillchair_show_complete:
+    - duration: -1      
+      lights:    
+        (leds): red 
+  mode_quadshotgun_show_complete:
+    - duration: -1      
+      lights:    
+        (leds): red 
+  mode_reversebeartrap_show_complete:
+    - duration: -1      
+      lights:    
+        (leds): red 
+  mode_flammablejelly_show_complete:
+    - duration: -1      
+      lights:    
+        (leds): red 
+  mode_zeptest_show_complete:
+    - duration: -1      
+      lights:    
+        (leds): red         
+ 
+# EK testing lightshow on shot action
+show_player:
+#  mode_skillshot_complete:
+  mode_base_started:   
+    flash_token:
+      loops: -1
+      speed: 2
+      show_tokens:
+        led: arrow
+        color1: ffffff
+
+  minimode_pops_complete:
+    minimode_pops_show_complete:
+      show_tokens:
+        leds: l_circle8
+      loops: -1   
+  minimode_drops_complete:
+    minimode_drops_show_complete:
+      show_tokens:
+        leds: l_circle7
+      loops: -1  
+  minimode_scoops_complete:
+    minimode_scoops_show_complete:
+      show_tokens:
+        leds: l_circle6
+      loops: -1  
+  minimode_inlanes_complete:
+    minimode_inlanes_show_complete:
+      show_tokens:
+        leds: l_circle5
+      loops: -1  
+  minimode_standups_complete:
+    minimode_standups_show_complete:
+      show_tokens:
+        leds: l_circle4
+      loops: -1  
+  minimode_loops_complete:
+    minimode_loops_show_complete:
+      show_tokens:
+        leds: l_circle3
+      loops: -1  
+  minimode_spinners_complete:
+    minimode_spinners_show_complete:
+      show_tokens:
+        leds: l_circle2
+      loops: -1  
+  minimode_ramps_complete:
+    minimode_ramps_show_complete:
+      show_tokens:
+        leds: l_circle1
+      loops: -1        
+  mode_razorwire_complete:
+    mode_razorwire_show_complete:
+      show_tokens:
+        leds: l_razorwire
+      loops: -1   
+  mode_drillchair_complete:
+    mode_drillchair_show_complete:
+      show_tokens:
+        leds: l_drillchair
+      loops: -1  
+  mode_quadshotgun_complete:
+    mode_quadshotgun_show_complete:
+      show_tokens:
+        leds: l_quadshotgun
+      loops: -1        
+  mode_reversebeartrap_complete:
+    mode_reversebeartrap_show_complete:
+      show_tokens:
+        leds: l_beartrap
+      loops: -1  
+  mode_zeptest_complete:
+    mode_zeptest_show_complete:
+      show_tokens:
+        leds: l_zeptest
+      loops: -1  
+  mode_flammablejelly_complete:
+    mode_flammablejelly_show_complete:
+      show_tokens:
+        leds: l_jelly
+      loops: -1        
+      
+#  mode_base_started.1:       
+#   flash_token2:
+#      loops: -1
+#      speed: 3
+#     show_tokens:
+#        led: l_left_return_lane
+#        color1: red
+
+  spinner_hit:
+    flash_token:
+      loops: 2
+      speed: 8
+      show_tokens:
+        led: l_right_loop_arrow
+        color1: 46eb34
+
+  left_inlane_hit:
+    flash_token:
+      loops: 2
+      speed: 8
+      show_tokens:
+        led: l_left_return_lane
+        color1: red
+
+  mysteryawardtemp_hit:
+    mystery_flash:
+       loops: 0
+       show_tokens:
+        led: insert, gi, jet_bumper, flasher
+        color1: white
+
+#  trap completed
+  slide_trapcomplete_active:
+    rw_complete:
+      loops: 2
+      speed: 25
+      
+sound_pools:
+  razorwirepops:
+    load: preload
+    type: random
+    track: sfx
+    sounds:
+      - UpPops1
+      - UpPops2
+      - UpPops3
+      - UpPops4
+
+  drillchairpops:
+    load: preload
+    type: random
+    track: sfx
+    sounds:
+      - LowerPops1
+      - LowerPops2
+      - LowerPops3
+      - LowerPops4
+      - LowerPops5
+      - LowerPops6
+      - LowerPops7
+      - LowerPops8
+      - LowerPops9
+      - LowerPops10
+      - LowerPops11
+      - LowerPops12
+      - LowerPops13
+      - LowerPops14
+      - LowerPops15
+      - LowerPops16
+      - LowerPops17
+      
+  loopsaudio:
+    load: preload
+    type: random
+    track: sfx
+    sounds:
+      - OrbitWoosh
+      - OrbitWoosh4
+      - OrbitWoosh6
+      
+  slingsaudio:
+    load: preload
+    type: random
+    track: sfx
+    sounds:
+      - LSling1
+      - LSling2
+      - LSling3
+      - LSling4
+      - LSling5
+      - LSling6
+      - RSling1
+      - RSling2
+      - RSling3
+ 
+  standupaudio:
+    load: preload
+    type: random
+    track: sfx
+    sounds:
+      - DropsCameraShutter1
+      - DropsCameraShutter2
+      - DropsCameraShutter3
+      - DropsCameraShutter4
+      - DropsCameraShutter5
+ 
+sound_player:
+  mode_base_started:
+    1playerGame:
+      action: play
+    BaseMusic:
+      delay: 5s
+      action: play
+      loops: -1
+  mode_selection_mode_started:
+    BaseMusic:
+      action: stop    
+      
+  player_adding{game.num_players==2}:
+    2PlayerGame:
+      action: play  
+  player_adding{game.num_players==3}:
+    3PlayerGame:
+      action: play        
+  player_adding{game.num_players==4}:
+    4PlayerGame:
+      action: play   
+ 
+  mode_razorwire_started:
+    razorwire:
+      action: play
+    RWModeStart:
+      delay: 4s
+      action: play
+
+  mode_razorwire_complete:
+    trapcomplete:
+      action: play
+    RWModeStart:
+      action: stop 
+    BaseMusic:
+      delay: 10s
+      action: play
+      loops: -1      
+    
+  upper_drop_target_hit:
+    SingleDropGlassBreak:
+      action: play 
+      
+  sw_top_pops:
+    razorwirepops:
+      action: play
+  sw_bottom_pops:
+    drillchairpops:
+      action: play
+  sw_slingshot:
+    slingsaudio:
+      action: play    
+  sw_spinner:
+    SpinnerShotgunLoading:
+      action: play
+  sw_standup:
+    standupaudio:
+      action: play
+  sw_loop:
+    loopsaudio:
+      action: play
+    
+      
+  mode_drillchair_started:
+    drillchair:
+      action: play  
+  mode_drillchair_complete:
+    trapcomplete:
+      action: play
+    BaseMusic:
+      delay: 10s
+      action: play
+      loops: -1          
+
+  mode_reversebeartrap_started:
+    reversebeartrap:
+      action: play
+  mode_reversebeartrap_complete:
+    trapcomplete:
+      action: play
+    BaseMusic:
+      delay: 10s
+      action: play
+      loops: -1          
+  
+  mode_quadshotgun_started:
+    QuadShotgunModeStart:
+      action: play
+  mode_quadshotgun_complete:
+    trapcomplete:
+      action: play
+    QuadShotgunModeStart:
+      action: stop
+    BaseMusic:
+      delay: 10s
+      action: play
+      loops: -1      
+      
+  mode_zeptest_started:
+    zeptest:
+      action: play
+  mode_zeptest_complete:
+    trapcomplete:
+      action: play
+    BaseMusic:
+      delay: 10s
+      action: play
+      loops: -1           
+
+  mode_flammablejelly_started:
+    flammablejelly:
+      action: play
+    FlammableJellyModeStart:
+      delay: 10s
+      action: play
+  mode_flammablejelly_complete:
+    trapcomplete:
+      action: play
+    FlammableJellyModeStart:
+      action: stop    
+    BaseMusic:
+      delay: 10s
+      action: play
+      loops: -1             
+  slide_flammablejellyUI_removed:
+    FlammableJellyModeStart:
+      action: stop
+ 
+widgets:
+  saw_letters:
+    - type: Text
+      text: Shoot WHITE ARROWS to spell SAW!
+      color: white
+      x: 50%
+      y: 85%
+      z: 2
+      font_size: 60
+      font_name: Skilt Gothic W04 Thin
+    - type: Text
+      text: SAW
+      color: white
+      x: 50%
+      y: 20%
+      z: 2
+      font_size: 110
+      font_name: sawesome      
+
+  cellar_start:
+    - type: Text
+      text: Get to the BATHROOM to Select A Mode!
+      color: white
+      x: 50%
+      y: 85%
+      z: 2
+      font_size: 60
+      font_name: Skilt Gothic W04 Thin
+      
+  saw_s_letters:
+     - type: Text
+       text: S
+       color: red
+       x: 44.6%
+       y: 20%
+       z: 3
+       font_size: 110
+       font_name: sawesome
+  saw_sa_letters:
+     - type: Text
+       text: S
+       color: red
+       x: 44.6%
+       y: 20%
+       z: 3
+       font_size: 110
+       font_name: sawesome
+     - type: Text
+       text: A
+       color: red
+       x: 50%
+       y: 20%
+       z: 3
+       font_size: 110
+       font_name: sawesome     
+  saw_saw_letters:
+     - type: Text
+       text: S
+       color: red
+       x: 44.6%
+       y: 20%
+       z: 3
+       font_size: 110
+       font_name: sawesome
+     - type: Text
+       text: A
+       color: red
+       x: 50%
+       y: 20%
+       z: 3
+       font_size: 110
+       font_name: sawesome    
+     - type: Text
+       text: W
+       color: red
+       x: 55.4%
+       y: 20%
+       z: 3
+       font_size: 110
+       font_name: sawesome   
+  2PlayerGame:       
+     - type: Text
+       text: (player2|score)
+       number_grouping: true   
+       font_name: TrajanProRegular
+       font_size: 36
+       y: 35
+       x: left+490
+       z: 5
+       color: C2E3E0
+     - type: image
+       image: hacksawUI
+       opacity: 0.9
+       y: 1
+       x: left+520
+       z: 4
+       anchor_y: bottom    
+  3PlayerGame:
+     - type: Text
+       text: (player3|score)
+       number_grouping: true   
+       font_name: TrajanProRegular
+       font_size: 36
+       y: 35
+       x: left+840
+       z: 5
+       color: C2E3E0
+     - type: image
+       image: hacksawUI
+       opacity: 0.9
+       y: 1
+       x: left+870
+       z: 4
+       anchor_y: bottom  
+  4PlayerGame:
+     - type: Text
+       text: (player4|score)
+       number_grouping: true       
+       font_name: TrajanProRegular
+       font_size: 36
+       y: 35
+       x: left+1180
+       z: 5
+       color: C2E3E0
+     - type: image
+       image: hacksawUI
+       opacity: 0.9
+       y: 1
+       x: left+1210
+       z: 4
+       anchor_y: bottom
+        
+#player 2   
+  Player2Inactive: 
+     - type: Text
+       text: PRESS START
+       font_name: TrajanProRegular
+       font_size: 28
+       y: 35
+       x: left+490
+       z: 5
+       color: red
+       animations:
+         pre_show_slide:
+         - property: opacity
+           value: 0
+           duration: 1.5s
+         - property: opacity
+           value: 1
+           duration: 1.5s
+           repeat: true
+     - type: image
+       image: hacksawUI
+       opacity: 0.9
+       y: 1
+       x: left+520
+       z: 2
+       anchor_y: bottom
+            
+#player 3   
+  Player3Inactive:
+     - type: Text
+       text: PRESS START
+       font_name: TrajanProRegular
+       font_size: 28
+       y: 35
+       x: left+840
+       z: 5
+       color: red
+       animations:
+         pre_show_slide:
+         - property: opacity
+           value: 0
+           duration: 1.5s
+         - property: opacity
+           value: 1
+           duration: 1.5s
+           repeat: true 
+     - type: image
+       image: hacksawUI
+       opacity: 0.9
+       y: 1
+       x: left+870
+       z: 4
+       anchor_y: bottom
+       
+#player 4   
+  Player4Inactive:
+     - type: Text
+       text: PRESS START
+       font_name: TrajanProRegular
+       font_size: 28
+       y: 35
+       x: left+1180
+       z: 5     
+       color: red
+       animations:
+         pre_show_slide:
+         - property: opacity
+           value: 0
+           duration: 1.5s
+         - property: opacity
+           value: 1
+           duration: 1.5s
+           repeat: true 
+     - type: image
+       image: hacksawUI
+       opacity: 0.9
+       y: 1
+       x: left+1210
+       z: 4
+       anchor_y: bottom                   
+
+widget_player:
+  mode_saw_qualify_started:
+    saw_letters:
+      slide: base_slide_main
+      action: add
+  saw_qualify_complete:
+    saw_letters:
+      action: remove
+    saw_s_letters:
+      action: remove
+    saw_sa_letters:
+      action: remove
+    saw_saw_letters:
+      action: remove      
+  sg_saw_qualify_subtract_hit{device.counters.saw_qualify_counter.value==1}:
+    saw_s_letters:
+      action: remove    
+  sg_saw_qualify_subtract_hit{device.counters.saw_qualify_counter.value==2}:
+    saw_sa_letters:
+      action: remove    
+  mode_cellar_started:
+    cellar_start:
+      slide: base_slide_main
+      action: add
+  mode_cellar_complete:
+    cellar_start:
+      action: remove
+  mode_selection_mode_stopped:
+    saw_letters:
+      slide: base_slide_main
+      action: add      
+      
+  logicblock_saw_qualify_counter_updated{value==1}:
+    saw_s_letters:
+      slide: base_slide_main
+      action: add   
+  logicblock_saw_qualify_counter_updated{value==2}:
+    saw_sa_letters:
+      slide: base_slide_main
+      action: add  
+  logicblock_saw_qualify_counter_updated{value==3}:
+    saw_saw_letters:
+      slide: base_slide_main
+      action: add   
+#multiplayer widget displays
+  player_added{game.num_players==2}:
+    2PlayerGame:
+      slide: base_slide_main
+      action: add  
+    Player2Inactive:
+      slide: base_slide_main
+      action: remove        
+  player_added{game.num_players==3}:
+    3PlayerGame:
+      slide: base_slide_main
+      action: add 
+    Player3Inactive:
+      slide: base_slide_main
+      action: remove       
+  player_added{game.num_players==4}:
+    4PlayerGame:
+      slide: base_slide_main
+      action: add
+    Player4Inactive:
+      slide: base_slide_main
+      action: remove       
+# press start loop when player isn't entered   
+  slide_wanttoplayagame_created:
+    Player2Inactive:
+      slide: base_slide_main
+      action: add    
+    Player3Inactive:  
+      slide: base_slide_main
+      action: add  
+    Player4Inactive:  
+      slide: base_slide_main
+      action: add        
+           
+slides:
+  base_slide_main: 
+    widgets:
+    - type: image
+      image: spiral
+      opacity: 0.7
+      y: top-20
+      x: right-165
+    - type: text
+      font_name: TrajanProRegular
+      text: PLAYER (player|number)
+      y: top-25
+      x: left+105
+      font_size: 38
+      color: C2E3E0
+    - type: image
+      image: rustpipe2
+      y: top-44
+      x: left+95
+      opacity: 0.5 
+    - type: text
+      text: BALL (player|ball)
+      font_name: TrajanProRegular
+      y: top-25
+      x: right-70
+      color: C2E3E0
+      font_size: 38    
+    - type: image
+      image: rustpipe2
+      y: top-44
+      x: right-90
+      opacity: 0.5 
+#player 1 
+    - type: text
+      text: (score)
+      number_grouping: true
+      y: 16
+      x: 25
+      font_size: 36
+      anchor_x: left
+      anchor_y: bottom
+      font_name: TrajanProRegular
+      color: C2E3E0        
+    - type: image
+      image: hacksawUI
+      opacity: 0.9
+      y: 1
+      x: 1
+      anchor_x: left
+      anchor_y: bottom      
+    - type: video
+      video: gordonsaw 
+      width: 1366
+      height: 768
+      end_behavior: loop
+
+ 
+  trapcomplete:
+    widgets:
+    - type: video
+      video: trapcomplete
+      width: 1366
+      height: 768      
+      
+  skillshotvideo:
+    widgets:
+    - type: video
+      video: skillshotvideo
+      width: 1366
+      height: 768
+      
+  ballsavevideo:
+    widgets:
+    - type: video
+      video: ballsave
+      width: 1366
+      height: 768
+  tiltwarningvideo:
+    widgets:
+    - type: video
+      video: tiltwarning
+      width: 1366
+      height: 768
+  mysteryawardvideo:
+    widgets:
+    - type: video
+      video: mysteryaward
+      width: 1366
+      height: 768
+  extraballvideo:
+    widgets:
+    - type: video
+      video: extraball
+      width: 1366
+      height: 768

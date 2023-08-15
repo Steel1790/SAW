@@ -26,10 +26,10 @@ sequence_shots:
 #temp for demo    
 #  ballsavetemp:
 #    switch_sequence: s_lower_top_jet_bumper
-#  tiltwarningtemp:
-#    switch_sequence: s_left_bottom_jet_bumper
-#  mysteryawardtemp:
-#    switch_sequence: s_right_bottom_jet_bumper
-#  extraballtemp:
-#    switch_sequence: s_upper_bottom_jet_bumper
+  tiltwarningtemp:
+    switch_sequence: s_left_bottom_jet_bumper
+  mysteryawardtemp:
+    switch_sequence: s_right_bottom_jet_bumper
+  extraballtemp:
+    switch_sequence: s_upper_bottom_jet_bumper
     
