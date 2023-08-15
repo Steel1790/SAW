@@ -1,0 +1,68 @@
+#config_version=5
+mode:
+  start_events: mode_base_started
+  stop_events: ball_ended
+  priority: 99
+
+variable_player:
+
+ # track modes completed for wizard mode qualifications -- player_modes_completed  
+  mode_drillchair_complete:
+    modes_completed:
+      int: 1
+      action: add  
+    drillchair_complete:
+      int: 2
+      action: set        
+  mode_flammablejelly_complete:
+    modes_completed:
+      int: 1
+      action: add    
+  mode_quadshotgun_complete:
+    modes_completed:
+      int: 1
+      action: add    
+  mode_razorwire_complete:
+    modes_completed:
+      int: 1
+      action: add    
+  mode_reversebeartrap_complete:
+    modes_completed:
+      int: 1
+      action: add    
+  mode_zeptest_complete:
+    modes_completed:
+      int: 1
+      action: add          
+      
+# modes attempted for mini wizard mode -- player_modes_attempted
+  mode_drillchair_started:
+    modes_attempted:
+      int: 1
+      action: add      
+  mode_flammablejelly_started:
+    modes_attempted:
+      int: 1
+      action: add    
+  mode_quadshotgun_started:
+    modes_attempted:
+      int: 1
+      action: add    
+  mode_razorwire_started:
+    modes_attempted:
+      int: 1
+      action: add    
+  mode_reversebeartrap_started:
+    modes_attempted:
+      int: 1
+      action: add    
+  mode_zeptest_started:
+    modes_attempted:
+      int: 1
+      action: add         
+# set qualification requirement to mode quadshotgun . 
+# 1 = default . 2 = mode_drillchair_complete      
+  slide_base_slide_main_created:
+    drillchair_complete:
+      int: 1
+      action: set    
