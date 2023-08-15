@@ -11,7 +11,7 @@ mode_settings:
     - quadshotgun
     - flammablejelly
     - zeptest
-  select_item_events: s_start_active
+  select_item_events: flipper_cancel
   next_item_events: s_left_flipper_active
   previous_item_events: s_right_flipper_active
 
