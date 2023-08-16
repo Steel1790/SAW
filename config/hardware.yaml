@@ -11,5 +11,5 @@ fast:
         port: /dev/tty.usbmodem14403
         boards:
             upperled:
-                model: FP-EXP-0071
+                model: FP-EXP-0081
         debug: true
