@@ -49,6 +49,9 @@ switches:
   s_start:
     number:
     tags: start
+  s_action_button:
+    number:
+    tags: action
   s_left_inlane:
     number: 18
     tags: left_return_lane, playfield_active, inlane, switch_hit

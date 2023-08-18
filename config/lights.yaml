@@ -706,28 +706,193 @@ lights:
     type: grb
     tags: gi, gi_right, gi_lower, gi_right_inlane
 
-# flashers
 
+# flashers
   l_flasher_1:
     number: 201
     type: grb
-    tags: flasher
+    tags: flasher,drill_flasher
+  l_drill_flasher_1:
+    number: 
+    type: grb
+    tags: flasher,drill_flasher
+  l_drill_flasher_2:
+    number: 
+    type: grb
+    tags: flasher,drill_flasher
+  l_drill_flasher_3:
+    number: 
+    type: grb
+    tags: flasher,drill_flasher
+  l_drill_flasher_4:
+    number: 
+    type: grb
+    tags: flasher,drill_flasher
+  l_drill_flasher_5:
+    number: 
+    type: grb
+    tags: flasher,drill_flasher
+  l_drill_flasher_6:
+    number: 
+    type: grb
+    tags: flasher,drill_flasher
+  l_drill_flasher_7:
+    number: 
+    type: grb
+    tags: flasher,drill_flasher
+  l_drill_flasher_8:
+    number: 
+    type: grb
+    tags: flasher,drill_flasher
+
   l_flasher_2:
     number: 202
     type: grb
     tags: flasher
+  l_zep_flasher_1:
+    number: 
+    type: grb
+    tags: flasher,zep_flasher
+  l_zep_flasher_2:
+    number: 
+    type: grb
+    tags: flasher,zep_flasher
+  l_zep_flasher_3:
+    number: 
+    type: grb
+    tags: flasher,zep_flasher
+  l_zep_flasher_4:
+    number: 
+    type: grb
+    tags: flasher,zep_flasher
+  l_zep_flasher_5:
+    number: 
+    type: grb
+    tags: flasher,zep_flasher
+  l_zep_flasher_6:
+    number: 
+    type: grb
+    tags: flasher,zep_flasher
+  l_zep_flasher_7:
+    number: 
+    type: grb
+    tags: flasher,zep_flasher
+  l_zep_flasher_8:
+    number: 
+    type: grb
+    tags: flasher,zep_flasher
+
   l_flasher_3:
     number: 203
     type: grb
     tags: flasher
+  l_razorwire_flasher_1:
+    number: 
+    type: grb
+    tags: flasher,razorwire_flasher
+  l_razorwire_flasher_2:
+    number: 
+    type: grb
+    tags: flasher,razorwire_flasher
+  l_razorwire_flasher_3:
+    number: 
+    type: grb
+    tags: flasher,razorwire_flasher
+  l_razorwire_flasher_4:
+    number: 
+    type: grb
+    tags: flasher,razorwire_flasher
+  l_razorwire_flasher_5:
+    number: 
+    type: grb
+    tags: flasher,razorwire_flasher
+  l_razorwire_flasher_6:
+    number: 
+    type: grb
+    tags: flasher,razorwire_flasher
+  l_razorwire_flasher_7:
+    number: 
+    type: grb
+    tags: flasher,razorwire_flasher
+  l_razorwire_flasher_8:
+    number: 
+    type: grb
+    tags: flasher,razorwire_flasher
+
   l_flasher_4:
     number: 204
     type: grb
     tags: flasher
+  l_bear_flasher_1:
+    number: 
+    type: grb
+    tags: flasher,bear_flasher
+  l_bear_flasher_2:
+    number: 
+    type: grb
+    tags: flasher,bear_flasher
+  l_bear_flasher_3:
+    number: 
+    type: grb
+    tags: flasher,bear_flasher
+  l_bear_flasher_4:
+    number: 
+    type: grb
+    tags: flasher,bear_flasher
+  l_bear_flasher_5:
+    number: 
+    type: grb
+    tags: flasher,bear_flasher
+  l_bear_flasher_6:
+    number: 
+    type: grb
+    tags: flasher,bear_flasher
+  l_bear_flasher_7:
+    number: 
+    type: grb
+    tags: flasher,bear_flasher
+  l_bear_flasher_8:
+    number: 
+    type: grb
+    tags: flasher,bear_flasher
+
   l_flasher_5:
     number: 205
     type: grb
     tags: flasher
+  l_shotgun_flasher_1:
+    number: 
+    type: grb
+    tags: flasher,shotgun_flasher
+  l_shotgun_flasher_2:
+    number: 
+    type: grb
+    tags: flasher,shotgun_flasher
+  l_shotgun_flasher_3:
+    number: 
+    type: grb
+    tags: flasher,shotgun_flasher
+  l_shotgun_flasher_4:
+    number: 
+    type: grb
+    tags: flasher,shotgun_flasher
+  l_shotgun_flasher_5:
+    number: 
+    type: grb
+    tags: flasher,shotgun_flasher
+  l_shotgun_flasher_6:
+    number: 
+    type: grb
+    tags: flasher,shotgun_flasher
+  l_shotgun_flasher_7:
+    number: 
+    type: grb
+    tags: flasher,shotgun_flasher
+  l_shotgun_flasher_8:
+    number: 
+    type: grb
+    tags: flasher,shotgun_flasher
+
 
 # playfield toys
   l_tape_reel:
@@ -738,19 +903,19 @@ lights:
     number: 
     type: grb
     tags: tape
-
   l_mode_scoop:
     number: 
     type: grb
-    tags: 
+    tags: scoop
   l_mb_lock_scoop:
     number: 
     type: grb
-    tags: 
+    tags: scoop
   l_mystery_scoop:
     number: 
     type: grb
-    tags: 
+    tags: scoop
+
 
 # ball trough
   l_trough_1:
@@ -785,6 +950,7 @@ lights:
     number: 
     type: grb
     tags: trough
+
 
 # spinning discs
   l_left_disc_1:
@@ -947,3 +1113,89 @@ lights:
     number: 
     type: grb
     tags: spotlights   
+
+
+# cabinet lights
+  l_start:
+    number: 
+    type: grb
+    tags: cabinet
+  l_left_flipper:
+    number: 
+    type: grb
+    tags: cabinet
+  l_right_flipper:
+    number: 
+    type: grb
+    tags: cabinet
+  l_action_button:
+    number: 
+    type: grb
+    tags: cabinet
+  l_coin_door:
+    number: 
+    type: grb
+    tags: cabinet
+
+
+# backpanel
+  l_backpanel_1:
+    number: 
+    type: grb
+    tags: backpanel
+  l_backpanel_2:
+    number: 
+    type: grb
+    tags: backpanel
+  l_backpanel_3:
+    number: 
+    type: grb
+    tags: backpanel
+  l_backpanel_4:
+    number: 
+    type: grb
+    tags: backpanel
+  l_backpanel_5:
+    number: 
+    type: grb
+    tags: backpanel
+  l_backpanel_6:
+    number: 
+    type: grb
+    tags: backpanel
+
+
+# topper
+  l_topper_1:
+    number: 
+    type: grb
+    tags: topper
+  l_topper_2:
+    number: 
+    type: grb
+    tags: topper
+  l_topper_3:
+    number: 
+    type: grb
+    tags: topper
+  l_topper_4:
+    number: 
+    type: grb
+    tags: topper
+  l_topper_5:
+    number: 
+    type: grb
+    tags: topper
+  l_topper_6:
+    number: 
+    type: grb
+    tags: topper
+  l_topper_7:
+    number: 
+    type: grb
+    tags: topper
+  l_topper_8:
+    number: 
+    type: grb
+    tags: topper
+
