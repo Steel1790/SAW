@@ -178,7 +178,7 @@ switches:
   s_right_slingshot:
     number:
     tags: slingshot
-  s_lockdown_button_active:
+  s_lockdown_button:
     number:
 
 virtual_platform_start_active_switches:
