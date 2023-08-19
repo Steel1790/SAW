@@ -15,7 +15,7 @@ hardware:
 #           order: 1
 
 machine:
-  min_balls: 3
+  #min_balls: 3
 
 switches:
   s_plumb_bob_tilt:
@@ -30,21 +30,19 @@ switches:
   s_upper_right_flipper:
     number:
     tags: upper_right_flipper
-  #Ball Trough #1 (left)
   s_trough1:
     number:
-    tags: left_trough
-  #Ball Trough #2 (mdl)
   s_trough2:
     number:
-    tags: middle_trough
-  #Ball Trough #3 (right)
   s_trough3:
     number:
-    tags: right_trough
-  s_trough_jam:
+  s_trough4:
     number:
-  s_outhole:
+  s_trough5:
+    number:
+  s_trough6:
+    number:
+  s_trough_jam:
     number:
   s_start:
     number:
@@ -180,11 +178,16 @@ switches:
   s_right_slingshot:
     number:
     tags: slingshot
+  s_lockdown_button_active:
+    number:
 
 virtual_platform_start_active_switches:
   - s_trough1
   - s_trough2
   - s_trough3
+  - s_trough4
+  - s_trough5
+  - s_trough6
 
 coils:
   c_flipper_left_main:
@@ -214,11 +217,9 @@ coils:
     default_pulse_ms: 20
     default_hold_power: 1.0
     tags: coils
-  c_draineject:
-    number:
-    default_pulse_ms: 20
-    default_hold_power: 1.0
   c_trough_eject:
+    number:
+  c_auto_plunger:
     number:
   c_diverter:
     number:
@@ -259,39 +260,6 @@ coils:
     default_pulse_ms: 250
   c_upper_droptargetreset:
     number:
-  flasher_c_bottom_right:
-    number:
-    allow_enable: true
-  flasher_c_spinner:
-    number:
-    allow_enable: true
-  flasher_c_right_ramp_top:
-    number:
-    allow_enable: true
-  flasher_c_right_ramp_upr_mid:
-    number:
-    allow_enable: true
-  flasher_c_right_ramp_lwr_mid:
-    number:
-    allow_enable: true
-  flasher_c_right_ramp_bottom:
-    number:
-    allow_enable: true
-  flasher_c_lower_drop:
-    number:
-    allow_enable: true
-  flasher_c_compass:
-    number:
-    allow_enable: true
-  flasher_c_bp_left:
-    number:
-    allow_enable: true
-  flasher_c_bp_mid:
-    number:
-    allow_enable: true
-  flasher_c_bp_right:
-    number:
-    allow_enable: true
 
 drop_targets:
   dt_upper_drop1:
@@ -320,28 +288,22 @@ drop_target_banks:
     reset_events: ball_starting
 
 ball_devices:
-  bd_drain:
-    ball_switches: s_outhole
-    eject_coil: c_draineject
-    eject_targets: bd_trough
-    eject_timeouts: 1s
-    confirm_eject_type: target
-    tags: drain
-    debug: true
-    ball_search_order: 1
-
   bd_trough:
-    ball_switches: s_trough1, s_trough2, s_trough3, s_trough_jam
+    ball_switches: s_trough1, s_trough2, s_trough3, s_trough4, s_trough5, s_trough6, s_trough_jam
     eject_coil: c_trough_eject
-    tags: trough, home
+    tags: trough, home, drain
     jam_switch: s_trough_jam
     eject_coil_jam_pulse: 15ms
     eject_targets: bd_plunger
-    debug: true
+    debug: false
+    eject_timeouts: 3s
 
   bd_plunger:
     ball_switches: s_ball_shooter_lane
+    eject_coil: c_auto_plunger
     mechanical_eject: true
+    eject_timeouts: 5s
+    player_controlled_eject_event: s_lockdown_button_active
 
   bd_mystery:
     ball_switches: s_left_cellar

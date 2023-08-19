@@ -1,17 +1,18 @@
 #config_version=5
-  
+
 game:
   balls_per_game: 3
   max_players: 4
-  allow_start_with_ball_in_drain: true
-  allow_start_with_loose_balls: true 
-  
+    #allow_start_with_ball_in_drain: true
+    #allow_start_with_loose_balls: true
+
 config:
 - hardware.yaml
 - keyboard.yaml
 - shots.yaml
 - videos.yaml
 - lights.yaml
+
 modes:
   - attract
   - base
@@ -43,7 +44,7 @@ displays:
   lcd:
     width: 1366
     height: 768
-    
+
 sound_player:
   mode_attract_started:
     HelloZeppPt1:
@@ -51,8 +52,8 @@ sound_player:
       loops: 3
   mode_attract_stopped:
     HelloZeppPt1:
-      action: stop    
-      
+      action: stop
+
 sound_system:
     tracks:
        music:
@@ -64,7 +65,7 @@ sound_system:
        sfx:
           simultaneous_sounds: 16
           volume: 1.0
-sounds:  
+sounds:
 assets:
     sounds:
         default:
