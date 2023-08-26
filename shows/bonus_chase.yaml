@@ -1,27 +1,27 @@
 #show_version=5
 - time: 0
   lights:
-    l_drillchair: ff
+    l_drillchair_mode: ff
 - time: '+1'
   lights:
-    l_beartrap: ff
+    l_beartrap_mode: ff
 - time: '+1'
   lights:
-    l_zeptest: ff
+    l_zeptest_mode: ff
 - time: '+1'
   lights:
-    l_jelly: ff
+    l_jelly_mode: ff
 - time: '+1'
   lights:
-    l_quadshotgun: ff
+    l_quadshotgun_mode: ff
 - time: '+1'
   lights:
-    l_razorwire: ff
+    l_razorwire_mode: ff
 - time: '+1'
   lights:
-    l_drillchair: 0
-    l_beartrap: 0
-    l_zeptest: 0
-    l_jelly: 0
-    l_quadshotgun: 0
-    l_razorwire: 0
+    l_drillchair_mode: 0
+    l_beartrap_mode: 0
+    l_zeptest_mode: 0
+    l_jelly_mode: 0
+    l_quadshotgun_mode: 0
+    l_razorwire_mode: 0

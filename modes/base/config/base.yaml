@@ -258,72 +258,72 @@ show_player:
   minimode_pops_complete:
     minimode_pops_show_complete:
       show_tokens:
-        leds: l_circle8
+        leds: l_jw_gears
       loops: -1   
   minimode_drops_complete:
     minimode_drops_show_complete:
       show_tokens:
-        leds: l_circle7
+        leds: l_jw_syringe
       loops: -1  
   minimode_scoops_complete:
     minimode_scoops_show_complete:
       show_tokens:
-        leds: l_circle6
+        leds: l_jw_bathtub
       loops: -1  
   minimode_inlanes_complete:
     minimode_inlanes_show_complete:
       show_tokens:
-        leds: l_circle5
+        leds: l_jw_taperecorder
       loops: -1  
   minimode_standups_complete:
     minimode_standups_show_complete:
       show_tokens:
-        leds: l_circle4
+        leds: l_jw_candle
       loops: -1  
   minimode_loops_complete:
     minimode_loops_show_complete:
       show_tokens:
-        leds: l_circle3
+        leds: l_jw_drill
       loops: -1  
   minimode_spinners_complete:
     minimode_spinners_show_complete:
       show_tokens:
-        leds: l_circle2
+        leds: l_jw_gun
       loops: -1  
   minimode_ramps_complete:
     minimode_ramps_show_complete:
       show_tokens:
-        leds: l_circle1
+        leds: l_jw_key
       loops: -1        
   mode_razorwire_complete:
     mode_razorwire_show_complete:
       show_tokens:
-        leds: l_razorwire
+        leds: l_razorwire_mode
       loops: -1   
   mode_drillchair_complete:
     mode_drillchair_show_complete:
       show_tokens:
-        leds: l_drillchair
+        leds: l_drillchair_mode
       loops: -1  
   mode_quadshotgun_complete:
     mode_quadshotgun_show_complete:
       show_tokens:
-        leds: l_quadshotgun
+        leds: l_quadshotgun_mode
       loops: -1        
   mode_reversebeartrap_complete:
     mode_reversebeartrap_show_complete:
       show_tokens:
-        leds: l_beartrap
+        leds: l_beartrap_mode
       loops: -1  
   mode_zeptest_complete:
     mode_zeptest_show_complete:
       show_tokens:
-        leds: l_zeptest
+        leds: l_zeptest_mode
       loops: -1  
   mode_flammablejelly_complete:
     mode_flammablejelly_show_complete:
       show_tokens:
-        leds: l_jelly
+        leds: l_jelly_mode
       loops: -1        
       
 #  mode_base_started.1:       

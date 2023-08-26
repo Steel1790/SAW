@@ -28,6 +28,12 @@
         speed: 40
 
 - duration: 5s
+  shows: 
+      flammable_jelly_3:
+        loops: 2
+        speed: 20        
+
+- duration: 5s
   shows:
       bonus_chase:
         loops: 1

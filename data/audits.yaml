@@ -1,6 +1,6 @@
 events:
   game_ended: 0
-  game_started: 669
+  game_started: 682
 player:
   score:
     average: 0
@@ -12,64 +12,82 @@ shots:
   bottom_t_pop: 11
   cellar: 187
   dt_drop2: 710
-  dt_drop3: 299
+  dt_drop3: 300
   dt_drop4: 170
+  lower_l_pop: 3
+  lower_r_pop: 37
   my_first_shot: 160
+  shot_inner_loop: 9
+  shot_left_loop: 18
+  shot_left_return_lane: 10
+  shot_left_standup: 19
+  shot_left_standup_rightramp: 16
+  shot_right_loop: 19
+  shot_right_standup: 11
+  shot_right_standup_rightramp: 21
   spinner: 97
-  upper_b_pop: 22
-  upper_l_pop: 513
-  upper_r_pop: 20
+  up_b_pop: 2
+  upper_b_pop: 78
+  upper_l_pop: 527
+  upper_r_pop: 53
 switches:
-  s_ball_shooter_lane: 0
+  s_action_button: 41
+  s_ball_shooter_lane: 9
   s_eject: 0
   s_elevator_hold: 0
-  s_enter_left_ramp: 656
-  s_inner_loop: 0
-  s_left_bottom_jet_bumper: 44
+  s_enter_left_ramp: 664
+  s_inner_loop: 9
+  s_left_110_point: 0
+  s_left_bottom_jet_bumper: 52
   s_left_cellar: 0
-  s_left_flipper: 327
-  s_left_inlane: 293
-  s_left_lock_1: 0
-  s_left_lock_2: 0
-  s_left_lock_3: 0
-  s_left_loop_bottom: 0
-  s_left_loop_top: 0
+  s_left_flipper: 334
+  s_left_inlane: 303
+  s_left_lock_1: 2
+  s_left_lock_2: 3
+  s_left_lock_3: 3
+  s_left_loop_bottom: 14
+  s_left_loop_top: 4
   s_left_outlane: 0
-  s_left_ramp_score_bottom: 640
-  s_left_ramp_score_top: 669
-  s_left_slingshot: 0
-  s_left_standup: 0
-  s_left_standup_right_ramp: 0
-  s_left_top_jet_bumper: 901
-  s_lower_bank_drop_target_opto_lower: 291
-  s_lower_bank_drop_target_opto_middle: 497
-  s_lower_bank_drop_target_opto_upper: 919
-  s_lower_top_jet_bumper: 28
+  s_left_ramp_score_bottom: 648
+  s_left_ramp_score_top: 680
+  s_left_slingshot: 3
+  s_left_standup: 19
+  s_left_standup_right_ramp: 16
+  s_left_top_jet_bumper: 918
+  s_lockdown_button: 0
+  s_lower_bank_drop_target_opto_lower: 294
+  s_lower_bank_drop_target_opto_middle: 501
+  s_lower_bank_drop_target_opto_upper: 922
+  s_lower_top_jet_bumper: 88
   s_middle_standup: 0
   s_outhole: 0
-  s_plumb_bob_tilt: 0
+  s_plumb_bob_tilt: 1
   s_plunger: 7
-  s_right_bottom_jet_bumper: 17
-  s_right_cellar: 1916
-  s_right_flipper: 289
+  s_right_110_point: 0
+  s_right_bottom_jet_bumper: 61
+  s_right_cellar: 1928
+  s_right_flipper: 353
   s_right_inlane: 0
-  s_right_loop_bottom: 0
-  s_right_loop_top: 0
+  s_right_loop_bottom: 13
+  s_right_loop_top: 6
   s_right_outlane: 0
-  s_right_ramp_down: 26
-  s_right_ramp_score_bottom: 24
-  s_right_ramp_score_top: 26
+  s_right_ramp_down: 27
+  s_right_ramp_score_bottom: 26
+  s_right_ramp_score_top: 28
   s_right_slingshot: 0
-  s_right_standup: 0
-  s_right_standup_right_ramp: 0
-  s_right_top_jet_bumper: 20
-  s_spinner: 4768
-  s_start: 283
+  s_right_standup: 11
+  s_right_standup_right_ramp: 21
+  s_right_top_jet_bumper: 56
+  s_spinner: 4801
+  s_start: 310
   s_top_right_reject: 0
-  s_trough1: 7
-  s_trough2: 5
-  s_trough3: 5
-  s_trough_jam: 0
-  s_upper_bank_drop_target_opto: 67
-  s_upper_bottom_jet_bumper: 17
+  s_trough1: 8
+  s_trough2: 6
+  s_trough3: 7
+  s_trough4: 1
+  s_trough5: 1
+  s_trough6: 1
+  s_trough_jam: 10
+  s_upper_bank_drop_target_opto: 82
+  s_upper_bottom_jet_bumper: 24
   s_upper_right_flipper: 0

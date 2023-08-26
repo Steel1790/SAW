@@ -37,45 +37,11 @@ light:
     size: 0.02
     x: 0.5097755610972569
     y: 0.2543640897755611
-  l_beartrap:
+  l_beartrap_mode:
     shape: SQUARE
     size: 0.03
     x: 0.42181904761904765
     y: 0.7845238095238095
-  l_circle1:
-    shape: CIRCLE
-    size: 0.03
-    x: 0.6814
-    y: 0.4166666666666667
-  l_circle2:
-    shape: CIRCLE
-    size: 0.03
-    x: 0.7246634920634921
-    y: 0.430952380952381
-  l_circle3:
-    size: 0.03
-    x: 0.7354793650793651
-    y: 0.45357142857142857
-  l_circle4:
-    size: 0.03
-    x: 0.7003277777777779
-    y: 0.47261904761904766
-  l_circle5:
-    size: 0.03
-    x: 0.648952380952381
-    y: 0.4761904761904763
-  l_circle6:
-    size: 0.03
-    x: 0.6056888888888889
-    y: 0.4619047619047619
-  l_circle7:
-    size: 0.03
-    x: 0.6002809523809524
-    y: 0.43928571428571433
-  l_circle8:
-    size: 0.03
-    x: 0.6300246031746032
-    y: 0.42023809523809524
   l_drill_flasher_1:
     size: 0.02
     x: 0.1954139650872818
@@ -108,7 +74,7 @@ light:
     size: 0.02
     x: 0.16992518703241896
     y: 0.36159600997506236
-  l_drillchair:
+  l_drillchair_mode:
     shape: SQUARE
     size: 0.03
     x: 0.3650357142857143
@@ -235,11 +201,45 @@ light:
     size: 0.05
     x: 0.4299309523809524
     y: 0.24523809523809526
-  l_jelly:
+  l_jelly_mode:
     shape: SQUARE
     size: 0.03
     x: 0.532681746031746
     y: 0.7928571428571429
+  l_jw_bathtub:
+    size: 0.03
+    x: 0.6056888888888889
+    y: 0.4619047619047619
+  l_jw_candle:
+    size: 0.03
+    x: 0.7003277777777779
+    y: 0.47261904761904766
+  l_jw_drill:
+    size: 0.03
+    x: 0.7354793650793651
+    y: 0.45357142857142857
+  l_jw_gears:
+    size: 0.03
+    x: 0.6300246031746032
+    y: 0.42023809523809524
+  l_jw_gun:
+    shape: CIRCLE
+    size: 0.03
+    x: 0.7246634920634921
+    y: 0.430952380952381
+  l_jw_key:
+    shape: CIRCLE
+    size: 0.03
+    x: 0.6814
+    y: 0.4166666666666667
+  l_jw_syringe:
+    size: 0.03
+    x: 0.6002809523809524
+    y: 0.43928571428571433
+  l_jw_taperecorder:
+    size: 0.03
+    x: 0.648952380952381
+    y: 0.4761904761904763
   l_left_bottom_bumper:
     size: 0.04
     x: 0.07838583643350754
@@ -308,10 +308,6 @@ light:
     size: 0.01
     x: 0.06413386617286981
     y: 0.4025289778714436
-  l_left_cellar_sign:
-    size: 0.03
-    x: 0.17558935993349958
-    y: 0.4613466334164589
   l_left_disc_1:
     x: 0.3729768421052632
     y: 0.5421052631578948
@@ -336,6 +332,10 @@ light:
   l_left_disc_8:
     x: 0.3275501754385965
     y: 0.5494736842105263
+  l_left_escape:
+    size: 0.05
+    x: 0.1406063492063492
+    y: 0.7047619047619048
   l_left_flipper:
     size: 0.04
     x: 0.02832086450540316
@@ -346,10 +346,6 @@ light:
     size: 0.05
     x: 0.23524523809523812
     y: 0.4416666666666667
-  l_left_outlane:
-    size: 0.05
-    x: 0.1406063492063492
-    y: 0.7047619047619048
   l_left_ramp_triangle1:
     rotation: 300
     shape: TRIANGLE
@@ -395,10 +391,143 @@ light:
     size: 0.04
     x: 0.3650357142857143
     y: 0.1273809523809524
+  l_left_top_bumper_1:
+    size: 0.01
+    x: 0.3785
+    y: 0.10509554140127389
+  l_left_top_bumper_10:
+    size: 0.01
+    x: 0.337515923566879
+    y: 0.14437367303609341
+  l_left_top_bumper_11:
+    size: 0.01
+    x: 0.32305095541401274
+    y: 0.13906581740976645
+  l_left_top_bumper_12:
+    size: 0.01
+    x: 0.3182292993630573
+    y: 0.13057324840764334
+  l_left_top_bumper_13:
+    size: 0.01
+    x: 0.3182292993630573
+    y: 0.12314225053078556
+  l_left_top_bumper_14:
+    size: 0.01
+    x: 0.32305095541401274
+    y: 0.11464968152866242
+  l_left_top_bumper_15:
+    size: 0.01
+    x: 0.337515923566879
+    y: 0.10828025477707007
+  l_left_top_bumper_16:
+    size: 0.01
+    x: 0.35921337579617835
+    y: 0.10509554140127389
+  l_left_top_bumper_2:
+    size: 0.01
+    x: 0.39296496815286625
+    y: 0.10828025477707007
+  l_left_top_bumper_3:
+    size: 0.01
+    x: 0.4050191082802548
+    y: 0.11464968152866242
+  l_left_top_bumper_4:
+    size: 0.01
+    x: 0.4146624203821656
+    y: 0.12101910828025476
+  l_left_top_bumper_5:
+    size: 0.01
+    x: 0.4170732484076433
+    y: 0.12951167728237792
+  l_left_top_bumper_6:
+    size: 0.01
+    x: 0.4098407643312102
+    y: 0.13694267515923567
+  l_left_top_bumper_7:
+    size: 0.01
+    x: 0.39778662420382166
+    y: 0.14331210191082802
+  l_left_top_bumper_8:
+    size: 0.01
+    x: 0.3809108280254777
+    y: 0.1464968152866242
+  l_left_top_bumper_9:
+    size: 0.01
+    x: 0.35680254777070064
+    y: 0.1475583864118896
+  l_live_again:
+    shape: CIRCLE
+    size: 0.05
+    x: 0.5056420634920635
+    y: 0.867857142857143
   l_lower_top_bumper:
     size: 0.04
     x: 0.5299777777777778
     y: 0.19523809523809527
+  l_lower_top_bumper_1:
+    size: 0.01
+    x: 0.5376146496815287
+    y: 0.1740976645435244
+  l_lower_top_bumper_10:
+    size: 0.01
+    x: 0.5135063694267515
+    y: 0.21549893842887471
+  l_lower_top_bumper_11:
+    size: 0.01
+    x: 0.49663057324840765
+    y: 0.21231422505307856
+  l_lower_top_bumper_12:
+    size: 0.01
+    x: 0.4869872611464968
+    y: 0.20594479830148618
+  l_lower_top_bumper_13:
+    size: 0.01
+    x: 0.4821656050955414
+    y: 0.19639065817409765
+  l_lower_top_bumper_14:
+    size: 0.01
+    x: 0.4821656050955414
+    y: 0.18789808917197454
+  l_lower_top_bumper_15:
+    size: 0.01
+    x: 0.49421974522292994
+    y: 0.1804670912951168
+  l_lower_top_bumper_16:
+    size: 0.01
+    x: 0.5135063694267515
+    y: 0.1751592356687898
+  l_lower_top_bumper_2:
+    size: 0.01
+    x: 0.5569012738853503
+    y: 0.17728237791932058
+  l_lower_top_bumper_3:
+    size: 0.01
+    x: 0.5713662420382166
+    y: 0.18259023354564757
+  l_lower_top_bumper_4:
+    size: 0.01
+    x: 0.5785987261146497
+    y: 0.19002123142250532
+  l_lower_top_bumper_5:
+    size: 0.01
+    x: 0.5810095541401274
+    y: 0.19745222929936307
+  l_lower_top_bumper_6:
+    size: 0.01
+    x: 0.576187898089172
+    y: 0.2048832271762208
+  l_lower_top_bumper_7:
+    size: 0.01
+    x: 0.5665445859872611
+    y: 0.21019108280254778
+  l_lower_top_bumper_8:
+    size: 0.01
+    x: 0.5544904458598726
+    y: 0.21443736730360932
+  l_lower_top_bumper_9:
+    size: 0.01
+    x: 0.535203821656051
+    y: 0.21656050955414013
   l_mb_lock_scoop:
     size: 0.03
     x: 0.12177971737323359
@@ -460,51 +589,76 @@ light:
     y: 0.2642857142857143
   l_mode_scoop:
     size: 0.03
-    x: 0.3426824605153782
-    y: 0.42768079800498754
+    x: 0.30020116375727346
+    y: 0.4339152119700748
   l_mystery_scoop:
     size: 0.03
     x: 0.13310806317539486
     y: 0.46633416458852867
-  l_quadshotgun:
+  l_quadshotgun_mode:
     shape: SQUARE
     size: 0.03
     x: 0.5894650793650794
     y: 0.7845238095238095
-  l_razorwire:
+  l_razorwire_flasher_1:
+    size: 0.02
+    x: 0.4797547770700637
+    y: 0.1326963906581741
+  l_razorwire_flasher_2:
+    x: 0.5014522292993631
+    y: 0.13694267515923567
+  l_razorwire_flasher_3:
+    x: 0.5086847133757962
+    y: 0.1464968152866242
+  l_razorwire_flasher_4:
+    x: 0.5014522292993631
+    y: 0.15498938428874734
+  l_razorwire_flasher_5:
+    x: 0.4797547770700637
+    y: 0.15817409766454352
+  l_razorwire_flasher_6:
+    x: 0.45564649681528663
+    y: 0.15498938428874734
+  l_razorwire_flasher_7:
+    x: 0.4508248407643312
+    y: 0.1454352441613588
+  l_razorwire_flasher_8:
+    x: 0.45805732484076433
+    y: 0.13588110403397027
+  l_razorwire_mode:
     shape: SQUARE
     size: 0.03
     x: 0.6462484126984127
     y: 0.7773809523809525
-  l_razorwire_flasher_1:
+  l_razorwire_mode_flasher_1:
     size: 0.02
     x: 0.4786226101413134
     y: 0.13341645885286785
-  l_razorwire_flasher_2:
+  l_razorwire_mode_flasher_2:
     size: 0.02
     x: 0.501279301745636
     y: 0.1371571072319202
-  l_razorwire_flasher_3:
+  l_razorwire_mode_flasher_3:
     size: 0.02
     x: 0.5097755610972569
     y: 0.14713216957605985
-  l_razorwire_flasher_4:
+  l_razorwire_mode_flasher_4:
     size: 0.02
     x: 0.501279301745636
     y: 0.1571072319201995
-  l_razorwire_flasher_5:
+  l_razorwire_mode_flasher_5:
     size: 0.02
     x: 0.4786226101413134
     y: 0.1596009975062344
-  l_razorwire_flasher_6:
+  l_razorwire_mode_flasher_6:
     size: 0.02
     x: 0.45596591853699087
     y: 0.15586034912718202
-  l_razorwire_flasher_7:
+  l_razorwire_mode_flasher_7:
     size: 0.02
     x: 0.4474696591853699
     y: 0.1458852867830424
-  l_razorwire_flasher_8:
+  l_razorwire_mode_flasher_8:
     size: 0.02
     x: 0.45596591853699087
     y: 0.13591022443890274
@@ -576,10 +730,6 @@ light:
     size: 0.01
     x: 0.3055713276836158
     y: 0.4216101694915254
-  l_right_cellar_sign:
-    size: 0.03
-    x: 0.30020116375727346
-    y: 0.4339152119700748
   l_right_disc_1:
     x: 0.7531263157894739
     y: 0.5505263157894738
@@ -604,6 +754,10 @@ light:
   l_right_disc_8:
     x: 0.6933543859649123
     y: 0.5610526315789474
+  l_right_escape:
+    size: 0.05
+    x: 0.8733817460317461
+    y: 0.7047619047619048
   l_right_flipper:
     size: 0.04
     x: 0.968573566084788
@@ -614,10 +768,6 @@ light:
     size: 0.05
     x: 0.8625658730158731
     y: 0.3511904761904762
-  l_right_outlane:
-    size: 0.05
-    x: 0.8733817460317461
-    y: 0.7047619047619048
   l_right_ramp_triangle1:
     rotation: 20
     shape: TRIANGLE
@@ -651,11 +801,70 @@ light:
     size: 0.04
     x: 0.5678333333333333
     y: 0.10714285714285715
-  l_shoot_again:
-    shape: CIRCLE
-    size: 0.05
-    x: 0.5056420634920635
-    y: 0.867857142857143
+  l_right_top_bumper_1:
+    size: 0.01
+    x: 0.5737770700636943
+    y: 0.08598726114649682
+  l_right_top_bumper_10:
+    size: 0.01
+    x: 0.5544904458598726
+    y: 0.12845010615711253
+  l_right_top_bumper_11:
+    size: 0.01
+    x: 0.535203821656051
+    y: 0.12420382165605096
+  l_right_top_bumper_12:
+    size: 0.01
+    x: 0.5255605095541401
+    y: 0.1178343949044586
+  l_right_top_bumper_13:
+    size: 0.01
+    x: 0.518328025477707
+    y: 0.11040339702760085
+  l_right_top_bumper_14:
+    size: 0.01
+    x: 0.5207388535031847
+    y: 0.10297239915074309
+  l_right_top_bumper_15:
+    size: 0.01
+    x: 0.5279713375796179
+    y: 0.09447983014861996
+  l_right_top_bumper_16:
+    size: 0.01
+    x: 0.5472579617834394
+    y: 0.0881104033970276
+  l_right_top_bumper_2:
+    size: 0.01
+    x: 0.5906528662420383
+    y: 0.089171974522293
+  l_right_top_bumper_3:
+    size: 0.01
+    x: 0.6051178343949044
+    y: 0.09341825902335456
+  l_right_top_bumper_4:
+    size: 0.01
+    x: 0.6147611464968152
+    y: 0.10084925690021232
+  l_right_top_bumper_5:
+    size: 0.01
+    x: 0.617171974522293
+    y: 0.10828025477707007
+  l_right_top_bumper_6:
+    size: 0.01
+    x: 0.6147611464968152
+    y: 0.11571125265392782
+  l_right_top_bumper_7:
+    size: 0.01
+    x: 0.6075286624203822
+    y: 0.12101910828025476
+  l_right_top_bumper_8:
+    size: 0.01
+    x: 0.5954745222929936
+    y: 0.12526539278131635
+  l_right_top_bumper_9:
+    size: 0.01
+    x: 0.576187898089172
+    y: 0.12845010615711253
   l_shotgun_flasher_1:
     size: 0.02
     x: 0.8949393183707398
@@ -882,7 +1091,7 @@ light:
     size: 0.02
     x: 0.48711886949293437
     y: 0.3965087281795512
-  l_zeptest:
+  l_zeptest_mode:
     shape: SQUARE
     size: 0.03
     x: 0.478602380952381
@@ -995,8 +1204,8 @@ switch:
     rotation: 290
     shape: RECTANGLE
     size: 0.04
-    x: 0.6700937566697674
-    y: 0.28735632183908044
+    x: 0.6870859872611466
+    y: 0.28768577494692144
   s_left_top_jet_bumper:
     shape: CIRCLE
     size: 0.08
@@ -1082,8 +1291,8 @@ switch:
     rotation: 20
     shape: RECTANGLE
     size: 0.05
-    x: 0.7012380248831571
-    y: 0.23452380952380952
+    x: 0.7136050955414013
+    y: 0.237791932059448
   s_right_ramp_score_bottom:
     rotation: 20
     shape: RECTANGLE
@@ -1112,8 +1321,8 @@ switch:
     rotation: 110
     shape: RECTANGLE
     size: 0.04
-    x: 0.793409621612468
-    y: 0.3270637408568443
+    x: 0.8100382165605096
+    y: 0.32802547770700635
   s_right_top_jet_bumper:
     shape: CIRCLE
     size: 0.08
@@ -1138,26 +1347,41 @@ switch:
     rotation: 60
     shape: CIRCLE
     size: 0.04
-    x: 0.6075873440355695
-    y: 0.9345238095238095
+    x: 0.8334192399049881
+    y: 0.8776722090261282
   s_trough2:
     rotation: 60
     shape: CIRCLE
     size: 0.04
-    x: 0.6806805583556379
-    y: 0.9142857142857143
+    x: 0.7794762470308789
+    y: 0.8919239904988123
   s_trough3:
     rotation: 60
     shape: CIRCLE
     size: 0.04
-    x: 0.7446371208856979
-    y: 0.8976190476190474
+    x: 0.7228361045130641
+    y: 0.9061757719714965
+  s_trough4:
+    shape: CIRCLE
+    size: 0.04
+    x: 0.6688931116389549
+    y: 0.9204275534441805
+  s_trough5:
+    shape: CIRCLE
+    size: 0.04
+    x: 0.6176472684085511
+    y: 0.9346793349168646
+  s_trough6:
+    shape: CIRCLE
+    size: 0.04
+    x: 0.5664014251781473
+    y: 0.9477434679334916
   s_trough_jam:
     rotation: 60
     shape: RECTANGLE
     size: 0.05
-    x: 0.5390624556105053
-    y: 0.9511904761904763
+    x: 0.512458432304038
+    y: 0.9608076009501189
   s_upper_bank_drop_target_opto:
     rotation: 310
     shape: RECTANGLE

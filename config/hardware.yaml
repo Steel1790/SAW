@@ -1,185 +1,196 @@
 #config_version=5
 
 hardware:
-    platform: smart_virtual
+    platform: fast
 
-#   fast:
-#     net:
-#       controller: neuron
-#       port: /dev/tty.usbmodem11101
-#     exp:
-#       port: /dev/tty.usbmodem11102
-#       boards:
-#         LED_256:
-#           model: FP-EXP-0081
-#           order: 1
+fast:
+  net:
+    controller: neuron
+    port: /dev/tty.usbmodem11101
+    io_loop:
+      1616_1:
+        model: FP-I/O-1616
+        order: 1
+      1616_2:
+        model: FP-I/O-1616
+        order: 2
+      3208:
+        model: FP-I/O-3208
+        order: 3
+  exp:
+    port: /dev/tty.usbmodem11103
+    boards:
+      led256:
+        model: FP-EXP-0081
+      led128:
+        model: FP-EXP-0071
+      ledneuron:
+        model: FP-EXP-2000
 
 machine:
   #min_balls: 3
 
 switches:
   s_plumb_bob_tilt:
-    number:
+    number: 3208-16
     tags: tilt_bob
   s_left_flipper:
-    number:
+    number: 3208-6
     tags: left_flipper
   s_right_flipper:
-    number:
+    number: 3208-7
     tags: right_flipper
   s_upper_right_flipper:
-    number:
+    number: 3208-12
     tags: upper_right_flipper
   s_trough1:
-    number:
+    number: 3208-29
   s_trough2:
-    number:
+    number: 3208-28
   s_trough3:
-    number:
+    number: 3208-27
   s_trough4:
-    number:
+    number: 3208-26
   s_trough5:
-    number:
+    number: 3208-25
   s_trough6:
-    number:
+    number: 3208-24
   s_trough_jam:
-    number:
+    number: 3208-31
   s_start:
-    number:
+    number: 3208-15
     tags: start
   s_action_button:
-    number:
+    number: 3208-14
     tags: action
   s_left_inlane:
-    number: 18
+    number: 3208-1
     tags: left_return_lane, playfield_active, inlane, switch_hit
   s_left_outlane:
-    number: 17
+    number: 3208-2
     tags: left_out_lane, playfield_active, outlane, switch_hit
   s_right_inlane:
-    number: 15
+    number: 3208-20
     tags: right_return_lane, playfield_active, inlane, switch_hit
   s_right_outlane:
-    number: 16
+    number: 3208-21
     tags: right_out_lane, playfield_active, outlane, switch_hit
   s_right_cellar:
-    number: 19
+    number: 1616_1-8
     tags: right_cellar, switch_hit
   s_left_cellar:
-    number: 20
+    number: 1616_1-3
     tags: left_cellar, switch_hit
   s_left_standup:
-    number: 21
+    number: 3208-8
     tags: left_standup, standup, switch_hit
 # Left Lock 1 (lwr)
   s_left_lock_1:
-    number: 22
+    number: 3208-3
     tags: left_lock_1 , left_lock
 # Left Lock 2 (mid)
   s_left_lock_2:
-    number: 23
+    number: 3208-4
     tags: left_lock_2, left_lock
 # Left Lock 3 (upr)
   s_left_lock_3:
-    number: 24
+    number: 3208-5
     tags: left_lock_3, left_lock
   s_right_standup:
-    number: 25
+    number:  3208-13
     tags: right_standup, standup, switch_hit
   s_upper_bank_drop_target_opto:
-    number: 26
+    number: 1616_2-5
     tags: drop_target, switch_hit
   s_lower_bank_drop_target_opto_upper:
-    number: 27
+    number: 3208-11
     tags: drop_target, switch_hit
   s_lower_bank_drop_target_opto_middle:
-    number: 28
+    number: 3208-10
     tags: drop_target, switch_hit
   s_lower_bank_drop_target_opto_lower:
-    number: 29
+    number: 3208-9
     tags: drop_target, switch_hit
   s_middle_standup:
-    number: 30
+    number: 1616_2-0
     tags: middle_standup, standup, switch_hit
   s_enter_left_ramp:
-    number: 33
+    number: 1616_1-12
     tags: left_ramp, ramp_hit, switch_hit, ramp
   s_left_ramp_score_top:
-    number: 34
+    number: 3208-23
     tags: left_ramp, ramp_hit, switch_hit, ramp
   s_left_ramp_score_bottom:
-    number: 35
+    number: 1616_2-9
     tags: left_ramp, ramp_hit, switch_hit, ramp
   s_left_loop_top:
-    number: 36
+    number: 1616_1-5
     tags: left_loop, loop_hit, switch_hit, loop
   s_left_loop_bottom:
-    number: 37
+    number: 1616_1-4
     tags: left_loop, loop_hit, switch_hit, loop
   s_right_loop_top:
-    number: 38
+    number: 1616_2-8
     tags: right_loop, loop_hit, switch_hit, loop
   s_right_loop_bottom:
-    number: 39
+    number: 1616_2-11
     tags: right_loop, loop_hit, switch_hit, loop
   s_inner_loop:
-    number: 40
+    number: 1616_1-6
     tags: inner_loop, loop_hit, switch_hit, loop
   s_spinner:
-    number: 41
+    number: 1616_2-4
     tags: spinner
   s_right_ramp_down:
-    number: 42
+    number: 1616_2-3
     tags: right_ramp, ramp_hit, switch_hit, ramp
   s_top_right_reject:
-    number: 43
+    number: 1616_2-10
     tags: right_ramp, ramp_hit, switch_hit
   s_right_ramp_score_top:
-    number: 44
+    number: 1616_1-7
     tags: right_ramp, ramp_hit, switch_hit, ramp
   s_right_ramp_score_bottom:
-    number: 45
+    number: 1616_2-6
     tags: right_ramp, switch_hit, switch_hit, ramp
   s_left_standup_right_ramp:
-    number: 47
+    number: 1616_2-1
     tags: standup, switch_hit
   s_right_standup_right_ramp:
-    number: 48
+    number: 1616_2-2
     tags: standup, switch_hit
   s_left_110_point:
-    number:
+    number: 3208-18
     tags: standup, switch_hit
   s_right_110_point:
-    number:
+    number: 3208-22
     tags: standup, switch_hit
   s_left_top_jet_bumper:
-    number: 49
+    number: 1616_1-10
     tags: top_pops, pops, switch_hit
   s_right_top_jet_bumper:
-    number: 50
+    number: 1616_1-9
     tags: top_pops, pops, switch_hit
   s_lower_top_jet_bumper:
-    number: 51
+    number: 1616_1-11
     tags: top_pops, pops, switch_hit
   s_left_bottom_jet_bumper:
-    number: 52
+    number: 1616_1-0
     tags: bottom_pops, pops, switch_hit
   s_right_bottom_jet_bumper:
-    number: 53
+    number: 1616_1-1
     tags: bottom_pops, pops, switch_hit
   s_upper_bottom_jet_bumper:
-    number: 54
+    number: 1616_1-2
     tags: bottom_pops, pops, switch_hit
   s_ball_shooter_lane:
-    number: 59
+    number: 3208-30
   s_left_slingshot:
-    number:
+    number: 3208-0
     tags: slingshot
   s_right_slingshot:
-    number:
+    number: 3208-19
     tags: slingshot
-  s_lockdown_button:
-    number:
 
 virtual_platform_start_active_switches:
   - s_trough1
@@ -191,75 +202,75 @@ virtual_platform_start_active_switches:
 
 coils:
   c_flipper_left_main:
-    number:
+    number: 3208-2
     default_pulse_ms: 20
     tags: coils
   c_flipper_left_hold:
-    number:
+    number: 3208-3
     default_pulse_ms: 20
     default_hold_power: 1.0
     tags: coils
   c_flipper_right_main:
-    number:
+    number: 3208-4
     default_pulse_ms: 80
     tags: coils
   c_flipper_right_hold:
-    number:
+    number: 3208-5
     default_pulse_ms: 20
     default_hold_power: 1.0
     tags: coils
   c_flipper_upper_right_main:
-    number:
+    number: 1616_2-4
     default_pulse_ms: 80
     tags: coils
   c_flipper_upper_right_hold:
-    number:
+    number: 1616_2-3
     default_pulse_ms: 20
     default_hold_power: 1.0
     tags: coils
   c_trough_eject:
-    number:
+    number: 3208-6
   c_auto_plunger:
-    number:
+    number: 3208-7
   c_diverter:
-    number:
+    number: 1616_1-0
   c_top_eject:
-    number:
+    number: 1616_2-0
   c_mystery_eject:
-    number:
+    number: 1616_1-1
   c_right_ramp_lift:
-    number:
+    number: 1616_2-2
   c_right_ramp_down:
-    number:
+    number: 1616_2-1
   c_left_spin_disc:
-    number:
+    number: 1616_2-8
   c_middle_spin_disc:
-    number:
+    number: 1616_2-9
   c_right_spin_disc:
-    number:
+    number: 1616_2-10
   c_left_lock_kickback:
-    number:
+    number: 1616_2-5
   c_left_top_jet_bumper:
-    number:
+    number: 1616_1-7
   c_right_top_jet_bumper:
-    number:
+    number: 1616_1-6
   c_lower_top_jet_bumper:
-    number:
+    number: 1616_1-9
   c_left_bottom_jet_bumper:
-    number:
+    number: 1616_1-2
   c_right_bottom_jet_bumper:
-    number:
+    number: 1616_1-4
   c_upper_bottom_jet_bumper:
-    number:
+    number: 1616_1-3
   c_left_slingshot:
-    number:
+    number: 3208-0
   c_right_slingshot:
-    number:
+    number: 3208-1
   c_lower_droptargetreset:
-    number: 12
+    number: 1616_1-5
     default_pulse_ms: 250
   c_upper_droptargetreset:
-    number:
+    number: 1616_1-8
 
 drop_targets:
   dt_upper_drop1:
