@@ -2,5 +2,12 @@
 
 lights:
   l_drillchair:
-    number: upperled-1-1
+    number: led128-1-1
     tags: insert
+  l_drillchair2:
+    number: led128-1-2
+    tags: insert
+  l_drillchair3:
+    number: led128-1-3
+    tags: insert
+    type: grb

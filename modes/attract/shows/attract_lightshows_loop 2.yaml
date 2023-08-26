@@ -1,0 +1,19 @@
+#show_version=5
+- duration: 1
+  lights:
+    l_drillchair: red
+- duration: 1
+  lights:
+    l_drillchair: ff6600
+- duration: 1
+  lights:
+    l_drillchair: ffcc00
+- duration: 1
+  lights:
+    l_drillchair: 000000
+- duration: 1
+  lights:
+    l_drillchair: blue
+- duration: 1
+  lights:
+    l_drillchair: ff00aa

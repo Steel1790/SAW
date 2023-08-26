@@ -6,10 +6,11 @@ hardware:
 fast:
     net:
         controller: neuron
-        port: /dev/tty.usbmodem14401
+        port: /dev/tty.usbmodem14101
     exp:
-        port: /dev/tty.usbmodem14403
+        port: /dev/tty.usbmodem14103
         boards:
-            upperled:
+            led128:
+                model: FP-EXP-0071
+            led256:
                 model: FP-EXP-0081
-        debug: true

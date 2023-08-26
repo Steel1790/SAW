@@ -2,18 +2,30 @@
 - duration: 1
   lights:
     l_drillchair: red
+    l_drillchair2: red
+    l_drillchair3: red
 - duration: 1
   lights:
     l_drillchair: ff6600
+    l_drillchair2: ff6600
+    l_drillchair3: ff6600
 - duration: 1
   lights:
     l_drillchair: ffcc00
+    l_drillchair2: ffcc00
+    l_drillchair3: ffcc00
 - duration: 1
   lights:
     l_drillchair: 000000
+    l_drillchair2: 000000
+    l_drillchair3: 000000
 - duration: 1
   lights:
     l_drillchair: blue
+    l_drillchair2: blue
+    l_drillchair3: blue
 - duration: 1
   lights:
     l_drillchair: ff00aa
+    l_drillchair2: ff00aa
+    l_drillchair3: ff00aa
