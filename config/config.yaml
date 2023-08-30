@@ -30,6 +30,7 @@ modes:
   - mystery
   - saw_qualify
   - mode_tracking
+  - jigsaw_multiball
 
 window:
   width: 1366
