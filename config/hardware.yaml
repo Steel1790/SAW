@@ -322,6 +322,12 @@ ball_devices:
     mechanical_eject: true
     eject_timeouts: 8000ms
 
+  bd_bathroom:
+    ball_switches: s_right_cellar
+    eject_coil: c_mystery_eject
+    mechanical_eject: true
+    eject_timeouts: 8000ms  
+
 playfields:
   playfield:
     tags: default

@@ -77,6 +77,15 @@ counters:
     events_when_complete: logicblock_jigsaw_multiball_qualify_complete 
     count_events: jigsaw_mb_qualify_sequence_complete
     
+  hacksaw_multiball_qualify:
+    starting_count: 0
+    count_complete_value: 1
+    start_enabled: true
+    persist_state: true
+    reset_on_complete: false
+    events_when_complete: logicblock_hacksaw_multiball_qualify_complete 
+    count_events: hacksaw_mb_qualify_sequence_complete  
+    
 sequences:
   jigsaw_mb_qualify:
     events:
@@ -92,3 +101,21 @@ sequences:
     reset_on_complete: false
     persist_state: true
     events_when_complete: jigsaw_mb_qualify_sequence_complete
+    
+  hacksaw_mb_qualify:
+    events:
+      - shot_left_standup_rightramp_hit
+      - shot_right_standup_rightramp_hit
+      - machine_var_audits_switches_s_right_ramp_score_top
+      - machine_var_audits_switches_s_left_lock_1{change==1}
+      - shot_left_standup_rightramp_hit
+      - shot_right_standup_rightramp_hit
+      - machine_var_audits_switches_s_right_ramp_score_top
+      - machine_var_audits_switches_s_left_lock_2{change==1}
+      - shot_left_standup_rightramp_hit
+      - shot_right_standup_rightramp_hit
+      - machine_var_audits_switches_s_right_ramp_score_top
+      - machine_var_audits_switches_s_left_lock_3{change==1}    
+    reset_on_complete: false
+    persist_state: true
+    events_when_complete: hacksaw_mb_qualify_sequence_complete    

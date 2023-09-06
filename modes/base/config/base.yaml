@@ -946,3 +946,11 @@ slides:
       video: extraball
       width: 1366
       height: 768
+
+ball_holds:
+  selection_mode_lock:
+    balls_to_hold: 1
+    hold_devices: bd_bathroom
+    enable_events: saw_qualify_complete
+    disable_events: multiball_active
+    release_one_events: slide_drillchair_pops_active, slide_flammablejellyUI_active, slide_quadshotgun_spinner, slide_razorwire_pops_active, slide_reversebeartrapUI_active, slide_zeptestUI_active          
