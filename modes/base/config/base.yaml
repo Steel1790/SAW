@@ -902,10 +902,11 @@ slides:
       anchor_x: left
       anchor_y: bottom      
     - type: video
-      video: gordonsaw 
-      width: 1366
-      height: 768
-      end_behavior: loop
+      image: gordonsaw
+#      video: gordonsaw 
+#      width: 1366
+#      height: 768
+#      end_behavior: loop
 
  
   trapcomplete:
