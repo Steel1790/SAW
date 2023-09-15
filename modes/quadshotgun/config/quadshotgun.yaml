@@ -269,6 +269,6 @@ show_player:
       loops: 2
       speed: 8
       show_tokens:
-        led: l_flasher_4
+        led: l_shotgun_flasher_4
         color1: 006ee6
 

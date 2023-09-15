@@ -1,0 +1,28 @@
+#config_version=5
+    
+mode:
+  start_events: logicblock_jigsaw_multiball_qualify_complete
+  stop_events: stop_mode_jigsaw_multiball, mode_jigsaw_multiball_complete, player_turn_stopped, player_turn_ended
+      
+multiballs:
+  jigsaw_multiball:
+    ball_count: 2
+    shoot_again: 15s
+    start_events: mode_jigsaw_multiball_started
+#    reset_events: mode_jigsaw_multiball_started
+
+variable_player: 
+  mode_jigsaw_multiball_started:
+    score: 3000000
+    
+slides:
+  HacksawMB:
+    widgets:
+    - type: video
+      video: HacksawMB     
+   
+slide_player:
+  mode_jigsaw_multiball_started:
+    HacksawMB:
+      priority: 500
+      expire: 8s
