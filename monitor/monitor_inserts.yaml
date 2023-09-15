@@ -1,0 +1,355 @@
+device_size: 0.02
+light:
+  l_bear_flasher_1:
+    size: 0.02
+    x: 0.5324322527015795
+    y: 0.2506234413965087
+  l_bear_flasher_2:
+    size: 0.02
+    x: 0.5550889443059018
+    y: 0.2543640897755611
+  l_bear_flasher_3:
+    size: 0.02
+    x: 0.5664172901080632
+    y: 0.2643391521197007
+  l_bear_flasher_4:
+    size: 0.02
+    x: 0.5550889443059018
+    y: 0.2743142144638404
+  l_bear_flasher_5:
+    size: 0.02
+    x: 0.529600166251039
+    y: 0.27805486284289277
+  l_bear_flasher_6:
+    size: 0.02
+    x: 0.5069434746467165
+    y: 0.2743142144638404
+  l_bear_flasher_7:
+    size: 0.02
+    x: 0.501279301745636
+    y: 0.2643391521197007
+  l_bear_flasher_8:
+    size: 0.02
+    x: 0.5097755610972569
+    y: 0.2543640897755611
+  l_beartrap_mode:
+    shape: SQUARE
+    size: 0.03
+    x: 0.42181904761904765
+    y: 0.7845238095238095
+  l_drill_flasher_1:
+    size: 0.02
+    x: 0.1954139650872818
+    y: 0.35660847880299257
+  l_drill_flasher_2:
+    size: 0.02
+    x: 0.22090274314214464
+    y: 0.36034912718204487
+  l_drill_flasher_3:
+    size: 0.02
+    x: 0.22939900249376557
+    y: 0.3703241895261845
+  l_drill_flasher_4:
+    size: 0.02
+    x: 0.22373482959268495
+    y: 0.38029925187032415
+  l_drill_flasher_5:
+    size: 0.02
+    x: 0.20391022443890275
+    y: 0.38403990024937656
+  l_drill_flasher_6:
+    size: 0.02
+    x: 0.17842144638403992
+    y: 0.38279301745635913
+  l_drill_flasher_7:
+    size: 0.02
+    x: 0.1642610141313383
+    y: 0.3728179551122195
+  l_drill_flasher_8:
+    size: 0.02
+    x: 0.16992518703241896
+    y: 0.36159600997506236
+  l_drillchair_mode:
+    shape: SQUARE
+    size: 0.03
+    x: 0.3650357142857143
+    y: 0.7761904761904763
+  l_inner_loop_arrow:
+    rotation: 310
+    shape: ARROW
+    size: 0.05
+    x: 0.4299309523809524
+    y: 0.24523809523809526
+  l_jelly_mode:
+    shape: SQUARE
+    size: 0.03
+    x: 0.532681746031746
+    y: 0.7928571428571429
+  l_jw_bathtub:
+    size: 0.03
+    x: 0.6056888888888889
+    y: 0.4619047619047619
+  l_jw_candle:
+    size: 0.03
+    x: 0.7003277777777779
+    y: 0.47261904761904766
+  l_jw_drill:
+    size: 0.03
+    x: 0.7354793650793651
+    y: 0.45357142857142857
+  l_jw_gears:
+    size: 0.03
+    x: 0.6300246031746032
+    y: 0.42023809523809524
+  l_jw_gun:
+    shape: CIRCLE
+    size: 0.03
+    x: 0.7246634920634921
+    y: 0.430952380952381
+  l_jw_key:
+    shape: CIRCLE
+    size: 0.03
+    x: 0.6814
+    y: 0.4166666666666667
+  l_jw_syringe:
+    size: 0.03
+    x: 0.6002809523809524
+    y: 0.43928571428571433
+  l_jw_taperecorder:
+    size: 0.03
+    x: 0.648952380952381
+    y: 0.4761904761904763
+  l_left_escape:
+    size: 0.05
+    x: 0.1406063492063492
+    y: 0.7047619047619048
+  l_left_loop_arrow:
+    rotation: 340
+    shape: ARROW
+    size: 0.05
+    x: 0.23524523809523812
+    y: 0.4416666666666667
+  l_left_ramp_triangle1:
+    rotation: 300
+    shape: TRIANGLE
+    size: 0.05
+    x: 0.5840053226531654
+    y: 0.3448275862068965
+  l_left_ramp_triangle2:
+    rotation: 300
+    shape: TRIANGLE
+    size: 0.05
+    x: 0.48628331647215767
+    y: 0.31974921630094044
+  l_left_ramp_triangle3:
+    rotation: 290
+    shape: TRIANGLE
+    size: 0.04
+    x: 0.4001948824555556
+    y: 0.29780564263322884
+  l_left_return_lane:
+    rotation: 210
+    shape: ARROW
+    size: 0.05
+    x: 0.27310079365079365
+    y: 0.6452380952380953
+  l_left_standup_arrow:
+    rotation: 350
+    shape: ARROW
+    size: 0.05
+    x: 0.42181904761904765
+    y: 0.47976190476190483
+  l_left_standup_right_ramp_arrow:
+    rotation: 20
+    shape: ARROW
+    size: 0.05
+    x: 0.6678801587301588
+    y: 0.31785714285714284
+  l_live_again:
+    shape: CIRCLE
+    size: 0.05
+    x: 0.5056420634920635
+    y: 0.867857142857143
+  l_quadshotgun_mode:
+    shape: SQUARE
+    size: 0.03
+    x: 0.5894650793650794
+    y: 0.7845238095238095
+  l_razorwire_flasher_1:
+    size: 0.02
+    x: 0.4797547770700637
+    y: 0.1326963906581741
+  l_razorwire_flasher_2:
+    x: 0.5014522292993631
+    y: 0.13694267515923567
+  l_razorwire_flasher_3:
+    x: 0.5086847133757962
+    y: 0.1464968152866242
+  l_razorwire_flasher_4:
+    x: 0.5014522292993631
+    y: 0.15498938428874734
+  l_razorwire_flasher_5:
+    x: 0.4797547770700637
+    y: 0.15817409766454352
+  l_razorwire_flasher_6:
+    x: 0.45564649681528663
+    y: 0.15498938428874734
+  l_razorwire_flasher_7:
+    x: 0.4508248407643312
+    y: 0.1454352441613588
+  l_razorwire_flasher_8:
+    x: 0.45805732484076433
+    y: 0.13588110403397027
+  l_razorwire_mode:
+    shape: SQUARE
+    size: 0.03
+    x: 0.6462484126984127
+    y: 0.7773809523809525
+  l_right_escape:
+    size: 0.05
+    x: 0.8733817460317461
+    y: 0.7047619047619048
+  l_right_loop_arrow:
+    rotation: 20
+    shape: ARROW
+    size: 0.05
+    x: 0.8625658730158731
+    y: 0.3511904761904762
+  l_right_ramp_triangle1:
+    rotation: 20
+    shape: TRIANGLE
+    size: 0.04
+    x: 0.7057357142857144
+    y: 0.37619047619047624
+  l_right_ramp_triangle2:
+    rotation: 20
+    shape: TRIANGLE
+    size: 0.04
+    x: 0.7273674603174605
+    y: 0.3380952380952381
+  l_right_standup_arrow:
+    rotation: 30
+    shape: ARROW
+    size: 0.05
+    x: 0.8274142857142859
+    y: 0.5416666666666667
+  l_right_standup_right_ramp_arrow:
+    rotation: 20
+    shape: ARROW
+    size: 0.05
+    x: 0.7895587301587302
+    y: 0.3595238095238096
+  l_shotgun_flasher_1:
+    size: 0.02
+    x: 0.8949393183707398
+    y: 0.2805486284289277
+  l_shotgun_flasher_2:
+    size: 0.02
+    x: 0.9147639235245221
+    y: 0.28428927680798005
+  l_shotgun_flasher_3:
+    size: 0.02
+    x: 0.9260922693266833
+    y: 0.29301745635910226
+  l_shotgun_flasher_4:
+    size: 0.02
+    x: 0.9175960099750623
+    y: 0.3042394014962594
+  l_shotgun_flasher_5:
+    size: 0.02
+    x: 0.8949393183707398
+    y: 0.3079800498753117
+  l_shotgun_flasher_6:
+    size: 0.02
+    x: 0.869450540315877
+    y: 0.3029925187032419
+  l_shotgun_flasher_7:
+    size: 0.02
+    x: 0.8637863674147963
+    y: 0.2917705735660848
+  l_shotgun_flasher_8:
+    size: 0.02
+    x: 0.8751147132169577
+    y: 0.2830423940149626
+  l_skill_shot1:
+    rotation: 310
+    shape: TRIANGLE
+    size: 0.04
+    x: 0.8652698412698413
+    y: 0.45357142857142857
+  l_skill_shot2:
+    rotation: 300
+    shape: TRIANGLE
+    size: 0.04
+    x: 0.7462952380952382
+    y: 0.40476190476190477
+  l_skill_shot3:
+    rotation: 260
+    shape: TRIANGLE
+    size: 0.04
+    x: 0.5746984649216411
+    y: 0.3887147335423198
+  l_top_drop1:
+    size: 0.03
+    x: 0.6056888888888889
+    y: 0.3107142857142857
+  l_top_drop2:
+    size: 0.03
+    x: 0.6138007936507937
+    y: 0.2892857142857143
+  l_top_drop3:
+    size: 0.03
+    x: 0.6219126984126985
+    y: 0.2666666666666667
+  l_top_drop4:
+    size: 0.03
+    x: 0.627320634920635
+    y: 0.24523809523809526
+  l_top_drop5:
+    size: 0.04
+    x: 0.638136507936508
+    y: 0.22023809523809523
+  l_top_drop_triangle:
+    rotation: 10
+    shape: TRIANGLE
+    size: 0.04
+    x: 0.6462484126984127
+    y: 0.19523809523809527
+  l_zep_flasher_1:
+    size: 0.02
+    x: 0.5069434746467165
+    y: 0.3940149625935162
+  l_zep_flasher_2:
+    size: 0.02
+    x: 0.5267680798004988
+    y: 0.4002493765586035
+  l_zep_flasher_3:
+    size: 0.02
+    x: 0.5352643391521197
+    y: 0.4089775561097257
+  l_zep_flasher_4:
+    size: 0.02
+    x: 0.5211039068994182
+    y: 0.4177057356608479
+  l_zep_flasher_5:
+    size: 0.02
+    x: 0.4984472152950956
+    y: 0.41895261845386533
+  l_zep_flasher_6:
+    size: 0.02
+    x: 0.4786226101413134
+    y: 0.4139650872817955
+  l_zep_flasher_7:
+    size: 0.02
+    x: 0.47579052369077307
+    y: 0.40399002493765584
+  l_zep_flasher_8:
+    size: 0.02
+    x: 0.48711886949293437
+    y: 0.3965087281795512
+  l_zeptest_mode:
+    shape: SQUARE
+    size: 0.03
+    x: 0.478602380952381
+    y: 0.7928571428571429
+

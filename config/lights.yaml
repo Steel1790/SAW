@@ -2,861 +2,826 @@
 
 lights:
   l_left_escape:
-    number: led128-1-4
-    tags: insert
+    number: led128-4-4
+    tags: insert, led128p4
   l_right_escape:
-    number: led128-1-19
-    tags: insert
+    number: led128-4-27
+    tags: insert, led128p4
   l_top_drop1:
-    number: led256-5-17
-    tags: insert
+    number: led256-5-11
+    tags: insert, led256p5
   l_top_drop2:
-    number: led256-5-16
-    tags: insert
+    number: led256-5-10
+    tags: insert, led256p5
   l_top_drop3:
-    number: led256-5-15
-    tags: insert
+    number: led256-5-9
+    tags: insert, led256p5
   l_top_drop4:
-    number: led256-5-14
-    tags: insert
+    number: led256-5-8
+    tags: insert, led256p5
   l_top_drop5:
-    number: led256-5-13
-    tags: insert
+    number: led256-5-7
+    tags: insert, led256p5
   l_top_drop_triangle:
-    number: led256-5-12
-    tags: insert
+    number: led256-5-6
+    tags: insert, led256p5
 
 # jigsaw's workshop circle of 8 round inserts
   l_jw_key:
     number: led128-3-12
-    
-    tags: insert
+    tags: insert, led128p3
   l_jw_gun:
     number: led128-3-13
-    
-    tags: insert
+    tags: insert, led128p3
   l_jw_drill:
     number: led128-3-6
-    
-    tags: insert
+    tags: insert, led128p3
   l_jw_candle:
     number: led128-3-7
-    
-    tags: insert
+    tags: insert, led128p3
   l_jw_taperecorder:
-    number: led128-3-8
-    
-    tags: insert
+    number: led128-3-8 
+    tags: insert, led128p3
   l_jw_bathtub:
-    number: led128-3-9
-    
-    tags: insert
+    number: led128-3-9  
+    tags: insert, led128p3
   l_jw_syringe:
     number: led128-3-10
-    
-    tags: insert
+    tags: insert, led128p3
   l_jw_gears:
     number: led128-3-11
-    
-    tags: insert
+    tags: insert, led128p3
 
 # jet bumpers
   l_left_bottom_bumper_1:
-    number: led256-1-6
-    
-    tags: jet_bumper, bottom_bumper, left_bottom_bumper
-  l_left_bottom_bumper_2:
-    number: led256-1-7
-    
-    tags: jet_bumper, bottom_bumper, left_bottom_bumper
-  l_left_bottom_bumper_3:
-    number: led256-1-8
-    
-    tags: jet_bumper, bottom_bumper, left_bottom_bumper
-  l_left_bottom_bumper_4:
-    number: led256-1-9
-    
-    tags: jet_bumper, bottom_bumper, left_bottom_bumper
-  l_left_bottom_bumper_5:
-    number: led256-1-10
-    
-    tags: jet_bumper, bottom_bumper, left_bottom_bumper
-  l_left_bottom_bumper_6:
-    number: led256-1-11
-    
-    tags: jet_bumper, bottom_bumper, left_bottom_bumper
-  l_left_bottom_bumper_7:
-    number: led256-1-12
-    
-    tags: jet_bumper, bottom_bumper, left_bottom_bumper
-  l_left_bottom_bumper_8:
-    number: led256-1-13
-    
-    tags: jet_bumper, bottom_bumper, left_bottom_bumper
-  l_left_bottom_bumper_9:
     number: led256-1-14
-    
-    tags: jet_bumper, bottom_bumper, left_bottom_bumper
-  l_left_bottom_bumper_10:
+    tags: jet_bumper, bottom_bumper, left_bottom_bumper, led256p1
+  l_left_bottom_bumper_2:
     number: led256-1-15
-    
-    tags: jet_bumper, bottom_bumper, left_bottom_bumper
-  l_left_bottom_bumper_11:
+    tags: jet_bumper, bottom_bumper, left_bottom_bumper, led256p1
+  l_left_bottom_bumper_3:
     number: led256-1-16
-    
-    tags: jet_bumper, bottom_bumper, left_bottom_bumper
-  l_left_bottom_bumper_12:
+    tags: jet_bumper, bottom_bumper, left_bottom_bumper, led256p1
+  l_left_bottom_bumper_4:
     number: led256-1-17
-    
-    tags: jet_bumper, bottom_bumper, left_bottom_bumper
-  l_left_bottom_bumper_13:
+    tags: jet_bumper, bottom_bumper, left_bottom_bumper, led256p1
+  l_left_bottom_bumper_5:
     number: led256-1-18
-    
-    tags: jet_bumper, bottom_bumper, left_bottom_bumper
-  l_left_bottom_bumper_14:
+    tags: jet_bumper, bottom_bumper, left_bottom_bumper, led256p1
+  l_left_bottom_bumper_6:
     number: led256-1-19
-    
-    tags: jet_bumper, bottom_bumper, left_bottom_bumper
-  l_left_bottom_bumper_15:
+    tags: jet_bumper, bottom_bumper, left_bottom_bumper, led256p1
+  l_left_bottom_bumper_7:
     number: led256-1-20
-    
-    tags: jet_bumper, bottom_bumper, left_bottom_bumper
-  l_left_bottom_bumper_16:
+    tags: jet_bumper, bottom_bumper, left_bottom_bumper, led256p1
+  l_left_bottom_bumper_8:
     number: led256-1-21
-    
-    tags: jet_bumper, bottom_bumper, left_bottom_bumper
-
+    tags: jet_bumper, bottom_bumper, left_bottom_bumper, led256p1
+  l_left_bottom_bumper_9:
+    number: led256-1-22
+    tags: jet_bumper, bottom_bumper, left_bottom_bumper, led256p1
+  l_left_bottom_bumper_10:
+    number: led256-1-23
+    tags: jet_bumper, bottom_bumper, left_bottom_bumper, led256p1
+  l_left_bottom_bumper_11:
+    number: led256-1-24
+    tags: jet_bumper, bottom_bumper, left_bottom_bumper, led256p1
+  l_left_bottom_bumper_12:
+    number: led256-1-25
+    tags: jet_bumper, bottom_bumper, left_bottom_bumper, led256p1
+  l_left_bottom_bumper_13:
+    number: led256-1-26
+    tags: jet_bumper, bottom_bumper, left_bottom_bumper, led256p1
+  l_left_bottom_bumper_14:
+    number: led256-1-27
+    tags: jet_bumper, bottom_bumper, left_bottom_bumper, led256p1
+  l_left_bottom_bumper_15:
+    number: led256-1-28
+    tags: jet_bumper, bottom_bumper, left_bottom_bumper, led256p1
+  l_left_bottom_bumper_16:
+    number: led256-1-29
+    tags: jet_bumper, bottom_bumper, left_bottom_bumper, led256p1
 
   l_top_bottom_bumper_1:
     number: led256-2-1
-    tags: jet_bumper, bottom_bumper, top_bottom_bumper
+    tags: jet_bumper, bottom_bumper, top_bottom_bumper, led256p2
   l_top_bottom_bumper_2:
     number: led256-2-2
-    tags: jet_bumper, bottom_bumper, top_bottom_bumper
+    tags: jet_bumper, bottom_bumper, top_bottom_bumper, led256p2
   l_top_bottom_bumper_3:
     number: led256-2-3
-    tags: jet_bumper, bottom_bumper, top_bottom_bumper
+    tags: jet_bumper, bottom_bumper, top_bottom_bumper, led256p2
   l_top_bottom_bumper_4:
     number: led256-2-4
-    tags: jet_bumper, bottom_bumper, top_bottom_bumper
+    tags: jet_bumper, bottom_bumper, top_bottom_bumper, led256p2
   l_top_bottom_bumper_5:
     number: led256-2-5
-    tags: jet_bumper, bottom_bumper, top_bottom_bumper
+    tags: jet_bumper, bottom_bumper, top_bottom_bumper, led256p2
   l_top_bottom_bumper_6:
     number: led256-2-6
-    tags: jet_bumper, bottom_bumper, top_bottom_bumper
+    tags: jet_bumper, bottom_bumper, top_bottom_bumper, led256p2
   l_top_bottom_bumper_7:
     number: led256-2-7
-    tags: jet_bumper, bottom_bumper, top_bottom_bumper
+    tags: jet_bumper, bottom_bumper, top_bottom_bumper, led256p2
   l_top_bottom_bumper_8:
     number: led256-2-8
-    tags: jet_bumper, bottom_bumper, top_bottom_bumper
+    tags: jet_bumper, bottom_bumper, top_bottom_bumper, led256p2
   l_top_bottom_bumper_9:
     number: led256-2-9
-    tags: jet_bumper, bottom_bumper, top_bottom_bumper
+    tags: jet_bumper, bottom_bumper, top_bottom_bumper, led256p2
   l_top_bottom_bumper_10:
     number: led256-2-10
-    tags: jet_bumper, bottom_bumper, top_bottom_bumper
+    tags: jet_bumper, bottom_bumper, top_bottom_bumper, led256p2
   l_top_bottom_bumper_11:
     number: led256-2-11
-    tags: jet_bumper, bottom_bumper, top_bottom_bumper
+    tags: jet_bumper, bottom_bumper, top_bottom_bumper, led256p2
   l_top_bottom_bumper_12:
     number: led256-2-12
-    tags: jet_bumper, bottom_bumper, top_bottom_bumper
+    tags: jet_bumper, bottom_bumper, top_bottom_bumper, led256p2
   l_top_bottom_bumper_13:
     number: led256-2-13
-    tags: jet_bumper, bottom_bumper, top_bottom_bumper
+    tags: jet_bumper, bottom_bumper, top_bottom_bumper, led256p2
   l_top_bottom_bumper_14:
     number: led256-2-14
-    tags: jet_bumper, bottom_bumper, top_bottom_bumper
+    tags: jet_bumper, bottom_bumper, top_bottom_bumper, led256p2
   l_top_bottom_bumper_15:
     number: led256-2-15
-    tags: jet_bumper, bottom_bumper, top_bottom_bumper
+    tags: jet_bumper, bottom_bumper, top_bottom_bumper, led256p2
   l_top_bottom_bumper_16:
     number: led256-2-16
-    tags: jet_bumper, bottom_bumper, top_bottom_bumper
-
+    tags: jet_bumper, bottom_bumper, top_bottom_bumper, led256p2
 
   l_right_bottom_bumper_1:
     number: led256-2-17
-    tags: jet_bumper, bottom_bumper, right_bottom_bumper
+    tags: jet_bumper, bottom_bumper, right_bottom_bumper, led256p2
   l_right_bottom_bumper_2:
     number: led256-2-18
-    tags: jet_bumper, bottom_bumper, right_bottom_bumper
+    tags: jet_bumper, bottom_bumper, right_bottom_bumper, led256p2
   l_right_bottom_bumper_3:
     number: led256-2-19  
-    tags: jet_bumper, bottom_bumper, right_bottom_bumper    
+    tags: jet_bumper, bottom_bumper, right_bottom_bumper, led256p2
   l_right_bottom_bumper_4:
     number: led256-2-20
-    tags: jet_bumper, bottom_bumper, right_bottom_bumper
+    tags: jet_bumper, bottom_bumper, right_bottom_bumper, led256p2
   l_right_bottom_bumper_5:
     number: led256-2-21
-    tags: jet_bumper, bottom_bumper, right_bottom_bumper
+    tags: jet_bumper, bottom_bumper, right_bottom_bumper, led256p2
   l_right_bottom_bumper_6:
     number: led256-2-22
-    tags: jet_bumper, bottom_bumper, right_bottom_bumper
+    tags: jet_bumper, bottom_bumper, right_bottom_bumper, led256p2
   l_right_bottom_bumper_7:
     number: led256-2-23
-    tags: jet_bumper, bottom_bumper, right_bottom_bumper
+    tags: jet_bumper, bottom_bumper, right_bottom_bumper, led256p2
   l_right_bottom_bumper_8:
     number: led256-2-24
-    tags: jet_bumper, bottom_bumper, right_bottom_bumper
+    tags: jet_bumper, bottom_bumper, right_bottom_bumper, led256p2
   l_right_bottom_bumper_9:
     number: led256-2-25
-    tags: jet_bumper, bottom_bumper, right_bottom_bumper
+    tags: jet_bumper, bottom_bumper, right_bottom_bumper, led256p2
   l_right_bottom_bumper_10:
     number: led256-2-26
-    tags: jet_bumper, bottom_bumper, right_bottom_bumper
+    tags: jet_bumper, bottom_bumper, right_bottom_bumper, led256p2
   l_right_bottom_bumper_11:
     number: led256-2-27
-    tags: jet_bumper, bottom_bumper, right_bottom_bumper
+    tags: jet_bumper, bottom_bumper, right_bottom_bumper, led256p2
   l_right_bottom_bumper_12:
     number: led256-2-28
-    tags: jet_bumper, bottom_bumper, right_bottom_bumper
+    tags: jet_bumper, bottom_bumper, right_bottom_bumper, led256p2
   l_right_bottom_bumper_13:
     number: led256-2-29    
-    tags: jet_bumper, bottom_bumper, right_bottom_bumper
+    tags: jet_bumper, bottom_bumper, right_bottom_bumper, led256p2
   l_right_bottom_bumper_14:
     number: led256-2-30
-    tags: jet_bumper, bottom_bumper, right_bottom_bumper
+    tags: jet_bumper, bottom_bumper, right_bottom_bumper, led256p2
   l_right_bottom_bumper_15:
     number: led256-2-31
-    tags: jet_bumper, bottom_bumper, right_bottom_bumper
+    tags: jet_bumper, bottom_bumper, right_bottom_bumper, led256p2
   l_right_bottom_bumper_16:
     number: led256-2-32
-    tags: jet_bumper, bottom_bumper, right_bottom_bumper
-
+    tags: jet_bumper, bottom_bumper, right_bottom_bumper, led256p2
 
   l_left_top_bumper_1:
     number: led256-3-1
-    tags: jet_bumper, top_bumper, left_top_bumper
+    tags: jet_bumper, top_bumper, left_top_bumper, led256p3
   l_left_top_bumper_2:
     number: led256-3-2
-    tags: jet_bumper, top_bumper, left_top_bumper
+    tags: jet_bumper, top_bumper, left_top_bumper, led256p3
   l_left_top_bumper_3:
     number: led256-3-3
-    tags: jet_bumper, top_bumper, left_top_bumper
+    tags: jet_bumper, top_bumper, left_top_bumper, led256p3
   l_left_top_bumper_4:
     number: led256-3-4
-    tags: jet_bumper, top_bumper, left_top_bumper
+    tags: jet_bumper, top_bumper, left_top_bumper, led256p3
   l_left_top_bumper_5:
     number: led256-3-5
-    tags: jet_bumper, top_bumper, left_top_bumper
+    tags: jet_bumper, top_bumper, left_top_bumper, led256p3
   l_left_top_bumper_6:
     number: led256-3-6
-    tags: jet_bumper, top_bumper, left_top_bumper
+    tags: jet_bumper, top_bumper, left_top_bumper, led256p3
   l_left_top_bumper_7:
     number: led256-3-7
-    tags: jet_bumper, top_bumper, left_top_bumper
+    tags: jet_bumper, top_bumper, left_top_bumper, led256p3
   l_left_top_bumper_8:
     number: led256-3-8
-    tags: jet_bumper, top_bumper, left_top_bumper
+    tags: jet_bumper, top_bumper, left_top_bumper, led256p3
   l_left_top_bumper_9:
     number: led256-3-9
-    tags: jet_bumper, top_bumper, left_top_bumper
+    tags: jet_bumper, top_bumper, left_top_bumper, led256p3
   l_left_top_bumper_10:
     number: led256-3-10
-    tags: jet_bumper, top_bumper, left_top_bumper
+    tags: jet_bumper, top_bumper, left_top_bumper, led256p3
   l_left_top_bumper_11:
     number: led256-3-11
-    tags: jet_bumper, top_bumper, left_top_bumper
+    tags: jet_bumper, top_bumper, left_top_bumper, led256p3
   l_left_top_bumper_12:
     number: led256-3-12
-    tags: jet_bumper, top_bumper, left_top_bumper
+    tags: jet_bumper, top_bumper, left_top_bumper, led256p3
   l_left_top_bumper_13:
     number: led256-3-13
-    tags: jet_bumper, top_bumper, left_top_bumper
+    tags: jet_bumper, top_bumper, left_top_bumper, led256p3
   l_left_top_bumper_14:
     number: led256-3-14
-    tags: jet_bumper, top_bumper, left_top_bumper
+    tags: jet_bumper, top_bumper, left_top_bumper, led256p3
   l_left_top_bumper_15:
     number: led256-3-15
-    tags: jet_bumper, top_bumper, left_top_bumper
+    tags: jet_bumper, top_bumper, left_top_bumper, led256p3
   l_left_top_bumper_16:
     number: led256-3-16
-    tags: jet_bumper, top_bumper, left_top_bumper
-
+    tags: jet_bumper, top_bumper, left_top_bumper, led256p3
 
   l_right_top_bumper_1:
     number: led256-4-1
-    tags: jet_bumper, top_bumper, right_top_bumper
+    tags: jet_bumper, top_bumper, right_top_bumper, led256p4
   l_right_top_bumper_2:
     number: led256-4-2
-    tags: jet_bumper, top_bumper, right_top_bumper
+    tags: jet_bumper, top_bumper, right_top_bumper, led256p4
   l_right_top_bumper_3:
     number: led256-4-3
-    tags: jet_bumper, top_bumper, right_top_bumper
+    tags: jet_bumper, top_bumper, right_top_bumper, led256p4
   l_right_top_bumper_4:
     number: led256-4-4
-    tags: jet_bumper, top_bumper, right_top_bumper
+    tags: jet_bumper, top_bumper, right_top_bumper, led256p4
   l_right_top_bumper_5:
     number: led256-4-5
-    tags: jet_bumper, top_bumper, right_top_bumper
+    tags: jet_bumper, top_bumper, right_top_bumper, led256p4
   l_right_top_bumper_6:
     number: led256-4-6
-    tags: jet_bumper, top_bumper, right_top_bumper
+    tags: jet_bumper, top_bumper, right_top_bumper, led256p4
   l_right_top_bumper_7:
     number: led256-4-7
-    tags: jet_bumper, top_bumper, right_top_bumper
+    tags: jet_bumper, top_bumper, right_top_bumper, led256p4
   l_right_top_bumper_8:
     number: led256-4-8
-    tags: jet_bumper, top_bumper, right_top_bumper
+    tags: jet_bumper, top_bumper, right_top_bumper, led256p4
   l_right_top_bumper_9:
     number: led256-4-9
-    tags: jet_bumper, top_bumper, right_top_bumper
+    tags: jet_bumper, top_bumper, right_top_bumper, led256p4
   l_right_top_bumper_10:
     number: led256-4-10
-    tags: jet_bumper, top_bumper, right_top_bumper
+    tags: jet_bumper, top_bumper, right_top_bumper, led256p4
   l_right_top_bumper_11:
     number: led256-4-11
-    tags: jet_bumper, top_bumper, right_top_bumper
+    tags: jet_bumper, top_bumper, right_top_bumper, led256p4
   l_right_top_bumper_12:
     number: led256-4-12
-    tags: jet_bumper, top_bumper, right_top_bumper
+    tags: jet_bumper, top_bumper, right_top_bumper, led256p4
   l_right_top_bumper_13:
     number: led256-4-13
-    tags: jet_bumper, top_bumper, right_top_bumper
+    tags: jet_bumper, top_bumper, right_top_bumper, led256p4
   l_right_top_bumper_14:
     number: led256-4-14
-    tags: jet_bumper, top_bumper, right_top_bumper
+    tags: jet_bumper, top_bumper, right_top_bumper, led256p4
   l_right_top_bumper_15:
     number: led256-4-15
-    tags: jet_bumper, top_bumper, right_top_bumper
+    tags: jet_bumper, top_bumper, right_top_bumper, led256p4
   l_right_top_bumper_16:
     number: led256-4-16
-    tags: jet_bumper, top_bumper, right_top_bumper
-
+    tags: jet_bumper, top_bumper, right_top_bumper, led256p4
 
   l_lower_top_bumper_1:
     number: led256-4-17
-    tags: jet_bumper, top_bumper, lower_bottom_bumper
+    tags: jet_bumper, top_bumper, lower_bottom_bumper, led256p4
   l_lower_top_bumper_2:
     number: led256-4-18
-    tags: jet_bumper, top_bumper, lower_bottom_bumper
+    tags: jet_bumper, top_bumper, lower_bottom_bumper, led256p4
   l_lower_top_bumper_3:
     number: led256-4-19
-    tags: jet_bumper, top_bumper, lower_bottom_bumper
+    tags: jet_bumper, top_bumper, lower_bottom_bumper, led256p4
   l_lower_top_bumper_4:
     number: led256-4-20
-    tags: jet_bumper, top_bumper, lower_bottom_bumper
+    tags: jet_bumper, top_bumper, lower_bottom_bumper, led256p4
   l_lower_top_bumper_5:
     number: led256-4-21
-    tags: jet_bumper, top_bumper, lower_bottom_bumper
+    tags: jet_bumper, top_bumper, lower_bottom_bumper, led256p4
   l_lower_top_bumper_6:
     number: led256-4-22
-    tags: jet_bumper, top_bumper, lower_bottom_bumper
+    tags: jet_bumper, top_bumper, lower_bottom_bumper, led256p4
   l_lower_top_bumper_7:
     number: led256-4-23
-    tags: jet_bumper, top_bumper, lower_bottom_bumper
+    tags: jet_bumper, top_bumper, lower_bottom_bumper, led256p4
   l_lower_top_bumper_8:
     number: led256-4-24
-    tags: jet_bumper, top_bumper, lower_bottom_bumper
+    tags: jet_bumper, top_bumper, lower_bottom_bumper, led256p4
   l_lower_top_bumper_9:
     number: led256-4-25
-    tags: jet_bumper, top_bumper, lower_bottom_bumper
+    tags: jet_bumper, top_bumper, lower_bottom_bumper, led256p4
   l_lower_top_bumper_10:
     number: led256-4-26
-    tags: jet_bumper, top_bumper, lower_bottom_bumper
+    tags: jet_bumper, top_bumper, lower_bottom_bumper, led256p4
   l_lower_top_bumper_11:
     number: led256-4-27
-    tags: jet_bumper, top_bumper, lower_bottom_bumper
+    tags: jet_bumper, top_bumper, lower_bottom_bumper, led256p4
   l_lower_top_bumper_12:
     number: led256-4-28
-    tags: jet_bumper, top_bumper, lower_bottom_bumper
+    tags: jet_bumper, top_bumper, lower_bottom_bumper, led256p4
   l_lower_top_bumper_13:
     number: led256-4-29
-    tags: jet_bumper, top_bumper, lower_bottom_bumper
+    tags: jet_bumper, top_bumper, lower_bottom_bumper, led256p4
   l_lower_top_bumper_14:
     number: led256-4-30
-    tags: jet_bumper, top_bumper, lower_bottom_bumper
+    tags: jet_bumper, top_bumper, lower_bottom_bumper, led256p4
   l_lower_top_bumper_15:
     number: led256-4-31
-    tags: jet_bumper, top_bumper, lower_bottom_bumper
+    tags: jet_bumper, top_bumper, lower_bottom_bumper, led256p4
   l_lower_top_bumper_16:
     number: led256-4-32
-    tags: jet_bumper, top_bumper, lower_bottom_bumper
+    tags: jet_bumper, top_bumper, lower_bottom_bumper, led256p4
 
   l_right_ramp_triangle1:
     number: led128-3-16
-    tags: insert
+    tags: insert, led128p3
   l_right_ramp_triangle2:
     number: led128-3-18
-    tags: insert
+    tags: insert, led128p3
   l_left_ramp_triangle1:
     number: led128-2-19
-    tags: insert
+    tags: insert, led128p2
   l_left_ramp_triangle2:
     number: led128-2-20
-    tags: insert
+    tags: insert, led128p2
   l_left_ramp_triangle3:
     number: led128-2-21
-    tags: insert
+    tags: insert, led128p2
 
 # skillshot lights
   l_skill_shot1:
     number: led128-3-5
-    tags: insert
+    tags: insert, led128p3
   l_skill_shot2:
     number: led128-3-14
-    tags: insert
+    tags: insert, led128p3
   l_skill_shot3:
     number: led128-3-15
-    tags: insert
-
+    tags: insert, led128p3
   l_left_return_lane:
-    number: led128-1-5
-    tags: insert
+    number: led128-4-5
+    tags: insert, led128p4
   l_left_loop_arrow:
     number: led128-2-4
-    tags: insert, arrow
+    tags: insert, arrow, led128p2
   l_left_standup_arrow:
     number: led128-2-6
-    tags: insert, arrow
+    tags: insert, arrow, led128p2
   l_inner_loop_arrow:
     number: led128-2-22
-    tags: insert, arrow
+    tags: insert, arrow, led128p2
   l_left_standup_right_ramp_arrow:
     number: led128-3-17
-    tags: insert, arrow
+    tags: insert, arrow, led128p3
   l_right_standup_right_ramp_arrow:
     number: led128-3-19
-    tags: insert, arrow
+    tags: insert, arrow, led128p3
   l_right_loop_arrow:
     number: led128-3-20
-    tags: insert, arrow
+    tags: insert, arrow, led128p3
   l_right_standup_arrow:
     number: led128-3-2
-    tags: insert, arrow
+    tags: insert, arrow, led128p3
   l_live_again:
-    number: led128-1-13
-    tags: insert
+    number: led128-4-13
+    tags: insert, led128p4
 
  # trap lights
   l_drillchair_mode:
-    number: led128-1-10
-    tags: insert, trap
+    number: led128-4-10
+    tags: insert, trap, led128p4
   l_beartrap_mode:
-    number: led128-1-11
-    tags: insert, trap
+    number: led128-4-11
+    tags: insert, trap, led128p4
   l_zeptest_mode:
-    number: led128-1-12
-    tags: insert, trap
+    number: led128-4-12
+    tags: insert, trap, led128p4
   l_jelly_mode:
-    number: led128-1-14
-    tags: insert, trap
+    number: led128-4-22
+    tags: insert, trap, led128p4
   l_quadshotgun_mode:
-    number: led128-1-15
-    
-    tags: insert, trap
+    number: led128-4-23  
+    tags: insert, trap, led128p4
   l_razorwire_mode:
-    number: led128-1-16
-    
-    tags: insert, trap
+    number: led128-4-24
+    tags: insert, trap, led128p4
 
 # gi lights
 
 # left_inlane_plastic:
   l_gi_1:
-    number: led128-1-9
+    number: led128-4-9
     type: grb
-    tags: gi, gi_left, gi_lower, gi_left_inlane
+    tags: gi, gi_left, gi_lower, gi_left_inlane, led128p4
   l_gi_2:
-    number: led128-1-8
+    number: led128-4-8
     type: grb
-    tags: gi, gi_left, gi_lower, gi_left_inlane
+    tags: gi, gi_left, gi_lower, gi_left_inlane, led128p4
 
 # left_slingshot_plastic:
   l_gi_3:
-    number: led128-1-7
+    number: led128-4-7
     type: grb
-    tags: gi, gi_left, gi_lower, gi_left_sling    
+    tags: gi, gi_left, gi_lower, gi_left_sling, led128p4
 
 # left_side_middle:
   l_gi_4:
     number: led128-2-1
     type: grb
-    tags: gi, gi_left, gi_middle
+    tags: gi, gi_left, gi_middle, led128p2
   l_gi_5:
     number: led128-2-17
     type: grb
-    tags: gi, gi_left, gi_middle
+    tags: gi, gi_left, gi_middle, led128p2
   l_gi_6:
     number: led128-2-18
     type: grb
-    tags: gi, gi_left, gi_middle
+    tags: gi, gi_left, gi_middle, led128p2
 
 # left_side_top:
   l_gi_7:
     number: led256-1-5
     type: grb
-    tags: gi, gi_left, gi_top
+    tags: gi, gi_left, gi_top, led256p1
   l_gi_8:
     number: led256-1-4
     type: grb
-    tags: gi, gi_left, gi_top
+    tags: gi, gi_left, gi_top, led256p1
   l_gi_9:
     number: led256-1-1
     type: grb
-    tags: gi, gi_left, gi_top
+    tags: gi, gi_left, gi_top, led256p1
   l_gi_10:
     number: led256-1-3
     type: grb
-    tags: gi, gi_left, gi_top
+    tags: gi, gi_left, gi_top, led256p1
   l_gi_11:
     number: led256-1-2
     type: grb
-    tags: gi, gi_left, gi_top
+    tags: gi, gi_left, gi_top, led256p1
 
 # right_side_top:
   l_gi_12:
-    number: led256-5-7
+    number: led256-5-1
     type: grb
-    tags: gi, gi_right, gi_top
+    tags: gi, gi_right, gi_top, led256p5
   l_gi_13:
-    number: led256-5-8
+    number: led256-5-2
     type: grb
-    tags: gi, gi_right, gi_top
+    tags: gi, gi_right, gi_top, led256p5
   l_gi_14:
-    number: led256-5-9
+    number: led256-5-3
     type: grb
-    tags: gi, gi_right, gi_top
+    tags: gi, gi_right, gi_top, led256p5
   l_gi_15:
-    number: led256-5-10
+    number: led256-5-4
     type: grb
-    tags: gi, gi_right, gi_top
+    tags: gi, gi_right, gi_top, led256p5
   l_gi_16:
-    number: led256-5-11
+    number: led256-5-5
     type: grb
-    tags: gi, gi_left, gi_top
+    tags: gi, gi_left, gi_top, led256p5
 
 # right_side_middle:
   l_gi_17:
     number: led128-3-29
     type: grb
-    tags: gi, gi_right, gi_middle
+    tags: gi, gi_right, gi_middle, led128p3
   l_gi_18:
     number: led128-3-3
     type: grb
-    tags: gi, gi_right, gi_middle
+    tags: gi, gi_right, gi_middle, led128p3
   l_gi_19:
     number: led128-3-1
     type: grb
-    tags: gi, gi_right, gi_middle
+    tags: gi, gi_right, gi_middle, led128p3
 
 # right_slingshot_plastic:
   l_gi_20:
-    number: led128-1-20
+    number: led128-4-28
     type: grb
-    tags: gi, gi_right, gi_lower, gi_right_sling
+    tags: gi, gi_right, gi_lower, gi_right_sling, led128p4
 
 # right_inlane_plastic:
   l_gi_21:
-    number: led128-1-18
+    number: led128-4-26
     type: grb
-    tags: gi, gi_right, gi_lower, gi_right_inlane
+    tags: gi, gi_right, gi_lower, gi_right_inlane, led128p4
   l_gi_22:
-    number: led128-1-17
+    number: led128-4-25
     type: grb
-    tags: gi, gi_right, gi_lower, gi_right_inlane
+    tags: gi, gi_right, gi_lower, gi_right_inlane, led128p4
 
 
 # flashers
   l_drill_flasher_1:
-    number: led256-1-22
-    tags: flasher,drill_flasher
+    number: led256-1-6
+    tags: flasher, drill_flasher, led256p1
   l_drill_flasher_2:
-    number: led256-1-23
-    tags: flasher,drill_flasher
+    number: led256-1-7
+    tags: flasher, drill_flasher, led256p1
   l_drill_flasher_3:
-    number: led256-1-24
-    tags: flasher,drill_flasher
+    number: led256-1-8
+    tags: flasher, drill_flasher, led256p1
   l_drill_flasher_4:
-    number: led256-1-25
-    tags: flasher,drill_flasher
+    number: led256-1-9
+    tags: flasher, drill_flasher, led256p1
   l_drill_flasher_5:
-    number: led256-1-26
-    tags: flasher,drill_flasher
+    number: led256-1-10
+    tags: flasher, drill_flasher, led256p1
   l_drill_flasher_6:
-    number: led256-1-27
-    tags: flasher,drill_flasher
+    number: led256-1-11
+    tags: flasher, drill_flasher, led256p1
   l_drill_flasher_7:
-    number: led256-1-28
-    tags: flasher,drill_flasher
+    number: led256-1-12
+    tags: flasher, drill_flasher, led256p1
   l_drill_flasher_8:
-    number: led256-1-29
-    tags: flasher,drill_flasher
+    number: led256-1-13
+    tags: flasher, drill_flasher, led256p1
 
-  l_flasher_2:
-    number: led128-1-1202
-    tags: flasher
   l_zep_flasher_1:
     number: led128-2-7
-    tags: flasher,zep_flasher
+    tags: flasher, zep_flasher, led128p2
   l_zep_flasher_2:
     number: led128-2-8
-    tags: flasher,zep_flasher
+    tags: flasher, zep_flasher, led128p2
   l_zep_flasher_3:
     number: led128-2-9
-    tags: flasher,zep_flasher
+    tags: flasher, zep_flasher, led128p2
   l_zep_flasher_4:
     number: led128-2-10
-    tags: flasher,zep_flasher
+    tags: flasher, zep_flasher, led128p2
   l_zep_flasher_5:
     number: led128-2-11
-    tags: flasher,zep_flasher
+    tags: flasher, zep_flasher, led128p2
   l_zep_flasher_6:
     number: led128-2-12
-    tags: flasher,zep_flasher
+    tags: flasher, zep_flasher, led128p2
   l_zep_flasher_7:
     number: led128-2-13
-    tags: flasher,zep_flasher
+    tags: flasher, zep_flasher, led128p2
   l_zep_flasher_8:
     number: led128-2-14
-    tags: flasher,zep_flasher
+    tags: flasher, zep_flasher, led128p2
 
   l_razorwire_flasher_1:
     number: led256-3-17
-    tags: flasher,razorwire_flasher
+    tags: flasher, razorwire_flasher, led256p3
   l_razorwire_flasher_2:
     number: led256-3-18
-    tags: flasher,razorwire_flasher
+    tags: flasher, razorwire_flasher, led256p3
   l_razorwire_flasher_3:
     number: led256-3-19
-    tags: flasher,razorwire_flasher
+    tags: flasher, razorwire_flasher, led256p3
   l_razorwire_flasher_4:
     number: led256-3-20
-    tags: flasher,razorwire_flasher
+    tags: flasher, razorwire_flasher, led256p3
   l_razorwire_flasher_5:
     number: led256-3-21
-    tags: flasher,razorwire_flasher
+    tags: flasher, razorwire_flasher, led256p3
   l_razorwire_flasher_6:
     number: led256-3-22
-    tags: flasher,razorwire_flasher
+    tags: flasher, razorwire_flasher, led256p3
   l_razorwire_flasher_7:
     number: led256-3-23
-    tags: flasher,razorwire_flasher
+    tags: flasher, razorwire_flasher, led256p3
   l_razorwire_flasher_8:
     number: led256-3-24
-    tags: flasher,razorwire_flasher
+    tags: flasher, razorwire_flasher, led256p3
 
   l_bear_flasher_1:
     number: led256-3-25
-    tags: flasher,bear_flasher
+    tags: flasher, bear_flasher, led256p3
   l_bear_flasher_2:
     number: led256-3-26
-    tags: flasher,bear_flasher
+    tags: flasher, bear_flasher, led256p3
   l_bear_flasher_3:
     number: led256-3-27
-    tags: flasher,bear_flasher
+    tags: flasher, bear_flasher, led256p3
   l_bear_flasher_4:
     number: led256-3-28
-    tags: flasher,bear_flasher
+    tags: flasher, bear_flasher, led256p3
   l_bear_flasher_5:
     number: led256-3-29
-    tags: flasher,bear_flasher
+    tags: flasher, bear_flasher, led256p3
   l_bear_flasher_6:
     number: led256-3-30
-    tags: flasher,bear_flasher
+    tags: flasher, bear_flasher, led256p3
   l_bear_flasher_7:
     number: led256-3-31
-    tags: flasher,bear_flasher
+    tags: flasher, bear_flasher, led256p3
   l_bear_flasher_8:
     number: led256-3-32
-    tags: flasher,bear_flasher
+    tags: flasher, bear_flasher, led256p3
 
   l_shotgun_flasher_1:
     number: led128-3-21
-    tags: flasher,shotgun_flasher
+    tags: flasher, shotgun_flasher, led128p3
   l_shotgun_flasher_2:
     number: led128-3-22
-    tags: flasher,shotgun_flasher
+    tags: flasher, shotgun_flasher, led128p3
   l_shotgun_flasher_3:
     number: led128-3-23
-    tags: flasher,shotgun_flasher
+    tags: flasher, shotgun_flasher, led128p3
   l_shotgun_flasher_4:
     number: led128-3-24
-    tags: flasher,shotgun_flasher
+    tags: flasher, shotgun_flasher, led128p3
   l_shotgun_flasher_5:
     number: led128-3-25
-    tags: flasher,shotgun_flasher
+    tags: flasher, shotgun_flasher, led128p3
   l_shotgun_flasher_6:
     number: led128-3-26
-    tags: flasher,shotgun_flasher
+    tags: flasher, shotgun_flasher, led128p3
   l_shotgun_flasher_7:
     number: led128-3-27
-    tags: flasher,shotgun_flasher
+    tags: flasher, shotgun_flasher, led128p3
   l_shotgun_flasher_8:
     number: led128-3-28
-    tags: flasher,shotgun_flasher
+    tags: flasher, shotgun_flasher, led128p3
 
 # playfield toys
   l_tape_reel:
     number: led128-2-15
-    tags: tape
+    tags: tape, toy, led128p2
   l_tape_speaker:
     number: led128-2-16
-    tags: tape
+    tags: tape, toy, led128p2
   l_mode_scoop:
     number: led128-2-5
-    tags: scoop
+    tags: scoop, toy, led128p2
   l_mb_lock_scoop:
     number: led128-2-2
-    tags: scoop
+    tags: scoop, toy, led128p2
   l_mystery_scoop:
     number: led128-2-3
-    tags: scoop
+    tags: scoop, toy, led128p2
 
 
 # ball trough
   l_trough_1:
-    number: led128-1-22
-    tags: trough
+    number: led128-4-14
+    tags: trough, led128p4
   l_trough_2:
-    number: led128-1-23
-    tags: trough
+    number: led128-4-15
+    tags: trough, led128p4
   l_trough_3:
-    number: led128-1-24
-    tags: trough
+    number: led128-4-16
+    tags: trough, led128p4
   l_trough_4:
-    number: led128-1-25
-    tags: trough
+    number: led128-4-17
+    tags: trough, led128p4
   l_trough_5:
-    number: led128-1-26
-    tags: trough
+    number: led128-4-18
+    tags: trough, led128p4
   l_trough_6:
-    number: led128-1-27
-    tags: trough
+    number: led128-4-19
+    tags: trough, led128p4
   l_trough_7:
-    number: led128-1-28
-    tags: trough
+    number: led128-4-20
+    tags: trough, led128p4
   l_trough_8:
-    number: led128-1-29
-    tags: trough
+    number: led128-4-21
+    tags: trough, led128p4
 
 
 # spinning discs
   l_left_disc_1:
-    number: led128-4-25
-    tags: left_disc
+    number: led128-1-25
+    tags: left_disc, discs, led128p1
   l_left_disc_2:
-    number: led128-4-26
-    tags: left_disc
+    number: led128-1-26
+    tags: left_disc, discs, led128p1
   l_left_disc_3:
-    number: led128-4-27
-    tags: left_disc
+    number: led128-1-27
+    tags: left_disc, discs, led128p1
   l_left_disc_4:
-    number: led128-4-28
-    tags: left_disc
+    number: led128-1-28
+    tags: left_disc, discs, led128p1
   l_left_disc_5:
-    number: led128-4-29
-    tags: left_disc
+    number: led128-1-29
+    tags: left_disc, discs, led128p1
   l_left_disc_6:
-    number: led128-4-30
-    tags: left_disc
+    number: led128-1-30
+    tags: left_disc, discs, led128p1
   l_left_disc_7:
-    number: led128-4-31
-    tags: left_disc
+    number: led128-1-31
+    tags: left_disc, discs, led128p1
   l_left_disc_8:
-    number: led128-4-32
-    tags: left_disc
+    number: led128-1-32
+    tags: left_disc, discs, led128p1
 
   l_middle_disc_1:
-    number: led128-4-9
-    tags: middle_disc
+    number: led128-1-9
+    tags: middle_disc, discs, led128p1
   l_middle_disc_2:
-    number: led128-4-10
-    tags: middle_disc
+    number: led128-1-10
+    tags: middle_disc, discs, led128p1
   l_middle_disc_3:
-    number: led128-4-11
-    tags: middle_disc
+    number: led128-1-11
+    tags: middle_disc, discs, led128p1
   l_middle_disc_4:
-    number: led128-4-12
-    tags: middle_disc
+    number: led128-1-12
+    tags: middle_disc, discs, led128p1
   l_middle_disc_5:
-    number: led128-4-13
-    tags: middle_disc
+    number: led128-1-13
+    tags: middle_disc, discs, led128p1
   l_middle_disc_6:
-    number: led128-4-14
-    tags: middle_disc
+    number: led128-1-14
+    tags: middle_disc, discs, led128p1
   l_middle_disc_7:
-    number: led128-4-15
-    tags: middle_disc
+    number: led128-1-15
+    tags: middle_disc, discs, led128p1
   l_middle_disc_8:
-    number: led128-4-16
-    tags: middle_disc
+    number: led128-1-16
+    tags: middle_disc, discs, led128p1
   l_middle_disc_9:
-    number: led128-4-17
-    tags: middle_disc
+    number: led128-1-17
+    tags: middle_disc, discs, led128p1
   l_middle_disc_10:
-    number: led128-4-18
-    tags: middle_disc
+    number: led128-1-18
+    tags: middle_disc, discs, led128p1
   l_middle_disc_11:
-    number: led128-4-19
-    tags: middle_disc
+    number: led128-1-19
+    tags: middle_disc, discs, led128p1
   l_middle_disc_12:
-    number: led128-4-20
-    tags: middle_disc
+    number: led128-1-20
+    tags: middle_disc, discs, led128p1
   l_middle_disc_13:
-    number: led128-4-21
-    tags: middle_disc
+    number: led128-1-21
+    tags: middle_disc, discs, led128p1
   l_middle_disc_14:
-    number: led128-4-22
-    tags: middle_disc
+    number: led128-1-22
+    tags: middle_disc, discs, led128p1
   l_middle_disc_15:
-    number: led128-4-23
-    tags: middle_disc
+    number: led128-1-23
+    tags: middle_disc, discs, led128p1
   l_middle_disc_16:
-    number: led128-4-24
-    tags: middle_disc
+    number: led128-1-24
+    tags: middle_disc, discs, led128p1
 
   l_right_disc_1:
-    number: led128-4-1
-    tags: right_disc
+    number: led128-1-1
+    tags: right_disc, discs, led128p1
   l_right_disc_2:
-    number: led128-4-2
-    tags: right_disc
+    number: led128-1-2
+    tags: right_disc, discs, led128p1
   l_right_disc_3:
-    number: led128-4-3
-    tags: right_disc
+    number: led128-1-3
+    tags: right_disc, discs, led128p1
   l_right_disc_4:
-    number: led128-4-4
-    tags: right_disc
+    number: led128-1-4
+    tags: right_disc, discs, led128p1
   l_right_disc_5:
-    number: led128-4-5
-    tags: right_disc
+    number: led128-1-5
+    tags: right_disc, discs, led128p1
   l_right_disc_6:
-    number: led128-4-6
-    tags: right_disc
+    number: led128-1-6
+    tags: right_disc, discs, led128p1
   l_right_disc_7:
-    number: led128-4-7
-    tags: right_disc
+    number: led128-1-7
+    tags: right_disc, discs, led128p1
   l_right_disc_8:
-    number: led128-4-8
-    tags: right_disc
+    number: led128-1-8
+    tags: right_disc, discs, led128p1
 
 
 # hacksaw multiball locks
   l_hmb_lock_1:
-    number: led128-1-1
-    tags: hmb_locks
+    number: led128-4-1
+    tags: hmb_locks, led128p4
   l_hmb_lock_2:
-    number: led128-1-2
-    tags: hmb_locks
+    number: led128-4-2
+    tags: hmb_locks, led128p4
   l_hmb_lock_3:
-    number: led128-1-3
-    tags: hmb_locks
+    number: led128-4-3
+    tags: hmb_locks, led128p4
 
 
 # spotlights
   l_tape_spotlight:
     number: led128-3-4
-    tags: spotlights   
+    tags: spotlights, led128p3   
   l_left_spotlight:
-    number: led128-1-6
-    tags: spotlights
+    number: led128-4-6
+    tags: spotlights, led128p4
   l_right_spotlight:
-    number: led128-1-21
-    tags: spotlights   
+    number: led128-4-29
+    tags: spotlights, led128p4
 
 
 # cabinet lights
@@ -879,23 +844,23 @@ lights:
 
 # backpanel
   l_backpanel_1:
-    number: led256-5-1
-    tags: backpanel
+    number: led256-5-12
+    tags: backpanel, led256p5
   l_backpanel_2:
-    number: led256-5-2
-    tags: backpanel
+    number: led256-5-13
+    tags: backpanel, led256p5
   l_backpanel_3:
-    number: led256-5-3
-    tags: backpanel
+    number: led256-5-14
+    tags: backpanel, led256p5
   l_backpanel_4:
-    number: led256-5-4
-    tags: backpane
+    number: led256-5-15
+    tags: backpanel, led256p5
   l_backpanel_5:
-    number: led256-5-5
-    tags: backpanel
+    number: led256-5-16
+    tags: backpanel, led256p5
   l_backpanel_6:
-    number: led256-5-6
-    tags: backpanel
+    number: led256-5-17
+    tags: backpanel, led256p5
 
 
 # topper

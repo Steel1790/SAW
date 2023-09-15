@@ -1,0 +1,214 @@
+#show_version=5
+- time: 0
+  lights:
+    l_right_top_bumper_1: '068D0A'
+    l_right_top_bumper_10: '068E0A'
+    l_right_top_bumper_2: '000500'
+    l_right_top_bumper_9: '000100'
+    
+- time: '+1'
+  lights:
+    l_right_top_bumper_1: '07A60C'
+    l_right_top_bumper_10: '011502'
+    l_right_top_bumper_11: '056C08'
+    l_right_top_bumper_2: '011201'
+    l_right_top_bumper_9: '000000'
+    
+- time: '+1'
+  lights:
+    l_right_top_bumper_1: '034A05'
+    l_right_top_bumper_10: '000000'
+    l_right_top_bumper_11: '06980A'
+    l_right_top_bumper_12: '010E01'
+    l_right_top_bumper_2: '046607'
+    
+- time: '+1'
+  lights:
+    l_right_top_bumper_1: '000000'
+    l_right_top_bumper_11: '011902'
+    l_right_top_bumper_12: '06A00B'
+    l_right_top_bumper_2: '06A70B'
+    l_right_top_bumper_3: '010F01'
+    
+- time: '+1'
+  lights:
+    l_right_top_bumper_11: '000000'
+    l_right_top_bumper_12: '047107'
+    l_right_top_bumper_13: '035605'
+    l_right_top_bumper_2: '047107'
+    l_right_top_bumper_3: '035F06'
+    
+- time: '+1'
+  lights:
+    l_right_top_bumper_12: '000B01'
+    l_right_top_bumper_13: '069F0A'
+    l_right_top_bumper_14: '012102'
+    l_right_top_bumper_2: '000500'
+    l_right_top_bumper_3: '06A80B'
+    l_right_top_bumper_4: '000C01'
+    
+- time: '+1'
+  lights:
+    l_right_top_bumper_12: '000000'
+    l_right_top_bumper_13: '011F02'
+    l_right_top_bumper_14: '05A60A'
+    l_right_top_bumper_2: '000000'
+    l_right_top_bumper_3: '023903'
+    l_right_top_bumper_4: '037006'
+    
+- time: '+1'
+  lights:
+    l_right_top_bumper_13: '000000'
+    l_right_top_bumper_14: '036806'
+    l_right_top_bumper_15: '011A02'
+    l_right_top_bumper_3: '000000'
+    l_right_top_bumper_4: '059709'
+    l_right_top_bumper_5: '012D03'
+    
+- time: '+1'
+  lights:
+    l_right_top_bumper_14: '000C01'
+    l_right_top_bumper_15: '05A509'
+    l_right_top_bumper_4: '000000'
+    l_right_top_bumper_5: '05A709'
+    l_right_top_bumper_6: '011101'
+    
+- time: '+1'
+  lights:
+    l_right_top_bumper_14: '000000'
+    l_right_top_bumper_15: '047706'
+    l_right_top_bumper_5: '000A01'
+    l_right_top_bumper_6: '059508'
+    l_right_top_bumper_7: '000600'
+    
+- time: '+1'
+  lights:
+    l_right_top_bumper_15: '000E01'
+    l_right_top_bumper_16: '011E01'
+    l_right_top_bumper_5: '000000'
+    l_right_top_bumper_6: '013302'
+    l_right_top_bumper_7: '037305'
+    
+- time: '+1'
+  lights:
+    l_right_top_bumper_15: '000000'
+    l_right_top_bumper_16: '04A007'
+    l_right_top_bumper_6: '000000'
+    l_right_top_bumper_7: '037505'
+    l_right_top_bumper_8: '013302'
+    
+- time: '+1'
+  lights:
+    l_right_top_bumper_16: '038105'
+    l_right_top_bumper_7: '000000'
+    l_right_top_bumper_8: '04A607'
+    
+- time: '+1'
+  lights:
+    l_right_top_bumper_16: '001301'
+    l_right_top_bumper_8: '000000'
+    l_right_top_bumper_9: '013902'
+    
+- time: '+1'
+  lights:
+    l_right_top_bumper_1: '012A02'
+    l_right_top_bumper_16: '000000'
+    l_right_top_bumper_9: '03A006'
+    
+- time: '+1'
+  lights:
+    l_right_top_bumper_1: '03A606'
+    l_right_top_bumper_10: '013D02'
+    l_right_top_bumper_9: '000000'
+    
+- time: '+1'
+  lights:
+    l_right_top_bumper_1: '026303'
+    l_right_top_bumper_10: '039205'
+    
+- time: '+1'
+  lights:
+    l_right_top_bumper_1: '000A00'
+    l_right_top_bumper_10: '000000'
+    l_right_top_bumper_11: '001801'
+    l_right_top_bumper_2: '014C02'
+    
+- time: '+1'
+  lights:
+    l_right_top_bumper_1: '000000'
+    l_right_top_bumper_11: '03A004'
+    l_right_top_bumper_2: '029A04'
+    
+- time: '+1'
+  lights:
+    l_right_top_bumper_11: '000000'
+    l_right_top_bumper_12: '027C03'
+    l_right_top_bumper_2: '001501'
+    l_right_top_bumper_3: '001F01'
+    
+- time: '+1'
+  lights:
+    l_right_top_bumper_12: '001901'
+    l_right_top_bumper_13: '001200'
+    l_right_top_bumper_2: '000000'
+    l_right_top_bumper_3: '029603'
+    
+- time: '+1'
+  lights:
+    l_right_top_bumper_12: '000000'
+    l_right_top_bumper_13: '02A603'
+    l_right_top_bumper_14: '000300'
+    l_right_top_bumper_3: '000A00'
+    l_right_top_bumper_4: '001A01'
+    
+- time: '+1'
+  lights:
+    l_right_top_bumper_13: '000000'
+    l_right_top_bumper_14: '018302'
+    l_right_top_bumper_3: '000000'
+    l_right_top_bumper_4: '017302'
+    
+- time: '+1'
+  lights:
+    l_right_top_bumper_14: '001000'
+    l_right_top_bumper_4: '000000'
+    l_right_top_bumper_5: '02A603'
+    
+- time: '+1'
+  lights:
+    l_right_top_bumper_14: '000000'
+    l_right_top_bumper_15: '017A01'
+    l_right_top_bumper_5: '000000'
+    l_right_top_bumper_6: '005E01'
+    
+- time: '+1'
+  lights:
+    l_right_top_bumper_15: '001200'
+    l_right_top_bumper_6: '000F00'
+    
+- time: '+1'
+  lights:
+    l_right_top_bumper_15: '000000'
+    l_right_top_bumper_6: '000000'
+    l_right_top_bumper_7: '004700'
+    
+- time: '+1'
+  lights:
+    l_right_top_bumper_16: '005E00'
+    l_right_top_bumper_7: '000000'
+    l_right_top_bumper_8: '009D01'
+    
+- time: '+1'
+  lights:
+    l_right_top_bumper_16: '002F00'
+    l_right_top_bumper_8: '000000'
+    
+- time: '+1'
+  lights:
+    l_right_top_bumper_16: '000000'
+    l_right_top_bumper_9: '009400'
+    
+- time: '+1'
+  lights:
+    l_right_top_bumper_9: '000000'
+    

@@ -1,0 +1,143 @@
+#show_version=5
+- time: 0
+  lights:
+    l_right_top_bumper_1: '068D0A'
+    
+- time: '+1'
+  lights:
+    l_right_top_bumper_1: '000000'
+    
+- time: '+1'
+  lights:
+    l_right_top_bumper_2: '068D0A'
+    
+- time: '+1'
+  lights:
+    l_right_top_bumper_2: '000000'
+    
+- time: '+1'
+  lights:
+    l_right_top_bumper_3: '068D0A'
+    
+- time: '+1'
+  lights:
+    l_right_top_bumper_3: '000000'
+    
+- time: '+1'
+  lights:
+    l_right_top_bumper_4: '068D0A'
+    
+- time: '+1'
+  lights:
+    l_right_top_bumper_4: '000000'
+    
+- time: '+1'
+  lights:
+    l_right_top_bumper_5: '068D0A'
+    
+- time: '+1'
+  lights:
+    l_right_top_bumper_5: '000000'
+    
+- time: '+1'
+  lights:
+    l_right_top_bumper_6: '068D0A'
+
+- time: '+1'
+  lights:
+    l_right_top_bumper_6: '000000'
+    
+- time: '+1'
+  lights:
+    l_right_top_bumper_7: '068D0A'
+    
+- time: '+1'
+  lights:
+    l_right_top_bumper_7: '000000'
+    
+- time: '+1'
+  lights:
+    l_right_top_bumper_8: '068D0A'
+    
+- time: '+1'
+  lights:
+    l_right_top_bumper_8: '000000'   
+    
+- time: '+1'
+  lights:
+    l_right_top_bumper_9: '068D0A'
+    
+- time: '+1'
+  lights:
+    l_right_top_bumper_9: '000000'
+
+- time: '+1'
+  lights:
+    l_right_top_bumper_10: '068D0A'
+    
+- time: '+1'
+  lights:
+    l_right_top_bumper_10: '000000'    
+
+- time: '+1'
+  lights:
+    l_right_top_bumper_11: '068D0A'
+    
+- time: '+1'
+  lights:
+    l_right_top_bumper_11: '000000'   
+
+- time: '+1'
+  lights:
+    l_right_top_bumper_12: '068D0A'
+    
+- time: '+1'
+  lights:
+    l_right_top_bumper_12: '000000'   
+
+- time: '+1'
+  lights:
+    l_right_top_bumper_13: '068D0A'
+    
+- time: '+1'
+  lights:
+    l_right_top_bumper_13: '000000'   
+
+- time: '+1'
+  lights:
+    l_right_top_bumper_14: '068D0A'
+    
+- time: '+1'
+  lights:
+    l_right_top_bumper_14: '000000'   
+
+- time: '+1'
+  lights:
+    l_right_top_bumper_15: '068D0A'
+    
+- time: '+1'
+  lights:
+    l_right_top_bumper_15: '000000'   
+
+- time: '+1'
+  lights:
+    l_right_top_bumper_16: '068D0A'
+    
+- time: '+1'
+  lights:
+    l_right_top_bumper_16: '000000'   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

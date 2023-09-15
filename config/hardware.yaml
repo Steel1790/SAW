@@ -26,7 +26,8 @@ fast:
         model: FP-EXP-0071
       ledneuron:
         model: FP-EXP-2000
-
+    debug: true
+    
 machine:
   #min_balls: 3
 

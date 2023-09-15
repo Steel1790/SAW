@@ -1,0 +1,52 @@
+#show_version=5
+- time: 0
+  lights:
+    l_hmb_lock_1: (color1)
+- time: '+1'
+  lights:
+    l_hmb_lock_1: 0
+    l_hmb_lock_2: (color1)
+- time: '+1'
+  lights:
+    l_hmb_lock_2: 0
+    l_hmb_lock_3: (color1)    
+- time: '+1'
+  lights:
+    l_hmb_lock_3: 0
+    l_left_escape: (color1)    
+- time: '+1'
+  lights:
+    l_left_escape: 0
+    l_left_return_lane: (color1)    
+- time: '+1'
+  lights:
+    l_left_return_lane: 0
+    l_left_spotlight: (color1)    
+- time: '+1'
+  lights:
+    l_left_spotlight: 0
+    l_gi_3: (color1)    
+- time: '+1'
+  lights:
+    l_gi_3: 0
+    l_gi_2: (color1)    
+- time: '+1'
+  lights:
+    l_gi_2: 0
+    l_gi_1: (color1)    
+- time: '+1'
+  lights:
+    l_gi_1: 0
+    l_drillchair_mode: (color1)  
+- time: '+1'
+  lights:
+    l_drillchair_mode: 0
+    l_beartrap_mode: (color1)  
+- time: '+1'
+  lights:
+    l_beartrap_mode: 0
+    l_zeptest_mode: (color1)  
+- time: '+1'
+  lights:
+    l_zeptest_mode: 0
+    l_live_again: (color1)  

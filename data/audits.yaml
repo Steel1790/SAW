@@ -1,6 +1,6 @@
 events:
   game_ended: 0
-  game_started: 682
+  game_started: 683
 player:
   score:
     average: 0
@@ -24,7 +24,7 @@ shots:
   shot_left_standup_rightramp: 16
   shot_right_loop: 19
   shot_right_standup: 11
-  shot_right_standup_rightramp: 21
+  shot_right_standup_rightramp: 22
   spinner: 97
   up_b_pop: 2
   upper_b_pop: 78
@@ -76,12 +76,12 @@ switches:
   s_right_ramp_score_top: 28
   s_right_slingshot: 0
   s_right_standup: 11
-  s_right_standup_right_ramp: 21
+  s_right_standup_right_ramp: 22
   s_right_top_jet_bumper: 56
   s_spinner: 4801
-  s_start: 310
+  s_start: 313
   s_top_right_reject: 0
-  s_trough1: 8
+  s_trough1: 9
   s_trough2: 6
   s_trough3: 7
   s_trough4: 1
