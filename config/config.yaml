@@ -32,6 +32,7 @@ modes:
   - mode_tracking
   - jigsaw_multiball
   - hacksaw_multiball
+  - high_score
 
 window:
   width: 1366

@@ -901,7 +901,7 @@ slides:
       x: 1
       anchor_x: left
       anchor_y: bottom      
-    - type: video
+    - type: image
       image: gordonsaw
 #      video: gordonsaw 
 #      width: 1366
