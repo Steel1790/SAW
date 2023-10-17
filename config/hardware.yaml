@@ -355,3 +355,27 @@ autofire_coils:
   right_slingshot:
     coil: c_right_slingshot
     switch: s_right_slingshot
+  left_top_bumper:
+    coil: c_left_top_jet_bumper
+    switch: s_left_top_jet_bumper
+  right_top_bumper:
+    coil: c_right_top_jet_bumper
+    switch: s_right_top_jet_bumper
+  lower_top_bumper:
+    coil: c_lower_top_jet_bumper
+    switch: s_lower_top_jet_bumper    
+  left_bottom_bumper:
+    coil: c_left_bottom_jet_bumper
+    switch: s_left_bottom_jet_bumper
+  right_bottom_bumper:
+    coil: c_right_bottom_jet_bumper
+    switch: s_right_bottom_jet_bumper 
+  upper_bottom_bumper:
+    coil: c_upper_bottom_jet_bumper
+    switch: s_upper_bottom_jet_bumper    
+  mystery_scoop:
+    coil: c_mystery_eject
+    switch: s_left_cellar
+  right_ramp_saucer:
+    coil: c_top_eject
+    switch: s_top_right_reject
