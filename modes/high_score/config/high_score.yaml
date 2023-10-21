@@ -22,7 +22,7 @@ high_score:
   # set the defaults
   defaults:
     score:
-      - JWF: 1000000
+      - JJF: 1000000
       - ECK: 900000
       - ADC: 800000
       - SAW: 700000
