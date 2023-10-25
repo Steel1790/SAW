@@ -85,6 +85,17 @@ counters:
     reset_on_complete: false
     events_when_complete: logicblock_hacksaw_multiball_qualify_complete 
     count_events: hacksaw_mb_qualify_sequence_complete  
+
+  random_switch:
+    starting_count: 0
+    count_complete_value: 5000
+    enable_events: enable_qualify
+    disable_events: disable_qualify
+    start_enabled: true
+#    persist_state: true
+    reset_on_complete: true
+    events_when_complete: random_switch_complete  
+    count_events: sw_pops, sw_standup, sw_inlane, sw_spinner, sw_ramp, sw_loop, sw_drop_target
     
 sequences:
   jigsaw_mb_qualify:
