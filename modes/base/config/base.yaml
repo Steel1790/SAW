@@ -657,14 +657,22 @@ sound_player:
   mode_zeptest_started:
     zeptest:
       action: play
+    ZepsTestModeStart:
+      delay: 9.2s
+      action: play
   mode_zeptest_complete:
     trapcomplete:
       action: play
+    ZepsTestModeStart:
+      action: stop
     BaseMusic:
       delay: 10s
       action: play
       loops: -1           
-
+  mode_zeptest_stopped:
+    ZepsTestModeStart:
+      action: stop
+      
   mode_flammablejelly_started:
     flammablejelly:
       action: play
