@@ -1,4 +1,4 @@
-#config_version=5
+#config_version=6
 sequence_shots:
   left_ramp:
     switch_sequence: s_enter_left_ramp, s_left_ramp_score_bottom, s_left_ramp_score_top

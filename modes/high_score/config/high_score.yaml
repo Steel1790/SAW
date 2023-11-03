@@ -1,4 +1,4 @@
-#config_version=5
+#config_version=6
 mode:
   priority: 500
   start_events: game_ending, start_high_score
@@ -8,21 +8,21 @@ high_score:
   enter_initials_timeout: 60
   award_slide_display_time: 4s
   # define your high score categories and the awards
-  categories: !!omap
-    - score:
+  categories:
+    score:
         - GRAND CHAMPION
         - HIGH SCORE 1
         - HIGH SCORE 2
         - HIGH SCORE 3
         - HIGH SCORE 4
-    - loops:
+    loops:
         - LOOP CHAMPION
-#    - tilt_bonus:
+#    tilt_bonus:
 #        - BONUS LOST
   # set the defaults
   defaults:
     score:
-      - JJF: 1000000
+      - JWF: 1000000
       - ECK: 900000
       - ADC: 800000
       - SAW: 700000

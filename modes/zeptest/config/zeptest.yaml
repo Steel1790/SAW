@@ -1,4 +1,4 @@
-#config_version=5                 
+#config_version=6                 
 mode:
   start_events: selection_mode_zeptest_selected
   stop_events: stop_mode_zeptest, ball_ended, player_zeptest_60s_zeptest_timer_tick{value < 1}

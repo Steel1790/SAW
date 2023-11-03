@@ -1,4 +1,4 @@
-#config_version=5                 
+#config_version=6                 
 mode:
   start_events: selection_mode_flammablejelly_selected
   stop_events: stop_mode_flammablejelly, ball_ended, player_flammablejelly_60s_flammablejelly_timer_tick{value < 1}

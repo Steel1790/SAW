@@ -1,4 +1,4 @@
-#config_version=5
+#config_version=6
 
 hardware:
     platform: fast
@@ -6,7 +6,7 @@ hardware:
 fast:
   net:
     controller: neuron
-    port: /dev/tty.usbmodem11101
+    port: /dev/tty.usbmodem14101
     io_loop:
       1616_1:
         model: FP-I/O-1616
@@ -18,7 +18,7 @@ fast:
         model: FP-I/O-3208
         order: 3
   exp:
-    port: /dev/tty.usbmodem11103
+    port: /dev/tty.usbmodem14103
     boards:
       led256:
         model: FP-EXP-0081
@@ -26,7 +26,7 @@ fast:
         model: FP-EXP-0071
       ledneuron:
         model: FP-EXP-2000
-    debug: true
+          #debug: true
     
 machine:
   #min_balls: 3
