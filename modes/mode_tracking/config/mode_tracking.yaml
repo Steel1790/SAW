@@ -100,15 +100,12 @@ counters:
 sequences:
   jigsaw_mb_qualify:
     events:
-      - shot_left_standup_rightramp_hit
-      - shot_right_standup_rightramp_hit
+      - machine_var_audits_switches_s_middle_standup
       - left_ramp_hit
-      - shot_left_standup_rightramp_hit
-      - shot_right_standup_rightramp_hit
+      - machine_var_audits_switches_s_middle_standup
       - left_ramp_hit
-      - shot_left_standup_rightramp_hit
-      - shot_right_standup_rightramp_hit
-      - left_ramp_hit      
+      - machine_var_audits_switches_s_middle_standup
+      - left_ramp_hit          
     reset_on_complete: false
     persist_state: true
     events_when_complete: jigsaw_mb_qualify_sequence_complete

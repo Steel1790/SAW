@@ -242,7 +242,35 @@ shows:
   mode_zeptest_show_complete:
     - duration: -1      
       lights:    
-        (leds): red         
+        (leds): red       
+  jigsaw_mb_qualify_hit_show_step2:   
+    - duration: -1
+      lights:
+        (leds): orange  
+  jigsaw_mb_qualify_hit_show_step4:   
+    - duration: -1
+      lights:
+        (leds): orange      
+  jigsaw_mb_qualify_hit_show_step6:   
+    - duration: -1
+      lights:
+        (leds): orange  
+  jigsaw_mb_show_end:   
+    - duration: -1
+      lights:
+        (leds):          
+  hacksaw_mb_qualify_hit_show_step4:   
+    - duration: -1
+      lights:
+        (leds): orange 
+  hacksaw_mb_qualify_hit_show_step8:   
+    - duration: -1
+      lights:
+        (leds): orange   
+  hacksaw_mb_show_end:   
+    - duration: -1
+      lights:
+        (leds):          
  
 # EK testing lightshow on shot action
 show_player:
@@ -325,6 +353,41 @@ show_player:
       show_tokens:
         leds: l_jelly_mode
       loops: -1        
+  logicblock_jigsaw_mb_qualify_hit{step==2}: 
+    jigsaw_mb_qualify_hit_show_step2:   
+      show_tokens:
+        leds: l_left_ramp_triangle1     
+      loops: -1 
+  logicblock_jigsaw_mb_qualify_hit{step==4}: 
+    jigsaw_mb_qualify_hit_show_step4:   
+      show_tokens:
+        leds: l_left_ramp_triangle2     
+      loops: -1        
+  jigsaw_mb_qualify_sequence_complete: 
+    jigsaw_mb_qualify_hit_show_step6:   
+      show_tokens:
+        leds: l_left_ramp_triangle3     
+      loops: -1  
+  mode_jigsaw_multiball_stopped: 
+    jigsaw_mb_show_end:   
+      show_tokens:
+        leds: l_left_ramp_triangle1, l_left_ramp_triangle2, l_left_ramp_triangle3
+      loops: -1        
+  logicblock_hacksaw_mb_qualify_hit{step==4}: 
+    hacksaw_mb_qualify_hit_show_step4:   
+      show_tokens:
+        leds: l_right_ramp_triangle1     
+      loops: -1  
+  logicblock_hacksaw_mb_qualify_hit{step==8}: 
+    hacksaw_mb_qualify_hit_show_step8:   
+      show_tokens:
+        leds: l_right_ramp_triangle2     
+      loops: -1   
+  mode_hacksaw_multiball_stopped: 
+    hacksaw_mb_show_end:   
+      show_tokens:
+        leds: l_right_ramp_triangle1, l_right_ramp_triangle2   
+      loops: -1         
       
 #  mode_base_started.1:       
 #   flash_token2:
@@ -903,7 +966,31 @@ widgets:
        y: 1
        x: left+1210
        z: 4
-       anchor_y: bottom                   
+       anchor_y: bottom   
+  Player2InactiveBall2: 
+     - type: image
+       image: hacksawUI
+       opacity: 0.9
+       y: 1
+       x: left+520
+       z: 2
+       anchor_y: bottom       
+  Player3InactiveBall2:
+     - type: image
+       image: hacksawUI
+       opacity: 0.9
+       y: 1
+       x: left+870
+       z: 4
+       anchor_y: bottom       
+  Player4InactiveBall2:
+     - type: image
+       image: hacksawUI
+       opacity: 0.9
+       y: 1
+       x: left+1210
+       z: 4
+       anchor_y: bottom          
 
 widget_player:
   mode_saw_qualify_started:
@@ -982,6 +1069,45 @@ widget_player:
     Player4Inactive:  
       slide: base_slide_main
       action: add        
+  ball_started{ball==2 and game.num_players==1}:  
+    Player2Inactive:  
+      slide: base_slide_main
+      action: remove 
+    Player2InactiveBall2:  
+      slide: base_slide_main
+      action: add     
+    Player3Inactive:  
+      slide: base_slide_main
+      action: remove 
+    Player3InactiveBall2:  
+      slide: base_slide_main
+      action: add      
+    Player4Inactive:  
+      slide: base_slide_main
+      action: remove 
+    Player4InactiveBall2:  
+      slide: base_slide_main
+      action: add          
+  ball_started{ball==2 and game.num_players==2}:  
+    Player3Inactive:  
+      slide: base_slide_main
+      action: remove 
+    Player3InactiveBall2:  
+      slide: base_slide_main
+      action: add      
+    Player4Inactive:  
+      slide: base_slide_main
+      action: remove 
+    Player4InactiveBall2:  
+      slide: base_slide_main
+      action: add  
+  ball_started{ball==2 and game.num_players==3}:      
+    Player4Inactive:  
+      slide: base_slide_main
+      action: remove 
+    Player4InactiveBall2:  
+      slide: base_slide_main
+      action: add             
            
 slides:
   base_slide_main: 
@@ -1086,4 +1212,4 @@ ball_holds:
     hold_devices: bd_bathroom
     enable_events: saw_qualify_complete
     disable_events: multiball_active
-    release_one_events: slide_drillchair_pops_active, slide_flammablejellyUI_active, slide_quadshotgun_spinner, slide_razorwire_pops_active, slide_reversebeartrapUI_active, slide_zeptestUI_active          
+    release_one_events: slide_drillchair_pops_active, slide_flammablejellyUI_active, slide_quadshotgun_spinner, slide_razorwire_pops_active, slide_reversebeartrapUI_active, slide_zeptestUI_active              
