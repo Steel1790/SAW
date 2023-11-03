@@ -242,7 +242,35 @@ shows:
   mode_zeptest_show_complete:
     - duration: -1      
       lights:    
-        (leds): red         
+        (leds): red       
+  jigsaw_mb_qualify_hit_show_step2:   
+    - duration: -1
+      lights:
+        (leds): orange  
+  jigsaw_mb_qualify_hit_show_step4:   
+    - duration: -1
+      lights:
+        (leds): orange      
+  jigsaw_mb_qualify_hit_show_step6:   
+    - duration: -1
+      lights:
+        (leds): orange  
+  jigsaw_mb_show_end:   
+    - duration: -1
+      lights:
+        (leds):          
+  hacksaw_mb_qualify_hit_show_step4:   
+    - duration: -1
+      lights:
+        (leds): orange 
+  hacksaw_mb_qualify_hit_show_step8:   
+    - duration: -1
+      lights:
+        (leds): orange   
+  hacksaw_mb_show_end:   
+    - duration: -1
+      lights:
+        (leds):          
  
 # EK testing lightshow on shot action
 show_player:
@@ -325,6 +353,41 @@ show_player:
       show_tokens:
         leds: l_jelly_mode
       loops: -1        
+  logicblock_jigsaw_mb_qualify_hit{step==2}: 
+    jigsaw_mb_qualify_hit_show_step2:   
+      show_tokens:
+        leds: l_left_ramp_triangle1     
+      loops: -1 
+  logicblock_jigsaw_mb_qualify_hit{step==4}: 
+    jigsaw_mb_qualify_hit_show_step4:   
+      show_tokens:
+        leds: l_left_ramp_triangle2     
+      loops: -1        
+  jigsaw_mb_qualify_sequence_complete: 
+    jigsaw_mb_qualify_hit_show_step6:   
+      show_tokens:
+        leds: l_left_ramp_triangle3     
+      loops: -1  
+  mode_jigsaw_multiball_stopped: 
+    jigsaw_mb_show_end:   
+      show_tokens:
+        leds: l_left_ramp_triangle1, l_left_ramp_triangle2, l_left_ramp_triangle3
+      loops: -1        
+  logicblock_hacksaw_mb_qualify_hit{step==4}: 
+    hacksaw_mb_qualify_hit_show_step4:   
+      show_tokens:
+        leds: l_right_ramp_triangle1     
+      loops: -1  
+  logicblock_hacksaw_mb_qualify_hit{step==8}: 
+    hacksaw_mb_qualify_hit_show_step8:   
+      show_tokens:
+        leds: l_right_ramp_triangle2     
+      loops: -1   
+  mode_hacksaw_multiball_stopped: 
+    hacksaw_mb_show_end:   
+      show_tokens:
+        leds: l_right_ramp_triangle1, l_right_ramp_triangle2   
+      loops: -1         
       
 #  mode_base_started.1:       
 #   flash_token2:
@@ -431,10 +494,41 @@ sound_pools:
       - DropsCameraShutter3
       - DropsCameraShutter4
       - DropsCameraShutter5
+  startbutton:
+    load: preload
+    type: random
+    track: sfx
+    sounds:
+      - LowPainTolerance
+      - FlipperFingers
+      - MakeFunOfMyMask
+      - PlungeTheBall
+      - RiseAndShine
+      - YouMayBegin
+  randomswitch:
+    load: preload
+    type: random
+    track: sfx
+    sounds:
+      - SawOffFoot
+      - RampsGranted
+      - ProveToMe
+      - PatheticScore
+      - Lungs
+      - Mistakes
+      - Lube
+      - Lies
+      - LifePurpose
+      - ISeeYou
+      - EndItAllNow
+      - ExistanceForGranted      
  
 sound_player:
   mode_base_started:
     1playerGame:
+      action: play
+    startbutton:
+      delay: 2.5s
       action: play
     BaseMusic:
       delay: 5s
@@ -442,17 +536,34 @@ sound_player:
       loops: -1
   mode_selection_mode_started:
     BaseMusic:
-      action: stop    
+      action: stop  
+    ModeQualifiedShootScoop:
+      action: stop
+
+  mode_cellar_started:
+    BaseMusic:
+      action: stop
+    ModeQualifiedShootScoop:
+      action: play    
       
   player_adding{game.num_players==2}:
     2PlayerGame:
       action: play  
+    startbutton:
+      delay: 2.5s
+      action: play      
   player_adding{game.num_players==3}:
     3PlayerGame:
-      action: play        
+      action: play  
+    startbutton:
+      delay: 2.5s
+      action: play      
   player_adding{game.num_players==4}:
     4PlayerGame:
       action: play   
+    startbutton:
+      delay: 2.5s
+      action: play      
  
   mode_razorwire_started:
     razorwire:
@@ -494,6 +605,82 @@ sound_player:
     loopsaudio:
       action: play
     
+  logicblock_random_switch_hit{hits==29}:  
+    randomswitch:
+      action: play   
+  logicblock_random_switch_hit{hits==58}:  
+    randomswitch:
+      action: play
+  logicblock_random_switch_hit{hits==87}:  
+    randomswitch:
+      action: play
+  logicblock_random_switch_hit{hits==116}:  
+    randomswitch:
+      action: play
+  logicblock_random_switch_hit{hits==145}:  
+    randomswitch:
+      action: play
+  logicblock_random_switch_hit{hits==174}:  
+    randomswitch:
+      action: play
+  logicblock_random_switch_hit{hits==203}:  
+    randomswitch:
+      action: play
+  logicblock_random_switch_hit{hits==232}:  
+    randomswitch:
+      action: play
+  logicblock_random_switch_hit{hits==261}:  
+    randomswitch:
+      action: play
+  logicblock_random_switch_hit{hits==290}:  
+    randomswitch:
+      action: play
+  logicblock_random_switch_hit{hits==319}:  
+    randomswitch:
+      action: play
+  logicblock_random_switch_hit{hits==348}:  
+    randomswitch:
+      action: play
+  logicblock_random_switch_hit{hits==377}:  
+    randomswitch:
+      action: play
+  logicblock_random_switch_hit{hits==406}:  
+    randomswitch:
+      action: play
+  logicblock_random_switch_hit{hits==435}:  
+    randomswitch:
+      action: play      
+  logicblock_random_switch_hit{hits==464}:  
+    randomswitch:
+      action: play  
+  logicblock_random_switch_hit{hits==493}:  
+    randomswitch:
+      action: play  
+  logicblock_random_switch_hit{hits==522}:  
+    randomswitch:
+      action: play  
+  logicblock_random_switch_hit{hits==551}:  
+    randomswitch:
+      action: play  
+  logicblock_random_switch_hit{hits==580}:  
+    randomswitch:
+      action: play  
+  logicblock_random_switch_hit{hits==609}:  
+    randomswitch:
+      action: play  
+  logicblock_random_switch_hit{hits==638}:  
+    randomswitch:
+      action: play  
+  logicblock_random_switch_hit{hits==667}:  
+    randomswitch:
+      action: play  
+  logicblock_random_switch_hit{hits==696}:  
+    randomswitch:
+      action: play  
+  logicblock_random_switch_hit{hits==725}:  
+    randomswitch:
+      action: play  
+      
       
   mode_drillchair_started:
     drillchair:
@@ -533,14 +720,22 @@ sound_player:
   mode_zeptest_started:
     zeptest:
       action: play
+    ZepsTestModeStart:
+      delay: 9.2s
+      action: play
   mode_zeptest_complete:
     trapcomplete:
       action: play
+    ZepsTestModeStart:
+      action: stop
     BaseMusic:
       delay: 10s
       action: play
       loops: -1           
-
+  mode_zeptest_stopped:
+    ZepsTestModeStart:
+      action: stop
+      
   mode_flammablejelly_started:
     flammablejelly:
       action: play
@@ -771,7 +966,31 @@ widgets:
        y: 1
        x: left+1210
        z: 4
-       anchor_y: bottom                   
+       anchor_y: bottom   
+  Player2InactiveBall2: 
+     - type: image
+       image: hacksawUI
+       opacity: 0.9
+       y: 1
+       x: left+520
+       z: 2
+       anchor_y: bottom       
+  Player3InactiveBall2:
+     - type: image
+       image: hacksawUI
+       opacity: 0.9
+       y: 1
+       x: left+870
+       z: 4
+       anchor_y: bottom       
+  Player4InactiveBall2:
+     - type: image
+       image: hacksawUI
+       opacity: 0.9
+       y: 1
+       x: left+1210
+       z: 4
+       anchor_y: bottom          
 
 widget_player:
   mode_saw_qualify_started:
@@ -850,6 +1069,45 @@ widget_player:
     Player4Inactive:  
       slide: base_slide_main
       action: add        
+  ball_started{ball==2 and game.num_players==1}:  
+    Player2Inactive:  
+      slide: base_slide_main
+      action: remove 
+    Player2InactiveBall2:  
+      slide: base_slide_main
+      action: add     
+    Player3Inactive:  
+      slide: base_slide_main
+      action: remove 
+    Player3InactiveBall2:  
+      slide: base_slide_main
+      action: add      
+    Player4Inactive:  
+      slide: base_slide_main
+      action: remove 
+    Player4InactiveBall2:  
+      slide: base_slide_main
+      action: add          
+  ball_started{ball==2 and game.num_players==2}:  
+    Player3Inactive:  
+      slide: base_slide_main
+      action: remove 
+    Player3InactiveBall2:  
+      slide: base_slide_main
+      action: add      
+    Player4Inactive:  
+      slide: base_slide_main
+      action: remove 
+    Player4InactiveBall2:  
+      slide: base_slide_main
+      action: add  
+  ball_started{ball==2 and game.num_players==3}:      
+    Player4Inactive:  
+      slide: base_slide_main
+      action: remove 
+    Player4InactiveBall2:  
+      slide: base_slide_main
+      action: add             
            
 slides:
   base_slide_main: 
@@ -954,4 +1212,4 @@ ball_holds:
     hold_devices: bd_bathroom
     enable_events: saw_qualify_complete
     disable_events: multiball_active
-    release_one_events: slide_drillchair_pops_active, slide_flammablejellyUI_active, slide_quadshotgun_spinner, slide_razorwire_pops_active, slide_reversebeartrapUI_active, slide_zeptestUI_active          
+    release_one_events: slide_drillchair_pops_active, slide_flammablejellyUI_active, slide_quadshotgun_spinner, slide_razorwire_pops_active, slide_reversebeartrapUI_active, slide_zeptestUI_active              
