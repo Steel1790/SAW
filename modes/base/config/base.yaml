@@ -2,6 +2,19 @@
 mode:
   start_events: ball_starting, mode_skillshot_started
   priority: 100
+  
+ball_saves:
+  default:
+    active_time: 5s
+    hurry_up_time: 2s
+    grace_period: 2s
+    enable_events: mode_base_started
+    disable_events: ball_save_default_disabled
+    timer_start_events: balldevice_bd_trough_ball_eject_success
+    early_ball_save_events: s_left_outlane_active, s_right_outlane_active    
+    auto_launch: true
+    balls_to_save: 1
+    debug: true  
 
 slide_player:
   mode_razorwire_complete: 
@@ -270,7 +283,18 @@ shows:
   hacksaw_mb_show_end:   
     - duration: -1
       lights:
-        (leds):          
+        (leds):    
+  ballsave:
+    - duration: 0.5s
+      lights:
+        (leds): FF5E0E
+    - duration: 0.5s
+      lights:
+        (leds): off
+  ballsave_end:
+    - duration: -1
+      lights:
+        (leds): off    
  
 # EK testing lightshow on shot action
 show_player:
@@ -388,6 +412,17 @@ show_player:
       show_tokens:
         leds: l_right_ramp_triangle1, l_right_ramp_triangle2   
       loops: -1         
+      
+  balldevice_bd_plunger_ball_eject_success:
+    ballsave:
+      show_tokens:
+        leds: l_live_again
+      loops: 10
+  ball_save_default_disabled:
+    ballsave_end:
+      show_tokens:
+        leds: l_live_again
+      loops: -1
       
 #  mode_base_started.1:       
 #   flash_token2:
