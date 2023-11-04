@@ -5,7 +5,7 @@ mode:
   use_wait_queue: true
 high_score:
   _overwrite: true
-  enter_initials_timeout: 60
+  enter_initials_timeout: 90
   award_slide_display_time: 4s
   # define your high score categories and the awards
   categories:
@@ -45,54 +45,60 @@ slides:
   high_score_enter_initials:
 
     - type: text
-      font_size: 150
-      text: PLAYER (number)
-      color: white
+      font_size: 125
+      font_name: Skilt Gothic W04 Thin
+      text: PLAYER  (number)
+      color: C2E3E0 
       x: center
-      y: center + 200
+      y: center + 300
       
     - type: text
-      font_size: 150
+      font_size: 100
+      font_name: Skilt Gothic W04 Thin
       text: (award)
-      color: white
+      color: red
       x: center
-      y: center + 900
+      y: center + 175
       
             
     - type: text
-      font_size: 150
+      font_name: sawesome
+      font_size: 80
       text: (score)
-      color: white
+      color: C2E3E0 
+      number_grouping: true      
       x: center
-      y: center + 1000
+      y: center - 300
       
     - type: text_input
       initial_char: A
       dynamic_x: false
       key: high_score
       font_size: 150
+      font_name: sawesome
       max_chars: 3
       x: center
       y: center - 150
       shift_left_event: s_left_flipper_active
       shift_right_event: s_right_flipper_active
       select_event: s_action_button_active
-      color: white
+      color: C2E3E0 
+      
     - type: text
-
       text: '<          >'
-      font_size: 150
+      font_size: 120
       x: center
       y: center
-      color: white
+      color: C2E3E0 
       
     - type: text
       text: ''
       key: high_score
-      font_size: 150
+      font_size: 100
+      font_name: sawesome      
       x: center
       y: center
-      color: white
+      color: C2E3E0 
       animations:
         show_slide:
           - property: opacity
@@ -104,3 +110,6 @@ slides:
             duration: 0.3s
             repeat: true
             easing: in_out_quint
+    - type: image            
+      image: billyskillshot
+      opacity: 0.8
