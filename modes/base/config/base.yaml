@@ -95,20 +95,40 @@ variable_player:
     score: 115000
   minimode_pops_complete:
     score: 3000000
+    bonus_gears: 1
+    value_type: int
   minimode_standups_complete:
     score: 3000000
+    bonus_candles: 1
+    value_type: int    
   minimode_scoops_complete:
     score: 3000000   
+    bonus_bathtubs: 1
+    value_type: int    
   minimode_inlanes_complete:
     score: 3000000   
+    bonus_taperecorders: 1
+    value_type: int    
   minimode_spinners_complete:
-    score: 3000000       
+    score: 3000000     
+    bonus_handguns: 1
+    value_type: int    
   minimode_ramps_complete:
-    score: 3000000         
+    score: 3000000 
+    bonus_keys: 1
+    value_type: int    
   minimode_loops_complete:
-    score: 3000000       
+    score: 3000000  
+    bonus_hacksaws: 1
+    value_type: int    
   minimode_drops_complete:
-    score: 3000000           
+    score: 3000000       
+    bonus_syringes: 1
+    value_type: int    
+  ball_started:
+    bonus_multiplier:
+      int: 1
+      action: set     
 
 counters:
   minimode_pops_counter:
@@ -118,7 +138,8 @@ counters:
     disable_events: 
     start_enabled: true
 #    persist_state: true
-    reset_on_complete: false
+    reset_on_complete: true
+    disable_on_complete: false    
     events_when_complete: minimode_pops_complete 
     count_events: sw_pops
 
@@ -129,7 +150,8 @@ counters:
     disable_events: 
     start_enabled: true
 #    persist_state: true
-    reset_on_complete: false
+    reset_on_complete: true
+    disable_on_complete: false
     events_when_complete: minimode_standups_complete 
     count_events: sw_standup  
     
@@ -140,7 +162,8 @@ counters:
     disable_events: 
     start_enabled: true
 #    persist_state: true
-    reset_on_complete: false
+    reset_on_complete: true
+    disable_on_complete: false    
     events_when_complete: minimode_scoops_complete 
     count_events: cellar_hit    
 
@@ -151,7 +174,8 @@ counters:
     disable_events: 
     start_enabled: true
 #    persist_state: true
-    reset_on_complete: false
+    reset_on_complete: true
+    disable_on_complete: false    
     events_when_complete: minimode_inlanes_complete 
     count_events: sw_inlane    
     
@@ -162,7 +186,8 @@ counters:
     disable_events: 
     start_enabled: true
 #    persist_state: true
-    reset_on_complete: false
+    reset_on_complete: true
+    disable_on_complete: false    
     events_when_complete: minimode_spinners_complete 
     count_events: sw_spinner 
 
@@ -173,7 +198,8 @@ counters:
     disable_events: 
     start_enabled: true
 #    persist_state: true
-    reset_on_complete: false
+    reset_on_complete: true
+    disable_on_complete: false    
     events_when_complete: minimode_ramps_complete 
     count_events: sw_ramp      
     
@@ -184,7 +210,8 @@ counters:
     disable_events: 
     start_enabled: true
 #    persist_state: true
-    reset_on_complete: false
+    reset_on_complete: true
+    disable_on_complete: false    
     events_when_complete: minimode_loops_complete 
     count_events: sw_loop   
 
@@ -195,7 +222,8 @@ counters:
     disable_events: 
     start_enabled: true
 #    persist_state: true
-    reset_on_complete: false
+    reset_on_complete: true
+    disable_on_complete: false
     events_when_complete: minimode_drops_complete 
     count_events: sw_drop_target 
  

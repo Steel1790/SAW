@@ -33,6 +33,7 @@ modes:
   - jigsaw_multiball
   - hacksaw_multiball
   - high_score
+  - bonus
 
 window:
   width: 1366

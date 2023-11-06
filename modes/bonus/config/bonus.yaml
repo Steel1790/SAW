@@ -1,0 +1,242 @@
+#config_version=6
+mode_settings:
+  display_delay_ms: 3s
+  hurry_up_delay_ms: 0
+  bonus_entries:
+    - event: bonus_gears
+      score: 750000 * (current_player.bonus_gears + 0)
+    - event: bonus_syringes
+      score: 750000 * (current_player.bonus_syringes + 0)
+    - event: bonus_bathtubs
+      score: 750000 * (current_player.bonus_bathtubs + 0)
+    - event: bonus_taperecorders
+      score: 750000 * (current_player.bonus_taperecorders + 0)
+    - event: bonus_candles
+      score: 750000 * (current_player.bonus_candles + 0)
+    - event: bonus_hacksaws
+      score: 750000 * (current_player.bonus_hacksaws + 0)
+    - event: bonus_handguns
+      score: 750000 * (current_player.bonus_handguns + 0)
+    - event: bonus_keys
+      score: 750000 * (current_player.bonus_keys + 0)      
+variable_player: 
+  mode_bonus_started:   
+    gears_score_total: 750000 * (current_player.bonus_gears + 0)       
+    syringes_score_total: 750000 * (current_player.bonus_syringes + 0) 
+    bathtubs_score_total: 750000 * (current_player.bonus_bathtubs + 0)
+    taperecorders_score_total: 750000 * (current_player.bonus_taperecorders + 0)
+    candles_score_total: 750000 * (current_player.bonus_candles + 0)
+    hacksaws_score_total: 750000 * (current_player.bonus_hacksaws+ 0)
+    handguns_score_total: 750000 * (current_player.bonus_handguns + 0)
+    keys_score_total: 750000 * (current_player.bonus_keys + 0)  
+    bonus_x: 
+      int: current_player.bonus_multiplier 
+    bonus_total: (((current_player.gears_score_total)+(current_player.syringes_score_total)+(current_player.bathtubs_score_total)+(current_player.taperecorders_score_total)+(current_player.candles_score_total)+(current_player.hacksaws_score_total)+(current_player.handguns_score_total)+(current_player.keys_score_total))*(current_player.bonus_x))
+    total_score: ((current_player.bonus_total)+(current_player.score))
+slide_player:
+  mode_bonus_started: bonus_start_slide
+
+slides:
+  bonus_start_slide:
+    - type: text
+      text: End of Ball Bonus
+      font_name: sawesome
+      font_size: 70
+      color: yellow 
+      outline_color: black
+      outline_width: 7
+      y: 92%
+    - type: text
+      text: "Gears Collected: (player|bonus_gears)"
+      font_name: Skilt Gothic W04 Thin
+      font_size: 35
+      bold: true      
+      color: white
+      outline_color: black
+      outline_width: 6
+      x: 30%
+      y: 82%   
+    - type: text
+      text: (player|gears_score_total)
+      font_name: Skilt Gothic W04 Thin
+      font_size: 35
+      number_grouping: true         
+      color: white
+      outline_color: black 
+      outline_width: 6      
+      x: 60%
+      y: 82%   
+    - type: text
+      text: "Syringes Collected: (player|bonus_syringes)"
+      font_name: Skilt Gothic W04 Thin
+      font_size: 35
+      bold: true      
+      color: white
+      outline_color: black
+      outline_width: 6     
+      x: 30%
+      y: 74%   
+    - type: text
+      text: (player|syringes_score_total) 
+      font_name: Skilt Gothic W04 Thin
+      font_size: 35
+      number_grouping: true        
+      color: white
+      outline_color: black
+      outline_width: 6     
+      x: 60%
+      y: 74%   
+    - type: text
+      text: "Bathtubs Collected: (player|bonus_bathtubs)"
+      font_name: Skilt Gothic W04 Thin
+      font_size: 35
+      bold: true      
+      color: white
+      outline_color: black
+      outline_width: 6     
+      x: 30%
+      y: 66%   
+    - type: text
+      text: (player|bathtubs_score_total) 
+      font_name: Skilt Gothic W04 Thin
+      font_size: 35
+      number_grouping: true        
+      color: white
+      outline_color: black
+      outline_width: 6    
+      x: 60%
+      y: 66%         
+    - type: text
+      text: "Tape Recorders Collected: (player|bonus_taperecorders)"
+      font_name: Skilt Gothic W04 Thin
+      font_size: 35
+      bold: true      
+      color: white 
+      outline_color: black
+      outline_width: 6     
+      x: 30%
+      y: 58%   
+    - type: text
+      text: (player|taperecorders_score_total) 
+      font_name: Skilt Gothic W04 Thin
+      font_size: 35
+      number_grouping: true        
+      color: white 
+      outline_color: black
+      outline_width: 6       
+      x: 60%
+      y: 58%               
+    - type: text
+      text: "Candles Collected: (player|bonus_candles)"
+      font_name: Skilt Gothic W04 Thin
+      font_size: 35
+      bold: true      
+      color: white
+      outline_color: black
+      outline_width: 6     
+      x: 30%
+      y: 50%   
+    - type: text
+      text: (player|candles_score_total) 
+      font_name: Skilt Gothic W04 Thin
+      font_size: 35
+      number_grouping: true        
+      color: white
+      outline_color: black
+      outline_width: 6      
+      x: 60%
+      y: 50%               
+    - type: text
+      text: "Hacksaws Collected: (player|bonus_hacksaws)"
+      font_name: Skilt Gothic W04 Thin
+      font_size: 35
+      bold: true      
+      color: white
+      outline_color: black
+      outline_width: 6    
+      x: 30%
+      y: 42%   
+    - type: text
+      text: (player|hacksaws_score_total) 
+      font_name: Skilt Gothic W04 Thin
+      font_size: 35
+      number_grouping: true        
+      color: white
+      outline_color: black
+      outline_width: 6      
+      x: 60%
+      y: 42%               
+    - type: text
+      text: "Handguns Collected: (player|bonus_handguns)"
+      font_name: Skilt Gothic W04 Thin
+      font_size: 35
+      bold: true      
+      color: white 
+      outline_color: black
+      outline_width: 6      
+      x: 30%
+      y: 34%   
+    - type: text
+      text: (player|handguns_score_total) 
+      font_name: Skilt Gothic W04 Thin
+      font_size: 35
+      number_grouping: true        
+      color: white
+      outline_color: black
+      outline_width: 6       
+      x: 60%
+      y: 34%               
+    - type: text
+      text: "Keys Collected: (player|bonus_keys)"
+      font_name: Skilt Gothic W04 Thin
+      font_size: 35
+      bold: true      
+      color: white
+      outline_color: black
+      outline_width: 6      
+      x: 30%
+      y: 26%   
+    - type: text
+      text: (player|keys_score_total) 
+      font_name: Skilt Gothic W04 Thin
+      font_size: 35
+      number_grouping: true        
+      color: white
+      outline_color: black
+      outline_width: 6         
+      x: 60%
+      y: 26%            
+    - type: text
+      text: "Bonus Multiplier: (player|bonus_x)X"
+      font_name: Skilt Gothic W04 Thin
+      bold: true
+      font_size: 45
+      color: white 
+      outline_color: black
+      outline_width: 6      
+      x: 30%
+      y: 18%         
+    - type: text
+      text: "Total Bonus: (player|bonus_total)"
+      font_name: Skilt Gothic W04 Thin
+      bold: true
+      font_size: 45
+      number_grouping: true        
+      color: white
+      outline_color: black
+      outline_width: 6      
+      x: 60%
+      y: 18%   
+    - type: text
+      text: "Total Score: (player|total_score)"
+      font_name: Skilt Gothic W04 Thin
+      bold: true
+      font_size: 45
+      number_grouping: true        
+      color: white
+      outline_color: black
+      outline_width: 6     
+      y: 8%   
+    - type: image
+      image: lastgamescores
+      opacity: 0.5
