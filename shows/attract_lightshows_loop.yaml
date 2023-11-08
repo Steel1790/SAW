@@ -1,11 +1,11 @@
 #show_version=5
-# - duration: 5s
-#   shows: 
-#       gi_flicker:
-#         loops: 3
-#         speed: 2
-#         show_tokens:
-#           color1: ffffff
+- duration: 5s
+  shows: 
+      gi_flicker:
+        loops: 3
+        speed: 1
+        show_tokens:
+          color1: ffffff
 
 # - duration: .5s
 #   shows: 
@@ -21,19 +21,27 @@
 #         loops: 2
 #         speed: 5
 
-- duration: 3s
+- duration: 29s
   shows: 
-      rw_white_sweeps:
-        loops: 1
-        speed: 20
+      test_128p1_ordercheck:
+        loops: 2
+        speed: 1
+        show_tokens:
+          color1: ffffff
+
+# - duration: 3s
+#   shows: 
+#       rw_white_sweeps:
+#         loops: 1
+#         speed: 20
 
 # - duration: 11s
 #   shows: 
 #       mystery_flash:
 #         loops: 0
 #         show_tokens:
-#          led: insert, gi, jet_bumper, flasher
-#          color1: white
+#          led: gi, flasher
+#          color1: b300ff
 
 # - duration: 6s
 #   shows: 

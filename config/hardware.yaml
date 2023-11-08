@@ -6,7 +6,7 @@ hardware:
 fast:
   net:
     controller: neuron
-    port: /dev/tty.usbmodem11101
+    port: /dev/tty.usbmodem2101
     io_loop:
       1616_1:
         model: FP-I/O-1616
@@ -18,7 +18,7 @@ fast:
         model: FP-I/O-3208
         order: 3
   exp:
-    port: /dev/tty.usbmodem11103
+    port: /dev/tty.usbmodem2103
     boards:
       led256:
         model: FP-EXP-0081
@@ -32,49 +32,49 @@ machine:
   #min_balls: 3
 
 switches:
-  s_plumb_bob_tilt:
-    number: 3208-16
-    tags: tilt_bob
+  # s_plumb_bob_tilt:
+  #   number: 0808-1
+  #   tags: tilt_bob
   s_left_flipper:
-    number: 3208-6
+    number: 3208-30
     tags: left_flipper
   s_right_flipper:
-    number: 3208-7
+    number: 3208-31
     tags: right_flipper
   s_upper_right_flipper:
     number: 3208-12
     tags: upper_right_flipper
   s_trough1:
-    number: 3208-29
+    number: 3208-18
   s_trough2:
-    number: 3208-28
+    number: 3208-19
   s_trough3:
-    number: 3208-27
+    number: 3208-20
   s_trough4:
-    number: 3208-26
+    number: 3208-21
   s_trough5:
-    number: 3208-25
+    number: 3208-22
   s_trough6:
-    number: 3208-24
+    number: 3208-23
   s_trough_jam:
-    number: 3208-31
-  s_start:
-    number: 3208-15
-    tags: start
-  s_action_button:
-    number: 3208-14
-    tags: action
+    number: 3208-16
+  # s_start:
+  #   number: 0808-15
+  #   tags: start
+  # s_action_button:
+  #   number: 0808-14
+  #   tags: action
   s_left_inlane:
-    number: 3208-1
+    number: 3208-25
     tags: left_return_lane, playfield_active, inlane, switch_hit
   s_left_outlane:
-    number: 3208-2
+    number: 3208-26
     tags: left_out_lane, playfield_active, outlane, switch_hit
   s_right_inlane:
-    number: 3208-20
+    number: 3208-3
     tags: right_return_lane, playfield_active, inlane, switch_hit
   s_right_outlane:
-    number: 3208-21
+    number: 3208-2
     tags: right_out_lane, playfield_active, outlane, switch_hit
   s_right_cellar:
     number: 1616_1-8
@@ -87,15 +87,15 @@ switches:
     tags: left_standup, standup, switch_hit
 # Left Lock 1 (lwr)
   s_left_lock_1:
-    number: 3208-3
+    number: 3208-27
     tags: left_lock_1 , left_lock
 # Left Lock 2 (mid)
   s_left_lock_2:
-    number: 3208-4
+    number: 3208-28
     tags: left_lock_2, left_lock
 # Left Lock 3 (upr)
   s_left_lock_3:
-    number: 3208-5
+    number: 3208-29
     tags: left_lock_3, left_lock
   s_right_standup:
     number:  3208-13
@@ -119,7 +119,7 @@ switches:
     number: 1616_1-12
     tags: left_ramp, ramp_hit, switch_hit, ramp
   s_left_ramp_score_top:
-    number: 3208-23
+    number: 3208-0
     tags: left_ramp, ramp_hit, switch_hit, ramp
   s_left_ramp_score_bottom:
     number: 1616_2-9
@@ -161,10 +161,10 @@ switches:
     number: 1616_2-2
     tags: standup, switch_hit
   s_left_110_point:
-    number: 3208-18
+    number: 3208-7
     tags: standup, switch_hit
   s_right_110_point:
-    number: 3208-22
+    number: 3208-1
     tags: standup, switch_hit
   s_left_top_jet_bumper:
     number: 1616_1-10
@@ -185,12 +185,12 @@ switches:
     number: 1616_1-2
     tags: bottom_pops, pops, switch_hit
   s_ball_shooter_lane:
-    number: 3208-30
+    number: 3208-17
   s_left_slingshot:
-    number: 3208-0
+    number: 3208-24
     tags: slingshot
   s_right_slingshot:
-    number: 3208-19
+    number: 3208-4
     tags: slingshot
 
 virtual_platform_start_active_switches:

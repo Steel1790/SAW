@@ -28,29 +28,29 @@ lights:
 
 # jigsaw's workshop circle of 8 round inserts
   l_jw_key:
-    number: led128-3-12
-    tags: insert, led128p3
+    number: led128-2-12
+    tags: insert, led128p2
   l_jw_gun:
-    number: led128-3-13
-    tags: insert, led128p3
+    number: led128-2-13
+    tags: insert, led128p2
   l_jw_drill:
-    number: led128-3-6
-    tags: insert, led128p3
+    number: led128-2-6
+    tags: insert, led128p2
   l_jw_candle:
-    number: led128-3-7
-    tags: insert, led128p3
+    number: led128-2-7
+    tags: insert, led128p2
   l_jw_taperecorder:
-    number: led128-3-8 
-    tags: insert, led128p3
+    number: led128-2-8 
+    tags: insert, led128p2
   l_jw_bathtub:
-    number: led128-3-9  
-    tags: insert, led128p3
+    number: led128-2-9  
+    tags: insert, led128p2
   l_jw_syringe:
-    number: led128-3-10
-    tags: insert, led128p3
+    number: led128-2-10
+    tags: insert, led128p2
   l_jw_gears:
-    number: led128-3-11
-    tags: insert, led128p3
+    number: led128-2-11
+    tags: insert, led128p2
 
 # jet bumpers
   l_left_bottom_bumper_1:
@@ -348,55 +348,55 @@ lights:
     tags: jet_bumper, top_bumper, lower_bottom_bumper, led256p4
 
   l_right_ramp_triangle1:
-    number: led128-3-16
-    tags: insert, led128p3
+    number: led128-2-16
+    tags: insert, led128p2
   l_right_ramp_triangle2:
-    number: led128-3-18
-    tags: insert, led128p3
+    number: led128-2-18
+    tags: insert, led128p2
   l_left_ramp_triangle1:
-    number: led128-2-19
-    tags: insert, led128p2
+    number: led128-3-19
+    tags: insert, led128p3
   l_left_ramp_triangle2:
-    number: led128-2-20
-    tags: insert, led128p2
+    number: led128-3-20
+    tags: insert, led128p3
   l_left_ramp_triangle3:
-    number: led128-2-21
-    tags: insert, led128p2
+    number: led128-3-21
+    tags: insert, led128p3
 
 # skillshot lights
   l_skill_shot1:
-    number: led128-3-5
-    tags: insert, led128p3
+    number: led128-2-5
+    tags: insert, led128p2
   l_skill_shot2:
-    number: led128-3-14
-    tags: insert, led128p3
+    number: led128-2-14
+    tags: insert, led128p2
   l_skill_shot3:
-    number: led128-3-15
-    tags: insert, led128p3
+    number: led128-2-15
+    tags: insert, led128p2
   l_left_return_lane:
     number: led128-4-5
     tags: insert, led128p4
   l_left_loop_arrow:
-    number: led128-2-4
-    tags: insert, arrow, led128p2
+    number: led128-3-4
+    tags: insert, arrow, led128p3
   l_left_standup_arrow:
-    number: led128-2-6
-    tags: insert, arrow, led128p2
+    number: led128-3-6
+    tags: insert, arrow, led128p3
   l_inner_loop_arrow:
-    number: led128-2-22
-    tags: insert, arrow, led128p2
+    number: led128-3-22
+    tags: insert, arrow, led128p3
   l_left_standup_right_ramp_arrow:
-    number: led128-3-17
-    tags: insert, arrow, led128p3
+    number: led128-2-17
+    tags: insert, arrow, led128p2
   l_right_standup_right_ramp_arrow:
-    number: led128-3-19
-    tags: insert, arrow, led128p3
+    number: led128-2-19
+    tags: insert, arrow, led128p2
   l_right_loop_arrow:
-    number: led128-3-20
-    tags: insert, arrow, led128p3
+    number: led128-2-20
+    tags: insert, arrow, led128p2
   l_right_standup_arrow:
-    number: led128-3-2
-    tags: insert, arrow, led128p3
+    number: led128-2-2
+    tags: insert, arrow, led128p2
   l_live_again:
     number: led128-4-13
     tags: insert, led128p4
@@ -441,17 +441,17 @@ lights:
 
 # left_side_middle:
   l_gi_4:
-    number: led128-2-1
+    number: led128-3-1
     type: grb
-    tags: gi, gi_left, gi_middle, led128p2
+    tags: gi, gi_left, gi_middle, led128p3
   l_gi_5:
-    number: led128-2-17
+    number: led128-3-17
     type: grb
-    tags: gi, gi_left, gi_middle, led128p2
+    tags: gi, gi_left, gi_middle, led128p3
   l_gi_6:
-    number: led128-2-18
+    number: led128-3-18
     type: grb
-    tags: gi, gi_left, gi_middle, led128p2
+    tags: gi, gi_left, gi_middle, led128p3
 
 # left_side_top:
   l_gi_7:
@@ -499,17 +499,17 @@ lights:
 
 # right_side_middle:
   l_gi_17:
-    number: led128-3-29
+    number: led128-2-29
     type: grb
-    tags: gi, gi_right, gi_middle, led128p3
+    tags: gi, gi_right, gi_middle, led128p2
   l_gi_18:
-    number: led128-3-3
+    number: led128-2-3
     type: grb
-    tags: gi, gi_right, gi_middle, led128p3
+    tags: gi, gi_right, gi_middle, led128p2
   l_gi_19:
-    number: led128-3-1
+    number: led128-2-1
     type: grb
-    tags: gi, gi_right, gi_middle, led128p3
+    tags: gi, gi_right, gi_middle, led128p2
 
 # right_slingshot_plastic:
   l_gi_20:
@@ -555,29 +555,29 @@ lights:
     tags: flasher, drill_flasher, led256p1
 
   l_zep_flasher_1:
-    number: led128-2-7
-    tags: flasher, zep_flasher, led128p2
+    number: led128-3-7
+    tags: flasher, zep_flasher, led128p3
   l_zep_flasher_2:
-    number: led128-2-8
-    tags: flasher, zep_flasher, led128p2
+    number: led128-3-8
+    tags: flasher, zep_flasher, led128p3
   l_zep_flasher_3:
-    number: led128-2-9
-    tags: flasher, zep_flasher, led128p2
+    number: led128-3-9
+    tags: flasher, zep_flasher, led128p3
   l_zep_flasher_4:
-    number: led128-2-10
-    tags: flasher, zep_flasher, led128p2
+    number: led128-3-10
+    tags: flasher, zep_flasher, led128p3
   l_zep_flasher_5:
-    number: led128-2-11
-    tags: flasher, zep_flasher, led128p2
+    number: led128-3-11
+    tags: flasher, zep_flasher, led128p3
   l_zep_flasher_6:
-    number: led128-2-12
-    tags: flasher, zep_flasher, led128p2
+    number: led128-3-12
+    tags: flasher, zep_flasher, led128p3
   l_zep_flasher_7:
-    number: led128-2-13
-    tags: flasher, zep_flasher, led128p2
+    number: led128-3-13
+    tags: flasher, zep_flasher, led128p3
   l_zep_flasher_8:
-    number: led128-2-14
-    tags: flasher, zep_flasher, led128p2
+    number: led128-3-14
+    tags: flasher, zep_flasher, led128p3
 
   l_razorwire_flasher_1:
     number: led256-3-17
@@ -630,46 +630,46 @@ lights:
     tags: flasher, bear_flasher, led256p3
 
   l_shotgun_flasher_1:
-    number: led128-3-21
-    tags: flasher, shotgun_flasher, led128p3
+    number: led128-2-21
+    tags: flasher, shotgun_flasher, led128p2
   l_shotgun_flasher_2:
-    number: led128-3-22
-    tags: flasher, shotgun_flasher, led128p3
+    number: led128-2-22
+    tags: flasher, shotgun_flasher, led128p2
   l_shotgun_flasher_3:
-    number: led128-3-23
-    tags: flasher, shotgun_flasher, led128p3
+    number: led128-2-23
+    tags: flasher, shotgun_flasher, led128p2
   l_shotgun_flasher_4:
-    number: led128-3-24
-    tags: flasher, shotgun_flasher, led128p3
+    number: led128-2-24
+    tags: flasher, shotgun_flasher, led128p2
   l_shotgun_flasher_5:
-    number: led128-3-25
-    tags: flasher, shotgun_flasher, led128p3
+    number: led128-2-25
+    tags: flasher, shotgun_flasher, led128p2
   l_shotgun_flasher_6:
-    number: led128-3-26
-    tags: flasher, shotgun_flasher, led128p3
+    number: led128-2-26
+    tags: flasher, shotgun_flasher, led128p2
   l_shotgun_flasher_7:
-    number: led128-3-27
-    tags: flasher, shotgun_flasher, led128p3
+    number: led128-2-27
+    tags: flasher, shotgun_flasher, led128p2
   l_shotgun_flasher_8:
-    number: led128-3-28
-    tags: flasher, shotgun_flasher, led128p3
+    number: led128-2-28
+    tags: flasher, shotgun_flasher, led128p2
 
 # playfield toys
   l_tape_reel:
-    number: led128-2-15
-    tags: tape, toy, led128p2
+    number: led128-3-15
+    tags: tape, toy, led128p3
   l_tape_speaker:
-    number: led128-2-16
-    tags: tape, toy, led128p2
+    number: led128-3-16
+    tags: tape, toy, led128p3
   l_mode_scoop:
-    number: led128-2-5
-    tags: scoop, toy, led128p2
+    number: led128-3-5
+    tags: scoop, toy, led128p3
   l_mb_lock_scoop:
-    number: led128-2-2
-    tags: scoop, toy, led128p2
+    number: led128-3-2
+    tags: scoop, toy, led128p3
   l_mystery_scoop:
-    number: led128-2-3
-    tags: scoop, toy, led128p2
+    number: led128-3-3
+    tags: scoop, toy, led128p3
 
 
 # ball trough
@@ -814,8 +814,8 @@ lights:
 
 # spotlights
   l_tape_spotlight:
-    number: led128-3-4
-    tags: spotlights, led128p3   
+    number: led128-2-4
+    tags: spotlights, led128p2   
   l_left_spotlight:
     number: led128-4-6
     tags: spotlights, led128p4
