@@ -1,4 +1,4 @@
-#config_version=5                 
+#config_version=6                 
 mode:
   start_events: selection_mode_reversebeartrap_selected
   stop_events: stop_mode_reversebeartrap, ball_ended, player_reversebeartrap_120s_reversebeartrap_timer_tick{value < 1}

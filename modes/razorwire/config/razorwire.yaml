@@ -1,4 +1,4 @@
-#config_version=5                 
+#config_version=6                 
 mode:
 #  start_events: mode_cellar_complete, stop_mode_cellar, stop_cellar_qualify_counter
   start_events: selection_mode_razorwire_selected

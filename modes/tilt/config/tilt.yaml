@@ -1,4 +1,4 @@
-#config_version=5
+#config_version=6
 tilt:    # the following are the defaults only copy those if you want to change them
   multiple_hit_window: 300ms
   settle_time: 5s

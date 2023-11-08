@@ -1,4 +1,4 @@
-#config_version=5
+#config_version=6
 
 hardware:
     platform: fast
@@ -6,7 +6,6 @@ hardware:
 fast:
   net:
     controller: neuron
-    port: /dev/tty.usbmodem2101
     io_loop:
       1616_1:
         model: FP-I/O-1616
@@ -18,7 +17,6 @@ fast:
         model: FP-I/O-3208
         order: 3
   exp:
-    port: /dev/tty.usbmodem2103
     boards:
       led256:
         model: FP-EXP-0081
@@ -26,7 +24,7 @@ fast:
         model: FP-EXP-0071
       ledneuron:
         model: FP-EXP-2000
-    debug: true
+          #debug: true
     
 machine:
   #min_balls: 3
@@ -355,3 +353,27 @@ autofire_coils:
   right_slingshot:
     coil: c_right_slingshot
     switch: s_right_slingshot
+  left_top_bumper:
+    coil: c_left_top_jet_bumper
+    switch: s_left_top_jet_bumper
+  right_top_bumper:
+    coil: c_right_top_jet_bumper
+    switch: s_right_top_jet_bumper
+  lower_top_bumper:
+    coil: c_lower_top_jet_bumper
+    switch: s_lower_top_jet_bumper    
+  left_bottom_bumper:
+    coil: c_left_bottom_jet_bumper
+    switch: s_left_bottom_jet_bumper
+  right_bottom_bumper:
+    coil: c_right_bottom_jet_bumper
+    switch: s_right_bottom_jet_bumper 
+  upper_bottom_bumper:
+    coil: c_upper_bottom_jet_bumper
+    switch: s_upper_bottom_jet_bumper    
+  mystery_scoop:
+    coil: c_mystery_eject
+    switch: s_left_cellar
+  right_ramp_saucer:
+    coil: c_top_eject
+    switch: s_top_right_reject

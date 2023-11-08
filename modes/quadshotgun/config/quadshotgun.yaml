@@ -1,4 +1,4 @@
-#config_version=5                 
+#config_version=6                 
 mode:
   start_events: selection_mode_quadshotgun_selected
   stop_events: stop_mode_quadshotgun, mode_quadshotgun_complete, ball_ended
@@ -84,7 +84,7 @@ slides:
       anchor_x: left
       anchor_y: bottom
       font_name: TrajanProRegular
-      color: 006ee6
+      color: "006ee6"
       
     - type: Text
       text: 00:(player|quadshotgun_quadshotgun_60s_timer_tick)
@@ -110,7 +110,7 @@ slides:
       anchor_x: left
       corner_radius: 10
       corner_segments: 10
-      color: 006ee6
+      color: "006ee6"
       animations:
         player_quadshotgun_spinner_counter:
          - property: width
@@ -139,7 +139,7 @@ slides:
       y: 35%
     - type: Text
       text: You Have 60 Seconds To Hit 30 Spins!
-      color: 006ee6
+      color: "006ee6"
       font_name: TrajanProRegular
       font_size: 35
       y: 17%
@@ -192,7 +192,7 @@ slides:
       anchor_x: left
       anchor_y: bottom
       font_name: TrajanProRegular
-      color: 006ee6
+      color: "006ee6"
       
     - type: Text
       text: 00:(player|quadshotgun_quadshotgun_60s_timer_tick)
@@ -237,7 +237,7 @@ widgets:
    quadshotgun_shot_update2:
     - type: Text
       text: X
-      color: 006ee6
+      color: "006ee6"
       x: 5.5%
       y: 52%
       font_size: 70
@@ -256,7 +256,7 @@ show_player:
   mode_quadshotgun_started:     
     gi_on:
       show_tokens:
-        color1: 006ee6
+        color1: "006ee6"
     flash_token:
       loops: -1
       speed: 8
@@ -270,5 +270,5 @@ show_player:
       speed: 8
       show_tokens:
         led: l_shotgun_flasher_4
-        color1: 006ee6
+        color1: "006ee6"
 

@@ -19,3 +19,5 @@ logs/
 /.vs/Saw/FileContentIndex
 /.vs/Saw
 /.vs
+/.vscode
+/sawenv

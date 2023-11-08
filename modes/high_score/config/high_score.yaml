@@ -1,0 +1,115 @@
+#config_version=6
+mode:
+  priority: 500
+  start_events: game_ending, start_high_score
+  use_wait_queue: true
+high_score:
+  _overwrite: true
+  enter_initials_timeout: 90
+  award_slide_display_time: 4s
+  # define your high score categories and the awards
+  categories:
+    score:
+        - GRAND CHAMPION
+        - HIGH SCORE 1
+        - HIGH SCORE 2
+        - HIGH SCORE 3
+        - HIGH SCORE 4
+    loops:
+        - LOOP CHAMPION
+#    tilt_bonus:
+#        - BONUS LOST
+  # set the defaults
+  defaults:
+    score:
+      - JWF: 1000000
+      - ECK: 900000
+      - ADC: 800000
+      - SAW: 700000
+      - SAW: 6000
+
+    loops:
+      - TST: 42
+ #   tilt_bonus:
+ #     - TST: 250000
+# optional: change the slides (you can omit all the following)
+slide_player:
+  _overwrite: true   
+  mode_high_score_started:  
+    high_score_enter_initials:
+      target: lcd
+
+
+slides:
+  _overwrite: true   
+  high_score_enter_initials:
+
+    - type: text
+      font_size: 125
+      font_name: Skilt Gothic W04 Thin
+      text: PLAYER  (number)
+      color: C2E3E0 
+      x: center
+      y: center + 300
+      
+    - type: text
+      font_size: 100
+      font_name: Skilt Gothic W04 Thin
+      text: (award)
+      color: red
+      x: center
+      y: center + 175
+      
+            
+    - type: text
+      font_name: sawesome
+      font_size: 80
+      text: (score)
+      color: C2E3E0 
+      number_grouping: true      
+      x: center
+      y: center - 300
+      
+    - type: text_input
+      initial_char: A
+      dynamic_x: false
+      key: high_score
+      font_size: 150
+      font_name: sawesome
+      max_chars: 3
+      x: center
+      y: center - 150
+      shift_left_event: s_left_flipper_active
+      shift_right_event: s_right_flipper_active
+      select_event: s_action_button_active
+      color: C2E3E0 
+      
+    - type: text
+      text: '<          >'
+      font_size: 120
+      x: center
+      y: center
+      color: C2E3E0 
+      
+    - type: text
+      text: ''
+      key: high_score
+      font_size: 100
+      font_name: sawesome      
+      x: center
+      y: center
+      color: C2E3E0 
+      animations:
+        show_slide:
+          - property: opacity
+            value: 1
+            duration: 0.3s
+            easing: in_out_quint
+          - property: opacity
+            value: 0
+            duration: 0.3s
+            repeat: true
+            easing: in_out_quint
+    - type: image            
+      image: billyskillshot
+      opacity: 0.8
