@@ -7,13 +7,13 @@ fast:
   net:
     controller: neuron
     io_loop:
-      1616_1:
+      "1616_1":
         model: FP-I/O-1616
         order: 1
-      1616_2:
+      "1616_2":
         model: FP-I/O-1616
         order: 2
-      3208:
+      "3208":
         model: FP-I/O-3208
         order: 3
   exp:
