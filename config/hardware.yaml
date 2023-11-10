@@ -25,7 +25,6 @@ fast:
       ledneuron:
         model: FP-EXP-2000
           #debug: true
-    
 machine:
   #min_balls: 3
 
@@ -96,7 +95,7 @@ switches:
     number: 3208-29
     tags: left_lock_3, left_lock
   s_right_standup:
-    number:  3208-13
+    number: 3208-13
     tags: right_standup, standup, switch_hit
   s_upper_bank_drop_target_opto:
     number: 1616_2-5
@@ -207,69 +206,89 @@ coils:
   c_flipper_left_hold:
     number: 3208-3
     default_pulse_ms: 20
-    default_hold_power: 1.0
+    default_hold_power: 0.2
     tags: coils
   c_flipper_right_main:
     number: 3208-4
-    default_pulse_ms: 80
+    default_pulse_ms: 20
     tags: coils
   c_flipper_right_hold:
     number: 3208-5
     default_pulse_ms: 20
-    default_hold_power: 1.0
+    default_hold_power: 0.2
     tags: coils
   c_flipper_upper_right_main:
     number: 1616_2-4
-    default_pulse_ms: 80
+    default_pulse_ms: 20
     tags: coils
   c_flipper_upper_right_hold:
     number: 1616_2-3
     default_pulse_ms: 20
-    default_hold_power: 1.0
+    default_hold_power: 0.2
     tags: coils
   c_trough_eject:
     number: 3208-6
+    default_pulse_ms: 20
   c_auto_plunger:
     number: 3208-7
+    default_pulse_ms: 20
   c_diverter:
     number: 1616_1-0
+    default_pulse_ms: 20
   c_top_eject:
     number: 1616_2-0
+    default_pulse_ms: 20
   c_mystery_eject:
     number: 1616_1-1
+    default_pulse_ms: 20
   c_right_ramp_lift:
     number: 1616_2-2
+    default_pulse_ms: 20
   c_right_ramp_down:
     number: 1616_2-1
+    default_pulse_ms: 20
   c_left_spin_disc:
     number: 1616_2-8
+    default_pulse_ms: 20
   c_middle_spin_disc:
     number: 1616_2-9
+    default_pulse_ms: 20
   c_right_spin_disc:
     number: 1616_2-10
+    default_pulse_ms: 20
   c_left_lock_kickback:
     number: 1616_2-5
+    default_pulse_ms: 20
   c_left_top_jet_bumper:
     number: 1616_1-7
+    default_pulse_ms: 20
   c_right_top_jet_bumper:
     number: 1616_1-6
+    default_pulse_ms: 20
   c_lower_top_jet_bumper:
     number: 1616_1-9
+    default_pulse_ms: 20
   c_left_bottom_jet_bumper:
     number: 1616_1-2
+    default_pulse_ms: 20
   c_right_bottom_jet_bumper:
     number: 1616_1-4
+    default_pulse_ms: 20
   c_upper_bottom_jet_bumper:
     number: 1616_1-3
+    default_pulse_ms: 20
   c_left_slingshot:
     number: 3208-0
+    default_pulse_ms: 20
   c_right_slingshot:
     number: 3208-1
+    default_pulse_ms: 20
   c_lower_droptargetreset:
     number: 1616_1-5
-    default_pulse_ms: 250
+    default_pulse_ms: 20
   c_upper_droptargetreset:
     number: 1616_1-8
+    default_pulse_ms: 20
 
 drop_targets:
   dt_upper_drop1:
@@ -325,7 +344,7 @@ ball_devices:
     ball_switches: s_right_cellar
     eject_coil: c_mystery_eject
     mechanical_eject: true
-    eject_timeouts: 8000ms  
+    eject_timeouts: 8000m
 
 playfields:
   playfield:
@@ -361,16 +380,16 @@ autofire_coils:
     switch: s_right_top_jet_bumper
   lower_top_bumper:
     coil: c_lower_top_jet_bumper
-    switch: s_lower_top_jet_bumper    
+    switch: s_lower_top_jet_bumper
   left_bottom_bumper:
     coil: c_left_bottom_jet_bumper
     switch: s_left_bottom_jet_bumper
   right_bottom_bumper:
     coil: c_right_bottom_jet_bumper
-    switch: s_right_bottom_jet_bumper 
+    switch: s_right_bottom_jet_bumper
   upper_bottom_bumper:
     coil: c_upper_bottom_jet_bumper
-    switch: s_upper_bottom_jet_bumper    
+    switch: s_upper_bottom_jet_bumper
   mystery_scoop:
     coil: c_mystery_eject
     switch: s_left_cellar
