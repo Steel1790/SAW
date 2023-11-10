@@ -1,6 +1,7 @@
 #config_version=6
 
 hardware:
+#    platform: smart_virtual
     platform: fast
 
 fast:
@@ -55,12 +56,12 @@ switches:
     number: 3208-23
   s_trough_jam:
     number: 3208-16
-  # s_start:
-  #   number: 0808-15
-  #   tags: start
-  # s_action_button:
-  #   number: 0808-14
-  #   tags: action
+  s_start:
+    number: 0808-15
+    tags: start
+  s_action_button:
+    number: 0808-14
+    tags: action
   s_left_inlane:
     number: 3208-25
     tags: left_return_lane, playfield_active, inlane, switch_hit
@@ -344,7 +345,7 @@ ball_devices:
     ball_switches: s_right_cellar
     eject_coil: c_mystery_eject
     mechanical_eject: true
-    eject_timeouts: 8000m
+    eject_timeouts: 8000ms
 
 playfields:
   playfield:

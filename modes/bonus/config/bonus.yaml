@@ -54,7 +54,8 @@ slides:
       color: white
       outline_color: black
       outline_width: 6
-      x: 30%
+  #    x: 30%
+      x: 372
       y: 82%   
     - type: text
       text: (player|gears_score_total)
@@ -74,7 +75,8 @@ slides:
       color: white
       outline_color: black
       outline_width: 6     
-      x: 30%
+   #   x: 30%
+      x: 392
       y: 74%   
     - type: text
       text: (player|syringes_score_total) 
@@ -94,7 +96,8 @@ slides:
       color: white
       outline_color: black
       outline_width: 6     
-      x: 30%
+  #    x: 30%
+      x: 393
       y: 66%   
     - type: text
       text: (player|bathtubs_score_total) 
@@ -114,7 +117,8 @@ slides:
       color: white 
       outline_color: black
       outline_width: 6     
-      x: 30%
+   #   x: 30%
+      x: 434
       y: 58%   
     - type: text
       text: (player|taperecorders_score_total) 
@@ -134,7 +138,8 @@ slides:
       color: white
       outline_color: black
       outline_width: 6     
-      x: 30%
+  #    x: 30%
+      x: 385
       y: 50%   
     - type: text
       text: (player|candles_score_total) 
@@ -154,7 +159,8 @@ slides:
       color: white
       outline_color: black
       outline_width: 6    
-      x: 30%
+ #     x: 30%
+      x: 400
       y: 42%   
     - type: text
       text: (player|hacksaws_score_total) 
@@ -174,7 +180,8 @@ slides:
       color: white 
       outline_color: black
       outline_width: 6      
-      x: 30%
+   #   x: 30%
+      x: 400
       y: 34%   
     - type: text
       text: (player|handguns_score_total) 
@@ -194,7 +201,8 @@ slides:
       color: white
       outline_color: black
       outline_width: 6      
-      x: 30%
+    #  x: 30%
+      x: 364
       y: 26%   
     - type: text
       text: (player|keys_score_total) 
@@ -240,3 +248,45 @@ slides:
     - type: image
       image: lastgamescores
       opacity: 0.5
+    
+    # icon images
+    - type: image
+      image: IconSyringe
+      x: 12%
+      y: 74%
+      z: 1
+    - type: image
+      image: IconBathtub
+      x: 12%
+      y: 66%
+      z: 1
+    - type: image
+      image: IconGears
+      x: 12%
+      y: 82%
+      z: 1
+    - type: image
+      image: IconCandle
+      x: 12%
+      y: 50%
+      z: 1
+    - type: image
+      image: IconHacksaw
+      x: 12%
+      y: 42%
+      z: 1
+    - type: image
+      image: IconHandgun
+      x: 12%
+      y: 34%
+      z: 1
+    - type: image
+      image: IconKey
+      x: 12%
+      y: 26%
+      z: 1
+    - type: image
+      image: IconTapeRecorder
+      x: 12%
+      y: 58%     
+      z: 1
