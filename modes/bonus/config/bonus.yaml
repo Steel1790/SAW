@@ -31,8 +31,11 @@ variable_player:
     keys_score_total: 750000 * (current_player.bonus_keys + 0)  
     bonus_x: 
       int: current_player.bonus_multiplier 
+      action: set
     bonus_total: (((current_player.gears_score_total)+(current_player.syringes_score_total)+(current_player.bathtubs_score_total)+(current_player.taperecorders_score_total)+(current_player.candles_score_total)+(current_player.hacksaws_score_total)+(current_player.handguns_score_total)+(current_player.keys_score_total))*(current_player.bonus_x))
-    total_score: ((current_player.bonus_total)+(current_player.score))
+    total_score: 
+      int: ((current_player.bonus_total)+(current_player.score))
+      action: set
 slide_player:
   mode_bonus_started: bonus_start_slide
 

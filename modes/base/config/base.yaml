@@ -125,10 +125,73 @@ variable_player:
     score: 3000000       
     bonus_syringes: 1
     value_type: int    
-  ball_started:
+  multiplier_progress_counter_complete:
     bonus_multiplier:
       int: 1
-      action: set     
+  mode_base_started:
+    bonus_multiplier:
+      int: 1
+      action: set   
+    bonus_x:
+      int: 1
+      action: set      
+    bonus_bathtubs:
+      int: 0
+      action: set
+    bonus_candles:
+      int: 0
+      action: set
+    bonus_gears:
+      int: 0
+      action: set
+    bonus_hacksaws:
+      int: 0
+      action: set
+    bonus_handguns:
+      int: 0
+      action: set
+    bonus_keys:
+      int: 0
+      action: set
+    bonus_syringes:
+      int: 0
+      action: set
+    bonus_taperecorders:
+      int: 0
+      action: set
+    bathtubs_score_total:
+      int: 0
+      action: set    
+    candles_score_total:
+      int: 0
+      action: set    
+    gears_score_total:
+      int: 0
+      action: set    
+    hacksaws_score_total:
+      int: 0
+      action: set    
+    handguns_score_total:
+      int: 0
+      action: set    
+    keys_score_total:
+      int: 0
+      action: set
+    syringes_score_total:
+      int: 0
+      action: set    
+    taperecorders_score_total:
+      int: 0
+      action: set    
+    bonus_total:
+      int: 0
+      action: set
+    total_score:
+      int: current_player.score
+      action: set      
+    score_total:
+      int: current_player.score
+      action: set   
 
 counters:
   minimode_pops_counter:
@@ -226,6 +289,18 @@ counters:
     disable_on_complete: false
     events_when_complete: minimode_drops_complete 
     count_events: sw_drop_target 
+    
+  multiplier_progress_counter:
+    starting_count: 0
+    count_complete_value: 6
+    enable_events: 
+    disable_events: 
+    start_enabled: true
+#    persist_state: true
+    reset_on_complete: true
+    disable_on_complete: false
+    events_when_complete: multiplier_progress_counter_complete
+    count_events: upper_drop_target_hit
  
 shows:
   minimode_pops_show_complete:    
@@ -312,6 +387,32 @@ shows:
     - duration: -1
       lights:
         (leds):    
+#multiplier progress
+  multiplier_progress_counter_show_step1:
+    - duration: -1
+      lights:
+        (leds): red
+  multiplier_progress_counter_show_step2:
+    - duration: -1
+      lights:
+        (leds): red  
+  multiplier_progress_counter_show_step3:
+    - duration: -1
+      lights:
+        (leds): red  
+  multiplier_progress_counter_show_step4:
+    - duration: -1
+      lights:
+        (leds): red  
+  multiplier_progress_counter_show_step5:
+    - duration: -1
+      lights:
+        (leds): red     
+  multiplier_progress_show_end:
+    - duration: -1
+      lights:
+        (leds): off
+        
   ballsave:
     - duration: 0.5s
       lights:
@@ -439,7 +540,39 @@ show_player:
     hacksaw_mb_show_end:   
       show_tokens:
         leds: l_right_ramp_triangle1, l_right_ramp_triangle2   
-      loops: -1         
+      loops: -1   
+ # multiplier progress     
+  counter_multiplier_progress_counter_hit{hits==1}:
+    multiplier_progress_counter_show_step1:
+      show_tokens:
+        leds: l_top_drop1
+      loops: -1
+  counter_multiplier_progress_counter_hit{hits==2}:
+    multiplier_progress_counter_show_step2:
+      show_tokens:
+        leds: l_top_drop2
+      loops: -1
+  counter_multiplier_progress_counter_hit{hits==3}:
+    multiplier_progress_counter_show_step3:
+      show_tokens:
+        leds: l_top_drop3
+      loops: -1
+  counter_multiplier_progress_counter_hit{hits==4}:
+    multiplier_progress_counter_show_step4:
+      show_tokens:
+        leds: l_top_drop4
+      loops: -1
+  counter_multiplier_progress_counter_hit{hits==5}:
+    multiplier_progress_counter_show_step5:
+      show_tokens:
+        leds: l_top_drop5
+      loops: -1     
+  counter_multiplier_progress_counter_hit{hits==6}:
+    multiplier_progress_show_end:
+      show_tokens:
+        leds: l_top_drop1, l_top_drop2, l_top_drop3, l_top_drop4, l_top_drop5
+      loops: -1
+   
       
   balldevice_bd_plunger_ball_eject_success:
     ballsave:
