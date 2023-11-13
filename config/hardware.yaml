@@ -8,15 +8,18 @@ fast:
   net:
     controller: neuron
     io_loop:
+      "0804":
+        model: FP-I/O-0804
+        order: 1
       "1616_1":
         model: FP-I/O-1616
-        order: 1
+        order: 2
       "1616_2":
         model: FP-I/O-1616
-        order: 2
+        order: 3
       "3208":
         model: FP-I/O-3208
-        order: 3
+        order: 4
   exp:
     boards:
       led256:
@@ -33,14 +36,23 @@ switches:
   # s_plumb_bob_tilt:
   #   number: 0808-1
   #   tags: tilt_bob
-  s_left_flipper:
+  s_left_flipper_eos:
     number: 3208-30
     tags: left_flipper
-  s_right_flipper:
+  s_right_flipper_eos:
     number: 3208-31
     tags: right_flipper
-  s_upper_right_flipper:
+  s_left_flipper_button:
+    number: 0804-0
+    tags: left_flipper
+  s_right_flipper_button:
+    number: 0804-1
+    tags: right_flipper   
+  s_upper_right_flipper_eos:
     number: 1616_2-8
+    tags: upper_right_flipper
+  s_upper_right_flipper_button:
+    number: 0804-2
     tags: upper_right_flipper
   s_trough1:
     number: 3208-18
@@ -57,10 +69,10 @@ switches:
   s_trough_jam:
     number: 3208-17
   s_start:
-    number: 0808-15
+    number: 0804-3
     tags: start
   s_action_button:
-    number: 0808-14
+    number: 0804-4
     tags: action
   s_left_inlane:
     number: 3208-25
@@ -81,7 +93,7 @@ switches:
     number: 1616_1-14
     tags: left_cellar, switch_hit
   s_left_standup:
-    number: 3208-12 
+    number: 1616_1-12
     tags: left_standup, standup, switch_hit
 # Left Lock 1 (lwr)
   s_left_lock_1:
@@ -96,10 +108,10 @@ switches:
     number: 3208-29
     tags: left_lock_3, left_lock
   s_right_standup:
-    number: 1616_2-2
+    number: 1616_2-7
     tags: right_standup, standup, switch_hit
   s_upper_bank_drop_target_opto:
-    number: 1616_2-5
+    number: 1616_2-6
     tags: drop_target, switch_hit
   s_lower_bank_drop_target_opto_upper:
     number: 3208-10
@@ -120,7 +132,7 @@ switches:
     number: 3208-7
     tags: left_ramp, ramp_hit, switch_hit, ramp
   s_left_ramp_score_bottom:
-    number: 1616_2-9
+    number: 1616_2-1
     tags: left_ramp, ramp_hit, switch_hit, ramp
   s_left_loop_top:
     number: 1616_1-0
@@ -138,22 +150,22 @@ switches:
     number: 1616_1-8
     tags: inner_loop, loop_hit, switch_hit, loop
   s_spinner:
-    number: 1616_2-4
+    number: 1616_2-9
     tags: spinner
   s_right_ramp_down:
-    number: 1616_2-3
+    number: 1616_2-12
     tags: right_ramp, ramp_hit, switch_hit, ramp
   s_top_right_reject:
-    number: 1616_2-10
+    number: 1616_2-13
     tags: right_ramp, ramp_hit, switch_hit
   s_right_ramp_score_top:
     number: 1616_1-7
     tags: right_ramp, ramp_hit, switch_hit, ramp
   s_right_ramp_score_bottom:
-    number: 1616_2-6
+    number: 1616_2-0
     tags: right_ramp, switch_hit, switch_hit, ramp
   s_left_standup_right_ramp:
-    number: 1616_2-1
+    number: 1616_2-10
     tags: standup, switch_hit
   s_right_standup_right_ramp:
     number: 1616_2-11
@@ -248,36 +260,36 @@ coils:
   c_right_ramp_down:
     number: 1616_2-11
     default_pulse_ms: 20
-  # c_left_spin_disc:
-  #   number: 1616_2-8
-  #   default_pulse_ms: 20
-  # c_middle_spin_disc:
-  #   number: 1616_2-9
-  #   default_pulse_ms: 20
-  # c_right_spin_disc:
-  #   number: 1616_2-10
-  #   default_pulse_ms: 20
+  c_left_spin_disc:
+    number: 1616_2-2
+    default_pulse_ms: 20
+  c_middle_spin_disc:
+    number: 1616_2-1
+    default_pulse_ms: 20
+  c_right_spin_disc:
+    number: 1616_2-0
+    default_pulse_ms: 20
   c_left_lock_kickback:
     number: 1616_1-12
     default_pulse_ms: 20
-  # c_left_top_jet_bumper:
-  #   number: 1616_1-7
-  #   default_pulse_ms: 20
-  # c_right_top_jet_bumper:
-  #   number: 1616_1-6
-  #   default_pulse_ms: 20
-  # c_lower_top_jet_bumper:
-  #   number: 1616_1-9
-  #   default_pulse_ms: 20
-  # c_left_bottom_jet_bumper:
-  #   number: 1616_1-2
-  #   default_pulse_ms: 20
-  # c_right_bottom_jet_bumper:
-  #   number: 1616_1-4
-  #   default_pulse_ms: 20
-  # c_upper_bottom_jet_bumper:
-  #   number: 1616_1-3
-  #   default_pulse_ms: 20
+  c_left_top_jet_bumper:
+    number: 1616_1-2
+    default_pulse_ms: 20
+  c_right_top_jet_bumper:
+    number: 1616_1-1
+    default_pulse_ms: 20
+  c_lower_top_jet_bumper:
+    number: 1616_1-3
+    default_pulse_ms: 20
+  c_left_bottom_jet_bumper:
+    number: 1616_1-6
+    default_pulse_ms: 20
+  c_right_bottom_jet_bumper:
+    number: 1616_1-5
+    default_pulse_ms: 20
+  c_upper_bottom_jet_bumper:
+    number: 1616_1-4
+    default_pulse_ms: 20
   c_left_slingshot:
     number: 3208-7
     default_pulse_ms: 20
@@ -360,11 +372,15 @@ flippers:
   left_flipper:
     main_coil: c_flipper_left_main
     hold_coil: c_flipper_left_hold
-    activation_switch: s_left_flipper
+    activation_switch: s_left_flipper_button
   right_flipper:
     main_coil: c_flipper_right_main
     hold_coil: c_flipper_right_hold
-    activation_switch: s_right_flipper
+    activation_switch: s_right_flipper_button
+  upper_right_flipper:
+    main_coil: c_flipper_upper_right_main
+    hold_coil: c_flipper_upper_right_hold
+    activation_switch: s_upper_right_flipper_button
 
 autofire_coils:
   left_slingshot:
