@@ -732,6 +732,15 @@ sound_player:
       delay: 5s
       action: play
       loops: -1
+
+  mode_base_stopped:
+    BaseMusic:
+      action: stop
+      events_when_played: StopModeQualifiedShootScoop
+  StopModeQualifiedShootScoop:
+    ModeQualifiedShootScoop:
+      action: stop
+
   mode_selection_mode_started:
     BaseMusic:
       action: stop  
@@ -742,7 +751,8 @@ sound_player:
     BaseMusic:
       action: stop
     ModeQualifiedShootScoop:
-      action: play    
+      action: play   
+      loops: -1
       
   player_adding{game.num_players==2}:
     2PlayerGame:
