@@ -721,15 +721,15 @@ sound_pools:
  
 sound_player:
   mode_base_started:
-    1playerGame:
-      action: play
+#    1playerGame:
+#      action: play
     startbutton:
       delay: 2.5s
       action: play
     BaseMusic:
       delay: 5s
       action: play
-      loops: -1
+ #     loops: -1
   mode_selection_mode_started:
     BaseMusic:
       action: stop  

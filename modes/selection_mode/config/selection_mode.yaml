@@ -12,8 +12,8 @@ mode_settings:
     - flammablejelly
     - zeptest
   select_item_events: flipper_cancel, s_action_button_active
-  next_item_events: s_left_flipper_active
-  previous_item_events: s_right_flipper_active
+  next_item_events: s_left_flipper_button_active
+  previous_item_events: s_right_flipper_button_active
 
 variable_player:
   carousel_razorwire_selected:

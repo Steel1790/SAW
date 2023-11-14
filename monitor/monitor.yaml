@@ -1059,7 +1059,7 @@ switch:
     size: 0.05
     x: 0.15683015873015874
     y: 0.4916666666666667
-  s_left_flipper:
+  s_left_flipper_button:
     rotation: 310
     shape: RECTANGLE
     size: 0.07
@@ -1183,7 +1183,7 @@ switch:
     size: 0.05
     x: 0.351515873015873
     y: 0.44642857142857145
-  s_right_flipper:
+  s_right_flipper_button:
     rotation: 60
     shape: RECTANGLE
     size: 0.07
