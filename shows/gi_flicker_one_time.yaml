@@ -1,0 +1,28 @@
+#show_version=6
+- time: 0
+
+- time: '+100ms'
+  lights:
+    gi_right: (color1) 
+
+- time: '+100ms'
+  lights:
+    gi_right: off 
+    gi_left: (color1) 
+
+- time: '+100ms'
+  lights:
+    gi_left: off
+
+- time: '+300ms'
+  lights:
+    gi_right: (color1) 
+
+- time: '+100ms'
+  lights:
+    gi_right: off 
+    gi_left: (color1) 
+
+- time: '+100ms'
+  lights:
+    gi_left: off

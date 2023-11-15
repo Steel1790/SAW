@@ -293,3 +293,11 @@ slides:
       x: 12%
       y: 58%     
       z: 1
+      
+sound_player:
+  mode_bonus_started:
+    initials:
+      action: play
+  mode_bonus_stopped:
+    initials:
+      action: stop

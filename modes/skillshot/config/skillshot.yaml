@@ -106,7 +106,7 @@ shots:
 #      light: l_3_bank_drop_target_opto_lower
       
 show_player: 
-  mode_skillshot_started:
+  mode_skillshot_started{current_player.ball == 1 and player==1}:
     ss_show: 
       priority: 900
       loops: 0  

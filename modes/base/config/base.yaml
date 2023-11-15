@@ -435,6 +435,14 @@ show_player:
       show_tokens:
         led: arrow
         color1: ffffff
+        
+  sw_standup:
+    gi_flicker_one_time:
+      loops: 1
+      speed: 4
+      show_tokens:
+        color1: white
+          
 
   minimode_pops_complete:
     minimode_pops_show_complete:
@@ -720,9 +728,10 @@ sound_pools:
       - ExistanceForGranted      
  
 sound_player:
-  mode_base_started:
+  mode_base_started{current_player.ball == 1 and player==1}:
     1playerGame:
       action: play
+  mode_base_started:
     startbutton:
       delay: 2.5s
       action: play
@@ -969,7 +978,7 @@ widgets:
       text: Shoot WHITE ARROWS to spell SAW!
       color: white
       x: 50%
-      y: 85%
+      y: 92%
       z: 2
       font_size: 60
       font_name: Skilt Gothic W04 Thin
