@@ -2,6 +2,7 @@
 - time: 0
   lights:
     led128pf: ffffff
+
 # - time: '+3'
 #   lights:
 #     led128p1: 0
@@ -10,7 +11,7 @@
 #   lights:
 #     led128p2: 0
 #     led128p3: ffffff
-- time: '+3'
+- time: "+3"
   lights:
     led128pf: 0
 #     led128p4: ffffff
