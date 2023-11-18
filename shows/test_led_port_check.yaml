@@ -1,0 +1,70 @@
+#show_version=6
+- time: 0
+  lights:
+    led128pf: ffffff
+# - time: '+3'
+#   lights:
+#     led128p1: 0
+#     led128p2: ffffff
+# - time: '+3'
+#   lights:
+#     led128p2: 0
+#     led128p3: ffffff
+- time: '+3'
+  lights:
+    led128pf: 0
+#     led128p4: ffffff
+# - time: '+3'
+#   lights:
+#     led128p4: 0
+#     led256p1: ffffff
+# - time: '+3'
+#   lights:
+#     led256p1: 0
+#     led256p2: ffffff
+# - time: '+3'
+#   lights:
+#     led256p2: 0
+#     led256p3: ffffff
+# - time: '+3'
+#   lights:
+#     led256p3: 0
+#     led256p4: ffffff
+# - time: '+3'
+#   lights:
+#     led256p4: 0
+#     led256p5: ffffff    
+# - time: '+3'
+#   lights:
+#     led256p5: 0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

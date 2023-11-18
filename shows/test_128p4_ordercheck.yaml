@@ -1,0 +1,119 @@
+#show_version=6
+- time: 0
+  lights:
+    l_hmb_lock_1: (color1)
+- time: '+1'
+  lights:
+    l_hmb_lock_1: 0
+    l_hmb_lock_2: (color1)
+- time: '+1'
+  lights:
+    l_hmb_lock_2: 0
+    l_hmb_lock_3: (color1)    
+- time: '+1'
+  lights:
+    l_hmb_lock_3: 0
+    l_left_escape: (color1)    
+- time: '+1'
+  lights:
+    l_left_escape: 0
+    l_left_return_lane: (color1)    
+- time: '+1'
+  lights:
+    l_left_return_lane: 0
+    l_left_spotlight: (color1)    
+- time: '+1'
+  lights:
+    l_left_spotlight: 0
+    l_gi_3: (color1)    
+- time: '+1'
+  lights:
+    l_gi_3: 0
+    l_gi_2: (color1)    
+- time: '+1'
+  lights:
+    l_gi_2: 0
+    l_gi_1: (color1)    
+- time: '+1'
+  lights:
+    l_gi_1: 0
+    l_drillchair_mode: (color1)  
+- time: '+1'
+  lights:
+    l_drillchair_mode: 0
+    l_beartrap_mode: (color1)  
+- time: '+1'
+  lights:
+    l_beartrap_mode: 0
+    l_zeptest_mode: (color1)  
+- time: '+1'
+  lights:
+    l_zeptest_mode: 0
+    l_live_again: (color1)  
+- time: '+1'
+  lights:
+    l_live_again: 0
+    l_trough_1: (color1)
+- time: '+1'
+  lights:
+    l_trough_1: 0
+    l_trough_2: (color1)        
+- time: '+1'
+  lights:
+    l_trough_2: 0
+    l_trough_3: (color1)       
+- time: '+1'
+  lights:
+    l_trough_3: 0
+    l_trough_4: (color1)       
+- time: '+1'
+  lights:
+    l_trough_4: 0
+    l_trough_5: (color1)       
+- time: '+1'
+  lights:
+    l_trough_5: 0
+    l_trough_6: (color1)       
+- time: '+1'
+  lights:
+    l_trough_6: 0
+    l_trough_7: (color1)       
+- time: '+1'
+  lights:
+    l_trough_7: 0
+    l_trough_8: (color1)       
+- time: '+1'
+  lights:
+    l_trough_8: 0
+    l_jelly_mode: (color1)   
+- time: '+1'
+  lights:
+    l_jelly_mode: 0
+    l_quadshotgun_mode: (color1)   
+- time: '+1'
+  lights:
+    l_quadshotgun_mode: 0
+    l_razorwire_mode: (color1)   
+- time: '+1'
+  lights:
+    l_razorwire_mode: 0
+    l_gi_22: (color1)  
+- time: '+1'
+  lights:
+    l_gi_22: 0
+    l_gi_21: (color1) 
+- time: '+1'
+  lights:
+    l_gi_21: 0
+    l_right_escape: (color1) 
+- time: '+1'
+  lights:
+    l_right_escape: 0
+    l_gi_20: (color1) 
+- time: '+1'
+  lights:
+    l_gi_20: 0
+    l_right_spotlight: (color1) 
+- time: '+1'
+  lights:
+    l_right_spotlight: 0

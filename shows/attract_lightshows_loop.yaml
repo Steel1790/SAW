@@ -2,7 +2,7 @@
 # - duration: 5s
 #   shows: 
 #       gi_flicker:
-#         loops: 3
+#         loops: 6
 #         speed: 2
 #         show_tokens:
 #           color1: ffffff
@@ -23,17 +23,26 @@
 
 - duration: 29s
   shows: 
-      test_128p1_ordercheck:
-        loops: 2
-        speed: 1
-        show_tokens:
-          color1: ffffff
+      # test_128p4_ordercheck:
+      #   loops: 2
+      #   speed: 1
+      #   show_tokens:
+      #     color1: ffffff
+
+      # test_128p1_ordercheck:
+      #   loops: 2
+      #   speed: 1
+      #   show_tokens:
+      #     color1: ffffff         
+      test_led_port_check:
+        loops: 3
+        speed: 1  
 
 # - duration: 3s
 #   shows: 
 #       rw_white_sweeps:
 #         loops: 1
-#         speed: 20
+#         speed: 5
 
 # - duration: 11s
 #   shows: 
@@ -97,17 +106,21 @@
 #         loops: 10
 #         speed: 8       
 
-#       rtb_green_single_reverse_rotation:
-#         loops: 7
-#         speed: 60
+      # rtb_green_single_reverse_rotation:
+      #   loops: 7
+      #   speed: 60
 
-#       disc_middle_hot_saw:
-#         loops: 1
-#         speed: 40
+      # rtb_red_blue_rotation:
+      #   loops: 7
+      #   speed: 30
 
-#       flammable_jelly_3:
-#         loops: 2
-#         speed: 15       
+      # disc_middle_hot_saw:
+      #   loops: 1
+      #   speed: 40
+
+      # flammable_jelly_3:
+      #   loops: 2
+      #   speed: 15       
 
 # - duration: 3s
 #   shows:       
