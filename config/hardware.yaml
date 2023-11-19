@@ -321,13 +321,21 @@ drop_target_banks:
       - dt_lower_drop3
     reset_on_complete: 1s
     reset_coils: c_lower_droptargetreset
-    reset_events: ball_starting
+    reset_events:
+      ball_started.1: 0
+      ball_started.2: 1s
+      ball_started.3: 2s
+      machine_reset_phase_3: 0 
   upper_dropbank:
     drop_targets:
       - dt_upper_drop1
     reset_on_complete: 1s
     reset_coils: c_upper_droptargetreset
-    reset_events: ball_starting
+    reset_events: 
+      ball_started.1: 0
+      ball_started.2: 1s
+      ball_started.3: 2s
+      machine_reset_phase_3: 0 
 
 ball_devices:
   bd_trough:
