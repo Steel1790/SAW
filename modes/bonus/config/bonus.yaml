@@ -1,6 +1,6 @@
 #config_version=6
 mode_settings:
-  display_delay_ms: 3s
+  display_delay_ms: 2s
   hurry_up_delay_ms: 0
   bonus_entries:
     - event: bonus_gears
@@ -36,6 +36,19 @@ variable_player:
     total_score: 
       int: ((current_player.bonus_total)+(current_player.score))
       action: set
+
+event_player:
+  mode_bonus_started: display_gears|0.5s
+  display_gears: display_syringes|0.4s
+  display_syringes: display_bathtubs|0.4s
+  display_bathtubs: display_taperecorders|0.4s
+  display_taperecorders: display_candles|0.4s
+  display_candles: display_hacksaws|0.4s
+  display_hacksaws: display_handguns|0.4s
+  display_handguns: display_keys|0.4s
+  display_keys: display_multiplierbonus|0.4s
+  display_multiplierbonus: display_totalscore|0.8s
+
 slide_player:
   mode_bonus_started: bonus_start_slide
 
@@ -49,17 +62,30 @@ slides:
       outline_color: black
       outline_width: 7
       y: 92%
+    - type: image
+      image: lastgamescores
+      opacity: 0.5
+
+
+
+widgets:
+  gears:
+    - type: image
+      image: IconGears
+      x: 12%
+      y: 82%
+      z: 1
     - type: text
-      text: "Gears Collected: (player|bonus_gears)"
+      text: "Gears: (player|bonus_gears)"
       font_name: Skilt Gothic W04 Thin
       font_size: 35
       bold: true      
       color: white
       outline_color: black
       outline_width: 6
-  #    x: 30%
       x: 372
       y: 82%   
+      z: 1
     - type: text
       text: (player|gears_score_total)
       font_name: Skilt Gothic W04 Thin
@@ -70,17 +96,26 @@ slides:
       outline_width: 6      
       x: 60%
       y: 82%   
+      z: 1
+
+
+  syringes:
+    - type: image
+      image: IconSyringe
+      x: 12%
+      y: 74%
+      z: 1
     - type: text
-      text: "Syringes Collected: (player|bonus_syringes)"
+      text: "Syringes: (player|bonus_syringes)"
       font_name: Skilt Gothic W04 Thin
       font_size: 35
       bold: true      
       color: white
       outline_color: black
       outline_width: 6     
-   #   x: 30%
       x: 392
       y: 74%   
+      z: 1
     - type: text
       text: (player|syringes_score_total) 
       font_name: Skilt Gothic W04 Thin
@@ -90,18 +125,25 @@ slides:
       outline_color: black
       outline_width: 6     
       x: 60%
-      y: 74%   
+      y: 74%  
+      z: 1
+  bathtubs:
+    - type: image
+      image: IconBathtub
+      x: 12%
+      y: 66%
+      z: 1
     - type: text
-      text: "Bathtubs Collected: (player|bonus_bathtubs)"
+      text: "Bathtubs: (player|bonus_bathtubs)"
       font_name: Skilt Gothic W04 Thin
       font_size: 35
       bold: true      
       color: white
       outline_color: black
       outline_width: 6     
-  #    x: 30%
       x: 393
       y: 66%   
+      z: 1
     - type: text
       text: (player|bathtubs_score_total) 
       font_name: Skilt Gothic W04 Thin
@@ -111,18 +153,25 @@ slides:
       outline_color: black
       outline_width: 6    
       x: 60%
-      y: 66%         
+      y: 66%     
+      z: 1
+  taperecorders:
+    - type: image
+      image: IconTapeRecorder
+      x: 12%
+      y: 58%     
+      z: 1
     - type: text
-      text: "Tape Recorders Collected: (player|bonus_taperecorders)"
+      text: "Tape Recorders: (player|bonus_taperecorders)"
       font_name: Skilt Gothic W04 Thin
       font_size: 35
       bold: true      
       color: white 
       outline_color: black
       outline_width: 6     
-   #   x: 30%
       x: 434
-      y: 58%   
+      y: 58%  
+      z: 1
     - type: text
       text: (player|taperecorders_score_total) 
       font_name: Skilt Gothic W04 Thin
@@ -132,18 +181,25 @@ slides:
       outline_color: black
       outline_width: 6       
       x: 60%
-      y: 58%               
+      y: 58%     
+      z: 1
+  candles:
+    - type: image
+      image: IconCandle
+      x: 12%
+      y: 50%
+      z: 1
     - type: text
-      text: "Candles Collected: (player|bonus_candles)"
+      text: "Candles: (player|bonus_candles)"
       font_name: Skilt Gothic W04 Thin
       font_size: 35
       bold: true      
       color: white
       outline_color: black
       outline_width: 6     
-  #    x: 30%
       x: 385
       y: 50%   
+      z: 1
     - type: text
       text: (player|candles_score_total) 
       font_name: Skilt Gothic W04 Thin
@@ -153,18 +209,25 @@ slides:
       outline_color: black
       outline_width: 6      
       x: 60%
-      y: 50%               
+      y: 50%     
+      z: 1
+  hacksaws:
+    - type: image
+      image: IconHacksaw
+      x: 12%
+      y: 42%
+      z: 1
     - type: text
-      text: "Hacksaws Collected: (player|bonus_hacksaws)"
+      text: "Hacksaws: (player|bonus_hacksaws)"
       font_name: Skilt Gothic W04 Thin
       font_size: 35
       bold: true      
       color: white
       outline_color: black
       outline_width: 6    
- #     x: 30%
       x: 400
-      y: 42%   
+      y: 42%  
+      z: 1
     - type: text
       text: (player|hacksaws_score_total) 
       font_name: Skilt Gothic W04 Thin
@@ -174,18 +237,25 @@ slides:
       outline_color: black
       outline_width: 6      
       x: 60%
-      y: 42%               
+      y: 42%     
+      z: 1
+  handguns:
+    - type: image
+      image: IconHandgun
+      x: 12%
+      y: 34%
+      z: 1
     - type: text
-      text: "Handguns Collected: (player|bonus_handguns)"
+      text: "Handguns: (player|bonus_handguns)"
       font_name: Skilt Gothic W04 Thin
       font_size: 35
       bold: true      
       color: white 
       outline_color: black
       outline_width: 6      
-   #   x: 30%
       x: 400
       y: 34%   
+      z: 1
     - type: text
       text: (player|handguns_score_total) 
       font_name: Skilt Gothic W04 Thin
@@ -195,18 +265,25 @@ slides:
       outline_color: black
       outline_width: 6       
       x: 60%
-      y: 34%               
+      y: 34%         
+      z: 1
+  keys:
+    - type: image
+      image: IconKey
+      x: 12%
+      y: 26%
+      z: 1
     - type: text
-      text: "Keys Collected: (player|bonus_keys)"
+      text: "Keys: (player|bonus_keys)"
       font_name: Skilt Gothic W04 Thin
       font_size: 35
       bold: true      
       color: white
       outline_color: black
       outline_width: 6      
-    #  x: 30%
       x: 364
       y: 26%   
+      z: 1
     - type: text
       text: (player|keys_score_total) 
       font_name: Skilt Gothic W04 Thin
@@ -216,7 +293,9 @@ slides:
       outline_color: black
       outline_width: 6         
       x: 60%
-      y: 26%            
+      y: 26%          
+      z: 1
+  multiplierbonus:
     - type: text
       text: "Bonus Multiplier: (player|bonus_x)X"
       font_name: Skilt Gothic W04 Thin
@@ -226,7 +305,8 @@ slides:
       outline_color: black
       outline_width: 6      
       x: 30%
-      y: 18%         
+      y: 18%       
+      z: 1
     - type: text
       text: "Total Bonus: (player|bonus_total)"
       font_name: Skilt Gothic W04 Thin
@@ -238,6 +318,8 @@ slides:
       outline_width: 6      
       x: 60%
       y: 18%   
+      z: 1
+  totalscore:
     - type: text
       text: "Total Score: (player|total_score)"
       font_name: Skilt Gothic W04 Thin
@@ -248,56 +330,89 @@ slides:
       outline_color: black
       outline_width: 6     
       y: 8%   
-    - type: image
-      image: lastgamescores
-      opacity: 0.5
-    
-    # icon images
-    - type: image
-      image: IconSyringe
-      x: 12%
-      y: 74%
       z: 1
-    - type: image
-      image: IconBathtub
-      x: 12%
-      y: 66%
-      z: 1
-    - type: image
-      image: IconGears
-      x: 12%
-      y: 82%
-      z: 1
-    - type: image
-      image: IconCandle
-      x: 12%
-      y: 50%
-      z: 1
-    - type: image
-      image: IconHacksaw
-      x: 12%
-      y: 42%
-      z: 1
-    - type: image
-      image: IconHandgun
-      x: 12%
-      y: 34%
-      z: 1
-    - type: image
-      image: IconKey
-      x: 12%
-      y: 26%
-      z: 1
-    - type: image
-      image: IconTapeRecorder
-      x: 12%
-      y: 58%     
-      z: 1
-      
+
+widget_player:
+  display_gears:
+    gears:
+      slide: bonus_start_slide
+      action: add
+  display_syringes:
+    syringes:
+      slide: bonus_start_slide
+      action: add
+  display_bathtubs:
+    bathtubs:
+      slide: bonus_start_slide
+      action: add
+  display_taperecorders:
+    taperecorders:
+      slide: bonus_start_slide
+      action: add      
+  display_candles:
+    candles:
+      slide: bonus_start_slide
+      action: add      
+  display_hacksaws:
+    hacksaws:
+      slide: bonus_start_slide
+      action: add      
+  display_handguns:
+    handguns:
+      slide: bonus_start_slide
+      action: add      
+  display_keys:
+    keys:
+      slide: bonus_start_slide
+      action: add  
+  display_multiplierbonus:
+    multiplierbonus:
+      slide: bonus_start_slide
+      action: add      
+  display_totalscore:
+    totalscore:
+      slide: bonus_start_slide
+      action: add      
+
+ 
+  
+
+
+#sound_player:
+#  mode_bonus_started:
+#    initials:
+#      action: play
+#  mode_bonus_stopped:
+#    initials:
+#      action: stop
 sound_player:
-  mode_bonus_started:
-    initials:
+  display_gears:
+    UpPops4:
       action: play
-  mode_bonus_stopped:
-    initials:
-      action: stop
+  display_syringes:
+    UpPops4:
+      action: play
+  display_bathtubs:
+    UpPops4:
+      action: play
+  display_taperecorders:
+    UpPops4:
+      action: play
+  display_candles:
+    UpPops4:
+      action: play
+  display_hacksaws:
+    UpPops4:
+      action: play
+  display_handguns:
+    UpPops4:
+      action: play
+  display_keys:
+    UpPops4:
+      action: play
+  display_multiplierbonus:
+    UpPops4:
+      action: play
+  display_totalscore:
+    UpPops4:
+      action: play
