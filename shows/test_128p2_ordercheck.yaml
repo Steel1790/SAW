@@ -1,0 +1,119 @@
+#show_version=6
+- time: 0
+  lights:
+    l_gi_19: (color1)
+- time: '+1'
+  lights:
+    l_gi_19: 0
+    l_right_standup_arrow: (color1)
+- time: '+1'
+  lights:
+    l_right_standup_arrow: 0
+    l_gi_18: (color1)    
+- time: '+1'
+  lights:
+    l_gi_18: 0
+    l_tape_spotlight: (color1)    
+- time: '+1'
+  lights:
+    l_tape_spotlight: 0
+    l_skill_shot1: (color1)    
+- time: '+1'
+  lights:
+    l_skill_shot1: 0
+    l_jw_drill: (color1)    
+- time: '+1'
+  lights:
+    l_jw_drill: 0
+    l_jw_candle: (color1)    
+- time: '+1'
+  lights:
+    l_jw_candle: 0
+    l_jw_taperecorder: (color1)    
+- time: '+1'
+  lights:
+    l_jw_taperecorder: 0
+    l_jw_bathtub: (color1)    
+- time: '+1'
+  lights:
+    l_jw_bathtub: 0
+    l_jw_syringe: (color1)  
+- time: '+1'
+  lights:
+    l_jw_syringe: 0
+    l_jw_gears: (color1)  
+- time: '+1'
+  lights:
+    l_jw_gears: 0
+    l_jw_key: (color1)  
+- time: '+1'
+  lights:
+    l_jw_key: 0
+    l_jw_gun: (color1)  
+- time: '+1'
+  lights:
+    l_jw_gun: 0
+    l_skill_shot2: (color1)
+- time: '+1'
+  lights:
+    l_skill_shot2: 0
+    l_skill_shot3: (color1)        
+- time: '+1'
+  lights:
+    l_skill_shot3: 0
+    l_right_ramp_triangle1: (color1)       
+- time: '+1'
+  lights:
+    l_right_ramp_triangle1: 0
+    l_left_standup_right_ramp_arrow: (color1)       
+- time: '+1'
+  lights:
+    l_left_standup_right_ramp_arrow: 0
+    l_right_ramp_triangle2: (color1)       
+- time: '+1'
+  lights:
+    l_right_ramp_triangle2: 0
+    l_right_standup_right_ramp_arrow: (color1)       
+- time: '+1'
+  lights:
+    l_right_standup_right_ramp_arrow: 0
+    l_right_loop_arrow: (color1)       
+- time: '+1'
+  lights:
+    l_right_loop_arrow: 0
+    l_shotgun_flasher_1: (color1)       
+- time: '+1'
+  lights:
+    l_shotgun_flasher_1: 0
+    l_shotgun_flasher_2: (color1)
+- time: '+1'
+  lights:
+    l_shotgun_flasher_2: 0
+    l_shotgun_flasher_3: (color1)        
+- time: '+1'
+  lights:
+    l_shotgun_flasher_3: 0
+    l_shotgun_flasher_4: (color1) 
+- time: '+1'
+  lights:
+    l_shotgun_flasher_4: 0
+    l_shotgun_flasher_5: (color1)     
+- time: '+1'
+  lights:
+    l_shotgun_flasher_5: 0
+    l_shotgun_flasher_6: (color1) 
+- time: '+1'
+  lights:
+    l_shotgun_flasher_6: 0
+    l_shotgun_flasher_7: (color1) 
+- time: '+1'
+  lights:
+    l_shotgun_flasher_7: 0
+    l_shotgun_flasher_8: (color1) 
+- time: '+1'
+  lights:
+    l_shotgun_flasher_8: 0
+    l_gi_17: (color1) 
+- time: '+1'
+  lights:
+    l_gi_17: 0                     

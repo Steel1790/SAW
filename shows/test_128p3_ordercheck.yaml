@@ -1,0 +1,91 @@
+#show_version=6
+- time: 0
+  lights:
+    l_gi_4: (color1)
+- time: '+1'
+  lights:
+    l_gi_4: 0
+    l_mb_lock_scoop: (color1)
+- time: '+1'
+  lights:
+    l_mb_lock_scoop: 0
+    l_mystery_scoop: (color1)    
+- time: '+1'
+  lights:
+    l_mystery_scoop: 0
+    l_left_loop_arrow: (color1)    
+- time: '+1'
+  lights:
+    l_left_loop_arrow: 0
+    l_mode_scoop: (color1)    
+- time: '+1'
+  lights:
+    l_mode_scoop: 0
+    l_left_standup_arrow: (color1)    
+- time: '+1'
+  lights:
+    l_left_standup_arrow: 0
+    l_zep_flasher_1: (color1)    
+- time: '+1'
+  lights:
+    l_zep_flasher_1: 0
+    l_zep_flasher_2: (color1)    
+- time: '+1'
+  lights:
+    l_zep_flasher_2: 0
+    l_zep_flasher_3: (color1)    
+- time: '+1'
+  lights:
+    l_zep_flasher_3: 0
+    l_zep_flasher_4: (color1)  
+- time: '+1'
+  lights:
+    l_zep_flasher_4: 0
+    l_zep_flasher_5: (color1)  
+- time: '+1'
+  lights:
+    l_zep_flasher_5: 0
+    l_zep_flasher_6: (color1)  
+- time: '+1'
+  lights:
+    l_zep_flasher_6: 0
+    l_zep_flasher_7: (color1)  
+- time: '+1'
+  lights:
+    l_zep_flasher_7: 0
+    l_zep_flasher_8: (color1)
+- time: '+1'
+  lights:
+    l_zep_flasher_8: 0
+    l_tape_reel: (color1)        
+- time: '+1'
+  lights:
+    l_tape_reel: 0
+    l_tape_speaker: (color1)       
+- time: '+1'
+  lights:
+    l_tape_speaker: 0
+    l_gi_5: (color1)       
+- time: '+1'
+  lights:
+    l_gi_5: 0
+    l_gi_6: (color1)       
+- time: '+1'
+  lights:
+    l_gi_6: 0
+    l_left_ramp_triangle1: (color1)       
+- time: '+1'
+  lights:
+    l_left_ramp_triangle1: 0
+    l_left_ramp_triangle2: (color1)       
+- time: '+1'
+  lights:
+    l_left_ramp_triangle2: 0
+    l_left_ramp_triangle3: (color1)       
+- time: '+1'
+  lights:
+    l_left_ramp_triangle3: 0
+    l_inner_loop_arrow: (color1)   
+- time: '+1'
+  lights:
+    l_inner_loop_arrow: 0

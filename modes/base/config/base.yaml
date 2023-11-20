@@ -435,14 +435,18 @@ show_player:
       show_tokens:
         led: arrow
         color1: ffffff
-        
+
+    gi_on:
+      loops: -1
+      show_tokens:
+        color1: ffffff
+
   sw_standup:
     gi_flicker_one_time:
       loops: 1
       speed: 4
       show_tokens:
         color1: white
-          
 
   minimode_pops_complete:
     minimode_pops_show_complete:
