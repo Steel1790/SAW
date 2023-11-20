@@ -376,6 +376,12 @@ ball_devices:
     mechanical_eject: true
     eject_timeouts: 8000ms
 
+  bd_top_saucer:
+    ball_switches: s_top_right_reject
+    eject_coil: c_top_eject
+    mechanical_eject: true
+    eject_timeouts: 1.5s
+
 playfields:
   playfield:
     tags: default
@@ -427,6 +433,3 @@ autofire_coils:
   mystery_scoop:
     coil: c_mystery_eject
     switch: s_left_cellar
-  right_ramp_saucer:
-    coil: c_top_eject
-    switch: s_top_right_reject
