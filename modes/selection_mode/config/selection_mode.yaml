@@ -52,6 +52,29 @@ slides:
     widgets:
     - type: video
       video: razorwirepuzzle
+    - type: text
+      text: '<               >'
+      font_size: 120
+      x: center
+      y: center +200
+      z: 1
+      color: C2E3E0 
+    - type: text
+      x: center
+      y: center -250
+      z: 1
+      font_size: 45
+      color: C2E3E0
+      text: Use the Flippers to Select Your Mode
+      animations:
+        pre_show_slide:
+        - property: opacity
+          value: 0
+          duration: 1s
+        - property: opacity
+          value: 1
+          duration: 1s
+          repeat: true
 #  razorwirecassette:
 #    widgets:
 #    - type: video
@@ -66,22 +89,141 @@ slides:
     widgets:
     - type: video
       video: reversebeartrappuzzle
+    - type: text
+      text: '<                                  >'
+      font_size: 120
+      x: center
+      y: center +200
+      z: 1
+      color: C2E3E0 
+    - type: text
+      x: center
+      y: center -250
+      z: 1
+      font_size: 45
+      color: C2E3E0
+      text: Use the Flippers to Select Your Mode
+      animations:
+        pre_show_slide:
+        - property: opacity
+          value: 0
+          duration: 1s
+        - property: opacity
+          value: 1
+          duration: 1s
+          repeat: true
+
   flammablejelly:
     widgets:
     - type: video
       video: flammablejellypuzzle
+    - type: text
+      text: '<                      >'
+      font_size: 120
+      x: center
+      y: center +200
+      z: 1
+      color: C2E3E0 
+    - type: text
+      x: center
+      y: center -250
+      z: 1
+      font_size: 45
+      color: C2E3E0
+      text: Use the Flippers to Select Your Mode
+      animations:
+        pre_show_slide:
+        - property: opacity
+          value: 0
+          duration: 1s
+        - property: opacity
+          value: 1
+          duration: 1s
+          repeat: true
+
   drillchair:
     widgets:
     - type: video
       video: drillchairpuzzle  
+    - type: text
+      text: '<                 >'
+      font_size: 120
+      x: center
+      y: center +200
+      z: 1
+      color: C2E3E0 
+    - type: text
+      x: center
+      y: center -250
+      z: 1
+      font_size: 45
+      color: C2E3E0
+      text: Use the Flippers to Select Your Mode
+      animations:
+        pre_show_slide:
+        - property: opacity
+          value: 0
+          duration: 1s
+        - property: opacity
+          value: 1
+          duration: 1s
+          repeat: true
+
   quadshotgun:
     widgets:
     - type: video
-      video: quadshotgunpuzzle  
+      video: quadshotgunpuzzle 
+    - type: text
+      text: '<                                  >'
+      font_size: 120
+      x: center
+      y: center +200
+      z: 1
+      color: C2E3E0
+    - type: text
+      x: center
+      y: center -250
+      z: 1
+      font_size: 45
+      color: C2E3E0
+      text: Use the Flippers to Select Your Mode
+      animations:
+        pre_show_slide:
+        - property: opacity
+          value: 0
+          duration: 1s
+        - property: opacity
+          value: 1
+          duration: 1s
+          repeat: true     
+      
   zeptest:
     widgets:
     - type: video
-      video: zeptestpuzzle      
+      video: zeptestpuzzle     
+    - type: text
+      text: '<               >'
+      font_size: 120
+      x: center
+      y: center +200
+      z: 1
+      color: C2E3E0    
+    - type: text
+      x: center
+      y: center -250
+      z: 1
+      font_size: 45
+      color: C2E3E0
+      text: Use the Flippers to Select Your Mode
+      animations:
+        pre_show_slide:
+        - property: opacity
+          value: 0
+          duration: 1s
+        - property: opacity
+          value: 1
+          duration: 1s
+          repeat: true      
       
 #    - type: text
 #      text: Mode

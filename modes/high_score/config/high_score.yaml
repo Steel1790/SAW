@@ -79,8 +79,8 @@ slides:
       max_chars: 3
       x: center
       y: center - 150
-      shift_left_event: s_left_flipper_active
-      shift_right_event: s_right_flipper_active
+      shift_left_event: s_left_flipper_button_active
+      shift_right_event: s_right_flipper_button_active
       select_event: s_action_button_active
       color: C2E3E0 
       
@@ -113,3 +113,14 @@ slides:
     - type: image            
       image: billyskillshot
       opacity: 0.8
+
+sound_player:
+  s_left_flipper_button_active:
+    LSling1:
+      action: play
+  s_right_flipper_button_active:
+    LSling1:
+      action: play
+  s_action_button_active:
+    OrbitWoosh6:
+      action: play      

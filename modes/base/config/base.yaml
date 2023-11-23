@@ -975,7 +975,13 @@ sound_player:
   slide_flammablejellyUI_removed:
     FlammableJellyModeStart:
       action: stop
- 
+
+  sg_saw_qualify_subtract_hit{device.counters.saw_qualify_counter.value==1}:
+    SawLetterNegative:
+      action: play   
+  sg_saw_qualify_subtract_hit{device.counters.saw_qualify_counter.value==2}:
+    SawLetterNegative:
+      action: play
 widgets:
   saw_letters:
     - type: Text
