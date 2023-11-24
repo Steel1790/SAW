@@ -255,6 +255,7 @@ coils:
   c_diverter:
     number: 1616_1-14
     default_pulse_ms: 20
+    default_pulse_power: 0.5
   c_top_eject:
     number: 1616_2-12
     default_pulse_ms: 20
@@ -265,18 +266,20 @@ coils:
   c_right_ramp_lift:
     number: 1616_2-10
     default_pulse_ms: 20
+    default_pulse_power: 0.5
   c_right_ramp_down:
     number: 1616_2-11
     default_pulse_ms: 20
+    default_pulse_power: 0.5
   c_left_spin_disc:
     number: 1616_2-2
-    default_pulse_ms: 20
+    default_hold_power: 0.5
   c_middle_spin_disc:
     number: 1616_2-1
-    default_pulse_ms: 20
+    default_hold_power: 0.5
   c_right_spin_disc:
     number: 1616_2-0
-    default_pulse_ms: 20
+    default_hold_power: 0.5
   c_left_lock_kickback:
     number: 1616_1-12
     default_pulse_ms: 20
