@@ -830,7 +830,8 @@ sound_player:
     slingsaudio:
       action: play    
   sw_spinner:
-    SpinnerShotgunLoading:
+#    SpinnerShotgunLoading:
+    Gore_Bloody_Impact:
       action: play
   sw_standup:
     standupaudio:
@@ -846,6 +847,9 @@ sound_player:
       action: play
   s_outlane_active:
     BallDrain:
+      action: play
+  sw_right_return_lane:
+    Gore_Neck_Break:
       action: play
     
   logicblock_random_switch_hit{hits==29}:  
