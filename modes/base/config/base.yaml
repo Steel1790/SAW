@@ -432,6 +432,10 @@ shows:
     - duration: 0.5s
       lights:
         (leds): off
+  flipper_buttons:
+    - duration: -1
+      lights:
+        (leds): 8A0303
  
 # EK testing lightshow on shot action
 show_player:
@@ -607,8 +611,12 @@ show_player:
   ball_started:
     base_action_button:
       show_tokens:
-        leds: l_action_button, l_left_flipper, l_right_flipper
+        leds: l_action_button, l_tape_reel, l_tape_speaker
       loops: -1
+    flipper_buttons:
+      show_tokens:
+        leds: l_left_flipper, l_right_flipper
+    
       
 #  mode_base_started.1:       
 #   flash_token2:
