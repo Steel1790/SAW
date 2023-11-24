@@ -387,32 +387,32 @@ widget_player:
 #      action: stop
 sound_player:
   display_gears:
-    UpPops4:
+    BonusChunk:
       action: play
   display_syringes:
-    UpPops4:
+    BonusChunk:
       action: play
   display_bathtubs:
-    UpPops4:
+    BonusChunk:
       action: play
   display_taperecorders:
-    UpPops4:
+    BonusChunk:
       action: play
   display_candles:
-    UpPops4:
+    BonusChunk:
       action: play
   display_hacksaws:
-    UpPops4:
+    BonusChunk:
       action: play
   display_handguns:
-    UpPops4:
+    BonusChunk:
       action: play
   display_keys:
-    UpPops4:
+    BonusChunk:
       action: play
   display_multiplierbonus:
-    UpPops4:
+    BonusChunk:
       action: play
   display_totalscore:
-    UpPops4:
+    BonusEnd:
       action: play

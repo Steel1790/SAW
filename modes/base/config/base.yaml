@@ -825,6 +825,12 @@ sound_player:
   sw_loop:
     loopsaudio:
       action: play
+  s_right_outlane_active:
+    BallDrain:
+      action: play
+  s_left_outlane_active:
+    BallDrain:
+      action: play
     
   logicblock_random_switch_hit{hits==29}:  
     randomswitch:
