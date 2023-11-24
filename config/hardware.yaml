@@ -433,3 +433,16 @@ autofire_coils:
   mystery_scoop:
     coil: c_mystery_eject
     switch: s_left_cellar
+
+  left_kickback_test:
+    coil: c_left_lock_kickback
+    switch: s_left_lock_1
+  right_ramp_lift_test:
+    coil: c_right_ramp_lift
+    switch: s_right_loop_bottom
+
+diverters:
+  right_ramp_diverter:
+    activation_coil: c_right_ramp_lift
+    deactivation_coil: c_right_ramp_down
+    type: pulse
