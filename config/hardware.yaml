@@ -362,7 +362,7 @@ ball_devices:
     eject_coil: c_auto_plunger
     mechanical_eject: true
     eject_timeouts: 5s
-    player_controlled_eject_event: s_lockdown_button_active
+    player_controlled_eject_event: s_action_button_active
 
   bd_mystery:
     ball_switches: s_left_cellar

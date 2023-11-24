@@ -424,6 +424,14 @@ shows:
     - duration: -1
       lights:
         (leds): off    
+
+  base_action_button:
+    - duration: 0.5s
+      lights:
+        (leds): 8A0303
+    - duration: 0.5s
+      lights:
+        (leds): off
  
 # EK testing lightshow on shot action
 show_player:
@@ -595,6 +603,11 @@ show_player:
     ballsave_end:
       show_tokens:
         leds: l_live_again
+      loops: -1
+  ball_started:
+    base_action_button:
+      show_tokens:
+        leds: l_action_button, l_left_flipper, l_right_flipper
       loops: -1
       
 #  mode_base_started.1:       
@@ -822,13 +835,16 @@ sound_player:
   sw_standup:
     standupaudio:
       action: play
-  sw_loop:
-    loopsaudio:
+  shot_left_loop_hit:
+    LeftOrbit:
+      action: play
+  shot_right_loop_hit:
+    RightOrbit:
       action: play
   s_right_outlane_active:
     BallDrain:
       action: play
-  s_left_outlane_active:
+  s_outlane_active:
     BallDrain:
       action: play
     
