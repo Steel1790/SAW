@@ -1483,6 +1483,6 @@ coil_player:
     c_middle_spin_disc:
       action: enable
       hold_power: 0.5
-    c_right_spin_disc:
-      action: enable
-      hold_power: 0.5
+#    c_right_spin_disc:
+#      action: enable
+#      hold_power: 0.5

@@ -39,9 +39,9 @@ window:
   width: 1366
   height: 768
   title: Mission Pinball Framework - SAW
-  resizable: false
+  resizable: true
   fullscreen: false
-  borderless: false
+  borderless: true
   exit_on_escape: true
   source_display: lcd
 displays:

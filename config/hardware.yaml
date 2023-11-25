@@ -99,7 +99,7 @@ switches:
     tags: left_standup, standup, switch_hit
 # Left Lock 1 (lwr)
   s_left_lock_1:
-    number: 3208-27
+    number: 3208-29
     tags: left_lock_1 , left_lock
 # Left Lock 2 (mid)
   s_left_lock_2:
@@ -107,7 +107,7 @@ switches:
     tags: left_lock_2, left_lock
 # Left Lock 3 (upr)
   s_left_lock_3:
-    number: 3208-29
+    number: 3208-27
     tags: left_lock_3, left_lock
   s_right_standup:
     number: 1616_2-7
