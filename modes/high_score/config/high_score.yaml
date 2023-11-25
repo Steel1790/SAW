@@ -55,10 +55,11 @@ slides:
     - type: text
       font_size: 100
       font_name: Skilt Gothic W04 Thin
-      text: (award)
+      text: (player|award)
       color: red
       x: center
-      y: center + 175
+      y: center + 100
+
       
             
     - type: text
@@ -99,17 +100,6 @@ slides:
       x: center
       y: center
       color: C2E3E0 
-      animations:
-        show_slide:
-          - property: opacity
-            value: 1
-            duration: 0.3s
-            easing: in_out_quint
-          - property: opacity
-            value: 0
-            duration: 0.3s
-            repeat: true
-            easing: in_out_quint
     - type: image            
       image: billyskillshot
       opacity: 0.8
@@ -124,3 +114,14 @@ sound_player:
   s_action_button_active:
     OrbitWoosh6:
       action: play      
+  mode_high_score_started: 
+    initials:
+      action: play
+      loops: -1
+    BaseMusic:
+      action: stop
+  mode_high_score_stopped:
+    BaseMusic:
+      action: stop
+    initials:
+      action: stop

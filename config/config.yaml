@@ -54,8 +54,16 @@ sound_player:
     HelloZeppPt1:
       action: play
       loops: 3
+    BaseMusic:
+      action: stop
   mode_attract_stopped:
     HelloZeppPt1:
+      action: stop
+  mode_game_stopping:
+    initials:
+      action: stop
+  mode_high_score_started:
+    BaseMusic:
       action: stop
 
 sound_system:

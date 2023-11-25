@@ -1,6 +1,6 @@
 #config_version=6
 mode_settings:
-  display_delay_ms: 2s
+  display_delay_ms: 2.3s
   hurry_up_delay_ms: 0
   bonus_entries:
     - event: bonus_gears
@@ -387,32 +387,35 @@ widget_player:
 #      action: stop
 sound_player:
   display_gears:
-    BonusChunk:
+    FleshCrushSquelch4:
       action: play
   display_syringes:
-    BonusChunk:
+    FleshCrushSquelch4:
       action: play
   display_bathtubs:
-    BonusChunk:
+    FleshCrushSquelch4:
       action: play
   display_taperecorders:
-    BonusChunk:
+    FleshCrushSquelch4:
       action: play
   display_candles:
-    BonusChunk:
+    FleshCrushSquelch4:
       action: play
   display_hacksaws:
-    BonusChunk:
+    FleshCrushSquelch4:
       action: play
   display_handguns:
-    BonusChunk:
+    FleshCrushSquelch4:
       action: play
   display_keys:
-    BonusChunk:
+    FleshCrushSquelch4:
       action: play
   display_multiplierbonus:
-    BonusChunk:
+    FleshCrushSquelch4:
       action: play
   display_totalscore:
-    BonusEnd:
+    SwordSlashA:
       action: play
+  mode_bonus_started:
+    BaseMusic:
+      action: stop

@@ -5,16 +5,16 @@ mode:
   
 ball_saves:
   default:
-    active_time: 5s
-    hurry_up_time: 2s
-    grace_period: 2s
-    enable_events: mode_base_started
-    disable_events: ball_save_default_disabled
+    active_time: 8s
+    hurry_up_time: 3s
+#    grace_period: 2s
+#    enable_events: mode_base_started
+#    disable_events: ball_save_default_disabled
     timer_start_events: balldevice_bd_trough_ball_eject_success
-    early_ball_save_events: s_left_outlane_active, s_right_outlane_active    
+    early_ball_save_events: sw_outlane, s_trough6_active
     auto_launch: true
-    balls_to_save: 1
-    debug: true  
+    balls_to_save: 3
+#    debug: true  
 
 slide_player:
   mode_razorwire_complete: 
@@ -602,7 +602,7 @@ show_player:
     ballsave:
       show_tokens:
         leds: l_live_again
-      loops: 10
+      loops: 20
   ball_save_default_disabled:
     ballsave_end:
       show_tokens:
@@ -688,6 +688,22 @@ sound_pools:
       - LowerPops15
       - LowerPops16
       - LowerPops17
+
+  lowerdropsaudio:
+    load: preload
+    type: random
+    track: sfx
+    sounds:
+      - TapeCassetteDrop-Sound1
+      - TapeCassetteDrop-Sound2
+      - TapeCassetteDrop-Sound3
+      - TapeCassetteDrop-Sound4
+      - TapeCassetteDrop-Sound5
+      - TapeCassetteDrop-Sound6
+      - TapeCassetteDrop-Sound7
+      - TapeCassetteDrop-Sound8
+      - TapeCassetteDrop-Sound9
+      - TapeCassetteDrop-Sound10
       
   loopsaudio:
     load: preload
@@ -730,7 +746,7 @@ sound_pools:
     sounds:
       - LowPainTolerance
       - FlipperFingers
-      - MakeFunOfMyMask
+#      - MakeFunOfMyMask
       - PlungeTheBall
       - RiseAndShine
       - YouMayBegin
@@ -762,6 +778,11 @@ sound_player:
       action: play
       events_when_played: Que_BaseMusic
   Que_BaseMusic:
+    BaseMusic:
+      delay: 5s
+      action: play
+      loops: -1
+  mode_bonus_stopped{current_player.ball == 1 or current_player.ball == 2}:
     BaseMusic:
       delay: 5s
       action: play
@@ -805,24 +826,7 @@ sound_player:
       action: play   
     startbutton:
       delay: 2.5s
-      action: play      
- 
-  mode_razorwire_started:
-    razorwire:
-      action: play
-    RWModeStart:
-      delay: 4s
-      action: play
-
-  mode_razorwire_complete:
-    trapcomplete:
-      action: play
-    RWModeStart:
-      action: stop 
-    BaseMusic:
-      delay: 10s
-      action: play
-      loops: -1      
+      action: play  
     
   upper_drop_target_hit:
     SingleDropGlassBreak:
@@ -839,7 +843,7 @@ sound_player:
       action: play    
   sw_spinner:
 #    SpinnerShotgunLoading:
-    Gore_Bloody_Impact:
+    Metal_Trap_ODC-0010-653:
       action: play
   sw_standup:
     standupaudio:
@@ -858,6 +862,9 @@ sound_player:
       action: play
   sw_right_return_lane:
     Gore_Neck_Break:
+      action: play
+  sw_lower_drop_target:
+    lowerdropsaudio:
       action: play
     
   logicblock_random_switch_hit{hits==29}:  
@@ -935,8 +942,30 @@ sound_player:
   logicblock_random_switch_hit{hits==725}:  
     randomswitch:
       action: play  
+
+ # razorwire mode
+  mode_razorwire_started:
+    razorwire:
+      action: play
+    RWModeStart:
+      delay: 4s
+      action: play
+  mode_razorwire_complete:
+    trapcomplete:
+      action: play
+    RWModeStart:
+      action: stop 
+    BaseMusic:
+      delay: 10s
+      action: play
+      loops: -1   
+  mode_razorwire_stopped:
+    BaseMusic:
+      delay: 3s
+      action: play
+      loops: -1 
       
-      
+ # drillchair mode     
   mode_drillchair_started:
     drillchair:
       action: play  
@@ -946,8 +975,14 @@ sound_player:
     BaseMusic:
       delay: 10s
       action: play
-      loops: -1          
+      loops: -1      
+  mode_drillchair_stopped:
+    BaseMusic:
+      delay: 3s
+      action: play
+      loops: -1      
 
+# reversebeartrap mode
   mode_reversebeartrap_started:
     reversebeartrap:
       action: play
@@ -957,8 +992,14 @@ sound_player:
     BaseMusic:
       delay: 10s
       action: play
-      loops: -1          
-  
+      loops: -1      
+  mode_reversebeartrap_stopped:
+    BaseMusic:
+      delay: 3s
+      action: play
+      loops: -1      
+
+# quadshotgun mode  
   mode_quadshotgun_started:
     QuadShotgunModeStart:
       action: play
@@ -971,7 +1012,13 @@ sound_player:
       delay: 10s
       action: play
       loops: -1      
+  mode_quadshotgun_stopped:
+    BaseMusic:
+      delay: 3s
+      action: play
+      loops: -1
       
+# zeptest mode
   mode_zeptest_started:
     zeptest:
       action: play
@@ -990,7 +1037,12 @@ sound_player:
   mode_zeptest_stopped:
     ZepsTestModeStart:
       action: stop
-      
+    BaseMusic:
+      delay: 3s
+      action: play
+      loops: -1
+ 
+# flammable jelly mode      
   mode_flammablejelly_started:
     flammablejelly:
       action: play
@@ -1009,6 +1061,11 @@ sound_player:
   slide_flammablejellyUI_removed:
     FlammableJellyModeStart:
       action: stop
+  mode_flammablejelly_stopped:
+    BaseMusic:
+      delay: 3s
+      action: play
+      loops: -1
 
   sg_saw_qualify_subtract_hit{device.counters.saw_qualify_counter.value==1}:
     SawLetterNegative:
