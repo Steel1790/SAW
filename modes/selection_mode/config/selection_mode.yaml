@@ -224,176 +224,7 @@ slides:
           value: 1
           duration: 1s
           repeat: true      
-      
-#    - type: text
-#      text: Mode
-#      font_name: TrajanProRegular
-#      font_size: 50
-#      bold: True
-#      color: yellow
-#      y: 95%
-#      x: 50%
-#    - type: text
-#      text: Razorwire
-#      font_name: valium
-#      font_size: 88
-#      bold: True
-#      y: 85%
-#      x: 50%
-#      color: yellow 
-#      animations:
-#        show_slide:
-#        - property: opacity
-#          value: 0
-#          duration: 1.5s
-#        - property: opacity
-#          value: 1
-#          duration: 1.5s
-#          repeat: true
-#    - type: image
-#      image: razorwirepuzzle
 
-#    - type: text
-#      text: Mode
-#      font_name: TrajanProRegular
-#      font_size: 50
-#      bold: True
-#      color: green
-#      y: 95%
-#      x: 50%
-#    - type: text
-#      text: Reverse Bear Trap
-#      font_name: valium
-#      font_size: 88
-#      bold: True
-#      y: 85%
-#      x: 50%
-#      color: green
-#      animations:
-#        show_slide:
-#        - property: opacity
-#          value: 0
-#          duration: 1.5s
-#        - property: opacity
-#          value: 1
-#          duration: 1.5s
-#          repeat: true
-#    - type: image
-#      image: reversebeartrappuzzle
-      
-#    - type: text
-#      text: Mode
-#      font_name: TrajanProRegular
-#      font_size: 50
-#      bold: True
-#      color: FFD21C
-#      y: 95%
-#      x: 50%
-#    - type: text
-#      text: Flammable Jelly
-#      font_name: valium
-#      font_size: 88
-#      bold: True
-#      y: 85%
-#      x: 50%
-#      color: FFD21C
-#      animations:
-#        show_slide:
-#        - property: opacity
-#          value: 0
-#          duration: 1.5s
-#        - property: opacity
-#          value: 1
-#          duration: 1.5s
-#          repeat: true
-#    - type: image
-#      image: flammablejellypuzzle
-      
-#    - type: text
-#      text: Mode
-#      font_name: TrajanProRegular
-#      font_size: 50
-#      bold: True
-#      color: CD7F32
-#      y: 95%
-#      x: 50%
-#    - type: text
-#      text: Drill Chair
-#      font_name: valium
-#      font_size: 88
-#      bold: True
-#      y: 85%
-#      x: 50%
-#      color: CD7F32
-#      animations:
-#        show_slide:
-#        - property: opacity
-#          value: 0
-#          duration: 1.5s
-#        - property: opacity
-#          value: 1
-#          duration: 1.5s
-#          repeat: true
-#    - type: image
-#      image: drillchairpuzzle
-      
-#    - type: text
-#      text: Mode
-#      font_name: TrajanProRegular
-#      font_size: 50
-#      bold: True
-#      color: 5B6065
-#      y: 95%
-#      x: 50%
-#    - type: text
-#      text: Quadruple Shotgun Hallway
-#      font_name: valium
-#      font_size: 88
-#      bold: True
-#      y: 85%
-#      x: 50%
-#      color: 5B6065
-#      animations:
-#        show_slide:
-#        - property: opacity
-#          value: 0
-#          duration: 1.5s
-#        - property: opacity
-#          value: 1
-#          duration: 1.5s
-#          repeat: true
-#    - type: image
-#      image: quadshotgunpuzzle
-      
-#    - type: text
-#      text: Mode
-#      font_name: TrajanProRegular
-#      font_size: 50
-#      bold: True
-#      color: 57669E
-#      y: 95%
-#      x: 50%
-#    - type: text
-#      text: Zep's Test
-#      font_name: valium
-#      font_size: 88
-#      bold: True
-#      y: 85%
-#      x: 50%
-#      color: 57669E
-#      animations:
-#        show_slide:
-#        - property: opacity
-#          value: 0
-#          duration: 1.5s
-#        - property: opacity
-#          value: 1
-#          duration: 1.5s
-#          repeat: true
-#    - type: image
-#      image: zeptestpuzzle
-
-#add logic later to remove after selected. temp. on a 15s timer 
 slide_player:
   selection_mode_razorwire_highlighted: 
 #    razorwirecassette:
@@ -423,3 +254,113 @@ slide_player:
 #      expire: 10s
 #  carousel_mission2_highlighted: select_mission2
 #  carousel_mission3_highlighted: select_mission3
+
+shows:
+  razorwire:
+    - duration: 0.3s
+      lights:
+        (leds): 41A317
+    - duration: 0.3s
+      lights:
+        (leds): off
+  reversebeartrap:
+    - duration: 0.3s
+      lights:
+        (leds): FF0800
+    - duration: 0.3s
+      lights:
+        (leds): off
+  flammablejelly:
+    - duration: 0.3s
+      lights:
+        (leds): FCE205
+    - duration: 0.3s
+      lights:
+        (leds): off
+  drillchair:
+    - duration: 0.3s
+      lights:
+        (leds): FF7417
+    - duration: 0.3s
+      lights:
+        (leds): off
+  quadshotgun:
+    - duration: 0.3s
+      lights:
+        (leds): 0981D1
+    - duration: 0.3s
+      lights:
+        (leds): off
+  zeptest:
+    - duration: 0.3s
+      lights:
+        (leds): B200ED
+    - duration: 0.3s
+      lights:
+        (leds): off
+  ActionOff:
+    - duration: 2s
+      lights:
+        (leds): off
+
+show_player:
+  selection_mode_razorwire_highlighted:
+    razorwire:
+      show_tokens:
+        leds: l_action_button
+      loops: -1
+  selection_mode_reversebeartrap_highlighted:
+    reversebeartrap:
+      show_tokens:
+        leds: l_action_button
+      loops: -1
+  selection_mode_flammablejelly_highlighted:
+    flammablejelly:
+      show_tokens:
+        leds: l_action_button
+      loops: -1
+  selection_mode_drillchair_highlighted:
+    drillchair:
+      show_tokens:
+        leds: l_action_button
+      loops: -1
+  selection_mode_quadshotgun_highlighted:
+    quadshotgun:
+      show_tokens:
+        leds: l_action_button
+      loops: -1
+  selection_mode_zeptest_highlighted:
+    zeptest:
+      show_tokens:
+        leds: l_action_button
+      loops: -1
+  selection_mode_razorwire_selected:
+    ActionOff:
+      show_tokens:
+        leds: l_action_button
+      loops: -1
+  selection_mode_reversebeartrap_selected:
+    ActionOff:
+      show_tokens:
+        leds: l_action_button
+      loops: -1
+  selection_mode_flammablejelly_selected:
+    ActionOff:
+      show_tokens:
+        leds: l_action_button
+      loops: -1
+  selection_mode_drillchair_selected:
+    ActionOff:
+      show_tokens:
+        leds: l_action_button
+      loops: -1
+  selection_mode_quadshotgun_selected:
+    ActionOff:
+      show_tokens:
+        leds: l_action_button
+      loops: -1
+  selection_mode_zeptest_selected:
+    ActionOff:
+      show_tokens:
+        leds: l_action_button
+      loops: -1

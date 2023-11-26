@@ -358,7 +358,30 @@ shows:
   mode_zeptest_show_complete:
     - duration: -1      
       lights:    
-        (leds): red       
+        (leds): red   
+       
+# mode attempt for puzzle insert
+  mode_razorwire_show_started:
+    - duration: -1
+      lights:
+        (leds): red
+  mode_drillchair_show_started:
+    - duration: -1
+      lights:
+        (leds): red
+  mode_reversebeartrap_show_started:
+    - duration: -1
+      lights:
+        (leds): red
+  mode_flammablejelly_show_started:
+    - duration: -1
+      lights:
+        (leds): red
+  mode_zeptest_show_started:
+    - duration: -1
+      lights:
+        (leds): red
+
   jigsaw_mb_qualify_hit_show_step2:   
     - duration: -1
       lights:
@@ -425,13 +448,13 @@ shows:
       lights:
         (leds): off    
 
-  base_action_button:
-    - duration: 0.5s
-      lights:
-        (leds): 8A0303
-    - duration: 0.5s
-      lights:
-        (leds): off
+#  base_action_button:
+#    - duration: 0.5s
+#      lights:
+#        (leds): 8A0303
+#    - duration: 0.5s
+#      lights:
+#        (leds): off
   flipper_buttons:
     - duration: -1
       lights:
@@ -530,6 +553,34 @@ show_player:
       show_tokens:
         leds: l_jelly_mode
       loops: -1        
+
+# mode attempt for puzzle insert 
+  mode_razorwire_stopping:
+    mode_razorwire_show_started:
+      show_tokens:
+        leds: l_razorwire_flasher_1, l_razorwire_flasher_2, l_razorwire_flasher_3, l_razorwire_flasher_4, l_razorwire_flasher_5, l_razorwire_flasher_6, l_razorwire_flasher_7, l_razorwire_flasher_8
+      loops: -1     
+  mode_flammablejelly_stopping:
+    mode_flammablejelly_show_started:
+      show_tokens:
+        leds: l_drill_flasher_1, l_drill_flasher_2, l_drill_flasher_3, l_drill_flasher_4, l_drill_flasher_5, l_drill_flasher_6, l_drill_flasher_7, l_drill_flasher_8
+      loops: -1     
+  mode_quadshotgun_stopping:
+    mode_quadshotgun_show_started:
+      show_tokens:
+        leds: l_shotgun_flasher_1, l_shotgun_flasher_2, l_shotgun_flasher_3, l_shotgun_flasher_4, l_shotgun_flasher_5, l_shotgun_flasher_6, l_shotgun_flasher_7, l_shotgun_flasher_8
+      loops: -1     
+  mode_drillchair_stopping:
+    mode_drillchair_show_started:
+      show_tokens:
+        leds: l_bear_flasher_1, l_bear_flasher_2, l_bear_flasher_3, l_bear_flasher_4, l_bear_flasher_5, l_bear_flasher_6, l_bear_flasher_7, l_bear_flasher_8
+      loops: -1     
+  mode_zeptest_stopping:
+    mode_zeptest_show_started:
+      show_tokens:
+        leds: l_zep_flasher_1, l_zep_flasher_2, l_zep_flasher_3, l_zep_flasher_4, l_zep_flasher_5, l_zep_flasher_6, l_zep_flasher_7, l_zep_flasher_8
+      loops: -1     
+
   logicblock_jigsaw_mb_qualify_hit{step==2}: 
     jigsaw_mb_qualify_hit_show_step2:   
       show_tokens:
@@ -609,10 +660,10 @@ show_player:
         leds: l_live_again
       loops: -1
   ball_started:
-    base_action_button:
-      show_tokens:
-        leds: l_action_button, l_tape_reel, l_tape_speaker
-      loops: -1
+#    base_action_button:
+#      show_tokens:
+#        leds: l_action_button, l_tape_reel, l_tape_speaker
+#      loops: -1
     flipper_buttons:
       show_tokens:
         leds: l_left_flipper, l_right_flipper
