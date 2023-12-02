@@ -383,7 +383,13 @@ ball_devices:
     ball_switches: s_top_right_reject
     eject_coil: c_top_eject
     mechanical_eject: true
-    eject_timeouts: 1.5s
+    eject_timeouts: 1.5s 
+
+  bd_hacksaw:
+    ball_switches: s_left_lock_3
+    eject_coil: c_left_lock_kickback
+    mechanical_eject: true
+    eject_timeouts: 5s
 
 playfields:
   playfield:
@@ -437,9 +443,9 @@ autofire_coils:
     coil: c_mystery_eject
     switch: s_left_cellar
 
-  left_kickback_test:
-    coil: c_left_lock_kickback
-    switch: s_left_lock_1
+  #left_kickback_test:
+  #  coil: c_left_lock_kickback
+  #  switch: s_left_lock_1
   right_ramp_lift_test:
     coil: c_right_ramp_lift
     switch: s_right_loop_bottom

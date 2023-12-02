@@ -5,39 +5,37 @@ mode:
   use_wait_queue: true
 high_score:
   _overwrite: true
-  enter_initials_timeout: 90
+  enter_initials_timeout: 60s
   award_slide_display_time: 4s
   # define your high score categories and the awards
   categories:
     score:
-        - GRAND CHAMPION
-        - HIGH SCORE 1
-        - HIGH SCORE 2
-        - HIGH SCORE 3
-        - HIGH SCORE 4
+      - GRAND CHAMPION
+      - HIGH SCORE 1
+      - HIGH SCORE 2
+      - HIGH SCORE 3
+      - HIGH SCORE 4
     loops:
-        - LOOP CHAMPION
-#    tilt_bonus:
-#        - BONUS LOST
-  # set the defaults
+      - LOOP CHAMPION
   defaults:
     score:
       - JWF: 1000000
       - ECK: 900000
       - ADC: 800000
       - SAW: 700000
-      - SAW: 6000
+      - TST: 6000
 
     loops:
-      - TST: 42
+      - TST: 4
+  vars:
+    loops:
+      - player: character
  #   tilt_bonus:
  #     - TST: 250000
 # optional: change the slides (you can omit all the following)
 slide_player:
   _overwrite: true   
-  mode_high_score_started:  
-    high_score_enter_initials:
-      target: lcd
+  high_score_enter_initials: high_score_enter_initials
 
 
 slides:
@@ -55,12 +53,10 @@ slides:
     - type: text
       font_size: 100
       font_name: Skilt Gothic W04 Thin
-      text: (player|award)
+      text: (award)
       color: red
       x: center
       y: center + 100
-
-      
             
     - type: text
       font_name: sawesome
