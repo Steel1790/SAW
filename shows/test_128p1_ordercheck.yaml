@@ -6,6 +6,7 @@
   lights:
     l_right_disc_1: 0
     l_right_disc_2: (color1)
+    l_left_disc: on
 - time: '+1'
   lights:
     l_right_disc_2: 0
@@ -13,7 +14,7 @@
 - time: '+1'
   lights:
     l_right_disc_3: 0
-    l_right_disc_4: (color1)    
+    l_right_disc_4: (color1) 
 - time: '+1'
   lights:
     l_right_disc_4: 0
@@ -21,11 +22,12 @@
 - time: '+1'
   lights:
     l_right_disc_5: 0
-    l_right_disc_6: (color1)    
+    l_right_disc_6: (color1)
+    l_left_disc: off
 - time: '+1'
   lights:
     l_right_disc_6: 0
-    l_right_disc_7: (color1)    
+    l_right_disc_7: (color1)  
 - time: '+1'
   lights:
     l_right_disc_7: 0
@@ -33,7 +35,8 @@
 - time: '+1'
   lights:
     l_right_disc_8: 0
-    l_middle_disc_1: (color1)    
+    l_middle_disc_1: (color1)
+    l_middle_disc: on
 - time: '+1'
   lights:
     l_middle_disc_1: 0
@@ -45,7 +48,8 @@
 - time: '+1'
   lights:
     l_middle_disc_3: 0
-    l_middle_disc_4: (color1)  
+    l_middle_disc_4: (color1) 
+    l_middle_disc: off 
 - time: '+1'
   lights:
     l_middle_disc_4: 0
@@ -81,7 +85,8 @@
 - time: '+1'
   lights:
     l_middle_disc_12: 0
-    l_middle_disc_13: (color1)  
+    l_middle_disc_13: (color1) 
+    l_right_disc: on   
 - time: '+1'
   lights:
     l_middle_disc_13: 0
@@ -93,7 +98,8 @@
 - time: '+1'
   lights:
     l_middle_disc_15: 0
-    l_middle_disc_16: (color1)  
+    l_middle_disc_16: (color1) 
+    l_right_disc: off 
 - time: '+1'
   lights:
     l_middle_disc_16: 0

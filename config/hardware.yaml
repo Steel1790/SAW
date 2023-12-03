@@ -274,12 +274,15 @@ coils:
   c_left_spin_disc:
     number: 1616_2-2
     default_hold_power: 0.5
+    allow_enable: true
   c_middle_spin_disc:
     number: 1616_2-1
     default_hold_power: 0.5
+    allow_enable: true
   c_right_spin_disc:
     number: 1616_2-0
     default_hold_power: 0.5
+    allow_enable: true
   c_left_lock_kickback:
     number: 1616_1-12
     default_pulse_ms: 20

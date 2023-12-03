@@ -889,3 +889,14 @@ lights:
     number: ledneuron-1-19
     tags: topper
 
+  l_left_disc:
+      number: c_left_spin_disc
+      platform: drivers
+  l_middle_disc:
+      number: c_middle_spin_disc
+      platform: drivers
+  l_right_disc:
+      number: c_right_spin_disc
+      platform: drivers
+
+
