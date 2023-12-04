@@ -1158,6 +1158,12 @@ switch:
     size: 0.08
     x: 0.5299777777777778
     y: 0.19523809523809527
+  s_middle_standup:
+    rotation: 90
+    shape: RECTANGLE
+    size: 0.04
+    x: 0.5327771952817825
+    y: 0.23066841415465272
   s_outhole:
     shape: RECTANGLE
     size: 0.03

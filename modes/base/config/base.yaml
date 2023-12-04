@@ -464,12 +464,12 @@ shows:
 show_player:
 #  mode_skillshot_complete:
   mode_base_started:   
-    flash_token:
-      loops: -1
-      speed: 2
-      show_tokens:
-        led: arrow
-        color1: ffffff
+#    flash_token:
+#      loops: -1
+#      speed: 2
+#      show_tokens:
+#        led: arrow
+#        color1: ffffff
 
     gi_on:
       loops: -1
@@ -1594,13 +1594,40 @@ ball_holds:
     release_one_events: slide_drillchair_pops_active, slide_flammablejellyUI_active, slide_quadshotgun_spinner, slide_razorwire_pops_active, slide_reversebeartrapUI_active, slide_zeptestUI_active              
 
 coil_player:
-  left_inlane_hit:
+  logicblock_saw_qualify_counter_updated{value==1}:
     c_left_spin_disc:
       action: enable
-      hold_power: 0.5
+      hold_power: 0.3
     c_middle_spin_disc:
       action: enable
-      hold_power: 0.5
-#    c_right_spin_disc:
-#      action: enable
-#      hold_power: 0.5
+      hold_power: 0.3
+    c_right_spin_disc:
+      action: enable
+      hold_power: 0.3
+  logicblock_saw_qualify_counter_updated{value==2}:
+    c_left_spin_disc:
+      action: enable
+      hold_power: 0.7
+    c_middle_spin_disc:
+      action: enable
+      hold_power: 0.7
+    c_right_spin_disc:
+      action: enable
+      hold_power: 0.7
+  logicblock_saw_qualify_counter_updated{value==3}:
+    c_left_spin_disc:
+      action: enable
+      hold_power: 1.0
+    c_middle_spin_disc:
+      action: enable
+      hold_power: 1.0
+    c_right_spin_disc:
+      action: enable
+      hold_power: 1.0
+  logicblock_saw_qualify_counter_updated{value==0}:
+    c_left_spin_disc:
+      action: off
+    c_middle_spin_disc:
+      action: off
+    c_right_spin_disc:
+      action: off

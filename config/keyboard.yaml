@@ -1,9 +1,9 @@
 #config_version=6
 keyboard:
   z:
-    switch: s_left_flipper
+    switch: s_left_flipper_botton
   x:
-    switch: s_right_flipper
+    switch: s_right_flipper_button
   1:
     switch: s_trough1
     toggle: true
