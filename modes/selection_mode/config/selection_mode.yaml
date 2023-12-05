@@ -1,16 +1,16 @@
-#config_version=6                 
+#config_version=6                   
 mode:
   start_events: start_selection_mode, mode_cellar_complete
-  stop_events: carousel_item_selected, ball_ended, stop_mode_cellar, slide_razorwire_pops_removed, slide_reversebeartrapvideo_removed, slide_drillchair_pops_removed, slide_quadshotgun_spinner_removed, slide_zeptestUI_removed,  slide_flammablejellyUI_removed
+  stop_events: carousel_item_selected, ball_ended, stop_mode_cellar, mode_razorwire_started, mode_reversebeartrap_started, mode_drillchair_started, mode_quadshotgun_started, mode_zeptestUI_started, mode_flammablejellyUI_started
   code: mpf.modes.carousel.code.carousel.Carousel
 mode_settings:
   selectable_items: 
-    - razorwire
     - drillchair
-    - reversebeartrap
+    - razorwire
     - quadshotgun
-    - flammablejelly
+    - flammablejelly    
     - zeptest
+    - reversebeartrap
   select_item_events: s_action_button_active
   next_item_events: s_left_flipper_button_active
   previous_item_events: s_right_flipper_button_active
@@ -311,52 +311,52 @@ show_player:
       loops: -1
     ActionOff:
       show_tokens:
-        leds: l_beartrap_mode, l_jelly_mode, l_drillchair_mode, l_quadshotgun_mode, l_zeptest_mode
+        leds: l_beartrap_mode, l_jelly_mode, l_drillchair_mode, l_quadshotgun_mode, l_zeptest_mode, bottom_bumper, l_right_standup_arrow, shotgun_flasher, skillshot, l_left_loop_arrow
       loops: -1
   selection_mode_reversebeartrap_highlighted:
     reversebeartrap:
       show_tokens:
-        leds: l_action_button, l_beartrap_mode
+        leds: l_action_button, l_beartrap_mode, l_left_loop_arrow
       loops: -1
     ActionOff:
       show_tokens:
-        leds: l_razorwire_mode, l_jelly_mode, l_drillchair_mode, l_quadshotgun_mode, l_zeptest_mode
+        leds: l_razorwire_mode, l_jelly_mode, l_drillchair_mode, l_quadshotgun_mode, l_zeptest_mode, jet_bumper, l_right_standup_arrow, shotgun_flasher, skillshot
       loops: -1
   selection_mode_flammablejelly_highlighted:
     flammablejelly:
       show_tokens:
-        leds: l_action_button, l_jelly_mode
+        leds: l_action_button, l_jelly_mode, l_right_standup_arrow
       loops: -1
     ActionOff:
       show_tokens:
-        leds: l_razorwire_mode, l_beartrap_mode, l_drillchair_mode, l_quadshotgun_mode, l_zeptest_mode
+        leds: l_razorwire_mode, l_beartrap_mode, l_drillchair_mode, l_quadshotgun_mode, l_zeptest_mode, jet_bumper, shotgun_flasher, skillshot, l_left_loop_arrow
       loops: -1
   selection_mode_drillchair_highlighted:
     drillchair:
       show_tokens:
-        leds: l_action_button, l_drillchair_mode
+        leds: l_action_button, l_drillchair_mode, bottom_bumper
       loops: -1
     ActionOff:
       show_tokens:
-        leds: l_razorwire_mode, l_beartrap_mode, l_jelly_mode, l_quadshotgun_mode, l_zeptest_mode
+        leds: l_razorwire_mode, l_beartrap_mode, l_jelly_mode, l_quadshotgun_mode, l_zeptest_mode, top_bumper, l_right_standup_arrow, shotgun_flasher, skillshot, l_left_loop_arrow
       loops: -1
   selection_mode_quadshotgun_highlighted:
     quadshotgun:
       show_tokens:
-        leds: l_action_button, l_quadshotgun_mode
+        leds: l_action_button, l_quadshotgun_mode, shotgun_flasher
       loops: -1
     ActionOff:
       show_tokens:
-        leds: l_razorwire_mode, l_beartrap_mode, l_jelly_mode, l_drillchair_mode, l_zeptest_mode
+        leds: l_razorwire_mode, l_beartrap_mode, l_jelly_mode, l_drillchair_mode, l_zeptest_mode, jet_bumper, l_right_standup_arrow, skillshot, l_left_loop_arrow
       loops: -1
   selection_mode_zeptest_highlighted:
     zeptest:
       show_tokens:
-        leds: l_action_button , l_zeptest_mode
+        leds: l_action_button , l_zeptest_mode, skillshot
       loops: -1
     ActionOff:
       show_tokens:
-        leds: l_razorwire_mode, l_beartrap_mode, l_jelly_mode, l_drillchair_mode, l_quadshotgun_mode
+        leds: l_razorwire_mode, l_beartrap_mode, l_jelly_mode, l_drillchair_mode, l_quadshotgun_mode, jet_bumper, l_right_standup_arrow, shotgun_flasher, l_left_loop_arrow
       loops: -1
   selection_mode_razorwire_selected:
     ActionOff:

@@ -168,7 +168,7 @@ switches:
     number: 1616_2-5
     tags: right_ramp, ramp_hit, switch_hit, ramp
   s_right_ramp_score_bottom:
-    number: 1616_2-0
+    number: 1616_2-4
     tags: right_ramp, switch_hit, switch_hit, ramp
   s_left_standup_right_ramp:
     number: 1616_2-10

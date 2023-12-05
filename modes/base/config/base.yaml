@@ -9,8 +9,8 @@ ball_saves:
     hurry_up_time: 3s
 #    grace_period: 2s
 #    enable_events: mode_base_started
-#    disable_events: ball_save_default_disabled
-    timer_start_events: balldevice_bd_trough_ball_eject_success
+#    disable_events2: ball_save_default_disabled
+    timer_start_events: playfield_active
     early_ball_save_events: sw_outlane, s_trough6_active
     auto_launch: true
     balls_to_save: 3
@@ -334,31 +334,32 @@ shows:
   minimode_drops_show_complete:    
     - duration: -1      
       lights:    
-        (leds): red      
+        (leds): red
+  
   mode_razorwire_show_complete:
     - duration: -1      
       lights:    
-        (leds): red 
+        (leds): green 
   mode_drillchair_show_complete:
     - duration: -1      
       lights:    
-        (leds): red 
+        (leds): green 
   mode_quadshotgun_show_complete:
     - duration: -1      
       lights:    
-        (leds): red 
+        (leds): green 
   mode_reversebeartrap_show_complete:
     - duration: -1      
       lights:    
-        (leds): red 
+        (leds): green 
   mode_flammablejelly_show_complete:
     - duration: -1      
       lights:    
-        (leds): red 
+        (leds): green 
   mode_zeptest_show_complete:
     - duration: -1      
       lights:    
-        (leds): red   
+        (leds): green   
        
 # mode attempt for puzzle insert
   mode_razorwire_show_started:
@@ -448,13 +449,17 @@ shows:
       lights:
         (leds): off    
 
-#  base_action_button:
-#    - duration: 0.5s
-#      lights:
-#        (leds): 8A0303
-#    - duration: 0.5s
-#      lights:
-#        (leds): off
+  base_action_button:
+    - duration: 0.5s
+      lights:
+        (leds): 8A0303
+    - duration: 0.5s
+      lights:
+        (leds): off
+  base_action_button_off:
+    - duration: -1
+      lights:
+        (leds): off   
   flipper_buttons:
     - duration: -1
       lights:
@@ -470,11 +475,21 @@ show_player:
 #      show_tokens:
 #        led: arrow
 #        color1: ffffff
-
+    base_action_button:
+      loops: -1
+      show_tokens:
+        leds: l_action_button
     gi_on:
       loops: -1
       show_tokens:
         color1: ffffff
+
+  playfield_active:
+    base_action_button_off:
+      loops: -1
+      show_tokens:
+        leds: l_action_button
+        
 
   sw_standup:
     gi_flicker_one_time:
@@ -528,58 +543,75 @@ show_player:
       show_tokens:
         leds: l_razorwire_mode
       loops: -1   
+      priority: 200
   mode_drillchair_complete:
     mode_drillchair_show_complete:
       show_tokens:
         leds: l_drillchair_mode
       loops: -1  
+      priority: 200
   mode_quadshotgun_complete:
     mode_quadshotgun_show_complete:
       show_tokens:
         leds: l_quadshotgun_mode
-      loops: -1        
+      loops: -1    
+      priority: 200
   mode_reversebeartrap_complete:
     mode_reversebeartrap_show_complete:
       show_tokens:
         leds: l_beartrap_mode
       loops: -1  
+      priority: 200
   mode_zeptest_complete:
     mode_zeptest_show_complete:
       show_tokens:
         leds: l_zeptest_mode
       loops: -1  
+      priority: 200
   mode_flammablejelly_complete:
     mode_flammablejelly_show_complete:
       show_tokens:
         leds: l_jelly_mode
-      loops: -1        
+      loops: -1    
+      priority: 200
 
 # mode attempt for puzzle insert 
   mode_razorwire_stopping:
     mode_razorwire_show_started:
       show_tokens:
-        leds: l_razorwire_flasher_1, l_razorwire_flasher_2, l_razorwire_flasher_3, l_razorwire_flasher_4, l_razorwire_flasher_5, l_razorwire_flasher_6, l_razorwire_flasher_7, l_razorwire_flasher_8
+        leds: l_razorwire_flasher_1, l_razorwire_flasher_2, l_razorwire_flasher_3, l_razorwire_flasher_4, l_razorwire_flasher_5, l_razorwire_flasher_6, l_razorwire_flasher_7, l_razorwire_flasher_8, l_razorwire_mode
       loops: -1     
+      priority: 100
   mode_flammablejelly_stopping:
     mode_flammablejelly_show_started:
       show_tokens:
-        leds: l_drill_flasher_1, l_drill_flasher_2, l_drill_flasher_3, l_drill_flasher_4, l_drill_flasher_5, l_drill_flasher_6, l_drill_flasher_7, l_drill_flasher_8
-      loops: -1     
+        leds: l_drill_flasher_1, l_drill_flasher_2, l_drill_flasher_3, l_drill_flasher_4, l_drill_flasher_5, l_drill_flasher_6, l_drill_flasher_7, l_drill_flasher_8, l_jelly_mode
+      loops: -1  
+      priority: 100
   mode_quadshotgun_stopping:
     mode_quadshotgun_show_started:
       show_tokens:
-        leds: l_shotgun_flasher_1, l_shotgun_flasher_2, l_shotgun_flasher_3, l_shotgun_flasher_4, l_shotgun_flasher_5, l_shotgun_flasher_6, l_shotgun_flasher_7, l_shotgun_flasher_8
-      loops: -1     
+        leds: l_shotgun_flasher_1, l_shotgun_flasher_2, l_shotgun_flasher_3, l_shotgun_flasher_4, l_shotgun_flasher_5, l_shotgun_flasher_6, l_shotgun_flasher_7, l_shotgun_flasher_8, l_quadshotgun_mode
+      loops: -1  
+      priority: 100
   mode_drillchair_stopping:
     mode_drillchair_show_started:
       show_tokens:
-        leds: l_bear_flasher_1, l_bear_flasher_2, l_bear_flasher_3, l_bear_flasher_4, l_bear_flasher_5, l_bear_flasher_6, l_bear_flasher_7, l_bear_flasher_8
-      loops: -1     
+        leds: l_bear_flasher_1, l_bear_flasher_2, l_bear_flasher_3, l_bear_flasher_4, l_bear_flasher_5, l_bear_flasher_6, l_bear_flasher_7, l_bear_flasher_8, l_drillchair_mode
+      loops: -1  
+      priority: 100
   mode_zeptest_stopping:
     mode_zeptest_show_started:
       show_tokens:
-        leds: l_zep_flasher_1, l_zep_flasher_2, l_zep_flasher_3, l_zep_flasher_4, l_zep_flasher_5, l_zep_flasher_6, l_zep_flasher_7, l_zep_flasher_8
-      loops: -1     
+        leds: l_zep_flasher_1, l_zep_flasher_2, l_zep_flasher_3, l_zep_flasher_4, l_zep_flasher_5, l_zep_flasher_6, l_zep_flasher_7, l_zep_flasher_8, l_zeptest_mode
+      loops: -1   
+      priority: 100
+  mode_reversebeartrap_stopping:
+    mode_reversebeartrap_show_started:
+      show_tokens: 
+        leds: l_beartrap_mode
+      loops: -1
+      priority: 100
 
   logicblock_jigsaw_mb_qualify_hit{step==2}: 
     jigsaw_mb_qualify_hit_show_step2:   
@@ -1595,25 +1627,16 @@ ball_holds:
 
 coil_player:
   logicblock_saw_qualify_counter_updated{value==1}:
-    c_left_spin_disc:
-      action: enable
-      hold_power: 0.3
-    c_middle_spin_disc:
-      action: enable
-      hold_power: 0.3
     c_right_spin_disc:
       action: enable
-      hold_power: 0.3
+      hold_power: 1.0
   logicblock_saw_qualify_counter_updated{value==2}:
-    c_left_spin_disc:
-      action: enable
-      hold_power: 0.7
     c_middle_spin_disc:
       action: enable
-      hold_power: 0.7
+      hold_power: 1.0
     c_right_spin_disc:
       action: enable
-      hold_power: 0.7
+      hold_power: 1.0
   logicblock_saw_qualify_counter_updated{value==3}:
     c_left_spin_disc:
       action: enable
@@ -1624,10 +1647,10 @@ coil_player:
     c_right_spin_disc:
       action: enable
       hold_power: 1.0
-  logicblock_saw_qualify_counter_updated{value==0}:
-    c_left_spin_disc:
+  mode_selection_mode_started:
+    c_right_spin_disc:
       action: off
     c_middle_spin_disc:
       action: off
-    c_right_spin_disc:
+    c_left_spin_disc:
       action: off

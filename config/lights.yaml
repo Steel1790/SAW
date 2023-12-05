@@ -366,13 +366,13 @@ lights:
 # skillshot lights
   l_skill_shot1:
     number: led128-2-5
-    tags: insert, led128p2
+    tags: insert, led128p2, skillshot
   l_skill_shot2:
     number: led128-2-14
-    tags: insert, led128p2
+    tags: insert, led128p2, skillshot
   l_skill_shot3:
     number: led128-2-15
-    tags: insert, led128p2
+    tags: insert, led128p2, skillshot
   l_left_return_lane:
     number: led128-4-5
     tags: insert, led128pf
