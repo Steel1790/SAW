@@ -86,6 +86,16 @@ counters:
     events_when_complete: logicblock_hacksaw_multiball_qualify_complete 
     count_events: hacksaw_mb_qualify_sequence_complete  
 
+  mystery_qualify:
+    starting_count: 0
+    count_complete_value: 3
+    start_enabled: true
+    persist_state: true
+    reset_on_complete: true
+    disable_on_complete: false
+    events_when_complete: start_mystery_mode
+    count_events: sw_lower_drop_target
+
   random_switch:
     starting_count: 0
     count_complete_value: 5000

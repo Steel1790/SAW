@@ -57,7 +57,7 @@ slide_player:
       action: play
       priority: 400
       expire: 8s
-  mysteryawardtemp_hit:
+  enable_mystery:
     mysteryawardvideo:
       action: play
       priority: 400
@@ -724,13 +724,6 @@ show_player:
       show_tokens:
         led: l_left_return_lane
         color1: red
-
-  mysteryawardtemp_hit:
-    mystery_flash:
-       loops: 0
-       show_tokens:
-        led: insert, gi, jet_bumper, flasher
-        color1: white
 
 #  trap completed
   slide_trapcomplete_active:

@@ -1,11 +1,12 @@
 #config_version=6
 mode:
-  start_events: start_mode_mystery
-  stop_events: stop_mode_mystery, ball_ended
+  start_events: start_mystery_mode
+  stop_events: stop_mystery_mode, ball_ended, end_mystery
   
 
 event_player:
   mystery_hit: enable_mystery
+  slide_mysteryawardvideo_removed: end_mystery
 
 ball_holds:
   mystery_scoop:
@@ -18,10 +19,33 @@ ball_holds:
 
 #EK added 
 # this is not working but I don't know why. The show in the base.yaml is working
+shows:
+  mystery_lit:
+    - duration: 0.5s
+      lights:
+        (leds): white
+    - duration: 0.5s
+      lights:
+        (leds): off
+  mystery_off:
+    - duration: -1
+      lights:
+        (leds): off  
 
-#show_player:
-#  mystery_hit:     
-#    mystery_flash:
-#      show_tokens:
-#        led: insert
-#        color1: orange
+show_player:
+  mode_mystery_started:     
+    mystery_lit:
+      show_tokens:
+        leds: l_mystery_scoop
+      loops: -1
+  mystery_hit:
+    mystery_off:
+      show_tokens:
+        leds: l_mystery_scoop
+      loops: -1
+  enable_mystery:
+    mystery_flash:
+       loops: 0
+       show_tokens:
+        led: insert, gi, jet_bumper, flasher, l_mystery_scoop
+        color1: white
