@@ -220,29 +220,29 @@ virtual_platform_start_active_switches:
 coils:
   c_flipper_left_main:
     number: 3208-6
-    default_pulse_ms: 20
+    default_pulse_ms: 80
     tags: coils
   c_flipper_left_hold:
     number: 3208-5
-    default_pulse_ms: 20
+    default_pulse_ms: 80
     default_hold_power: 0.2
     tags: coils
   c_flipper_right_main:
     number: 3208-3
-    default_pulse_ms: 20
+    default_pulse_ms: 80
     tags: coils
   c_flipper_right_hold:
     number: 3208-4
-    default_pulse_ms: 20
+    default_pulse_ms: 80
     default_hold_power: 0.2
     tags: coils
   c_flipper_upper_right_main:
     number: 1616_2-9
-    default_pulse_ms: 20
+    default_pulse_ms: 80
     tags: coils
   c_flipper_upper_right_hold:
     number: 1616_2-8
-    default_pulse_ms: 20
+    default_pulse_ms: 80
     default_hold_power: 0.2
     tags: coils
   c_trough_eject:
@@ -262,7 +262,7 @@ coils:
     default_pulse_power: 0.9
   c_mystery_eject:
     number: 1616_1-15
-    default_pulse_ms: 20
+    default_pulse_ms: 80
   c_right_ramp_lift:
     number: 1616_2-10
     default_pulse_ms: 20
@@ -380,7 +380,7 @@ ball_devices:
     ball_switches: s_right_cellar
     eject_coil: c_mystery_eject
     mechanical_eject: true
-    eject_timeouts: 8000ms
+    eject_timeouts: 3000ms
 
   bd_top_saucer:
     ball_switches: s_top_right_reject
@@ -442,9 +442,9 @@ autofire_coils:
   upper_bottom_bumper:
     coil: c_upper_bottom_jet_bumper
     switch: s_upper_bottom_jet_bumper
-  mystery_scoop:
-    coil: c_mystery_eject
-    switch: s_left_cellar
+  #mystery_scoop:
+  #  coil: c_mystery_eject
+  #  switch: s_left_cellar
 
   #left_kickback_test:
   #  coil: c_left_lock_kickback
