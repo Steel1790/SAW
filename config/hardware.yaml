@@ -46,7 +46,7 @@ switches:
     number: 0804-0
     tags: left_flipper
   s_right_flipper_button:
-    number: 0804-1
+    number: 0804-7
     tags: right_flipper   
   s_upper_right_flipper_eos:
     number: 1616_2-8
