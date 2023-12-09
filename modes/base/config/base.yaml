@@ -1034,6 +1034,9 @@ sound_player:
       delay: 10s
       action: play
       loops: -1   
+  player_razorwire_60s_timer_tick{value < 1}:
+    RazorWireFail:
+      action: play
   mode_razorwire_stopped:
     BaseMusic:
       delay: 3s
@@ -1051,9 +1054,8 @@ sound_player:
       delay: 10s
       action: play
       loops: -1      
-  player_reversebeartrap_120s_reversebeartrap_timer_tick{value < 1}:
-    ReverseBearTrapFail:
-      action: play
+#  player_drillchair_drillchair_60s_timer_tick{value < 1}:
+   
   mode_drillchair_stopped:
     BaseMusic:
       delay: 3s
@@ -1077,6 +1079,9 @@ sound_player:
       delay: 10s
       action: play
       loops: -1      
+  player_reversebeartrap_120s_reversebeartrap_timer_tick{value < 1}:
+    ReverseBearTrapFail:
+      action: play
   mode_reversebeartrap_stopped:
     BaseMusic:
       delay: 3s
@@ -1098,6 +1103,9 @@ sound_player:
       delay: 10s
       action: play
       loops: -1      
+  player_quadshotgun_quadshotgun_60s_timer_tick{value < 1}:
+    QuadShotgunFail:
+      action: play
   mode_quadshotgun_stopped:
     BaseMusic:
       delay: 3s
@@ -1147,6 +1155,9 @@ sound_player:
   slide_flammablejellyUI_removed:
     FlammableJellyModeStart:
       action: stop
+  player_flammablejelly_60s_flammablejelly_timer_tick{value < 1}:
+    FlammableJellyFail:
+      action: play
   mode_flammablejelly_stopped:
     BaseMusic:
       delay: 3s

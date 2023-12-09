@@ -388,3 +388,17 @@ show_player:
       show_tokens:
         leds: l_action_button, l_zeptest_mode
       loops: -1
+
+sound_player:
+  selection_mode_razorwire_highlighted:
+    RazorWirePreview:
+      loops: 1
+  selection_mode_FlammableJelly_highlighted:
+    FlammableJellyPreview:
+      loops: 1
+  selection_mode_QuadShotgun_highlighted:
+    QuadShotgunPreview:
+      loops: 1
+  selection_mode_ZepTest_highlighted:
+    ZepsTestPreview:
+      loops: 1
