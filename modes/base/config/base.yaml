@@ -13,10 +13,14 @@ ball_saves:
     timer_start_events: playfield_active
     early_ball_save_events: sw_outlane, s_trough6_active
     auto_launch: true
-    balls_to_save: 3
+    balls_to_save: 1
 #    debug: true  
 
 slide_player:
+  saw_qualify_complete:
+    saw_collect:
+      priority: 400
+      expire: 3s   
   mode_razorwire_complete: 
     trapcomplete:
       priority: 400
@@ -1420,7 +1424,8 @@ widget_player:
     saw_sa_letters:
       action: remove
     saw_saw_letters:
-      action: remove      
+      slide: base_slide_main
+      action: add     
   sg_saw_qualify_subtract_hit{device.counters.saw_qualify_counter.value==1}:
     saw_s_letters:
       action: remove    
@@ -1433,6 +1438,8 @@ widget_player:
       action: add
   mode_cellar_complete:
     cellar_start:
+      action: remove
+    saw_saw_letters:
       action: remove
   mode_selection_mode_stopped:
     saw_letters:
@@ -1447,10 +1454,10 @@ widget_player:
     saw_sa_letters:
       slide: base_slide_main
       action: add  
-  logicblock_saw_qualify_counter_updated{value==3}:
-    saw_saw_letters:
-      slide: base_slide_main
-      action: add   
+  #logicblock_saw_qualify_counter_updated{value==3}:
+  #  saw_saw_letters:
+  #    slide: base_slide_main
+  #    action: add   
 #multiplayer widget displays
   player_added{game.num_players==2}:
     2PlayerGame:

@@ -1,12 +1,12 @@
 #config_version=6
 mode:
-  start_events: start_mystery_mode
-  stop_events: stop_mystery_mode, ball_ended, end_mystery
+  start_events: start_mystery_mode, mode_razorwire_stopped, mode_drillchair_stopped, mode_flammablejelly_stopped, mode_quadshotgun_stopped, mode_reversebeartrap_stopped, mode_zeptest_stopped, mode_hacksaw_multiball_stopped, mode_jigsaw_multiball_stopped, mode_jigsaw_multiball_stopped, mode_hacksaw_multiball_stopped
+  stop_events: stop_mystery_mode, ball_ended, end_mystery, mode_cellar_started
   
 
 event_player:
   mystery_hit: enable_mystery
-  slide_mysteryawardvideo_removed: end_mystery
+  slide_mysteryaward_removed: end_mystery
 
 ball_holds:
   mystery_scoop:
@@ -49,3 +49,42 @@ show_player:
        show_tokens:
         led: insert, gi, jet_bumper, flasher, l_mystery_scoop
         color1: white
+
+random_event_player:
+  mystery_hit:
+    events:
+      mystery_5million: 90 #numbers show probability of event
+      mystery_minus5million: 10
+#      mystery_award_3_event: 20
+#      mystery_award_4_event: 30
+    force_all: true
+
+variable_player:
+  mystery_5million:
+    score: 5000000
+  mystery_minus5million:
+    score: -5000000
+
+slides:
+  Mystery5Million:
+    widgets:
+    - type: video
+      video: Mystery5Million    
+      width: 1366
+      height: 768
+  MysteryMinus5Million:
+    widgets:
+    - type: video
+      video: MysteryMinus5Million    
+      width: 1366
+      height: 768
+
+slide_player:
+  mystery_5million: 
+    Mystery5Million:
+      priority: 1
+      expire: 11s
+  mystery_minus5million: 
+    MysteryMinus5Million:
+      priority: 1
+      expire: 11s

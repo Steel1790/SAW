@@ -217,10 +217,10 @@ slide_player:
     sa_collect:
       priority: 190
       expire: 3s
-  logicblock_saw_qualify_counter_updated{value==3}:
-    saw_collect:
-      priority: 200
-      expire: 3s         
+  #saw_qualify_complete:
+  #  saw_collect:
+  #    priority: 200
+  #    expire: 3s         
   sg_saw_qualify_subtract_hit:
     s_subtract:
       priority: 195
