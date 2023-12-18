@@ -376,11 +376,11 @@ ball_devices:
     mechanical_eject: true
     eject_timeouts: 1.5s
 
-  bd_bathroom:
-    ball_switches: s_right_cellar
-    eject_coil: c_mystery_eject
-    mechanical_eject: true
-    eject_timeouts: 1.5s
+  #bd_bathroom:
+  #  ball_switches: s_right_cellar
+  #  eject_coil: c_mystery_eject
+  #  mechanical_eject: true
+  #  eject_timeouts: 1.5s
 
   bd_top_saucer:
     ball_switches: s_top_right_reject
