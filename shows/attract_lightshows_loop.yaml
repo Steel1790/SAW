@@ -1,61 +1,67 @@
 #show_version=6
-- duration: 5s
-  shows: 
-      gi_flicker:
-        loops: 6
-        speed: 2
-        show_tokens:
-          color1: ffffff
 
-- duration: .5s
-  shows: 
-      gi_on:
-       # loops: -1
-       # speed: 10
-        show_tokens:
-          color1: ffffff
+# EK Notes: If loops are not defined, it will repeat for the duration time. If loops = 0, then it will play once. 1 loop = 2 plays.
 
-# - duration: 12s
+
+# - duration: 5s
+#   shows: 
+#       gi_flicker:
+#         loops: 6
+#         speed: 2
+#         show_tokens:
+#           color1: ffffff
+
+# - duration: .5s
+#   shows: 
+#       gi_on:
+#        # loops: -1
+#        # speed: 10
+#         show_tokens:
+#           color1: ffffff
+
+
+# - duration: 17s
 #   shows: 
 #       rtb_order_test:
-#         loops: 2
-#         speed: 5
+#         loops: 0
+#         speed: 2
 
-- duration: 29s
-  shows: 
-      test_128p1_ordercheck:
-        loops: 2
-        speed: 1
-        show_tokens:
-          color1: ffffff
+# - duration: 17s
+#   shows: 
+#       ltb_order_test:
+#         loops: 0
+#         speed: 2        
 
-      test_128p2_ordercheck:
-        loops: 2
-        speed: 1
-        show_tokens:
-          color1: ffffff      
+# - duration: 29s
+#   shows: 
+      # test_128p1_ordercheck:
+      #   loops: 2
+      #   speed: 1
+      #   show_tokens:
+      #     color1: ffffff
 
-      test_128p3_ordercheck:
-        loops: 2
-        speed: 1
-        show_tokens:
-          color1: ffffff   
+      # test_128p2_ordercheck:
+      #   loops: 2
+      #   speed: 1
+      #   show_tokens:
+      #     color1: ffffff      
 
-      test_128p4_ordercheck:
-        loops: 2
-        speed: 1
-        show_tokens:
-          color1: ffffff  
+      # test_128p3_ordercheck:
+      #   loops: 2
+      #   speed: 1
+      #   show_tokens:
+      #     color1: ffffff   
+
+      # test_128p4_ordercheck:
+      #   loops: 2
+      #   speed: 1
+      #   show_tokens:
+      #     color1: ffffff  
 
       # test_led_port_check:
       #   loops: 3
       #   speed: 1  
 
-# - duration: 3s
-#   shows: 
-#       rw_white_sweeps:
-#         loops: 1
-#         speed: 5
 
 # - duration: 11s
 #   shows: 
@@ -75,7 +81,7 @@
 #   shows: 
 #       attract_red_wash:
 #         loops: 1
-#         speed: 30
+#         speed: 20
 
 # - duration: 8s
 #   shows: 
@@ -87,37 +93,33 @@
 #   shows: 
 #       disc_middle_hot_saw:
 #         loops: 1
-#         speed: 40
+#         speed: 30
 
 # - duration: 5s
 #   shows: 
 #       flammable_jelly_3:
-#         loops: 2
+#         loops: 1
 #         speed: 20        
 
-# - duration: 8s
-#   shows:
-#       bonus_chase:
-#         loops: 6
-#         speed: 10
+- duration: 12s
+  shows:      
+      # skillshot_chase:
+      #   # loops: 15
+      #   speed: 7
+      #   show_tokens:
+      #     color1: ff5733
 
-# - duration: 5s
-#   shows:      
-#       skillshot_chase:
-#         loops: 15
-#         speed: 7
-#         show_tokens:
-#           color1: ff5733
+      # top_drop_chase:
+      #   loops: 12
+      #   speed: 8
+      #   show_tokens:
+      #     color1: ff5733
 
-#       top_drop_chase:
-#         loops: 12
-#         speed: 8
-#         show_tokens:
-#           color1: ff5733
-
-#       bonus_chase:
-#         loops: 10
-#         speed: 8       
+      # bonus_chase:
+      #   loops: 10
+      #   speed: 8
+      #   show_tokens:
+      #     color1: ff5733       
 
       # rtb_green_single_reverse_rotation:
       #   loops: 7
@@ -135,17 +137,45 @@
       #   loops: 2
       #   speed: 15       
 
-# - duration: 3s
+      # attract_color_stacker:
+      #   loops: -1
+      #   speed: 15   
+
+      # attract_color_wipes:
+      #   loops: -1
+      #   speed: 15   
+
+      # attract_color_wash:
+      #   loops: -1
+      #   speed: 15   
+
+      top_pops_fire:
+        loops: -1
+        speed: 15   
+
+# - duration: 10s
 #   shows:       
 #       jet_bumpers_flash:
 #         loops: 1
+#         speed: 1
+
+# - duration: 10s
+#   shows:       
+#       jet_bumpers_color_cycle:
+#         loops: 1
 #         speed: 3
 
-# - duration: 15s
-#  shows: 
-#      attract_color_wash:
-#        loops: 1
-#        speed: 5
+# - duration: 10s
+#   shows:       
+#       jet_bumpers_color_chase:
+#         loops: 1
+#         speed: 3
+
+# - duration: 10s
+#   shows:       
+#       jet_bumpers_color_chase_2:
+#         loops: 1
+#         speed: 10
 
 # - duration: 5s
 #   shows: 
@@ -155,18 +185,48 @@
 #         show_tokens:
 #           color1: "00bfff"
 
-      # rtb_red_blue_rotation:
-      #   loops: 7
-      #   speed: 30
+# - duration: 5s
+#   shows: 
+#       rtb_red_blue_rotation:
+#         loops: 7
+#         speed: 30
 
-# - duration: 8s
+# - duration: 5s
 #   shows: 
 #       rtb_green_single_rotation:
 #         loops: 7
 #         speed: 40    
 
-# - duration: 8s
+# - duration: 5s
 #   shows: 
 #       rtb_green_single_reverse_rotation:
 #         loops: 7
 #         speed: 40
+
+# This lightshow does not work well. Needs to be redone.
+# - duration: .5s
+#   shows: 
+#       rainbow_saucer:
+#        loops: 0
+#        speed: 5
+
+#This lightshow crashes MPF
+# - duration: 15s
+#  shows: 
+#      attract_color_wash:
+#        loops: 1
+#        speed: 5
+
+# This lightshow does not work well. Needs to be redone.
+# - duration: 3s
+#   shows: 
+#       rw_white_sweeps:
+#         loops: 1
+#         speed: 5
+
+# This lightshow does not work.
+# - duration: .5s
+#   shows: 
+#       rainbow_stacker:
+#        loops: 0
+#        speed: 10
