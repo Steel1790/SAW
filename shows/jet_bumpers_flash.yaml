@@ -1,13 +1,9 @@
 #show_version=6
 - time: 0
   lights:
-    top_bumper: red
+    top_bumper: bd0000
+    bottom_bumper: dea30d
 - time: '+1'
   lights:
-    bottom_bumper: blue
-- time: '+1'
-  lights:
-    top_bumper: blue
-- time: '+1'
-  lights:
-    bottom_bumper: red
+    top_bumper: dea30d
+    bottom_bumper: bd0000

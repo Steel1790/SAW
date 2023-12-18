@@ -862,11 +862,11 @@ sound_player:
       delay: 5s
       action: play
       loops: -1
-  mode_bonus_stopped{current_player.ball == 1 or current_player.ball == 2}:
-    BaseMusic:
-      delay: 5s
-      action: play
-      loops: -1
+  # mode_bonus_stopped{current_player.ball == 1 or current_player.ball == 2}:
+  #   BaseMusic:
+  #     delay: 5s
+  #     action: play
+  #     loops: -1
 
   mode_base_stopped:
     BaseMusic:

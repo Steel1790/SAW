@@ -3,10 +3,10 @@
 lights:
   l_left_escape:
     number: led128-4-4
-    tags: insert, led128pf
+    tags: insert, led128pf, escape
   l_right_escape:
     number: led128-4-27
-    tags: insert, led128pf
+    tags: insert, led128pf, escape
   l_top_drop1:
     number: led256-5-11
     tags: insert, led256p5
@@ -29,28 +29,28 @@ lights:
 # jigsaw's workshop circle of 8 round inserts
   l_jw_key:
     number: led128-2-12
-    tags: insert, led128p2
+    tags: insert, led128p2, jw_insert
   l_jw_gun:
     number: led128-2-13
-    tags: insert, led128p2
+    tags: insert, led128p2, jw_insert
   l_jw_drill:
     number: led128-2-6
-    tags: insert, led128p2
+    tags: insert, led128p2, jw_insert
   l_jw_candle:
     number: led128-2-7
-    tags: insert, led128p2
+    tags: insert, led128p2, jw_insert
   l_jw_taperecorder:
     number: led128-2-8 
-    tags: insert, led128p2
+    tags: insert, led128p2, jw_insert
   l_jw_bathtub:
     number: led128-2-9  
-    tags: insert, led128p2
+    tags: insert, led128p2, jw_insert
   l_jw_syringe:
     number: led128-2-10
-    tags: insert, led128p2
+    tags: insert, led128p2, jw_insert
   l_jw_gears:
     number: led128-2-11
-    tags: insert, led128p2
+    tags: insert, led128p2, jw_insert
 
 # jet bumpers
   l_left_bottom_bumper_1:
@@ -300,52 +300,52 @@ lights:
 
   l_lower_top_bumper_1:
     number: led256-4-17
-    tags: jet_bumper, top_bumper, lower_bottom_bumper, led256p4
+    tags: jet_bumper, top_bumper, lower_top_bumper, led256p4
   l_lower_top_bumper_2:
     number: led256-4-18
-    tags: jet_bumper, top_bumper, lower_bottom_bumper, led256p4
+    tags: jet_bumper, top_bumper, lower_top_bumper, led256p4
   l_lower_top_bumper_3:
     number: led256-4-19
-    tags: jet_bumper, top_bumper, lower_bottom_bumper, led256p4
+    tags: jet_bumper, top_bumper, lower_top_bumper, led256p4
   l_lower_top_bumper_4:
     number: led256-4-20
-    tags: jet_bumper, top_bumper, lower_bottom_bumper, led256p4
+    tags: jet_bumper, top_bumper, lower_top_bumper, led256p4
   l_lower_top_bumper_5:
     number: led256-4-21
-    tags: jet_bumper, top_bumper, lower_bottom_bumper, led256p4
+    tags: jet_bumper, top_bumper, lower_top_bumper, led256p4
   l_lower_top_bumper_6:
     number: led256-4-22
-    tags: jet_bumper, top_bumper, lower_bottom_bumper, led256p4
+    tags: jet_bumper, top_bumper, lower_top_bumper, led256p4
   l_lower_top_bumper_7:
     number: led256-4-23
-    tags: jet_bumper, top_bumper, lower_bottom_bumper, led256p4
+    tags: jet_bumper, top_bumper, lower_top_bumper, led256p4
   l_lower_top_bumper_8:
     number: led256-4-24
-    tags: jet_bumper, top_bumper, lower_bottom_bumper, led256p4
+    tags: jet_bumper, top_bumper, lower_top_bumper, led256p4
   l_lower_top_bumper_9:
     number: led256-4-25
-    tags: jet_bumper, top_bumper, lower_bottom_bumper, led256p4
+    tags: jet_bumper, top_bumper, lower_top_bumper, led256p4
   l_lower_top_bumper_10:
     number: led256-4-26
-    tags: jet_bumper, top_bumper, lower_bottom_bumper, led256p4
+    tags: jet_bumper, top_bumper, lower_top_bumper, led256p4
   l_lower_top_bumper_11:
     number: led256-4-27
-    tags: jet_bumper, top_bumper, lower_bottom_bumper, led256p4
+    tags: jet_bumper, top_bumper, lower_top_bumper, led256p4
   l_lower_top_bumper_12:
     number: led256-4-28
-    tags: jet_bumper, top_bumper, lower_bottom_bumper, led256p4
+    tags: jet_bumper, top_bumper, lower_top_bumper, led256p4
   l_lower_top_bumper_13:
     number: led256-4-29
-    tags: jet_bumper, top_bumper, lower_bottom_bumper, led256p4
+    tags: jet_bumper, top_bumper, lower_top_bumper, led256p4
   l_lower_top_bumper_14:
     number: led256-4-30
-    tags: jet_bumper, top_bumper, lower_bottom_bumper, led256p4
+    tags: jet_bumper, top_bumper, lower_top_bumper, led256p4
   l_lower_top_bumper_15:
     number: led256-4-31
-    tags: jet_bumper, top_bumper, lower_bottom_bumper, led256p4
+    tags: jet_bumper, top_bumper, lower_top_bumper, led256p4
   l_lower_top_bumper_16:
     number: led256-4-32
-    tags: jet_bumper, top_bumper, lower_bottom_bumper, led256p4
+    tags: jet_bumper, top_bumper, lower_top_bumper, led256p4
 
   l_right_ramp_triangle1:
     number: led128-2-16

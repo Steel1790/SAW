@@ -1,0 +1,33 @@
+#show_version=6
+- time: 0
+  lights:
+    top_bumper: ffffff
+    bottom_bumper: off
+- time: '+1'
+  lights:
+    top_bumper: yellow
+    bottom_bumper: white
+- time: '+1'
+  lights:
+    top_bumper: orange
+    bottom_bumper: yellow
+- time: '+1'
+  lights:
+    top_bumper: red
+    bottom_bumper: orange     
+- time: '+1'
+  lights:
+    top_bumper: purple
+    bottom_bumper: red 
+- time: '+1'
+  lights:
+    top_bumper: blue
+    bottom_bumper: purple
+- time: '+1'
+  lights:
+    top_bumper: green
+    bottom_bumper: blue
+- time: '+1'
+  lights:
+    top_bumper: 000000
+    bottom_bumper: green    

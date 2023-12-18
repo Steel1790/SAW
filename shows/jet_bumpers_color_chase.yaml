@@ -1,0 +1,106 @@
+#show_version=6
+- time: 0
+  lights:
+    right_top_bumper: ffffff
+    left_top_bumper: off
+    lower_top_bumper: off
+    top_bottom_bumper: off
+    left_bottom_bumper: off
+    right_bottom_bumper: off
+- time: '+1'
+  lights:
+    right_top_bumper: yellow
+    left_top_bumper: ffffff
+    lower_top_bumper: off
+    top_bottom_bumper: off
+    left_bottom_bumper: off
+    right_bottom_bumper: off
+- time: '+1'
+  lights:
+    right_top_bumper: orange
+    left_top_bumper: yellow
+    lower_top_bumper: ffffff
+    top_bottom_bumper: off
+    left_bottom_bumper: off
+    right_bottom_bumper: off
+- time: '+1'
+  lights:
+    right_top_bumper: red
+    left_top_bumper: orange
+    lower_top_bumper: yellow
+    top_bottom_bumper: ffffff
+    left_bottom_bumper: off
+    right_bottom_bumper: off   
+- time: '+1'
+  lights:
+    right_top_bumper: purple
+    left_top_bumper: red
+    lower_top_bumper: orange
+    top_bottom_bumper: yellow
+    left_bottom_bumper: ffffff
+    right_bottom_bumper: off
+- time: '+1'
+  lights:
+    right_top_bumper: blue
+    left_top_bumper: purple
+    lower_top_bumper: red
+    top_bottom_bumper: orange
+    left_bottom_bumper: yellow
+    right_bottom_bumper: ffffff
+- time: '+1'
+  lights:
+    right_top_bumper: green
+    left_top_bumper: blue
+    lower_top_bumper: purple
+    top_bottom_bumper: red
+    left_bottom_bumper: orange
+    right_bottom_bumper: yellow
+- time: '+1'
+  lights:
+    right_top_bumper: off
+    left_top_bumper: green
+    lower_top_bumper: blue
+    top_bottom_bumper: purple
+    left_bottom_bumper: red
+    right_bottom_bumper: orange
+- time: '+1'
+  lights:
+    right_top_bumper: off
+    left_top_bumper: off
+    lower_top_bumper: green
+    top_bottom_bumper: blue
+    left_bottom_bumper: purple
+    right_bottom_bumper: red
+- time: '+1'
+  lights:
+    right_top_bumper: off
+    left_top_bumper: off
+    lower_top_bumper: off
+    top_bottom_bumper: green
+    left_bottom_bumper: blue
+    right_bottom_bumper: purple
+- time: '+1'
+  lights:
+    right_top_bumper: off
+    left_top_bumper: off
+    lower_top_bumper: off
+    top_bottom_bumper: off
+    left_bottom_bumper: green
+    right_bottom_bumper: blue
+- time: '+1'
+  lights:
+    right_top_bumper: off
+    left_top_bumper: off
+    lower_top_bumper: off
+    top_bottom_bumper: off
+    left_bottom_bumper: off
+    right_bottom_bumper: green
+- time: '+1'
+  lights:
+    right_top_bumper: off
+    left_top_bumper: off
+    lower_top_bumper: off
+    top_bottom_bumper: off
+    left_bottom_bumper: off
+    right_bottom_bumper: off
+
