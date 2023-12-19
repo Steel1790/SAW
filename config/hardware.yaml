@@ -30,7 +30,8 @@ fast:
         model: FP-EXP-2000
           #debug: true
 machine:
-  #min_balls: 3
+  balls_installed: 6 #How many balls are physically in your game
+  min_balls: 5 #How few balls can be accounted for before you can start a game
 
 switches:
   # s_plumb_bob_tilt:
@@ -373,8 +374,7 @@ ball_devices:
   bd_mystery:
     ball_switches: s_left_cellar
     eject_coil: c_mystery_eject
-    mechanical_eject: true
-    eject_timeouts: 1.5s
+    eject_timeouts: 4s
 
   #bd_bathroom:
   #  ball_switches: s_right_cellar
@@ -385,13 +385,11 @@ ball_devices:
   bd_top_saucer:
     ball_switches: s_top_right_reject
     eject_coil: c_top_eject
-    mechanical_eject: true
     eject_timeouts: 1.5s 
 
   bd_hacksaw:
     ball_switches: s_left_lock_3
     eject_coil: c_left_lock_kickback
-    mechanical_eject: true
     eject_timeouts: 5s
 
 playfields:
