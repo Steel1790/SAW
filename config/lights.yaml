@@ -701,104 +701,127 @@ lights:
 
 # spinning discs
   l_left_disc_1:
-    number: led128-1-25
+    number: led128-1-1
     tags: left_disc, discs, led128p1
   l_left_disc_2:
-    number: led128-1-26
+    number: led128-1-2
     tags: left_disc, discs, led128p1
   l_left_disc_3:
-    number: led128-1-27
+    number: led128-1-3
     tags: left_disc, discs, led128p1
   l_left_disc_4:
-    number: led128-1-28
+    number: led128-1-4
     tags: left_disc, discs, led128p1
   l_left_disc_5:
-    number: led128-1-29
+    number: led128-1-5
     tags: left_disc, discs, led128p1
   l_left_disc_6:
-    number: led128-1-30
+    number: led128-1-6
     tags: left_disc, discs, led128p1
   l_left_disc_7:
-    number: led128-1-31
+    number: led128-1-7
     tags: left_disc, discs, led128p1
   l_left_disc_8:
-    number: led128-1-32
+    number: led128-1-8
     tags: left_disc, discs, led128p1
+  l_left_disc_9:
+    number: led128-1-9
+    tags: left_disc, discs, led128p1
+  l_left_disc_10:
+    number: led128-1-10
+    tags: left_disc, discs, led128p1    
+  l_left_disc_11:
+    number: led128-1-11
+    tags: left_disc, discs, led128p1
+  l_left_disc_12:
+    number: led128-1-12
+    tags: left_disc, discs, led128p1     
 
   l_middle_disc_1:
-    number: led128-1-9
-    tags: middle_disc, discs, led128p1
-  l_middle_disc_2:
-    number: led128-1-10
-    tags: middle_disc, discs, led128p1
-  l_middle_disc_3:
-    number: led128-1-11
-    tags: middle_disc, discs, led128p1
-  l_middle_disc_4:
-    number: led128-1-12
-    tags: middle_disc, discs, led128p1
-  l_middle_disc_5:
     number: led128-1-13
     tags: middle_disc, discs, led128p1
-  l_middle_disc_6:
+  l_middle_disc_2:
     number: led128-1-14
     tags: middle_disc, discs, led128p1
-  l_middle_disc_7:
+  l_middle_disc_3:
     number: led128-1-15
     tags: middle_disc, discs, led128p1
-  l_middle_disc_8:
+  l_middle_disc_4:
     number: led128-1-16
     tags: middle_disc, discs, led128p1
-  l_middle_disc_9:
+  l_middle_disc_5:
     number: led128-1-17
     tags: middle_disc, discs, led128p1
-  l_middle_disc_10:
+  l_middle_disc_6:
     number: led128-1-18
     tags: middle_disc, discs, led128p1
-  l_middle_disc_11:
+  l_middle_disc_7:
     number: led128-1-19
     tags: middle_disc, discs, led128p1
-  l_middle_disc_12:
+  l_middle_disc_8:
     number: led128-1-20
     tags: middle_disc, discs, led128p1
-  l_middle_disc_13:
+  l_middle_disc_9:
     number: led128-1-21
     tags: middle_disc, discs, led128p1
-  l_middle_disc_14:
+  l_middle_disc_10:
     number: led128-1-22
     tags: middle_disc, discs, led128p1
-  l_middle_disc_15:
+  l_middle_disc_11:
     number: led128-1-23
     tags: middle_disc, discs, led128p1
-  l_middle_disc_16:
+  l_middle_disc_12:
     number: led128-1-24
+    tags: middle_disc, discs, led128p1
+  l_middle_disc_13:
+    number: led128-1-25
+    tags: middle_disc, discs, led128p1
+  l_middle_disc_14:
+    number: led128-1-26
+    tags: middle_disc, discs, led128p1
+  l_middle_disc_15:
+    number: led128-1-27
+    tags: middle_disc, discs, led128p1
+  l_middle_disc_16:
+    number: led128-1-28
     tags: middle_disc, discs, led128p1
 
   l_right_disc_1:
-    number: led128-1-1
-    tags: right_disc, discs, led128p1
+    number: led256-5-12
+    tags: right_disc, discs, led256p5
   l_right_disc_2:
-    number: led128-1-2
-    tags: right_disc, discs, led128p1
+    number: led256-5-13
+    tags: right_disc, discs, led256p5
   l_right_disc_3:
-    number: led128-1-3
-    tags: right_disc, discs, led128p1
+    number: led256-5-14
+    tags: right_disc, discs, led256p5
   l_right_disc_4:
-    number: led128-1-4
-    tags: right_disc, discs, led128p1
+    number: led256-5-15
+    tags: right_disc, discs, led256p5
   l_right_disc_5:
-    number: led128-1-5
-    tags: right_disc, discs, led128p1
+    number: led256-5-16
+    tags: right_disc, discs, led256p5
   l_right_disc_6:
-    number: led128-1-6
-    tags: right_disc, discs, led128p1
+    number: led256-5-17
+    tags: right_disc, discs, led256p5
   l_right_disc_7:
-    number: led128-1-7
-    tags: right_disc, discs, led128p1
+    number: led256-5-18
+    tags: right_disc, discs, led256p5
   l_right_disc_8:
-    number: led128-1-8
-    tags: right_disc, discs, led128p1
-
+    number: led256-5-19
+    tags: right_disc, discs, led256p5
+  l_right_disc_9:
+    number: led256-5-20
+    tags: right_disc, discs, led256p5
+  l_right_disc_10:
+    number: led256-5-21
+    tags: right_disc, discs, led256p5        
+  l_right_disc_11:
+    number: led256-5-22
+    tags: right_disc, discs, led256p5
+  l_right_disc_12:
+    number: led256-5-23
+    tags: right_disc, discs, led256p5  
 
 # hacksaw multiball locks
   l_hmb_lock_1:
@@ -844,22 +867,22 @@ lights:
 
 # backpanel
   l_backpanel_1:
-    number: led256-5-12
+    number: led256-5-24
     tags: backpanel, led256p5
   l_backpanel_2:
-    number: led256-5-13
+    number: led256-5-25
     tags: backpanel, led256p5
   l_backpanel_3:
-    number: led256-5-14
+    number: led256-5-26
     tags: backpanel, led256p5
   l_backpanel_4:
-    number: led256-5-15
+    number: led256-5-27
     tags: backpanel, led256p5
   l_backpanel_5:
-    number: led256-5-16
+    number: led256-5-28
     tags: backpanel, led256p5
   l_backpanel_6:
-    number: led256-5-17
+    number: led256-5-29
     tags: backpanel, led256p5
 
 
