@@ -1,93 +1,107 @@
 events:
-  game_ended: 0
-  game_started: 683
+  game_ended: 8
+  game_started: 720
 player:
   score:
-    average: 0
-    top: []
-    total: 0
+    average: 21505625.0
+    top:
+    - 94234349
+    - 24426993
+    - 18523996
+    - 13795333
+    - 7796332
+    - 7535999
+    - 3131998
+    - 2600000
+    total: 8
 shots:
   bottom_l_pop: 38
   bottom_r_pop: 11
   bottom_t_pop: 11
   cellar: 187
-  dt_drop2: 710
+  dt_drop2: 712
   dt_drop3: 300
   dt_drop4: 170
-  lower_l_pop: 3
-  lower_r_pop: 37
+  lower_l_pop: 33
+  lower_r_pop: 76
   my_first_shot: 160
-  shot_inner_loop: 9
-  shot_left_loop: 18
-  shot_left_return_lane: 10
-  shot_left_standup: 19
-  shot_left_standup_rightramp: 16
-  shot_right_loop: 19
-  shot_right_standup: 11
-  shot_right_standup_rightramp: 22
+  shot_inner_loop: 104
+  shot_left_loop: 44
+  shot_left_return_lane: 27
+  shot_left_standup: 59
+  shot_left_standup_rightramp: 57
+  shot_right_loop: 157
+  shot_right_standup: 41
+  shot_right_standup_rightramp: 61
   spinner: 97
-  up_b_pop: 2
-  upper_b_pop: 78
-  upper_l_pop: 527
-  upper_r_pop: 53
+  up_b_pop: 17
+  upper_b_pop: 112
+  upper_l_pop: 537
+  upper_r_pop: 62
 switches:
-  s_action_button: 41
-  s_ball_shooter_lane: 9
+  s_action_button: 180
+  s_ball_shooter_lane: 171
   s_eject: 0
   s_elevator_hold: 0
-  s_enter_left_ramp: 664
-  s_inner_loop: 9
-  s_left_110_point: 0
-  s_left_bottom_jet_bumper: 52
-  s_left_cellar: 0
+  s_enter_left_ramp: 668
+  s_inner_loop: 120
+  s_left_110_point: 70
+  s_left_bottom_jet_bumper: 182
+  s_left_cellar: 210
   s_left_flipper: 334
-  s_left_inlane: 303
-  s_left_lock_1: 2
-  s_left_lock_2: 3
-  s_left_lock_3: 3
-  s_left_loop_bottom: 14
-  s_left_loop_top: 4
-  s_left_outlane: 0
+  s_left_flipper_button: 672
+  s_left_flipper_eos: 660
+  s_left_inlane: 333
+  s_left_lock_1: 13
+  s_left_lock_2: 8
+  s_left_lock_3: 13
+  s_left_loop_bottom: 44
+  s_left_loop_top: 22
+  s_left_outlane: 10
   s_left_ramp_score_bottom: 648
   s_left_ramp_score_top: 680
-  s_left_slingshot: 3
-  s_left_standup: 19
-  s_left_standup_right_ramp: 16
-  s_left_top_jet_bumper: 918
+  s_left_slingshot: 191
+  s_left_standup: 76
+  s_left_standup_right_ramp: 78
+  s_left_top_jet_bumper: 999
   s_lockdown_button: 0
-  s_lower_bank_drop_target_opto_lower: 294
-  s_lower_bank_drop_target_opto_middle: 501
-  s_lower_bank_drop_target_opto_upper: 922
-  s_lower_top_jet_bumper: 88
-  s_middle_standup: 0
+  s_lower_bank_drop_target_opto_lower: 324
+  s_lower_bank_drop_target_opto_middle: 526
+  s_lower_bank_drop_target_opto_upper: 956
+  s_lower_top_jet_bumper: 368
+  s_middle_standup: 48
   s_outhole: 0
   s_plumb_bob_tilt: 1
   s_plunger: 7
-  s_right_110_point: 0
-  s_right_bottom_jet_bumper: 61
-  s_right_cellar: 1928
+  s_right_110_point: 142
+  s_right_bottom_jet_bumper: 221
+  s_right_cellar: 1986
   s_right_flipper: 353
-  s_right_inlane: 0
-  s_right_loop_bottom: 13
-  s_right_loop_top: 6
-  s_right_outlane: 0
-  s_right_ramp_down: 27
+  s_right_flipper_button: 1016
+  s_right_flipper_eos: 658
+  s_right_inlane: 39
+  s_right_loop_bottom: 104
+  s_right_loop_top: 90
+  s_right_outlane: 11
+  s_right_ramp_down: 35
   s_right_ramp_score_bottom: 26
-  s_right_ramp_score_top: 28
-  s_right_slingshot: 0
-  s_right_standup: 11
-  s_right_standup_right_ramp: 22
-  s_right_top_jet_bumper: 56
-  s_spinner: 4801
-  s_start: 313
-  s_top_right_reject: 0
-  s_trough1: 9
-  s_trough2: 6
-  s_trough3: 7
-  s_trough4: 1
-  s_trough5: 1
-  s_trough6: 1
-  s_trough_jam: 10
-  s_upper_bank_drop_target_opto: 82
-  s_upper_bottom_jet_bumper: 24
+  s_right_ramp_score_top: 29
+  s_right_slingshot: 58
+  s_right_standup: 57
+  s_right_standup_right_ramp: 78
+  s_right_top_jet_bumper: 104
+  s_spinner: 5177
+  s_start: 330
+  s_top_right_reject: 30
+  s_trough1: 173
+  s_trough2: 87
+  s_trough3: 87
+  s_trough4: 81
+  s_trough5: 81
+  s_trough6: 66
+  s_trough_jam: 90
+  s_upper_bank_drop_target_opto: 126
+  s_upper_bottom_jet_bumper: 79
   s_upper_right_flipper: 0
+  s_upper_right_flipper_button: 928
+  s_upper_right_flipper_eos: 835

@@ -19,13 +19,16 @@
 #         show_tokens:
 #           color1: ffffff 
 
-# - duration: 40s
-#   shows: 
-#       test_128p1_ordercheck:
-#         loops: 2
-#         speed: 1
-#         show_tokens:
-#           color1: ffffff
+- duration: 40s
+  shows: 
+      test_led_port_check:
+        loops: 3
+        speed: 1      
+      # test_128p1_ordercheck:
+      #   loops: 2
+      #   speed: 1
+      #   show_tokens:
+      #     color1: ffffff
 
       # test_128p2_ordercheck:
       #   loops: 2
@@ -44,10 +47,6 @@
       #   speed: 1
       #   show_tokens:
       #     color1: ffffff  
-
-      # test_led_port_check:
-      #   loops: 3
-      #   speed: 1  
 
 
 # - duration: 11s
@@ -88,8 +87,8 @@
 #         loops: 1
 #         speed: 20        
 
-- duration: 12s
-  shows:      
+# - duration: 12s
+#   shows:      
       # skillshot_chase:
       #   # loops: 15
       #   speed: 6
@@ -112,9 +111,9 @@
       #   # loops: 10
       #   speed: 8         
 
-      skillshot_color_wash:
-        # loops: 10
-        speed: 8                     
+      # skillshot_color_wash:
+      #   # loops: 10
+      #   speed: 8                     
 
       # rtb_green_single_reverse_rotation:
       #   loops: 7
