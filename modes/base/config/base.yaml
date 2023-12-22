@@ -98,35 +98,35 @@ variable_player:
   sw_loop:
     score: 115000
   minimode_pops_complete:
-    score: 3000000
+    #score: 3000000
     bonus_gears: 1
     value_type: int
   minimode_standups_complete:
-    score: 3000000
+    #score: 3000000
     bonus_candles: 1
     value_type: int    
   minimode_scoops_complete:
-    score: 3000000   
+    #score: 3000000   
     bonus_bathtubs: 1
     value_type: int    
   minimode_inlanes_complete:
-    score: 3000000   
+    #score: 3000000   
     bonus_taperecorders: 1
     value_type: int    
   minimode_spinners_complete:
-    score: 3000000     
+    #score: 3000000     
     bonus_handguns: 1
     value_type: int    
   minimode_ramps_complete:
-    score: 3000000 
+    #score: 3000000 
     bonus_keys: 1
     value_type: int    
   minimode_loops_complete:
-    score: 3000000  
+    #score: 3000000  
     bonus_hacksaws: 1
     value_type: int    
   minimode_drops_complete:
-    score: 3000000       
+    #score: 3000000       
     bonus_syringes: 1
     value_type: int    
   multiplier_progress_counter_complete:
@@ -1634,7 +1634,7 @@ ball_holds:
     hold_devices: bd_mystery
     enable_events: saw_qualify_complete
     disable_events: multiball_active
-    release_one_events: slide_drillchair_pops_active, slide_flammablejellyUI_active, slide_quadshotgun_spinner, slide_razorwire_pops_active, slide_reversebeartrapUI_active, slide_zeptestUI_active              
+    release_one_events: slide_drillchair_pops_active, slide_flammablejellyUI_active, slide_quadshotgun_spinner, slide_razorwire_pops_active, slide_reversebeartrapUI_active, slide_zeptestUI_active         
 
 coil_player:
   logicblock_saw_qualify_counter_updated{value==1}:

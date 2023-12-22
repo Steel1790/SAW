@@ -49,12 +49,12 @@ shots:
     
 
 variable_player:
-  upper_l_pop_hit:
-    score: 2150
-  upper_r_pop_hit:
-    score: 2150
-  upper_b_pop_hit:
-    score: 2150
+  logicblock_razorwire_hit{step==1}:
+    score: 1000000
+  logicblock_razorwire_hit{step==2}:
+    score: 1000000
+  mode_razorwire_complete:
+    score: 6500000 
   counter_razorwire_pops_counter_hit:
     razorwire_pops_counter:
       action: set
