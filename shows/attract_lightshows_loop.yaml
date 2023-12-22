@@ -17,28 +17,15 @@
 #        # loops: -1
 #        # speed: 10
 #         show_tokens:
+#           color1: ffffff 
+
+# - duration: 40s
+#   shows: 
+#       test_128p1_ordercheck:
+#         loops: 2
+#         speed: 1
+#         show_tokens:
 #           color1: ffffff
-
-
-# - duration: 17s
-#   shows: 
-#       rtb_order_test:
-#         loops: 0
-#         speed: 2
-
-# - duration: 17s
-#   shows: 
-#       ltb_order_test:
-#         loops: 0
-#         speed: 2        
-
-# - duration: 29s
-#   shows: 
-      # test_128p1_ordercheck:
-      #   loops: 2
-      #   speed: 1
-      #   show_tokens:
-      #     color1: ffffff
 
       # test_128p2_ordercheck:
       #   loops: 2
@@ -105,21 +92,29 @@
   shows:      
       # skillshot_chase:
       #   # loops: 15
-      #   speed: 7
+      #   speed: 6
       #   show_tokens:
       #     color1: ff5733
 
       # top_drop_chase:
-      #   loops: 12
+      #   # loops: 12
       #   speed: 8
       #   show_tokens:
       #     color1: ff5733
 
       # bonus_chase:
-      #   loops: 10
+      #   # loops: 10
       #   speed: 8
       #   show_tokens:
       #     color1: ff5733       
+
+      # shotgun_blast_top_pops:
+      #   # loops: 10
+      #   speed: 8         
+
+      skillshot_color_wash:
+        # loops: 10
+        speed: 8                     
 
       # rtb_green_single_reverse_rotation:
       #   loops: 7
@@ -130,8 +125,15 @@
       #   speed: 30
 
       # disc_middle_hot_saw:
-      #   loops: 1
+      #   # loops: 1
       #   speed: 40
+
+      # flash_token:
+      #   # loops: 1
+      #   speed: 10
+      #   show_tokens:
+      #     led: l_middle_disc_1
+      #     color1: ff5733        
 
       # flammable_jelly_3:
       #   loops: 2
@@ -149,9 +151,25 @@
       #   loops: -1
       #   speed: 15   
 
-      top_pops_fire:
-        loops: -1
-        speed: 15   
+      # fire_top_pops:
+      #   loops: -1
+      #   speed: 15   
+
+      # fire_bottom_pops:
+      #   loops: -1
+      #   speed: 15      
+
+      # opposite_sweep_blue_white:
+      #   loops: -1
+      #   speed: 15      
+
+      # spinning_top_pops:
+      #   # loops: -1
+      #   speed: 50
+
+      # spinning_bottom_pops:
+      #   # loops: -1
+      #   speed: 15 
 
 # - duration: 10s
 #   shows:       
