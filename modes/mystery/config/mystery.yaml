@@ -1,7 +1,7 @@
 #config_version=6
 mode:
   start_events: start_mystery_mode, mode_razorwire_stopped, mode_drillchair_stopped, mode_flammablejelly_stopped, mode_quadshotgun_stopped, mode_reversebeartrap_stopped, mode_zeptest_stopped, mode_hacksaw_multiball_stopped, mode_jigsaw_multiball_stopped, mode_jigsaw_multiball_stopped, mode_hacksaw_multiball_stopped
-  stop_events: ball_ended, mode_cellar_started, slide_Mystery5Million_removed, slide_MysteryMinus5Million_removed, mode_selection_mode_started, s_right_cellar_active
+  stop_events: ball_ended, mode_cellar_started, slide_Mystery5Million_removed, slide_MysteryMinus5Million_removed, slide_MysteryExtraBall_removed, mode_selection_mode_started, s_right_cellar_active
   
 
 event_player:
@@ -14,7 +14,7 @@ ball_holds:
     hold_devices: bd_mystery
     enable_events: enable_mystery
     disable_events: end_mystery, multiball_active
-    release_one_events: slide_Mystery5Million_removed, slide_MysteryMinus5Million_removed
+    release_one_events: slide_Mystery5Million_removed, slide_MysteryMinus5Million_removed, slide_MysteryExtraBall_removed
 
 
 #EK added 
