@@ -53,7 +53,7 @@ timers:
     start_running: false
   target_rotator:
     start_running: true
-    tick_interval: 1s
+    tick_interval: 30s
 
 shot_profiles:
   skill:
@@ -63,7 +63,7 @@ shot_profiles:
       show: off
     - name: lit
       show: flash
-      loops: -1
+      loops: 0
       speed: 10
     - name: hit
       show: on
@@ -77,7 +77,7 @@ shot_groups:
 
 variable_player:
   droptargets_skill_hit:
-    score: 250000
+    score: 1000000
 
 event_player:
   dt_drop2_hit: mode_skillshot_complete

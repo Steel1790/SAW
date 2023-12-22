@@ -56,12 +56,12 @@ shots:
     
 
 variable_player:
-  lower_l_pop_hit:
-    score: 20
-  lower_r_pop_hit:
-    score: 21
-  up_b_pop_hit:
-    score: 22
+  logicblock_drillchair_hit{step==1}:
+    score: 1000000
+  logicblock_drillchair_hit{step==3}:
+    score: 1000000
+  mode_drillchair_complete:
+    score: 6500000   
   counter_drillchair_pops_counter_hit:
     drillchair_pops_counter:
       action: set

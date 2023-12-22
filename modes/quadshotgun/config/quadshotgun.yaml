@@ -37,8 +37,10 @@ counters:
 #    switch: s_spinner   
 
 variable_player:
-  spinner_hit:
-    score: 95000
+  logicblock_quadshotgun_hit{step==1}:
+    score: 2500000
+  mode_quadshotgun_complete:
+    score: 6000000 
   counter_quadshotgun_spinner_counter_hit:
     quadshotgun_spinner_counter:
       action: set
