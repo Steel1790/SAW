@@ -175,7 +175,7 @@ counters:
     enable_events: enable_qualify
     disable_events: disable_qualify
     start_enabled: true
-#    persist_state: true
+    persist_state: true
     reset_events:
       slide_trapcomplete_removed, mode_razorwire_stopped, mode_drillchair_stopped, mode_quadshotgun_stopped, mode_reversebeartrap_stopped, mode_zeptest_stopped, mode_flammablejelly_stopped
     disable_on_complete: false

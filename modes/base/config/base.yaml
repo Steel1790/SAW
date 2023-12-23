@@ -1086,6 +1086,8 @@ sound_player:
   player_reversebeartrap_120s_reversebeartrap_timer_tick{value < 1}:
     ReverseBearTrapFail:
       action: play
+    ReverseBearTrapModeStart:
+      action: stop
   mode_reversebeartrap_stopped:
     BaseMusic:
       delay: 3s
@@ -1634,7 +1636,7 @@ ball_holds:
     hold_devices: bd_mystery
     enable_events: saw_qualify_complete
     disable_events: multiball_active
-    release_one_events: slide_drillchair_pops_active, slide_flammablejellyUI_active, slide_quadshotgun_spinner, slide_razorwire_pops_active, slide_reversebeartrapUI_active, slide_zeptestUI_active         
+    release_one_events: slide_drillchair_pops_active, slide_flammablejellyUI_active, slide_quadshotgun_spinner_active, slide_razorwire_pops_active, slide_reversebeartrapUI_active, slide_zeptestUI_active         
 
 coil_player:
   logicblock_saw_qualify_counter_updated{value==1}:
