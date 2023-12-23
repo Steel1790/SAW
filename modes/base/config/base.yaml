@@ -386,6 +386,10 @@ shows:
     - duration: -1
       lights:
         (leds): red
+  mode_quadshotgun_show_started:
+    - duration: -1
+      lights:
+        (leds): red
 
   jigsaw_mb_qualify_hit_show_step2:   
     - duration: -1
@@ -1023,12 +1027,6 @@ sound_player:
       action: play  
 
  # razorwire mode
-  mode_razorwire_started:
-    razorwire:
-      action: play
-    RWModeStart:
-      delay: 4s
-      action: play
   mode_razorwire_complete:
     trapcomplete:
       action: play
@@ -1048,18 +1046,15 @@ sound_player:
       loops: -1 
       
  # drillchair mode     
-  mode_drillchair_started:
-    drillchair:
-      action: play  
   mode_drillchair_complete:
     trapcomplete:
       action: play
+    drillchair:
+      action: stop
     BaseMusic:
       delay: 10s
       action: play
       loops: -1      
-#  player_drillchair_drillchair_60s_timer_tick{value < 1}:
-   
   mode_drillchair_stopped:
     BaseMusic:
       delay: 3s
@@ -1067,13 +1062,6 @@ sound_player:
       loops: -1      
 
 # reversebeartrap mode
-  mode_reversebeartrap_started:
-    reversebeartrap:
-      action: play
-    ReverseBearTrapModeStart:
-      delay: 24s
-      action: play
-      loops: 2
   mode_reversebeartrap_complete:
     trapcomplete:
       action: play
@@ -1086,20 +1074,13 @@ sound_player:
   player_reversebeartrap_120s_reversebeartrap_timer_tick{value < 1}:
     ReverseBearTrapFail:
       action: play
-    ReverseBearTrapModeStart:
-      action: stop
   mode_reversebeartrap_stopped:
     BaseMusic:
       delay: 3s
       action: play
       loops: -1      
-    ReverseBearTrapModeStart:
-      action: stop
 
 # quadshotgun mode  
-  mode_quadshotgun_started:
-    QuadShotgunModeStart:
-      action: play
   mode_quadshotgun_complete:
     trapcomplete:
       action: play
@@ -1119,12 +1100,6 @@ sound_player:
       loops: -1
       
 # zeptest mode
-  mode_zeptest_started:
-    zeptest:
-      action: play
-    ZepsTestModeStart:
-      delay: 9.2s
-      action: play
   mode_zeptest_complete:
     trapcomplete:
       action: play
@@ -1135,32 +1110,21 @@ sound_player:
       action: play
       loops: -1           
   mode_zeptest_stopped:
-    ZepsTestModeStart:
-      action: stop
     BaseMusic:
       delay: 3s
       action: play
       loops: -1
  
 # flammable jelly mode      
-  mode_flammablejelly_started:
-    flammablejelly:
-      action: play
-    FlammableJellyModeStart:
-      delay: 10s
-      action: play
   mode_flammablejelly_complete:
     trapcomplete:
-      action: play
+      action: play  
     FlammableJellyModeStart:
-      action: stop    
+      action: stop
     BaseMusic:
       delay: 10s
       action: play
       loops: -1             
-  slide_flammablejellyUI_removed:
-    FlammableJellyModeStart:
-      action: stop
   player_flammablejelly_60s_flammablejelly_timer_tick{value < 1}:
     FlammableJellyFail:
       action: play

@@ -11,3 +11,10 @@ show_player:
 #      speed: 1
 #    attract_lightshows_loop:
 #      speed: 4
+
+sound_player:
+  mode_attract_started:
+    BaseMusic:
+      action: stop  
+    initials:
+      action: stop      

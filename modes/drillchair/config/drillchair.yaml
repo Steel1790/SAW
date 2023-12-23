@@ -305,3 +305,11 @@ widget_player:
  logicblock_drillchair_hit{step==3}: 
   dc_shot_update3:
     slide: drillchair_phase2    
+
+sound_player:
+  mode_drillchair_started:
+    drillchair:
+      action: play  
+  player_drillchair_drillchair_60s_timer_tick{value < 1}:
+    drillchair:
+      action: stop

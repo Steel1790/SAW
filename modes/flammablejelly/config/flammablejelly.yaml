@@ -211,5 +211,13 @@ show_player:
         show_tokens:
           color1: red
 
-
-
+sound_player:
+  mode_flammablejelly_started:
+    flammablejelly:
+      action: play
+    FlammableJellyModeStart:
+      delay: 10s
+      action: play        
+  player_flammablejelly_60s_flammablejelly_timer_tick{value < 1}:
+    FlammableJellyModeStart:
+      action: stop

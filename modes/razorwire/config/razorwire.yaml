@@ -353,3 +353,14 @@ show_player:
         show_tokens:
           color1: ffffff
       top_drop_chase: stop
+
+sound_player:
+  mode_razorwire_started:
+    razorwire:
+      action: play
+    RWModeStart:
+      delay: 4s
+      action: play 
+  player_razorwire_60s_timer_tick{value < 1}:
+    RWModeStart:
+      action: stop

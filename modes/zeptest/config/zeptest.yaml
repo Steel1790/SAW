@@ -227,3 +227,14 @@ show_player:
         speed: 20
         show_tokens:
           color1: red          
+
+sound_player:
+  mode_zeptest_started:
+    zeptest:
+      action: play
+    ZepsTestModeStart:
+      delay: 9.2s
+      action: play
+  player_zeptest_60s_zeptest_timer_tick{value < 1}:
+    ZepsTestModeStart:
+      action: stop

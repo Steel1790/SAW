@@ -238,3 +238,14 @@ slide_player:
 #    ShotUpdated:
 #      priority: 400
       
+sound_player:
+  mode_reversebeartrap_started:
+    reversebeartrap:
+      action: play
+    ReverseBearTrapModeStart:
+      delay: 24s
+      action: play
+      loops: 2
+  player_reversebeartrap_120s_reversebeartrap_timer_tick{value < 1}:
+    ReverseBearTrapModeStart:
+      action: stop

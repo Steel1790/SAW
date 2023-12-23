@@ -274,3 +274,10 @@ show_player:
         led: l_shotgun_flasher_4
         color1: "006ee6"
 
+sound_player:
+  mode_quadshotgun_started:
+    QuadShotgunModeStart:
+      action: play
+  player_quadshotgun_quadshotgun_60s_timer_tick{value < 1}:
+    QuadShotgunModeStart:
+      action: stop
