@@ -1083,8 +1083,8 @@ switch:
     rotation: 340
     shape: SQUARE
     size: 0.05
-    x: 0.15574641148325358
-    y: 0.49122807017543857
+    x: 0.16516363636363635
+    y: 0.49421487603305786
   s_left_flipper_button:
     rotation: 310
     shape: RECTANGLE
@@ -1213,8 +1213,8 @@ switch:
     rotation: 350
     shape: SQUARE
     size: 0.05
-    x: 0.35133492822966506
-    y: 0.4449760765550239
+    x: 0.3453421487603306
+    y: 0.4528925619834711
   s_right_flipper_button:
     rotation: 60
     shape: RECTANGLE

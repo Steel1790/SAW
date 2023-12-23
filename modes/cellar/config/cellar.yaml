@@ -32,4 +32,13 @@ counters:
 #    reset_events: mode_cellar_started, cellar_qualify_counter_started
 #    restart_events: reset_qualify_modes, mode_cellar_started, cellar_qualify_counter_started
     count_events: cellar_hit
+
+
+sound_player:
+    mode_cellar_started:
+      BaseMusic:
+        action: stop
+      ModeQualifiedShootScoop:
+        action: play   
+        loops: -1
     
