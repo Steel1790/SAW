@@ -41,4 +41,6 @@ sound_player:
       ModeQualifiedShootScoop:
         action: play   
         loops: -1
-    
+    ball_ending:
+      ModeQualifiedShootScoop:
+        action: stop
