@@ -49,23 +49,6 @@ displays:
     width: 1366
     height: 768
 
-sound_player:
-  mode_attract_started:
-    HelloZeppPt1:
-      action: play
-      loops: 3
-    BaseMusic:
-      action: stop
-  mode_attract_stopped:
-    HelloZeppPt1:
-      action: stop
-  mode_game_stopping:
-    initials:
-      action: stop
-  mode_high_score_started:
-    BaseMusic:
-      action: stop
-
 sound_system:
     tracks:
        music:
