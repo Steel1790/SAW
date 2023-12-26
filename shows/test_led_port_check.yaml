@@ -1,42 +1,44 @@
 #show_version=6
 - time: 0
   lights:
-    led128p1: 00ff00
+    #led128p4: 00ff00
+    backbox: 00ff00
 - time: '+3'
   lights:
-    led128p1: 0
-    led128p2: 00ff00
-- time: '+3'
-  lights:
-    led128p2: 0
-    led128p3: 00ff00
-- time: "+3"
-  lights:
-    led128p3: 0
-    led128p4: 00ff00
-- time: '+3'
-  lights:
-    led128p4: 0
-    led256p1: 00ff00
-- time: '+3'
-  lights:
-    led256p1: 0
-    led256p2: 00ff00
-- time: '+3'
-  lights:
-    led256p2: 0
-    led256p3: 00ff00
-- time: '+3'
-  lights:
-    led256p3: 0
-    led256p4: 00ff00
-- time: '+3'
-  lights:
-    led256p4: 0
-    led256p5: 00ff00  
-- time: '+3'
-  lights:
-    led256p5: 0
+    #led128p4: 0
+    backbox: 0
+#     led128p2: 00ff00
+# - time: '+3'
+#   lights:
+#     led128p2: 0
+#     led128p3: 00ff00
+# - time: "+3"
+#   lights:
+#     led128p3: 0
+#     led128p4: 00ff00
+# - time: '+3'
+#   lights:
+#     led128p4: 0
+#     led256p1: 00ff00
+# - time: '+3'
+#   lights:
+#     led256p1: 0
+#     led256p2: 00ff00
+# - time: '+3'
+#   lights:
+#     led256p2: 0
+#     led256p3: 00ff00
+# - time: '+3'
+#   lights:
+#     led256p3: 0
+#     led256p4: 00ff00
+# - time: '+3'
+#   lights:
+#     led256p4: 0
+#     led256p5: 00ff00  
+# - time: '+3'
+#   lights:
+#     led256p5: 0
 
 
 

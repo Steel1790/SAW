@@ -298,13 +298,13 @@ show_player:
   mode_razorwire_started:     
     gi_on:
       show_tokens:
-        color1: 46eb34
+        color1: razorwire
   upper_l_pop_hit:
       attract_flash_all:
         loops: 1
         speed: 10
         show_tokens:
-          color1: 46eb34
+          color1: razorwire
   #    flash_token:
   #      loops: 5
   #      speed: 20

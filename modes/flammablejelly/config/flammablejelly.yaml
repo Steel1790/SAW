@@ -211,6 +211,11 @@ show_player:
         show_tokens:
           color1: red
 
+  mode_flammablejelly_started:     
+    gi_on:
+      show_tokens:
+        color1: jelly
+
 sound_player:
   mode_flammablejelly_started:
     flammablejelly:

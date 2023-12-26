@@ -865,7 +865,7 @@ lights:
     tags: cabinet
 
 
-# backpanel
+# backplayfieldpanel
   l_backpanel_1:
     number: led256-5-24
     tags: backpanel, led256p5
@@ -921,5 +921,133 @@ lights:
   l_right_disc:
       number: c_right_spin_disc
       platform: drivers
+
+
+# backbox
+  l_backbox_1:
+    channels:
+      red:
+        - number: 1-0
+      green:
+        - number: 1-1
+      blue:
+        - number: 1-2
+      white:
+        - number: 2-0
+    tags: backbox, ledneuronp2
+
+  # l_backbox_1:
+  #   number: ledneuron-2-1
+  #   type: rgbw
+  #   tags: backbox, ledneuronp2
+  # l_backbox_2:
+  #   number: ledneuron-2-2
+  #   # type: rgbw
+  #   tags: backbox, ledneuronp2
+  # l_backbox_3:
+  #   number: ledneuron-2-3
+  #   # type: rgbw
+  #   tags: backbox, ledneuronp2
+  # l_backbox_4:
+  #   number: ledneuron-2-4
+  #   type: rgbw
+  #   tags: backbox, ledneuronp2
+  # l_backbox_5:
+  #   number: ledneuron-2-5
+  #   type: rgbw
+  #   tags: backbox, ledneuronp2
+  # l_backbox_6:
+  #   number: ledneuron-2-6
+  #   type: rgbw
+  #   tags: backbox, ledneuronp2
+  # l_backbox_7:
+  #   number: ledneuron-2-7
+  #   tags: backbox, ledneuronp2
+  # l_backbox_8:
+  #   number: ledneuron-2-8
+  #   tags: backbox, ledneuronp2
+  # l_backbox_9:
+  #   number: ledneuron-2-9
+  #   tags: backbox, ledneuronp2
+  # l_backbox_10:
+  #   number: ledneuron-2-10
+  #   tags: backbox, ledneuronp2
+  # l_backbox_11:
+  #   number: ledneuron-2-11
+  #   tags: backbox, ledneuronp2
+  # l_backbox_12:
+  #   number: ledneuron-2-12
+  #   tags: backbox, ledneuronp2
+  # l_backbox_13:
+  #   number: ledneuron-2-13
+  #   tags: backbox, ledneuronp2
+  # l_backbox_14:
+  #   number: ledneuron-2-14
+  #   tags: backbox, ledneuronp2
+  # l_backbox_15:
+  #   number: ledneuron-2-15
+  #   tags: backbox, ledneuronp2
+  # l_backbox_16:
+  #   number: ledneuron-2-16
+  #   tags: backbox, ledneuronp2
+  # l_backbox_17:
+  #   number: ledneuron-2-17
+  #   tags: backbox, ledneuronp2
+  # l_backbox_18:
+  #   number: ledneuron-2-18
+  #   tags: backbox, ledneuronp2
+  # l_backbox_19:
+  #   number: ledneuron-2-19
+  #   tags: backbox, ledneuronp2
+  # l_backbox_20:
+  #   number: ledneuron-2-20
+  #   tags: backbox, ledneuronp2
+  # l_backbox_21:
+  #   number: ledneuron-2-21
+  #   tags: backbox, ledneuronp2
+  # l_backbox_22:
+  #   number: ledneuron-2-22
+  #   tags: backbox, ledneuronp2
+  # l_backbox_23:
+  #   number: ledneuron-2-23
+  #   tags: backbox, ledneuronp2
+  # l_backbox_24:
+  #   number: ledneuron-2-24
+  #   tags: backbox, ledneuronp2
+  # l_backbox_25:
+  #   number: ledneuron-2-25
+  #   tags: backbox, ledneuronp2
+  # l_backbox_26:
+  #   number: ledneuron-2-26
+  #   tags: backbox, ledneuronp2
+  # l_backbox_27:
+  #   number: ledneuron-2-27
+  #   tags: backbox, ledneuronp2
+  # l_backbox_28:
+  #   number: ledneuron-2-28
+  #   tags: backbox, ledneuronp2
+  # l_backbox_29:
+  #   number: ledneuron-2-29
+  #   tags: backbox, ledneuronp2
+  # l_backbox_30:
+  #   number: ledneuron-2-30
+  #   tags: backbox, ledneuronp2
+  # l_backbox_31:
+  #   number: ledneuron-2-31
+  #   tags: backbox, ledneuronp2
+  # l_backbox_32:
+  #   number: ledneuron-2-32
+  #   tags: backbox, ledneuronp2
+
+named_colors:
+  razorwire: 41A317
+  drillchair: d8d8d8
+  zepstest: B200ED
+  beartrap: ff0800
+  shotgun: 0981D1
+  jelly: FCE205
+
+light_settings:
+  default_fade_ms: 40
 
 

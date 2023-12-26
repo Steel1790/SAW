@@ -258,7 +258,7 @@ show_player:
   mode_quadshotgun_started:     
     gi_on:
       show_tokens:
-        color1: "006ee6"
+        color1: shotgun
     flash_token:
       loops: -1
       speed: 8
@@ -272,7 +272,7 @@ show_player:
       speed: 8
       show_tokens:
         led: l_shotgun_flasher_4
-        color1: "006ee6"
+        color1: shotgun
 
 sound_player:
   mode_quadshotgun_started:
@@ -281,3 +281,4 @@ sound_player:
   player_quadshotgun_quadshotgun_60s_timer_tick{value < 1}:
     QuadShotgunModeStart:
       action: stop
+   

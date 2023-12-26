@@ -3,27 +3,28 @@
 # EK Notes: If loops are not defined, it will repeat for the duration time. If loops = 0, then it will play once. 1 loop = 2 plays.
 
 
-# - duration: 5s
-#   shows: 
-#       gi_flicker:
-#         loops: 6
-#         speed: 2
-#         show_tokens:
-#           color1: ffffff
-
-# - duration: .5s
-#   shows: 
-#       gi_on:
-#        # loops: -1
-#        # speed: 10
-#         show_tokens:
-#           color1: ffffff 
-
-- duration: 40s
+- duration: 5s
   shows: 
-      test_led_port_check:
-        loops: 3
-        speed: 1      
+      gi_flicker:
+        loops: 6
+        speed: 2
+        show_tokens:
+          color1: ffffff
+
+- duration: .5s
+  shows: 
+      gi_on:
+       # loops: -1
+       # speed: 10
+        show_tokens:
+          color1: ffffff 
+
+- duration: 5s
+  shows: 
+      # test_led_port_check:
+      #   loops: 3
+      #   speed: 1      
+
       # test_128p1_ordercheck:
       #   loops: 2
       #   speed: 1
@@ -101,11 +102,11 @@
       #   show_tokens:
       #     color1: ff5733
 
-      # bonus_chase:
-      #   # loops: 10
-      #   speed: 8
-      #   show_tokens:
-      #     color1: ff5733       
+      bonus_chase:
+        # loops: 10
+        speed: 8
+        show_tokens:
+          color1: drillchair   
 
       # shotgun_blast_top_pops:
       #   # loops: 10
@@ -127,12 +128,13 @@
       #   # loops: 1
       #   speed: 40
 
-      # flash_token:
-      #   # loops: 1
-      #   speed: 10
-      #   show_tokens:
-      #     led: l_middle_disc_1
-      #     color1: ff5733        
+      flash_token:
+        loops: 1
+        speed: 10
+        show_tokens:
+          led: l_backbox_1
+          color1: drillchair  
+      attract_color_wash: stop 
 
       # flammable_jelly_3:
       #   loops: 2
@@ -227,12 +229,12 @@
 #        loops: 0
 #        speed: 5
 
-#This lightshow crashes MPF
-# - duration: 15s
-#  shows: 
-#      attract_color_wash:
-#        loops: 1
-#        speed: 5
+- duration: 15s
+  shows: 
+     attract_color_wash:
+       # loops: 1
+       speed: 10
+
 
 # This lightshow does not work well. Needs to be redone.
 # - duration: 3s

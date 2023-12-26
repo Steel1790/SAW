@@ -226,7 +226,12 @@ show_player:
         loops: -1
         speed: 20
         show_tokens:
-          color1: red          
+          color1: red    
+
+  mode_quadshotgun_started:     
+    gi_on:
+      show_tokens:
+        color1: zepstest
 
 sound_player:
   mode_zeptest_started:

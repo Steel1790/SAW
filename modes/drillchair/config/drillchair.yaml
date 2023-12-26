@@ -313,3 +313,10 @@ sound_player:
   player_drillchair_drillchair_60s_timer_tick{value < 1}:
     drillchair:
       action: stop
+
+
+show_player:
+  mode_drillchair_started:     
+    gi_on:
+      show_tokens:
+        color1: drillchair     

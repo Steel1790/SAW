@@ -259,42 +259,42 @@ shows:
   razorwire:
     - duration: 0.3s
       lights:
-        (leds): 41A317
+        (leds): razorwire
     - duration: 0.3s
       lights:
         (leds): off
   reversebeartrap:
     - duration: 0.3s
       lights:
-        (leds): FF0800
+        (leds): beartrap
     - duration: 0.3s
       lights:
         (leds): off
   flammablejelly:
     - duration: 0.3s
       lights:
-        (leds): FCE205
+        (leds): jelly
     - duration: 0.3s
       lights:
         (leds): off
   drillchair:
     - duration: 0.3s
       lights:
-        (leds): FF7417
+        (leds): drillchair
     - duration: 0.3s
       lights:
         (leds): off
   quadshotgun:
     - duration: 0.3s
       lights:
-        (leds): 0981D1
+        (leds): shotgun
     - duration: 0.3s
       lights:
         (leds): off
   zeptest:
     - duration: 0.3s
       lights:
-        (leds): B200ED
+        (leds): zepstest
     - duration: 0.3s
       lights:
         (leds): off

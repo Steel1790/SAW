@@ -249,3 +249,10 @@ sound_player:
   player_reversebeartrap_120s_reversebeartrap_timer_tick{value < 1}:
     ReverseBearTrapModeStart:
       action: stop
+
+
+show_player:
+  mode_reversebeartrap_started:     
+    gi_on:
+      show_tokens:
+        color1: beartrap     
