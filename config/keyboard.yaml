@@ -23,10 +23,8 @@ keyboard:
     switch: s_trough6
     toggle: true
   p:
-    switch: s_ball_shooter_lane
-    toggle: true
+    switch: s_action_button
   s:
     switch: s_start
   q:
     switch: s_right_outlane
-  

@@ -257,6 +257,7 @@ coils:
     number: 1616_1-14
     default_pulse_ms: 20
     default_pulse_power: 0.5
+    default_hold_power: 0.3
   c_top_eject:
     number: 1616_2-12
     default_pulse_ms: 20
@@ -391,10 +392,10 @@ ball_devices:
   bd_top_saucer:
     ball_switches: s_top_right_reject
     eject_coil: c_top_eject
-    eject_timeouts: 1.5s 
+    eject_timeouts: 1.5s
 
   bd_hacksaw:
-    ball_switches: s_left_lock_3
+    ball_switches: s_left_lock_1, s_left_lock_2, s_left_lock_3
     eject_coil: c_left_lock_kickback
     eject_timeouts: 5s
 
@@ -446,19 +447,18 @@ autofire_coils:
   upper_bottom_bumper:
     coil: c_upper_bottom_jet_bumper
     switch: s_upper_bottom_jet_bumper
-  #mystery_scoop:
-  #  coil: c_mystery_eject
-  #  switch: s_left_cellar
-
-  #left_kickback_test:
-  #  coil: c_left_lock_kickback
-  #  switch: s_left_lock_1
-  #right_ramp_lift_test:
-  #  coil: c_right_ramp_lift
-  #  switch: s_right_loop_bottom
 
 diverters:
   right_ramp_diverter:
     activation_coil: c_right_ramp_lift
     deactivation_coil: c_right_ramp_down
     type: pulse
+  hacksaw_lock_diverter:
+    activation_coil: c_diverter
+    type: hold
+    activation_time: 3s
+    activation_switches: s_right_ramp_score_bottom
+    enable_events: logicblock_hacksaw_mb_qualify_complete
+    disable_events: ball_ended
+    targets_when_active: bd_hacksaw
+    targets_when_inactive: playfield

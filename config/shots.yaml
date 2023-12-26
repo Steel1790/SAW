@@ -6,8 +6,6 @@ sequence_shots:
   right_ramp:
     switch_sequence: s_right_ramp_down, s_right_ramp_score_bottom, s_right_ramp_score_top
     sequence_timeout: 4s
-#  left_pop:
-#    switch_sequence: s_left_bottom_jet_bumper
   cellar:
     switch_sequence: s_right_cellar
   mystery:
@@ -23,7 +21,7 @@ sequence_shots:
   left_inlane:
     switch_sequence: s_left_inlane
 
-#temp for demo    
+#temp for demo
 #  ballsavetemp:
 #    switch_sequence: s_lower_top_jet_bumper
 #  tiltwarningtemp:
@@ -32,4 +30,3 @@ sequence_shots:
 #    switch_sequence: s_right_bottom_jet_bumper
 #  extraballtemp:
 #    switch_sequence: s_upper_bottom_jet_bumper
-    

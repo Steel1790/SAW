@@ -16,6 +16,14 @@ ball_saves:
     balls_to_save: 1
 #    debug: true  
 
+event_player:
+  playfield_active: ballsave_light
+  mode_base_started:
+    - startmode_jigsaw_multiball
+    - startmode_jigsaw_multiball_qualify
+    - startmode_hacksaw_multiball
+    - startmode_hacksaw_multiball_qualify
+
 slide_player:
   saw_qualify_complete:
     saw_collect:
@@ -391,34 +399,6 @@ shows:
       lights:
         (leds): red
 
-  jigsaw_mb_qualify_hit_show_step2:   
-    - duration: -1
-      lights:
-        (leds): orange  
-  jigsaw_mb_qualify_hit_show_step4:   
-    - duration: -1
-      lights:
-        (leds): orange      
-  jigsaw_mb_qualify_hit_show_step6:   
-    - duration: -1
-      lights:
-        (leds): orange  
-  jigsaw_mb_show_end:   
-    - duration: -1
-      lights:
-        (leds):          
-  hacksaw_mb_qualify_hit_show_step4:   
-    - duration: -1
-      lights:
-        (leds): orange 
-  hacksaw_mb_qualify_hit_show_step8:   
-    - duration: -1
-      lights:
-        (leds): orange   
-  hacksaw_mb_show_end:   
-    - duration: -1
-      lights:
-        (leds):    
 #multiplier progress
   multiplier_progress_counter_show_step1:
     - duration: -1
@@ -631,41 +611,6 @@ show_player:
       loops: -1
       priority: 100
 
-  logicblock_jigsaw_mb_qualify_hit{step==2}: 
-    jigsaw_mb_qualify_hit_show_step2:   
-      show_tokens:
-        leds: l_left_ramp_triangle1     
-      loops: -1 
-  logicblock_jigsaw_mb_qualify_hit{step==4}: 
-    jigsaw_mb_qualify_hit_show_step4:   
-      show_tokens:
-        leds: l_left_ramp_triangle2     
-      loops: -1        
-  jigsaw_mb_qualify_sequence_complete: 
-    jigsaw_mb_qualify_hit_show_step6:   
-      show_tokens:
-        leds: l_left_ramp_triangle3     
-      loops: -1  
-  mode_jigsaw_multiball_stopped: 
-    jigsaw_mb_show_end:   
-      show_tokens:
-        leds: l_left_ramp_triangle1, l_left_ramp_triangle2, l_left_ramp_triangle3
-      loops: -1        
-  logicblock_hacksaw_mb_qualify_hit{step==4}: 
-    hacksaw_mb_qualify_hit_show_step4:   
-      show_tokens:
-        leds: l_right_ramp_triangle1     
-      loops: -1  
-  logicblock_hacksaw_mb_qualify_hit{step==8}: 
-    hacksaw_mb_qualify_hit_show_step8:   
-      show_tokens:
-        leds: l_right_ramp_triangle2     
-      loops: -1   
-  mode_hacksaw_multiball_stopped: 
-    hacksaw_mb_show_end:   
-      show_tokens:
-        leds: l_right_ramp_triangle1, l_right_ramp_triangle2   
-      loops: -1   
  # multiplier progress     
   counter_multiplier_progress_counter_hit{hits==1}:
     multiplier_progress_counter_show_step1:
@@ -1229,6 +1174,3 @@ coil_player:
       action: off
     c_left_spin_disc:
       action: off
-
-event_player:
-  playfield_active: ballsave_light

@@ -1,28 +1,29 @@
 #config_version=6
-    
+##! mode: jigsaw_multiball
+
 mode:
-  start_events: logicblock_jigsaw_multiball_qualify_complete
+  start_events: startmode_jigsaw_multiball
   stop_events: stop_mode_jigsaw_multiball, mode_jigsaw_multiball_complete, player_turn_stopped, player_turn_ended
-      
+  priority: 155
+
 multiballs:
   jigsaw_multiball:
     ball_count: 2
     shoot_again: 15s
-    start_events: mode_jigsaw_multiball_started
-#    reset_events: mode_jigsaw_multiball_started
+    start_events: logicblock_jigsaw_multiball_qualify_complete
 
-variable_player: 
-  mode_jigsaw_multiball_started:
+variable_player:
+  multiball_jigsaw_multiball_started:
     score: 3000000
-    
+
 slides:
   JigsawMB:
     widgets:
     - type: video
-      video: JigsawMB     
-   
+      video: JigsawMB
+
 slide_player:
-  mode_jigsaw_multiball_started:
+  multiball_jigsaw_multiball_started:
     JigsawMB:
       priority: 500
       expire: 6s

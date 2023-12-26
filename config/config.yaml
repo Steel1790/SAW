@@ -31,7 +31,9 @@ modes:
   - saw_qualify
   - mode_tracking
   - jigsaw_multiball
+  - jigsaw_multiball_qualify
   - hacksaw_multiball
+  - hacksaw_multiball_qualify
   - high_score
   - bonus
 
