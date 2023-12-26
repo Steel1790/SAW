@@ -1,0 +1,27 @@
+#show_version=6
+
+#CHOOSE ONE OF THE TWO OPTIONS. COMMENT OUT THE OTHER.
+
+#OPTION 1 - ONE INSERT LIT AT A TIME
+# - time: 0
+#   lights:
+#     l_right_ramp_triangle2: off    
+#     l_right_ramp_triangle1: (color1)
+# - time: '+1'
+#   lights:
+#     l_right_ramp_triangle1: off
+#     l_right_ramp_triangle2: (color1)
+
+#OPTION 2 - OVERLAPS BETWEEN INSERTS
+- time: 0
+  lights:
+    l_right_ramp_triangle2: off    
+    l_right_ramp_triangle1: (color1)
+- time: '+1'
+  lights:
+    l_right_ramp_triangle1: (color1)
+    l_right_ramp_triangle2: (color1)
+- time: '+1'
+  lights:
+    l_right_ramp_triangle1: off
+    l_right_ramp_triangle2: (color1)

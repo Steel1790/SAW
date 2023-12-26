@@ -1,13 +1,37 @@
 #show_version=6
+
+#CHOOSE ONE OF THE TWO OPTIONS. COMMENT OUT THE OTHER.
+
+#OPTION 1 - ONE INSERT LIT AT A TIME
+# - time: 0
+#   lights:
+#     l_skill_shot3: off    
+#     l_skill_shot1: (color1)
+# - time: '+1'
+#   lights:
+#     l_skill_shot1: off
+#     l_skill_shot2: (color1)
+# - time: '+1'
+#   lights:
+#     l_skill_shot2: off
+#     l_skill_shot3: (color1)
+
+#OPTION 2 - OVERLAPS BETWEEN INSERTS
 - time: 0
   lights:
     l_skill_shot3: off    
     l_skill_shot1: (color1)
 - time: '+1'
   lights:
-    l_skill_shot1: off
+    l_skill_shot1: (color1)
     l_skill_shot2: (color1)
 - time: '+1'
   lights:
-    l_skill_shot2: off
+    l_skill_shot1: off
+    l_skill_shot2: (color1)
     l_skill_shot3: (color1)
+- time: '+1'
+  lights:
+    l_skill_shot1: off
+    l_skill_shot2: off
+    l_skill_shot3: (color1)     

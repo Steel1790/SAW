@@ -1,9 +1,9 @@
 #show_version=6
 - time: 0
   lights:
-    top_bumper: bd0000
-    bottom_bumper: dea30d
+    top_bumper: beartrap
+    bottom_bumper: jelly
 - time: '+1'
   lights:
-    top_bumper: dea30d
-    bottom_bumper: bd0000
+    top_bumper: jelly
+    bottom_bumper: beartrap

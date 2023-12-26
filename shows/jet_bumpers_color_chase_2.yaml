@@ -1,7 +1,7 @@
 #show_version=6
 - time: 0
   lights:
-    right_top_bumper: ffffff
+    right_top_bumper: (color1)
     left_top_bumper: off
     lower_top_bumper: off
     top_bottom_bumper: off
@@ -9,19 +9,19 @@
     right_bottom_bumper: off
 - time: '+1'
   lights:
-    left_top_bumper: ffffff
+    left_top_bumper: (color1)
 - time: '+1'
   lights:
-    lower_top_bumper: ffffff
+    lower_top_bumper: (color1)
 - time: '+1'
   lights:
-    top_bottom_bumper: ffffff
+    top_bottom_bumper: (color1)
 - time: '+1'
   lights:
-    left_bottom_bumper: ffffff
+    left_bottom_bumper: (color1)
 - time: '+1'
   lights:
-    right_bottom_bumper: ffffff
+    right_bottom_bumper: (color1)
 - time: '+1'
   lights:
     right_top_bumper: off
@@ -44,7 +44,7 @@
 
 - time: '+2'
   lights:
-    right_top_bumper: dc143c
+    right_top_bumper: (color2)
     left_top_bumper: off
     lower_top_bumper: off
     top_bottom_bumper: off
@@ -52,19 +52,19 @@
     right_bottom_bumper: off
 - time: '+1'
   lights:
-    left_top_bumper: dc143c
+    left_top_bumper: (color2)
 - time: '+1'
   lights:
-    lower_top_bumper: dc143c
+    lower_top_bumper: (color2)
 - time: '+1'
   lights:
-    top_bottom_bumper: dc143c
+    top_bottom_bumper: (color2)
 - time: '+1'
   lights:
-    left_bottom_bumper: dc143c
+    left_bottom_bumper: (color2)
 - time: '+1'
   lights:
-    right_bottom_bumper: dc143c
+    right_bottom_bumper: (color2)
 - time: '+1'
   lights:
     right_top_bumper: off
@@ -87,7 +87,7 @@
 
 - time: '+2'
   lights:
-    right_top_bumper: b300ff
+    right_top_bumper: (color3)
     left_top_bumper: off
     lower_top_bumper: off
     top_bottom_bumper: off
@@ -95,19 +95,19 @@
     right_bottom_bumper: off
 - time: '+1'
   lights:
-    left_top_bumper: b300ff
+    left_top_bumper: (color3)
 - time: '+1'
   lights:
-    lower_top_bumper: b300ff
+    lower_top_bumper: (color3)
 - time: '+1'
   lights:
-    top_bottom_bumper: b300ff
+    top_bottom_bumper: (color3)
 - time: '+1'
   lights:
-    left_bottom_bumper: b300ff
+    left_bottom_bumper: (color3)
 - time: '+1'
   lights:
-    right_bottom_bumper: b300ff
+    right_bottom_bumper: (color3)
 - time: '+1'
   lights:
     right_top_bumper: off

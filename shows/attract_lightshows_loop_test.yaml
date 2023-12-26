@@ -1,0 +1,250 @@
+#show_version=6
+
+# EK Notes: If loops are not defined, it will repeat for the duration time. If loops = 0, then it will play once. 1 loop = 2 plays.
+
+
+- duration: 5s
+  shows: 
+      gi_flicker:
+        loops: 6
+        speed: 2
+        show_tokens:
+          color1: ffffff
+
+- duration: .5s
+  shows: 
+      gi_on:
+       # loops: -1
+        show_tokens:
+          color1: ffffff 
+
+- duration: 5s
+  shows: 
+      # test_led_port_check:
+      #   loops: 3
+      #   speed: 1      
+
+      # test_128p1_ordercheck:
+      #   loops: 2
+      #   speed: 1
+      #   show_tokens:
+      #     color1: ffffff
+
+      # test_128p2_ordercheck:
+      #   loops: 2
+      #   speed: 1
+      #   show_tokens:
+      #     color1: ffffff      
+
+      # test_128p3_ordercheck:
+      #   loops: 2
+      #   speed: 1
+      #   show_tokens:
+      #     color1: ffffff   
+
+      # test_128p4_ordercheck:
+      #   loops: 2
+      #   speed: 1
+      #   show_tokens:
+      #     color1: ffffff  
+
+
+# - duration: 11s
+#   shows: 
+#       mystery_flash:
+#         loops: 0
+#         show_tokens:
+#          led: gi, flasher
+#          color1: b300ff
+
+# - duration: 6s
+#   shows: 
+#       white_sweeps:
+#         loops: 1
+#         speed: 20
+
+# - duration: 5s
+#   shows: 
+#       attract_red_wash:
+#         loops: 1
+#         speed: 20
+
+# - duration: 8s
+#   shows: 
+#       rw_complete:
+#         loops: 2
+#         speed: 20
+
+# - duration: 5s
+#   shows: 
+#       disc_middle_hot_saw:
+#         loops: 1
+#         speed: 30
+
+# - duration: 5s
+#   shows: 
+#       flammable_jelly_3:
+#         loops: 1
+#         speed: 20        
+
+# - duration: 12s
+#   shows:      
+      # skillshot_chase:
+      #   # loops: 15
+      #   speed: 6
+      #   show_tokens:
+      #     color1: ff5733
+
+      # top_drop_chase:
+      #   # loops: 12
+      #   speed: 8
+      #   show_tokens:
+      #     color1: ff5733
+
+      mode_chase:
+        # loops: 10
+        speed: 8
+        show_tokens:
+          color1: drillchair   
+
+      # shotgun_blast_top_pops:
+      #   # loops: 10
+      #   speed: 8         
+
+      # skillshot_color_wash:
+      #   # loops: 10
+      #   speed: 8                     
+
+      # rtb_green_single_reverse_rotation:
+      #   loops: 7
+      #   speed: 60
+
+      # rtb_red_blue_rotation:
+      #   loops: 7
+      #   speed: 30
+
+      # disc_middle_hot_saw:
+      #   # loops: 1
+      #   speed: 40
+
+      flash_token:
+        loops: 1
+        speed: 10
+        show_tokens:
+          led: l_backbox_1
+          color1: drillchair  
+      attract_color_wash: stop 
+
+      # flammable_jelly_3:
+      #   loops: 2
+      #   speed: 15       
+
+      # attract_color_stacker:
+      #   loops: -1
+      #   speed: 15   
+
+      # attract_color_wipes:
+      #   loops: -1
+      #   speed: 15   
+
+      # attract_color_wash:
+      #   loops: -1
+      #   speed: 15   
+
+      # fire_top_pops:
+      #   loops: -1
+      #   speed: 15   
+
+      # fire_bottom_pops:
+      #   loops: -1
+      #   speed: 15      
+
+      # opposite_sweep_blue_white:
+      #   loops: -1
+      #   speed: 15      
+
+      # spinning_top_pops:
+      #   # loops: -1
+      #   speed: 50
+
+      # spinning_bottom_pops:
+      #   # loops: -1
+      #   speed: 15 
+
+# - duration: 10s
+#   shows:       
+#       jet_bumpers_flash:
+#         loops: 1
+#         speed: 1
+
+# - duration: 10s
+#   shows:       
+#       jet_bumpers_color_cycle:
+#         loops: 1
+#         speed: 3
+
+# - duration: 10s
+#   shows:       
+#       jet_bumpers_color_chase:
+#         loops: 1
+#         speed: 3
+
+# - duration: 10s
+#   shows:       
+#       jet_bumpers_color_chase_2:
+#         loops: 1
+#         speed: 10
+
+# - duration: 5s
+#   shows: 
+#       attract_flash_all:
+#         loops: 5
+#         speed: 1
+#         show_tokens:
+#           color1: "00bfff"
+
+# - duration: 5s
+#   shows: 
+#       rtb_red_blue_rotation:
+#         loops: 7
+#         speed: 30
+
+# - duration: 5s
+#   shows: 
+#       rtb_green_single_rotation:
+#         loops: 7
+#         speed: 40    
+
+# - duration: 5s
+#   shows: 
+#       rtb_green_single_reverse_rotation:
+#         loops: 7
+#         speed: 40
+
+# This lightshow does not work well. Needs to be redone.
+# - duration: .5s
+#   shows: 
+#       rainbow_saucer:
+#        loops: 0
+#        speed: 5
+
+# - duration: 15s
+#   shows: 
+#      attract_color_wash:
+#        # loops: 1
+#        speed: 10
+
+
+# This lightshow does not work well. Needs to be redone.
+# - duration: 3s
+#   shows: 
+#       rw_white_sweeps:
+#         loops: 1
+#         speed: 5
+
+# This lightshow does not work.
+# - duration: .5s
+#   shows: 
+#       rainbow_stacker:
+#        loops: 0
+#        speed: 10

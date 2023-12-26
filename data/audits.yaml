@@ -1,6 +1,6 @@
 events:
   game_ended: 1
-  game_started: 16
+  game_started: 39
 player:
   score:
     average: 21416327.0
@@ -8,26 +8,27 @@ player:
     - 21416327
     total: 1
 shots:
+  dt_drop2: 1
   lower_r_pop: 1
   shot_inner_loop: 23
   shot_left_loop: 18
   shot_left_return_lane: 5
-  shot_left_standup: 9
+  shot_left_standup: 40
   shot_left_standup_rightramp: 17
   shot_right_loop: 25
-  shot_right_standup: 5
-  shot_right_standup_rightramp: 16
+  shot_right_standup: 7
+  shot_right_standup_rightramp: 18
   up_b_pop: 19
   upper_b_pop: 7
   upper_l_pop: 3
   upper_r_pop: 3
 switches:
   s_action_button: 29
-  s_ball_shooter_lane: 24
+  s_ball_shooter_lane: 26
   s_enter_left_ramp: 5
   s_inner_loop: 28
   s_left_110_point: 37
-  s_left_bottom_jet_bumper: 62
+  s_left_bottom_jet_bumper: 65
   s_left_cellar: 22
   s_left_flipper_button: 208
   s_left_flipper_eos: 231
@@ -40,35 +41,35 @@ switches:
   s_left_outlane: 7
   s_left_ramp_score_bottom: 2
   s_left_ramp_score_top: 2
-  s_left_slingshot: 44
-  s_left_standup: 13
+  s_left_slingshot: 142
+  s_left_standup: 44
   s_left_standup_right_ramp: 25
-  s_left_top_jet_bumper: 27
+  s_left_top_jet_bumper: 30
   s_lower_bank_drop_target_opto_lower: 9
   s_lower_bank_drop_target_opto_middle: 11
-  s_lower_bank_drop_target_opto_upper: 11
-  s_lower_top_jet_bumper: 52
+  s_lower_bank_drop_target_opto_upper: 12
+  s_lower_top_jet_bumper: 64
   s_middle_standup: 16
   s_right_110_point: 34
-  s_right_bottom_jet_bumper: 45
+  s_right_bottom_jet_bumper: 66
   s_right_cellar: 19
   s_right_flipper_button: 192
   s_right_flipper_eos: 143
-  s_right_inlane: 7
+  s_right_inlane: 8
   s_right_loop_bottom: 18
   s_right_loop_top: 16
   s_right_outlane: 1
   s_right_ramp_down: 0
   s_right_ramp_score_bottom: 0
   s_right_ramp_score_top: 0
-  s_right_slingshot: 19
-  s_right_standup: 7
-  s_right_standup_right_ramp: 20
-  s_right_top_jet_bumper: 6
+  s_right_slingshot: 53
+  s_right_standup: 9
+  s_right_standup_right_ramp: 22
+  s_right_top_jet_bumper: 12
   s_spinner: 70
   s_start: 4
   s_top_right_reject: 20
-  s_trough1: 21
+  s_trough1: 22
   s_trough2: 11
   s_trough3: 11
   s_trough4: 11
@@ -76,6 +77,6 @@ switches:
   s_trough6: 7
   s_trough_jam: 11
   s_upper_bank_drop_target_opto: 8
-  s_upper_bottom_jet_bumper: 31
+  s_upper_bottom_jet_bumper: 45
   s_upper_right_flipper_button: 164
   s_upper_right_flipper_eos: 164

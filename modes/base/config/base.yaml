@@ -452,6 +452,16 @@ shows:
     - duration: -1
       lights:
         (leds): 8A0303
+
+  base_slingshots:
+    - duration: 0.5s
+      lights:
+        (leds): red-f100ms
+      # fade_ms: 100ms  
+    - duration: 0.2s
+      lights:
+        (leds): white-f100ms
+      # fade_ms: 100ms    
  
 # EK testing lightshow on shot action
 show_player:
@@ -487,7 +497,6 @@ show_player:
       show_tokens:
         leds: l_live_again
       loops: -1
-        
 
   sw_standup:
     gi_flicker_one_time:
@@ -495,6 +504,25 @@ show_player:
       speed: 4
       show_tokens:
         color1: white
+
+  # sw_slingshot:
+  #  flash_token:
+  #     loops: 1
+  #     speed: 10
+  #     show_tokens:
+  #       led: l_gi_20
+  #       color1: red   
+  sw_slingshot:
+    base_slingshots:
+      loops: 0
+      show_tokens:
+        leds: l_gi_1, l_gi_2, l_gi_3, l_gi_20, l_gi_21, l_gi_22
+
+  s_right_top_jet_bumper_hit: 
+    base_slingshots:
+      loops: 0
+      show_tokens:
+        leds: l_gi_7, l_gi_8
 
   minimode_pops_complete:
     minimode_pops_show_complete:

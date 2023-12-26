@@ -1,5 +1,16 @@
 #config_version=6
 
+light_settings:
+  default_fade_ms: 75
+
+named_colors:
+  razorwire: 41A317
+  drillchair: FF7417
+  zepstest: B200ED
+  beartrap: ff0800
+  shotgun: 0981D1
+  jelly: FCE205
+  
 lights:
   l_left_escape:
     number: led128-4-4
@@ -1039,15 +1050,5 @@ lights:
   #   number: ledneuron-2-32
   #   tags: backbox, ledneuronp2
 
-named_colors:
-  razorwire: 41A317
-  drillchair: d8d8d8
-  zepstest: B200ED
-  beartrap: ff0800
-  shotgun: 0981D1
-  jelly: FCE205
-
-light_settings:
-  default_fade_ms: 40
 
 

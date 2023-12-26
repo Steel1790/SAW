@@ -15,126 +15,222 @@
   shows: 
       gi_on:
        # loops: -1
-       # speed: 10
         show_tokens:
-          color1: ffffff 
+          color1: ffffff     
 
-- duration: 5s
-  shows: 
-      # test_led_port_check:
-      #   loops: 3
-      #   speed: 1      
+#CHASE LIGHTS - COLOR 1 BEARTRAP
+- duration: 3s
+  shows:      
+      skillshot_chase:
+        # loops: 15
+        speed: 8
+        show_tokens:
+          color1: beartrap
 
-      # test_128p1_ordercheck:
-      #   loops: 2
-      #   speed: 1
-      #   show_tokens:
-      #     color1: ffffff
+      top_drop_chase:
+        # loops: 12
+        speed: 8
+        show_tokens:
+          color1: beartrap
 
-      # test_128p2_ordercheck:
-      #   loops: 2
-      #   speed: 1
-      #   show_tokens:
-      #     color1: ffffff      
+      mode_chase:
+        # loops: 10
+        speed: 10
+        show_tokens:
+          color1: beartrap  
 
-      # test_128p3_ordercheck:
-      #   loops: 2
-      #   speed: 1
-      #   show_tokens:
-      #     color1: ffffff   
-
-      # test_128p4_ordercheck:
-      #   loops: 2
-      #   speed: 1
-      #   show_tokens:
-      #     color1: ffffff  
-
-
-# - duration: 11s
-#   shows: 
-#       mystery_flash:
-#         loops: 0
-#         show_tokens:
-#          led: gi, flasher
-#          color1: b300ff
-
-# - duration: 6s
-#   shows: 
-#       white_sweeps:
-#         loops: 1
-#         speed: 20
-
-# - duration: 5s
-#   shows: 
-#       attract_red_wash:
-#         loops: 1
-#         speed: 20
-
-# - duration: 8s
-#   shows: 
-#       rw_complete:
-#         loops: 2
-#         speed: 20
-
-# - duration: 5s
-#   shows: 
-#       disc_middle_hot_saw:
-#         loops: 1
-#         speed: 30
-
-# - duration: 5s
-#   shows: 
-#       flammable_jelly_3:
-#         loops: 1
-#         speed: 20        
-
-# - duration: 12s
-#   shows:      
-      # skillshot_chase:
-      #   # loops: 15
-      #   speed: 6
-      #   show_tokens:
-      #     color1: ff5733
-
-      # top_drop_chase:
-      #   # loops: 12
-      #   speed: 8
-      #   show_tokens:
-      #     color1: ff5733
-
-      bonus_chase:
+      jw_chase:
         # loops: 10
         speed: 8
         show_tokens:
-          color1: drillchair   
+          color1: beartrap
 
-      # shotgun_blast_top_pops:
-      #   # loops: 10
-      #   speed: 8         
+      right_ramp_chase:
+        # loops: 10
+        speed: 8
+        show_tokens:
+          color1: beartrap
 
-      # skillshot_color_wash:
-      #   # loops: 10
-      #   speed: 8                     
+      left_ramp_chase:
+        # loops: 10
+        speed: 8
+        show_tokens:
+          color1: beartrap
 
-      # rtb_green_single_reverse_rotation:
-      #   loops: 7
-      #   speed: 60
-
-      # rtb_red_blue_rotation:
-      #   loops: 7
-      #   speed: 30
-
-      # disc_middle_hot_saw:
-      #   # loops: 1
-      #   speed: 40
-
-      flash_token:
+      outlane_alternate:
+        # loops: 10
+        speed: 4
+        show_tokens:
+          color1: beartrap
+     
+      jet_bumpers_color_chase_2:
         loops: 1
         speed: 10
         show_tokens:
-          led: l_backbox_1
+          color1: beartrap
+          color2: drillchair
+          color3: jelly            
+
+#CHASE LIGHTS - COLOR 2 DRILLCHAIR
+- duration: 3s
+  shows:      
+      skillshot_chase:
+        # loops: 15
+        speed: 8
+        show_tokens:
+          color1: drillchair
+
+      top_drop_chase:
+        # loops: 12
+        speed: 8
+        show_tokens:
+          color1: drillchair
+
+      mode_chase:
+        # loops: 10
+        speed: 10
+        show_tokens:
           color1: drillchair  
-      attract_color_wash: stop 
+
+      jw_chase:
+        # loops: 10
+        speed: 8
+        show_tokens:
+          color1: drillchair
+
+      right_ramp_chase:
+        # loops: 10
+        speed: 8
+        show_tokens:
+          color1: drillchair
+
+      left_ramp_chase:
+        # loops: 10
+        speed: 8
+        show_tokens:
+          color1: drillchair
+
+      outlane_alternate:
+        # loops: 10
+        speed: 4
+        show_tokens:
+          color1: drillchair
+
+      jet_bumpers_color_chase_2:
+        loops: 1
+        speed: 10
+        show_tokens:
+          color1: beartrap
+          color2: drillchair
+          color3: jelly           
+
+
+#CHASE LIGHTS - COLOR 3 JELLY
+- duration: 3s
+  shows:      
+      skillshot_chase:
+        # loops: 15
+        speed: 8
+        show_tokens:
+          color1: jelly
+
+      top_drop_chase:
+        # loops: 12
+        speed: 8
+        show_tokens:
+          color1: jelly
+
+      mode_chase:
+        # loops: 10
+        speed: 10
+        show_tokens:
+          color1: jelly  
+
+      jw_chase:
+        # loops: 10
+        speed: 8
+        show_tokens:
+          color1: jelly
+
+      right_ramp_chase:
+        # loops: 10
+        speed: 8
+        show_tokens:
+          color1: jelly
+
+      left_ramp_chase:
+        # loops: 10
+        speed: 8
+        show_tokens:
+          color1: jelly
+
+      outlane_alternate:
+        # loops: 10
+        speed: 4
+        show_tokens:
+          color1: jelly
+
+      jet_bumpers_color_chase_2:
+        loops: 1
+        speed: 10
+        show_tokens:
+          color1: beartrap
+          color2: drillchair
+          color3: jelly 
+
+
+#CHASE LIGHTS - COLOR 3 ZEPTEST
+- duration: 3s
+  shows:      
+      skillshot_chase:
+        # loops: 15
+        speed: 8
+        show_tokens:
+          color1: zepstest
+
+      top_drop_chase:
+        # loops: 12
+        speed: 8
+        show_tokens:
+          color1: zepstest
+
+      mode_chase:
+        # loops: 10
+        speed: 10
+        show_tokens:
+          color1: zepstest  
+
+      jw_chase:
+        # loops: 10
+        speed: 8
+        show_tokens:
+          color1: zepstest
+
+      right_ramp_chase:
+        # loops: 10
+        speed: 8
+        show_tokens:
+          color1: zepstest
+
+      left_ramp_chase:
+        # loops: 10
+        speed: 8
+        show_tokens:
+          color1: zepstest
+
+      outlane_alternate:
+        # loops: 10
+        speed: 4
+        show_tokens:
+          color1: zepstest
+
+      jet_bumpers_color_chase_2:
+        loops: 1
+        speed: 10
+        show_tokens:
+          color1: beartrap
+          color2: drillchair
+          color3: jelly 
 
       # flammable_jelly_3:
       #   loops: 2
@@ -190,11 +286,6 @@
 #         loops: 1
 #         speed: 3
 
-# - duration: 10s
-#   shows:       
-#       jet_bumpers_color_chase_2:
-#         loops: 1
-#         speed: 10
 
 # - duration: 5s
 #   shows: 
@@ -229,11 +320,11 @@
 #        loops: 0
 #        speed: 5
 
-- duration: 15s
-  shows: 
-     attract_color_wash:
-       # loops: 1
-       speed: 10
+# - duration: 15s
+#   shows: 
+#      attract_color_wash:
+#        # loops: 1
+#        speed: 10
 
 
 # This lightshow does not work well. Needs to be redone.
