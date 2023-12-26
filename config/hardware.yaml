@@ -179,10 +179,10 @@ switches:
     tags: standup, switch_hit
   s_left_110_point:
     number: 3208-12
-    tags: standup, switch_hit
+    tags: slingshot, switch_hit
   s_right_110_point:
     number: 3208-11
-    tags: standup, switch_hit
+    tags: slingshot, switch_hit
   s_left_top_jet_bumper:
     number: 1616_1-2
     tags: top_pops, pops, switch_hit

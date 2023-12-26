@@ -14,6 +14,9 @@ show_player:
 
 sound_player:
   mode_attract_started:
+    HelloZeppPt1:
+      action: play
+      loops: 3
     BaseMusic:
       action: stop  
     initials:

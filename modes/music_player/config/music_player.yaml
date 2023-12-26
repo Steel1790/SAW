@@ -119,13 +119,7 @@ sound_pools:
       - ExistanceForGranted      
  
 sound_player:
-  mode_attract_started:
-    HelloZeppPt1:
-      action: play
-      loops: 3
-    BaseMusic:
-      action: stop
-  mode_attract_stopped:
+  mode_music_player_started:
     HelloZeppPt1:
       action: stop
   mode_game_stopping:
