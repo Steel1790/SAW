@@ -1,0 +1,70 @@
+#show_version=6
+
+#CHOOSE ONE OF THE TWO OPTIONS. COMMENT OUT THE OTHER.
+
+#OPTION 1 - TOP TO BOTTOM RIGHT REPEAT
+# - time: 0
+#   lights:
+#     l_drillchair_mode: (color1)
+# - time: '+1'
+#   lights:
+#     l_beartrap_mode: (color1)
+# - time: '+1'
+#   lights:
+#     l_zeptest_mode: (color1)
+# - time: '+1'
+#   lights:
+#     l_jelly_mode: (color1)
+# - time: '+1'
+#   lights:
+#     l_quadshotgun_mode: (color1)
+# - time: '+1'
+#   lights:
+#     l_razorwire_mode: (color1)
+# - time: '+1'
+#   lights:
+#     l_drillchair_mode: off
+#     l_beartrap_mode: off
+#     l_zeptest_mode: off
+#     l_jelly_mode: off
+#     l_quadshotgun_mode: off
+#     l_razorwire_mode: off
+
+
+#OPTION 2  OVERLAPS BETWEEN INSERTS TOP TO BOTTOM AND THEN BACK UP CYLON STYLE
+- time: 0
+  lights:
+    l_hmb_lock_1: (color1)
+- time: '+1'
+  lights:
+    l_hmb_lock_2: (color1)
+- time: '+1'
+  lights:
+    l_hmb_lock_3: (color1)
+    l_hmb_lock_1: off
+- time: '+1'
+  lights:
+    l_hmb_lock_2: off
+- time: '+1'
+  lights:
+    l_hmb_lock_3: off
+- time: '+1'
+  lights:
+    l_hmb_lock_3: (color1)
+- time: '+1'
+  lights:
+    l_hmb_lock_2: (color1)
+- time: '+1'
+  lights:
+    l_hmb_lock_1: (color1)
+    l_hmb_lock_3: off
+- time: '+1'
+  lights:
+    l_hmb_lock_2: off
+- time: '+1'
+  lights:
+    l_hmb_lock_1: off
+
+
+
+

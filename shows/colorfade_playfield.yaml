@@ -1,0 +1,27 @@
+#show_version=6
+- time: 0
+
+- time: '+10'
+  lights:
+    insert: (color1)-f800ms
+    gi: (color1)-f800ms
+    jet_bumper: (color1)-f800ms  
+    flasher: (color1)-f800ms 
+    discs: (color1)-f800ms 
+    trough: (color1)-f800ms       
+- time: '+10'
+  lights:
+    insert: (color2)-f800ms
+    gi: (color2)-f800ms
+    jet_bumper: (color2)-f800ms  
+    flasher: (color2)-f800ms 
+    discs: (color2)-f800ms  
+    trough: (color2)-f800ms       
+- time: '+10'
+  lights:
+    insert: (color3)-f800ms
+    gi: (color3)-f800ms
+    jet_bumper: (color3)-f800ms  
+    flasher: (color3)-f800ms 
+    discs: (color3)-f800ms
+    trough: (color3)-f800ms            

@@ -31,7 +31,7 @@
 #     l_razorwire_mode: off
 
 
-#OPTION 1 - LEFT TO RIGHT / RIGHT TO LEFT
+#OPTION 2  OVERLAPS BETWEEN INSERTS LEFT TO RIGHT AND THEN RIGHT TO LEFT CYLON STYLE
 - time: 0
   lights:
     l_drillchair_mode: (color1)
@@ -44,21 +44,14 @@
 - time: '+1'
   lights:
     l_jelly_mode: (color1)
-- time: '+1'
-  lights:
-    l_quadshotgun_mode: (color1)
-- time: '+1'
-  lights:
-    l_razorwire_mode: (color1)
-
-- time: '+1'
-  lights:
     l_drillchair_mode: off
 - time: '+1'
   lights:
+    l_quadshotgun_mode: (color1)
     l_beartrap_mode: off
 - time: '+1'
   lights:
+    l_razorwire_mode: (color1)
     l_zeptest_mode: off
 - time: '+1'
   lights:
@@ -69,7 +62,6 @@
 - time: '+1'
   lights:
     l_razorwire_mode: off
-
 - time: '+1'
   lights:
     l_razorwire_mode: (color1)
@@ -82,32 +74,24 @@
 - time: '+1'
   lights:
     l_zeptest_mode: (color1)
-- time: '+1'
-  lights:
-    l_beartrap_mode: (color1)               
-- time: '+1'
-  lights:
-    l_drillchair_mode: (color1)
-
-- time: '+1'
-  lights:
     l_razorwire_mode: off
 - time: '+1'
   lights:
+    l_beartrap_mode: (color1)
     l_quadshotgun_mode: off
 - time: '+1'
   lights:
+    l_drillchair_mode: (color1)
     l_jelly_mode: off
 - time: '+1'
   lights:
-    l_zeptest_mode: off
+     l_zeptest_mode: off
 - time: '+1'
   lights:
-    l_beartrap_mode: off              
+    l_beartrap_mode: off
 - time: '+1'
   lights:
     l_drillchair_mode: off
-
 
 
 

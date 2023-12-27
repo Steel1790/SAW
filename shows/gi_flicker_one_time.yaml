@@ -3,26 +3,26 @@
 
 - time: '+100ms'
   lights:
-    gi_right: (color1) 
+    gi_right: (color1)-f0ms
 
 - time: '+100ms'
   lights:
-    gi_right: off 
-    gi_left: (color1) 
+    gi_right: off-f0ms
+    gi_left: (color1)-f0ms
 
 - time: '+100ms'
   lights:
-    gi_left: off
+    gi_left: off-f0ms
 
 - time: '+300ms'
   lights:
-    gi_right: (color1) 
+    gi_right: (color1)-f0ms
 
 - time: '+100ms'
   lights:
-    gi_right: off 
-    gi_left: (color1) 
+    gi_right: off-f0ms
+    gi_left: (color1)-f0ms
 
 - time: '+100ms'
   lights:
-    gi_left: off
+    gi_left: off-f0ms

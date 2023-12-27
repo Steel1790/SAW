@@ -1,0 +1,12 @@
+#show_version=6
+- time: 0
+
+- time: '+10'
+  lights:
+    insert: (color1)-f800ms
+- time: '+10'
+  lights:
+    insert: (color2)-f800ms
+- time: '+10'
+  lights:
+    insert: (color3)-f800ms  

@@ -5,6 +5,30 @@
 
 - duration: 5s
   shows: 
+      gi_on: stop
+      skillshot_chase: stop
+      top_drop_chase: stop
+      mode_chase: stop
+      jw_chase: stop
+      right_ramp_chase: stop
+      left_ramp_chase: stop
+      hmb_chase: stop
+      outlane_alternate: stop
+      jet_bumpers_color_chase_2: stop
+      colorfade_playfield: stop
+      colorfade_gi: stop
+      colorfade_inserts: stop
+      colorfade_discs: stop
+      disc_left_chase: stop
+      disc_middle_chase: stop
+      disc_right_chase: stop
+      flasher_beartrap_chase: stop
+      flasher_drill_chase: stop
+      flasher_razorwire_chase: stop
+      flasher_shotgun_chase: stop
+      flasher_zep_chase: stop
+      attract_color_stacks: stop
+      colorwash_up_down: stop
       gi_flicker:
         loops: 6
         speed: 2
@@ -16,7 +40,7 @@
       gi_on:
        # loops: -1
         show_tokens:
-          color1: ffffff     
+          color1: ffffff
 
 #CHASE LIGHTS - COLOR 1 BEARTRAP
 - duration: 3s
@@ -35,7 +59,7 @@
 
       mode_chase:
         # loops: 10
-        speed: 10
+        speed: 6
         show_tokens:
           color1: beartrap  
 
@@ -54,6 +78,60 @@
       left_ramp_chase:
         # loops: 10
         speed: 8
+        show_tokens:
+          color1: beartrap
+
+      hmb_chase:
+        # loops: 10
+        speed: 8
+        show_tokens:
+          color1: beartrap
+
+      disc_left_chase:
+        # loops: 10
+        speed: 10
+        show_tokens:
+          color1: beartrap
+
+      disc_middle_chase:
+        # loops: 10
+        speed: 13.3
+        show_tokens:
+          color1: beartrap
+
+      disc_right_chase:
+        # loops: 10
+        speed: 10
+        show_tokens:
+          color1: beartrap
+
+      flasher_beartrap_chase:
+        # loops: 10
+        speed: 6.67
+        show_tokens:
+          color1: beartrap
+
+      flasher_drill_chase:
+        # loops: 10
+        speed: 6.67
+        show_tokens:
+          color1: beartrap
+
+      flasher_razorwire_chase:
+        # loops: 10
+        speed: 6.67
+        show_tokens:
+          color1: beartrap
+
+      flasher_shotgun_chase:
+        # loops: 10
+        speed: 6.67
+        show_tokens:
+          color1: beartrap
+
+      flasher_zep_chase:
+        # loops: 10
+        speed: 6.67
         show_tokens:
           color1: beartrap
 
@@ -88,7 +166,7 @@
 
       mode_chase:
         # loops: 10
-        speed: 10
+        speed: 6
         show_tokens:
           color1: drillchair  
 
@@ -107,6 +185,60 @@
       left_ramp_chase:
         # loops: 10
         speed: 8
+        show_tokens:
+          color1: drillchair
+
+      hmb_chase:
+        # loops: 10
+        speed: 8
+        show_tokens:
+          color1: drillchair 
+
+      disc_left_chase:
+        # loops: 10
+        speed: 10
+        show_tokens:
+          color1: drillchair
+
+      disc_middle_chase:
+        # loops: 10
+        speed: 13.3
+        show_tokens:
+          color1: drillchair
+
+      disc_right_chase:
+        # loops: 10
+        speed: 10
+        show_tokens:
+          color1: drillchair
+
+      flasher_beartrap_chase:
+        # loops: 10
+        speed: 6.67
+        show_tokens:
+          color1: drillchair
+
+      flasher_drill_chase:
+        # loops: 10
+        speed: 6.67
+        show_tokens:
+          color1: drillchair
+
+      flasher_razorwire_chase:
+        # loops: 10
+        speed: 6.67
+        show_tokens:
+          color1: drillchair
+
+      flasher_shotgun_chase:
+        # loops: 10
+        speed: 6.67
+        show_tokens:
+          color1: drillchair
+
+      flasher_zep_chase:
+        # loops: 10
+        speed: 6.67
         show_tokens:
           color1: drillchair
 
@@ -142,7 +274,7 @@
 
       mode_chase:
         # loops: 10
-        speed: 10
+        speed: 6
         show_tokens:
           color1: jelly  
 
@@ -161,6 +293,60 @@
       left_ramp_chase:
         # loops: 10
         speed: 8
+        show_tokens:
+          color1: jelly
+
+      hmb_chase:
+        # loops: 10
+        speed: 8
+        show_tokens:
+          color1: jelly
+
+      disc_left_chase:
+        # loops: 10
+        speed: 10
+        show_tokens:
+          color1: jelly
+
+      disc_middle_chase:
+        # loops: 10
+        speed: 13.3
+        show_tokens:
+          color1: jelly
+
+      disc_right_chase:
+        # loops: 10
+        speed: 10
+        show_tokens:
+          color1: jelly
+
+      flasher_beartrap_chase:
+        # loops: 10
+        speed: 6.67
+        show_tokens:
+          color1: jelly
+
+      flasher_drill_chase:
+        # loops: 10
+        speed: 6.67
+        show_tokens:
+          color1: jelly
+
+      flasher_razorwire_chase:
+        # loops: 10
+        speed: 6.67
+        show_tokens:
+          color1: jelly
+
+      flasher_shotgun_chase:
+        # loops: 10
+        speed: 6.67
+        show_tokens:
+          color1: jelly
+
+      flasher_zep_chase:
+        # loops: 10
+        speed: 6.67
         show_tokens:
           color1: jelly
 
@@ -196,7 +382,7 @@
 
       mode_chase:
         # loops: 10
-        speed: 10
+        speed: 6
         show_tokens:
           color1: zepstest  
 
@@ -218,6 +404,60 @@
         show_tokens:
           color1: zepstest
 
+      hmb_chase:
+        # loops: 10
+        speed: 8
+        show_tokens:
+          color1: zepstest
+
+      disc_left_chase:
+        # loops: 10
+        speed: 10
+        show_tokens:
+          color1: zepstest
+
+      disc_middle_chase:
+        # loops: 10
+        speed: 13.3
+        show_tokens:
+          color1: zepstest
+
+      disc_right_chase:
+        # loops: 10
+        speed: 10
+        show_tokens:
+          color1: zepstest
+
+      flasher_beartrap_chase:
+        # loops: 10
+        speed: 6.67
+        show_tokens:
+          color1: zepstest
+
+      flasher_drill_chase:
+        # loops: 10
+        speed: 6.67
+        show_tokens:
+          color1: zepstest
+
+      flasher_razorwire_chase:
+        # loops: 10
+        speed: 6.67
+        show_tokens:
+          color1: zepstest
+
+      flasher_shotgun_chase:
+        # loops: 10
+        speed: 6.67
+        show_tokens:
+          color1: zepstest
+
+      flasher_zep_chase:
+        # loops: 10
+        speed: 6.67
+        show_tokens:
+          color1: zepstest
+
       outlane_alternate:
         # loops: 10
         speed: 4
@@ -231,6 +471,108 @@
           color1: beartrap
           color2: drillchair
           color3: jelly 
+
+# COLOR FADE FULL PLAYFIELD
+- duration: 10s
+  shows: 
+      skillshot_chase: stop
+      top_drop_chase: stop
+      mode_chase: stop
+      jw_chase: stop
+      right_ramp_chase: stop
+      left_ramp_chase: stop
+      hmb_chase: stop
+      outlane_alternate: stop
+      jet_bumpers_color_chase_2: stop 
+      disc_left_chase: stop
+      disc_middle_chase: stop
+      disc_right_chase: stop
+      flasher_beartrap_chase: stop
+      flasher_drill_chase: stop
+      flasher_razorwire_chase: stop
+      flasher_shotgun_chase: stop
+      flasher_zep_chase: stop    
+      colorfade_playfield:
+        speed: 8
+        show_tokens:
+          color1: zepstest
+          color2: beartrap
+          color3: drillchair
+
+- duration: 15s
+  shows: 
+      colorfade_playfield: stop
+      gi_on: stop
+      colorfade_gi:
+        speed: 4
+        show_tokens:
+          color1: drillchair
+          color2: beartrap
+          color3: shotgun
+      colorfade_discs:
+        speed: 4
+        show_tokens:
+          color1: drillchair
+          color2: beartrap
+          color3: shotgun 
+      colorfade_pops:
+        speed: 4
+        show_tokens:
+          color1: drillchair
+          color2: beartrap
+          color3: shotgun                    
+      colorfade_inserts:
+        speed: 4
+        show_tokens:
+          color1: zepstest
+          color2: razorwire
+          color3: jelly          
+
+- duration: 15s
+  shows: 
+      colorfade_gi: stop
+      colorfade_discs: stop
+      colorfade_pops: stop
+      colorfade_inserts: stop
+      gi_on: stop
+      attract_color_stacks:
+        speed: 30
+
+- duration: 4s
+  shows: 
+      attract_color_stacks: stop
+      colorwash_up_down:
+        speed: 30
+        show_tokens:
+          color1: zepstest
+
+- duration: 4s
+  shows: 
+      colorwash_up_down:
+        speed: 30
+        show_tokens:
+          color1: drillchair
+
+- duration: 4s
+  shows: 
+      colorwash_up_down:
+        speed: 30
+        show_tokens:
+          color1: jelly
+
+- duration: 4s
+  shows: 
+      colorwash_up_down:
+        speed: 30
+        show_tokens:
+          color1: beartrap
+
+- duration: 4s
+  shows: 
+      colorwash_up_down:
+        speed: 30
+        show_tokens:
+          color1: shotgun
 
       # flammable_jelly_3:
       #   loops: 2
@@ -312,13 +654,6 @@
 #       rtb_green_single_reverse_rotation:
 #         loops: 7
 #         speed: 40
-
-# This lightshow does not work well. Needs to be redone.
-# - duration: .5s
-#   shows: 
-#       rainbow_saucer:
-#        loops: 0
-#        speed: 5
 
 # - duration: 15s
 #   shows: 
