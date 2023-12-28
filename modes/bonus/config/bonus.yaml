@@ -419,3 +419,13 @@ sound_player:
   mode_bonus_started:
     BaseMusic:
       action: stop
+
+
+show_player:
+  display_handguns:   
+   flash_token:
+     loops: 2
+     speed: 10
+     show_tokens:
+       led: l_jw_gun
+       color1: ffffff
