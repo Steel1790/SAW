@@ -214,10 +214,10 @@ sound_player:
     RightOrbit:
       action: play
   s_right_outlane_active:
-    BallDrain:
+    TortureScream:
       action: play
-  s_outlane_active:
-    BallDrain:
+  s_left_outlane_active:
+    TortureScream:
       action: play
   sw_right_return_lane:
     Gore_Neck_Break:

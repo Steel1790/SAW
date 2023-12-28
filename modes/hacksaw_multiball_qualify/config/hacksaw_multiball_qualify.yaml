@@ -2,16 +2,30 @@
 ##! mode: hacksaw_multiball_qualify
 
 mode:
-  start_events: startmode_hacksaw_multiball_qualify
+  start_events: ball_starting
+  #start_mode_hacksaw_multiball_qualify
   priority: 160
 
-accruals:
+#accruals:
+sequences:
   hacksaw_mb_qualify:
     events:
       - s_left_standup_right_ramp_active
       - s_right_standup_right_ramp_active
     reset_on_complete: true
     persist_state: true
+    disable_on_complete: false
+
+#TODO need a player variable to store this counter between balls
+counters:
+  hacksaw_multiball_qualify:
+    starting_count: 0
+    count_complete_value: 3
+    start_enabled: true
+    persist_state: true
+    reset_on_complete: false
+    count_events: logicblock_hacksaw_mb_qualify_complete
+    events_when_complete: start_mode_hacksaw_multiball
 
 variable_player:
   mode_hacksaw_multiball_started:
@@ -69,7 +83,7 @@ show_player:
   event_hacksaw_mb_qualify_hit_two{device.counters.hacksaw_multiball_qualify.value == 1}:
     hacksaw_mb_qualify_hit_qualified_show:
       show_tokens:
-        leds: l_hmb_lock_2
+        leds: l_hmb_lock_1, l_hmb_lock_2
   event_hacksaw_mb_qualify_hit_one{device.counters.hacksaw_multiball_qualify.value == 2}:
     hacksaw_mb_qualify_hit_ready_show:
       show_tokens:
@@ -77,7 +91,7 @@ show_player:
   event_hacksaw_mb_qualify_hit_two{device.counters.hacksaw_multiball_qualify.value == 2}:
     hacksaw_mb_qualify_hit_qualified_show:
       show_tokens:
-        leds: l_hmb_lock_3
+        leds: l_hmb_lock_1, l_hmb_lock_2, l_hmb_lock_3
   mode_hacksaw_multiball_stopped:
     hacksaw_mb_show_end:
       show_tokens:

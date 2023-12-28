@@ -2,7 +2,8 @@
 ##! mode: jigsaw_multiball_qualify
 
 mode:
-  start_events: startmode_jigsaw_multiball_qualify
+  start_events: ball_starting
+  #start_mode_jigsaw_multiball_qualify
   priority: 150
 
 sequences:
@@ -23,6 +24,7 @@ counters:
     persist_state: true
     reset_on_complete: false
     count_events: logicblock_jigsaw_mb_qualify_complete
+    events_when_complete: start_mode_jigsaw_multiball
 
 variable_player:
   mode_jigsaw_multiball_started:
