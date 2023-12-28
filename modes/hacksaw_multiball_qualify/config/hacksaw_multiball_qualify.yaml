@@ -10,30 +10,26 @@ accruals:
     events:
       - s_left_standup_right_ramp_active
       - s_right_standup_right_ramp_active
-    reset_on_complete: true
+    reset_on_complete: false
     persist_state: true
+    disable_on_complete: false
+    reset_events: multiball_lock_hacksaw_multiball_lock_locked_ball
 
 variable_player:
-  mode_jigsaw_multiball_started:
+  mode_hacksaw_multiball_started:
     score: 3000000
 
 slides:
-  JigsawMB:
+  HacksawMB:
     widgets:
       - type: video
-        video: JigsawMB
+        video: HacksawMB
 
 slide_player:
-  mode_jigsaw_multiball_started:
-    JigsawMB:
+  mode_hacksaw_multiball_started:
+    HacksawMB:
       priority: 500
       expire: 6s
-
-event_player:
-  logicblock_jigsaw_mb_qualify_hit{step==1}:
-    - event_jigsaw_mb_qualify_hit_one
-  logicblock_jigsaw_mb_qualify_hit{step==2}:
-    - event_jigsaw_mb_qualify_hit_two
 
 shows:
   hacksaw_mb_qualify_hit_ready_show:
@@ -41,44 +37,44 @@ shows:
       shows:
         flash_color:
           show_tokens:
-            color: orange
+            color: color_hacksaw_mb
             leds: (leds)
           speed: 4
-  hacksaw_mb_qualify_hit_qualified_show:
+  hacksaw_mb_qualify_hit_locked_show:
     - duration: -1
       lights:
-        (leds): orange
+        (leds): color_hacksaw_mb
   hacksaw_mb_show_end:
     - duration: -1
       lights:
         (leds): off
 
 show_player:
-  event_jigsaw_mb_qualify_hit_one{device.counters.jigsaw_multiball_qualify.value == 0}:
+  logicblock_hacksaw_mb_qualify_complete{device.multiball_locks.hacksaw_multiball_lock.locked_balls == 0}:
     hacksaw_mb_qualify_hit_ready_show:
       show_tokens:
-        leds: l_left_ramp_triangle3
-  event_jigsaw_mb_qualify_hit_two{device.counters.jigsaw_multiball_qualify.value == 0}:
-    hacksaw_mb_qualify_hit_qualified_show:
+        leds: l_hmb_lock_1
+  multiball_lock_hacksaw_multiball_lock_locked_ball{device.multiball_locks.hacksaw_multiball_lock.locked_balls == 1}:
+    hacksaw_mb_qualify_hit_locked_show:
       show_tokens:
-        leds: l_left_ramp_triangle3
-  event_jigsaw_mb_qualify_hit_one{device.counters.jigsaw_multiball_qualify.value == 1}:
+        leds: l_hmb_lock_1
+  logicblock_hacksaw_mb_qualify_complete{device.multiball_locks.hacksaw_multiball_lock.locked_balls == 1}:
     hacksaw_mb_qualify_hit_ready_show:
       show_tokens:
-        leds: l_left_ramp_triangle2
-  event_jigsaw_mb_qualify_hit_two{device.counters.jigsaw_multiball_qualify.value == 1}:
-    hacksaw_mb_qualify_hit_qualified_show:
+        leds: l_hmb_lock_2
+  multiball_lock_hacksaw_multiball_lock_locked_ball{device.multiball_locks.hacksaw_multiball_lock.locked_balls == 2}:
+    hacksaw_mb_qualify_hit_locked_show:
       show_tokens:
-        leds: l_left_ramp_triangle3, l_left_ramp_triangle2
-  event_jigsaw_mb_qualify_hit_one{device.counters.jigsaw_multiball_qualify.value == 2}:
+        leds: l_hmb_lock_1, l_hmb_lock_2
+  logicblock_hacksaw_mb_qualify_complete{device.multiball_locks.hacksaw_multiball_lock.locked_balls == 2}:
     hacksaw_mb_qualify_hit_ready_show:
       show_tokens:
-        leds: l_left_ramp_triangle1
-  event_jigsaw_mb_qualify_hit_two{device.counters.jigsaw_multiball_qualify.value == 2}:
-    hacksaw_mb_qualify_hit_qualified_show:
+        leds: l_hmb_lock_3
+  multiball_lock_hacksaw_multiball_lock_locked_ball{device.multiball_locks.hacksaw_multiball_lock.locked_balls == 3}:
+    hacksaw_mb_qualify_hit_locked_show:
       show_tokens:
-        leds: l_left_ramp_triangle3, l_left_ramp_triangle2, l_left_ramp_triangle1
-  mode_jigsaw_multiball_stopped:
+        leds: l_hmb_lock_1, l_hmb_lock_2, l_hmb_lock_3
+  mode_hacksaw_multiball_stopped:
     hacksaw_mb_show_end:
       show_tokens:
-        leds: l_left_ramp_triangle1, l_left_ramp_triangle2, l_left_ramp_triangle3
+        leds: l_hmb_lock_1

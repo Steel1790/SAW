@@ -10,7 +10,9 @@ named_colors:
   beartrap: ff0800
   shotgun: 0981D1
   jelly: FCE205
-  
+  color_jigsaw_mb: FFA500
+  color_hacksaw_mb: 2db83d
+
 lights:
   l_left_escape:
     number: led128-4-4

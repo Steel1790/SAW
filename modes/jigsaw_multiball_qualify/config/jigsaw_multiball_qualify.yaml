@@ -52,13 +52,13 @@ shows:
       shows:
         flash_color:
           show_tokens:
-            color: orange
+            color: color_jigsaw_mb
             leds: (leds)
           speed: 4
   jigsaw_mb_qualify_hit_qualified_show:
     - duration: -1
       lights:
-        (leds): orange
+        (leds): color_jigsaw_mb
   jigsaw_mb_show_end:
     - duration: -1
       lights:

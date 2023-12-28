@@ -20,7 +20,7 @@ multiballs:
   hacksaw_multiball:
     ball_count: 3
     shoot_again: 15s
-    start_events: multiball_hacksaw_multiball_lock_full
+    start_events: multiball_lock_hacksaw_multiball_lock_full
 
 slides:
   HacksawMB:
