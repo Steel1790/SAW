@@ -1,6 +1,6 @@
 #config_version=6
 mode:
-  start_events: start_mystery_mode, mode_razorwire_stopped, mode_drillchair_stopped, mode_flammablejelly_stopped, mode_quadshotgun_stopped, mode_reversebeartrap_stopped, mode_zeptest_stopped, mode_hacksaw_multiball_stopped, mode_jigsaw_multiball_stopped, mode_jigsaw_multiball_stopped, mode_hacksaw_multiball_stopped
+  start_events: start_mystery_mode
   stop_events: ball_ended, mode_cellar_started, slide_Mystery5Million_removed, slide_MysteryMinus5Million_removed, slide_MysteryExtraBall_removed, mode_selection_mode_started, s_right_cellar_active
   
 

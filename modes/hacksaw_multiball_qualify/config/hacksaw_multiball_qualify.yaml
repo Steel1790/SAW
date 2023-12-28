@@ -2,10 +2,12 @@
 ##! mode: hacksaw_multiball_qualify
 
 mode:
-  start_events: startmode_hacksaw_multiball_qualify
+  start_events: ball_starting
+  #start_mode_hacksaw_multiball_qualify
   priority: 160
 
-accruals:
+#accruals:
+sequences:
   hacksaw_mb_qualify:
     events:
       - s_left_standup_right_ramp_active
@@ -77,4 +79,4 @@ show_player:
   mode_hacksaw_multiball_stopped:
     hacksaw_mb_show_end:
       show_tokens:
-        leds: l_hmb_lock_1
+        leds: l_hmb_lock_1,l_hmb_lock_2,l_hmb_lock_3

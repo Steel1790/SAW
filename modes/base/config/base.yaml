@@ -466,6 +466,8 @@ shows:
 # EK testing lightshow on shot action
 show_player:
 #  mode_skillshot_complete:
+# add show here
+
   mode_base_started:   
 #    flash_token:
 #      loops: -1
@@ -512,17 +514,17 @@ show_player:
   #     show_tokens:
   #       led: l_gi_20
   #       color1: red   
-  sw_slingshot:
+  s_left_slingshot_active:
     base_slingshots:
       loops: 0
       show_tokens:
-        leds: l_gi_1, l_gi_2, l_gi_3, l_gi_20, l_gi_21, l_gi_22
+        leds: l_gi_1, l_gi_2, l_gi_3
 
-  s_right_top_jet_bumper_hit: 
+  s_right_slingshot_active:
     base_slingshots:
       loops: 0
       show_tokens:
-        leds: l_gi_7, l_gi_8
+        leds: l_gi_20, l_gi_21, l_gi_22        
 
   minimode_pops_complete:
     minimode_pops_show_complete:

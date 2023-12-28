@@ -2,7 +2,7 @@
 ##! mode: jigsaw_multiball
 
 mode:
-  start_events: startmode_jigsaw_multiball
+  start_events: start_mode_jigsaw_multiball
   stop_events: stop_mode_jigsaw_multiball, mode_jigsaw_multiball_complete, player_turn_stopped, player_turn_ended
   priority: 155
 

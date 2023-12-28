@@ -214,10 +214,10 @@ sound_player:
     RightOrbit:
       action: play
   s_right_outlane_active:
-    BallDrain:
+    TortureScream:
       action: play
-  s_outlane_active:
-    BallDrain:
+  s_left_outlane_active:
+    TortureScream:
       action: play
   sw_right_return_lane:
     Gore_Neck_Break:
@@ -366,7 +366,7 @@ sound_player:
       delay: 10s
       action: play
       loops: -1      
-  player_quadshotgun_quadshotgun_60s_timer_tick{value < 1}:
+  player_quadshotgun_quadshotgun_60s_timer_tick{value == 1}:
     QuadShotgunFail:
       action: play
   mode_quadshotgun_stopped:
