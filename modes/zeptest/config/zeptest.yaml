@@ -6,9 +6,9 @@ mode:
 sequences:
   zeptest:
     events:
-      - machine_var_audits_switches_s_lower_bank_drop_target_opto_upper
-      - machine_var_audits_switches_s_lower_bank_drop_target_opto_middle
-      - machine_var_audits_switches_s_lower_bank_drop_target_opto_lower
+      - sw_lower_drop_target
+      - sw_lower_drop_target
+      - sw_lower_drop_target
       - upper_drop_target_hit
       - left_ramp_hit
       - machine_var_audits_switches_s_right_ramp_score_top
