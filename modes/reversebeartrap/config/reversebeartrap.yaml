@@ -256,3 +256,6 @@ show_player:
     gi_on:
       show_tokens:
         color1: beartrap     
+
+event_player: 
+  slide_reversebeartrapUI_active: e_primary_mode_active

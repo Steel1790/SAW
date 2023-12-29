@@ -442,3 +442,6 @@ show_player:
         show_tokens:
           leds: bottom_bumper
           color1: drillchair
+
+event_player: 
+  slide_drillchair_pops_active: e_primary_mode_active

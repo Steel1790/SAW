@@ -425,3 +425,6 @@ sound_player:
   player_razorwire_60s_timer_tick{value < 1}:
     RWModeStart:
       action: stop
+
+event_player: 
+  slide_razorwire_pops_active: e_primary_mode_active

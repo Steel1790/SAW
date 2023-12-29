@@ -378,7 +378,7 @@ ball_devices:
     eject_timeouts: 5s
     player_controlled_eject_event: s_action_button_active
 
-  bd_mystery:
+  bd_scoop:
     ball_switches: s_left_cellar
     eject_coil: c_mystery_eject
     eject_timeouts: 4s
