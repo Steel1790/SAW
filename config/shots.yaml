@@ -8,8 +8,8 @@ sequence_shots:
     sequence_timeout: 4s
   cellar:
     switch_sequence: s_right_cellar
-  mystery:
-    switch_sequence: s_left_cellar
+  #mystery:
+  #  switch_sequence: s_left_cellar
   spinner:
     switch_sequence: s_spinner
   upper_drop_target:

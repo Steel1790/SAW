@@ -76,6 +76,8 @@ counters:
     reset_on_complete: true
     disable_on_complete: false
     events_when_complete: start_mystery_mode
+    enable_events: mode_base_started, mode_drillchair_stopped, mode_flammablejelly_stopped, mode_quadshotgun_stopped, mode_razorwire_stopped, mode_reversebeartrap_stopped, mode_zeptest_stopped
+    disable_events: multiball_active, mode_selection_mode_started 
     count_events: sw_lower_drop_target
 
   random_switch:

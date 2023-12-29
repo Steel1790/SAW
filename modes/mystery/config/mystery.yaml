@@ -1,7 +1,7 @@
 #config_version=6
 mode:
   start_events: start_mystery_mode
-  stop_events: ball_ended, mode_cellar_started, slide_Mystery5Million_removed, slide_MysteryMinus5Million_removed, slide_MysteryExtraBall_removed, mode_selection_mode_started, s_right_cellar_active
+  stop_events: ball_ended, slide_Mystery5Million_removed, slide_MysteryMinus5Million_removed, slide_MysteryExtraBall_removed
   
 
 event_player:
@@ -103,3 +103,14 @@ slide_player:
     MysteryExtraBall:
       priority: 1
       expire: 11s
+
+shots:
+  mystery:
+    switch: s_left_cellar
+    disable_events: mode_cellar_started, multiball_active
+    enable_events: mode_mystery_started, mode_drillchair_stopped, mode_flammablejelly_stopped, mode_quadshotgun_stopped, mode_razorwire_stopped, mode_reversebeartrap_stopped, mode_zeptest_stopped
+
+#sequence_shots:
+#  right_left_cellar:
+#    switch_sequence: s_right_cellar, s_left_cellar
+#    sequence_timeout: 2s
