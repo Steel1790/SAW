@@ -2,7 +2,7 @@
 ##! mode: hacksaw_multiball
 
 mode:
-  start_events: start_mode_hacksaw_multiball
+  start_events: startmode_hacksaw_multiball
   stop_events: stop_mode_hacksaw_multiball, mode_hacksaw_multiball_complete
   priority: 165
 

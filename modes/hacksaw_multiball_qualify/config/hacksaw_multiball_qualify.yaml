@@ -6,8 +6,7 @@ mode:
   #start_mode_hacksaw_multiball_qualify
   priority: 160
 
-#accruals:
-sequences:
+accruals:
   hacksaw_mb_qualify:
     events:
       - s_left_standup_right_ramp_active
