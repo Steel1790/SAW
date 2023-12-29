@@ -2,8 +2,7 @@
 ##! mode: hacksaw_multiball_qualify
 
 mode:
-  start_events: ball_starting
-  #start_mode_hacksaw_multiball_qualify
+  start_events: startmode_hacksaw_multiball_qualify
   priority: 160
 
 accruals:
@@ -16,21 +15,6 @@ accruals:
     disable_on_complete: false
     reset_events: multiball_lock_hacksaw_multiball_lock_locked_ball
 
-variable_player:
-  mode_hacksaw_multiball_started:
-    score: 3000000
-
-slides:
-  HacksawMB:
-    widgets:
-      - type: video
-        video: HacksawMB
-
-slide_player:
-  mode_hacksaw_multiball_started:
-    HacksawMB:
-      priority: 500
-      expire: 6s
 
 shows:
   hacksaw_mb_qualify_hit_ready_show:
@@ -75,7 +59,7 @@ show_player:
     hacksaw_mb_qualify_hit_locked_show:
       show_tokens:
         leds: l_hmb_lock_1, l_hmb_lock_2, l_hmb_lock_3
-  mode_hacksaw_multiball_stopped:
+  mode_hacksaw_multiball_ended:
     hacksaw_mb_show_end:
       show_tokens:
         leds: l_hmb_lock_1,l_hmb_lock_2,l_hmb_lock_3

@@ -2,8 +2,7 @@
 ##! mode: jigsaw_multiball_qualify
 
 mode:
-  start_events: ball_starting
-  #start_mode_jigsaw_multiball_qualify
+  start_events: startmode_jigsaw_multiball_qualify
   priority: 150
 
 sequences:
@@ -24,10 +23,9 @@ counters:
     persist_state: true
     reset_on_complete: false
     count_events: logicblock_jigsaw_mb_qualify_complete
-    events_when_complete: start_mode_jigsaw_multiball
 
 variable_player:
-  mode_jigsaw_multiball_started:
+  multiball_jigsaw_multiball_started:
     score: 3000000
 
 slides:
@@ -37,7 +35,7 @@ slides:
         video: JigsawMB
 
 slide_player:
-  mode_jigsaw_multiball_started:
+  multiball_jigsaw_multiball_started:
     JigsawMB:
       priority: 500
       expire: 6s
@@ -91,7 +89,7 @@ show_player:
     jigsaw_mb_qualify_hit_qualified_show:
       show_tokens:
         leds: l_left_ramp_triangle3, l_left_ramp_triangle2, l_left_ramp_triangle1
-  mode_jigsaw_multiball_stopped:
+  mode_jigsaw_multiball_ended:
     jigsaw_mb_show_end:
       show_tokens:
         leds: l_left_ramp_triangle1, l_left_ramp_triangle2, l_left_ramp_triangle3
