@@ -314,6 +314,18 @@ counters:
     events_when_complete: multiplier_progress_counter_complete
     count_events: upper_drop_target_hit
  
+  cnt_negative_shot_counter:
+    starting_count: 0
+    count_complete_value: 3
+    enable_events: 
+    disable_events: 
+    start_enabled: true
+#    persist_state: true
+    reset_on_complete: true
+    disable_on_complete: false
+#    events_when_complete: 
+    count_events: shot_left_return_lane_hit
+
 shows:
   minimode_pops_show_complete:    
     - duration: -1      
@@ -1176,18 +1188,18 @@ ball_holds:
     release_one_events: e_primary_mode_active, e_release_mystery
 
 coil_player:
-  logicblock_saw_qualify_counter_updated{value==1}:
+  logicblock_cnt_negative_shot_counter_updated{value==1}:
     c_right_spin_disc:
       action: enable
       hold_power: 1.0
-  logicblock_saw_qualify_counter_updated{value==2}:
+  logicblock_cnt_negative_shot_counter_updated{value==2}:
     c_middle_spin_disc:
       action: enable
       hold_power: 1.0
     c_right_spin_disc:
       action: enable
       hold_power: 1.0
-  logicblock_saw_qualify_counter_updated{value==3}:
+  logicblock_cnt_negative_shot_counter_updated{value==3}:
     c_left_spin_disc:
       action: enable
       hold_power: 1.0
@@ -1198,6 +1210,13 @@ coil_player:
       action: enable
       hold_power: 1.0
   mode_selection_mode_started:
+    c_right_spin_disc:
+      action: off
+    c_middle_spin_disc:
+      action: off
+    c_left_spin_disc:
+      action: off
+  ball_ending:
     c_right_spin_disc:
       action: off
     c_middle_spin_disc:
