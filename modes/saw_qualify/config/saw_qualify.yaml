@@ -88,9 +88,12 @@ shot_groups:
 
 shows:
   shot_on:    # define our show to indicate the state
-    - duration: -1      # this show step will run permanently
-      lights:     # turn the light purple
+    - duration: 1s
+      lights:
         (leds): white
+    - duration: 1s
+      lights:
+        (leds): off
   shot_subtract:    # define our show to indicate the state
     - duration: -1      # this show step will run permanently
       lights:     # turn the light purple

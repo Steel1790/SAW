@@ -23,7 +23,7 @@ shows:
   mystery_lit:
     - duration: 0.5s
       lights:
-        (leds): white
+        (leds): jelly
     - duration: 0.5s
       lights:
         (leds): off
@@ -48,7 +48,7 @@ show_player:
        loops: 0
        show_tokens:
         led: insert, gi, jet_bumper, flasher, l_mystery_scoop
-        color1: white
+        color1: jelly
 
 random_event_player:
   mystery_hit:
@@ -103,6 +103,37 @@ slide_player:
     MysteryExtraBall:
       priority: 1
       expire: 11s
+
+
+widgets:
+  mystery_ready:
+    - type: Text
+      text: Mystery Is Lit
+      color: jelly
+      x: 50%
+      y: 85%
+      z: 2
+      font_size: 55
+      font_name: Mustkill
+      animations:
+        add_to_slide:
+        - property: opacity
+          value: 0
+          duration: 1s
+        - property: opacity
+          value: 1
+          duration: 1s
+          repeat: true 
+
+widget_player:
+  player_shot_mystery_enabled{value==True}:
+    mystery_ready:
+      slide: base_slide_main
+      action: add
+  player_shot_mystery_enabled{value==False}:
+    mystery_ready:
+      slide: base_slide_main
+      action: remove
 
 shots:
   mystery:
