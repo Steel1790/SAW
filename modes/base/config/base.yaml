@@ -436,7 +436,7 @@ shows:
     - duration: -1
       lights:
         (leds): off
-        
+  
   ballsave:
     - duration: 0.5s
       lights:
@@ -465,28 +465,26 @@ shows:
       lights:
         (leds): 8A0303
 
-  base_slingshots:
-    - duration: 0.5s
+  slingshots_flash:
+    - duration: 0.3s
       lights:
-        (leds): red-f100ms
+        (leds): red-f200ms
       # fade_ms: 100ms  
-    - duration: 0.2s
+    - duration: 0.1s
       lights:
-        (leds): white-f100ms
+        (leds): white-f200ms
       # fade_ms: 100ms    
  
 # EK testing lightshow on shot action
 show_player:
-#  mode_skillshot_complete:
-# add show here
+  mode_skillshot_complete:
+    skillshot_color_wash:
+      loops: 0
+      speed: 10
+      # show_tokens:
+      #   color1: white
 
   mode_base_started:   
-#    flash_token:
-#      loops: -1
-#      speed: 2
-#      show_tokens:
-#        led: arrow
-#        color1: ffffff
     base_action_button:
       loops: -1
       show_tokens:
@@ -519,24 +517,23 @@ show_player:
       show_tokens:
         color1: white
 
-  # sw_slingshot:
-  #  flash_token:
-  #     loops: 1
-  #     speed: 10
-  #     show_tokens:
-  #       led: l_gi_20
-  #       color1: red   
   s_left_slingshot_active:
-    base_slingshots:
+    slingshots_flash:
       loops: 0
       show_tokens:
         leds: l_gi_1, l_gi_2, l_gi_3
 
   s_right_slingshot_active:
-    base_slingshots:
+    slingshots_flash:
       loops: 0
       show_tokens:
-        leds: l_gi_20, l_gi_21, l_gi_22        
+        leds: l_gi_20, l_gi_21, l_gi_22
+
+  s_right_top_jet_bumper_active:
+    slingshots_flash:
+      loops: 0
+      show_tokens:
+        leds: right_top_bumper      
 
   minimode_pops_complete:
     minimode_pops_show_complete:
