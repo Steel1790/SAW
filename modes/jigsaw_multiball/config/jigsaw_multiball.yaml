@@ -7,23 +7,23 @@ mode:
   priority: 155
 
 multiballs:
-  jigsaw_multiball:
+  mb_jigsaw:
     ball_count: 2
     shoot_again: 15s
     start_events: logicblock_jigsaw_multiball_qualify_complete
 
 variable_player:
-  multiball_jigsaw_multiball_started:
+  multiball_mb_jigsaw_started:
     score: 3000000
 
 slides:
-  JigsawMB:
+  sl_JigsawMB:
     widgets:
     - type: video
       video: JigsawMB
 
 slide_player:
-  multiball_jigsaw_multiball_started:
-    JigsawMB:
+  multiball_mb_jigsaw_started:
+    sl_JigsawMB:
       priority: 500
       expire: 6s

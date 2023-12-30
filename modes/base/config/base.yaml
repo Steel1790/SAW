@@ -25,7 +25,7 @@ event_player:
     - startmode_hacksaw_multiball_qualify
 
 slide_player:
-  saw_qualify_complete:
+  logicblock_cnt_saw_qualify_complete:
     saw_collect:
       priority: 400
       expire: 3s   
@@ -85,7 +85,7 @@ slide_player:
       action: play    
       
 variable_player:
-  cellar_hit:
+  logicblock_cnt_saw_qualify_complete:
     score: 100000
   sw_pops:
     score: 50000
@@ -240,7 +240,7 @@ counters:
     reset_on_complete: true
     disable_on_complete: false    
     events_when_complete: minimode_scoops_complete 
-    count_events: cellar_hit    
+    count_events: logicblock_cnt_saw_qualify_complete
 
   minimode_inlanes_counter:
     starting_count: 0
@@ -741,7 +741,7 @@ widgets:
       font_size: 110
       font_name: sawesome      
 
-  cellar_start:
+  w_trap_select_start:
     - type: Text
       text: Get to the BATHROOM to Select A Mode!
       color: white
@@ -964,7 +964,7 @@ widget_player:
     saw_letters:
       slide: base_slide_main
       action: add
-  saw_qualify_complete:
+  logicblock_cnt_saw_qualify_complete:
     saw_letters:
       action: remove
     saw_s_letters:
@@ -974,18 +974,18 @@ widget_player:
     saw_saw_letters:
       slide: base_slide_main
       action: add     
-  sg_saw_qualify_subtract_hit{device.counters.saw_qualify_counter.value==1}:
+  sg_saw_qualify_subtract_hit{device.counters.cnt_saw_qualify.value==1}:
     saw_s_letters:
       action: remove    
-  sg_saw_qualify_subtract_hit{device.counters.saw_qualify_counter.value==2}:
+  sg_saw_qualify_subtract_hit{device.counters.cnt_saw_qualify.value==2}:
     saw_sa_letters:
       action: remove    
-  mode_cellar_started:
-    cellar_start:
+  mode_trap_select_started:
+    w_trap_select_start:
       slide: base_slide_main
       action: add
-  mode_cellar_complete:
-    cellar_start:
+  mode_trap_select_stopped:
+    w_trap_select_start:
       action: remove
     saw_saw_letters:
       action: remove
@@ -994,15 +994,15 @@ widget_player:
       slide: base_slide_main
       action: add      
       
-  logicblock_saw_qualify_counter_updated{value==1}:
+  logicblock_cnt_saw_qualify_updated{value==1}:
     saw_s_letters:
       slide: base_slide_main
       action: add   
-  logicblock_saw_qualify_counter_updated{value==2}:
+  logicblock_cnt_saw_qualify_updated{value==2}:
     saw_sa_letters:
       slide: base_slide_main
       action: add  
-  #logicblock_saw_qualify_counter_updated{value==3}:
+  #logicblock_cnt_saw_qualify_updated{value==3}:
   #  saw_saw_letters:
   #    slide: base_slide_main
   #    action: add   
@@ -1180,7 +1180,7 @@ ball_holds:
   bh_scoop:
     balls_to_hold: 1
     hold_devices: bd_scoop
-    enable_events: saw_qualify_complete, e_enable_mystery
+    enable_events: sh_select_mode_hit, e_enable_mystery
     disable_events: multiball_active, e_primary_mode_active, e_release_mystery
     release_one_events: e_primary_mode_active, e_release_mystery
 

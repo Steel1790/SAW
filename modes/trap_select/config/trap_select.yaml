@@ -1,0 +1,29 @@
+#config_version=6
+##! mode: trap_select
+
+mode:
+  start_events: slide_saw_collect_created
+  stop_events: logicblock_trap_select_qualify_counter_complete
+
+variable_player:
+  logicblock_trap_select_qualify_counter_complete:
+    score: 300000
+    
+counters:
+  trap_select_qualify_counter:
+    starting_count: 0
+    count_complete_value: 1
+    disable_on_complete: false
+    count_events: sh_select_mode_hit
+
+
+sound_player:
+    mode_trap_select_started:
+      BaseMusic:
+        action: stop
+      ModeQualifiedShootScoop:
+        action: play   
+        loops: -1
+    ball_ending:
+      ModeQualifiedShootScoop:
+        action: stop

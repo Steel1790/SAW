@@ -89,12 +89,12 @@ switches:
   s_right_outlane:
     number: 3208-0
     tags: right_out_lane, playfield_active, outlane, switch_hit
-  s_right_cellar:
+  s_right_scoop:
     number: 1616_1-13
-    tags: right_cellar, switch_hit
-  s_left_cellar:
+    tags: right_scoop, switch_hit
+  s_left_scoop:
     number: 1616_1-14
-    tags: left_cellar, switch_hit
+    tags: left_scoop, switch_hit
   s_left_standup:
     number: 1616_1-12
     tags: left_standup, standup, switch_hit
@@ -379,12 +379,12 @@ ball_devices:
     player_controlled_eject_event: s_action_button_active
 
   bd_scoop:
-    ball_switches: s_left_cellar
+    ball_switches: s_left_scoop
     eject_coil: c_mystery_eject
     eject_timeouts: 4s
 
   #bd_bathroom:
-  #  ball_switches: s_right_cellar
+  #  ball_switches: s_right_scoop
   #  eject_coil: c_mystery_eject
   #  mechanical_eject: true
   #  eject_timeouts: 1.5s

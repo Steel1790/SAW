@@ -10,7 +10,7 @@ sequences:
       - sw_lower_drop_target
       - sw_lower_drop_target
       - upper_drop_target_hit
-      - left_ramp_hit
+      - ssh_left_ramp_hit
       - machine_var_audits_switches_s_right_ramp_score_top
       - upper_drop_target_hit     
     reset_on_complete: false

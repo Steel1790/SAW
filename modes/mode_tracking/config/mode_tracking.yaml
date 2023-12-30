@@ -4,6 +4,12 @@ mode:
   stop_events: ball_ended
   priority: 99
 
+shots:
+  sh_select_mode:
+    switch: s_right_scoop
+    disable_events: e_primary_mode_active, multiball_active
+    enable_events: logicblock_cnt_saw_qualify_complete
+
 variable_player:
 
  # track modes completed for wizard mode qualifications -- player_modes_completed

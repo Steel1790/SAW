@@ -2,80 +2,80 @@
 ##! mode: saw_qualify
 mode:
   start_events: ball_starting, mode_razorwire_stopped, mode_drillchair_stopped, mode_flammablejelly_stopped, mode_quadshotgun_stopped, mode_reversebeartrap_stopped, mode_zeptest_stopped, mode_hacksaw_multiball_stopped, mode_jigsaw_multiball_stopped
-  stop_events: mode_cellar_started
+  stop_events: mode_trap_select_started
   priority: 120
 
 shots:
   shot_left_return_lane:
-    advance_events: shot_left_return_lane_saw_qualify_profile_lit_hit 
+    advance_events: shot_left_return_lane_sp_saw_qualify_lit_hit
     switches: s_left_inlane
-    profile: saw_qualify_profile
+    profile: sp_saw_qualify
     show_tokens:
       leds: l_left_return_lane
     control_events:
       - events: ball_starting
         state: 2
   shot_left_loop:
-    advance_events: shot_left_loop_saw_qualify_profile_lit_hit 
-    reset_events: slide_trapcomplete_removed, mode_razorwire_stopped, mode_drillchair_stopped, mode_quadshotgun_stopped, mode_reversebeartrap_stopped, mode_zeptest_stopped, mode_flammablejelly_stopped   
+    advance_events: shot_left_loop_sp_saw_qualify_lit_hit
+    reset_events: slide_trapcomplete_removed, mode_razorwire_stopped, mode_drillchair_stopped, mode_quadshotgun_stopped, mode_reversebeartrap_stopped, mode_zeptest_stopped, mode_flammablejelly_stopped
     switches: s_left_loop_bottom, s_left_loop_top
-    profile: saw_qualify_profile
+    profile: sp_saw_qualify
     show_tokens:
       leds: l_left_loop_arrow
   shot_left_standup:
-    advance_events: shot_left_standup_saw_qualify_profile_lit_hit  
+    advance_events: shot_left_standup_sp_saw_qualify_lit_hit  
     reset_events: slide_trapcomplete_removed, sg_saw_reset_complete, mode_razorwire_stopped, mode_drillchair_stopped, mode_quadshotgun_stopped, mode_reversebeartrap_stopped, mode_zeptest_stopped, mode_flammablejelly_stopped    
     switches: s_left_standup
-    profile: saw_qualify_profile
+    profile: sp_saw_qualify
     show_tokens:
       leds: l_left_standup_arrow
   shot_inner_loop:
-    advance_events: shot_inner_loop_saw_qualify_profile_lit_hit  
+    advance_events: shot_inner_loop_sp_saw_qualify_lit_hit  
     reset_events: slide_trapcomplete_removed, sg_saw_reset_complete, mode_razorwire_stopped, mode_drillchair_stopped, mode_quadshotgun_stopped, mode_reversebeartrap_stopped, mode_zeptest_stopped, mode_flammablejelly_stopped 
     switches: s_inner_loop
-    profile: saw_qualify_profile
+    profile: sp_saw_qualify
     show_tokens:
       leds: l_inner_loop_arrow
   shot_left_standup_rightramp:
-    advance_events: shot_left_standup_rightramp_saw_qualify_profile_lit_hit  
+    advance_events: shot_left_standup_rightramp_sp_saw_qualify_lit_hit  
     reset_events: slide_trapcomplete_removed, sg_saw_reset_complete, mode_razorwire_stopped, mode_drillchair_stopped, mode_quadshotgun_stopped, mode_reversebeartrap_stopped, mode_zeptest_stopped, mode_flammablejelly_stopped 
     switches: s_left_standup_right_ramp
-    profile: saw_qualify_profile
+    profile: sp_saw_qualify
     show_tokens:
       leds: l_left_standup_right_ramp_arrow
   shot_right_standup_rightramp:
-    advance_events: shot_right_standup_rightramp_saw_qualify_profile_lit_hit
+    advance_events: shot_right_standup_rightramp_sp_saw_qualify_lit_hit
     reset_events: slide_trapcomplete_removed, sg_saw_reset_complete, mode_razorwire_stopped, mode_drillchair_stopped, mode_quadshotgun_stopped, mode_reversebeartrap_stopped, mode_zeptest_stopped, mode_flammablejelly_stopped   
     switches: s_right_standup_right_ramp
-    profile: saw_qualify_profile
+    profile: sp_saw_qualify
     show_tokens:
       leds: l_right_standup_right_ramp_arrow
   shot_right_loop:
-    advance_events: shot_right_loop_saw_qualify_profile_lit_hit
+    advance_events: shot_right_loop_sp_saw_qualify_lit_hit
     reset_events: slide_trapcomplete_removed, sg_saw_reset_complete, mode_razorwire_stopped, mode_drillchair_stopped, mode_quadshotgun_stopped, mode_reversebeartrap_stopped, mode_zeptest_stopped, mode_flammablejelly_stopped    
     switches: s_right_loop_bottom, s_right_loop_top
-    profile: saw_qualify_profile
+    profile: sp_saw_qualify
     show_tokens:
       leds: l_right_loop_arrow
   shot_right_standup:
-    advance_events: shot_right_standup_saw_qualify_profile_lit_hit
+    advance_events: shot_right_standup_sp_saw_qualify_lit_hit
     reset_events: slide_trapcomplete_removed, sg_saw_reset_complete, mode_razorwire_stopped, mode_drillchair_stopped, mode_quadshotgun_stopped, mode_reversebeartrap_stopped, mode_zeptest_stopped, mode_flammablejelly_stopped   
     switches: s_right_standup
-    profile: saw_qualify_profile
+    profile: sp_saw_qualify
     show_tokens:
       leds: l_right_standup_arrow
 
 
 shot_profiles:
-  saw_qualify_profile:
+  sp_saw_qualify:
     advance_on_hit: false
     states:
       - name: lit
-        show: "shot_on"           # a default show to turn of the led. change if you want to do something on unlit shots
+        show: "sh_shot_on"           # a default show to turn of the led. change if you want to do something on unlit shots
       - name: collected
         show: "off"               # a default show to turn of the led. change if you want to do something on unlit shots
       - name: subtract
-        show: "shot_subtract"      # our show to indicate an lit shot
+        show: "sh_shot_subtract"      # our show to indicate an lit shot
     state_names_to_not_rotate: subtract
 
 
@@ -87,18 +87,18 @@ shot_groups:
 
 
 shows:
-  shot_on:    # define our show to indicate the state
+  sh_shot_on:    # define our show to indicate the state
     - duration: 1s
       lights:
         (leds): white
     - duration: 1s
       lights:
         (leds): off
-  shot_subtract:    # define our show to indicate the state
+  sh_shot_subtract:    # define our show to indicate the state
     - duration: -1      # this show step will run permanently
       lights:     # turn the light purple
         (leds): red
-  shot_hit:    # define our show to communicate success to the player
+  sh_shot_hit:    # define our show to communicate success to the player
     - duration: 1s      # this show step lasts 1s
         # add sounds here or videos
         # add scoring here
@@ -109,7 +109,7 @@ shows:
             leds: (leds)
           speed: 4
 
-  saw_qualify_complete:    # define our show to communicate success on completing all shots
+  sh_saw_qualify_complete:    # define our show to communicate success on completing all shots
     - duration: 1s
         # add scoring, sounds and video
       shows:
@@ -123,56 +123,56 @@ shows:
 show_player:
    # play a show once a each shot is lit
   shot_left_return_lane_hit{state=="lit"}:
-    shot_hit:
+    sh_shot_hit:
       show_tokens:
         leds: l_left_standup_arrow
       loops: 1
   shot_left_loop_hit{state=="lit"}:
-    shot_hit:
+    sh_shot_hit:
       show_tokens:
         leds: l_left_loop_arrow
       loops: 1
   shot_left_standup_hit{state=="lit"}:
-    shot_hit:
+    sh_shot_hit:
       show_tokens:
         leds: l_left_standup_arrow
       loops: 1
   shot_inner_loop_hit{state=="lit"}:
-    shot_hit:
+    sh_shot_hit:
       show_tokens:
         leds: l_inner_loop_arrow
       loops: 1
   shot_left_standup_rightramp_hit{state=="lit"}:
-    shot_hit:
+    sh_shot_hit:
       show_tokens:
         leds: l_left_standup_right_ramp_arrow
       loops: 1
   shot_right_standup_rightramp_hit{state=="lit"}:
-    shot_hit:
+    sh_shot_hit:
       show_tokens:
         leds: l_right_standup_right_ramp_arrow
       loops: 1
   shot_right_loop_hit{state=="lit"}:
-    shot_hit:
+    sh_shot_hit:
       show_tokens:
         leds: l_right_loop_arrow
       loops: 1
   shot_right_standup_hit{state=="lit"}:
-    shot_hit:
+    sh_shot_hit:
       show_tokens:
         leds: l_right_standup_arrow
       loops: 1
    # play a show when the group completes
   sg_saw_qualify_complete{state=="lit"}:
-    saw_qualify_complete:
+    sh_saw_qualify_complete:
       loops: 0
 
 event_player:
-  sg_saw_qualify_subtract_hit{device.counters.saw_qualify_counter.value > 0}:
-    - subtract_a_saw_letter
+  sg_saw_qualify_subtract_hit{device.counters.cnt_saw_qualify.value > 0}:
+    - e_subtract_a_saw_letter
 
 counters:
-  saw_qualify_counter:
+  cnt_saw_qualify:
     starting_count: 0
     count_complete_value: 3
     enable_events: enable_qualify
@@ -182,10 +182,9 @@ counters:
     reset_events:
       slide_trapcomplete_removed, mode_razorwire_stopped, mode_drillchair_stopped, mode_quadshotgun_stopped, mode_reversebeartrap_stopped, mode_zeptest_stopped, mode_flammablejelly_stopped
     disable_on_complete: false
-    events_when_complete: saw_qualify_complete   
     count_events: sg_saw_qualify_lit_hit
     control_events:
-      - event: subtract_a_saw_letter
+      - event: e_subtract_a_saw_letter
         action: subtract
         value: 1
 
@@ -212,11 +211,11 @@ slides:
       video: s_subtract     
     
 slide_player:
-  logicblock_saw_qualify_counter_updated{value==1}:
+  logicblock_cnt_saw_qualify_updated{value==1}:
     s_collect:
       priority: 190
       expire: 3s
-  logicblock_saw_qualify_counter_updated{value==2}:
+  logicblock_cnt_saw_qualify_updated{value==2}:
     sa_collect:
       priority: 190
       expire: 3s
@@ -228,29 +227,29 @@ slide_player:
     s_subtract:
       priority: 195
       expire: 3s
-  sg_saw_qualify_subtract_hit{device.counters.saw_qualify_counter.value==2}:
+  sg_saw_qualify_subtract_hit{device.counters.cnt_saw_qualify.value==2}:
     sa_subtract:
       priority: 196
       expire: 3s
 
 #sound_player:
-#  logicblock_saw_qualify_counter_updated{value==1}:
+#  logicblock_cnt_saw_qualify_updated{value==1}:
 #    SawLetterS:
 #      action: play
 #      block: true      
-#  logicblock_saw_qualify_counter_updated{value==2}:
+#  logicblock_cnt_saw_qualify_updated{value==2}:
 #    SawLetterA:
 #      action: play     
 #      block: true      
-#  logicblock_saw_qualify_counter_updated{value==3}:
+#  logicblock_cnt_saw_qualify_updated{value==3}:
 #    SawLetterW:
 #      action: play
 #      block: true      
-#  sg_saw_qualify_subtract_hit{device.counters.saw_qualify_counter.value==2}:
+#  sg_saw_qualify_subtract_hit{device.counters.cnt_saw_qualify.value==2}:
 #    SawLetterNegative:
 #      action: play
 #      block: true      
-#  sg_saw_qualify_subtract_hit{device.counters.saw_qualify_counter.value==1}:
+#  sg_saw_qualify_subtract_hit{device.counters.cnt_saw_qualify.value==1}:
 #    SawLetterNegative:
 #      action: play
 #      block: true            

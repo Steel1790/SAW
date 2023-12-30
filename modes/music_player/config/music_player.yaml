@@ -162,13 +162,6 @@ sound_player:
     ModeQualifiedShootScoop:
       action: stop
 
-  # mode_cellar_started:
-  #   BaseMusic:
-  #     action: stop
-  #   ModeQualifiedShootScoop:
-  #     action: play   
-  #     loops: -1
-      
   player_adding{game.num_players==2}:
     2PlayerGame:
       action: play  
@@ -410,10 +403,10 @@ sound_player:
       action: play
       loops: -1
 
-  sg_saw_qualify_subtract_hit{device.counters.saw_qualify_counter.value==1}:
+  sg_saw_qualify_subtract_hit{device.counters.cnt_saw_qualify.value==1}:
     SawLetterNegative:
       action: play   
-  sg_saw_qualify_subtract_hit{device.counters.saw_qualify_counter.value==2}:
+  sg_saw_qualify_subtract_hit{device.counters.cnt_saw_qualify.value==2}:
     SawLetterNegative:
       action: play
 
