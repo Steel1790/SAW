@@ -162,13 +162,6 @@ sound_player:
     ModeQualifiedShootScoop:
       action: stop
 
-  # mode_cellar_started:
-  #   BaseMusic:
-  #     action: stop
-  #   ModeQualifiedShootScoop:
-  #     action: play   
-  #     loops: -1
-      
   player_adding{game.num_players==2}:
     2PlayerGame:
       action: play  

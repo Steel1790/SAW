@@ -139,11 +139,6 @@ widget_player:
 
 shots:
   sh_mystery:
-    switch: s_left_cellar
-    disable_events: mode_cellar_started, multiball_active
+    switch: s_left_scoop
+    disable_events: mode_trap_select_started, multiball_active
     enable_events: mode_mystery_started, mode_drillchair_stopped, mode_flammablejelly_stopped, mode_quadshotgun_stopped, mode_razorwire_stopped, mode_reversebeartrap_stopped, mode_zeptest_stopped
-
-#sequence_shots:
-#  right_left_cellar:
-#    switch_sequence: s_right_cellar, s_left_cellar
-#    sequence_timeout: 2s

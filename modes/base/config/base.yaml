@@ -744,7 +744,7 @@ widgets:
       font_size: 110
       font_name: sawesome      
 
-  w_cellar_start:
+  w_trap_select_start:
     - type: Text
       text: Get to the BATHROOM to Select A Mode!
       color: white
@@ -983,12 +983,12 @@ widget_player:
   sg_saw_qualify_subtract_hit{device.counters.cnt_saw_qualify.value==2}:
     saw_sa_letters:
       action: remove    
-  mode_cellar_started:
-    w_cellar_start:
+  mode_trap_select_started:
+    w_trap_select_start:
       slide: base_slide_main
       action: add
-  mode_cellar_stopped:
-    w_cellar_start:
+  mode_trap_select_stopped:
+    w_trap_select_start:
       action: remove
     saw_saw_letters:
       action: remove
