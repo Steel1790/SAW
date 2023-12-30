@@ -6,48 +6,32 @@ mode:
   priority: 150
 
 sequences:
-  jigsaw_mb_qualify:
+  seq_jigsaw_mb_qualify:
     events:
       - s_middle_standup_active
-      - left_ramp_hit
+      - ssh_left_ramp_hit
     reset_on_complete: true
     disable_on_complete: false
     persist_state: true
 
 #TODO need a player variable to store this counter between balls
 counters:
-  jigsaw_multiball_qualify:
+  cnt_jigsaw_mb_qualify:
     starting_count: 0
     count_complete_value: 3
     start_enabled: true
     persist_state: true
     reset_on_complete: false
-    count_events: logicblock_jigsaw_mb_qualify_complete
-
-variable_player:
-  multiball_jigsaw_multiball_started:
-    score: 3000000
-
-slides:
-  JigsawMB:
-    widgets:
-      - type: video
-        video: JigsawMB
-
-slide_player:
-  multiball_jigsaw_multiball_started:
-    JigsawMB:
-      priority: 500
-      expire: 6s
+    count_events: logicblock_seq_jigsaw_mb_qualify_complete
 
 event_player:
-  logicblock_jigsaw_mb_qualify_hit{step==1}:
-    - event_jigsaw_mb_qualify_hit_one
-  logicblock_jigsaw_mb_qualify_hit{step==2}:
-    - event_jigsaw_mb_qualify_hit_two
+  logicblock_seq_jigsaw_mb_qualify_hit{step==1}:
+    - e_jigsaw_mb_qualify_hit_one
+  logicblock_seq_jigsaw_mb_qualify_hit{step==2}:
+    - e_jigsaw_mb_qualify_hit_two
 
 shows:
-  jigsaw_mb_qualify_hit_ready_show:
+  sh_jigsaw_mb_qualify_hit_ready:
     - duration: -1
       shows:
         flash_color:
@@ -55,41 +39,41 @@ shows:
             color: color_jigsaw_mb
             leds: (leds)
           speed: 4
-  jigsaw_mb_qualify_hit_qualified_show:
+  sh_jigsaw_mb_qualify_hit_qualified:
     - duration: -1
       lights:
         (leds): color_jigsaw_mb
-  jigsaw_mb_show_end:
+  sh_jigsaw_mb_end:
     - duration: -1
       lights:
         (leds): off
 
 show_player:
-  event_jigsaw_mb_qualify_hit_one{device.counters.jigsaw_multiball_qualify.value == 0}:
-    jigsaw_mb_qualify_hit_ready_show:
+  e_jigsaw_mb_qualify_hit_one{device.counters.cnt_jigsaw_mb_qualify.value == 0}:
+    sh_jigsaw_mb_qualify_hit_ready:
       show_tokens:
         leds: l_left_ramp_triangle3
-  event_jigsaw_mb_qualify_hit_two{device.counters.jigsaw_multiball_qualify.value == 0}:
-    jigsaw_mb_qualify_hit_qualified_show:
+  e_jigsaw_mb_qualify_hit_two{device.counters.cnt_jigsaw_mb_qualify.value == 0}:
+    sh_jigsaw_mb_qualify_hit_qualified:
       show_tokens:
         leds: l_left_ramp_triangle3
-  event_jigsaw_mb_qualify_hit_one{device.counters.jigsaw_multiball_qualify.value == 1}:
-    jigsaw_mb_qualify_hit_ready_show:
+  e_jigsaw_mb_qualify_hit_one{device.counters.cnt_jigsaw_mb_qualify.value == 1}:
+    sh_jigsaw_mb_qualify_hit_ready:
       show_tokens:
         leds: l_left_ramp_triangle2
-  event_jigsaw_mb_qualify_hit_two{device.counters.jigsaw_multiball_qualify.value == 1}:
-    jigsaw_mb_qualify_hit_qualified_show:
+  e_jigsaw_mb_qualify_hit_two{device.counters.cnt_jigsaw_mb_qualify.value == 1}:
+    sh_jigsaw_mb_qualify_hit_qualified:
       show_tokens:
         leds: l_left_ramp_triangle3, l_left_ramp_triangle2
-  event_jigsaw_mb_qualify_hit_one{device.counters.jigsaw_multiball_qualify.value == 2}:
-    jigsaw_mb_qualify_hit_ready_show:
+  e_jigsaw_mb_qualify_hit_one{device.counters.cnt_jigsaw_mb_qualify.value == 2}:
+    sh_jigsaw_mb_qualify_hit_ready:
       show_tokens:
         leds: l_left_ramp_triangle1
-  event_jigsaw_mb_qualify_hit_two{device.counters.jigsaw_multiball_qualify.value == 2}:
-    jigsaw_mb_qualify_hit_qualified_show:
+  e_jigsaw_mb_qualify_hit_two{device.counters.cnt_jigsaw_mb_qualify.value == 2}:
+    sh_jigsaw_mb_qualify_hit_qualified:
       show_tokens:
         leds: l_left_ramp_triangle3, l_left_ramp_triangle2, l_left_ramp_triangle1
-  mode_jigsaw_multiball_ended:
-    jigsaw_mb_show_end:
+  multiball_mb_jigsaw_ended:
+    sh_jigsaw_mb_end:
       show_tokens:
         leds: l_left_ramp_triangle1, l_left_ramp_triangle2, l_left_ramp_triangle3

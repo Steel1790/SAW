@@ -410,10 +410,10 @@ sound_player:
       action: play
       loops: -1
 
-  sg_saw_qualify_subtract_hit{device.counters.saw_qualify_counter.value==1}:
+  sg_saw_qualify_subtract_hit{device.counters.cnt_saw_qualify.value==1}:
     SawLetterNegative:
       action: play   
-  sg_saw_qualify_subtract_hit{device.counters.saw_qualify_counter.value==2}:
+  sg_saw_qualify_subtract_hit{device.counters.cnt_saw_qualify.value==2}:
     SawLetterNegative:
       action: play
 

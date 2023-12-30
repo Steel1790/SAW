@@ -1,32 +1,8 @@
 #config_version=6
 sequence_shots:
-  left_ramp:
+  ssh_left_ramp:
     switch_sequence: s_enter_left_ramp, s_left_ramp_score_bottom, s_left_ramp_score_top
     sequence_timeout: 4s
-  right_ramp:
+  ssh_right_ramp:
     switch_sequence: s_right_ramp_down, s_right_ramp_score_bottom, s_right_ramp_score_top
     sequence_timeout: 4s
-  cellar:
-    switch_sequence: s_right_cellar
-  #mystery:
-  #  switch_sequence: s_left_cellar
-  spinner:
-    switch_sequence: s_spinner
-  upper_drop_target:
-    switch_sequence: s_upper_bank_drop_target_opto
-  left_loop:
-    switch_sequence: s_left_loop_bottom
-  left_outlane:
-    switch_sequence: s_left_outlane
-  left_inlane:
-    switch_sequence: s_left_inlane
-
-#temp for demo
-#  ballsavetemp:
-#    switch_sequence: s_lower_top_jet_bumper
-#  tiltwarningtemp:
-#    switch_sequence: s_left_bottom_jet_bumper
-#  mysteryawardtemp:
-#    switch_sequence: s_right_bottom_jet_bumper
-#  extraballtemp:
-#    switch_sequence: s_upper_bottom_jet_bumper

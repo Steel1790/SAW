@@ -2,10 +2,10 @@
 mode:
   start_events: start_mystery_mode
   stop_events: ball_ended, e_release_mystery
-  
+
 
 event_player:
-  mystery_hit: e_enable_mystery
+  sh_mystery_hit: e_enable_mystery
   slide_Mystery5Million_removed: e_release_mystery
   slide_MysteryMinus5Million_removed: e_release_mystery
   slide_MysteryExtraBall_removed: e_release_mystery
@@ -19,7 +19,7 @@ event_player:
 #    release_one_events: slide_Mystery5Million_removed, slide_MysteryMinus5Million_removed, slide_MysteryExtraBall_removed
 
 
-#EK added 
+#EK added
 # this is not working but I don't know why. The show in the base.yaml is working
 shows:
   mystery_lit:
@@ -32,15 +32,15 @@ shows:
   mystery_off:
     - duration: -1
       lights:
-        (leds): off  
+        (leds): off
 
 show_player:
-  mode_mystery_started:     
+  mode_mystery_started:
     mystery_lit:
       show_tokens:
         leds: l_mystery_scoop
       loops: -1
-  mystery_hit:
+  sh_mystery_hit:
     mystery_off:
       show_tokens:
         leds: l_mystery_scoop
@@ -53,7 +53,7 @@ show_player:
         color1: jelly
 
 random_event_player:
-  mystery_hit:
+  sh_mystery_hit:
     events:
       mystery_5million: 85 #numbers show probability of event
       mystery_minus5million: 5
@@ -138,7 +138,7 @@ widget_player:
       action: remove
 
 shots:
-  mystery:
+  sh_mystery:
     switch: s_left_cellar
     disable_events: mode_cellar_started, multiball_active
     enable_events: mode_mystery_started, mode_drillchair_stopped, mode_flammablejelly_stopped, mode_quadshotgun_stopped, mode_razorwire_stopped, mode_reversebeartrap_stopped, mode_zeptest_stopped

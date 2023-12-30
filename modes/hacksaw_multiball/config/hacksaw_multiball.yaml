@@ -7,33 +7,33 @@ mode:
   priority: 165
 
 multiball_locks:
-  hacksaw_multiball_lock:
+  mbl_hacksaw:
     #debug: true
     balls_to_lock: 3
     lock_devices: bd_hacksaw
-    enable_events: logicblock_hacksaw_mb_qualify_complete
+    enable_events: logicblock_acc_hacksaw_mb_qualify_complete
       #disable_events: sg_lockshot_complete{state=="unlit"}
       #reset_count_for_current_player_events: multiball_lock_sword_multiball_lock_full
 
 multiballs:
-  hacksaw_multiball:
+  mb_hacksaw:
     ball_count: 3
     shoot_again: 15s
-    start_events: multiball_lock_hacksaw_multiball_lock_full
+    start_events: multiball_lock_mbl_hacksaw_lock_full
     replace_balls_in_play: true
 
 variable_player:
-  multiball_hacksaw_multiball_started:
+  multiball_mb_hacksaw_started:
     score: 3000000
 
 slides:
-  HacksawMB:
+  sl_HacksawMB:
     widgets:
     - type: video
       video: HacksawMB
 
 slide_player:
-  multiball_hacksaw_multiball_started:
-    HacksawMB:
+  multiball_mb_hacksaw_started:
+    sl_HacksawMB:
       priority: 500
       expire: 8s
