@@ -55,22 +55,22 @@ show_player:
 random_event_player:
   sh_mystery_hit:
     events:
-      mystery_5million: 85 #numbers show probability of event
-      mystery_minus5million: 5
-      mystery_extraball: 10
+      e_mystery_5million: 85 #numbers show probability of event
+      e_mystery_minus5million: 5
+      e_mystery_extraball: 10
 #      mystery_award_3_event: 20
 #      mystery_award_4_event: 30
     force_all: true
 
 variable_player:
-  mystery_5million:
+  e_mystery_5million:
     score: 5000000
-  mystery_minus5million:
+  e_mystery_minus5million:
     score: -5000000
 
 extra_balls:
   mystery_extraball_award:
-    award_events: mystery_extraball
+    award_events: e_mystery_extraball
 
 slides:
   Mystery5Million:
@@ -93,15 +93,15 @@ slides:
       height: 768
 
 slide_player:
-  mystery_5million: 
+  e_mystery_5million: 
     Mystery5Million:
       priority: 1
       expire: 11s
-  mystery_minus5million: 
+  e_mystery_minus5million: 
     MysteryMinus5Million:
       priority: 1
       expire: 11s
-  mystery_extraball: 
+  e_mystery_extraball: 
     MysteryExtraBall:
       priority: 1
       expire: 11s

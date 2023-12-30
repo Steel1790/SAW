@@ -449,11 +449,11 @@ autofire_coils:
     switch: s_upper_bottom_jet_bumper
 
 diverters:
-  right_ramp_diverter:
+  dv_right_ramp_diverter:
     activation_coil: c_right_ramp_lift
     deactivation_coil: c_right_ramp_down
     type: pulse
-  hacksaw_lock_diverter:
+  dv_hacksaw_lock_diverter:
     activation_coil: c_diverter
     type: hold
     activation_time: 3s
