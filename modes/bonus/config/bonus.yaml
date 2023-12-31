@@ -374,9 +374,6 @@ widget_player:
       slide: bonus_start_slide
       action: add      
 
- 
-  
-
 
 #sound_player:
 #  mode_bonus_started:
@@ -420,12 +417,18 @@ sound_player:
     BaseMusic:
       action: stop
 
-
 show_player:
-  display_handguns:   
+  display_gears:   
+   jw_chase:
+     loops: 0
+     speed: 20
+     show_tokens:
+       color1: ffffff
    flash_token:
      loops: 2
-     speed: 10
+     speed: 20
      show_tokens:
        led: l_jw_gun
-       color1: ffffff
+       color1: beartrap
+
+
