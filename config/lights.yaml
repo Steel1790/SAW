@@ -938,120 +938,303 @@ lights:
 
 
 # backbox
-  l_backbox_1:
-    channels:
-      red:
-        - number: 1-0
-      green:
-        - number: 1-1
-      blue:
-        - number: 1-2
-      white:
-        - number: 2-0
-    tags: backbox, ledneuronp2
-
   # l_backbox_1:
-  #   number: ledneuron-2-1
+  #   start_channel: ledneuron-2-1-0
   #   type: rgbw
   #   tags: backbox, ledneuronp2
   # l_backbox_2:
-  #   number: ledneuron-2-2
-  #   # type: rgbw
-  #   tags: backbox, ledneuronp2
-  # l_backbox_3:
-  #   number: ledneuron-2-3
-  #   # type: rgbw
-  #   tags: backbox, ledneuronp2
-  # l_backbox_4:
-  #   number: ledneuron-2-4
+  #   start_channel: ledneuron-2-2-1
   #   type: rgbw
   #   tags: backbox, ledneuronp2
-  # l_backbox_5:
-  #   number: ledneuron-2-5
-  #   type: rgbw
-  #   tags: backbox, ledneuronp2
-  # l_backbox_6:
-  #   number: ledneuron-2-6
-  #   type: rgbw
-  #   tags: backbox, ledneuronp2
-  # l_backbox_7:
-  #   number: ledneuron-2-7
-  #   tags: backbox, ledneuronp2
-  # l_backbox_8:
-  #   number: ledneuron-2-8
-  #   tags: backbox, ledneuronp2
-  # l_backbox_9:
-  #   number: ledneuron-2-9
-  #   tags: backbox, ledneuronp2
-  # l_backbox_10:
-  #   number: ledneuron-2-10
-  #   tags: backbox, ledneuronp2
-  # l_backbox_11:
-  #   number: ledneuron-2-11
-  #   tags: backbox, ledneuronp2
-  # l_backbox_12:
-  #   number: ledneuron-2-12
-  #   tags: backbox, ledneuronp2
-  # l_backbox_13:
-  #   number: ledneuron-2-13
-  #   tags: backbox, ledneuronp2
-  # l_backbox_14:
-  #   number: ledneuron-2-14
-  #   tags: backbox, ledneuronp2
-  # l_backbox_15:
-  #   number: ledneuron-2-15
-  #   tags: backbox, ledneuronp2
-  # l_backbox_16:
-  #   number: ledneuron-2-16
-  #   tags: backbox, ledneuronp2
-  # l_backbox_17:
-  #   number: ledneuron-2-17
-  #   tags: backbox, ledneuronp2
-  # l_backbox_18:
-  #   number: ledneuron-2-18
-  #   tags: backbox, ledneuronp2
-  # l_backbox_19:
-  #   number: ledneuron-2-19
-  #   tags: backbox, ledneuronp2
-  # l_backbox_20:
-  #   number: ledneuron-2-20
-  #   tags: backbox, ledneuronp2
-  # l_backbox_21:
-  #   number: ledneuron-2-21
-  #   tags: backbox, ledneuronp2
-  # l_backbox_22:
-  #   number: ledneuron-2-22
-  #   tags: backbox, ledneuronp2
-  # l_backbox_23:
-  #   number: ledneuron-2-23
-  #   tags: backbox, ledneuronp2
-  # l_backbox_24:
-  #   number: ledneuron-2-24
-  #   tags: backbox, ledneuronp2
-  # l_backbox_25:
-  #   number: ledneuron-2-25
-  #   tags: backbox, ledneuronp2
-  # l_backbox_26:
-  #   number: ledneuron-2-26
-  #   tags: backbox, ledneuronp2
-  # l_backbox_27:
-  #   number: ledneuron-2-27
-  #   tags: backbox, ledneuronp2
-  # l_backbox_28:
-  #   number: ledneuron-2-28
-  #   tags: backbox, ledneuronp2
-  # l_backbox_29:
-  #   number: ledneuron-2-29
-  #   tags: backbox, ledneuronp2
-  # l_backbox_30:
-  #   number: ledneuron-2-30
-  #   tags: backbox, ledneuronp2
-  # l_backbox_31:
-  #   number: ledneuron-2-31
-  #   tags: backbox, ledneuronp2
-  # l_backbox_32:
-  #   number: ledneuron-2-32
-  #   tags: backbox, ledneuronp2
+
+  l_backbox_1:
+    channels:
+      red:
+        number: ledneuron-2-1-0
+      green:
+        number: ledneuron-2-1-1
+      blue:
+        number: ledneuron-2-1-2
+      white:
+        number: ledneuron-2-2-1
+    tags: backbox, ledneuronp2
+
+  l_backbox_2:
+    channels:
+      red:
+        number: ledneuron-2-2-2
+      green:
+        number: ledneuron-2-2-0
+      blue:
+        number: ledneuron-2-3-1
+      white:
+        number: ledneuron-2-3-0
+    tags: backbox, ledneuronp2
+
+  l_backbox_3:
+    channels:
+      red:
+        number: ledneuron-2-4-1
+      green:
+        number: ledneuron-2-3-2
+      blue:
+        number: ledneuron-2-4-0
+      white:
+        number: ledneuron-2-4-2
+    tags: backbox, ledneuronp2
+
+  l_backbox_4:
+    channels:
+      red:
+        number: ledneuron-2-5-0
+      green:
+        number: ledneuron-2-5-1
+      blue:
+        number: ledneuron-2-5-2
+      white:
+        number: ledneuron-2-6-1
+    tags: backbox, ledneuronp2
+
+  l_backbox_5:
+    channels:
+      red:
+        number: ledneuron-2-6-2
+      green:
+        number: ledneuron-2-6-0
+      blue:
+        number: ledneuron-2-7-1
+      white:
+        number: ledneuron-2-7-0
+    tags: backbox, ledneuronp2
+
+  l_backbox_6:
+    channels:
+      red:
+        number: ledneuron-2-8-1
+      green:
+        number: ledneuron-2-7-2
+      blue:
+        number: ledneuron-2-8-0
+      white:
+        number: ledneuron-2-8-2
+    tags: backbox, ledneuronp2
+
+  l_backbox_7:
+    channels:
+      red:
+        number: ledneuron-2-9-0
+      green:
+        number: ledneuron-2-9-1
+      blue:
+        number: ledneuron-2-9-2
+      white:
+        number: ledneuron-2-10-1
+    tags: backbox, ledneuronp2
+
+  l_backbox_8:
+    channels:
+      red:
+        number: ledneuron-2-10-2
+      green:
+        number: ledneuron-2-10-0
+      blue:
+        number: ledneuron-2-11-1
+      white:
+        number: ledneuron-2-11-0
+    tags: backbox, ledneuronp2
+
+  l_backbox_9:
+    channels:
+      red:
+        number: ledneuron-2-12-1
+      green:
+        number: ledneuron-2-11-2
+      blue:
+        number: ledneuron-2-12-0
+      white:
+        number: ledneuron-2-12-2
+    tags: backbox, ledneuronp2   
+
+  l_backbox_10:
+    channels:
+      red:
+        number: ledneuron-2-13-0
+      green:
+        number: ledneuron-2-13-1
+      blue:
+        number: ledneuron-2-13-2
+      white:
+        number: ledneuron-2-14-1
+    tags: backbox, ledneuronp2
+
+  l_backbox_11:
+    channels:
+      red:
+        number: ledneuron-2-14-2
+      green:
+        number: ledneuron-2-14-0
+      blue:
+        number: ledneuron-2-15-1
+      white:
+        number: ledneuron-2-15-0
+    tags: backbox, ledneuronp2
+
+  l_backbox_12:
+    channels:
+      red:
+        number: ledneuron-2-16-1
+      green:
+        number: ledneuron-2-15-2
+      blue:
+        number: ledneuron-2-16-0
+      white:
+        number: ledneuron-2-16-2
+    tags: backbox, ledneuronp2 
+
+  l_backbox_13:
+    channels:
+      red:
+        number: ledneuron-2-17-0
+      green:
+        number: ledneuron-2-17-1
+      blue:
+        number: ledneuron-2-17-2
+      white:
+        number: ledneuron-2-18-1
+    tags: backbox, ledneuronp2
+
+  l_backbox_14:
+    channels:
+      red:
+        number: ledneuron-2-18-2
+      green:
+        number: ledneuron-2-18-0
+      blue:
+        number: ledneuron-2-19-1
+      white:
+        number: ledneuron-2-19-0
+    tags: backbox, ledneuronp2
+
+  l_backbox_15:
+    channels:
+      red:
+        number: ledneuron-2-20-1
+      green:
+        number: ledneuron-2-19-2
+      blue:
+        number: ledneuron-2-20-0
+      white:
+        number: ledneuron-2-20-2
+    tags: backbox, ledneuronp2 
+
+  l_backbox_16:
+    channels:
+      red:
+        number: ledneuron-2-21-0
+      green:
+        number: ledneuron-2-21-1
+      blue:
+        number: ledneuron-2-21-2
+      white:
+        number: ledneuron-2-22-1
+    tags: backbox, ledneuronp2
+
+  l_backbox_17:
+    channels:
+      red:
+        number: ledneuron-2-22-2
+      green:
+        number: ledneuron-2-22-0
+      blue:
+        number: ledneuron-2-23-1
+      white:
+        number: ledneuron-2-23-0
+    tags: backbox, ledneuronp2
+
+  l_backbox_18:
+    channels:
+      red:
+        number: ledneuron-2-24-1
+      green:
+        number: ledneuron-2-23-2
+      blue:
+        number: ledneuron-2-24-0
+      white:
+        number: ledneuron-2-24-2
+    tags: backbox, ledneuronp2 
+
+  l_backbox_19:
+    channels:
+      red:
+        number: ledneuron-2-25-0
+      green:
+        number: ledneuron-2-25-1
+      blue:
+        number: ledneuron-2-25-2
+      white:
+        number: ledneuron-2-26-1
+    tags: backbox, ledneuronp2
+
+  l_backbox_20:
+    channels:
+      red:
+        number: ledneuron-2-26-2
+      green:
+        number: ledneuron-2-26-0
+      blue:
+        number: ledneuron-2-27-1
+      white:
+        number: ledneuron-2-27-0
+    tags: backbox, ledneuronp2
+
+  l_backbox_21:
+    channels:
+      red:
+        number: ledneuron-2-28-1
+      green:
+        number: ledneuron-2-27-2
+      blue:
+        number: ledneuron-2-28-0
+      white:
+        number: ledneuron-2-28-2
+    tags: backbox, ledneuronp2 
+
+  l_backbox_22:
+    channels:
+      red:
+        number: ledneuron-2-29-0
+      green:
+        number: ledneuron-2-29-1
+      blue:
+        number: ledneuron-2-29-2
+      white:
+        number: ledneuron-2-30-1
+    tags: backbox, ledneuronp2
+
+  l_backbox_23:
+    channels:
+      red:
+        number: ledneuron-2-30-2
+      green:
+        number: ledneuron-2-30-0
+      blue:
+        number: ledneuron-2-31-1
+      white:
+        number: ledneuron-2-31-0
+    tags: backbox, ledneuronp2
+
+  l_backbox_24:
+    channels:
+      red:
+        number: ledneuron-2-32-1
+      green:
+        number: ledneuron-2-31-2
+      blue:
+        number: ledneuron-2-32-0
+      white:
+        number: ledneuron-2-32-2
+    tags: backbox, ledneuronp2 
+
 
 
 
