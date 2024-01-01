@@ -45,19 +45,20 @@ show_player:
       show_tokens:
         leds: l_mystery_scoop
       loops: -1
-  enable_mystery:
+  e_enable_mystery:
     mystery_flash:
        loops: 0
        show_tokens:
         led: insert, gi, jet_bumper, flasher, l_mystery_scoop
-        color1: jelly
+        color1: white
 
 random_event_player:
   sh_mystery_hit:
     events:
-      e_mystery_5million: 85 #numbers show probability of event
+      e_mystery_5million: 75 #numbers show probability of event
       e_mystery_minus5million: 5
-      e_mystery_extraball: 10
+      e_mystery_extraball: 5
+      e_mystery_outlane: 15
 #      mystery_award_3_event: 20
 #      mystery_award_4_event: 30
     force_all: true
@@ -91,19 +92,25 @@ slides:
       video: MysteryExtraBall    
       width: 1366
       height: 768
+  MysteryEscapeOutlane:
+    widgets:
+    - type: video
+      video: MysteryEscapeOutlane 
+      width: 1366
+      height: 768
 
 slide_player:
   e_mystery_5million: 
     Mystery5Million:
-      priority: 1
       expire: 11s
   e_mystery_minus5million: 
     MysteryMinus5Million:
-      priority: 1
       expire: 11s
   e_mystery_extraball: 
     MysteryExtraBall:
-      priority: 1
+      expire: 11s
+  e_mystery_outlane: 
+    MysteryEscapeOutlane:
       expire: 11s
 
 

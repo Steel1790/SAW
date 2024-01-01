@@ -15,6 +15,12 @@ ball_saves:
     auto_launch: true
     balls_to_save: 1
 #    debug: true  
+  escape_outlane:
+    #enable_events: e_mystery_outlane
+    enable_events: shot_left_outlane_hit{state=="lit"}, shot_right_outlane_hit{state=="lit"}
+    auto_launch: true
+    balls_to_save: 1
+#    debug: true  
 
 event_player:
   playfield_active: ballsave_light
@@ -71,7 +77,7 @@ slide_player:
       action: play
       priority: 400
       expire: 8s
-  enable_mystery:
+  e_enable_mystery:
     mysteryawardvideo:
       action: play
       priority: 400
@@ -442,7 +448,7 @@ shows:
   ballsave:
     - duration: 0.5s
       lights:
-        (leds): FF5E0E
+        (leds): drillchair
     - duration: 0.5s
       lights:
         (leds): off
@@ -466,6 +472,10 @@ shows:
     - duration: -1
       lights:
         (leds): 8A0303
+  sh_outlane_on:
+    - duration: -1
+      lights:
+        (leds): 8A0303
 
   slingshots_flash:
     - duration: 0.3s
@@ -478,6 +488,11 @@ shows:
     - duration: -1
       lights:
         (leds): eeeeee   
+
+  sh_escape_outlane_end:
+    - duration: -1
+      lights:
+        (leds): off
 
 # EK testing lightshow on shot action
 show_player:
@@ -497,11 +512,14 @@ show_player:
       loops: -1
       show_tokens:
         color1: ffffff
-
     pops_on:
       loops: -1
       show_tokens:
         leds: jet_bumper
+    flipper_buttons:
+      loops: -1      
+      show_tokens:
+        leds: l_left_flipper, l_right_flipper
 
   playfield_active:
     base_action_button_off:
@@ -568,7 +586,7 @@ show_player:
       show_tokens:
         leds: right_bottom_bumper  
 
-  s_left__bottom_jet_bumper_active:
+  s_left_bottom_jet_bumper_active:
     slingshots_flash:
       loops: 0
       show_tokens:
@@ -720,17 +738,7 @@ show_player:
       show_tokens:
         leds: l_top_drop1, l_top_drop2, l_top_drop3, l_top_drop4, l_top_drop5
       loops: -1
-   
-  ball_started:
-#    base_action_button:
-#      show_tokens:
-#        leds: l_action_button, l_tape_reel, l_tape_speaker
-#      loops: -1
-    flipper_buttons:
-      show_tokens:
-        leds: l_left_flipper, l_right_flipper
-    
-      
+         
 #  mode_base_started.1:       
 #   flash_token2:
 #      loops: -1
@@ -759,7 +767,7 @@ show_player:
   slide_trapcomplete_active:
     rw_complete:
       loops: 2
-      speed: 25
+      speed: 25    
       
 widgets:
   saw_letters:
@@ -1259,3 +1267,36 @@ coil_player:
       action: off
     c_left_spin_disc:
       action: off
+
+shots:
+  shot_left_outlane:
+    switches: s_left_outlane
+    profile: sp_outlane
+    show_tokens:
+      leds: l_left_escape
+    control_events:
+      - events: e_mystery_outlane
+        state: 1
+  shot_right_outlane:
+    switches: s_right_outlane
+    profile: sp_outlane
+    show_tokens:
+      leds: l_right_escape
+
+shot_profiles:
+  sp_outlane:
+    advance_on_hit: false
+    states:
+      - name: ball_save_not_ready
+        show: "off"   
+      - name: lit
+        show: "sh_outlane_on"
+      - name: ball_save_collected
+        show: "off"   
+
+shot_groups:
+  sg_outlane_ballsave:
+    shots: shot_left_outlane, shot_right_outlane
+    rotate_left_events: s_left_flipper_button_active
+    rotate_right_events: s_right_flipper_button_active
+    reset_events: sg_outlane_ballsave_lit_hit
