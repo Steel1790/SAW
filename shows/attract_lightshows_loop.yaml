@@ -2,7 +2,12 @@
 
 # EK Notes: If loops are not defined, it will repeat for the duration time. If loops = 0, then it will play once. 1 loop = 2 plays.
 
-
+- duration: .5s
+  shows: 
+      backbox_on:
+       loops: -1
+       speed: 1
+       
 - duration: 5s
   shows: 
       gi_on: stop
@@ -38,12 +43,6 @@
 - duration: .5s
   shows: 
       gi_on:
-       # loops: -1
-        show_tokens:
-          color1: ffffff
-- duration: .5s
-  shows: 
-      backbox_on:
        # loops: -1
         show_tokens:
           color1: ffffff

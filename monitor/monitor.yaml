@@ -6,8 +6,17 @@ light:
     x: 0.48802340425531904
     y: 0.9829787234042552
   l_backbox_1:
-    x: 0.4974226804123711
-    y: 0.03404649389205899
+    size: 0.04
+    x: 0.3875119047619048
+    y: 0.0291005291005291
+  l_backbox_2:
+    size: 0.04
+    x: 0.49565476190476193
+    y: 0.02777777777777778
+  l_backbox_3:
+    size: 0.04
+    x: 0.6037976190476191
+    y: 0.02777777777777778
   l_bear_flasher_1:
     size: 0.02
     x: 0.5324322527015795
@@ -1082,12 +1091,6 @@ switch:
     size: 0.06
     x: 0.07898208640674394
     y: 0.3814541622760801
-  s_left_scoop:
-    rotation: 340
-    shape: SQUARE
-    size: 0.05
-    x: 0.16516363636363635
-    y: 0.49421487603305786
   s_left_flipper_button:
     rotation: 310
     shape: RECTANGLE
@@ -1141,6 +1144,12 @@ switch:
     size: 0.04
     x: 0.12562896211261773
     y: 0.1857142857142857
+  s_left_scoop:
+    rotation: 340
+    shape: SQUARE
+    size: 0.05
+    x: 0.16516363636363635
+    y: 0.49421487603305786
   s_left_slingshot:
     rotation: 70
     shape: RECTANGLE
@@ -1212,12 +1221,6 @@ switch:
     size: 0.06
     x: 0.3007591807909604
     y: 0.39936440677966095
-  s_right_scoop:
-    rotation: 350
-    shape: SQUARE
-    size: 0.05
-    x: 0.3095465268676278
-    y: 0.4849279161205766
   s_right_flipper_button:
     rotation: 60
     shape: RECTANGLE
@@ -1264,6 +1267,12 @@ switch:
     size: 0.04
     x: 0.7895587301587302
     y: 0.24285714285714288
+  s_right_scoop:
+    rotation: 350
+    shape: SQUARE
+    size: 0.05
+    x: 0.3095465268676278
+    y: 0.4849279161205766
   s_right_slingshot:
     rotation: 290
     shape: RECTANGLE

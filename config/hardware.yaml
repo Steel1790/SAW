@@ -29,6 +29,9 @@ fast:
       ledneuron:
         model: FP-EXP-2000
           #debug: true
+mpf: 
+  rgbw_white_behavior: duck_rgb
+
 machine:
   balls_installed: 6 #How many balls are physically in your game
   min_balls: 5 #How few balls can be accounted for before you can start a game
