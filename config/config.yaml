@@ -34,6 +34,8 @@ modes:
   - jigsaw_multiball_qualify
   - hacksaw_multiball
   - hacksaw_multiball_qualify
+  - shackle_multiball
+  - shackle_multiball_qualify
   - high_score
   - bonus
 

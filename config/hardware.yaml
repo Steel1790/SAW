@@ -452,13 +452,14 @@ diverters:
   dv_right_ramp_diverter:
     activation_coil: c_right_ramp_lift
     deactivation_coil: c_right_ramp_down
+    targets_when_active: bd_top_saucer
     type: pulse
   dv_hacksaw_lock_diverter:
     activation_coil: c_diverter
     type: hold
     activation_time: 3s
     activation_switches: s_right_ramp_score_bottom
-    enable_events: logicblock_hacksaw_mb_qualify_complete
+    enable_events: logicblock_acc_hacksaw_mb_qualify_complete
     disable_events: ball_ended
     targets_when_active: bd_hacksaw
     targets_when_inactive: playfield

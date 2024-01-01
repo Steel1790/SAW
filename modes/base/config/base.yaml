@@ -23,6 +23,8 @@ event_player:
     - startmode_jigsaw_multiball_qualify
     - startmode_hacksaw_multiball
     - startmode_hacksaw_multiball_qualify
+    - startmode_shackle_multiball
+    - startmode_shackle_multiball_qualify
 
 slide_player:
   logicblock_cnt_saw_qualify_complete:

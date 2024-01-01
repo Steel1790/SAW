@@ -12,6 +12,7 @@ named_colors:
   jelly: FCE205
   color_jigsaw_mb: FFA500
   color_hacksaw_mb: 2db83d
+  color_shackle_mb: f62f2f
 
 lights:
   l_left_escape:

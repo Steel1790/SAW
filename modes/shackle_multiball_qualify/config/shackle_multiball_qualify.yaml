@@ -1,0 +1,65 @@
+#config_version=6
+##! mode: shackle_multiball_qualify
+
+mode:
+  start_events: startmode_shackle_multiball_qualify
+  priority: 170
+
+accruals:
+  acc_shackle_mb_qualify:
+    events:
+      - s_left_standup_right_ramp_active
+      - s_right_standup_right_ramp_active
+    reset_on_complete: false
+    persist_state: true
+    disable_on_complete: false
+    reset_events: multiball_lock_mbl_shackle_locked_ball
+
+
+shows:
+  sh_shackle_mb_qualify_hit_ready:
+    - duration: -1
+      shows:
+        flash_color:
+          show_tokens:
+            color: color_shackle_mb
+            leds: (leds)
+          speed: 4
+  sh_shackle_mb_qualify_hit_locked:
+    - duration: -1
+      lights:
+        (leds): color_shackle_mb
+  sh_shackle_mb_end:
+    - duration: -1
+      lights:
+        (leds): off
+
+show_player:
+  logicblock_acc_shackle_mb_qualify_complete{device.multiball_locks.mbl_shackle.locked_balls == 0}:
+    sh_shackle_mb_qualify_hit_ready:
+      show_tokens:
+        leds: l_hmb_lock_1
+  multiball_lock_mbl_shackle_locked_ball{device.multiball_locks.mbl_shackle.locked_balls == 1}:
+    sh_shackle_mb_qualify_hit_locked:
+      show_tokens:
+        leds: l_hmb_lock_1
+  logicblock_acc_shackle_mb_qualify_complete{device.multiball_locks.mbl_shackle.locked_balls == 1}:
+    sh_shackle_mb_qualify_hit_ready:
+      show_tokens:
+        leds: l_hmb_lock_2
+  multiball_lock_mbl_shackle_locked_ball{device.multiball_locks.mbl_shackle.locked_balls == 2}:
+    sh_shackle_mb_qualify_hit_locked:
+      show_tokens:
+        leds: l_hmb_lock_1, l_hmb_lock_2
+  logicblock_acc_shackle_mb_qualify_complete{device.multiball_locks.mbl_shackle.locked_balls == 2}:
+    sh_shackle_mb_qualify_hit_ready:
+      show_tokens:
+        leds: l_hmb_lock_3
+  multiball_lock_mbl_shackle_lock_locked_ball{device.multiball_locks.mbl_shackle.locked_balls == 3}:
+    sh_shackle_mb_qualify_hit_locked:
+      show_tokens:
+        leds: l_hmb_lock_1, l_hmb_lock_2, l_hmb_lock_3
+  multiball_mb_shackle_ended:
+    sh_shackle_mb_end:
+      show_tokens:
+        leds: l_hmb_lock_1,l_hmb_lock_2,l_hmb_lock_3

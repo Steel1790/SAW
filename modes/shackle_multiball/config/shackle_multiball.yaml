@@ -1,42 +1,39 @@
 #config_version=6
-##! mode: hacksaw_multiball
+##! mode: shackle_multiball
 
 mode:
-  start_events: startmode_hacksaw_multiball
-  stop_events: stop_mode_hacksaw_multiball, mode_hacksaw_multiball_complete
-  priority: 165
+  start_events: startmode_shackle_multiball
+  stop_events: stop_mode_shackle_multiball, mode_shackle_multiball_complete
+  priority: 175
 
 multiball_locks:
-  mbl_hacksaw:
+  mbl_shackle:
     #debug: true
-    balls_to_lock: 3
-    balls_to_replace: 2
-    lock_devices: bd_hacksaw
+    balls_to_lock: 2
+    lock_devices: bd_top_saucer
     enable_events: logicblock_acc_hacksaw_mb_qualify_complete
-    locked_ball_counting_strategy: physical_only
       #disable_events: sg_lockshot_complete{state=="unlit"}
       #reset_count_for_current_player_events: multiball_lock_sword_multiball_lock_full
 
 multiballs:
-  mb_hacksaw:
+  mb_shackle:
     ball_count: 3
-    ball_locks: bd_hacksaw
     shoot_again: 15s
-    start_events: multiball_lock_mbl_hacksaw_full
+    start_events: multiball_lock_mbl_shackle_lock_full
     replace_balls_in_play: true
 
 variable_player:
-  multiball_mb_hacksaw_started:
+  multiball_mb_shackle_started:
     score: 3000000
 
 slides:
-  sl_HacksawMB:
+  sl_ShackleMB:
     widgets:
     - type: video
       video: HacksawMB
 
 slide_player:
-  multiball_mb_hacksaw_started:
-    sl_HacksawMB:
+  multiball_mb_shackle_started:
+    sl_ShackleMB:
       priority: 500
       expire: 8s
