@@ -11,13 +11,13 @@ multiball_locks:
     #debug: true
     balls_to_lock: 2
     lock_devices: bd_top_saucer
-    enable_events: logicblock_acc_hacksaw_mb_qualify_complete
+    enable_events: logicblock_acc_shackle_mb_qualify_complete
       #disable_events: sg_lockshot_complete{state=="unlit"}
       #reset_count_for_current_player_events: multiball_lock_sword_multiball_lock_full
 
 multiballs:
   mb_shackle:
-    ball_count: 3
+    ball_count: 2
     shoot_again: 15s
     start_events: multiball_lock_mbl_shackle_lock_full
     replace_balls_in_play: true

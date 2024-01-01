@@ -8,8 +8,8 @@ mode:
 accruals:
   acc_shackle_mb_qualify:
     events:
-      - s_left_standup_right_ramp_active
-      - s_right_standup_right_ramp_active
+      - s_left_standup_active
+      - s_right_standup_active
     reset_on_complete: false
     persist_state: true
     disable_on_complete: false
@@ -38,28 +38,28 @@ show_player:
   logicblock_acc_shackle_mb_qualify_complete{device.multiball_locks.mbl_shackle.locked_balls == 0}:
     sh_shackle_mb_qualify_hit_ready:
       show_tokens:
-        leds: l_hmb_lock_1
+        leds: l_right_ramp_triangle1
   multiball_lock_mbl_shackle_locked_ball{device.multiball_locks.mbl_shackle.locked_balls == 1}:
     sh_shackle_mb_qualify_hit_locked:
       show_tokens:
-        leds: l_hmb_lock_1
+        leds: l_right_ramp_triangle1
   logicblock_acc_shackle_mb_qualify_complete{device.multiball_locks.mbl_shackle.locked_balls == 1}:
     sh_shackle_mb_qualify_hit_ready:
       show_tokens:
-        leds: l_hmb_lock_2
+        leds: l_right_ramp_triangle1
   multiball_lock_mbl_shackle_locked_ball{device.multiball_locks.mbl_shackle.locked_balls == 2}:
     sh_shackle_mb_qualify_hit_locked:
       show_tokens:
-        leds: l_hmb_lock_1, l_hmb_lock_2
+        leds: l_right_ramp_triangle1
   logicblock_acc_shackle_mb_qualify_complete{device.multiball_locks.mbl_shackle.locked_balls == 2}:
     sh_shackle_mb_qualify_hit_ready:
       show_tokens:
-        leds: l_hmb_lock_3
+        leds: l_right_ramp_triangle1
   multiball_lock_mbl_shackle_lock_locked_ball{device.multiball_locks.mbl_shackle.locked_balls == 3}:
     sh_shackle_mb_qualify_hit_locked:
       show_tokens:
-        leds: l_hmb_lock_1, l_hmb_lock_2, l_hmb_lock_3
+        leds: l_right_ramp_triangle1
   multiball_mb_shackle_ended:
     sh_shackle_mb_end:
       show_tokens:
-        leds: l_hmb_lock_1,l_hmb_lock_2,l_hmb_lock_3
+        leds: l_right_ramp_triangle1

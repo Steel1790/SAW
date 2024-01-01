@@ -452,10 +452,15 @@ autofire_coils:
     switch: s_upper_bottom_jet_bumper
 
 diverters:
+#TODO need some error handling for this diverter if the switch is on like at ball start
   dv_right_ramp_diverter:
     activation_coil: c_right_ramp_lift
     deactivation_coil: c_right_ramp_down
     targets_when_active: bd_top_saucer
+    targets_when_inactive: playfield
+    enable_events: ball_starting
+    activate_events: logicblock_acc_shackle_mb_qualify_complete
+    deactivate_events: balldevice_bd_top_saucer_ball_entered
     type: pulse
   dv_hacksaw_lock_diverter:
     activation_coil: c_diverter
