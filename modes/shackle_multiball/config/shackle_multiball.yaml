@@ -19,8 +19,9 @@ multiballs:
   mb_shackle:
     ball_count: 2
     shoot_again: 15s
-    start_events: multiball_lock_mbl_shackle_lock_full
-    replace_balls_in_play: true
+    start_events: multiball_lock_mbl_shackle_full
+    ball_locks: bd_top_saucer
+    # replace_balls_in_play: true
 
 variable_player:
   multiball_mb_shackle_started:

@@ -28,7 +28,7 @@ fast:
         model: FP-EXP-0071
       ledneuron:
         model: FP-EXP-2000
-          #debug: true
+    debug: true
 mpf: 
   rgbw_white_behavior: duck_rgb
 
@@ -269,11 +269,11 @@ coils:
     number: 1616_1-15
     default_pulse_ms: 80
   c_right_ramp_lift:
-    number: 1616_2-10
-    default_pulse_ms: 20
+    number: 1616_2-11
+    default_pulse_ms: 40
     default_pulse_power: 0.5
   c_right_ramp_down:
-    number: 1616_2-11
+    number: 1616_2-10
     default_pulse_ms: 20
     default_pulse_power: 0.5
   c_left_spin_disc:
@@ -460,7 +460,7 @@ diverters:
     targets_when_inactive: playfield
     enable_events: ball_starting
     activate_events: logicblock_acc_shackle_mb_qualify_complete
-    deactivate_events: balldevice_bd_top_saucer_ball_entered
+    deactivate_events: balldevice_bd_top_saucer_ball_entered, ball_started
     type: pulse
   dv_hacksaw_lock_diverter:
     activation_coil: c_diverter
