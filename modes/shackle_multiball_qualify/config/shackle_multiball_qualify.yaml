@@ -50,16 +50,40 @@ show_player:
   multiball_lock_mbl_shackle_locked_ball{device.multiball_locks.mbl_shackle.locked_balls == 2}:
     sh_shackle_mb_qualify_hit_locked:
       show_tokens:
-        leds: l_right_ramp_triangle1
+        leds: l_right_ramp_triangle1, l_right_ramp_triangle2
   logicblock_acc_shackle_mb_qualify_complete{device.multiball_locks.mbl_shackle.locked_balls == 2}:
     sh_shackle_mb_qualify_hit_ready:
       show_tokens:
-        leds: l_right_ramp_triangle1
+        leds: l_right_ramp_triangle2
   multiball_lock_mbl_shackle_lock_locked_ball{device.multiball_locks.mbl_shackle.locked_balls == 3}:
     sh_shackle_mb_qualify_hit_locked:
       show_tokens:
-        leds: l_right_ramp_triangle1
+        leds: l_right_ramp_triangle1, l_right_ramp_triangle2
   multiball_mb_shackle_ended:
     sh_shackle_mb_end:
       show_tokens:
-        leds: l_right_ramp_triangle1
+        leds: l_right_ramp_triangle1, l_right_ramp_triangle2
+
+slides:
+  sl_Shackle_locked_1:
+    widgets:
+    - type: video
+      video: shackle_lock1
+      width: 1366
+      height: 768 
+  sl_Shackle_locked_2:
+    widgets:
+    - type: video
+      video: shackle_lock2
+      width: 1366
+      height: 768 
+
+slide_player:
+  multiball_lock_mbl_shackle_locked_ball{device.multiball_locks.mbl_shackle.locked_balls == 1}:
+    sl_Shackle_locked_1:
+      priority: 500
+      expire: 3s
+  multiball_lock_mbl_shackle_locked_ball{device.multiball_locks.mbl_shackle.locked_balls == 2}:
+    sl_Shackle_locked_2:
+      priority: 500
+      expire: 3s

@@ -63,3 +63,37 @@ show_player:
     sh_hacksaw_mb_end:
       show_tokens:
         leds: l_hmb_lock_1,l_hmb_lock_2,l_hmb_lock_3
+
+slides:
+  sl_Hacksaw_locked_1:
+    widgets:
+    - type: video
+      video: hacksaw_lock1
+      width: 1366
+      height: 768 
+  sl_Hacksaw_locked_2:
+    widgets:
+    - type: video
+      video: hacksaw_lock2
+      width: 1366
+      height: 768 
+  sl_Hacksaw_locked_3:
+    widgets:
+    - type: video
+      video: hacksaw_lock3
+      width: 1366
+      height: 768 
+
+slide_player:
+  multiball_lock_mbl_hacksaw_locked_ball{device.multiball_locks.mbl_hacksaw.locked_balls == 1}:
+    sl_Hacksaw_locked_1:
+      priority: 500
+      expire: 3s
+  multiball_lock_mbl_hacksaw_locked_ball{device.multiball_locks.mbl_hacksaw.locked_balls == 2}:
+    sl_Hacksaw_locked_2:
+      priority: 500
+      expire: 3s
+  multiball_lock_mbl_hacksaw_lock_locked_ball{device.multiball_locks.mbl_hacksaw.locked_balls == 3}:
+    sl_Hacksaw_locked_3:
+      priority: 500
+      expire: 3s

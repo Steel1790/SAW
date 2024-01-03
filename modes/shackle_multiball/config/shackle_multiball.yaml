@@ -31,10 +31,12 @@ slides:
   sl_ShackleMB:
     widgets:
     - type: video
-      video: HacksawMB
+      video: shackleMB
+      width: 1366
+      height: 768 
 
 slide_player:
   multiball_mb_shackle_started:
     sl_ShackleMB:
-      priority: 500
-      expire: 8s
+      priority: 600
+      expire: 7s

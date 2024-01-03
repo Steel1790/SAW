@@ -23,6 +23,7 @@ counters:
     persist_state: true
     reset_on_complete: false
     count_events: logicblock_seq_jigsaw_mb_qualify_complete
+    events_when_complete: logicblock_jigsaw_multiball_qualify_complete
 
 event_player:
   logicblock_seq_jigsaw_mb_qualify_hit{step==1}:
@@ -77,3 +78,37 @@ show_player:
     sh_jigsaw_mb_end:
       show_tokens:
         leds: l_left_ramp_triangle1, l_left_ramp_triangle2, l_left_ramp_triangle3
+
+slides:
+  sl_Jigsaw_locked_1:
+    widgets:
+    - type: video
+      video: jigsaw_lock1
+      width: 1366
+      height: 768 
+  sl_Jigsaw_locked_2:
+    widgets:
+    - type: video
+      video: jigsaw_lock2
+      width: 1366
+      height: 768 
+  sl_Jigsaw_locked_3:
+    widgets:
+    - type: video
+      video: jigsaw_lock3
+      width: 1366
+      height: 768 
+
+slide_player:
+  logicblock_cnt_jigsaw_mb_qualify_updated{value==1}:
+    sl_Jigsaw_locked_1:
+      priority: 500
+      expire: 3s
+  logicblock_cnt_jigsaw_mb_qualify_updated{value==2}:
+    sl_Jigsaw_locked_2:
+      priority: 500
+      expire: 3s
+  logicblock_cnt_jigsaw_mb_qualify_updated{value==3}:
+    sl_Jigsaw_locked_3:
+      priority: 500
+      expire: 3s

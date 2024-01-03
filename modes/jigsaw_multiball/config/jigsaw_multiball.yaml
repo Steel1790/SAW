@@ -8,7 +8,7 @@ mode:
 
 multiballs:
   mb_jigsaw:
-    ball_count: 2
+    ball_count: 3
     shoot_again: 15s
     start_events: logicblock_jigsaw_multiball_qualify_complete
 
@@ -25,5 +25,5 @@ slides:
 slide_player:
   multiball_mb_jigsaw_started:
     sl_JigsawMB:
-      priority: 500
+      priority: 600
       expire: 6s
