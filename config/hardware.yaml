@@ -136,13 +136,13 @@ switches:
     number: 1616_1-5
     tags: middle_standup, standup, switch_hit
   s_enter_left_ramp:
-    number: 1616_2-2
-    tags: left_ramp, ramp_hit, switch_hit, ramp
-  s_left_ramp_score_top:
     number: 1616_2-3
     tags: left_ramp, ramp_hit, switch_hit, ramp
-  s_left_ramp_score_bottom:
+  s_left_ramp_score_top:
     number: 1616_2-0
+    tags: left_ramp, ramp_hit, switch_hit, ramp
+  s_left_ramp_score_bottom:
+    number: 1616_2-2
     tags: left_ramp, ramp_hit, switch_hit, ramp
   s_left_loop_top:
     number: 1616_1-0
