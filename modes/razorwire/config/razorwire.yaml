@@ -7,7 +7,7 @@ sequences:
   razorwire:
     events:
       - razorwire_pops_complete
-      - upper_drop_target_hit
+      - drop_target_dt_upper_drop1_down
       - ssh_left_ramp_hit
     reset_on_complete: false
     events_when_complete: mode_razorwire_complete, stop_mode_razorwire

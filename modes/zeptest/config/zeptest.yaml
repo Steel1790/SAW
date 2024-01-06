@@ -9,10 +9,10 @@ sequences:
       - sw_lower_drop_target
       - sw_lower_drop_target
       - sw_lower_drop_target
-      - upper_drop_target_hit
+      - drop_target_dt_upper_drop1_down
       - ssh_left_ramp_hit
       - machine_var_audits_switches_s_right_ramp_score_top
-      - upper_drop_target_hit     
+      - drop_target_dt_upper_drop1_down   
     reset_on_complete: false
     events_when_complete: mode_zeptest_complete, stop_mode_zeptest
 

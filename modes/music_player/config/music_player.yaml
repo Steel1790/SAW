@@ -320,11 +320,15 @@ sound_player:
       action: play
     drillchair:
       action: stop
+    DrillChairModeStart:
+      action: stop
     BaseMusic:
       delay: 10s
       action: play
       loops: -1      
   mode_drillchair_stopped:
+    DrillChairModeStart:
+      action: stop
     BaseMusic:
       delay: 3s
       action: play

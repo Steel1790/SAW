@@ -6,11 +6,11 @@ mode:
 sequences:
   flammablejelly:
     events:
-      - shot_right_standup_hit
-      - shot_inner_loop_hit
-      - shot_left_standup_hit
-      - shot_right_loop_hit
-      - upper_drop_target_hit     
+      - s_right_standup_active
+      - sw_loop
+      - s_left_standup_active
+      - sw_loop
+      - drop_target_dt_upper_drop1_down    
     reset_on_complete: false
     events_when_complete: mode_flammablejelly_complete, stop_mode_flammablejelly
 

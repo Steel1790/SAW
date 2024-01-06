@@ -21,7 +21,7 @@ sequences:
       - shot_left_standup_rightramp_hit
       - shot_right_standup_rightramp_hit
       - shot_right_standup_hit
-      - upper_drop_target_hit
+      - drop_target_dt_upper_drop1_down
     reset_on_complete: false
     events_when_complete: mode_reversebeartrap_complete, stop_mode_reversebeartrap
 
