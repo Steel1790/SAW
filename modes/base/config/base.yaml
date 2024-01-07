@@ -98,7 +98,7 @@ slide_player:
       priority: 400
       expire: 8s
   ball_save_default_saving_ball:
-    ballsavevideo:
+    HeHelpedMeVideo:
       action: play
       priority: 400
       expire: 5s
@@ -1246,6 +1246,12 @@ slides:
     widgets:
     - type: video
       video: ballsave
+      width: 1366
+      height: 768
+  HeHelpedMeVideo:
+    widgets:
+    - type: video
+      video: HeHelpedMeVideo
       width: 1366
       height: 768
   tiltwarningvideo:
