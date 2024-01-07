@@ -5,8 +5,8 @@ mode:
   
 ball_saves:
   default:
-    active_time: 8s
-    hurry_up_time: 3s
+    active_time: 5s
+    hurry_up_time: 2s
 #    grace_period: 2s
 #    enable_events: mode_base_started
 #    disable_events2: ball_save_default_disabled
@@ -37,41 +37,76 @@ slide_player:
     saw_collect:
       priority: 400
       expire: 3s   
+
   mode_razorwire_complete: 
     trapcomplete:
       priority: 400
       expire: 5s   #EK shortened to time with lightshow
+  player_razorwire_60s_timer_tick{value < 1}:
+    trapfailed:
+      priority: 400
+      expire: 5s    
 
   mode_drillchair_complete: 
     trapcomplete:
       priority: 400
       expire: 8s  
+  player_drillchair_drillchair_60s_timer_tick{value < 1}:
+    trapfailed:
+      priority: 400
+      expire: 5s  
 
   mode_reversebeartrap_complete: 
     trapcomplete:
       priority: 400
       expire: 8s   
+  player_reversebeartrap_120s_reversebeartrap_timer_tick{value < 1}:
+    trapfailed:
+      priority: 400
+      expire: 5s  
       
   mode_zeptest_complete: 
     trapcomplete:
       priority: 400
       expire: 8s    
+  player_zeptest_60s_zeptest_timer_tick{value < 1}:
+    trapfailed:
+      priority: 400
+      expire: 5s  
 
   mode_flammablejelly_complete: 
     trapcomplete:
       priority: 400
-      expire: 8s              
+      expire: 8s   
+  player_flammablejelly_60s_flammablejelly_timer_tick{value < 1}:
+    trapfailed:
+      priority: 400
+      expire: 5s        
+
+  mode_quadshotgun_complete: 
+    trapcomplete:
+      priority: 400
+      expire: 8s   
+  player_quadshotgun_quadshotgun_60s_timer_tick{value < 1}:
+    trapfailed:
+      priority: 400
+      expire: 5s     
       
   mode_skillshot_complete:
     skillshotvideo:
       action: play
       priority: 400
       expire: 8s
-  ballsavetemp_hit:
+  ball_save_default_saving_ball:
     ballsavevideo:
       action: play
       priority: 400
-      expire: 8s
+      expire: 5s
+  ball_save_escape_outlane_saving_ball:
+    ballsavevideo:
+      action: play
+      priority: 400
+      expire: 5s
   tiltwarningtemp_hit:
     tiltwarningvideo:
       action: play
@@ -533,7 +568,7 @@ show_player:
     ballsave:
       show_tokens:
         leds: l_live_again
-      loops: 20
+      loops: 10
   ball_save_default_disabled:
     ballsave_end:
       show_tokens:
@@ -1193,6 +1228,12 @@ slides:
       video: trapcomplete
       width: 1366
       height: 768      
+  trapfailed:
+    widgets:
+    - type: video
+      video: TrapFailed
+      width: 1366
+      height: 768    
       
   skillshotvideo:
     widgets:
