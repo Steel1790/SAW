@@ -129,6 +129,10 @@ sound_player:
     BaseMusic:
       action: stop
 
+  ball_save_default_saving_ball:
+    HeHelpedMe:
+      action: play
+
   mode_base_started{current_player.ball == 1 and player==1}:
     1playerGame:
       action: play
