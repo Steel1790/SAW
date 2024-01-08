@@ -38,6 +38,7 @@ modes:
   - shackle_multiball_qualify
   - high_score
   - bonus
+  - stop_game
 
 window:
   width: 1366

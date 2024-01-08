@@ -182,36 +182,36 @@ switches:
     tags: standup, switch_hit, playfield_active
   s_left_110_point:
     number: 3208-12
-    tags: slingshot, switch_hit, playfield_active
+    tags: switch_hit, playfield_active
   s_right_110_point:
     number: 3208-11
-    tags: slingshot, switch_hit, playfield_active
+    tags: switch_hit, playfield_active
   s_left_top_jet_bumper:
     number: 1616_1-2
-    tags: top_pops, pops, switch_hit, playfield_active
+    tags: top_pops, pops, switch_hit
   s_right_top_jet_bumper:
     number: 1616_1-3
-    tags: top_pops, pops, switch_hit, playfield_active
+    tags: top_pops, pops, switch_hit
   s_lower_top_jet_bumper:
     number: 1616_1-4
-    tags: top_pops, pops, switch_hit, playfield_active
+    tags: top_pops, pops, switch_hit
   s_left_bottom_jet_bumper:
     number: 1616_1-11
-    tags: bottom_pops, pops, switch_hit, playfield_active
+    tags: bottom_pops, pops, switch_hit
   s_right_bottom_jet_bumper:
     number: 1616_1-10
-    tags: bottom_pops, pops, switch_hit, playfield_active
+    tags: bottom_pops, pops, switch_hit
   s_upper_bottom_jet_bumper:
     number: 1616_1-9
-    tags: bottom_pops, pops, switch_hit, playfield_active
+    tags: bottom_pops, pops, switch_hit
   s_ball_shooter_lane:
     number: 3208-16
   s_left_slingshot:
     number: 3208-24
-    tags: slingshot, playfield_active
+    tags: slingshot
   s_right_slingshot:
     number: 3208-2
-    tags: slingshot, playfield_active
+    tags: slingshot
 
 virtual_platform_start_active_switches:
   - s_trough1
@@ -352,7 +352,6 @@ drop_target_banks:
       ball_started.2: 1s
       ball_started.3: 2s
       machine_reset_phase_3: 0 
-      mode_zeptest_started: 0
   upper_dropbank:
     drop_targets:
       - dt_upper_drop1
