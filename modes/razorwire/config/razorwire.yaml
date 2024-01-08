@@ -2,6 +2,7 @@
 mode:
   start_events: selection_mode_razorwire_selected
   stop_events: stop_mode_razorwire, ball_ended, ball_will_end, player_razorwire_60s_timer_tick{value < 1}
+  priority: 110
  
 sequences:
   razorwire:
@@ -412,7 +413,24 @@ show_player:
           leds: top_bumper
           color1: razorwire
 
-      
+sound_pools:
+  razorwire_mode_sound_pool:
+    load: preload
+    type: random
+    track: sfx
+    sounds:
+      - RW1
+      - RW2
+      - RW3
+      - RW6
+      - RW7
+      - RW8
+      - RW9
+      - RW10
+      - RW11
+      - RW12
+      - RW13
+      - RW14
 
 sound_player:
   mode_razorwire_started:
@@ -424,6 +442,27 @@ sound_player:
   player_razorwire_60s_timer_tick{value < 1}:
     RWModeStart:
       action: stop
+
+  sw_bottom_pops:
+    razorwire_mode_sound_pool:
+      action: play
+      block: true
+  sw_slingshot:
+    razorwire_mode_sound_pool:
+      action: play
+      block: true    
+  sw_standup:
+    razorwire_mode_sound_pool:
+      action: play
+      block: true
+  sw_right_return_lane:
+    razorwire_mode_sound_pool:
+      action: play
+      block: true
+  sw_lower_drop_target:
+    razorwire_mode_sound_pool:
+      action: play
+      block: true
 
 event_player: 
   slide_razorwire_pops_active: e_primary_mode_active

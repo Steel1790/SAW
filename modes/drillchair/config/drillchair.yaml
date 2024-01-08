@@ -2,6 +2,7 @@
 mode:
   start_events: selection_mode_drillchair_selected
   stop_events: stop_mode_drillchair, mode_drillchair_complete, ball_ended, ball_will_end, player_drillchair_drillchair_60s_timer_tick{value < 1}
+  priority: 110
  
 sequences:
   drillchair:
@@ -306,6 +307,18 @@ widget_player:
   dc_shot_update3:
     slide: drillchair_phase2    
 
+sound_pools:
+  drillchair_mode_sound_pool:
+    load: preload
+    type: random
+    track: sfx
+    sounds:
+      - DC1
+      - DC2
+      - DC4
+      - DC7
+      - DC9
+
 sound_player:
   mode_drillchair_started:
     drillchair:
@@ -316,6 +329,27 @@ sound_player:
   player_drillchair_drillchair_60s_timer_tick{value < 1}:
     DrillChairModeStart:
       action: stop      
+
+  sw_top_pops:
+    drillchair_mode_sound_pool:
+      action: play
+      block: true
+  sw_slingshot:
+    drillchair_mode_sound_pool:
+      action: play
+      block: true    
+  sw_standup:
+    drillchair_mode_sound_pool:
+      action: play
+      block: true
+  sw_right_return_lane:
+    drillchair_mode_sound_pool:
+      action: play
+      block: true
+  sw_lower_drop_target:
+    drillchair_mode_sound_pool:
+      action: play
+      block: true
 
 shows:
   drillchair_pops_progress:    

@@ -132,6 +132,9 @@ sound_player:
   ball_save_default_saving_ball:
     HeHelpedMe:
       action: play
+  ball_ending{current_player.ball==3}:
+    GameOver:
+      action: play
 
   mode_base_started{current_player.ball == 1 and player==1}:
     1playerGame:
@@ -192,36 +195,47 @@ sound_player:
   sw_top_pops:
     razorwirepops:
       action: play
+      block: true
   sw_bottom_pops:
     drillchairpops:
       action: play
+      block: true
   sw_slingshot:
     slingsaudio:
-      action: play    
+      action: play
+      block: true    
   sw_spinner:
     Spinner3:
       action: play
+      block: true
   sw_standup:
     standupaudio:
       action: play
+      block: true
   shot_left_loop_hit:
     LeftOrbit:
       action: play
+      block: true
   shot_right_loop_hit:
     RightOrbit:
       action: play
+      block: true
   s_right_outlane_active:
     TortureScream:
       action: play
+      block: true
   s_left_outlane_active:
     TortureScream:
       action: play
+      block: true
   sw_right_return_lane:
     Gore_Neck_Break:
       action: play
+      block: true
   sw_lower_drop_target:
     lowerdropsaudio:
       action: play
+      block: true
     
   logicblock_random_switch_hit{hits==29}:  
     randomswitch:
