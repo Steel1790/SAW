@@ -216,6 +216,22 @@ show_player:
       show_tokens:
         color1: jelly
 
+sound_pools:
+  flammablejelly_mode_sound_pool:
+    load: preload
+    type: random
+    track: sfx
+    sounds:
+      - FJ1
+      - FJ2
+      - FJ3
+      - FJ4
+      - FJ5
+      - FJ6
+      - FJ7
+      - FJ8
+      - FJ9
+
 sound_player:
   mode_flammablejelly_started:
     flammablejelly:
@@ -226,6 +242,31 @@ sound_player:
   player_flammablejelly_60s_flammablejelly_timer_tick{value < 1}:
     FlammableJellyModeStart:
       action: stop
+
+  sw_top_pops:
+    flammablejelly_mode_sound_pool:
+      action: play
+      block: true
+  sw_bottom_pops:
+    flammablejelly_mode_sound_pool:
+      action: play
+      block: true
+  sw_slingshot:
+    flammablejelly_mode_sound_pool:
+      action: play
+      block: true    
+  sw_standup:
+    flammablejelly_mode_sound_pool:
+      action: play
+      block: true
+  sw_right_return_lane:
+    flammablejelly_mode_sound_pool:
+      action: play
+      block: true
+  sw_lower_drop_target:
+    flammablejelly_mode_sound_pool:
+      action: play
+      block: true
 
 event_player: 
   slide_flammablejellyUI_active: e_primary_mode_active

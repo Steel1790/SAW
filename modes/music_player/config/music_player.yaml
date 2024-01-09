@@ -212,11 +212,11 @@ sound_player:
     standupaudio:
       action: play
       block: true
-  shot_left_loop_hit:
+  ssh_left_orbit_hit:
     LeftOrbit:
       action: play
       block: true
-  shot_right_loop_hit:
+  ssh_right_orbit_hit:
     RightOrbit:
       action: play
       block: true
