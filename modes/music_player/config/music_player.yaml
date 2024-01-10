@@ -188,7 +188,7 @@ sound_player:
       delay: 2.5s
       action: play  
     
-  upper_drop_target_hit:
+  drop_target_bank_upper_dropbank_down:
     SingleDropGlassBreak:
       action: play 
       
@@ -204,7 +204,7 @@ sound_player:
     slingsaudio:
       action: play
       block: true    
-  sw_spinner:
+  spinner_spinner_hit:
     Spinner3:
       action: play
       block: true

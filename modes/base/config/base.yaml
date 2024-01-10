@@ -142,7 +142,7 @@ variable_player:
     score: 75000
   sw_ramp:
     score: 125000
-  sw_spinner:
+  spinner_spinner_hit:
     score: 30000
   sw_drop_target:
     score: 95000
@@ -307,7 +307,7 @@ counters:
     reset_on_complete: true
     disable_on_complete: false    
     events_when_complete: minimode_spinners_complete 
-    count_events: sw_spinner 
+    count_events: spinner_spinner_hit 
 
   minimode_ramps_counter:
     starting_count: 0
@@ -785,7 +785,7 @@ show_player:
 #        led: l_left_return_lane
 #        color1: red
 
-  spinner_hit:
+  spinner_spinner_hit:
     flash_token:
       loops: 2
       speed: 8

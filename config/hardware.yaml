@@ -471,3 +471,8 @@ diverters:
     disable_events: ball_ended
     targets_when_active: bd_hacksaw
     targets_when_inactive: playfield
+
+spinners:
+  spinner:
+    switch: s_spinner
+    active_ms: 500

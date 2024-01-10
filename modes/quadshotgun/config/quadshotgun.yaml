@@ -2,6 +2,7 @@
 mode:
   start_events: selection_mode_quadshotgun_selected
   stop_events: stop_mode_quadshotgun, mode_quadshotgun_complete, ball_ended, ball_will_end, player_quadshotgun_quadshotgun_60s_timer_tick{value < 1}
+  priority: 110
  
 sequences:
   quadshotgun:
@@ -30,7 +31,7 @@ counters:
 #    persist_state: true
     reset_on_complete: false
     events_when_complete: quadshotgun_spinner_complete   
-    count_events: spinner_hit
+    count_events: spinner_spinner_hit
 
 #shots:
 #  spinner:
@@ -287,6 +288,28 @@ show_player:
         led: l_shotgun_flasher_4
         color1: shotgun
 
+sound_pools:
+  quadshotgun_mode_sound_pool:
+    load: preload
+    type: random
+    track: sfx
+    sounds:
+      - QS1
+      - QS2
+      - QS3
+      - QS4
+      - QS5
+      - QS7
+
+  quadshotgun_gears_sound_pool:
+    load: preload
+    type: random
+    track: sfx
+    sounds:
+      - MoleDrillGears8
+      - MoleDrillGears30
+      - MoleDrillGears36
+
 sound_player:
   mode_quadshotgun_started:
     QuadShotgunModeStart:
@@ -294,6 +317,32 @@ sound_player:
   player_quadshotgun_quadshotgun_60s_timer_tick{value < 1}:
     QuadShotgunModeStart:
       action: stop
+
+  sw_top_pops:
+    quadshotgun_gears_sound_pool:
+      action: play
+      block: true
+  sw_bottom_pops:
+    quadshotgun_gears_sound_pool:
+      action: play
+      block: true
+  sw_slingshot:
+    quadshotgun_mode_sound_pool:
+      action: play
+      block: true    
+  sw_standup:
+    quadshotgun_mode_sound_pool:
+      action: play
+      block: true
+  sw_right_return_lane:
+    quadshotgun_mode_sound_pool:
+      action: play
+      block: true
+  sw_lower_drop_target:
+    quadshotgun_mode_sound_pool:
+      action: play
+      block: true
+
    
 event_player: 
   slide_quadshotgun_spinner_active: e_primary_mode_active

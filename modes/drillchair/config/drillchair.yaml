@@ -319,6 +319,15 @@ sound_pools:
       - DC7
       - DC9
 
+  drillchair_gears_sound_pool:
+    load: preload
+    type: random
+    track: sfx
+    sounds:
+      - MoleDrillGears8
+      - MoleDrillGears30
+      - MoleDrillGears36
+
 sound_player:
   mode_drillchair_started:
     drillchair:
@@ -339,7 +348,7 @@ sound_player:
       action: play
       block: true    
   sw_standup:
-    drillchair_mode_sound_pool:
+    drillchair_gears_sound_pool:
       action: play
       block: true
   sw_right_return_lane:
@@ -347,7 +356,7 @@ sound_player:
       action: play
       block: true
   sw_lower_drop_target:
-    drillchair_mode_sound_pool:
+    drillchair_gears_sound_pool:
       action: play
       block: true
 
