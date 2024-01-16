@@ -363,11 +363,16 @@ counters:
     enable_events: 
     disable_events: 
     start_enabled: true
+    reset_events: logicblock_cnt_negative_shot_counter_updated{value==-1}
 #    persist_state: true
     reset_on_complete: true
     disable_on_complete: false
 #    events_when_complete: 
     count_events: shot_left_return_lane_hit
+    control_events:
+      - event: sg_saw_qualify_lit_hit
+        action: subtract
+        value: 1
 
 shows:
   minimode_pops_show_complete:    
@@ -539,9 +544,9 @@ show_player:
       #   color1: white
 
   mode_base_started:  
-    backbox_on:
-      loops: -1
-      speed: 1 
+    #backbox_on:
+    #  loops: -1
+    #  speed: 1 
     base_action_button:
       loops: -1
       show_tokens:
@@ -1282,6 +1287,13 @@ ball_holds:
     release_one_events: e_primary_mode_active, e_release_mystery
 
 coil_player:
+  logicblock_cnt_negative_shot_counter_updated{value==0}:
+    c_right_spin_disc:
+      action: off
+    c_middle_spin_disc:
+      action: off
+    c_left_spin_disc:
+      action: off
   logicblock_cnt_negative_shot_counter_updated{value==1}:
     c_right_spin_disc:
       action: enable

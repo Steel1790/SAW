@@ -220,22 +220,22 @@ sound_player:
     RightOrbit:
       action: play
       block: true
-  s_right_outlane_active:
+  shot_left_outlane_hit{state=="ball_save_not_ready"}:
     TortureScream:
       action: play
       block: true
-  s_left_outlane_active:
+  shot_right_outlane_hit{state=="ball_save_not_ready"}:
     TortureScream:
       action: play
       block: true
-  #shot_left_outlane_hit{state=="lit"}:
-  #  StillAlive:
-  #    action: play
-  #    block: true
-  #shot_right_outlane_hit{state=="lit"}:
-  #  StillAlive:
-  #    action: play
-  #    block: true
+  shot_left_outlane_hit{state=="lit"}:
+    StillAlive:
+      action: play
+      block: true
+  shot_right_outlane_hit{state=="lit"}:
+    StillAlive:
+      action: play
+      block: true
 
   sw_right_return_lane:
     Gore_Neck_Break:

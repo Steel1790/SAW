@@ -1235,6 +1235,10 @@ lights:
         number: ledneuron-2-32-2
     tags: backbox, ledneuronp2 
 
-
+show_player:
+  init_phase_1:
+    backbox_on:
+      loops: -1
+      speed: 1     
 
 
