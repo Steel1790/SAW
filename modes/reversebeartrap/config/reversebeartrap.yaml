@@ -5,10 +5,10 @@ mode:
   priority: 110
  
 sequence_shots:
-  leftloop_leftramp:
+  ssh_leftloop_leftramp:
     switch_sequence: s_left_loop_bottom, s_left_loop_top, s_enter_left_ramp, s_left_ramp_score_bottom, s_left_ramp_score_top
     sequence_timeout: 6s
-  rightramp_rightloop:
+  ssh_rightramp_rightloop:
     switch_sequence: s_right_ramp_score_bottom, s_right_ramp_score_top, s_right_loop_bottom, s_right_loop_top
     sequence_timeout: 6s 
  
@@ -16,12 +16,12 @@ sequence_shots:
 sequences:
   reversebeartrap:
     events:
-      - leftloop_leftramp_hit
-      - rightramp_rightloop_hit
-      - shot_left_standup_hit
-      - shot_left_standup_rightramp_hit
-      - shot_right_standup_rightramp_hit
-      - shot_right_standup_hit
+      - ssh_leftloop_leftramp_hit
+      - ssh_rightramp_rightloop_hit
+      - sw_standup
+      - sw_standup
+      - sw_standup
+      - sw_standup
       - drop_target_dt_upper_drop1_down
     reset_on_complete: false
     events_when_complete: mode_reversebeartrap_complete, stop_mode_reversebeartrap
@@ -120,44 +120,14 @@ slides:
     - type: Text
 # work on displaying the count of spins
       text: "To Find the Key:"
-      font_size: 42
+      font_size: 60
       font_name: TrajanProRegular
+      outline_color: black
+      outline_width: 7
       color: AECCE4
-      x: 275
-      y: 75%
-      
-    - type: Text
-      text: "- Combo the Left Loop into the Left Ramp"
-      font_size: 32
-      font_name: TrajanProRegular
-      color: BDD5E7
-      x: 480
-      y: 68%
-      
-    - type: Text
-      text: "- Combo the Right Ramp into the Right Loop"
-      font_size: 32
-      font_name: TrajanProRegular
-      color: BDD5E7
-      x: 510
-      y: 62%
-      
-    - type: Text
-      text: "- Hit the 4 Stand-ups in Order Left to Right"
-      font_size: 32
-      font_name: TrajanProRegular
-      color: BDD5E7
-      x: 500
-      y: 56%
-      
-    - type: Text
-      text: "- X marks the Spot to Find the Key"
-      font_size: 32
-      font_name: TrajanProRegular
-      color: BDD5E7
-      x: 408
-      y: 50%      
-      
+      x: 50%
+      y: 62%      
+      z: 1
     - type: Text
       text: "You Have 120 Seconds To Find The Key & Earn Your Salvation"
       color: D1E5F4
@@ -185,40 +155,108 @@ slides:
 widgets:
    rbt_shot_update1:
     - type: Text
-      text: X
-      color: ad1400
-      x: 4%
-      y: 68%
+      text: " Combo the Left Loop into the Left Ramp"
       font_size: 50
       font_name: TrajanProRegular
-   rbt_shot_update2:
+      outline_color: black
+      outline_width: 7
+      color: BDD5E7
+      x: 50%
+      y: 48%
+      z: 1
+      animations:
+        add_to_slide:
+          - property: opacity
+            value: 0
+          - property: opacity
+            value: 1
+            duration: 1000ms
+            timing: after_previous
+   rbt_shot_update2:      
     - type: Text
-      text: X
-      color: ad1400
-      x: 4%
-      y: 62%
+      text: " Combo the Right Ramp into the Right Loop"
       font_size: 50
       font_name: TrajanProRegular
-   rbt_shot_update6:
+      outline_color: black
+      outline_width: 7
+      color: BDD5E7
+      x: 50%
+      y: 48%
+      z: 1
+      animations:
+        add_to_slide:
+          - property: opacity
+            value: 0
+          - property: opacity
+            value: 1
+            duration: 1000ms
+            timing: after_previous
+   rbt_shot_update3:      
     - type: Text
-      text: X
-      color: ad1400
-      x: 4%
-      y: 56%
-      font_size: 50
+      text: " Hit 4 Stand-ups"
+      font_size: 60
       font_name: TrajanProRegular
+      outline_color: black
+      outline_width: 7
+      color: BDD5E7
+      x: 50%
+      y: 48%
+      z: 1
+      animations:
+        add_to_slide:
+          - property: opacity
+            value: 0
+          - property: opacity
+            value: 1
+            duration: 1000ms
+            timing: after_previous
+   rbt_shot_update4:      
+    - type: Text
+      text: " X marks the Spot to Find the Key"
+      font_size: 60
+      font_name: TrajanProRegular
+      outline_color: black
+      outline_width: 7
+      color: BDD5E7
+      x: 50%
+      y: 48%     
+      z: 1
+      animations:
+        add_to_slide:
+          - property: opacity
+            value: 0
+          - property: opacity
+            value: 1
+            duration: 1000ms
+            timing: after_previous
     
  
 widget_player:
+ logicblock_reversebeartrap_updated{value==0}: 
+   rbt_shot_update1:
+     slide: reversebeartrapUI
+     action: add
  logicblock_reversebeartrap_hit{step==1}: 
-  rbt_shot_update1:
-    slide: reversebeartrapUI
+   rbt_shot_update1:
+     slide: reversebeartrapUI
+     action: remove
+   rbt_shot_update2:
+     slide: reversebeartrapUI
+     action: add
  logicblock_reversebeartrap_hit{step==2}: 
-  rbt_shot_update2:
-    slide: reversebeartrapUI
+   rbt_shot_update2:
+     slide: reversebeartrapUI
+     action: remove
+   rbt_shot_update3:
+     slide: reversebeartrapUI
+     action: add
  logicblock_reversebeartrap_hit{step==6}: 
-  rbt_shot_update6:
-    slide: reversebeartrapUI
+   rbt_shot_update3:
+     slide: reversebeartrapUI
+     action: remove
+   rbt_shot_update4:
+     slide: reversebeartrapUI
+     action: add
    
 
 slide_player:

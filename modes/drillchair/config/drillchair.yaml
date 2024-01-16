@@ -8,9 +8,9 @@ sequences:
   drillchair:
     events:
       - drillchair_pops_complete
-      - left_loop_hit
+      - ssh_left_orbit_hit
       - drillchair_pops2_complete
-      - left_loop_hit
+      - ssh_left_orbit_hit
     reset_on_complete: false
     events_when_complete: mode_drillchair_complete, stop_mode_drillchair
  
@@ -92,6 +92,8 @@ slides:
       text: Aim for the Lower Pop Bumpers!
       font_name: TrajanProRegular
       font_size: 75
+      outline_color: black
+      outline_width: 7
       color: d8d8d8
       
     - type: image
@@ -161,6 +163,8 @@ slides:
       text: (player|drillchair_visual_pops_counter) / 20 lower pops
       font_size: 50
       font_name: TrajanProRegular
+      outline_color: black
+      outline_width: 7
       color: d8d8d8
       y: 35%
     - type: Text
@@ -186,43 +190,7 @@ slides:
      duration: 0.2s
  
   drillchair_phase2:
-    widgets:   
-    - type: Text
-      text: "- Hit The Left Loop"
-      font_size: 52
-      font_name: TrajanProRegular
-      color: d8d8d8 
-      x: 405
-      y: 66%    
-    - type: Text
-      text: "- (player|drillchair_visual_pops2_counter) /20 lower pops"
-      font_size: 52
-      font_name: TrajanProRegular
-      color: d8d8d8 
-      x: 385
-      y: 56%    
-    - type: Text
-      text: " to disable the right drill!"
-      font_size: 52
-      font_name: TrajanProRegular
-      color: d8d8d8 
-      x: 552
-      y: 50%          
-    - type: Text
-      text: "- Hit The Left Loop To Escape"
-      font_size: 52
-      font_name: TrajanProRegular
-      color: d8d8d8 
-      x: 552
-      y: 40%
-    - type: Text
-      text: " & Complete The Trap"
-      font_size: 52
-      font_name: TrajanProRegular
-      color: d8d8d8 
-      x: 467
-      y: 34%
-      
+    widgets:      
     - type: image
       image: hacksawUI
       opacity: 0.5
@@ -281,31 +249,120 @@ slide_player:
       expire: 60.5s
       
 widgets:
-   dc_shot_update2:
+   dc_shot_update2: 
     - type: Text
-      text: X
-      color: ff6700
-      x: 5.5%
-      y: 66%
-      font_size: 70
+      text: " Hit The Left Orbit"
+      font_size: 52
       font_name: TrajanProRegular
+      outline_color: black
+      outline_width: 7
+      color: d8d8d8 
+      x: 50%
+      y: 62%    
+      z: 1
+      animations:
+        add_to_slide:
+          - property: opacity
+            value: 0
+          - property: opacity
+            value: 1
+            duration: 1000ms
+            timing: after_previous
    dc_shot_update3:
     - type: Text
-      text: X
-      color: ff6700
-      x: 5.5%
-      y: 56%
-      font_size: 70
-      font_name: TrajanProRegular      
+      text: " (player|drillchair_visual_pops2_counter) /20 lower pops"
+      font_size: 80
+      font_name: TrajanProRegular
+      outline_color: black
+      outline_width: 7
+      color: d8d8d8 
+      x: 50%
+      y: 62%    
+      z: 1
+      animations:
+        add_to_slide:
+          - property: opacity
+            value: 0
+          - property: opacity
+            value: 1
+            duration: 1000ms
+            timing: after_previous
+    - type: Text
+      text: " to disable the right drill!"
+      font_size: 80
+      font_name: TrajanProRegular
+      outline_color: black
+      outline_width: 7
+      color: d8d8d8 
+      x: 50%
+      y: 48%          
+      z: 1
+      animations:
+        add_to_slide:
+          - property: opacity
+            value: 0
+          - property: opacity
+            value: 1
+            duration: 1000ms
+            timing: after_previous
+   dc_shot_update4:
+    - type: Text
+      text: " Hit The Left Loop To Escape"
+      font_size: 80
+      font_name: TrajanProRegular
+      outline_color: black
+      outline_width: 7
+      color: d8d8d8 
+      x: 50%
+      y: 62%
+      z: 1
+      animations:
+        add_to_slide:
+          - property: opacity
+            value: 0
+          - property: opacity
+            value: 1
+            duration: 1000ms
+            timing: after_previous
+    - type: Text
+      text: " & Complete The Trap"
+      font_size: 80
+      font_name: TrajanProRegular
+      outline_color: black
+      outline_width: 7
+      color: d8d8d8 
+      x: 50%
+      y: 48%  
+      z: 1
+      animations:
+        add_to_slide:
+          - property: opacity
+            value: 0
+          - property: opacity
+            value: 1
+            duration: 1000ms
+            timing: after_previous
 
  
 widget_player:
+ logicblock_drillchair_hit{step==1}: 
+  dc_shot_update2:
+    slide: drillchair_phase2
+    action: add
  logicblock_drillchair_hit{step==2}: 
   dc_shot_update2:
     slide: drillchair_phase2
+    action: remove
+  dc_shot_update3:
+    slide: drillchair_phase2 
+    action: add
  logicblock_drillchair_hit{step==3}: 
   dc_shot_update3:
-    slide: drillchair_phase2    
+    slide: drillchair_phase2
+    action: remove
+  dc_shot_update4:
+    slide: drillchair_phase2
+    action: add
 
 sound_pools:
   drillchair_mode_sound_pool:

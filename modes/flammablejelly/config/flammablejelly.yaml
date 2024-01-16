@@ -50,6 +50,16 @@ slides:
       
   flammablejellyUI:
    widgets:
+    - type: Text
+      text: "To Find the Safe Combination:"
+      font_size: 50
+      font_name: TrajanProRegular
+      outline_color: black
+      outline_width: 7
+      color: FFD800
+      x: 50%
+      y: 62%  
+      z: 1
     - type: image
       image: hacksawUI
       opacity: 0.5
@@ -72,51 +82,7 @@ slides:
       font_size: 55
       font_name: TrajanProRegular
       color: FFF700
-      y: 90%
-      
-    - type: Text
-      text: "To Find the Safe Combination:"
-      font_size: 42
-      font_name: TrajanProRegular
-      color: FFD800
-      x: 400
-      y: 75%    
-    - type: Text
-      text: "- The First Digit is the Rightmost Stand Up"
-      font_size: 32
-      font_name: TrajanProRegular
-      color: FFBF00
-      x: 500
-      y: 68%   
-    - type: Text
-      text: "- The Next Digit is Hidden Within the Loops"
-      font_size: 32
-      font_name: TrajanProRegular
-      color: FFBF00
-      x: 510
-      y: 62%   
-    - type: Text
-      text: "- The Third Digit is in the Stand Ups"
-      font_size: 32
-      font_name: TrajanProRegular
-      color: FFBF00
-      x: 435
-      y: 56%    
-    - type: Text
-      text: "- The Last Digit is Found in Another Loop"
-      font_size: 32
-      font_name: TrajanProRegular
-      color: FFBF00
-      x: 486
-      y: 50%           
-    - type: Text
-      text: "- X marks the Spot to Input the Digits into the Safe"
-      font_size: 32
-      font_name: TrajanProRegular
-      color: FFBF00
-      x: 576
-      y: 44%         
-      
+      y: 90%     
     - type: Text
       text: "You Have 60 Seconds To Solve the Safe Combination"
       color: FFD800
@@ -142,53 +108,154 @@ slides:
 #     duration: 0.2s
 
 widgets:
-   flammablejelly_shot_update1:
+   flammablejelly_shot_update1:            
     - type: Text
-      text: X
-      color: ad1400
-      x: 4%
-      y: 68%
+      text: " The First Digit is the Rightmost Stand Up"
       font_size: 50
       font_name: TrajanProRegular
-   flammablejelly_shot_update2:
+      outline_color: black
+      outline_width: 7
+      color: FFBF00
+      x: 50%
+      y: 48%   
+      z: 1
+      animations:
+        add_to_slide:
+          - property: opacity
+            value: 0
+          - property: opacity
+            value: 1
+            duration: 1000ms
+            timing: after_previous
+   flammablejelly_shot_update2:  
     - type: Text
-      text: X
-      color: ad1400
-      x: 4%
-      y: 62%
+      text: " The Next Digit is Hidden Within the Orbits"
       font_size: 50
       font_name: TrajanProRegular
-   flammablejelly_shot_update3:
+      outline_color: black
+      outline_width: 7
+      color: FFBF00
+      x: 50%
+      y: 48%   
+      z: 1
+      animations:
+        add_to_slide:
+          - property: opacity
+            value: 0
+          - property: opacity
+            value: 1
+            duration: 1000ms
+            timing: after_previous
+   flammablejelly_shot_update3:  
     - type: Text
-      text: X
-      color: ad1400
-      x: 4%
-      y: 56%
+      text: " The Third Digit is the Leftmost Stand Up"
       font_size: 50
       font_name: TrajanProRegular
-   flammablejelly_shot_update4:
+      outline_color: black
+      outline_width: 7
+      color: FFBF00
+      x: 50%
+      y: 48%  
+      z: 1
+      animations:
+        add_to_slide:
+          - property: opacity
+            value: 0
+          - property: opacity
+            value: 1
+            duration: 1000ms
+            timing: after_previous      
+   flammablejelly_shot_update4:  
     - type: Text
-      text: X
-      color: ad1400
-      x: 4%
-      y: 50%
+      text: " The Last Digit is Found in the Orbits"
       font_size: 50
-      font_name: TrajanProRegular      
+      font_name: TrajanProRegular
+      outline_color: black
+      outline_width: 7
+      color: FFBF00
+      x: 50%
+      y: 48%           
+      z: 1
+      animations:
+        add_to_slide:
+          - property: opacity
+            value: 0
+          - property: opacity
+            value: 1
+            duration: 1000ms
+            timing: after_previous
+   flammablejelly_shot_update5:  
+    - type: Text
+      text: " X marks the Spot to Input"
+      font_size: 50
+      font_name: TrajanProRegular
+      outline_color: black
+      outline_width: 7
+      color: FFBF00
+      x: 50%
+      y: 48%         
+      z: 1
+      animations:
+        add_to_slide:
+          - property: opacity
+            value: 0
+          - property: opacity
+            value: 1
+            duration: 1000ms
+            timing: after_previous   
+    - type: Text
+      text: " the Digits into the Safe"
+      font_size: 50
+      font_name: TrajanProRegular
+      outline_color: black
+      outline_width: 7
+      color: FFBF00
+      x: 50%
+      y: 40%         
+      z: 1
+      animations:
+        add_to_slide:
+          - property: opacity
+            value: 0
+          - property: opacity
+            value: 1
+            duration: 1000ms
+            timing: after_previous   
     
  
 widget_player:
+ logicblock_flammablejelly_updated{value==0}: 
+  flammablejelly_shot_update1:
+    slide: flammablejellyUI
+    action: add
  logicblock_flammablejelly_hit{step==1}: 
   flammablejelly_shot_update1:
     slide: flammablejellyUI
+    action: remove
+  flammablejelly_shot_update2:
+    slide: flammablejellyUI
+    action: add
  logicblock_flammablejelly_hit{step==2}: 
   flammablejelly_shot_update2:
     slide: flammablejellyUI
+    action: remove
+  flammablejelly_shot_update3:
+    slide: flammablejellyUI
+    action: add
  logicblock_flammablejelly_hit{step==3}: 
   flammablejelly_shot_update3:
     slide: flammablejellyUI
+    action: remove
+  flammablejelly_shot_update4:
+    slide: flammablejellyUI
+    action: add
  logicblock_flammablejelly_hit{step==4}: 
   flammablejelly_shot_update4:
-    slide: flammablejellyUI   
+    slide: flammablejellyUI
+    action: remove
+  flammablejelly_shot_update5:
+    slide: flammablejellyUI      
+    action: add
 
 slide_player:
   mode_flammablejelly_started: 

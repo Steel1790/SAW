@@ -228,6 +228,15 @@ sound_player:
     TortureScream:
       action: play
       block: true
+  #shot_left_outlane_hit{state=="lit"}:
+  #  StillAlive:
+  #    action: play
+  #    block: true
+  #shot_right_outlane_hit{state=="lit"}:
+  #  StillAlive:
+  #    action: play
+  #    block: true
+
   sw_right_return_lane:
     Gore_Neck_Break:
       action: play

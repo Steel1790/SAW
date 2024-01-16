@@ -8,7 +8,7 @@ sequences:
   quadshotgun:
     events:
       - quadshotgun_spinner_complete
-      - left_loop_hit
+      - ssh_left_orbit_hit
     reset_on_complete: false
     events_when_complete: mode_quadshotgun_complete, stop_mode_quadshotgun
  
@@ -69,7 +69,17 @@ slides:
       text: Rip the Spinner!
       font_name: TrajanProRegular
       font_size: 75
+      outline_color: black
+      outline_width: 7
       color: d8d8d8
+      animations:
+        add_to_slide:
+          - property: opacity
+            value: 0
+          - property: opacity
+            value: 1
+            duration: 1000ms
+            timing: after_previous
       
     - type: image
       image: hacksawUI
@@ -138,6 +148,8 @@ slides:
       text: (player|quadshotgun_visual_spinner_counter) / 30 spins
       font_size: 50
       font_name: TrajanProRegular
+      outline_color: black
+      outline_width: 7
       color: d8d8d8
       y: 35%
     - type: Text
@@ -165,19 +177,39 @@ slides:
   quadshotgun_phase2:
     widgets:     
     - type: Text
-      text: "- Hit The Left Loop To Escape"
-      font_size: 52
+      text: " Hit The Left Orbit To Escape"
+      font_size: 80
       font_name: TrajanProRegular
+      outline_color: black
+      outline_width: 7
       color: d8d8d8 
-      x: 552
-      y: 52%
+      x: 50%
+      y: 62%
+      animations:
+        add_to_slide:
+          - property: opacity
+            value: 0
+          - property: opacity
+            value: 1
+            duration: 1000ms
+            timing: after_previous
     - type: Text
       text: " & Complete The Trap"
-      font_size: 52
+      font_size: 80
       font_name: TrajanProRegular
+      outline_color: black
+      outline_width: 7
       color: d8d8d8
-      x: 467
-      y: 46%
+      x: 50%
+      y: 48%
+      animations:
+        add_to_slide:
+          - property: opacity
+            value: 0
+          - property: opacity
+            value: 1
+            duration: 1000ms
+            timing: after_previous
       
     - type: image
       image: hacksawUI
@@ -236,21 +268,21 @@ slide_player:
       priority: 405
       expire: 49.5s
       
-widgets:
-   quadshotgun_shot_update2:
-    - type: Text
-      text: X
-      color: "006ee6"
-      x: 5.5%
-      y: 52%
-      font_size: 70
-      font_name: TrajanProRegular
+#widgets:
+#   quadshotgun_shot_update2:
+#    - type: Text
+#      text: X
+#      color: "006ee6"
+#      x: 5.5%
+#      y: 52%
+#      font_size: 70
+#      font_name: TrajanProRegular
 
  
-widget_player:
- logicblock_quadshotgun_hit{step==2}: 
-  quadshotgun_shot_update2:
-    slide: quadshotgun_phase2
+#widget_player:
+# logicblock_quadshotgun_hit{step==2}: 
+#  quadshotgun_shot_update2:
+#    slide: quadshotgun_phase2
 
 
 #EK added 

@@ -77,47 +77,14 @@ slides:
       
     - type: Text
       text: "To find the Poison Antidote:"
-      font_size: 42
+      font_size: 50
       font_name: TrajanProRegular
+      outline_color: black
+      outline_width: 7
       color: AECCE4
-      x: 400
-      y: 75%    
-    - type: Text
-      text: "- Hit All 3 Drop Targets"
-      font_size: 32
-      font_name: TrajanProRegular
-      color: BDD5E7
-      x: 330
-      y: 68%   
-    - type: Text
-      text: "- Hit X Marks the Spot"
-      font_size: 32
-      font_name: TrajanProRegular
-      color: BDD5E7
-      x: 313
-      y: 62%   
-    - type: Text
-      text: "- Hit the Left Ramp"
-      font_size: 32
-      font_name: TrajanProRegular
-      color: BDD5E7
-      x: 281
-      y: 56%    
-    - type: Text
-      text: "- Hit the Right Ramp"
-      font_size: 32
-      font_name: TrajanProRegular
-      color: BDD5E7
-      x: 294
-      y: 50%           
-    - type: Text
-      text: "- X marks the Spot to Collect the Antidote"
-      font_size: 32
-      font_name: TrajanProRegular
-      color: BDD5E7
-      x: 499
-      y: 44%         
-      
+      x: 50%
+      y: 62%    
+      z: 1      
     - type: Text
       text: "You Have 60 Seconds To Enable The Cameras"
       color: CC8899
@@ -158,53 +125,132 @@ slides:
 #     duration: 0.2s
 
 widgets:
+   zep_shot_update1:
+    - type: Text
+      text: " Hit All 3 Drop Targets"
+      font_size: 60
+      font_name: TrajanProRegular
+      outline_color: black
+      outline_width: 7
+      color: BDD5E7
+      x: 50%
+      y: 48%
+      z: 1
+      animations:
+        add_to_slide:
+          - property: opacity
+            value: 0
+          - property: opacity
+            value: 1
+            duration: 1000ms
+            timing: after_previous
+   zep_shot_update2:
+    - type: Text
+      text: " Hit X Marks the Spot"
+      font_size: 60
+      font_name: TrajanProRegular
+      outline_color: black
+      outline_width: 7
+      color: BDD5E7
+      x: 50%
+      y: 48%   
+      z: 1
+      animations:
+        add_to_slide:
+          - property: opacity
+            value: 0
+          - property: opacity
+            value: 1
+            duration: 1000ms
+            timing: after_previous
    zep_shot_update3:
     - type: Text
-      text: X
-      color: ad1400
-      x: 4%
-      y: 68%
-      font_size: 50
+      text: " Hit the Left Ramp"
+      font_size: 60
       font_name: TrajanProRegular
+      color: BDD5E7
+      x: 58%
+      y: 48%   
+      z: 1
+      animations:
+        add_to_slide:
+          - property: opacity
+            value: 0
+          - property: opacity
+            value: 1
+            duration: 1000ms
+            timing: after_previous
    zep_shot_update4:
     - type: Text
-      text: X
-      color: ad1400
-      x: 4%
-      y: 62%
-      font_size: 50
+      text: " Hit the Right Ramp"
+      font_size: 60
       font_name: TrajanProRegular
+      color: BDD5E7
+      x: 50%
+      y: 48%        
+      z: 1
+      animations:
+        add_to_slide:
+          - property: opacity
+            value: 0
+          - property: opacity
+            value: 1
+            duration: 1000ms
+            timing: after_previous
    zep_shot_update5:
     - type: Text
-      text: X
-      color: ad1400
-      x: 4%
-      y: 56%
+      text: " X marks the Spot to Collect the Antidote"
       font_size: 50
       font_name: TrajanProRegular
-   zep_shot_update6:
-    - type: Text
-      text: X
-      color: ad1400
-      x: 4%
-      y: 50%
-      font_size: 50
-      font_name: TrajanProRegular      
+      outline_color: black
+      outline_width: 7
+      color: BDD5E7
+      x: 50%
+      y: 48%      
+      z: 1
+      animations:
+        add_to_slide:
+          - property: opacity
+            value: 0
+          - property: opacity
+            value: 1
+            duration: 1000ms
+            timing: after_previous
     
  
 widget_player:
+ logicblock_zeptest_updated{value==0}:
+  zep_shot_update1:
+    slide: zeptestUI
+    action: add
  logicblock_zeptest_hit{step==3}: 
+  zep_shot_update1:
+    slide: zeptestUI
+    action: remove
+  zep_shot_update2:
+    slide: zeptestUI
+    action: add
+ logicblock_zeptest_hit{step==4}: 
+  zep_shot_update2:
+    slide: zeptestUI
+    action: remove
   zep_shot_update3:
     slide: zeptestUI
- logicblock_zeptest_hit{step==4}: 
+    action: add
+ logicblock_zeptest_hit{step==5}: 
+  zep_shot_update3:
+    slide: zeptestUI
+    action: remove
   zep_shot_update4:
     slide: zeptestUI
- logicblock_zeptest_hit{step==5}: 
+    action: add
+ logicblock_zeptest_hit{step==6}: 
+  zep_shot_update4:
+    slide: zeptestUI
+    action: remove
   zep_shot_update5:
     slide: zeptestUI
- logicblock_zeptest_hit{step==6}: 
-  zep_shot_update6:
-    slide: zeptestUI   
+    action: add
 
 slide_player:
   mode_zeptest_started: 
