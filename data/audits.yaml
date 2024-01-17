@@ -1,6 +1,6 @@
 events:
   game_ended: 2
-  game_started: 68
+  game_started: 69
 player:
   score:
     average: 18545154.0
@@ -13,24 +13,24 @@ shots:
   dt_drop3: 3
   dt_drop4: 2
   lower_r_pop: 1
-  sh_select_mode: 1
-  shot_inner_loop: 30
+  sh_select_mode: 2
+  shot_inner_loop: 31
   shot_left_loop: 19
   shot_left_return_lane: 7
   shot_left_standup: 52
   shot_left_standup_rightramp: 29
   shot_right_loop: 28
-  shot_right_standup: 13
-  shot_right_standup_rightramp: 32
+  shot_right_standup: 14
+  shot_right_standup_rightramp: 33
   up_b_pop: 19
   upper_b_pop: 12
   upper_l_pop: 7
   upper_r_pop: 5
 switches:
-  s_action_button: 55
-  s_ball_shooter_lane: 39
+  s_action_button: 57
+  s_ball_shooter_lane: 41
   s_enter_left_ramp: 5
-  s_inner_loop: 36
+  s_inner_loop: 37
   s_left_110_point: 45
   s_left_bottom_jet_bumper: 112
   s_left_cellar: 28
@@ -67,15 +67,15 @@ switches:
   s_right_ramp_down: 1
   s_right_ramp_score_bottom: 2
   s_right_ramp_score_top: 1
-  s_right_scoop: 1
+  s_right_scoop: 2
   s_right_slingshot: 91
-  s_right_standup: 17
-  s_right_standup_right_ramp: 39
+  s_right_standup: 18
+  s_right_standup_right_ramp: 40
   s_right_top_jet_bumper: 71
   s_spinner: 150
   s_start: 4
   s_top_right_reject: 25
-  s_trough1: 42
+  s_trough1: 43
   s_trough2: 21
   s_trough3: 20
   s_trough4: 20

@@ -38,6 +38,11 @@ slide_player:
       priority: 400
       expire: 3s   
 
+  sw_standup: 
+    cameraflashvideo:
+      priority: 400
+      expire: 0.8s   
+
   mode_razorwire_complete: 
     trapcomplete:
       priority: 400
@@ -1275,6 +1280,12 @@ slides:
     widgets:
     - type: video
       video: extraball
+      width: 1366
+      height: 768
+  cameraflashvideo:
+    widgets:
+    - type: video
+      video: CameraFlash
       width: 1366
       height: 768
 

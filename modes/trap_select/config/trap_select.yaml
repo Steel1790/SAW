@@ -4,6 +4,7 @@
 mode:
   start_events: slide_saw_collect_created
   stop_events: logicblock_trap_select_qualify_counter_complete
+  restart_on_next_ball: true
 
 variable_player:
   logicblock_trap_select_qualify_counter_complete:

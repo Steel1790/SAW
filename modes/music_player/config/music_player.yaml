@@ -353,6 +353,9 @@ sound_player:
       delay: 10s
       action: play
       loops: -1      
+  player_drillchair_drillchair_60s_timer_tick{value < 1}:
+    DrillChairFail:
+      action: play
   mode_drillchair_stopped:
     DrillChairModeStart:
       action: stop
