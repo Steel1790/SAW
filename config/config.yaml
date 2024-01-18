@@ -17,6 +17,7 @@ modes:
   - attract
   - base
   - skillshot
+  - super_skillshot
   - music_player
   - trap_select
   - selection_mode

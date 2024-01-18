@@ -1,0 +1,37 @@
+#config_version=6
+mode:
+  start_events: ball_starting, start_mode_super_skillshot
+  stop_events: stop_mode_super_skillshot
+  priority: 100
+
+timers:
+  mode_super_skillshot_timer:
+    start_value: 8
+    end_value: 0
+    direction: down
+    tick_interval: 1s
+    control_events:
+    - event: balldevice_playfield_ball_enter
+      action: start
+    start_running: false
+
+variable_player:
+  ssh_skillshot_orbit_ramp_hit:
+    score: 5000000
+  ssh_skillshot_orbit_ramp_ramp_hit:
+    score: 3000000
+
+event_player:
+  ssh_skillshot_orbit_ramp_ramp_hit: mode_super_skillshot_complete
+  playfield_active: stop_mode_super_skillshot|7s
+  balldevice_bd_plunger_ball_eject_success: stop_mode_super_skillshot|8s
+ 
+  
+sequence_shots:
+  ssh_skillshot_orbit_ramp:
+    switch_sequence: s_inner_loop, s_enter_left_ramp, s_left_ramp_score_bottom, s_left_ramp_score_top
+    sequence_timeout: 5s
+      
+  ssh_skillshot_orbit_ramp_ramp:
+    switch_sequence: s_inner_loop, s_enter_left_ramp, s_left_ramp_score_bottom, s_left_ramp_score_top, s_right_ramp_score_bottom, s_right_ramp_score_top
+    sequence_timeout: 6s

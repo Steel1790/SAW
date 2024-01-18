@@ -102,6 +102,16 @@ slide_player:
       action: play
       priority: 400
       expire: 8s
+  ssh_skillshot_orbit_ramp_hit:
+    skillshotvideo:
+      action: play
+      priority: 400
+      expire: 8s
+  ssh_skillshot_orbit_ramp_ramp_hit:
+    skillshotvideo:
+      action: play
+      priority: 400
+      expire: 8s
   ball_save_default_saving_ball:
     HeHelpedMeVideo:
       action: play
@@ -897,6 +907,29 @@ widgets:
        z: 3
        font_size: 110
        font_name: sawesome   
+#player 1
+  1PlayerGame: 
+    - type: text
+      text: (player1|score)
+      number_grouping: true
+      #y: 16
+      #x: 25
+      y: 16
+      x: 25
+      z: 5
+      font_size: 36
+      anchor_x: left
+      anchor_y: bottom
+      font_name: TrajanProRegular
+      color: C2E3E0        
+    - type: image
+      image: hacksawUI
+      opacity: 0.9
+      y: 1
+      x: 1
+      z: 5
+      anchor_x: left
+      anchor_y: bottom      
   2PlayerGame:       
      - type: Text
        text: (player2|score)
@@ -912,7 +945,7 @@ widgets:
        opacity: 0.9
        y: 1
        x: left+520
-       z: 4
+       z: 5
        anchor_y: bottom    
   3PlayerGame:
      - type: Text
@@ -929,7 +962,7 @@ widgets:
        opacity: 0.9
        y: 1
        x: left+870
-       z: 4
+       z: 5
        anchor_y: bottom  
   4PlayerGame:
      - type: Text
@@ -946,8 +979,87 @@ widgets:
        opacity: 0.9
        y: 1
        x: left+1210
-       z: 4
+       z: 5
        anchor_y: bottom
+
+#player active
+  Player1Active:
+    - type: text
+      text: (player1|score)
+      number_grouping: true
+      y: 16
+      x: 25
+      z: 7
+      font_size: 36
+      anchor_x: left
+      anchor_y: bottom
+      font_name: TrajanProRegular
+      color: C2E3E0    
+    - type: image
+      image: currentplayer
+      opacity: 0.9
+      y: 1
+      x: 1
+      z: 7
+      anchor_x: left
+      anchor_y: bottom  
+  Player2Active:
+    - type: text
+      text: (player2|score)
+      number_grouping: true
+      y: 16
+      x: left+400
+      z: 7
+      font_size: 36
+      anchor_x: left
+      anchor_y: bottom
+      font_name: TrajanProRegular
+      color: C2E3E0    
+    - type: image
+      image: currentplayer
+      opacity: 0.9
+      y: 1
+      x: left+520
+      z: 7
+      anchor_y: bottom       
+  Player3Active:
+    - type: Text
+      text: (player3|score)
+      number_grouping: true   
+      font_name: TrajanProRegular
+      font_size: 36
+      anchor_x: left
+      anchor_y: bottom
+      y: 16
+      x: left+750
+      z: 7
+      color: C2E3E0
+    - type: image
+      image: currentplayer
+      opacity: 0.9
+      y: 1
+      x: left+870
+      z: 7
+      anchor_y: bottom  
+  Player4Active:
+    - type: Text
+      text: (player4|score)
+      number_grouping: true       
+      font_name: TrajanProRegular
+      font_size: 36
+      anchor_x: left
+      anchor_y: bottom
+      y: 16
+      x: left+1090
+      z: 5
+      color: C2E3E0
+    - type: image
+      image: currentplayer
+      opacity: 0.9
+      y: 1
+      x: left+1210
+      z: 5
+      anchor_y: bottom
         
 #player 2   
   Player2Inactive: 
@@ -1153,7 +1265,48 @@ widget_player:
     Player4InactiveBall2:  
       slide: base_slide_main
       action: add          
-  ball_started{ball==2 and game.num_players==2}:  
+  #ball_started{ball==2 and game.num_players==2}:  
+  #  2PlayerGame:
+  #    slide: base_slide_main
+  #    action: add 
+  #  Player3Inactive:  
+  #    slide: base_slide_main
+  #    action: remove 
+  #  Player3InactiveBall2:  
+  #    slide: base_slide_main
+  #    action: add      
+  #  Player4Inactive:  
+  #    slide: base_slide_main
+  #    action: remove 
+  #  Player4InactiveBall2:  
+  #    slide: base_slide_main
+  #    action: add  
+  single_player_ball_started:
+    Player1Active: 
+      slide: base_slide_main
+      action: add
+
+  player_1_ball_started: 
+    Player1Active:
+      slide: base_slide_main
+      action: add     
+    2PlayerGame:
+      slide: base_slide_main
+      action: add 
+    3PlayerGame:  
+      slide: base_slide_main
+      action: add      
+    4PlayerGame:  
+      slide: base_slide_main
+      action: add
+
+  player_2_ball_started: 
+    1PlayerGame:
+      slide: base_slide_main
+      action: add     
+    Player2Active:
+      slide: base_slide_main
+      action: add 
     Player3Inactive:  
       slide: base_slide_main
       action: remove 
@@ -1166,13 +1319,54 @@ widget_player:
     Player4InactiveBall2:  
       slide: base_slide_main
       action: add  
-  ball_started{ball==2 and game.num_players==3}:      
+
+  player_3_ball_started: 
+    1PlayerGame:
+      slide: base_slide_main
+      action: add     
+    Player2Inactive:  
+      slide: base_slide_main
+      action: remove 
+    2PlayerGame:
+      slide: base_slide_main
+      action: add 
+    Player3Active:  
+      slide: base_slide_main
+      action: add     
     Player4Inactive:  
       slide: base_slide_main
       action: remove 
-    Player4InactiveBall2:  
+    4PlayerGame:  
       slide: base_slide_main
-      action: add             
+      action: add  
+
+  player_4_ball_started: 
+    1PlayerGame:
+      slide: base_slide_main
+      action: add     
+    Player2Inactive:  
+      slide: base_slide_main
+      action: remove 
+    2PlayerGame:
+      slide: base_slide_main
+      action: add 
+    Player3Inactive:  
+      slide: base_slide_main
+      action: remove 
+    3PlayerGame:  
+      slide: base_slide_main
+      action: add      
+    Player4Active:  
+      slide: base_slide_main
+      action: add
+
+  #ball_started{ball==2 and game.num_players==3}:      
+  #  Player4Inactive:  
+  #    slide: base_slide_main
+  #    action: remove 
+  #  Player4InactiveBall2:  
+  #    slide: base_slide_main
+  #    action: add             
            
 slides:
   base_slide_main: 
@@ -1207,23 +1401,23 @@ slides:
       x: right-90
       opacity: 0.5 
 #player 1 
-    - type: text
-      text: (score)
-      number_grouping: true
-      y: 16
-      x: 25
-      font_size: 36
-      anchor_x: left
-      anchor_y: bottom
-      font_name: TrajanProRegular
-      color: C2E3E0        
-    - type: image
-      image: hacksawUI
-      opacity: 0.9
-      y: 1
-      x: 1
-      anchor_x: left
-      anchor_y: bottom      
+    #- type: text
+    #  text: (score)
+    #  number_grouping: true
+    #  y: 16
+    #  x: 25
+    #  font_size: 36
+    #  anchor_x: left
+    #  anchor_y: bottom
+    #  font_name: TrajanProRegular
+    #  color: C2E3E0        
+    #- type: image
+    #  image: hacksawUI
+    #  opacity: 0.9
+    #  y: 1
+    #  x: 1
+    #  anchor_x: left
+    #  anchor_y: bottom      
     - type: image
       image: gordonsaw
 #      video: gordonsaw 
