@@ -35,3 +35,21 @@ sequence_shots:
   ssh_skillshot_orbit_ramp_ramp:
     switch_sequence: s_inner_loop, s_enter_left_ramp, s_left_ramp_score_bottom, s_left_ramp_score_top, s_right_ramp_score_bottom, s_right_ramp_score_top
     sequence_timeout: 6s
+
+slides:
+  superskillshot:
+    widgets:
+    - type: video
+      video: superskillshot
+      width: 1366
+      height: 768   
+
+slide_player:
+  ssh_skillshot_orbit_ramp_hit: 
+    superskillshot:
+      priority: 500
+      expire: 4s
+  ssh_skillshot_orbit_ramp_ramp_hit: 
+    superskillshot:
+      priority: 500
+      expire: 4s

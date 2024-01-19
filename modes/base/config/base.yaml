@@ -102,16 +102,6 @@ slide_player:
       action: play
       priority: 400
       expire: 8s
-  ssh_skillshot_orbit_ramp_hit:
-    skillshotvideo:
-      action: play
-      priority: 400
-      expire: 8s
-  ssh_skillshot_orbit_ramp_ramp_hit:
-    skillshotvideo:
-      action: play
-      priority: 400
-      expire: 8s
   ball_save_default_saving_ball:
     HeHelpedMeVideo:
       action: play
