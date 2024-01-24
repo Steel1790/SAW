@@ -32,6 +32,9 @@ event_player:
     - startmode_shackle_multiball
     - startmode_shackle_multiball_qualify
 
+
+  mode_trap_select_started: stop_saw_widget|0.2s
+
 slide_player:
   logicblock_cnt_saw_qualify_complete:
     saw_collect:
@@ -127,10 +130,29 @@ slide_player:
       action: play
       priority: 400
       expire: 8s
+  
       
-  mode_base_started:
-    base_slide_main:
+  single_player_ball_started:
+    Player1Active: 
+      slide: base_slide_main
+      action: play
+  player_1_ball_started: 
+    Player1Active:
+      slide: base_slide_main
       action: play    
+  #mode_base_started:
+  #  base_slide_main:
+  #    action: play    
+
+  player_2_ball_started:
+    base_slide_main:
+      action: play
+  player_3_ball_started:
+    base_slide_main:
+      action: play
+  player_4_ball_started:
+    base_slide_main:
+      action: play
 
   ball_will_end{current_player.ball==3}:
     gameovervideo:
@@ -1005,6 +1027,8 @@ widgets:
       z: 7
       anchor_x: left
       anchor_y: bottom  
+    - type: image
+      image: gordonsaw
   Player2Active:
     - type: text
       text: (player2|score)
@@ -1024,6 +1048,8 @@ widgets:
       x: left+520
       z: 7
       anchor_y: bottom       
+    - type: image
+      image: player2UI
   Player3Active:
     - type: Text
       text: (player3|score)
@@ -1043,6 +1069,8 @@ widgets:
       x: left+870
       z: 7
       anchor_y: bottom  
+    - type: image
+      image: player3UI
   Player4Active:
     - type: Text
       text: (player4|score)
@@ -1062,6 +1090,9 @@ widgets:
       x: left+1210
       z: 5
       anchor_y: bottom
+    - type: image
+      image: player4UI
+
         
 #player 2   
   Player2Inactive: 
@@ -1169,10 +1200,106 @@ widgets:
        anchor_y: bottom          
 
 widget_player:
+  single_player_ball_started:
+    Player1Active: 
+      slide: base_slide_main
+      action: add
+    saw_letters:
+      slide: base_slide_main
+      action: add
+  
+
+  player_1_ball_started: 
+    Player1Active:
+      slide: base_slide_main
+      action: add     
+    2PlayerGame:
+      slide: base_slide_main
+      action: add 
+    3PlayerGame:  
+      slide: base_slide_main
+      action: add      
+    4PlayerGame:  
+      slide: base_slide_main
+      action: add   
+    saw_letters:
+      slide: base_slide_main
+      action: add
+
+  player_2_ball_started: 
+    1PlayerGame:
+      slide: base_slide_main
+      action: add     
+    Player2Active:
+      slide: base_slide_main
+      action: add 
+    Player3Inactive:  
+      slide: base_slide_main
+      action: remove 
+    Player3InactiveBall2:  
+      slide: base_slide_main
+      action: add      
+    Player4Inactive:  
+      slide: base_slide_main
+      action: remove 
+    Player4InactiveBall2:  
+      slide: base_slide_main
+      action: add  
+    saw_letters:
+      slide: base_slide_main
+      action: add
+
+  player_3_ball_started: 
+    1PlayerGame:
+      slide: base_slide_main
+      action: add     
+    Player2Inactive:  
+      slide: base_slide_main
+      action: remove 
+    2PlayerGame:
+      slide: base_slide_main
+      action: add 
+    Player3Active:  
+      slide: base_slide_main
+      action: add     
+    Player4Inactive:  
+      slide: base_slide_main
+      action: remove 
+    4PlayerGame:  
+      slide: base_slide_main
+      action: add  
+    saw_letters:
+      slide: base_slide_main
+      action: add
+
+  player_4_ball_started: 
+    1PlayerGame:
+      slide: base_slide_main
+      action: add     
+    Player2Inactive:  
+      slide: base_slide_main
+      action: remove 
+    2PlayerGame:
+      slide: base_slide_main
+      action: add 
+    Player3Inactive:  
+      slide: base_slide_main
+      action: remove 
+    3PlayerGame:  
+      slide: base_slide_main
+      action: add      
+    Player4Active:  
+      slide: base_slide_main
+      action: add
+    saw_letters:
+      slide: base_slide_main
+      action: add
+
   mode_saw_qualify_started:
     saw_letters:
       slide: base_slide_main
       action: add
+
   logicblock_cnt_saw_qualify_complete:
     saw_letters:
       action: remove
@@ -1193,15 +1320,19 @@ widget_player:
     w_trap_select_start:
       slide: base_slide_main
       action: add
+  stop_saw_widget:
+    saw_letters:
+      slide: base_slide_main
+      action: remove
   mode_trap_select_stopped:
     w_trap_select_start:
       action: remove
     saw_saw_letters:
       action: remove
-  mode_selection_mode_stopped:
-    saw_letters:
-      slide: base_slide_main
-      action: add      
+  #mode_selection_mode_stopped:
+  #  saw_letters:
+  #    slide: base_slide_main
+  #    action: add      
       
   logicblock_cnt_saw_qualify_updated{value==1}:
     saw_s_letters:
@@ -1283,93 +1414,7 @@ widget_player:
   #  Player4InactiveBall2:  
   #    slide: base_slide_main
   #    action: add  
-  single_player_ball_started:
-    Player1Active: 
-      slide: base_slide_main
-      action: add
-  
 
-  player_1_ball_started: 
-    Player1Active:
-      slide: base_slide_main
-      action: add     
-    2PlayerGame:
-      slide: base_slide_main
-      action: add 
-    3PlayerGame:  
-      slide: base_slide_main
-      action: add      
-    4PlayerGame:  
-      slide: base_slide_main
-      action: add   
-
-  player_2_ball_started: 
-    1PlayerGame:
-      slide: base_slide_main
-      action: add     
-    Player2Active:
-      slide: base_slide_main
-      action: add 
-    Player3Inactive:  
-      slide: base_slide_main
-      action: remove 
-    Player3InactiveBall2:  
-      slide: base_slide_main
-      action: add      
-    Player4Inactive:  
-      slide: base_slide_main
-      action: remove 
-    Player4InactiveBall2:  
-      slide: base_slide_main
-      action: add  
-
-  player_3_ball_started: 
-    1PlayerGame:
-      slide: base_slide_main
-      action: add     
-    Player2Inactive:  
-      slide: base_slide_main
-      action: remove 
-    2PlayerGame:
-      slide: base_slide_main
-      action: add 
-    Player3Active:  
-      slide: base_slide_main
-      action: add     
-    Player4Inactive:  
-      slide: base_slide_main
-      action: remove 
-    4PlayerGame:  
-      slide: base_slide_main
-      action: add  
-
-  player_4_ball_started: 
-    1PlayerGame:
-      slide: base_slide_main
-      action: add     
-    Player2Inactive:  
-      slide: base_slide_main
-      action: remove 
-    2PlayerGame:
-      slide: base_slide_main
-      action: add 
-    Player3Inactive:  
-      slide: base_slide_main
-      action: remove 
-    3PlayerGame:  
-      slide: base_slide_main
-      action: add      
-    Player4Active:  
-      slide: base_slide_main
-      action: add
-
-  #ball_started{ball==2 and game.num_players==3}:      
-  #  Player4Inactive:  
-  #    slide: base_slide_main
-  #    action: remove 
-  #  Player4InactiveBall2:  
-  #    slide: base_slide_main
-  #    action: add             
            
 slides:
   base_slide_main: 
@@ -1386,6 +1431,8 @@ slides:
       x: left+105
       font_size: 38
       color: C2E3E0
+      outline_color: black
+      outline_width: 2
     - type: image
       image: rustpipe2
       y: top-44
@@ -1398,35 +1445,15 @@ slides:
       x: right-70
       color: C2E3E0
       font_size: 38    
+      outline_color: black
+      outline_width: 2
     - type: image
       image: rustpipe2
       y: top-44
       x: right-90
-      opacity: 0.5 
-#player 1 
-    #- type: text
-    #  text: (score)
-    #  number_grouping: true
-    #  y: 16
-    #  x: 25
-    #  font_size: 36
-    #  anchor_x: left
-    #  anchor_y: bottom
-    #  font_name: TrajanProRegular
-    #  color: C2E3E0        
+    #  opacity: 0.5    
     #- type: image
-    #  image: hacksawUI
-    #  opacity: 0.9
-    #  y: 1
-    #  x: 1
-    #  anchor_x: left
-    #  anchor_y: bottom      
-    - type: image
-      image: gordonsaw
-#      video: gordonsaw 
-#      width: 1366
-#      height: 768
-#      end_behavior: loop
+    #  image: gordonsaw
 
  
   trapcomplete:
