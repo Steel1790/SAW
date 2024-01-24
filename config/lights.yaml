@@ -1236,5 +1236,305 @@ lights:
     tags: backbox, ledneuronp2 
 
 
+# starpost lights
+  l_post_a_1:
+    number: led128-5-1
+    tags: starpost, post_a, led128p5
+  l_post_a_2:
+    number: led128-5-2
+    tags: starpost, post_a, led128p5
+  l_post_a_3:
+    number: led128-5-3
+    tags: starpost, post_a, led128p5
+  l_post_a_4:
+    number: led128-5-4
+    tags: starpost, post_a, led128p5
+  l_post_a_5:
+    number: led128-5-5
+    tags: starpost, post_a, led128p5
+  l_post_a_6:
+    number: led128-5-6
+    tags: starpost, post_a, led128p5
+  l_post_a_7:
+    number: led128-5-7
+    tags: starpost, post_a, led128p5
+  l_post_a_8:
+    number: led128-5-8
+    tags: starpost, post_a, led128p5
+
+  l_post_b_1:
+    number: led128-5-9
+    tags: starpost, post_b, led128p5
+  l_post_b_2:
+    number: led128-5-10
+    tags: starpost, post_b, led128p5
+  l_post_b_3:
+    number: led128-5-11
+    tags: starpost, post_b, led128p5
+  l_post_b_4:
+    number: led128-5-12
+    tags: starpost, post_b, led128p5
+  l_post_b_5:
+    number: led128-5-13
+    tags: starpost, post_b, led128p5
+  l_post_b_6:
+    number: led128-5-14
+    tags: starpost, post_b, led128p5
+  l_post_b_7:
+    number: led128-5-15
+    tags: starpost, post_b, led128p5
+  l_post_b_8:
+    number: led128-5-16
+    tags: starpost, post_b, led128p5
+
+  l_post_c_1:
+    number: led128-5-17
+    tags: starpost, post_c, led128p5
+  l_post_c_2:
+    number: led128-5-18
+    tags: starpost, post_c, led128p5
+  l_post_c_3:
+    number: led128-5-19
+    tags: starpost, post_c, led128p5
+  l_post_c_4:
+    number: led128-5-20
+    tags: starpost, post_c, led128p5
+  l_post_c_5:
+    number: led128-5-21
+    tags: starpost, post_c, led128p5
+  l_post_c_6:
+    number: led128-5-22
+    tags: starpost, post_c, led128p5
+  l_post_c_7:
+    number: led128-5-23
+    tags: starpost, post_c, led128p5
+  l_post_c_8:
+    number: led128-5-24
+    tags: starpost, post_c, led128p5
+
+  l_post_d_1:
+    number: led128-5-25
+    tags: starpost, post_d, led128p5
+  l_post_d_2:
+    number: led128-5-26
+    tags: starpost, post_d, led128p5
+  l_post_d_3:
+    number: led128-5-27
+    tags: starpost, post_d, led128p5
+  l_post_d_4:
+    number: led128-5-28
+    tags: starpost, post_d, led128p5
+  l_post_d_5:
+    number: led128-5-29
+    tags: starpost, post_d, led128p5
+  l_post_d_6:
+    number: led128-5-30
+    tags: starpost, post_d, led128p5
+  l_post_d_7:
+    number: led128-5-31
+    tags: starpost, post_d, led128p5
+  l_post_d_8:
+    number: led128-5-32
+    tags: starpost, post_d, led128p5
+
+  l_post_e_1:
+    number: led256-6-1
+    tags: starpost, post_e, led256p6
+  l_post_e_2:
+    number: led256-6-2
+    tags: starpost, post_e, led256p6
+  l_post_e_3:
+    number: led256-6-3
+    tags: starpost, post_e, led256p6
+  l_post_e_4:
+    number: led256-6-4
+    tags: starpost, post_e, led256p6
+  l_post_e_5:
+    number: led256-6-5
+    tags: starpost, post_e, led256p6
+  l_post_e_6:
+    number: led256-6-6
+    tags: starpost, post_e, led256p6
+  l_post_e_7:
+    number: led256-6-7
+    tags: starpost, post_e, led256p6
+  l_post_e_8:
+    number: led256-6-8
+    tags: starpost, post_e, led256p6
+
+  l_post_f_1:
+    number: led256-6-9
+    tags: starpost, post_f, led256p6
+  l_post_f_2:
+    number: led256-6-10
+    tags: starpost, post_f, led256p6
+  l_post_f_3:
+    number: led256-6-11
+    tags: starpost, post_f, led256p6
+  l_post_f_4:
+    number: led256-6-12
+    tags: starpost, post_f, led256p6
+  l_post_f_5:
+    number: led256-6-13
+    tags: starpost, post_f, led256p6
+  l_post_f_6:
+    number: led256-6-14
+    tags: starpost, post_f, led256p6
+  l_post_f_7:
+    number: led256-6-15
+    tags: starpost, post_f, led256p6
+  l_post_f_8:
+    number: led256-6-16
+    tags: starpost, post_f, led256p6
+
+  l_post_g_1:
+    number: led256-6-17
+    tags: starpost, post_g, led256p6
+  l_post_g_2:
+    number: led256-6-18
+    tags: starpost, post_g, led256p6
+  l_post_g_3:
+    number: led256-6-19
+    tags: starpost, post_g, led256p6
+  l_post_g_4:
+    number: led256-6-20
+    tags: starpost, post_g, led256p6
+  l_post_g_5:
+    number: led256-6-21
+    tags: starpost, post_g, led256p6
+  l_post_g_6:
+    number: led256-6-22
+    tags: starpost, post_g, led256p6
+  l_post_g_7:
+    number: led256-6-23
+    tags: starpost, post_g, led256p6
+  l_post_g_8:
+    number: led256-6-24
+    tags: starpost, post_g, led256p6
+
+  l_post_h_1:
+    number: led256-6-25
+    tags: starpost, post_h, led256p6
+  l_post_h_2:
+    number: led256-6-26
+    tags: starpost, post_h, led256p6
+  l_post_h_3:
+    number: led256-6-27
+    tags: starpost, post_h, led256p6
+  l_post_h_4:
+    number: led256-6-28
+    tags: starpost, post_h, led256p6
+  l_post_h_5:
+    number: led256-6-29
+    tags: starpost, post_h, led256p6
+  l_post_h_6:
+    number: led256-6-30
+    tags: starpost, post_h, led256p6
+  l_post_h_7:
+    number: led256-6-31
+    tags: starpost, post_h, led256p6
+  l_post_h_8:
+    number: led256-6-32
+    tags: starpost, post_h, led256p6   
+
+  l_post_i_1:
+    number: led128-6-25
+    tags: starpost, post_i, led128p6
+  l_post_i_2:
+    number: led128-6-26
+    tags: starpost, post_i, led128p6
+  l_post_i_3:
+    number: led128-6-27
+    tags: starpost, post_i, led128p6
+  l_post_i_4:
+    number: led128-6-28
+    tags: starpost, post_i, led128p6
+  l_post_i_5:
+    number: led128-6-29
+    tags: starpost, post_i, led128p6
+  l_post_i_6:
+    number: led128-6-30
+    tags: starpost, post_i, led128p6
+  l_post_i_7:
+    number: led128-6-31
+    tags: starpost, post_i, led128p6
+  l_post_i_8:
+    number: led128-6-32
+    tags: starpost, post_i, led128p6    
+
+  l_post_j_1:
+    number: led128-6-17
+    tags: starpost, post_j, led128p6
+  l_post_j_2:
+    number: led128-6-18
+    tags: starpost, post_j, led128p6
+  l_post_j_3:
+    number: led128-6-19
+    tags: starpost, post_j, led128p6
+  l_post_j_4:
+    number: led128-6-20
+    tags: starpost, post_j, led128p6
+  l_post_j_5:
+    number: led128-6-21
+    tags: starpost, post_j, led128p6
+  l_post_j_6:
+    number: led128-6-22
+    tags: starpost, post_j, led128p6
+  l_post_j_7:
+    number: led128-6-23
+    tags: starpost, post_j, led128p6
+  l_post_j_8:
+    number: led128-6-24
+    tags: starpost, post_j, led128p6  
+
+  l_post_k_1:
+    number: led128-6-9
+    tags: starpost, post_k, led128p6
+  l_post_k_2:
+    number: led128-6-10
+    tags: starpost, post_k, led128p6
+  l_post_k_3:
+    number: led128-6-11
+    tags: starpost, post_k, led128p6
+  l_post_k_4:
+    number: led128-6-12
+    tags: starpost, post_k, led128p6
+  l_post_k_5:
+    number: led128-6-13
+    tags: starpost, post_k, led128p6
+  l_post_k_6:
+    number: led128-6-14
+    tags: starpost, post_k, led128p6
+  l_post_k_7:
+    number: led128-6-15
+    tags: starpost, post_k, led128p6
+  l_post_k_8:
+    number: led128-6-16
+    tags: starpost, post_k, led128p6  
+
+  l_post_l_1:
+    number: led128-6-1
+    tags: starpost, post_l, led128p6
+  l_post_l_2:
+    number: led128-6-2
+    tags: starpost, post_l, led128p6
+  l_post_l_3:
+    number: led128-6-3
+    tags: starpost, post_l, led128p6
+  l_post_l_4:
+    number: led128-6-4
+    tags: starpost, post_l, led128p6
+  l_post_l_5:
+    number: led128-6-5
+    tags: starpost, post_l, led128p6
+  l_post_l_6:
+    number: led128-6-6
+    tags: starpost, post_l, led128p6
+  l_post_l_7:
+    number: led128-6-7
+    tags: starpost, post_l, led128p6
+  l_post_l_8:
+    number: led128-6-8
+    tags: starpost, post_l, led128p6      
 
 
