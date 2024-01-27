@@ -6,3 +6,9 @@ sequence_shots:
   ssh_right_ramp:
     switch_sequence: s_right_ramp_down, s_right_ramp_score_bottom, s_right_ramp_score_top
     sequence_timeout: 4s
+  ssh_right_orbit:
+    switch_sequence: s_right_loop_bottom, s_right_loop_top
+    sequence_timeout: 2s
+  ssh_left_orbit:
+    switch_sequence: s_left_loop_bottom, s_left_loop_top
+    sequence_timeout: 2s

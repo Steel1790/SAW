@@ -50,10 +50,10 @@ timers:
     control_events:
     - event: balldevice_playfield_ball_enter
       action: start
-    start_running: false
-  target_rotator:
-    start_running: true
-    tick_interval: 30s
+  #  start_running: false
+  #target_rotator:
+  #  start_running: true
+  #  tick_interval: 30s
 
 shot_profiles:
   skill:

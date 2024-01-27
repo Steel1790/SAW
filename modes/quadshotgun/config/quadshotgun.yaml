@@ -2,12 +2,13 @@
 mode:
   start_events: selection_mode_quadshotgun_selected
   stop_events: stop_mode_quadshotgun, mode_quadshotgun_complete, ball_ended, ball_will_end, player_quadshotgun_quadshotgun_60s_timer_tick{value < 1}
+  priority: 110
  
 sequences:
   quadshotgun:
     events:
       - quadshotgun_spinner_complete
-      - left_loop_hit
+      - ssh_left_orbit_hit
     reset_on_complete: false
     events_when_complete: mode_quadshotgun_complete, stop_mode_quadshotgun
  
@@ -30,7 +31,7 @@ counters:
 #    persist_state: true
     reset_on_complete: false
     events_when_complete: quadshotgun_spinner_complete   
-    count_events: spinner_hit
+    count_events: spinner_spinner_hit
 
 #shots:
 #  spinner:
@@ -68,7 +69,17 @@ slides:
       text: Rip the Spinner!
       font_name: TrajanProRegular
       font_size: 75
+      outline_color: black
+      outline_width: 7
       color: d8d8d8
+      animations:
+        add_to_slide:
+          - property: opacity
+            value: 0
+          - property: opacity
+            value: 1
+            duration: 1000ms
+            timing: after_previous
       
     - type: image
       image: hacksawUI
@@ -137,6 +148,8 @@ slides:
       text: (player|quadshotgun_visual_spinner_counter) / 30 spins
       font_size: 50
       font_name: TrajanProRegular
+      outline_color: black
+      outline_width: 7
       color: d8d8d8
       y: 35%
     - type: Text
@@ -164,19 +177,39 @@ slides:
   quadshotgun_phase2:
     widgets:     
     - type: Text
-      text: "- Hit The Left Loop To Escape"
-      font_size: 52
+      text: " Hit The Left Orbit To Escape"
+      font_size: 80
       font_name: TrajanProRegular
+      outline_color: black
+      outline_width: 7
       color: d8d8d8 
-      x: 552
-      y: 52%
+      x: 50%
+      y: 62%
+      animations:
+        add_to_slide:
+          - property: opacity
+            value: 0
+          - property: opacity
+            value: 1
+            duration: 1000ms
+            timing: after_previous
     - type: Text
       text: " & Complete The Trap"
-      font_size: 52
+      font_size: 80
       font_name: TrajanProRegular
+      outline_color: black
+      outline_width: 7
       color: d8d8d8
-      x: 467
-      y: 46%
+      x: 50%
+      y: 48%
+      animations:
+        add_to_slide:
+          - property: opacity
+            value: 0
+          - property: opacity
+            value: 1
+            duration: 1000ms
+            timing: after_previous
       
     - type: image
       image: hacksawUI
@@ -235,21 +268,21 @@ slide_player:
       priority: 405
       expire: 49.5s
       
-widgets:
-   quadshotgun_shot_update2:
-    - type: Text
-      text: X
-      color: "006ee6"
-      x: 5.5%
-      y: 52%
-      font_size: 70
-      font_name: TrajanProRegular
+#widgets:
+#   quadshotgun_shot_update2:
+#    - type: Text
+#      text: X
+#      color: "006ee6"
+#      x: 5.5%
+#      y: 52%
+#      font_size: 70
+#      font_name: TrajanProRegular
 
  
-widget_player:
- logicblock_quadshotgun_hit{step==2}: 
-  quadshotgun_shot_update2:
-    slide: quadshotgun_phase2
+#widget_player:
+# logicblock_quadshotgun_hit{step==2}: 
+#  quadshotgun_shot_update2:
+#    slide: quadshotgun_phase2
 
 
 #EK added 
@@ -287,6 +320,28 @@ show_player:
         led: l_shotgun_flasher_4
         color1: shotgun
 
+sound_pools:
+  quadshotgun_mode_sound_pool:
+    load: preload
+    type: random
+    track: sfx
+    sounds:
+      - QS1
+      - QS2
+      - QS3
+      - QS4
+      - QS5
+      - QS7
+
+  quadshotgun_gears_sound_pool:
+    load: preload
+    type: random
+    track: sfx
+    sounds:
+      - MoleDrillGears8
+      - MoleDrillGears30
+      - MoleDrillGears36
+
 sound_player:
   mode_quadshotgun_started:
     QuadShotgunModeStart:
@@ -294,6 +349,32 @@ sound_player:
   player_quadshotgun_quadshotgun_60s_timer_tick{value < 1}:
     QuadShotgunModeStart:
       action: stop
+
+  sw_top_pops:
+    quadshotgun_gears_sound_pool:
+      action: play
+      block: true
+  sw_bottom_pops:
+    quadshotgun_gears_sound_pool:
+      action: play
+      block: true
+  sw_slingshot:
+    quadshotgun_mode_sound_pool:
+      action: play
+      block: true    
+  sw_standup:
+    quadshotgun_mode_sound_pool:
+      action: play
+      block: true
+  sw_right_return_lane:
+    quadshotgun_mode_sound_pool:
+      action: play
+      block: true
+  sw_lower_drop_target:
+    quadshotgun_mode_sound_pool:
+      action: play
+      block: true
+
    
 event_player: 
   slide_quadshotgun_spinner_active: e_primary_mode_active

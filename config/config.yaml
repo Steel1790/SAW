@@ -17,6 +17,7 @@ modes:
   - attract
   - base
   - skillshot
+  - super_skillshot
   - music_player
   - trap_select
   - selection_mode
@@ -38,6 +39,7 @@ modes:
   - shackle_multiball_qualify
   - high_score
   - bonus
+  - stop_game
 
 window:
   width: 1366
@@ -57,7 +59,7 @@ sound_system:
     tracks:
        music:
           simultaneous_sounds: 1
-          volume: 1.0
+          volume: 0.8
        voice:
           simultaneous_sounds: 1
           volume: 1.0

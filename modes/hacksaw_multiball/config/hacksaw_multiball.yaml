@@ -13,7 +13,9 @@ multiball_locks:
     balls_to_replace: 2
     lock_devices: bd_hacksaw
     enable_events: logicblock_acc_hacksaw_mb_qualify_complete
+    disable_events: multiball_lock_mbl_hacksaw_locked_ball
     locked_ball_counting_strategy: physical_only
+    reset_all_counts_events: multiball_lock_mbl_hacksaw_full 
       #disable_events: sg_lockshot_complete{state=="unlit"}
       #reset_count_for_current_player_events: multiball_lock_sword_multiball_lock_full
 

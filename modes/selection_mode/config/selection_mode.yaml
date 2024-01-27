@@ -1,7 +1,7 @@
 #config_version=6                   
 mode:
-  start_events: start_selection_mode, mode_trap_select_stopped
-  stop_events: carousel_item_selected, ball_ended, mode_razorwire_started, mode_reversebeartrap_started, mode_drillchair_started, mode_quadshotgun_started, mode_zeptest_started, mode_flammablejelly_started, mode_jigsaw_multiball_started, mode_hacksaw_multiball_started
+  start_events: logicblock_trap_select_qualify_counter_complete
+  stop_events: carousel_item_selected, ball_ended, mode_razorwire_started, mode_reversebeartrap_started, mode_drillchair_started, mode_quadshotgun_started, mode_zeptest_started, mode_flammablejelly_started, mode_jigsaw_multiball_started, mode_hacksaw_multiball_started, mode_shackle_multiball_started
   code: mpf.modes.carousel.code.carousel.Carousel
 mode_settings:
   selectable_items: 
@@ -399,6 +399,10 @@ sound_player:
       action: stop
     ZepsTestPreview:
       action: stop
+    DrillChairPreview:
+      action: stop
+    ReverseBearTrapPreview:
+      action: stop
     RazorWirePreview:
       action: play
       loops: -1
@@ -410,6 +414,10 @@ sound_player:
     QuadShotgunPreview:
       action: stop
     ZepsTestPreview:
+      action: stop
+    DrillChairPreview:
+      action: stop
+    ReverseBearTrapPreview:
       action: stop
     FlammableJellyPreview:
       action: play
@@ -423,6 +431,10 @@ sound_player:
       action: stop
     ZepsTestPreview:
       action: stop
+    DrillChairPreview:
+      action: stop
+    ReverseBearTrapPreview:
+      action: stop
     QuadShotgunPreview:
       action: play
       loops: -1
@@ -435,7 +447,43 @@ sound_player:
       action: stop
     QuadShotgunPreview:
       action: stop
+    DrillChairPreview:
+      action: stop
+    ReverseBearTrapPreview:
+      action: stop
     ZepsTestPreview:
+      action: play
+      loops: -1
+  selection_mode_drillchair_highlighted:
+    ModeQualifiedShootScoop:
+      action: stop
+    RazorWirePreview:
+      action: stop
+    FlammableJellyPreview:
+      action: stop
+    QuadShotgunPreview:
+      action: stop
+    ZepsTestPreview:
+      action: stop
+    ReverseBearTrapPreview:
+      action: stop
+    DrillChairPreview:
+      action: play
+      loops: -1
+  selection_mode_reversebeartrap_highlighted:
+    ModeQualifiedShootScoop:
+      action: stop
+    RazorWirePreview:
+      action: stop
+    FlammableJellyPreview:
+      action: stop
+    QuadShotgunPreview:
+      action: stop
+    ZepsTestPreview:
+      action: stop
+    DrillChairPreview:
+      action: stop
+    ReverseBearTrapPreview:
       action: play
       loops: -1
 
@@ -448,6 +496,10 @@ sound_player:
       action: stop
     RazorWirePreview:
       action: stop
+    DrillChairPreview:
+      action: stop
+    ReverseBearTrapPreview:
+      action: stop
   selection_mode_flammablejelly_selected:
     FlammableJellyPreview:
       action: stop
@@ -456,6 +508,10 @@ sound_player:
     ZepsTestPreview:
       action: stop
     RazorWirePreview:
+      action: stop
+    DrillChairPreview:
+      action: stop
+    ReverseBearTrapPreview:
       action: stop
   selection_mode_quadshotgun_selected:
     FlammableJellyPreview:
@@ -466,6 +522,10 @@ sound_player:
       action: stop
     RazorWirePreview:
       action: stop
+    DrillChairPreview:
+      action: stop
+    ReverseBearTrapPreview:
+      action: stop
   selection_mode_zeptest_selected:
     FlammableJellyPreview:
       action: stop
@@ -474,4 +534,34 @@ sound_player:
     ZepsTestPreview:
       action: stop
     RazorWirePreview:
+      action: stop
+    DrillChairPreview:
+      action: stop
+    ReverseBearTrapPreview:
+      action: stop
+  selection_mode_drillchair_selected:
+    FlammableJellyPreview:
+      action: stop
+    QuadShotgunPreview:
+      action: stop
+    ZepsTestPreview:
+      action: stop
+    RazorWirePreview:
+      action: stop
+    DrillChairPreview:
+      action: stop
+    ReverseBearTrapPreview:
+      action: stop
+  selection_mode_reversebeartrap_selected:
+    FlammableJellyPreview:
+      action: stop
+    QuadShotgunPreview:
+      action: stop
+    ZepsTestPreview:
+      action: stop
+    RazorWirePreview:
+      action: stop
+    DrillChairPreview:
+      action: stop
+    ReverseBearTrapPreview:
       action: stop

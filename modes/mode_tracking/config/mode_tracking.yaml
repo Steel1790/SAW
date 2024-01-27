@@ -68,10 +68,10 @@ variable_player:
       action: add
 # set qualification requirement to mode quadshotgun
 # 1 = default . 2 = mode_drillchair_complete
-  slide_base_slide_main_created:
-    drillchair_complete:
-      int: 1
-      action: set
+  #slide_base_slide_main_created:
+  #  drillchair_complete:
+  #    int: 1
+  #    action: set
 
 counters:
   mystery_qualify:

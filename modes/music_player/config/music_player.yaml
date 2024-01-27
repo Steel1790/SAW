@@ -129,6 +129,13 @@ sound_player:
     BaseMusic:
       action: stop
 
+  ball_save_default_saving_ball:
+    HeHelpedMe:
+      action: play
+  ball_will_end{current_player.ball==3}:
+    GameOver:
+      action: play
+
   mode_base_started{current_player.ball == 1 and player==1}:
     1playerGame:
       action: play
@@ -181,43 +188,63 @@ sound_player:
       delay: 2.5s
       action: play  
     
-  upper_drop_target_hit:
+  drop_target_bank_upper_dropbank_down:
     SingleDropGlassBreak:
       action: play 
       
   sw_top_pops:
     razorwirepops:
       action: play
+      block: true
   sw_bottom_pops:
     drillchairpops:
       action: play
+      block: true
   sw_slingshot:
     slingsaudio:
-      action: play    
-  sw_spinner:
+      action: play
+      block: true    
+  spinner_spinner_hit:
     Spinner3:
       action: play
+      block: true
   sw_standup:
     standupaudio:
       action: play
-  shot_left_loop_hit:
+      block: true
+  ssh_left_orbit_hit:
     LeftOrbit:
       action: play
-  shot_right_loop_hit:
+      block: true
+  ssh_right_orbit_hit:
     RightOrbit:
       action: play
-  s_right_outlane_active:
+      block: true
+  shot_left_outlane_hit{state=="ball_save_not_ready"}:
     TortureScream:
       action: play
-  s_left_outlane_active:
+      block: true
+  shot_right_outlane_hit{state=="ball_save_not_ready"}:
     TortureScream:
       action: play
+      block: true
+  shot_left_outlane_hit{state=="lit"}:
+    StillAlive:
+      action: play
+      block: true
+  shot_right_outlane_hit{state=="lit"}:
+    StillAlive:
+      action: play
+      block: true
+
   sw_right_return_lane:
     Gore_Neck_Break:
       action: play
+      block: true
   sw_lower_drop_target:
     lowerdropsaudio:
       action: play
+      block: true
     
   logicblock_random_switch_hit{hits==29}:  
     randomswitch:
@@ -326,6 +353,9 @@ sound_player:
       delay: 10s
       action: play
       loops: -1      
+  player_drillchair_drillchair_60s_timer_tick{value < 1}:
+    DrillChairFail:
+      action: play
   mode_drillchair_stopped:
     DrillChairModeStart:
       action: stop

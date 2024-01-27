@@ -1235,7 +1235,6 @@ lights:
         number: ledneuron-2-32-2
     tags: backbox, ledneuronp2 
 
-
 # starpost lights
   l_post_a_1:
     number: led128-5-1
@@ -1536,5 +1535,10 @@ lights:
   l_post_l_8:
     number: led128-6-8
     tags: starpost, post_l, led128p6      
+show_player:
+  init_phase_1:
+    backbox_on:
+      loops: -1
+      speed: 1     
 
 

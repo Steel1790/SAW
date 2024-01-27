@@ -9,6 +9,7 @@ event_player:
   slide_Mystery5Million_removed: e_release_mystery
   slide_MysteryMinus5Million_removed: e_release_mystery
   slide_MysteryExtraBall_removed: e_release_mystery
+  slide_MysteryEscapeOutlane_removed: e_release_mystery
 
 #ball_holds:
 #  mystery_scoop:

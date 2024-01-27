@@ -2,6 +2,7 @@
 mode:
   start_events: selection_mode_razorwire_selected
   stop_events: stop_mode_razorwire, ball_ended, ball_will_end, player_razorwire_60s_timer_tick{value < 1}
+  priority: 110
  
 sequences:
   razorwire:
@@ -84,6 +85,8 @@ slides:
       text: Aim for the Upper Pop Bumpers!
       font_name: TrajanProRegular
       font_size: 75
+      outline_color: black
+      outline_width: 7
       color: 65fe08
       
     - type: image
@@ -154,6 +157,8 @@ slides:
       text: (player|razorwire_visual_pops_counter) / 25 Pops Hit
       font_size: 50
       font_name: TrajanProRegular
+      outline_color: black
+      outline_width: 7
       color: 65fe08
       y: 35%
     - type: Text
@@ -181,27 +186,27 @@ slides:
 
   razorwire_phase2:
     widgets:
-    - type: Text
-      text: "- X Marks The Spot ..."
-      font_name: TrajanProRegular
-      font_size: 52
-      x: 425
-      y: 62%
-      color: 65fe08       
-    - type: Text
-      text: "- Hit The Left Ramp To Escape"
-      font_size: 52
-      font_name: TrajanProRegular
-      color: 65fe08 
-      x: 552
-      y: 52%
-    - type: Text
-      text: " & Complete The Trap"
-      font_size: 52
-      font_name: TrajanProRegular
-      color: 65fe08 
-      x: 452
-      y: 46%
+    #- type: Text
+    #  text: "- X Marks The Spot ..."
+    #  font_name: TrajanProRegular
+    #  font_size: 52
+    #  x: 425
+    #  y: 62%
+    #  color: 65fe08       
+    #- type: Text
+    #  text: "- Hit The Left Ramp To Escape"
+    #  font_size: 52
+    #  font_name: TrajanProRegular
+    #  color: 65fe08 
+    #  x: 552
+    #  y: 52%
+    #- type: Text
+    #  text: " & Complete The Trap"
+    #  font_size: 52
+    #  font_name: TrajanProRegular
+    #  color: 65fe08 
+    #  x: 452
+    #  y: 46%
       
     - type: image
       image: hacksawUI
@@ -266,29 +271,93 @@ slide_player:
  
 widgets:
    rw_shot_update2:
+    #- type: Text
+    #  text: X
+    #  color: ad1400
+    #  x: 5.5%
+    #  y: 62%
+    #  font_size: 70
+    #  font_name: TrajanProRegular
     - type: Text
-      text: X
-      color: ad1400
-      x: 5.5%
-      y: 62%
-      font_size: 70
+      text: " X Marks The Spot ..."
       font_name: TrajanProRegular
+      font_size: 80
+      outline_color: black
+      outline_width: 7
+      x: 50%
+      y: 62%
+      z: 1
+      color: 65fe08       
+      animations:
+        add_to_slide:
+          - property: y
+            value: 62%
+            duration: 2.1s
+          - property: opacity
+            value: 0
+          - property: opacity
+            value: 1
+            duration: 1000ms
+            timing: after_previous
+   #rw_shot_update3:
+   # - type: Text
+   #   text: X
+   #   color: ad1400
+   #   x: 5.5%
+   #   y: 52%
+   #   font_size: 70
+   #   font_name: TrajanProRegular
+
    rw_shot_update3:
     - type: Text
-      text: X
-      color: ad1400
-      x: 5.5%
-      y: 52%
-      font_size: 70
+      text: " Hit The Left Ramp To Escape"
+      font_size: 80
       font_name: TrajanProRegular
- 
+      outline_color: black
+      outline_width: 7
+      color: 65fe08 
+      x: 50%
+      y: 62%
+      z: 1
+      animations:
+        add_to_slide:
+          - property: opacity
+            value: 0
+          - property: opacity
+            value: 1
+            duration: 1000ms
+            timing: after_previous
+    - type: Text
+      text: " & Complete The Trap"
+      font_size: 80
+      font_name: TrajanProRegular
+      outline_color: black
+      outline_width: 7
+      color: 65fe08 
+      x: 50%
+      y: 48%
+      z: 1
+      animations:
+        add_to_slide:
+          - property: opacity
+            value: 0
+          - property: opacity
+            value: 1
+            duration: 1000ms
+            timing: after_previous
+
 widget_player:
+ logicblock_razorwire_hit{step==1}: 
+  rw_shot_update2:
+    slide: razorwire_phase2
+    action: add
  logicblock_razorwire_hit{step==2}: 
   rw_shot_update2:
     slide: razorwire_phase2
- logicblock_razorwire_hit{step==3}: 
+    action: remove
   rw_shot_update3:
     slide: razorwire_phase2
+    action: add
 
 shows:
   razorwire_pops_progress:    
@@ -412,7 +481,24 @@ show_player:
           leds: top_bumper
           color1: razorwire
 
-      
+sound_pools:
+  razorwire_mode_sound_pool:
+    load: preload
+    type: random
+    track: sfx
+    sounds:
+      - RW1
+      - RW2
+      - RW3
+      - RW6
+      - RW7
+      - RW8
+      - RW9
+      - RW10
+      - RW11
+      - RW12
+      - RW13
+      - RW14
 
 sound_player:
   mode_razorwire_started:
@@ -424,6 +510,27 @@ sound_player:
   player_razorwire_60s_timer_tick{value < 1}:
     RWModeStart:
       action: stop
+
+  sw_bottom_pops:
+    razorwire_mode_sound_pool:
+      action: play
+      block: true
+  sw_slingshot:
+    razorwire_mode_sound_pool:
+      action: play
+      block: true    
+  sw_standup:
+    razorwire_mode_sound_pool:
+      action: play
+      block: true
+  sw_right_return_lane:
+    razorwire_mode_sound_pool:
+      action: play
+      block: true
+  sw_lower_drop_target:
+    razorwire_mode_sound_pool:
+      action: play
+      block: true
 
 event_player: 
   slide_razorwire_pops_active: e_primary_mode_active

@@ -1,0 +1,14 @@
+#config_version=6
+##! mode: stop_game
+
+mode:
+  start_events: mode_base_started
+  stop_events: mode_base_stopped
+  priority: 450
+
+combo_switches:
+  shutdown_hold:
+    switches_1: s_left_flipper_button
+    switches_2: s_start
+    hold_time: 5s
+    events_when_both: end_game

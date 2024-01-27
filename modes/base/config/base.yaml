@@ -5,8 +5,8 @@ mode:
   
 ball_saves:
   default:
-    active_time: 8s
-    hurry_up_time: 3s
+    active_time: 5s
+    hurry_up_time: 2s
 #    grace_period: 2s
 #    enable_events: mode_base_started
 #    disable_events2: ball_save_default_disabled
@@ -32,46 +32,89 @@ event_player:
     - startmode_shackle_multiball
     - startmode_shackle_multiball_qualify
 
+
+  mode_trap_select_started: stop_saw_widget|0.2s
+
 slide_player:
   logicblock_cnt_saw_qualify_complete:
     saw_collect:
       priority: 400
       expire: 3s   
+
+  sw_standup: 
+    cameraflashvideo:
+      priority: 400
+      expire: 0.8s   
+
   mode_razorwire_complete: 
     trapcomplete:
       priority: 400
       expire: 5s   #EK shortened to time with lightshow
+  player_razorwire_60s_timer_tick{value < 1}:
+    trapfailed:
+      priority: 400
+      expire: 5s    
 
   mode_drillchair_complete: 
     trapcomplete:
       priority: 400
       expire: 8s  
+  player_drillchair_drillchair_60s_timer_tick{value < 1}:
+    trapfailed:
+      priority: 400
+      expire: 5s  
 
   mode_reversebeartrap_complete: 
     trapcomplete:
       priority: 400
       expire: 8s   
+  player_reversebeartrap_120s_reversebeartrap_timer_tick{value < 1}:
+    trapfailed:
+      priority: 400
+      expire: 5s  
       
   mode_zeptest_complete: 
     trapcomplete:
       priority: 400
       expire: 8s    
+  player_zeptest_60s_zeptest_timer_tick{value < 1}:
+    trapfailed:
+      priority: 400
+      expire: 5s  
 
   mode_flammablejelly_complete: 
     trapcomplete:
       priority: 400
-      expire: 8s              
+      expire: 8s   
+  player_flammablejelly_60s_flammablejelly_timer_tick{value < 1}:
+    trapfailed:
+      priority: 400
+      expire: 5s        
+
+  mode_quadshotgun_complete: 
+    trapcomplete:
+      priority: 400
+      expire: 8s   
+  player_quadshotgun_quadshotgun_60s_timer_tick{value < 1}:
+    trapfailed:
+      priority: 400
+      expire: 5s     
       
   mode_skillshot_complete:
     skillshotvideo:
       action: play
       priority: 400
       expire: 8s
-  ballsavetemp_hit:
+  ball_save_default_saving_ball:
+    HeHelpedMeVideo:
+      action: play
+      priority: 400
+      expire: 5s
+  ball_save_escape_outlane_saving_ball:
     ballsavevideo:
       action: play
       priority: 400
-      expire: 8s
+      expire: 5s
   tiltwarningtemp_hit:
     tiltwarningvideo:
       action: play
@@ -87,10 +130,35 @@ slide_player:
       action: play
       priority: 400
       expire: 8s
+  
       
-  mode_base_started:
-    base_slide_main:
+  single_player_ball_started:
+    Player1Active: 
+      slide: base_slide_main
+      action: play
+  player_1_ball_started: 
+    Player1Active:
+      slide: base_slide_main
       action: play    
+  #mode_base_started:
+  #  base_slide_main:
+  #    action: play    
+
+  player_2_ball_started:
+    base_slide_main:
+      action: play
+  player_3_ball_started:
+    base_slide_main:
+      action: play
+  player_4_ball_started:
+    base_slide_main:
+      action: play
+
+  ball_will_end{current_player.ball==3}:
+    gameovervideo:
+      action: play
+      priority: 600
+      expire: 2.5s
       
 variable_player:
   logicblock_cnt_saw_qualify_complete:
@@ -107,7 +175,7 @@ variable_player:
     score: 75000
   sw_ramp:
     score: 125000
-  sw_spinner:
+  spinner_spinner_hit:
     score: 30000
   sw_drop_target:
     score: 95000
@@ -272,7 +340,7 @@ counters:
     reset_on_complete: true
     disable_on_complete: false    
     events_when_complete: minimode_spinners_complete 
-    count_events: sw_spinner 
+    count_events: spinner_spinner_hit 
 
   minimode_ramps_counter:
     starting_count: 0
@@ -328,11 +396,16 @@ counters:
     enable_events: 
     disable_events: 
     start_enabled: true
+    reset_events: logicblock_cnt_negative_shot_counter_updated{value==-1}
 #    persist_state: true
     reset_on_complete: true
     disable_on_complete: false
 #    events_when_complete: 
     count_events: shot_left_return_lane_hit
+    control_events:
+      - event: sg_saw_qualify_lit_hit
+        action: subtract
+        value: 1
 
 shows:
   minimode_pops_show_complete:    
@@ -504,9 +577,9 @@ show_player:
       #   color1: white
 
   mode_base_started:  
-    backbox_on:
-      loops: -1
-      speed: 1 
+    #backbox_on:
+    #  loops: -1
+    #  speed: 1 
     base_action_button:
       loops: -1
       show_tokens:
@@ -533,7 +606,7 @@ show_player:
     ballsave:
       show_tokens:
         leds: l_live_again
-      loops: 20
+      loops: 10
   ball_save_default_disabled:
     ballsave_end:
       show_tokens:
@@ -750,7 +823,7 @@ show_player:
 #        led: l_left_return_lane
 #        color1: red
 
-  spinner_hit:
+  spinner_spinner_hit:
     flash_token:
       loops: 2
       speed: 8
@@ -782,6 +855,8 @@ widgets:
       z: 2
       font_size: 60
       font_name: Skilt Gothic W04 Thin
+      outline_color: black
+      outline_width: 7
     - type: Text
       text: SAW
       color: white
@@ -789,7 +864,9 @@ widgets:
       y: 20%
       z: 2
       font_size: 110
-      font_name: sawesome      
+      font_name: sawesome     
+      outline_color: black
+      outline_width: 9
 
   w_trap_select_start:
     - type: Text
@@ -800,6 +877,8 @@ widgets:
       z: 2
       font_size: 60
       font_name: Skilt Gothic W04 Thin
+      outline_color: black
+      outline_width: 7
       
   saw_s_letters:
      - type: Text
@@ -852,6 +931,29 @@ widgets:
        z: 3
        font_size: 110
        font_name: sawesome   
+#player 1
+  1PlayerGame: 
+    - type: text
+      text: (player1|score)
+      number_grouping: true
+      #y: 16
+      #x: 25
+      y: 16
+      x: 25
+      z: 5
+      font_size: 36
+      anchor_x: left
+      anchor_y: bottom
+      font_name: TrajanProRegular
+      color: C2E3E0        
+    - type: image
+      image: hacksawUI
+      opacity: 0.9
+      y: 1
+      x: 1
+      z: 5
+      anchor_x: left
+      anchor_y: bottom      
   2PlayerGame:       
      - type: Text
        text: (player2|score)
@@ -867,7 +969,7 @@ widgets:
        opacity: 0.9
        y: 1
        x: left+520
-       z: 4
+       z: 5
        anchor_y: bottom    
   3PlayerGame:
      - type: Text
@@ -884,7 +986,7 @@ widgets:
        opacity: 0.9
        y: 1
        x: left+870
-       z: 4
+       z: 5
        anchor_y: bottom  
   4PlayerGame:
      - type: Text
@@ -901,8 +1003,96 @@ widgets:
        opacity: 0.9
        y: 1
        x: left+1210
-       z: 4
+       z: 5
        anchor_y: bottom
+
+#player active
+  Player1Active:
+    - type: text
+      text: (player1|score)
+      number_grouping: true
+      y: 16
+      x: 25
+      z: 7
+      font_size: 36
+      anchor_x: left
+      anchor_y: bottom
+      font_name: TrajanProRegular
+      color: C2E3E0    
+    - type: image
+      image: currentplayer
+      opacity: 0.9
+      y: 1
+      x: 1
+      z: 7
+      anchor_x: left
+      anchor_y: bottom  
+    - type: image
+      image: gordonsaw
+  Player2Active:
+    - type: text
+      text: (player2|score)
+      number_grouping: true
+      y: 16
+      x: left+400
+      z: 7
+      font_size: 36
+      anchor_x: left
+      anchor_y: bottom
+      font_name: TrajanProRegular
+      color: C2E3E0    
+    - type: image
+      image: currentplayer
+      opacity: 0.9
+      y: 1
+      x: left+520
+      z: 7
+      anchor_y: bottom       
+    - type: image
+      image: player2UI
+  Player3Active:
+    - type: Text
+      text: (player3|score)
+      number_grouping: true   
+      font_name: TrajanProRegular
+      font_size: 36
+      anchor_x: left
+      anchor_y: bottom
+      y: 16
+      x: left+750
+      z: 7
+      color: C2E3E0
+    - type: image
+      image: currentplayer
+      opacity: 0.9
+      y: 1
+      x: left+870
+      z: 7
+      anchor_y: bottom  
+    - type: image
+      image: player3UI
+  Player4Active:
+    - type: Text
+      text: (player4|score)
+      number_grouping: true       
+      font_name: TrajanProRegular
+      font_size: 36
+      anchor_x: left
+      anchor_y: bottom
+      y: 16
+      x: left+1090
+      z: 5
+      color: C2E3E0
+    - type: image
+      image: currentplayer
+      opacity: 0.9
+      y: 1
+      x: left+1210
+      z: 5
+      anchor_y: bottom
+    - type: image
+      image: player4UI
+
         
 #player 2   
   Player2Inactive: 
@@ -1010,10 +1200,106 @@ widgets:
        anchor_y: bottom          
 
 widget_player:
+  single_player_ball_started:
+    Player1Active: 
+      slide: base_slide_main
+      action: add
+    saw_letters:
+      slide: base_slide_main
+      action: add
+  
+
+  player_1_ball_started: 
+    Player1Active:
+      slide: base_slide_main
+      action: add     
+    2PlayerGame:
+      slide: base_slide_main
+      action: add 
+    3PlayerGame:  
+      slide: base_slide_main
+      action: add      
+    4PlayerGame:  
+      slide: base_slide_main
+      action: add   
+    saw_letters:
+      slide: base_slide_main
+      action: add
+
+  player_2_ball_started: 
+    1PlayerGame:
+      slide: base_slide_main
+      action: add     
+    Player2Active:
+      slide: base_slide_main
+      action: add 
+    Player3Inactive:  
+      slide: base_slide_main
+      action: remove 
+    Player3InactiveBall2:  
+      slide: base_slide_main
+      action: add      
+    Player4Inactive:  
+      slide: base_slide_main
+      action: remove 
+    Player4InactiveBall2:  
+      slide: base_slide_main
+      action: add  
+    saw_letters:
+      slide: base_slide_main
+      action: add
+
+  player_3_ball_started: 
+    1PlayerGame:
+      slide: base_slide_main
+      action: add     
+    Player2Inactive:  
+      slide: base_slide_main
+      action: remove 
+    2PlayerGame:
+      slide: base_slide_main
+      action: add 
+    Player3Active:  
+      slide: base_slide_main
+      action: add     
+    Player4Inactive:  
+      slide: base_slide_main
+      action: remove 
+    4PlayerGame:  
+      slide: base_slide_main
+      action: add  
+    saw_letters:
+      slide: base_slide_main
+      action: add
+
+  player_4_ball_started: 
+    1PlayerGame:
+      slide: base_slide_main
+      action: add     
+    Player2Inactive:  
+      slide: base_slide_main
+      action: remove 
+    2PlayerGame:
+      slide: base_slide_main
+      action: add 
+    Player3Inactive:  
+      slide: base_slide_main
+      action: remove 
+    3PlayerGame:  
+      slide: base_slide_main
+      action: add      
+    Player4Active:  
+      slide: base_slide_main
+      action: add
+    saw_letters:
+      slide: base_slide_main
+      action: add
+
   mode_saw_qualify_started:
     saw_letters:
       slide: base_slide_main
       action: add
+
   logicblock_cnt_saw_qualify_complete:
     saw_letters:
       action: remove
@@ -1034,15 +1320,19 @@ widget_player:
     w_trap_select_start:
       slide: base_slide_main
       action: add
+  stop_saw_widget:
+    saw_letters:
+      slide: base_slide_main
+      action: remove
   mode_trap_select_stopped:
     w_trap_select_start:
       action: remove
     saw_saw_letters:
       action: remove
-  mode_selection_mode_stopped:
-    saw_letters:
-      slide: base_slide_main
-      action: add      
+  #mode_selection_mode_stopped:
+  #  saw_letters:
+  #    slide: base_slide_main
+  #    action: add      
       
   logicblock_cnt_saw_qualify_updated{value==1}:
     saw_s_letters:
@@ -1108,26 +1398,23 @@ widget_player:
     Player4InactiveBall2:  
       slide: base_slide_main
       action: add          
-  ball_started{ball==2 and game.num_players==2}:  
-    Player3Inactive:  
-      slide: base_slide_main
-      action: remove 
-    Player3InactiveBall2:  
-      slide: base_slide_main
-      action: add      
-    Player4Inactive:  
-      slide: base_slide_main
-      action: remove 
-    Player4InactiveBall2:  
-      slide: base_slide_main
-      action: add  
-  ball_started{ball==2 and game.num_players==3}:      
-    Player4Inactive:  
-      slide: base_slide_main
-      action: remove 
-    Player4InactiveBall2:  
-      slide: base_slide_main
-      action: add             
+  #ball_started{ball==2 and game.num_players==2}:  
+  #  2PlayerGame:
+  #    slide: base_slide_main
+  #    action: add 
+  #  Player3Inactive:  
+  #    slide: base_slide_main
+  #    action: remove 
+  #  Player3InactiveBall2:  
+  #    slide: base_slide_main
+  #    action: add      
+  #  Player4Inactive:  
+  #    slide: base_slide_main
+  #    action: remove 
+  #  Player4InactiveBall2:  
+  #    slide: base_slide_main
+  #    action: add  
+
            
 slides:
   base_slide_main: 
@@ -1144,6 +1431,8 @@ slides:
       x: left+105
       font_size: 38
       color: C2E3E0
+      outline_color: black
+      outline_width: 2
     - type: image
       image: rustpipe2
       y: top-44
@@ -1156,35 +1445,15 @@ slides:
       x: right-70
       color: C2E3E0
       font_size: 38    
+      outline_color: black
+      outline_width: 2
     - type: image
       image: rustpipe2
       y: top-44
       x: right-90
-      opacity: 0.5 
-#player 1 
-    - type: text
-      text: (score)
-      number_grouping: true
-      y: 16
-      x: 25
-      font_size: 36
-      anchor_x: left
-      anchor_y: bottom
-      font_name: TrajanProRegular
-      color: C2E3E0        
-    - type: image
-      image: hacksawUI
-      opacity: 0.9
-      y: 1
-      x: 1
-      anchor_x: left
-      anchor_y: bottom      
-    - type: image
-      image: gordonsaw
-#      video: gordonsaw 
-#      width: 1366
-#      height: 768
-#      end_behavior: loop
+    #  opacity: 0.5    
+    #- type: image
+    #  image: gordonsaw
 
  
   trapcomplete:
@@ -1193,6 +1462,12 @@ slides:
       video: trapcomplete
       width: 1366
       height: 768      
+  trapfailed:
+    widgets:
+    - type: video
+      video: TrapFailed
+      width: 1366
+      height: 768    
       
   skillshotvideo:
     widgets:
@@ -1205,6 +1480,12 @@ slides:
     widgets:
     - type: video
       video: ballsave
+      width: 1366
+      height: 768
+  HeHelpedMeVideo:
+    widgets:
+    - type: video
+      video: HeHelpedMeVideo
       width: 1366
       height: 768
   tiltwarningvideo:
@@ -1225,6 +1506,18 @@ slides:
       video: extraball
       width: 1366
       height: 768
+  cameraflashvideo:
+    widgets:
+    - type: video
+      video: CameraFlash
+      width: 1366
+      height: 768
+  gameovervideo:
+    widgets:
+    - type: video
+      video: GameOverVideo
+      width: 1366
+      height: 768
 
 ball_holds:
   bh_scoop:
@@ -1235,6 +1528,13 @@ ball_holds:
     release_one_events: e_primary_mode_active, e_release_mystery
 
 coil_player:
+  logicblock_cnt_negative_shot_counter_updated{value==0}:
+    c_right_spin_disc:
+      action: off
+    c_middle_spin_disc:
+      action: off
+    c_left_spin_disc:
+      action: off
   logicblock_cnt_negative_shot_counter_updated{value==1}:
     c_right_spin_disc:
       action: enable
