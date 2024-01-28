@@ -34,6 +34,7 @@ event_player:
 
 
   mode_trap_select_started: stop_saw_widget|0.2s
+  sw_pops: stop_pops_widget|200ms
 
 slide_player:
   logicblock_cnt_saw_qualify_complete:
@@ -165,6 +166,10 @@ variable_player:
     score: 100000
   sw_pops:
     score: 50000
+    pops:
+      int: 50000
+      action: set
+
   sw_slingshot:
     score: 333
   sw_inlane:
@@ -931,6 +936,22 @@ widgets:
        z: 3
        font_size: 110
        font_name: sawesome   
+
+  w_pop_hit:
+    - type: Text
+#      text: (player|score)
+      #text: (player|pops) + (player|bonus_x)
+      text: (player|pops)
+      color: white
+      x: 50%
+      y: 85%
+      z: 5
+      font_size: 25
+#      font_name: Skilt Gothic W04 Thin
+      font_name: sawesome
+      outline_color: black
+      outline_width: 7
+
 #player 1
   1PlayerGame: 
     - type: text
@@ -1415,6 +1436,15 @@ widget_player:
   #    slide: base_slide_main
   #    action: add  
 
+
+#  sw_pops:
+#    w_pop_hit:
+#      slide: base_slide_main
+#      action: add
+#  stop_pops_widget:
+#    w_pop_hit:
+#      slide: base_slide_main
+#      action: remove
            
 slides:
   base_slide_main: 
