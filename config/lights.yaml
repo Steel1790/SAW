@@ -19,7 +19,7 @@ lights:
     number: led128-4-4
     tags: insert, led128p4, escape
   l_right_escape:
-    number: led128-4-27
+    number: led128-4-26
     tags: insert, led128p4, escape
   l_top_drop1:
     number: led256-5-11
@@ -412,44 +412,44 @@ lights:
     number: led128-2-2
     tags: insert, arrow, led128p2
   l_live_again:
-    number: led128-4-13
+    number: led128-4-12
     tags: insert, led128p4
 
  # trap lights
   l_drillchair_mode:
-    number: led128-4-10
+    number: led128-4-9
     tags: insert, trap, led128p4
   l_beartrap_mode:
-    number: led128-4-11
+    number: led128-4-10
     tags: insert, trap, led128p4
   l_zeptest_mode:
-    number: led128-4-12
+    number: led128-4-11
     tags: insert, trap, led128p4
   l_jelly_mode:
-    number: led128-4-22
+    number: led128-4-21
     tags: insert, trap, led128p4
   l_quadshotgun_mode:
-    number: led128-4-23  
+    number: led128-4-22
     tags: insert, trap, led128p4
   l_razorwire_mode:
-    number: led128-4-24
+    number: led128-4-23
     tags: insert, trap, led128p4
 
 # gi lights
 
 # left_inlane_plastic:
   l_gi_1:
-    number: led128-4-9
+    number: led128-4-8
     type: grb
     tags: gi, gi_left, gi_lower, gi_left_inlane, led128p4
   l_gi_2:
-    number: led128-4-8
+    number: led128-4-7
     type: grb
     tags: gi, gi_left, gi_lower, gi_left_inlane, led128p4
 
 # left_slingshot_plastic:
   l_gi_3:
-    number: led128-4-7
+    number: led128-4-6
     type: grb
     tags: gi, gi_left, gi_lower, gi_left_sling, led128p4
 
@@ -527,17 +527,17 @@ lights:
 
 # right_slingshot_plastic:
   l_gi_20:
-    number: led128-4-28
+    number: led128-4-27
     type: grb
     tags: gi, gi_right, gi_lower, gi_right_sling, led128p4
 
 # right_inlane_plastic:
   l_gi_21:
-    number: led128-4-26
+    number: led128-4-25
     type: grb
     tags: gi, gi_right, gi_lower, gi_right_inlane, led128p4
   l_gi_22:
-    number: led128-4-25
+    number: led128-4-24
     type: grb
     tags: gi, gi_right, gi_lower, gi_right_inlane, led128p4
 
@@ -688,28 +688,28 @@ lights:
 
 # ball trough
   l_trough_1:
-    number: led128-4-14
+    number: led128-4-13
     tags: trough, led128p4
   l_trough_2:
-    number: led128-4-15
+    number: led128-4-14
     tags: trough, led128p4
   l_trough_3:
-    number: led128-4-16
+    number: led128-4-15
     tags: trough, led128p4
   l_trough_4:
-    number: led128-4-17
+    number: led128-4-16
     tags: trough, led128p4
   l_trough_5:
-    number: led128-4-18
+    number: led128-4-17
     tags: trough, led128p4
   l_trough_6:
-    number: led128-4-19
+    number: led128-4-18
     tags: trough, led128p4
   l_trough_7:
-    number: led128-4-20
+    number: led128-4-19
     tags: trough, led128p4
   l_trough_8:
-    number: led128-4-21
+    number: led128-4-20
     tags: trough, led128p4
 
 
@@ -850,15 +850,15 @@ lights:
 
 
 # spotlights
-  l_tape_spotlight:
-    number: led128-2-4
-    tags: spotlights, led128p2   
+  # l_tape_spotlight:
+  #   number: led128-2-4
+  #   tags: spotlights, led128p2   
   l_left_spotlight:
     number: c_left_spotlight     # map this light to a driver
     platform: drivers
-  l_right_spotlight:
-    number: led128-4-29
-    tags: spotlights, led128p4
+  # l_right_spotlight:
+  #   number: led128-4-29
+  #   tags: spotlights, led128p4
 
 
 # cabinet lights
