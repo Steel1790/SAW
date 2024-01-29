@@ -34,7 +34,36 @@ event_player:
 
 
   mode_trap_select_started: stop_saw_widget|0.2s
-  sw_pops: stop_pops_widget|200ms
+  logicblock_minimode_pops_counter_hit{count==1}: stop_pops_widget1|300ms
+  logicblock_minimode_pops_counter_hit{count==2}: stop_pops_widget2|300ms
+  logicblock_minimode_pops_counter_hit{count==3}: stop_pops_widget3|300ms
+  logicblock_minimode_pops_counter_hit{count==4}: stop_pops_widget4|300ms
+  logicblock_minimode_pops_counter_hit{count==5}: stop_pops_widget5|300ms
+  logicblock_minimode_pops_counter_hit{count==6}: stop_pops_widget6|300ms
+  logicblock_minimode_pops_counter_hit{count==7}: stop_pops_widget7|300ms
+  logicblock_minimode_pops_counter_hit{count==8}: stop_pops_widget8|300ms
+  logicblock_minimode_pops_counter_hit{count==9}: stop_pops_widget9|300ms
+  logicblock_minimode_pops_counter_hit{count==10}: stop_pops_widget10|300ms
+  logicblock_minimode_pops_counter_hit{count==11}: stop_pops_widget11|300ms
+  logicblock_minimode_pops_counter_hit{count==12}: stop_pops_widget12|300ms
+  logicblock_minimode_pops_counter_hit{count==13}: stop_pops_widget13|300ms
+  logicblock_minimode_pops_counter_hit{count==14}: stop_pops_widget14|300ms
+  logicblock_minimode_pops_counter_hit{count==15}: stop_pops_widget15|300ms
+  logicblock_minimode_pops_counter_hit{count==16}: stop_pops_widget16|300ms
+  logicblock_minimode_pops_counter_hit{count==17}: stop_pops_widget17|300ms
+  logicblock_minimode_pops_counter_hit{count==18}: stop_pops_widget18|300ms
+  logicblock_minimode_pops_counter_hit{count==19}: stop_pops_widget19|300ms
+  logicblock_minimode_pops_counter_hit{count==20}: stop_pops_widget20|300ms
+  logicblock_minimode_pops_counter_hit{count==21}: stop_pops_widget21|300ms
+  logicblock_minimode_pops_counter_hit{count==22}: stop_pops_widget22|300ms
+  logicblock_minimode_pops_counter_hit{count==23}: stop_pops_widget23|300ms
+  logicblock_minimode_pops_counter_hit{count==24}: stop_pops_widget24|300ms
+  logicblock_minimode_pops_counter_hit{count==25}: stop_pops_widget25|300ms
+  logicblock_minimode_pops_counter_hit{count==26}: stop_pops_widget26|300ms
+  logicblock_minimode_pops_counter_hit{count==27}: stop_pops_widget27|300ms
+  logicblock_minimode_pops_counter_hit{count==28}: stop_pops_widget28|300ms
+  logicblock_minimode_pops_counter_hit{count==29}: stop_pops_widget29|300ms
+  logicblock_minimode_pops_counter_hit{count==30}: stop_pops_widget30|300ms
 
 slide_player:
   logicblock_cnt_saw_qualify_complete:
@@ -937,20 +966,490 @@ widgets:
        font_size: 110
        font_name: sawesome   
 
-  w_pop_hit:
+#
+  w_pop_hit1:
     - type: Text
 #      text: (player|score)
       #text: (player|pops) + (player|bonus_x)
       text: (player|pops)
       color: white
       x: 50%
-      y: 85%
+      y: 50%
       z: 5
-      font_size: 25
-#      font_name: Skilt Gothic W04 Thin
+      font_size: 40
       font_name: sawesome
       outline_color: black
       outline_width: 7
+    - type: image
+      image: BloodSplatter
+      x: 44%
+      y: 50%
+      z: 6
+  w_pop_hit2:
+    - type: Text
+      text: (player|pops)
+      color: white
+      x: 44%
+      y: 56%
+      z: 5
+      font_size: 40
+      font_name: sawesome
+      outline_color: black
+      outline_width: 7
+    - type: image
+      image: BloodSplatter
+      x: 38%
+      y: 56%
+      z: 6
+  w_pop_hit3:
+    - type: Text
+      text: (player|pops)
+      color: white
+      x: 56%
+      y: 44%
+      z: 5
+      font_size: 40
+      font_name: sawesome
+      outline_color: black
+      outline_width: 7
+    - type: image
+      image: BloodSplatter
+      x: 50%
+      y: 44%
+      z: 6
+  w_pop_hit4:
+    - type: Text
+      text: (player|pops)
+      color: white
+      x: 56%
+      y: 56%
+      z: 5
+      font_size: 40
+      font_name: sawesome
+      outline_color: black
+      outline_width: 7
+    - type: image
+      image: BloodSplatter
+      x: 50%
+      y: 56%
+      z: 6
+  w_pop_hit5:
+    - type: Text
+      text: (player|pops)
+      color: white
+      x: 44%
+      y: 44%
+      z: 5
+      font_size: 40
+      font_name: sawesome
+      outline_color: black
+      outline_width: 7
+    - type: image
+      image: BloodSplatter
+      x: 38%
+      y: 44%
+      z: 6
+  w_pop_hit6:
+    - type: Text
+      text: (player|pops)
+      color: white
+      x: 48%
+      y: 52%
+      z: 5
+      font_size: 40
+      font_name: sawesome
+      outline_color: black
+      outline_width: 7
+    - type: image
+      image: BloodSplatter
+      x: 42%
+      y: 52%
+      z: 6
+  w_pop_hit7:
+    - type: Text
+      text: (player|pops)
+      color: white
+      x: 46%
+      y: 52%
+      z: 5
+      font_size: 40
+      font_name: sawesome
+      outline_color: black
+      outline_width: 7
+    - type: image
+      image: BloodSplatter
+      x: 40%
+      y: 52%
+      z: 6
+  w_pop_hit8:
+    - type: Text
+      text: (player|pops)
+      color: white
+      x: 52%
+      y: 47%
+      z: 5
+      font_size: 40
+      font_name: sawesome
+      outline_color: black
+      outline_width: 7
+    - type: image
+      image: BloodSplatter
+      x: 46%
+      y: 47%
+      z: 6
+  w_pop_hit9:
+    - type: Text
+      text: (player|pops)
+      color: white
+      x: 54%
+      y: 52%
+      z: 5
+      font_size: 40
+      font_name: sawesome
+      outline_color: black
+      outline_width: 7
+    - type: image
+      image: BloodSplatter
+      x: 48%
+      y: 52%
+      z: 6
+  w_pop_hit10:
+    - type: Text
+      text: (player|pops)
+      color: white
+      x: 49%
+      y: 47%
+      z: 5
+      font_size: 40
+      font_name: sawesome
+      outline_color: black
+      outline_width: 7
+    - type: image
+      image: BloodSplatter
+      x: 43%
+      y: 47%
+      z: 6
+  w_pop_hit11:
+    - type: Text
+      text: (player|pops)
+      color: white
+      x: 52%
+      y: 50%
+      z: 5
+      font_size: 40
+      font_name: sawesome
+      outline_color: black
+      outline_width: 7
+    - type: image
+      image: BloodSplatter
+      x: 46%
+      y: 50%
+      z: 6
+  w_pop_hit12:
+    - type: Text
+      text: (player|pops)
+      color: white
+      x: 44%
+      y: 54%
+      z: 5
+      font_size: 40
+      font_name: sawesome
+      outline_color: black
+      outline_width: 7
+    - type: image
+      image: BloodSplatter
+      x: 38%
+      y: 54%
+      z: 6
+  w_pop_hit13:
+    - type: Text
+      text: (player|pops)
+      color: white
+      x: 55%
+      y: 47%
+      z: 5
+      font_size: 40
+      font_name: sawesome
+      outline_color: black
+      outline_width: 7
+    - type: image
+      image: BloodSplatter
+      x: 49%
+      y: 47%
+      z: 6
+  w_pop_hit14:
+    - type: Text
+      text: (player|pops)
+      color: white
+      x: 53%
+      y: 54%
+      z: 5
+      font_size: 40
+      font_name: sawesome
+      outline_color: black
+      outline_width: 7
+    - type: image
+      image: BloodSplatter
+      x: 47%
+      y: 54%
+      z: 6
+  w_pop_hit15:
+    - type: Text
+      text: (player|pops)
+      color: white
+      x: 47%
+      y: 52%
+      z: 5
+      font_size: 40
+      font_name: sawesome
+      outline_color: black
+      outline_width: 7
+    - type: image
+      image: BloodSplatter
+      x: 41%
+      y: 52%
+      z: 6
+  w_pop_hit16:
+    - type: Text
+      text: (player|pops)
+      color: white
+      x: 51%
+      y: 48%
+      z: 5
+      font_size: 40
+      font_name: sawesome
+      outline_color: black
+      outline_width: 7
+    - type: image
+      image: BloodSplatter
+      x: 45%
+      y: 48%
+      z: 6
+  w_pop_hit17:
+    - type: Text
+      text: (player|pops)
+      color: white
+      x: 46%
+      y: 54%
+      z: 5
+      font_size: 40
+      font_name: sawesome
+      outline_color: black
+      outline_width: 7
+    - type: image
+      image: BloodSplatter
+      x: 40%
+      y: 54%
+      z: 6
+  w_pop_hit18:
+    - type: Text
+      text: (player|pops)
+      color: white
+      x: 53%
+      y: 47%
+      z: 5
+      font_size: 40
+      font_name: sawesome
+      outline_color: black
+      outline_width: 7
+    - type: image
+      image: BloodSplatter
+      x: 47%
+      y: 47%
+      z: 6
+  w_pop_hit19:
+    - type: Text
+      text: (player|pops)
+      color: white
+      x: 55%
+      y: 54%
+      z: 5
+      font_size: 40
+      font_name: sawesome
+      outline_color: black
+      outline_width: 7
+    - type: image
+      image: BloodSplatter
+      x: 49%
+      y: 54%
+      z: 6
+  w_pop_hit20:
+    - type: Text
+      text: (player|pops)
+      color: white
+      x: 46%
+      y: 45%
+      z: 5
+      font_size: 40
+      font_name: sawesome
+      outline_color: black
+      outline_width: 7
+    - type: image
+      image: BloodSplatter
+      x: 40%
+      y: 45%
+      z: 6
+  w_pop_hit21:
+    - type: Text
+      text: (player|pops)
+      color: white
+      x: 51%
+      y: 49%
+      z: 5
+      font_size: 40
+      font_name: sawesome
+      outline_color: black
+      outline_width: 7
+    - type: image
+      image: BloodSplatter
+      x: 45%
+      y: 49%
+      z: 6
+  w_pop_hit22:
+    - type: Text
+      text: (player|pops)
+      color: white
+      x: 46%
+      y: 54%
+      z: 5
+      font_size: 40
+      font_name: sawesome
+      outline_color: black
+      outline_width: 7
+    - type: image
+      image: BloodSplatter
+      x: 40%
+      y: 54%
+      z: 6
+  w_pop_hit23:
+    - type: Text
+      text: (player|pops)
+      color: white
+      x: 53%
+      y: 47%
+      z: 5
+      font_size: 40
+      font_name: sawesome
+      outline_color: black
+      outline_width: 7
+    - type: image
+      image: BloodSplatter
+      x: 47%
+      y: 47%
+      z: 6
+  w_pop_hit24:
+    - type: Text
+      text: (player|pops)
+      color: white
+      x: 54%
+      y: 53%
+      z: 5
+      font_size: 40
+      font_name: sawesome
+      outline_color: black
+      outline_width: 7
+    - type: image
+      image: BloodSplatter
+      x: 48%
+      y: 53%
+      z: 6
+  w_pop_hit25:
+    - type: Text
+      text: (player|pops)
+      color: white
+      x: 47%
+      y: 46%
+      z: 5
+      font_size: 40
+      font_name: sawesome
+      outline_color: black
+      outline_width: 7
+    - type: image
+      image: BloodSplatter
+      x: 41%
+      y: 46%
+      z: 6
+  w_pop_hit26:
+    - type: Text
+      text: (player|pops)
+      color: white
+      x: 49%
+      y: 51%
+      z: 5
+      font_size: 40
+      font_name: sawesome
+      outline_color: black
+      outline_width: 7
+    - type: image
+      image: BloodSplatter
+      x: 43%
+      y: 51%
+      z: 6
+  w_pop_hit27:
+    - type: Text
+      text: (player|pops)
+      color: white
+      x: 45%
+      y: 54%
+      z: 5
+      font_size: 40
+      font_name: sawesome
+      outline_color: black
+      outline_width: 7
+    - type: image
+      image: BloodSplatter
+      x: 39%
+      y: 54%
+      z: 6
+  w_pop_hit28:
+    - type: Text
+      text: (player|pops)
+      color: white
+      x: 55%
+      y: 45%
+      z: 5
+      font_size: 40
+      font_name: sawesome
+      outline_color: black
+      outline_width: 7
+    - type: image
+      image: BloodSplatter
+      x: 49%
+      y: 45%
+      z: 6
+  w_pop_hit29:
+    - type: Text
+      text: (player|pops)
+      color: white
+      x: 53%
+      y: 56%
+      z: 5
+      font_size: 40
+      font_name: sawesome
+      outline_color: black
+      outline_width: 7
+    - type: image
+      image: BloodSplatter
+      x: 47%
+      y: 56%
+      z: 6
+  w_pop_hit30:
+    - type: Text
+      text: (player|pops)
+      color: white
+      x: 48%
+      y: 46%
+      z: 5
+      font_size: 40
+      font_name: sawesome
+      outline_color: black
+      outline_width: 7
+    - type: image
+      image: BloodSplatter
+      x: 42%
+      y: 46%
+      z: 6
+
 
 #player 1
   1PlayerGame: 
@@ -1436,15 +1935,248 @@ widget_player:
   #    slide: base_slide_main
   #    action: add  
 
+#pops showing on base UI
+  logicblock_minimode_pops_counter_hit{count==1}:
+    w_pop_hit1:
+      slide: base_slide_main
+      action: add
+  stop_pops_widget1:
+    w_pop_hit1:
+      slide: base_slide_main
+      action: remove
+  logicblock_minimode_pops_counter_hit{count==2}:
+    w_pop_hit2:
+      slide: base_slide_main
+      action: add
+  stop_pops_widget2:
+    w_pop_hit2:
+      slide: base_slide_main
+      action: remove
+  logicblock_minimode_pops_counter_hit{count==3}:
+    w_pop_hit3:
+      slide: base_slide_main
+      action: add
+  stop_pops_widget3:
+    w_pop_hit3:
+      slide: base_slide_main
+      action: remove
+  logicblock_minimode_pops_counter_hit{count==4}:
+    w_pop_hit4:
+      slide: base_slide_main
+      action: add
+  stop_pops_widget4:
+    w_pop_hit4:
+      slide: base_slide_main
+      action: remove
+  logicblock_minimode_pops_counter_hit{count==5}:
+    w_pop_hit5:
+      slide: base_slide_main
+      action: add
+  stop_pops_widget5:
+    w_pop_hit5:
+      slide: base_slide_main
+      action: remove
+  logicblock_minimode_pops_counter_hit{count==6}:
+    w_pop_hit6:
+      slide: base_slide_main
+      action: add
+  stop_pops_widget6:
+    w_pop_hit6:
+      slide: base_slide_main
+      action: remove
+  logicblock_minimode_pops_counter_hit{count==7}:
+    w_pop_hit7:
+      slide: base_slide_main
+      action: add
+  stop_pops_widget7:
+    w_pop_hit7:
+      slide: base_slide_main
+      action: remove
+  logicblock_minimode_pops_counter_hit{count==8}:
+    w_pop_hit8:
+      slide: base_slide_main
+      action: add
+  stop_pops_widget8:
+    w_pop_hit8:
+      slide: base_slide_main
+      action: remove
+  logicblock_minimode_pops_counter_hit{count==9}:
+    w_pop_hit9:
+      slide: base_slide_main
+      action: add
+  stop_pops_widget9:
+    w_pop_hit9:
+      slide: base_slide_main
+      action: remove
+  logicblock_minimode_pops_counter_hit{count==10}:
+    w_pop_hit10:
+      slide: base_slide_main
+      action: add
+  stop_pops_widget10:
+    w_pop_hit10:
+      slide: base_slide_main
+      action: remove
+  logicblock_minimode_pops_counter_hit{count==11}:
+    w_pop_hit11:
+      slide: base_slide_main
+      action: add
+  stop_pops_widget11:
+    w_pop_hit11:
+      slide: base_slide_main
+      action: remove
+  logicblock_minimode_pops_counter_hit{count==12}:
+    w_pop_hit12:
+      slide: base_slide_main
+      action: add
+  stop_pops_widget12:
+    w_pop_hit12:
+      slide: base_slide_main
+      action: remove
+  logicblock_minimode_pops_counter_hit{count==13}:
+    w_pop_hit13:
+      slide: base_slide_main
+      action: add
+  stop_pops_widget13:
+    w_pop_hit13:
+      slide: base_slide_main
+      action: remove
+  logicblock_minimode_pops_counter_hit{count==14}:
+    w_pop_hit14:
+      slide: base_slide_main
+      action: add
+  stop_pops_widget14:
+    w_pop_hit14:
+      slide: base_slide_main
+      action: remove
+  logicblock_minimode_pops_counter_hit{count==15}:
+    w_pop_hit15:
+      slide: base_slide_main
+      action: add
+  stop_pops_widget15:
+    w_pop_hit15:
+      slide: base_slide_main
+      action: remove
+  logicblock_minimode_pops_counter_hit{count==16}:
+    w_pop_hit16:
+      slide: base_slide_main
+      action: add
+  stop_pops_widget16:
+    w_pop_hit16:
+      slide: base_slide_main
+      action: remove
+  logicblock_minimode_pops_counter_hit{count==17}:
+    w_pop_hit17:
+      slide: base_slide_main
+      action: add
+  stop_pops_widget17:
+    w_pop_hit17:
+      slide: base_slide_main
+      action: remove
+  logicblock_minimode_pops_counter_hit{count==18}:
+    w_pop_hit18:
+      slide: base_slide_main
+      action: add
+  stop_pops_widget18:
+    w_pop_hit18:
+      slide: base_slide_main
+      action: remove
+  logicblock_minimode_pops_counter_hit{count==19}:
+    w_pop_hit19:
+      slide: base_slide_main
+      action: add
+  stop_pops_widget19:
+    w_pop_hit19:
+      slide: base_slide_main
+      action: remove
+  logicblock_minimode_pops_counter_hit{count==20}:
+    w_pop_hit20:
+      slide: base_slide_main
+      action: add
+  stop_pops_widget20:
+    w_pop_hit20:
+      slide: base_slide_main
+      action: remove
+  logicblock_minimode_pops_counter_hit{count==21}:
+    w_pop_hit21:
+      slide: base_slide_main
+      action: add
+  stop_pops_widget21:
+    w_pop_hit21:
+      slide: base_slide_main
+      action: remove
+  logicblock_minimode_pops_counter_hit{count==22}:
+    w_pop_hit22:
+      slide: base_slide_main
+      action: add
+  stop_pops_widget22:
+    w_pop_hit22:
+      slide: base_slide_main
+      action: remove
+  logicblock_minimode_pops_counter_hit{count==23}:
+    w_pop_hit23:
+      slide: base_slide_main
+      action: add
+  stop_pops_widget23:
+    w_pop_hit23:
+      slide: base_slide_main
+      action: remove
+  logicblock_minimode_pops_counter_hit{count==24}:
+    w_pop_hit24:
+      slide: base_slide_main
+      action: add
+  stop_pops_widget24:
+    w_pop_hit24:
+      slide: base_slide_main
+      action: remove
+  logicblock_minimode_pops_counter_hit{count==25}:
+    w_pop_hit25:
+      slide: base_slide_main
+      action: add
+  stop_pops_widget25:
+    w_pop_hit25:
+      slide: base_slide_main
+      action: remove
+  logicblock_minimode_pops_counter_hit{count==26}:
+    w_pop_hit26:
+      slide: base_slide_main
+      action: add
+  stop_pops_widget26:
+    w_pop_hit26:
+      slide: base_slide_main
+      action: remove
+  logicblock_minimode_pops_counter_hit{count==27}:
+    w_pop_hit27:
+      slide: base_slide_main
+      action: add
+  stop_pops_widget27:
+    w_pop_hit27:
+      slide: base_slide_main
+      action: remove
+  logicblock_minimode_pops_counter_hit{count==28}:
+    w_pop_hit28:
+      slide: base_slide_main
+      action: add
+  stop_pops_widget28:
+    w_pop_hit28:
+      slide: base_slide_main
+      action: remove
+  logicblock_minimode_pops_counter_hit{count==29}:
+    w_pop_hit29:
+      slide: base_slide_main
+      action: add
+  stop_pops_widget29:
+    w_pop_hit29:
+      slide: base_slide_main
+      action: remove
+  logicblock_minimode_pops_counter_hit{count==30}:
+    w_pop_hit30:
+      slide: base_slide_main
+      action: add
+  stop_pops_widget30:
+    w_pop_hit30:
+      slide: base_slide_main
+      action: remove
 
-#  sw_pops:
-#    w_pop_hit:
-#      slide: base_slide_main
-#      action: add
-#  stop_pops_widget:
-#    w_pop_hit:
-#      slide: base_slide_main
-#      action: remove
            
 slides:
   base_slide_main: 
