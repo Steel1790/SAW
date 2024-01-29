@@ -854,8 +854,8 @@ lights:
     number: led128-2-4
     tags: spotlights, led128p2   
   l_left_spotlight:
-    number: led128-4-6
-    tags: spotlights, led128p4
+    number: c_left_spotlight     # map this light to a driver
+    platform: drivers
   l_right_spotlight:
     number: led128-4-29
     tags: spotlights, led128p4

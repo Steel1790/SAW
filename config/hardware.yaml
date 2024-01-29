@@ -25,7 +25,8 @@ fast:
       led256:
         model: FP-EXP-0081
       led128:
-        model: FP-EXP-0071
+        model: FP-EXP-0081
+        address: 85
       ledneuron:
         model: FP-EXP-2000
     debug: true
@@ -328,6 +329,10 @@ coils:
     number: 1616_1-0
     default_pulse_ms: 20
     default_pulse_power: 0.9
+  c_left_spotlight:
+    number: 1616_2-3
+    default_hold_power: 1.0
+    allow_enable: true
 
 drop_targets:
   dt_upper_drop1:
