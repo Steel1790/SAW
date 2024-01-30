@@ -1,0 +1,45 @@
+#show_version=6
+
+#CHOOSE ONE OF THE TWO OPTIONS. COMMENT OUT THE OTHER.
+
+#OPTION 1 - ONE INSERT LIT AT A TIME
+# - time: 0
+#   lights:
+#     l_(led3): off    
+#     l_(led1): (color1)
+# - time: '+1'
+#   lights:
+#     l_(led1): off
+#     l_(led2): (color1)
+# - time: '+1'
+#   lights:
+#     l_(led2): off
+#     l_(led3): (color1)
+
+#OPTION 2 - OVERLAPS BETWEEN INSERTS
+- time: 0
+  lights:
+    (led4): off        
+    (led3): off    
+    (led1): (color1)
+- time: '+1'
+  lights:
+    (led1): (color1)
+    (led2): (color1)
+- time: '+1'
+  lights:
+    (led1): off
+    (led2): (color1)
+    (led3): (color1)
+- time: '+1'
+  lights:
+    (led1): off
+    (led2): off
+    (led3): (color1)
+    (led4): (color1)             
+- time: '+1'
+  lights:
+    (led1): off
+    (led2): off
+    (led3): off
+    (led4): (color1)              

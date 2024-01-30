@@ -1,0 +1,220 @@
+#show_version=6
+
+#CHOOSE ONE OF THE TWO OPTIONS. COMMENT OUT THE OTHER.
+
+#OPTION 1 - CLOCKWISE CIRCLE REPEAT WITH FADE OUT
+# - time: 0
+#   lights:
+#     l_post_a_1: (color1)
+# - time: '+1'
+#   lights:
+#     l_post_a_2: (color1)
+# - time: '+1'
+#   lights:
+#     l_post_a_3: (color1)
+# - time: '+1'
+#   lights:
+#     l_post_a_4: (color1)
+# - time: '+1'
+#   lights:
+#     l_post_a_5: (color1)
+# - time: '+1'
+#   lights:
+#     l_post_a_6: (color1)
+# - time: '+1'
+#   lights:
+#     l_post_a_7: (color1)
+# - time: '+1'
+#   lights:
+#     l_post_a_8: (color1)
+# - time: '+1'
+#   lights:
+#     l_post_a_1: off-f200ms
+#     l_post_a_2: off-f200ms
+#     l_post_a_3: off-f200ms
+#     l_post_a_4: off-f200ms
+#     l_post_a_5: off-f200ms
+#     l_post_a_6: off-f200ms
+#     l_post_a_7: off-f200ms
+#     l_post_a_8: off-f200ms
+
+#OPTION 2 - OVERLAPS BETWEEN INSERTS CLOCKWISE AND THEN COUNTERCLOCKWISE CYLON STYLE
+- time: 0
+  lights:
+    l_post_a_1: (color1)
+    l_post_b_1: (color1)
+    l_post_c_1: (color1)    
+    l_post_d_1: (color1)        
+- time: '+1'
+  lights:
+    l_post_a_2: (color1)
+    l_post_b_2: (color1)
+    l_post_c_2: (color1)    
+    l_post_d_2: (color1)  
+- time: '+1'
+  lights:
+    l_post_a_3: (color1)
+    l_post_b_3: (color1)
+    l_post_c_3: (color1)    
+    l_post_d_3: (color1)  
+- time: '+1'
+  lights:
+    l_post_a_4: (color1)
+    l_post_b_4: (color1)
+    l_post_c_4: (color1)    
+    l_post_d_4: (color1)  
+    l_post_a_1: off
+    l_post_b_1: off
+    l_post_c_1: off   
+    l_post_d_1: off    
+- time: '+1'
+  lights:
+    l_post_a_5: (color1)
+    l_post_b_5: (color1)
+    l_post_c_5: (color1)    
+    l_post_d_5: (color1)  
+    l_post_a_2: off
+    l_post_b_2: off
+    l_post_c_2: off   
+    l_post_d_2: off    
+- time: '+1'
+  lights:
+    l_post_a_6: (color1)
+    l_post_b_6: (color1)
+    l_post_c_6: (color1)    
+    l_post_d_6: (color1)  
+    l_post_a_3: off
+    l_post_b_3: off
+    l_post_c_3: off   
+    l_post_d_3: off    
+- time: '+1'
+  lights:
+    l_post_a_7: (color1)
+    l_post_b_7: (color1)
+    l_post_c_7: (color1)    
+    l_post_d_7: (color1)  
+    l_post_a_4: off
+    l_post_b_4: off
+    l_post_c_4: off   
+    l_post_d_4: off    
+- time: '+1'
+  lights:
+    l_post_a_8: (color1)
+    l_post_b_8: (color1)
+    l_post_c_8: (color1)    
+    l_post_d_8: (color1)  
+    l_post_a_5: off
+    l_post_b_5: off
+    l_post_c_5: off   
+    l_post_d_5: off     
+- time: '+1'
+  lights:
+    l_post_a_6: off
+    l_post_b_6: off
+    l_post_c_6: off   
+    l_post_d_6: off   
+- time: '+1'
+  lights:
+    l_post_a_7: off
+    l_post_b_7: off
+    l_post_c_7: off   
+    l_post_d_7: off   
+- time: '+1'
+  lights:
+    l_post_a_8: off
+    l_post_b_8: off
+    l_post_c_8: off   
+    l_post_d_8: off   
+- time: '+1'
+  lights:
+    l_post_a_8: (color1)
+    l_post_b_8: (color1)
+    l_post_c_8: (color1)
+    l_post_d_8: (color1)
+- time: '+1'
+  lights:
+    l_post_a_7: (color1)
+    l_post_b_7: (color1)
+    l_post_c_7: (color1)
+    l_post_d_7: (color1)
+- time: '+1'
+  lights:
+    l_post_a_6: (color1)
+    l_post_b_6: (color1)
+    l_post_c_6: (color1)
+    l_post_d_6: (color1)
+- time: '+1'
+  lights:
+    l_post_a_5: (color1)
+    l_post_b_5: (color1)
+    l_post_c_5: (color1)    
+    l_post_d_5: (color1)  
+    l_post_a_8: off
+    l_post_b_8: off
+    l_post_c_8: off   
+    l_post_d_8: off   
+- time: '+1'
+  lights:
+    l_post_a_4: (color1)
+    l_post_b_4: (color1)
+    l_post_c_4: (color1)    
+    l_post_d_4: (color1)  
+    l_post_a_7: off
+    l_post_b_7: off
+    l_post_c_7: off   
+    l_post_d_7: off  
+- time: '+1'
+  lights:
+    l_post_a_3: (color1)
+    l_post_b_3: (color1)
+    l_post_c_3: (color1)    
+    l_post_d_3: (color1)  
+    l_post_a_6: off
+    l_post_b_6: off
+    l_post_c_6: off   
+    l_post_d_6: off  
+- time: '+1'
+  lights:
+    l_post_a_2: (color1)
+    l_post_b_2: (color1)
+    l_post_c_2: (color1)    
+    l_post_d_2: (color1)  
+    l_post_a_5: off
+    l_post_b_5: off
+    l_post_c_5: off   
+    l_post_d_5: off  
+- time: '+1'
+  lights:
+    l_post_a_1: (color1)
+    l_post_b_1: (color1)
+    l_post_c_1: (color1)    
+    l_post_d_1: (color1)  
+    l_post_a_4: off
+    l_post_b_4: off
+    l_post_c_4: off   
+    l_post_d_4: off   
+- time: '+1'
+  lights:
+    l_post_a_3: off
+    l_post_b_3: off
+    l_post_c_3: off   
+    l_post_d_3: off   
+- time: '+1'
+  lights:
+    l_post_a_2: off
+    l_post_b_2: off
+    l_post_c_2: off   
+    l_post_d_2: off   
+- time: '+1'
+  lights:
+    l_post_a_1: off
+    l_post_b_1: off
+    l_post_c_1: off   
+    l_post_d_1: off   
+
+
+
+
+
+
+
