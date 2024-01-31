@@ -405,12 +405,12 @@ show_player:
 #        show_tokens:
 #          led: l_lower_top_bumper
 #          color1: 46eb34
-  razorwire_pops_complete:
-      top_drop_chase:
-        loops: -1
-        speed: 20
-        show_tokens:
-          color1: red
+  #razorwire_pops_complete:
+  #    top_drop_chase:
+  #      loops: -1
+  #      speed: 20
+  #      show_tokens:
+  #        color1: red
 
       gi_flicker:
         loops: -1
@@ -480,6 +480,22 @@ show_player:
         show_tokens:
           leds: top_bumper
           color1: razorwire
+  logicblock_razorwire_hit{step==1}:
+      top_drop_chase:
+        loops: -1
+        speed: 20
+        show_tokens:
+          color1: razorwire
+  logicblock_razorwire_hit{step==2}:
+      left_ramp_chase:
+        loops: -1
+        speed: 5
+        show_tokens:
+          color1: razorwire
+      top_drop_chase:
+        loops: -1
+        show_tokens:
+          color1: off
 
 sound_pools:
   razorwire_mode_sound_pool:

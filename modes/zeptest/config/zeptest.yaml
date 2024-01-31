@@ -267,12 +267,53 @@ slide_player:
       expire: 2.1s      
 
 show_player:
+  logicblock_zeptest_updated{value==0}:
+      skillshot_chase:
+        loops: -1
+        speed: 5
+        show_tokens:
+          color1: zepstest
+  logicblock_zeptest_hit{step==1}:
+      skillshot_chase:
+        loops: -1
+        show_tokens:
+          color1: off
+  logicblock_zeptest_hit{step==3}:
+      top_drop_chase:
+        loops: -1
+        speed: 20
+        show_tokens:
+          color1: zepstest
+  logicblock_zeptest_hit{step==4}:
+      left_ramp_chase:
+        loops: -1
+        speed: 5
+        show_tokens:
+          color1: zepstest
+      top_drop_chase:
+        loops: -1
+        show_tokens:
+          color1: off
+  logicblock_zeptest_hit{step==5}:
+      right_ramp_chase:
+        loops: -1
+        speed: 5
+        show_tokens:
+          color1: zepstest
+      left_ramp_chase:
+        loops: -1
+        show_tokens:
+          color1: off
   logicblock_zeptest_hit{step==6}:
       top_drop_chase:
         loops: -1
         speed: 20
         show_tokens:
-          color1: red    
+          color1: zepstest
+      right_ramp_chase:
+        loops: -1
+        show_tokens:
+          color1: off
 
   mode_quadshotgun_started:     
     gi_on:

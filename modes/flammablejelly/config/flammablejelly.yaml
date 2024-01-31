@@ -269,15 +269,76 @@ slide_player:
   logicblock_flammablejelly_hit{step==4}:
     XMarksTheSpotVideo:
       priority: 406
-      expire: 2.1s      
+      expire: 2.1s    
+      
+shows:
+  flammablejelly_progress_p1:    
+    - duration: 1s
+      lights:
+        (leds): (color1)
+    - duration: 1s
+      lights:
+        (leds): off
+  flammablejelly_progress_p2:    
+    - duration: 1s
+      lights:
+        (leds): (color1)
+    - duration: 1s
+      lights:
+        (leds): off
 
 show_player:
+#mode progress lights
+  logicblock_flammablejelly_updated{value==0}:
+      flammablejelly_progress_p1:
+        loops: -1
+        show_tokens:
+          leds: l_right_standup_arrow
+          color1: jelly
+  logicblock_flammablejelly_hit{step==1}:
+      flammablejelly_progress_p1:
+        loops: -1
+        show_tokens:
+          leds: l_right_standup_arrow
+          color1: off
+      flammablejelly_progress_p2:
+        loops: -1
+        show_tokens:
+          leds: orbit
+          color1: jelly
+  logicblock_flammablejelly_hit{step==2}:
+      flammablejelly_progress_p2:
+        loops: -1
+        show_tokens:
+          leds: orbit
+          color1: off
+      flammablejelly_progress_p1:
+        loops: -1
+        show_tokens:
+          leds: l_left_standup_arrow
+          color1: jelly
+  logicblock_flammablejelly_hit{step==3}:
+      flammablejelly_progress_p1:
+        loops: -1
+        show_tokens:
+          leds: l_left_standup_arrow
+          color1: off
+      flammablejelly_progress_p2:
+        loops: -1
+        show_tokens:
+          leds: orbit
+          color1: jelly
   logicblock_flammablejelly_hit{step==4}:
       top_drop_chase:
         loops: -1
         speed: 20
         show_tokens:
-          color1: red
+          color1: jelly
+      flammablejelly_progress_p2:
+        loops: -1
+        show_tokens:
+          leds: orbit
+          color1: off
 
   mode_flammablejelly_started:     
     gi_on:

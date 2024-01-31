@@ -286,6 +286,14 @@ slide_player:
 
 
 #EK added 
+shows:
+  quadshotgun_progress:    
+    - duration: 1s
+      lights:
+        (leds): (color1)
+    - duration: 1s
+      lights:
+        (leds): off
 
 show_player:
   mode_quadshotgun_started:     
@@ -319,6 +327,18 @@ show_player:
       show_tokens:
         led: l_shotgun_flasher_4
         color1: shotgun
+
+  logicblock_quadshotgun_hit{step==1}:
+      flash_token:
+        loops: -1
+        show_tokens:
+          leds: l_right_loop_arrow
+          color1: off
+      quadshotgun_progress:
+        loops: -1
+        show_tokens:
+          leds: l_left_loop_arrow
+          color1: shotgun
 
 sound_pools:
   quadshotgun_mode_sound_pool:

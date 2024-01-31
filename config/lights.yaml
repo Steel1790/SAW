@@ -23,22 +23,22 @@ lights:
     tags: insert, led128p4, escape
   l_top_drop1:
     number: led256-5-11
-    tags: insert, led256p5
+    tags: insert, led256p5, billy
   l_top_drop2:
     number: led256-5-10
-    tags: insert, led256p5
+    tags: insert, led256p5, billy
   l_top_drop3:
     number: led256-5-9
-    tags: insert, led256p5
+    tags: insert, led256p5, billy
   l_top_drop4:
     number: led256-5-8
-    tags: insert, led256p5
+    tags: insert, led256p5, billy
   l_top_drop5:
     number: led256-5-7
-    tags: insert, led256p5
+    tags: insert, led256p5, billy
   l_top_drop_triangle:
     number: led256-5-6
-    tags: insert, led256p5
+    tags: insert, led256p5, billy
 
 # jigsaw's workshop circle of 8 round inserts
   l_jw_key:
@@ -392,13 +392,13 @@ lights:
     tags: insert, led128p4
   l_left_loop_arrow:
     number: led128-3-4
-    tags: insert, arrow, led128p3
+    tags: insert, arrow, led128p3, orbit
   l_left_standup_arrow:
     number: led128-3-6
     tags: insert, arrow, led128p3
   l_inner_loop_arrow:
     number: led128-3-22
-    tags: insert, arrow, led128p3
+    tags: insert, arrow, led128p3, orbit
   l_left_standup_right_ramp_arrow:
     number: led128-2-17
     tags: insert, arrow, led128p2
@@ -407,7 +407,7 @@ lights:
     tags: insert, arrow, led128p2
   l_right_loop_arrow:
     number: led128-2-20
-    tags: insert, arrow, led128p2
+    tags: insert, arrow, led128p2, orbit
   l_right_standup_arrow:
     number: led128-2-2
     tags: insert, arrow, led128p2

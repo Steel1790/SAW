@@ -422,6 +422,13 @@ shows:
     - duration: -1      
       lights:    
         (leds): (color1)
+  drillchair_left_orbit:
+    - duration: 1s
+      lights:
+        (leds): (color1)
+    - duration: 1s
+      lights:
+        (leds): off
 
 show_player:
   mode_drillchair_started:     
@@ -484,12 +491,20 @@ show_player:
         show_tokens:
           leds: bottom_bumper
           color1: drillchair
+#first left orbit shot
+  logicblock_drillchair_hit{step==1}:
+      drillchair_left_orbit:
+        loops: -1
+        show_tokens:
+          leds: l_left_loop_arrow
+          color1: drillchair
+
 #pops progress p2
   logicblock_drillchair_hit{step==2}:
       drillchair_pops_progress:
         loops: -1
         show_tokens:
-          leds: bottom_bumper
+          leds: bottom_bumper, l_left_loop_arrow
           color1: off
   logicblock_drillchair_pops2_counter_hit{count==1}:
       drillchair_pops_progress:
@@ -544,6 +559,14 @@ show_player:
         loops: -1
         show_tokens:
           leds: bottom_bumper
+          color1: drillchair
+
+# second left orbit shot
+  logicblock_drillchair_hit{step==3}:
+      drillchair_left_orbit:
+        loops: -1
+        show_tokens:
+          leds: l_left_loop_arrow
           color1: drillchair
 
 event_player: 
