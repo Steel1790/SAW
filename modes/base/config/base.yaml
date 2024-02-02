@@ -65,16 +65,61 @@ event_player:
   logicblock_minimode_pops_counter_hit{count==29}: stop_pops_widget29|300ms
   logicblock_minimode_pops_counter_hit{count==30}: stop_pops_widget30|300ms
 
+#videos:
+#    cameraflashvideo:
+#      width: 1366
+#      height: 768
+#      file: CameraFlash.mp4
+#    cameraflashvideo2:
+#      width: 1366
+#      height: 768
+#      file: CameraFlash2.mp4
+#    cameraflashvideo3:
+#      width: 1366
+#      height: 768
+#      file: CameraFlash3.mp4
+#    cameraflashvideo4:
+#      width: 1366
+#      height: 768
+#      file: CameraFlash4.mp4
+
+#video_pools:
+#  cameraflashpool:
+#    load: preload
+#    type: random
+#    videos:
+#      - CameraFlash
+#      - CameraFlash2
+#      - CameraFlash3
+#      - CameraFlash4
+
+
 slide_player:
   logicblock_cnt_saw_qualify_complete:
     saw_collect:
       priority: 400
       expire: 3s   
 
-  sw_standup: 
+  s_left_standup_active: 
     cameraflashvideo:
       priority: 400
+      expire: 0.8s  
+  s_middle_standup_active: 
+    cameraflashvideo2:
+      priority: 400
       expire: 0.8s   
+  s_left_standup_right_ramp_active: 
+    cameraflashvideo3:
+      priority: 400
+      expire: 0.8s   
+  s_right_standup_right_ramp_active: 
+    cameraflashvideo4:
+      priority: 400
+      expire: 0.8s    
+  s_right_standup_active: 
+    cameraflashvideo:
+      priority: 400
+      expire: 0.8s         
 
   mode_razorwire_complete: 
     trapcomplete:
@@ -976,13 +1021,13 @@ widgets:
       x: 50%
       y: 50%
       z: 5
-      font_size: 40
+      font_size: 60
       font_name: sawesome
       outline_color: black
       outline_width: 7
     - type: image
       image: BloodSplatter
-      x: 44%
+      x: 42%
       y: 50%
       z: 6
   w_pop_hit2:
@@ -992,13 +1037,13 @@ widgets:
       x: 44%
       y: 56%
       z: 5
-      font_size: 40
+      font_size: 60
       font_name: sawesome
       outline_color: black
       outline_width: 7
     - type: image
       image: BloodSplatter
-      x: 38%
+      x: 36%
       y: 56%
       z: 6
   w_pop_hit3:
@@ -1008,13 +1053,13 @@ widgets:
       x: 56%
       y: 44%
       z: 5
-      font_size: 40
+      font_size: 60
       font_name: sawesome
       outline_color: black
       outline_width: 7
     - type: image
       image: BloodSplatter
-      x: 50%
+      x: 48%
       y: 44%
       z: 6
   w_pop_hit4:
@@ -1024,13 +1069,13 @@ widgets:
       x: 56%
       y: 56%
       z: 5
-      font_size: 40
+      font_size: 60
       font_name: sawesome
       outline_color: black
       outline_width: 7
     - type: image
       image: BloodSplatter
-      x: 50%
+      x: 48%
       y: 56%
       z: 6
   w_pop_hit5:
@@ -1040,13 +1085,13 @@ widgets:
       x: 44%
       y: 44%
       z: 5
-      font_size: 40
+      font_size: 60
       font_name: sawesome
       outline_color: black
       outline_width: 7
     - type: image
       image: BloodSplatter
-      x: 38%
+      x: 36%
       y: 44%
       z: 6
   w_pop_hit6:
@@ -1056,13 +1101,13 @@ widgets:
       x: 48%
       y: 52%
       z: 5
-      font_size: 40
+      font_size: 60
       font_name: sawesome
       outline_color: black
       outline_width: 7
     - type: image
       image: BloodSplatter
-      x: 42%
+      x: 40%
       y: 52%
       z: 6
   w_pop_hit7:
@@ -1072,13 +1117,13 @@ widgets:
       x: 46%
       y: 52%
       z: 5
-      font_size: 40
+      font_size: 60
       font_name: sawesome
       outline_color: black
       outline_width: 7
     - type: image
       image: BloodSplatter
-      x: 40%
+      x: 38%
       y: 52%
       z: 6
   w_pop_hit8:
@@ -1088,13 +1133,13 @@ widgets:
       x: 52%
       y: 47%
       z: 5
-      font_size: 40
+      font_size: 60
       font_name: sawesome
       outline_color: black
       outline_width: 7
     - type: image
       image: BloodSplatter
-      x: 46%
+      x: 52%
       y: 47%
       z: 6
   w_pop_hit9:
@@ -1104,13 +1149,13 @@ widgets:
       x: 54%
       y: 52%
       z: 5
-      font_size: 40
+      font_size: 60
       font_name: sawesome
       outline_color: black
       outline_width: 7
     - type: image
       image: BloodSplatter
-      x: 48%
+      x: 46%
       y: 52%
       z: 6
   w_pop_hit10:
@@ -1120,13 +1165,13 @@ widgets:
       x: 49%
       y: 47%
       z: 5
-      font_size: 40
+      font_size: 60
       font_name: sawesome
       outline_color: black
       outline_width: 7
     - type: image
       image: BloodSplatter
-      x: 43%
+      x: 41%
       y: 47%
       z: 6
   w_pop_hit11:
@@ -1136,13 +1181,13 @@ widgets:
       x: 52%
       y: 50%
       z: 5
-      font_size: 40
+      font_size: 60
       font_name: sawesome
       outline_color: black
       outline_width: 7
     - type: image
       image: BloodSplatter
-      x: 46%
+      x: 44%
       y: 50%
       z: 6
   w_pop_hit12:
@@ -1152,13 +1197,13 @@ widgets:
       x: 44%
       y: 54%
       z: 5
-      font_size: 40
+      font_size: 60
       font_name: sawesome
       outline_color: black
       outline_width: 7
     - type: image
       image: BloodSplatter
-      x: 38%
+      x: 36%
       y: 54%
       z: 6
   w_pop_hit13:
@@ -1168,13 +1213,13 @@ widgets:
       x: 55%
       y: 47%
       z: 5
-      font_size: 40
+      font_size: 60
       font_name: sawesome
       outline_color: black
       outline_width: 7
     - type: image
       image: BloodSplatter
-      x: 49%
+      x: 47%
       y: 47%
       z: 6
   w_pop_hit14:
@@ -1184,13 +1229,13 @@ widgets:
       x: 53%
       y: 54%
       z: 5
-      font_size: 40
+      font_size: 60
       font_name: sawesome
       outline_color: black
       outline_width: 7
     - type: image
       image: BloodSplatter
-      x: 47%
+      x: 45%
       y: 54%
       z: 6
   w_pop_hit15:
@@ -1200,13 +1245,13 @@ widgets:
       x: 47%
       y: 52%
       z: 5
-      font_size: 40
+      font_size: 60
       font_name: sawesome
       outline_color: black
       outline_width: 7
     - type: image
       image: BloodSplatter
-      x: 41%
+      x: 39%
       y: 52%
       z: 6
   w_pop_hit16:
@@ -1216,13 +1261,13 @@ widgets:
       x: 51%
       y: 48%
       z: 5
-      font_size: 40
+      font_size: 60
       font_name: sawesome
       outline_color: black
       outline_width: 7
     - type: image
       image: BloodSplatter
-      x: 45%
+      x: 43%
       y: 48%
       z: 6
   w_pop_hit17:
@@ -1232,13 +1277,13 @@ widgets:
       x: 46%
       y: 54%
       z: 5
-      font_size: 40
+      font_size: 60
       font_name: sawesome
       outline_color: black
       outline_width: 7
     - type: image
       image: BloodSplatter
-      x: 40%
+      x: 38%
       y: 54%
       z: 6
   w_pop_hit18:
@@ -1248,13 +1293,13 @@ widgets:
       x: 53%
       y: 47%
       z: 5
-      font_size: 40
+      font_size: 60
       font_name: sawesome
       outline_color: black
       outline_width: 7
     - type: image
       image: BloodSplatter
-      x: 47%
+      x: 45%
       y: 47%
       z: 6
   w_pop_hit19:
@@ -1264,13 +1309,13 @@ widgets:
       x: 55%
       y: 54%
       z: 5
-      font_size: 40
+      font_size: 60
       font_name: sawesome
       outline_color: black
       outline_width: 7
     - type: image
       image: BloodSplatter
-      x: 49%
+      x: 47%
       y: 54%
       z: 6
   w_pop_hit20:
@@ -1280,13 +1325,13 @@ widgets:
       x: 46%
       y: 45%
       z: 5
-      font_size: 40
+      font_size: 60
       font_name: sawesome
       outline_color: black
       outline_width: 7
     - type: image
       image: BloodSplatter
-      x: 40%
+      x: 38%
       y: 45%
       z: 6
   w_pop_hit21:
@@ -1296,13 +1341,13 @@ widgets:
       x: 51%
       y: 49%
       z: 5
-      font_size: 40
+      font_size: 60
       font_name: sawesome
       outline_color: black
       outline_width: 7
     - type: image
       image: BloodSplatter
-      x: 45%
+      x: 43%
       y: 49%
       z: 6
   w_pop_hit22:
@@ -1312,13 +1357,13 @@ widgets:
       x: 46%
       y: 54%
       z: 5
-      font_size: 40
+      font_size: 60
       font_name: sawesome
       outline_color: black
       outline_width: 7
     - type: image
       image: BloodSplatter
-      x: 40%
+      x: 38%
       y: 54%
       z: 6
   w_pop_hit23:
@@ -1328,13 +1373,13 @@ widgets:
       x: 53%
       y: 47%
       z: 5
-      font_size: 40
+      font_size: 60
       font_name: sawesome
       outline_color: black
       outline_width: 7
     - type: image
       image: BloodSplatter
-      x: 47%
+      x: 45%
       y: 47%
       z: 6
   w_pop_hit24:
@@ -1344,13 +1389,13 @@ widgets:
       x: 54%
       y: 53%
       z: 5
-      font_size: 40
+      font_size: 60
       font_name: sawesome
       outline_color: black
       outline_width: 7
     - type: image
       image: BloodSplatter
-      x: 48%
+      x: 46%
       y: 53%
       z: 6
   w_pop_hit25:
@@ -1360,13 +1405,13 @@ widgets:
       x: 47%
       y: 46%
       z: 5
-      font_size: 40
+      font_size: 60
       font_name: sawesome
       outline_color: black
       outline_width: 7
     - type: image
       image: BloodSplatter
-      x: 41%
+      x: 39%
       y: 46%
       z: 6
   w_pop_hit26:
@@ -1376,13 +1421,13 @@ widgets:
       x: 49%
       y: 51%
       z: 5
-      font_size: 40
+      font_size: 60
       font_name: sawesome
       outline_color: black
       outline_width: 7
     - type: image
       image: BloodSplatter
-      x: 43%
+      x: 41%
       y: 51%
       z: 6
   w_pop_hit27:
@@ -1392,13 +1437,13 @@ widgets:
       x: 45%
       y: 54%
       z: 5
-      font_size: 40
+      font_size: 60
       font_name: sawesome
       outline_color: black
       outline_width: 7
     - type: image
       image: BloodSplatter
-      x: 39%
+      x: 37%
       y: 54%
       z: 6
   w_pop_hit28:
@@ -1408,13 +1453,13 @@ widgets:
       x: 55%
       y: 45%
       z: 5
-      font_size: 40
+      font_size: 60
       font_name: sawesome
       outline_color: black
       outline_width: 7
     - type: image
       image: BloodSplatter
-      x: 49%
+      x: 47%
       y: 45%
       z: 6
   w_pop_hit29:
@@ -1424,13 +1469,13 @@ widgets:
       x: 53%
       y: 56%
       z: 5
-      font_size: 40
+      font_size: 60
       font_name: sawesome
       outline_color: black
       outline_width: 7
     - type: image
       image: BloodSplatter
-      x: 47%
+      x: 45%
       y: 56%
       z: 6
   w_pop_hit30:
@@ -1440,13 +1485,13 @@ widgets:
       x: 48%
       y: 46%
       z: 5
-      font_size: 40
+      font_size: 60
       font_name: sawesome
       outline_color: black
       outline_width: 7
     - type: image
       image: BloodSplatter
-      x: 42%
+      x: 40%
       y: 46%
       z: 6
 
@@ -2268,10 +2313,36 @@ slides:
       video: extraball
       width: 1366
       height: 768
+  #cameraflash:
+  #  - type: video
+  #    video: cameraflashpool
+  #    height: 1366
+  #    width: 768
+  #    control_events: 
+  #    - event: sw_standup
+  #      action: play
   cameraflashvideo:
     widgets:
     - type: video
       video: CameraFlash
+      width: 1366
+      height: 768
+  cameraflashvideo2:
+    widgets:
+    - type: video
+      video: CameraFlash2
+      width: 1366
+      height: 768
+  cameraflashvideo3:
+    widgets:
+    - type: video
+      video: CameraFlash3
+      width: 1366
+      height: 768
+  cameraflashvideo4:
+    widgets:
+    - type: video
+      video: CameraFlash4
       width: 1366
       height: 768
   gameovervideo:

@@ -395,22 +395,22 @@ lights:
     tags: insert, arrow, led128p3, orbit
   l_left_standup_arrow:
     number: led128-3-6
-    tags: insert, arrow, led128p3
+    tags: insert, arrow, led128p3, standup
   l_inner_loop_arrow:
     number: led128-3-22
     tags: insert, arrow, led128p3, orbit
   l_left_standup_right_ramp_arrow:
     number: led128-2-17
-    tags: insert, arrow, led128p2
+    tags: insert, arrow, led128p2, standup
   l_right_standup_right_ramp_arrow:
     number: led128-2-19
-    tags: insert, arrow, led128p2
+    tags: insert, arrow, led128p2, standup
   l_right_loop_arrow:
     number: led128-2-20
     tags: insert, arrow, led128p2, orbit
   l_right_standup_arrow:
     number: led128-2-2
-    tags: insert, arrow, led128p2
+    tags: insert, arrow, led128p2, standup
   l_live_again:
     number: led128-4-12
     tags: insert, led128p4

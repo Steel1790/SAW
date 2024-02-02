@@ -1,0 +1,16 @@
+#show_version=6
+- time: 0
+  lights:
+    l_right_ramp_triangle2: off    
+    l_right_loop_arrow: (color1)
+- time: '+1'
+  lights:
+    l_right_loop_arrow: off    
+    l_right_ramp_triangle1: (color1)
+- time: '+1'
+  lights:
+    l_right_ramp_triangle1: off
+    l_right_ramp_triangle2: (color1)
+- time: '+1'
+  lights:
+    l_right_ramp_triangle2: off
