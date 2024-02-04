@@ -420,7 +420,7 @@
   shows: 
       starpost_cycle:
         show_tokens:
-          color1: zeptest
+          color1: zepstest
         speed: 20   
 
       skillshot_chase:

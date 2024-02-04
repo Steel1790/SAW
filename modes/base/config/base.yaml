@@ -70,6 +70,8 @@ event_player:
   logicblock_cnt_rightloop_rightramp_combo_counter_hit: stop_combo_widget|1.5s
   logicblock_cnt_leftloop_leftramp_leftramp_combo_counter_hit: stop_previous_combo_widget|1ms, stop_combo_widget|1.5s
   logicblock_cnt_leftloop_leftramp_innerloop_combo_counter_hit: stop_previous_combo_widget|1ms, stop_combo_widget|1.5s
+  minimode_ramps_complete: stop_items_widget|2.5s
+
 #videos:
 #    cameraflashvideo:
 #      width: 1366
@@ -956,6 +958,30 @@ show_player:
     rw_complete:
       loops: 2
       speed: 25    
+
+# disc shows
+  logicblock_cnt_negative_shot_counter_updated{value==1}:
+    disc_right_chase:
+      loops: -1
+      speed: 10
+      show_tokens:
+        color1: beartrap
+  logicblock_cnt_negative_shot_counter_updated{value==2}:
+    disc_middle_chase:
+      loops: -1
+      speed: 10
+      show_tokens:
+        color1: beartrap
+  logicblock_cnt_negative_shot_counter_updated{value==3}:
+    disc_left_chase:
+      loops: -1
+      speed: 10
+      show_tokens:
+        color1: beartrap
+  logicblock_cnt_negative_shot_counter_updated{value==0}:
+      disc_left_chase: stop
+      disc_middle_chase: stop
+      disc_right_chase: stop
       
 widgets:
   saw_letters:
@@ -1672,6 +1698,25 @@ widgets:
       x: 85%
       y: 18%
       z: 6
+# item collected
+  w_keys_collected:
+    - type: Text
+      text: Key Collected
+      color: white
+      x: 50%
+      y: 70%
+      z: 5
+      font_size: 85
+      font_name: Mustkill
+      outline_color: black
+      outline_width: 7
+    - type: image
+      image: IconKey
+      x: 30%
+      y: 70%
+      z: 6
+
+
 #combos
   w_leftloop_leftramp_combo:
     - type: Text
@@ -2665,7 +2710,16 @@ widget_player:
     w_leftloop_leftramp_combo:
       slide: base_slide_main
       action: remove 
-           
+
+  minimode_ramps_complete:
+    w_keys_collected:
+      slide: base_slide_main
+      action: add 
+  stop_items_widget:
+    w_keys_collected:
+      slide: base_slide_main
+      action: remove
+    
 slides:
   base_slide_main: 
     widgets:
