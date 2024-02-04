@@ -45,18 +45,18 @@
       #     color1: ffffff
                   
 
-- duration: 10s
-  shows: 
-      # starpost_pulse:
-      #   show_tokens:
-      #     color1: beartrap 
-      # starpost_heartbeat:
-      #   show_tokens:
-      #     color1: beartrap 
-      starpost_cycle:
-        show_tokens:
-          color1: beartrap 
-        speed: 20    
+# - duration: 10s
+#   shows: 
+#       # starpost_pulse:
+#       #   show_tokens:
+#       #     color1: beartrap 
+#       # starpost_heartbeat:
+#       #   show_tokens:
+#       #     color1: beartrap 
+#       starpost_cycle:
+#         show_tokens:
+#           color1: beartrap 
+#         speed: 20    
 
 
 - duration: .5s
@@ -67,8 +67,8 @@
           color1: ffffff
 
 #CHASE LIGHTS - COLOR 1 BEARTRAP
-# - duration: 3s
-#   shows:      
+- duration: 10s
+  shows:      
       # starpost_chase:
       #   show_tokens:
       #     led1: post_a
@@ -118,24 +118,28 @@
 #         speed: 8
 #         show_tokens:
 #           color1: beartrap
+      flash_token:
+        show_tokens:
+          led: l_mystery_scoop, l_mode_scoop, l_left_spotlight, l_right_spotlight, l_tape_spotlight, l_billy
+          color1: white
 
-#       disc_left_chase:
-#         # loops: 10
-#         speed: 10
-#         show_tokens:
-#           color1: beartrap
+      disc_left_chase:
+        # loops: 10
+        speed: 10
+        show_tokens:
+          color1: beartrap
 
-#       disc_middle_chase:
-#         # loops: 10
-#         speed: 13.3
-#         show_tokens:
-#           color1: beartrap
+      disc_middle_chase:
+        # loops: 10
+        speed: 13.3
+        show_tokens:
+          color1: beartrap
 
-#       disc_right_chase:
-#         # loops: 10
-#         speed: 10
-#         show_tokens:
-#           color1: beartrap
+      disc_right_chase:
+        # loops: 10
+        speed: 10
+        show_tokens:
+          color1: beartrap
 
 #       flasher_beartrap_chase:
 #         # loops: 10

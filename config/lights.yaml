@@ -675,14 +675,22 @@ lights:
   l_tape_speaker:
     number: led128-3-16
     tags: tape, toy, led128p3
+  # l_mode_scoop:
+  #   number: led128-3-5
+  #   tags: scoop, toy, led128p3
   l_mode_scoop:
-    number: led128-3-5
+    number: c_mode_scoop
+    platform: drivers
     tags: scoop, toy, led128p3
   l_mb_lock_scoop:
     number: led128-3-2
     tags: scoop, toy, led128p3
+  # l_mystery_scoop:
+  #   number: led128-3-3
+  #   tags: scoop, toy, led128p3
   l_mystery_scoop:
-    number: led128-3-3
+    number: c_mystery_scoop
+    platform: drivers
     tags: scoop, toy, led128p3
 
 
@@ -851,14 +859,24 @@ lights:
 
 # spotlights
   l_tape_spotlight:
-    number: led128-2-4
-    tags: spotlights, led128p2   
+    number: c_tape_spotlight
+    platform: drivers   
   l_left_spotlight:
     number: c_left_spotlight     # map this light to a driver
     platform: drivers
   l_right_spotlight:
-    number: led128-4-29
-    tags: spotlights, led128p4
+    number: c_right_spotlight
+    platform: drivers
+
+# billy
+  l_billy:
+    number: c_billy
+    platform: drivers
+
+# dome lights
+  l_domes:
+    number: c_domes
+    platform: drivers
 
 
 # cabinet lights

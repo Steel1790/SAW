@@ -330,8 +330,32 @@ coils:
     default_pulse_ms: 20
     default_pulse_power: 0.9
   c_left_spotlight:
+    number: 1616_2-4
+    default_hold_power: 0.2
+    allow_enable: true
+  c_right_spotlight:
     number: 1616_2-3
-    default_hold_power: 1.0
+    default_hold_power: 0.2
+    allow_enable: true
+  c_tape_spotlight:
+    number: 1616_2-5
+    default_hold_power: 0.2
+    allow_enable: true
+  c_domes:
+    number: 1616_2-6
+    default_hold_power: 0.2
+    allow_enable: true
+  c_billy:
+    number: 1616_2-7
+    default_hold_power: 0.2
+    allow_enable: true
+  c_mode_scoop:
+    number: 1616_1-10
+    default_hold_power: 0.2
+    allow_enable: true
+  c_mystery_scoop:
+    number: 1616_1-11
+    default_hold_power: 0.2
     allow_enable: true
 
 drop_targets:
