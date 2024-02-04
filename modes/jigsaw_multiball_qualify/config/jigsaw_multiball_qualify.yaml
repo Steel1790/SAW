@@ -37,13 +37,13 @@ shows:
       shows:
         flash_color:
           show_tokens:
-            color: color_jigsaw_mb
+            color: razorwire
             leds: (leds)
           speed: 4
   sh_jigsaw_mb_qualify_hit_qualified:
     - duration: -1
       lights:
-        (leds): color_jigsaw_mb
+        (leds): razorwire
   sh_jigsaw_mb_end:
     - duration: -1
       lights:

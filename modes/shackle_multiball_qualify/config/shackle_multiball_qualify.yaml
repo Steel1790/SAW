@@ -22,13 +22,13 @@ shows:
       shows:
         flash_color:
           show_tokens:
-            color: color_shackle_mb
+            color: razorwire
             leds: (leds)
           speed: 4
   sh_shackle_mb_qualify_hit_locked:
     - duration: -1
       lights:
-        (leds): color_shackle_mb
+        (leds): razorwire
   sh_shackle_mb_end:
     - duration: -1
       lights:
