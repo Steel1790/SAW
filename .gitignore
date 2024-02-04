@@ -21,3 +21,4 @@ logs/
 /.vs
 /.vscode
 /sawenv
+/data
