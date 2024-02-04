@@ -842,17 +842,21 @@ lights:
   l_tape_spotlight:
     number: c_tape_spotlight
     platform: drivers   
+    tags: spotlights
   l_left_spotlight:
     number: c_left_spotlight     # map this light to a driver
     platform: drivers
+    tags: spotlights
   l_right_spotlight:
     number: c_right_spotlight
     platform: drivers
+    tags: spotlights    
 
 # billy
   l_billy:
     number: c_billy
     platform: drivers
+    tags: billy
 
 # dome lights
   l_domes:
