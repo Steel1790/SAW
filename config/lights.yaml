@@ -1821,11 +1821,27 @@ lights:
     tags: starpost, post_l, led128p6
   l_post_l_8:
     number: led128-6-8
-    tags: starpost, post_l, led128p6      
+    tags: starpost, post_l, led128p6     
+
 show_player:
   init_phase_1:
     backbox_on:
       loops: -1
       speed: 1     
-
+  #init_phase_2:
+  #  backbox_on:
+  #    loops: -1
+  #    speed: 1  
+  #init_phase_3:
+  #  backbox_on:
+  #    loops: -1
+  #    speed: 1    
+  init_phase_4:
+    backbox_on:
+      loops: -1
+      speed: 1   
+  #init_phase_5:
+  #  backbox_on:
+  #    loops: -1
+  #    speed: 1 
 

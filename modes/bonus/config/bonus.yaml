@@ -106,7 +106,8 @@ widgets:
       y: 74%
       z: 1
     - type: text
-      text: "Syringes: (player|bonus_syringes)"
+      #text: "Syringes: (player|bonus_syringes)"
+      text: "Antidotes: (player|bonus_syringes)"
       font_name: Skilt Gothic W04 Thin
       font_size: 35
       bold: true      

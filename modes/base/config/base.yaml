@@ -64,7 +64,12 @@ event_player:
   logicblock_minimode_pops_counter_hit{count==28}: stop_pops_widget28|300ms
   logicblock_minimode_pops_counter_hit{count==29}: stop_pops_widget29|300ms
   logicblock_minimode_pops_counter_hit{count==30}: stop_pops_widget30|300ms
-
+  logicblock_cnt_leftloop_leftramp_combo_counter_hit: stop_combo_widget|1.5s
+  logicblock_cnt_rightramp_rightloop_combo_counter_hit: stop_combo_widget|1.5s
+  logicblock_cnt_leftloop_innerloop_combo_counter_hit: stop_combo_widget|1.5s
+  logicblock_cnt_rightloop_rightramp_combo_counter_hit: stop_combo_widget|1.5s
+  logicblock_cnt_leftloop_leftramp_leftramp_combo_counter_hit: stop_previous_combo_widget|1ms, stop_combo_widget|1.5s
+  logicblock_cnt_leftloop_leftramp_innerloop_combo_counter_hit: stop_previous_combo_widget|1ms, stop_combo_widget|1.5s
 #videos:
 #    cameraflashvideo:
 #      width: 1366
@@ -260,6 +265,25 @@ variable_player:
     score: 95000
   sw_loop:
     score: 115000
+# combo hits
+  logicblock_cnt_leftloop_leftramp_combo_counter_hit:
+    score: 2000000
+  logicblock_cnt_rightramp_rightloop_combo_counter_hit:
+    score: 2000000
+  logicblock_cnt_leftloop_innerloop_combo_counter_hit:
+    score: 2000000
+  logicblock_cnt_rightloop_rightramp_combo_counter_hit:
+    score: 2000000
+  logicblock_cnt_leftloop_leftramp_leftramp_combo_counter_hit:
+    score: 4000000
+  logicblock_cnt_leftloop_leftramp_innerloop_combo_counter_hit:
+    score: 4000000
+
+  saw_combo_collected:
+    combo_progress:
+      int: 1
+      action: set
+#minimode / jigsaw workshop
   minimode_pops_complete:
     #score: 3000000
     bonus_gears: 1
@@ -291,6 +315,7 @@ variable_player:
   minimode_drops_complete:
     #score: 3000000       
     bonus_syringes: 1
+    # called antidote
     value_type: int    
   multiplier_progress_counter_complete:
     bonus_multiplier:
@@ -467,7 +492,7 @@ counters:
     reset_on_complete: true
     disable_on_complete: false
     events_when_complete: multiplier_progress_counter_complete
-    count_events: upper_drop_target_hit
+    count_events: s_upper_bank_drop_target_opto_active
  
   cnt_negative_shot_counter:
     starting_count: 0
@@ -485,6 +510,63 @@ counters:
       - event: sg_saw_qualify_lit_hit
         action: subtract
         value: 1
+
+# combo track progress
+  cnt_leftloop_leftramp_combo_counter:
+    starting_count: 0
+    count_complete_value: 1
+    start_enabled: true
+    persist_state: true
+    reset_on_complete: false
+    events_when_complete: saw_combo_collected
+    count_events: ssh_leftloop_leftramp_combo_hit
+  cnt_rightramp_rightloop_combo_counter:
+    starting_count: 0
+    count_complete_value: 1
+    start_enabled: true
+    persist_state: true
+    reset_on_complete: false
+    events_when_complete: saw_combo_collected
+    count_events: ssh_rightramp_rightloop_combo_hit
+  cnt_leftloop_innerloop_combo_counter:
+    starting_count: 0
+    count_complete_value: 1
+    start_enabled: true
+    persist_state: true
+    reset_on_complete: false
+    events_when_complete: saw_combo_collected
+    count_events: ssh_leftloop_innerloop_combo_hit
+  cnt_rightloop_rightramp_combo_counter:
+    starting_count: 0
+    count_complete_value: 1
+    start_enabled: true
+    persist_state: true
+    reset_on_complete: false
+    events_when_complete: saw_combo_collected
+    count_events: ssh_rightloop_rightramp_combo_hit
+  cnt_leftloop_leftramp_leftramp_combo_counter:
+    starting_count: 0
+    count_complete_value: 1
+    start_enabled: true
+    persist_state: true
+    reset_on_complete: false
+    events_when_complete: saw_combo_collected
+    count_events: ssh_leftloop_leftramp_leftramp_combo_hit
+  cnt_leftloop_leftramp_innerloop_combo_counter:
+    starting_count: 0
+    count_complete_value: 1
+    start_enabled: true
+    persist_state: true
+    reset_on_complete: false
+    events_when_complete: saw_combo_collected
+    count_events: ssh_leftloop_leftramp_innerloop_combo_hit
+  cnt_combo_collected_counter:
+    starting_count: 0
+    count_complete_value: 6
+    start_enabled: true
+    persist_state: true
+    reset_on_complete: false
+    count_events: saw_combo_collected
 
 shows:
   minimode_pops_show_complete:    
@@ -570,32 +652,6 @@ shows:
     - duration: -1
       lights:
         (leds): red
-
-#multiplier progress
-  multiplier_progress_counter_show_step1:
-    - duration: -1
-      lights:
-        (leds): red
-  multiplier_progress_counter_show_step2:
-    - duration: -1
-      lights:
-        (leds): red  
-  multiplier_progress_counter_show_step3:
-    - duration: -1
-      lights:
-        (leds): red  
-  multiplier_progress_counter_show_step4:
-    - duration: -1
-      lights:
-        (leds): red  
-  multiplier_progress_counter_show_step5:
-    - duration: -1
-      lights:
-        (leds): red     
-  multiplier_progress_show_end:
-    - duration: -1
-      lights:
-        (leds): off
   
   ballsave:
     - duration: 0.5s
@@ -645,6 +701,15 @@ shows:
     - duration: -1
       lights:
         (leds): off
+#multiplier progress
+  sh_multiplier_off:   
+    - duration: 1s
+      lights:
+        (leds): off
+  sh_multiplier_on:    
+    - duration: 1s      
+      lights:
+        (leds): red
 
 # EK testing lightshow on shot action
 show_player:
@@ -861,38 +926,6 @@ show_player:
         leds: l_beartrap_mode
       loops: -1
       priority: 100
-
- # multiplier progress     
-  counter_multiplier_progress_counter_hit{hits==1}:
-    multiplier_progress_counter_show_step1:
-      show_tokens:
-        leds: l_top_drop1
-      loops: -1
-  counter_multiplier_progress_counter_hit{hits==2}:
-    multiplier_progress_counter_show_step2:
-      show_tokens:
-        leds: l_top_drop2
-      loops: -1
-  counter_multiplier_progress_counter_hit{hits==3}:
-    multiplier_progress_counter_show_step3:
-      show_tokens:
-        leds: l_top_drop3
-      loops: -1
-  counter_multiplier_progress_counter_hit{hits==4}:
-    multiplier_progress_counter_show_step4:
-      show_tokens:
-        leds: l_top_drop4
-      loops: -1
-  counter_multiplier_progress_counter_hit{hits==5}:
-    multiplier_progress_counter_show_step5:
-      show_tokens:
-        leds: l_top_drop5
-      loops: -1     
-  counter_multiplier_progress_counter_hit{hits==6}:
-    multiplier_progress_show_end:
-      show_tokens:
-        leds: l_top_drop1, l_top_drop2, l_top_drop3, l_top_drop4, l_top_drop5
-      loops: -1
          
 #  mode_base_started.1:       
 #   flash_token2:
@@ -1021,174 +1054,174 @@ widgets:
       x: 50%
       y: 50%
       z: 5
-      font_size: 60
+      font_size: 100
       font_name: sawesome
       outline_color: black
       outline_width: 7
     - type: image
       image: BloodSplatter
-      x: 42%
+      x: 36%
       y: 50%
       z: 6
   w_pop_hit2:
     - type: Text
       text: (player|pops)
       color: white
-      x: 44%
-      y: 56%
+      x: 25%
+      y: 66%
       z: 5
-      font_size: 60
+      font_size: 100
       font_name: sawesome
       outline_color: black
       outline_width: 7
     - type: image
       image: BloodSplatter
-      x: 36%
-      y: 56%
+      x: 11%
+      y: 66%
       z: 6
   w_pop_hit3:
     - type: Text
       text: (player|pops)
       color: white
-      x: 56%
-      y: 44%
+      x: 68%
+      y: 30%
       z: 5
-      font_size: 60
+      font_size: 100
       font_name: sawesome
       outline_color: black
       outline_width: 7
     - type: image
       image: BloodSplatter
-      x: 48%
-      y: 44%
+      x: 54%
+      y: 30%
       z: 6
   w_pop_hit4:
     - type: Text
       text: (player|pops)
       color: white
-      x: 56%
-      y: 56%
+      x: 39%
+      y: 71%
       z: 5
-      font_size: 60
+      font_size: 100
       font_name: sawesome
       outline_color: black
       outline_width: 7
     - type: image
       image: BloodSplatter
-      x: 48%
-      y: 56%
+      x: 25%
+      y: 71%
       z: 6
   w_pop_hit5:
     - type: Text
       text: (player|pops)
       color: white
-      x: 44%
-      y: 44%
+      x: 70%
+      y: 39%
       z: 5
-      font_size: 60
+      font_size: 100
       font_name: sawesome
       outline_color: black
       outline_width: 7
     - type: image
       image: BloodSplatter
-      x: 36%
-      y: 44%
+      x: 56%
+      y: 39%
       z: 6
   w_pop_hit6:
     - type: Text
       text: (player|pops)
       color: white
-      x: 48%
-      y: 52%
+      x: 43%
+      y: 54%
       z: 5
-      font_size: 60
+      font_size: 100
       font_name: sawesome
       outline_color: black
       outline_width: 7
     - type: image
       image: BloodSplatter
-      x: 40%
-      y: 52%
+      x: 29%
+      y: 54%
       z: 6
   w_pop_hit7:
     - type: Text
       text: (player|pops)
       color: white
-      x: 46%
-      y: 52%
+      x: 64%
+      y: 67%
       z: 5
-      font_size: 60
+      font_size: 100
       font_name: sawesome
       outline_color: black
       outline_width: 7
     - type: image
       image: BloodSplatter
-      x: 38%
-      y: 52%
+      x: 50%
+      y: 67%
       z: 6
   w_pop_hit8:
     - type: Text
       text: (player|pops)
       color: white
-      x: 52%
-      y: 47%
+      x: 59%
+      y: 46%
       z: 5
-      font_size: 60
+      font_size: 100
       font_name: sawesome
       outline_color: black
       outline_width: 7
     - type: image
       image: BloodSplatter
-      x: 52%
-      y: 47%
+      x: 45%
+      y: 46%
       z: 6
   w_pop_hit9:
     - type: Text
       text: (player|pops)
       color: white
-      x: 54%
-      y: 52%
+      x: 22%
+      y: 64%
       z: 5
-      font_size: 60
+      font_size: 100
       font_name: sawesome
       outline_color: black
       outline_width: 7
     - type: image
       image: BloodSplatter
-      x: 46%
-      y: 52%
+      x: 8%
+      y: 64%
       z: 6
   w_pop_hit10:
     - type: Text
       text: (player|pops)
       color: white
-      x: 49%
-      y: 47%
+      x: 34%
+      y: 37%
       z: 5
-      font_size: 60
+      font_size: 100
       font_name: sawesome
       outline_color: black
       outline_width: 7
     - type: image
       image: BloodSplatter
-      x: 41%
-      y: 47%
+      x: 20%
+      y: 37%
       z: 6
   w_pop_hit11:
     - type: Text
       text: (player|pops)
       color: white
-      x: 52%
-      y: 50%
+      x: 59%
+      y: 53%
       z: 5
-      font_size: 60
+      font_size: 100
       font_name: sawesome
       outline_color: black
       outline_width: 7
     - type: image
       image: BloodSplatter
-      x: 44%
-      y: 50%
+      x: 45%
+      y: 53%
       z: 6
   w_pop_hit12:
     - type: Text
@@ -1197,46 +1230,46 @@ widgets:
       x: 44%
       y: 54%
       z: 5
-      font_size: 60
+      font_size: 100
       font_name: sawesome
       outline_color: black
       outline_width: 7
     - type: image
       image: BloodSplatter
-      x: 36%
+      x: 30%
       y: 54%
       z: 6
   w_pop_hit13:
     - type: Text
       text: (player|pops)
       color: white
-      x: 55%
-      y: 47%
+      x: 66%
+      y: 31%
       z: 5
-      font_size: 60
+      font_size: 100
       font_name: sawesome
       outline_color: black
       outline_width: 7
     - type: image
       image: BloodSplatter
-      x: 47%
-      y: 47%
+      x: 52%
+      y: 31%
       z: 6
   w_pop_hit14:
     - type: Text
       text: (player|pops)
       color: white
-      x: 53%
-      y: 54%
+      x: 67%
+      y: 64%
       z: 5
-      font_size: 60
+      font_size: 100
       font_name: sawesome
       outline_color: black
       outline_width: 7
     - type: image
       image: BloodSplatter
-      x: 45%
-      y: 54%
+      x: 53%
+      y: 64%
       z: 6
   w_pop_hit15:
     - type: Text
@@ -1245,94 +1278,94 @@ widgets:
       x: 47%
       y: 52%
       z: 5
-      font_size: 60
+      font_size: 100
       font_name: sawesome
       outline_color: black
       outline_width: 7
     - type: image
       image: BloodSplatter
-      x: 39%
+      x: 33%
       y: 52%
       z: 6
   w_pop_hit16:
     - type: Text
       text: (player|pops)
       color: white
-      x: 51%
-      y: 48%
+      x: 25%
+      y: 68%
       z: 5
-      font_size: 60
+      font_size: 100
       font_name: sawesome
       outline_color: black
       outline_width: 7
     - type: image
       image: BloodSplatter
-      x: 43%
-      y: 48%
+      x: 11%
+      y: 68%
       z: 6
   w_pop_hit17:
     - type: Text
       text: (player|pops)
       color: white
-      x: 46%
+      x: 39%
       y: 54%
       z: 5
-      font_size: 60
+      font_size: 100
       font_name: sawesome
       outline_color: black
       outline_width: 7
     - type: image
       image: BloodSplatter
-      x: 38%
+      x: 25%
       y: 54%
       z: 6
   w_pop_hit18:
     - type: Text
       text: (player|pops)
       color: white
-      x: 53%
+      x: 57%
       y: 47%
       z: 5
-      font_size: 60
+      font_size: 100
       font_name: sawesome
       outline_color: black
       outline_width: 7
     - type: image
       image: BloodSplatter
-      x: 45%
+      x: 43%
       y: 47%
       z: 6
   w_pop_hit19:
     - type: Text
       text: (player|pops)
       color: white
-      x: 55%
-      y: 54%
+      x: 68%
+      y: 67%
       z: 5
-      font_size: 60
+      font_size: 100
       font_name: sawesome
       outline_color: black
       outline_width: 7
     - type: image
       image: BloodSplatter
-      x: 47%
-      y: 54%
+      x: 54%
+      y: 67%
       z: 6
   w_pop_hit20:
     - type: Text
       text: (player|pops)
       color: white
-      x: 46%
-      y: 45%
+      x: 27%
+      y: 31%
       z: 5
-      font_size: 60
+      font_size: 100
       font_name: sawesome
       outline_color: black
       outline_width: 7
     - type: image
       image: BloodSplatter
-      x: 38%
-      y: 45%
+      x: 13%
+      y: 31%
       z: 6
   w_pop_hit21:
     - type: Text
@@ -1341,160 +1374,496 @@ widgets:
       x: 51%
       y: 49%
       z: 5
-      font_size: 60
-      font_name: sawesome
-      outline_color: black
-      outline_width: 7
-    - type: image
-      image: BloodSplatter
-      x: 43%
-      y: 49%
-      z: 6
-  w_pop_hit22:
-    - type: Text
-      text: (player|pops)
-      color: white
-      x: 46%
-      y: 54%
-      z: 5
-      font_size: 60
-      font_name: sawesome
-      outline_color: black
-      outline_width: 7
-    - type: image
-      image: BloodSplatter
-      x: 38%
-      y: 54%
-      z: 6
-  w_pop_hit23:
-    - type: Text
-      text: (player|pops)
-      color: white
-      x: 53%
-      y: 47%
-      z: 5
-      font_size: 60
-      font_name: sawesome
-      outline_color: black
-      outline_width: 7
-    - type: image
-      image: BloodSplatter
-      x: 45%
-      y: 47%
-      z: 6
-  w_pop_hit24:
-    - type: Text
-      text: (player|pops)
-      color: white
-      x: 54%
-      y: 53%
-      z: 5
-      font_size: 60
-      font_name: sawesome
-      outline_color: black
-      outline_width: 7
-    - type: image
-      image: BloodSplatter
-      x: 46%
-      y: 53%
-      z: 6
-  w_pop_hit25:
-    - type: Text
-      text: (player|pops)
-      color: white
-      x: 47%
-      y: 46%
-      z: 5
-      font_size: 60
-      font_name: sawesome
-      outline_color: black
-      outline_width: 7
-    - type: image
-      image: BloodSplatter
-      x: 39%
-      y: 46%
-      z: 6
-  w_pop_hit26:
-    - type: Text
-      text: (player|pops)
-      color: white
-      x: 49%
-      y: 51%
-      z: 5
-      font_size: 60
-      font_name: sawesome
-      outline_color: black
-      outline_width: 7
-    - type: image
-      image: BloodSplatter
-      x: 41%
-      y: 51%
-      z: 6
-  w_pop_hit27:
-    - type: Text
-      text: (player|pops)
-      color: white
-      x: 45%
-      y: 54%
-      z: 5
-      font_size: 60
+      font_size: 100
       font_name: sawesome
       outline_color: black
       outline_width: 7
     - type: image
       image: BloodSplatter
       x: 37%
-      y: 54%
+      y: 49%
       z: 6
-  w_pop_hit28:
+  w_pop_hit22:
     - type: Text
       text: (player|pops)
       color: white
-      x: 55%
-      y: 45%
+      x: 66%
+      y: 66%
       z: 5
-      font_size: 60
+      font_size: 100
       font_name: sawesome
       outline_color: black
       outline_width: 7
     - type: image
       image: BloodSplatter
-      x: 47%
+      x: 52%
+      y: 66%
+      z: 6
+  w_pop_hit23:
+    - type: Text
+      text: (player|pops)
+      color: white
+      x: 29%
+      y: 61%
+      z: 5
+      font_size: 100
+      font_name: sawesome
+      outline_color: black
+      outline_width: 7
+    - type: image
+      image: BloodSplatter
+      x: 15%
+      y: 61%
+      z: 6
+  w_pop_hit24:
+    - type: Text
+      text: (player|pops)
+      color: white
+      x: 27%
+      y: 30%
+      z: 5
+      font_size: 100
+      font_name: sawesome
+      outline_color: black
+      outline_width: 7
+    - type: image
+      image: BloodSplatter
+      x: 13%
+      y: 30%
+      z: 6
+  w_pop_hit25:
+    - type: Text
+      text: (player|pops)
+      color: white
+      x: 63%
+      y: 64%
+      z: 5
+      font_size: 100
+      font_name: sawesome
+      outline_color: black
+      outline_width: 7
+    - type: image
+      image: BloodSplatter
+      x: 49%
+      y: 64%
+      z: 6
+  w_pop_hit26:
+    - type: Text
+      text: (player|pops)
+      color: white
+      x: 19%
+      y: 46%
+      z: 5
+      font_size: 100
+      font_name: sawesome
+      outline_color: black
+      outline_width: 7
+    - type: image
+      image: BloodSplatter
+      x: 5%
+      y: 46%
+      z: 6
+  w_pop_hit27:
+    - type: Text
+      text: (player|pops)
+      color: white
+      x: 67%
+      y: 70%
+      z: 5
+      font_size: 100
+      font_name: sawesome
+      outline_color: black
+      outline_width: 7
+    - type: image
+      image: BloodSplatter
+      x: 53%
+      y: 70%
+      z: 6
+  w_pop_hit28:
+    - type: Text
+      text: (player|pops)
+      color: white
+      x: 41%
+      y: 45%
+      z: 5
+      font_size: 100
+      font_name: sawesome
+      outline_color: black
+      outline_width: 7
+    - type: image
+      image: BloodSplatter
+      x: 27%
       y: 45%
       z: 6
   w_pop_hit29:
     - type: Text
       text: (player|pops)
       color: white
-      x: 53%
-      y: 56%
+      x: 24%
+      y: 30%
       z: 5
-      font_size: 60
+      font_size: 100
       font_name: sawesome
       outline_color: black
       outline_width: 7
     - type: image
       image: BloodSplatter
-      x: 45%
-      y: 56%
+      x: 10%
+      y: 30%
       z: 6
   w_pop_hit30:
     - type: Text
       text: (player|pops)
       color: white
-      x: 48%
-      y: 46%
+      x: 32%
+      y: 42%
       z: 5
-      font_size: 60
+      font_size: 100
       font_name: sawesome
       outline_color: black
       outline_width: 7
     - type: image
       image: BloodSplatter
-      x: 40%
-      y: 46%
+      x: 18%
+      y: 42%
       z: 6
-
+#progress
+  w_combo_progress:
+    - type: Text
+      text: (player|combo_progress) / 6 Combos
+      color: white
+      font_size: 25
+      font_name: Skilt Gothic W04 Thin
+      outline_color: black
+      outline_width: 5
+      x: 93%
+      y: 82%
+      z: 6  
+    - type: image
+      image: SurveillanceCameraTrackingIcon
+      x: 85%
+      y: 81%
+      z: 6
+  w_keys_progress:
+    - type: Text
+      text: (player|bonus_keys) Keys
+      color: white
+      font_size: 25
+      font_name: Skilt Gothic W04 Thin
+      outline_color: black
+      outline_width: 5
+      x: 90.4%
+      y: 74%
+      z: 6  
+    - type: image
+      image: IconKey
+      x: 85%
+      y: 74%
+      z: 6
+  w_handguns_progress:
+    - type: Text
+      text: (player|bonus_handguns) Handguns
+      color: white
+      font_size: 25
+      font_name: Skilt Gothic W04 Thin
+      outline_color: black
+      outline_width: 5
+      x: 92.5%
+      y: 66%
+      z: 6  
+    - type: image
+      image: IconHandgun
+      x: 85%
+      y: 66%
+      z: 6
+  w_hacksaws_progress:
+    - type: Text
+      text: (player|bonus_hacksaws) Hacksaws
+      color: white
+      font_size: 25
+      font_name: Skilt Gothic W04 Thin
+      outline_color: black
+      outline_width: 5
+      x: 92.3%
+      y: 58%
+      z: 6  
+    - type: image
+      image: IconHacksaw
+      x: 85%
+      y: 58%
+      z: 6
+  w_candles_progress:
+    - type: Text
+      text: (player|bonus_candles) Candles
+      color: white
+      font_size: 25
+      font_name: Skilt Gothic W04 Thin
+      outline_color: black
+      outline_width: 5
+      x: 91.6%
+      y: 50%
+      z: 6  
+    - type: image
+      image: IconCandle
+      x: 85%
+      y: 50%
+      z: 6
+  w_taperecorders_progress:
+    - type: Text
+      text: (player|bonus_taperecorders) Tape Recorders
+      color: white
+      font_size: 25
+      font_name: Skilt Gothic W04 Thin
+      outline_color: black
+      outline_width: 5
+      x: 94%
+      y: 42%
+      z: 6  
+    - type: image
+      image: IconTapeRecorder
+      x: 85%
+      y: 42%
+      z: 6
+  w_bathtubs_progress:
+    - type: Text
+      text: (player|bonus_bahhtubs) Bathtubs
+      color: white
+      font_size: 25
+      font_name: Skilt Gothic W04 Thin
+      outline_color: black
+      outline_width: 5
+      x: 92%
+      y: 34%
+      z: 6  
+    - type: image
+      image: IconBathtub
+      x: 85%
+      y: 34%
+      z: 6
+  w_syringes_progress:
+    - type: Text
+      text: (player|bonus_syringes) Antidotes
+      color: white
+      font_size: 25
+      font_name: Skilt Gothic W04 Thin
+      outline_color: black
+      outline_width: 5
+      x: 92.2%
+      y: 26%
+      z: 6  
+    - type: image
+      image: IconSyringe
+      x: 85%
+      y: 26%
+      z: 6
+  w_gears_progress:
+    - type: Text
+      text: (player|bonus_gears) Gears
+      color: white
+      font_size: 25
+      font_name: Skilt Gothic W04 Thin
+      outline_color: black
+      outline_width: 5
+      x: 91%
+      y: 18%
+      z: 6  
+    - type: image
+      image: IconGears
+      x: 85%
+      y: 18%
+      z: 6
+#combos
+  w_leftloop_leftramp_combo:
+    - type: Text
+      text: Surveillance Combo
+      color: white
+      x: 50%
+      y: 70%
+      z: 5
+      font_size: 80
+      font_name: Mustkill
+      outline_color: black
+      outline_width: 7
+    - type: Text
+      text: Collected!
+      color: white
+      x: 50%
+      y: 60%
+      z: 5
+      font_size: 80
+      font_name: Mustkill
+      outline_color: black
+      outline_width: 7
+    - type: Text
+      text: 2,000,000
+      color: white
+      x: 50%
+      y: 50%
+      z: 5
+      font_size: 80
+      font_name: sawesome
+      outline_color: black
+      outline_width: 7
+    - type: image
+      image: SurveillanceCamera
+      x: 20%
+      y: 60%
+      z: 4
+  w_rightramp_rightloop_combo:
+    - type: Text
+      text: Surveillance Combo
+      color: white
+      x: 50%
+      y: 70%
+      z: 5
+      font_size: 80
+      font_name: Mustkill
+      outline_color: black
+      outline_width: 7
+    - type: Text
+      text: Collected!
+      color: white
+      x: 50%
+      y: 60%
+      z: 5
+      font_size: 80
+      font_name: Mustkill
+      outline_color: black
+      outline_width: 7
+    - type: Text
+      text: 2,000,000
+      color: white
+      x: 50%
+      y: 50%
+      z: 5
+      font_size: 80
+      font_name: sawesome
+      outline_color: black
+      outline_width: 7
+  w_leftloop_innerloop_combo:
+    - type: Text
+      text: Surveillance Combo
+      color: white
+      x: 50%
+      y: 70%
+      z: 5
+      font_size: 80
+      font_name: Mustkill
+      outline_color: black
+      outline_width: 7
+    - type: Text
+      text: Collected!
+      color: white
+      x: 50%
+      y: 60%
+      z: 5
+      font_size: 80
+      font_name: Mustkill
+      outline_color: black
+      outline_width: 7
+    - type: Text
+      text: 2,000,000
+      color: white
+      x: 50%
+      y: 50%
+      z: 5
+      font_size: 80
+      font_name: sawesome
+      outline_color: black
+      outline_width: 7
+  w_rightloop_rightramp_combo:
+    - type: Text
+      text: Surveillance Combo
+      color: white
+      x: 50%
+      y: 70%
+      z: 5
+      font_size: 80
+      font_name: Mustkill
+      outline_color: black
+      outline_width: 7
+    - type: Text
+      text: Collected!
+      color: white
+      x: 50%
+      y: 60%
+      z: 5
+      font_size: 80
+      font_name: Mustkill
+      outline_color: black
+      outline_width: 7
+    - type: Text
+      text: 2,000,000
+      color: white
+      x: 50%
+      y: 50%
+      z: 5
+      font_size: 80
+      font_name: sawesome
+      outline_color: black
+      outline_width: 7
+  w_leftloop_leftramp_leftramp_combo:    
+    - type: Text
+      text: Surveillance Combo
+      color: white
+      x: 50%
+      y: 70%
+      z: 5
+      font_size: 80
+      font_name: Mustkill
+      outline_color: black
+      outline_width: 7
+    - type: Text
+      text: Collected!
+      color: white
+      x: 50%
+      y: 60%
+      z: 5
+      font_size: 80
+      font_name: Mustkill
+      outline_color: black
+      outline_width: 7
+    - type: Text
+      text: 4,000,000
+      color: white
+      x: 50%
+      y: 50%
+      z: 5
+      font_size: 80
+      font_name: sawesome
+      outline_color: black
+      outline_width: 7
+  w_leftloop_leftramp_innerloop_combo:
+    - type: Text
+      text: Surveillance Combo
+      color: white
+      x: 50%
+      y: 70%
+      z: 5
+      font_size: 80
+      font_name: Mustkill
+      outline_color: black
+      outline_width: 7
+    - type: Text
+      text: Collected!
+      color: white
+      x: 50%
+      y: 60%
+      z: 5
+      font_size: 80
+      font_name: Mustkill
+      outline_color: black
+      outline_width: 7
+    - type: Text
+      text: 4,000,000
+      color: white
+      x: 50%
+      y: 50%
+      z: 5
+      font_size: 80
+      font_name: sawesome
+      outline_color: black
+      outline_width: 7
 
 #player 1
   1PlayerGame: 
@@ -1772,6 +2141,33 @@ widget_player:
     saw_letters:
       slide: base_slide_main
       action: add
+    w_combo_progress:
+      slide: base_slide_main
+      action: add   
+    w_keys_progress:
+      slide: base_slide_main
+      action: add  
+    w_handguns_progress:
+      slide: base_slide_main
+      action: add  
+    w_hacksaws_progress:
+      slide: base_slide_main
+      action: add  
+    w_candles_progress:
+      slide: base_slide_main
+      action: add  
+    w_taperecorders_progress:
+      slide: base_slide_main
+      action: add  
+    w_bathtubs_progress:
+      slide: base_slide_main
+      action: add  
+    w_syringes_progress:
+      slide: base_slide_main
+      action: add  
+    w_gears_progress:
+      slide: base_slide_main
+      action: add  
   
 
   player_1_ball_started: 
@@ -2221,7 +2617,54 @@ widget_player:
     w_pop_hit30:
       slide: base_slide_main
       action: remove
-
+#combos
+  logicblock_cnt_leftloop_leftramp_combo_counter_hit:
+    w_leftloop_leftramp_combo:
+      slide: base_slide_main
+      action: add          
+  logicblock_cnt_rightramp_rightloop_combo_counter_hit:
+    w_rightramp_rightloop_combo:
+      slide: base_slide_main
+      action: add     
+  logicblock_cnt_leftloop_innerloop_combo_counter_hit:
+    w_leftloop_innerloop_combo:
+      slide: base_slide_main
+      action: add   
+  logicblock_cnt_rightloop_rightramp_combo_counter_hit:
+    w_rightloop_rightramp_combo:
+      slide: base_slide_main
+      action: add   
+  logicblock_cnt_leftloop_leftramp_leftramp_combo_counter_hit:
+    w_leftloop_leftramp_leftramp_combo:
+      slide: base_slide_main
+      action: add   
+  logicblock_cnt_leftloop_leftramp_innerloop_combo_counter_hit:
+    w_leftloop_leftramp_innerloop_combo:
+      slide: base_slide_main
+      action: add   
+  stop_combo_widget:
+    w_leftloop_leftramp_combo:
+      slide: base_slide_main
+      action: remove 
+    w_rightramp_rightloop_combo:
+      slide: base_slide_main
+      action: remove  
+    w_leftloop_innerloop_combo:
+      slide: base_slide_main
+      action: remove  
+    w_rightloop_rightramp_combo:
+      slide: base_slide_main
+      action: remove  
+    w_leftloop_leftramp_leftramp_combo:    
+      slide: base_slide_main
+      action: remove  
+    w_leftloop_leftramp_innerloop_combo:
+      slide: base_slide_main
+      action: remove  
+  stop_previous_combo_widget:
+    w_leftloop_leftramp_combo:
+      slide: base_slide_main
+      action: remove 
            
 slides:
   base_slide_main: 
@@ -2419,6 +2862,42 @@ shots:
     show_tokens:
       leds: l_right_escape
 
+  shot_multiplier1:
+    advance_events: logicblock_multiplier_progress_counter_hit{count==1}
+    reset_events: multiplier_progress_counter_complete
+    switches: s_upper_bank_drop_target_opto
+    profile: sp_multiplier
+    show_tokens:
+      leds: l_top_drop1
+  shot_multiplier2:
+    advance_events: logicblock_multiplier_progress_counter_hit{count==2}
+    reset_events: multiplier_progress_counter_complete
+    switches: s_upper_bank_drop_target_opto
+    profile: sp_multiplier
+    show_tokens:
+      leds: l_top_drop2
+  shot_multiplier3:
+    advance_events: logicblock_multiplier_progress_counter_hit{count==3}
+    reset_events: multiplier_progress_counter_complete
+    switches: s_upper_bank_drop_target_opto
+    profile: sp_multiplier
+    show_tokens:
+      leds: l_top_drop3
+  shot_multiplier4:
+    advance_events: logicblock_multiplier_progress_counter_hit{count==4}
+    reset_events: multiplier_progress_counter_complete
+    switches: s_upper_bank_drop_target_opto
+    profile: sp_multiplier
+    show_tokens:
+      leds: l_top_drop4
+  shot_multiplier5:
+    advance_events: logicblock_multiplier_progress_counter_hit{count==5}
+    reset_events: multiplier_progress_counter_complete
+    switches: s_upper_bank_drop_target_opto
+    profile: sp_multiplier
+    show_tokens:
+      leds: l_top_drop5
+
 shot_profiles:
   sp_outlane:
     advance_on_hit: false
@@ -2429,6 +2908,15 @@ shot_profiles:
         show: "sh_outlane_on"
       - name: ball_save_collected
         show: "off"   
+
+  sp_multiplier:
+    advance_on_hit: false
+    states:
+      - name: multiplier_off
+        show: "sh_multiplier_off"          
+      - name: collected
+        show: "sh_multiplier_on"              
+
 
 shot_groups:
   sg_outlane_ballsave:
