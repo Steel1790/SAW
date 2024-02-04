@@ -5,10 +5,8 @@
 - time: '+1'
   lights:
     l_gi_4: 0
-    l_mb_lock_scoop: (color1)
 - time: '+1'
   lights:
-    l_mb_lock_scoop: 0
     l_mystery_scoop: (color1)    
 - time: '+1'
   lights:

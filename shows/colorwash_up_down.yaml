@@ -167,7 +167,6 @@
   lights:
     l_jw_bathtub: (color1)
     l_jw_drill: (color1)
-    l_mb_lock_scoop: (color1)
     l_mystery_scoop: (color1)
     l_skill_shot1: (color1)
     
@@ -737,7 +736,6 @@
     l_jw_drill: '000000'
     l_jw_syringe: '000000'
     l_left_loop_arrow: '000000'
-    l_mb_lock_scoop: '000000'
     l_skill_shot1: '000000'
     
 - time: '+1'
