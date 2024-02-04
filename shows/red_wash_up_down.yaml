@@ -275,7 +275,6 @@
     l_left_ramp_triangle2: '820000'
     l_left_standup_right_ramp_arrow: '820000'
     l_top_bottom_bumper_12: '820000'
-    l_top_bottom_bumper_13: '820000'
     l_top_bottom_bumper_6: '820000'
     l_top_bottom_bumper_7: '820000'
     
@@ -284,8 +283,6 @@
     l_shotgun_flasher_4: '820000'
     l_shotgun_flasher_5: '820000'
     l_shotgun_flasher_6: '820000'
-    l_top_bottom_bumper_14: '820000'
-    l_top_bottom_bumper_15: '820000'
     l_top_bottom_bumper_3: '820000'
     l_top_bottom_bumper_4: '820000'
     l_top_bottom_bumper_5: '820000'
@@ -298,7 +295,6 @@
     l_shotgun_flasher_3: '820000'
     l_shotgun_flasher_7: '820000'
     l_top_bottom_bumper_1: '820000'
-    l_top_bottom_bumper_16: '820000'
     l_top_bottom_bumper_2: '820000'
     l_top_drop2: '820000'
     
@@ -545,7 +541,6 @@
     l_shotgun_flasher_3: '000000'
     l_shotgun_flasher_7: '000000'
     l_top_bottom_bumper_1: '000000'
-    l_top_bottom_bumper_16: '000000'
     l_top_bottom_bumper_2: '000000'
     l_top_drop2: '000000'
     
@@ -554,8 +549,6 @@
     l_shotgun_flasher_4: '000000'
     l_shotgun_flasher_5: '000000'
     l_shotgun_flasher_6: '000000'
-    l_top_bottom_bumper_14: '000000'
-    l_top_bottom_bumper_15: '000000'
     l_top_bottom_bumper_3: '000000'
     l_top_bottom_bumper_4: '000000'
     l_top_bottom_bumper_5: '000000'
@@ -566,7 +559,6 @@
     l_left_ramp_triangle2: '000000'
     l_left_standup_right_ramp_arrow: '000000'
     l_top_bottom_bumper_12: '000000'
-    l_top_bottom_bumper_13: '000000'
     l_top_bottom_bumper_6: '000000'
     l_top_bottom_bumper_7: '000000'
     

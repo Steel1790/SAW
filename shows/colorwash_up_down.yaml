@@ -255,8 +255,6 @@
     l_left_ramp_triangle1: (color1)
     l_right_ramp_triangle2: (color1)
     l_top_bottom_bumper_1: (color1)
-    l_top_bottom_bumper_15: (color1)
-    l_top_bottom_bumper_16: (color1)
     l_top_bottom_bumper_2: (color1)
     l_top_bottom_bumper_3: (color1)
     
@@ -266,8 +264,6 @@
     l_left_standup_right_ramp_arrow: (color1)
     l_shotgun_flasher_5: (color1)
     l_top_bottom_bumper_12: (color1)
-    l_top_bottom_bumper_13: (color1)
-    l_top_bottom_bumper_14: (color1)
     l_top_bottom_bumper_4: (color1)
     l_top_bottom_bumper_5: (color1)
     l_top_bottom_bumper_6: (color1)
@@ -644,7 +640,6 @@
     l_shotgun_flasher_6: '000000'
     l_top_bottom_bumper_11: '000000'
     l_top_bottom_bumper_12: '000000'
-    l_top_bottom_bumper_13: '000000'
     l_top_bottom_bumper_5: '000000'
     l_top_bottom_bumper_6: '000000'
     l_top_bottom_bumper_7: '000000'
@@ -654,9 +649,6 @@
   lights:
     l_left_ramp_triangle2: '000000'
     l_right_ramp_triangle2: '000000'
-    l_top_bottom_bumper_14: '000000'
-    l_top_bottom_bumper_15: '000000'
-    l_top_bottom_bumper_16: '000000'
     l_top_bottom_bumper_2: '000000'
     l_top_bottom_bumper_3: '000000'
     l_top_bottom_bumper_4: '000000'

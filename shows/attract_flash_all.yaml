@@ -1,9 +1,9 @@
 #show_version=6
 - time: 0
   lights:
-    # insert: 0
-    # jet_bumper: 0
-    # gi: (color1)
+    insert: 0
+    jet_bumper: 0
+    gi: (color1)
     # spotlights: 0
     # discs: 0
     flasher: 0
@@ -11,9 +11,9 @@
     # led128p4: 0
 - time: '+3'
   lights:
-    # insert: (color1)
-    # jet_bumper: (color1)
-    # gi: 0
+    insert: (color1)
+    jet_bumper: (color1)
+    gi: 0
     # spotlights: (color1)
     # discs: (color1)
     flasher: (color1)
