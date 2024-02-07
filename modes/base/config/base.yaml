@@ -71,6 +71,13 @@ event_player:
   logicblock_cnt_leftloop_leftramp_leftramp_combo_counter_hit: stop_previous_combo_widget|1ms, stop_combo_widget|1.5s
   logicblock_cnt_leftloop_leftramp_innerloop_combo_counter_hit: stop_previous_combo_widget|1ms, stop_combo_widget|1.5s
   minimode_ramps_complete: stop_items_widget|2.5s
+  minimode_pops_complete: stop_items_widget|2.5s
+  minimode_standups_complete: stop_items_widget|2.5s
+  minimode_scoops_complete: stop_items_widget|2.5s
+  minimode_inlanes_complete: stop_items_widget|2.5s
+  minimode_spinners_complete: stop_items_widget|2.5s
+  minimode_loops_complete: stop_items_widget|2.5s
+  minimode_drops_complete: stop_items_widget|2.5s
 
 #videos:
 #    cameraflashvideo:
@@ -414,7 +421,7 @@ counters:
     
   minimode_scoops_counter:
     starting_count: 0
-    count_complete_value: 10
+    count_complete_value: 6
     enable_events: 
     disable_events: 
     start_enabled: true
@@ -422,7 +429,7 @@ counters:
     reset_on_complete: true
     disable_on_complete: false    
     events_when_complete: minimode_scoops_complete 
-    count_events: logicblock_cnt_saw_qualify_complete
+    count_events: sw_right_scoop, sw_left_scoop
 
   minimode_inlanes_counter:
     starting_count: 0
@@ -989,7 +996,7 @@ widgets:
       text: Shoot WHITE ARROWS to spell SAW!
       color: white
       x: 50%
-      y: 92%
+      y: 95%
       z: 2
       font_size: 60
       font_name: Skilt Gothic W04 Thin
@@ -1011,7 +1018,7 @@ widgets:
       text: Get to the BATHROOM to Select A Mode!
       color: white
       x: 50%
-      y: 85%
+      y: 95%
       z: 2
       font_size: 60
       font_name: Skilt Gothic W04 Thin
@@ -1652,7 +1659,7 @@ widgets:
       z: 6
   w_bathtubs_progress:
     - type: Text
-      text: (player|bonus_bahhtubs) Bathtubs
+      text: (player|bonus_bathtubs) Bathtubs
       color: white
       font_size: 25
       font_name: Skilt Gothic W04 Thin
@@ -1711,8 +1718,120 @@ widgets:
       outline_color: black
       outline_width: 7
     - type: image
-      image: IconKey
-      x: 30%
+      image: IconKeyLarge
+      x: 28%
+      y: 70%
+      z: 6
+  w_handguns_collected:
+    - type: Text
+      text: Handgun Collected
+      color: white
+      x: 50%
+      y: 70%
+      z: 5
+      font_size: 85
+      font_name: Mustkill
+      outline_color: black
+      outline_width: 7
+    - type: image
+      image: IconHandgunLarge
+      x: 21%
+      y: 70%
+      z: 6
+  w_hacksaws_collected:
+    - type: Text
+      text: Hacksaw Collected
+      color: white
+      x: 50%
+      y: 70%
+      z: 5
+      font_size: 85
+      font_name: Mustkill
+      outline_color: black
+      outline_width: 7
+    - type: image
+      image: IconHacksawLarge
+      x: 24%
+      y: 70%
+      z: 6
+  w_candles_collected:
+    - type: Text
+      text: Candle Collected
+      color: white
+      x: 50%
+      y: 70%
+      z: 5
+      font_size: 85
+      font_name: Mustkill
+      outline_color: black
+      outline_width: 7
+    - type: image
+      image: IconCandleLarge
+      x: 26%
+      y: 70%
+      z: 6
+  w_taperecorders_collected:
+    - type: Text
+      text: Tape Recorder Collected
+      color: white
+      x: 50%
+      y: 70%
+      z: 5
+      font_size: 85
+      font_name: Mustkill
+      outline_color: black
+      outline_width: 7
+    - type: image
+      image: IconTapeRecorderLarge
+      x: 18%
+      y: 70%
+      z: 6
+  w_bathtubs_collected:
+    - type: Text
+      text: Bathtub Collected
+      color: white
+      x: 50%
+      y: 70%
+      z: 5
+      font_size: 85
+      font_name: Mustkill
+      outline_color: black
+      outline_width: 7
+    - type: image
+      image: IconBathtubLarge
+      x: 24%
+      y: 70%
+      z: 6
+  w_syringes_collected:
+    - type: Text
+      text: Antidote Collected
+      color: white
+      x: 50%
+      y: 70%
+      z: 5
+      font_size: 85
+      font_name: Mustkill
+      outline_color: black
+      outline_width: 7
+    - type: image
+      image: IconSyringeLarge
+      x: 24%
+      y: 70%
+      z: 6
+  w_gears_collected:
+    - type: Text
+      text: Gear Collected
+      color: white
+      x: 50%
+      y: 70%
+      z: 5
+      font_size: 85
+      font_name: Mustkill
+      outline_color: black
+      outline_width: 7
+    - type: image
+      image: IconGearsLarge
+      x: 28%
       y: 70%
       z: 6
 
@@ -2219,6 +2338,33 @@ widget_player:
     Player1Active:
       slide: base_slide_main
       action: add     
+    w_combo_progress:
+      slide: base_slide_main
+      action: add   
+    w_keys_progress:
+      slide: base_slide_main
+      action: add  
+    w_handguns_progress:
+      slide: base_slide_main
+      action: add  
+    w_hacksaws_progress:
+      slide: base_slide_main
+      action: add  
+    w_candles_progress:
+      slide: base_slide_main
+      action: add  
+    w_taperecorders_progress:
+      slide: base_slide_main
+      action: add  
+    w_bathtubs_progress:
+      slide: base_slide_main
+      action: add  
+    w_syringes_progress:
+      slide: base_slide_main
+      action: add  
+    w_gears_progress:
+      slide: base_slide_main
+      action: add  
     2PlayerGame:
       slide: base_slide_main
       action: add 
@@ -2232,6 +2378,7 @@ widget_player:
       slide: base_slide_main
       action: add
 
+
   player_2_ball_started: 
     1PlayerGame:
       slide: base_slide_main
@@ -2239,6 +2386,33 @@ widget_player:
     Player2Active:
       slide: base_slide_main
       action: add 
+    w_combo_progress:
+      slide: base_slide_main
+      action: add   
+    w_keys_progress:
+      slide: base_slide_main
+      action: add  
+    w_handguns_progress:
+      slide: base_slide_main
+      action: add  
+    w_hacksaws_progress:
+      slide: base_slide_main
+      action: add  
+    w_candles_progress:
+      slide: base_slide_main
+      action: add  
+    w_taperecorders_progress:
+      slide: base_slide_main
+      action: add  
+    w_bathtubs_progress:
+      slide: base_slide_main
+      action: add  
+    w_syringes_progress:
+      slide: base_slide_main
+      action: add  
+    w_gears_progress:
+      slide: base_slide_main
+      action: add  
     Player3Inactive:  
       slide: base_slide_main
       action: remove 
@@ -2268,6 +2442,33 @@ widget_player:
     Player3Active:  
       slide: base_slide_main
       action: add     
+    w_combo_progress:
+      slide: base_slide_main
+      action: add   
+    w_keys_progress:
+      slide: base_slide_main
+      action: add  
+    w_handguns_progress:
+      slide: base_slide_main
+      action: add  
+    w_hacksaws_progress:
+      slide: base_slide_main
+      action: add  
+    w_candles_progress:
+      slide: base_slide_main
+      action: add  
+    w_taperecorders_progress:
+      slide: base_slide_main
+      action: add  
+    w_bathtubs_progress:
+      slide: base_slide_main
+      action: add  
+    w_syringes_progress:
+      slide: base_slide_main
+      action: add  
+    w_gears_progress:
+      slide: base_slide_main
+      action: add  
     Player4Inactive:  
       slide: base_slide_main
       action: remove 
@@ -2297,6 +2498,33 @@ widget_player:
     Player4Active:  
       slide: base_slide_main
       action: add
+    w_combo_progress:
+      slide: base_slide_main
+      action: add   
+    w_keys_progress:
+      slide: base_slide_main
+      action: add  
+    w_handguns_progress:
+      slide: base_slide_main
+      action: add  
+    w_hacksaws_progress:
+      slide: base_slide_main
+      action: add  
+    w_candles_progress:
+      slide: base_slide_main
+      action: add  
+    w_taperecorders_progress:
+      slide: base_slide_main
+      action: add  
+    w_bathtubs_progress:
+      slide: base_slide_main
+      action: add  
+    w_syringes_progress:
+      slide: base_slide_main
+      action: add  
+    w_gears_progress:
+      slide: base_slide_main
+      action: add  
     saw_letters:
       slide: base_slide_main
       action: add
@@ -2710,51 +2938,112 @@ widget_player:
     w_leftloop_leftramp_combo:
       slide: base_slide_main
       action: remove 
-
+#jigsaw workshop icon pop up when collected
   minimode_ramps_complete:
     w_keys_collected:
+      slide: base_slide_main
+      action: add 
+  minimode_spinners_complete:
+    w_handguns_collected:
+      slide: base_slide_main
+      action: add 
+  minimode_loops_complete:
+    w_hacksaws_collected:
+      slide: base_slide_main
+      action: add 
+  minimode_standups_complete:
+    w_candles_collected:
+      slide: base_slide_main
+      action: add 
+  minimode_inlanes_complete:
+    w_taperecorders_collected:
+      slide: base_slide_main
+      action: add 
+  minimode_scoops_complete:
+    w_bathtubs_collected:
+      slide: base_slide_main
+      action: add 
+  minimode_drops_complete:
+    w_syringes_collected:
+      slide: base_slide_main
+      action: add 
+  minimode_pops_complete:
+    w_gears_collected:
       slide: base_slide_main
       action: add 
   stop_items_widget:
     w_keys_collected:
       slide: base_slide_main
       action: remove
+    w_handguns_collected:
+      slide: base_slide_main
+      action: remove
+    w_hacksaws_collected:
+      slide: base_slide_main
+      action: remove
+    w_candles_collected:
+      slide: base_slide_main
+      action: remove
+    w_taperecorders_collected:
+      slide: base_slide_main
+      action: remove
+    w_bathtubs_collected:
+      slide: base_slide_main
+      action: remove
+    w_syringes_collected:
+      slide: base_slide_main
+      action: remove
+    w_gears_collected:
+      slide: base_slide_main
+      action: remove
     
 slides:
   base_slide_main: 
     widgets:
-    - type: image
-      image: spiral
-      opacity: 0.7
-      y: top-20
-      x: right-165
-    - type: text
-      font_name: TrajanProRegular
-      text: PLAYER (player|number)
-      y: top-25
-      x: left+105
-      font_size: 38
-      color: C2E3E0
-      outline_color: black
-      outline_width: 2
-    - type: image
-      image: rustpipe2
-      y: top-44
-      x: left+95
-      opacity: 0.5 
+    #- type: image
+    #  image: spiral
+    #  opacity: 0.7
+    #  y: top-20
+    #  x: right-165
+    #- type: text
+    #  font_name: TrajanProRegular
+    #  text: PLAYER (player|number)
+    #  y: top-25
+    #  x: left+105
+    #  font_size: 38
+    #  color: C2E3E0
+    #  outline_color: black
+    #  outline_width: 2
+    #- type: image
+    #  image: rustpipe2
+    #  y: top-44
+    #  x: left+95
+    #  opacity: 0.5 
     - type: text
       text: BALL (player|ball)
       font_name: TrajanProRegular
-      y: top-25
-      x: right-70
+      y: top-106
+      x: 50%
       color: C2E3E0
-      font_size: 38    
+      font_size: 32 
       outline_color: black
       outline_width: 2
     - type: image
-      image: rustpipe2
-      y: top-44
-      x: right-90
+      image: PipeUpperBorderBallUI
+      y: top-110
+      x: 56.2%
+    - type: image
+      image: PipeUpperBorderUI
+      y: top-50
+      x: 50%
+    - type: image
+      image: PipeRightBorderUI
+      y: 41.5%
+      x: 93%
+    #- type: image
+    #  image: rustpipe2
+    #  y: top-44
+    #  x: right-90
     #  opacity: 0.5    
     #- type: image
     #  image: gordonsaw

@@ -1,0 +1,7 @@
+#config_version=6                 
+mode:
+  start_events: startmode_make_your_choice_hurryup
+  stop_events: mode_make_your_choice_hurryup_complete, stop_mode_make_your_choice_hurryup, ball_ended, ball_will_end
+  priority: 120
+
+  # to be added. Spell S-A-W (3 drop target bank) in sequential order to start this hurry up mode.
