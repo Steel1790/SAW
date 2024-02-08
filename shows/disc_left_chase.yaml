@@ -3,58 +3,6 @@
 #CHOOSE ONE OF THE TWO OPTIONS. COMMENT OUT THE OTHER.
 
 #OPTION 1 - CLOCKWISE CIRCLE REPEAT WITH FADE OUT
-# - time: 0
-#   lights:
-#     l_left_disc_1: (color1)
-# - time: '+1'
-#   lights:
-#     l_left_disc_2: (color1)
-# - time: '+1'
-#   lights:
-#     l_left_disc_3: (color1)
-# - time: '+1'
-#   lights:
-#     l_left_disc_4: (color1)
-# - time: '+1'
-#   lights:
-#     l_left_disc_5: (color1)
-# - time: '+1'
-#   lights:
-#     l_left_disc_6: (color1)
-# - time: '+1'
-#   lights:
-#     l_left_disc_7: (color1)
-# - time: '+1'
-#   lights:
-#     l_left_disc_8: (color1)
-# - time: '+1'
-#   lights:
-#     l_left_disc_9: (color1)
-# - time: '+1'
-#   lights:
-#     l_left_disc_10: (color1)
-# - time: '+1'
-#   lights:
-#     l_left_disc_11: (color1)
-# - time: '+1'
-#   lights:
-#     l_left_disc_12: (color1)
-# - time: '+1'
-#   lights:
-#     l_left_disc_1: off-f200ms
-#     l_left_disc_2: off-f200ms
-#     l_left_disc_3: off-f200ms
-#     l_left_disc_4: off-f200ms
-#     l_left_disc_5: off-f200ms
-#     l_left_disc_6: off-f200ms
-#     l_left_disc_7: off-f200ms
-#     l_left_disc_8: off-f200ms
-#     l_left_disc_9: off-f200ms
-#     l_left_disc_10: off-f200ms
-#     l_left_disc_11: off-f200ms
-#     l_left_disc_12: off-f200ms
-
-#OPTION 2  OVERLAPS BETWEEN INSERTS CLOCKWISE AND THEN COUNTERCLOCKWISE CYLON STYLE
 - time: 0
   lights:
     l_left_disc_1: (color1)
@@ -67,102 +15,154 @@
 - time: '+1'
   lights:
     l_left_disc_4: (color1)
-    l_left_disc_1: off
 - time: '+1'
   lights:
     l_left_disc_5: (color1)
-    l_left_disc_2: off
 - time: '+1'
   lights:
     l_left_disc_6: (color1)
-    l_left_disc_3: off
 - time: '+1'
   lights:
     l_left_disc_7: (color1)
-    l_left_disc_4: off
 - time: '+1'
   lights:
     l_left_disc_8: (color1)
-    l_left_disc_5: off    
 - time: '+1'
   lights:
     l_left_disc_9: (color1)
-    l_left_disc_6: off
-- time: '+1'
-  lights:
-    l_left_disc_10: (color1)
-    l_left_disc_7: off
-- time: '+1'
-  lights:
-    l_left_disc_11: (color1)
-    l_left_disc_8: off
-- time: '+1'
-  lights:
-    l_left_disc_12: (color1)
-    l_left_disc_9: off
-- time: '+1'
-  lights:
-    l_left_disc_10: off
-- time: '+1'
-  lights:
-    l_left_disc_11: off
-- time: '+1'
-  lights:
-    l_left_disc_12: off
-- time: '+1'
-  lights:
-    l_left_disc_12: (color1)
-- time: '+1'
-  lights:
-    l_left_disc_11: (color1)
 - time: '+1'
   lights:
     l_left_disc_10: (color1)
 - time: '+1'
   lights:
-    l_left_disc_9: (color1)
-    l_left_disc_12: off
+    l_left_disc_11: (color1)
 - time: '+1'
   lights:
-    l_left_disc_8: (color1)
-    l_left_disc_11: off
+    l_left_disc_12: (color1)
 - time: '+1'
   lights:
-    l_left_disc_7: (color1)
-    l_left_disc_10: off
-- time: '+1'
-  lights:
-    l_left_disc_6: (color1)
-    l_left_disc_9: off
-- time: '+1'
-  lights:
-    l_left_disc_5: (color1)
-    l_left_disc_8: off    
-- time: '+1'
-  lights:
-    l_left_disc_4: (color1)
-    l_left_disc_7: off
-- time: '+1'
-  lights:
-    l_left_disc_3: (color1)
-    l_left_disc_6: off
-- time: '+1'
-  lights:
-    l_left_disc_2: (color1)
-    l_left_disc_5: off
-- time: '+1'
-  lights:
-    l_left_disc_1: (color1)
-    l_left_disc_4: off
-- time: '+1'
-  lights:
-    l_left_disc_3: off
-- time: '+1'
-  lights:
-    l_left_disc_2: off
-- time: '+1'
-  lights:
-    l_left_disc_1: off
+    l_left_disc_1: off-f200ms
+    l_left_disc_2: off-f200ms
+    l_left_disc_3: off-f200ms
+    l_left_disc_4: off-f200ms
+    l_left_disc_5: off-f200ms
+    l_left_disc_6: off-f200ms
+    l_left_disc_7: off-f200ms
+    l_left_disc_8: off-f200ms
+    l_left_disc_9: off-f200ms
+    l_left_disc_10: off-f200ms
+    l_left_disc_11: off-f200ms
+    l_left_disc_12: off-f200ms
+
+#OPTION 2  OVERLAPS BETWEEN INSERTS CLOCKWISE AND THEN COUNTERCLOCKWISE CYLON STYLE
+# - time: 0
+#   lights:
+#     l_left_disc_1: (color1)
+# - time: '+1'
+#   lights:
+#     l_left_disc_2: (color1)
+# - time: '+1'
+#   lights:
+#     l_left_disc_3: (color1)
+# - time: '+1'
+#   lights:
+#     l_left_disc_4: (color1)
+#     l_left_disc_1: off
+# - time: '+1'
+#   lights:
+#     l_left_disc_5: (color1)
+#     l_left_disc_2: off
+# - time: '+1'
+#   lights:
+#     l_left_disc_6: (color1)
+#     l_left_disc_3: off
+# - time: '+1'
+#   lights:
+#     l_left_disc_7: (color1)
+#     l_left_disc_4: off
+# - time: '+1'
+#   lights:
+#     l_left_disc_8: (color1)
+#     l_left_disc_5: off    
+# - time: '+1'
+#   lights:
+#     l_left_disc_9: (color1)
+#     l_left_disc_6: off
+# - time: '+1'
+#   lights:
+#     l_left_disc_10: (color1)
+#     l_left_disc_7: off
+# - time: '+1'
+#   lights:
+#     l_left_disc_11: (color1)
+#     l_left_disc_8: off
+# - time: '+1'
+#   lights:
+#     l_left_disc_12: (color1)
+#     l_left_disc_9: off
+# - time: '+1'
+#   lights:
+#     l_left_disc_10: off
+# - time: '+1'
+#   lights:
+#     l_left_disc_11: off
+# - time: '+1'
+#   lights:
+#     l_left_disc_12: off
+# - time: '+1'
+#   lights:
+#     l_left_disc_12: (color1)
+# - time: '+1'
+#   lights:
+#     l_left_disc_11: (color1)
+# - time: '+1'
+#   lights:
+#     l_left_disc_10: (color1)
+# - time: '+1'
+#   lights:
+#     l_left_disc_9: (color1)
+#     l_left_disc_12: off
+# - time: '+1'
+#   lights:
+#     l_left_disc_8: (color1)
+#     l_left_disc_11: off
+# - time: '+1'
+#   lights:
+#     l_left_disc_7: (color1)
+#     l_left_disc_10: off
+# - time: '+1'
+#   lights:
+#     l_left_disc_6: (color1)
+#     l_left_disc_9: off
+# - time: '+1'
+#   lights:
+#     l_left_disc_5: (color1)
+#     l_left_disc_8: off    
+# - time: '+1'
+#   lights:
+#     l_left_disc_4: (color1)
+#     l_left_disc_7: off
+# - time: '+1'
+#   lights:
+#     l_left_disc_3: (color1)
+#     l_left_disc_6: off
+# - time: '+1'
+#   lights:
+#     l_left_disc_2: (color1)
+#     l_left_disc_5: off
+# - time: '+1'
+#   lights:
+#     l_left_disc_1: (color1)
+#     l_left_disc_4: off
+# - time: '+1'
+#   lights:
+#     l_left_disc_3: off
+# - time: '+1'
+#   lights:
+#     l_left_disc_2: off
+# - time: '+1'
+#   lights:
+#     l_left_disc_1: off
 
 
 

@@ -43,6 +43,9 @@
       flasher_zep_chase: stop
       attract_color_stacks: stop
       colorwash_up_down: stop
+      game_over: stop
+      hacksaw_mb_lock: stop
+      shackle_mb_lock: stop
       gi_flicker:
         loops: 6
         speed: 2
@@ -530,6 +533,7 @@
 # COLOR FADE FULL PLAYFIELD
 - duration: 10s
   shows: 
+      starpost_cycle: stop      
       skillshot_chase: stop
       top_drop_chase: stop
       mode_chase: stop
@@ -628,6 +632,27 @@
         speed: 30
         show_tokens:
           color1: shotgun
+
+# START TEST SECTION - SHOWS BELOW THIS LINE ARE TEST ONLY. NOT IN THE FINAL SHOW.
+- duration: 8s
+  shows: 
+      colorwash_up_down: stop    
+      game_over:
+        speed: 20
+        # show_tokens:
+        #   color1: shotgun
+
+- duration: 10s
+  shows: 
+      game_over: stop
+      hacksaw_mb_lock:
+        speed: 30       
+
+- duration: 10s
+  shows: 
+      hacksaw_mb_lock: stop
+      shackle_mb_lock:
+        speed: 30           
 
       # flammable_jelly_3:
       #   loops: 2

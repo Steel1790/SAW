@@ -1513,8 +1513,8 @@ switch:
     rotation: 340
     shape: SQUARE
     size: 0.05
-    x: 0.16516363636363635
-    y: 0.49421487603305786
+    x: 0.15295168374816984
+    y: 0.493411420204978
   s_left_slingshot:
     rotation: 70
     shape: RECTANGLE
@@ -1636,8 +1636,8 @@ switch:
     rotation: 350
     shape: SQUARE
     size: 0.05
-    x: 0.3095465268676278
-    y: 0.4849279161205766
+    x: 0.3192035139092241
+    y: 0.486090775988287
   s_right_slingshot:
     rotation: 290
     shape: RECTANGLE
