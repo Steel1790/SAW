@@ -965,6 +965,12 @@ show_player:
     rw_complete:
       loops: 2
       speed: 25    
+# end of ball 3
+  ball_will_end{current_player.ball==3}:
+    game_over:
+      loops: 0
+      speed: 10
+
 
 # disc shows
   logicblock_cnt_negative_shot_counter_updated{value==1}:

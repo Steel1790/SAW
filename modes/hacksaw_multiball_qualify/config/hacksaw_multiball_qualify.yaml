@@ -43,6 +43,9 @@ show_player:
     sh_hacksaw_mb_qualify_hit_locked:
       show_tokens:
         leds: l_hmb_lock_1
+    hacksaw_mb_lock:
+      loops: 0
+      speed: 30
   logicblock_acc_hacksaw_mb_qualify_complete{device.multiball_locks.mbl_hacksaw.locked_balls == 1}:
     sh_hacksaw_mb_qualify_hit_ready:
       show_tokens:
@@ -51,6 +54,9 @@ show_player:
     sh_hacksaw_mb_qualify_hit_locked:
       show_tokens:
         leds: l_hmb_lock_1, l_hmb_lock_2
+    hacksaw_mb_lock:
+      loops: 0
+      speed: 30
   logicblock_acc_hacksaw_mb_qualify_complete{device.multiball_locks.mbl_hacksaw.locked_balls == 2}:
     sh_hacksaw_mb_qualify_hit_ready:
       show_tokens:
@@ -59,6 +65,9 @@ show_player:
     sh_hacksaw_mb_qualify_hit_locked:
       show_tokens:
         leds: l_hmb_lock_1, l_hmb_lock_2, l_hmb_lock_3
+    hacksaw_mb_lock:
+      loops: 0
+      speed: 30
   multiball_mb_hacksaw_ended:
     sh_hacksaw_mb_end:
       show_tokens:
