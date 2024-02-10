@@ -1841,6 +1841,55 @@ widgets:
       y: 70%
       z: 6
 
+# mb progress
+  w_hacksaw_mb_progress:
+    - type: Text
+      text: (player|hacksaw_mb_lock_counter) /3 Hacksaw MB locked
+      color: white
+      font_size: 25
+      font_name: Skilt Gothic W04 Thin
+      outline_color: black
+      outline_width: 5
+      x: 13.5%
+      y: 34%
+      z: 6  
+    - type: image
+      image: HacksawMBIcon
+      x: 3%
+      y: 34%
+      z: 6
+  w_jigsaw_mb_progress:
+    - type: Text
+      text: (player|jigsaw_mb_lock_counter) /3 Jigsaw MB locked
+      color: white
+      font_size: 25
+      font_name: Skilt Gothic W04 Thin
+      outline_color: black
+      outline_width: 5
+      x: 12.5%
+      y: 26%
+      z: 6  
+    - type: image
+      image: JigsawMBIcon
+      x: 3%
+      y: 26%
+      z: 6
+  w_shackle_mb_progress:
+    - type: Text
+      text: (player|shackle_mb_lock_counter) /3 Shackle MB locked
+      color: white
+      font_size: 25
+      font_name: Skilt Gothic W04 Thin
+      outline_color: black
+      outline_width: 5
+      x: 13%
+      y: 18%
+      z: 6  
+    - type: image
+      image: ShackleMBIcon
+      x: 3%
+      y: 18%
+      z: 6
 
 #combos
   w_leftloop_leftramp_combo:
@@ -2338,7 +2387,15 @@ widget_player:
     w_gears_progress:
       slide: base_slide_main
       action: add  
-  
+    w_hacksaw_mb_progress:
+      slide: base_slide_main
+      action: add 
+    w_jigsaw_mb_progress:
+      slide: base_slide_main
+      action: add 
+    w_shackle_mb_progress:
+      slide: base_slide_main
+      action: add   
 
   player_1_ball_started: 
     Player1Active:
@@ -3046,6 +3103,10 @@ slides:
       image: PipeRightBorderUI
       y: 41.5%
       x: 93%
+    - type: image
+      image: PipeLeftBorderUI
+      y: 41.5%
+      x: 12%
     #- type: image
     #  image: rustpipe2
     #  y: top-44

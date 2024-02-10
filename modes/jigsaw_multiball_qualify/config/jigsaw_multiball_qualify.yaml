@@ -25,6 +25,16 @@ counters:
     count_events: logicblock_seq_jigsaw_mb_qualify_complete
     events_when_complete: logicblock_jigsaw_multiball_qualify_complete
 
+variable_player:
+  logicblock_cnt_jigsaw_mb_qualify_hit:
+    jigsaw_mb_lock_counter:
+      action: set
+      int: (count)
+  logicblock_jigsaw_multiball_qualify_complete:
+    jigsaw_mb_lock_counter:
+      action: set
+      int: 0
+
 event_player:
   logicblock_seq_jigsaw_mb_qualify_hit{step==1}:
     - e_jigsaw_mb_qualify_hit_one
