@@ -394,6 +394,16 @@ variable_player:
       int: current_player.score
       action: set   
 
+sequences:
+  make_your_choice_qualify:
+    events:
+      - drop_target_dt_lower_drop3_down
+      - drop_target_dt_lower_drop2_down
+      - drop_target_dt_lower_drop1_down
+    reset_on_complete: true
+    disable_on_complete: false    
+    events_when_complete: startmode_make_your_choice_hurryup
+
 counters:
   minimode_pops_counter:
     starting_count: 0
