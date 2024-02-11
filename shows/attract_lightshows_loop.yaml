@@ -7,6 +7,10 @@
       backbox_on:
        loops: -1
        speed: 1
+      topper_on:
+       loops: -1
+       speed: 1
+
       # flash_token:
       #   show_tokens:
       #     led: l_left_spotlight
@@ -20,6 +24,7 @@
 - duration: 5s
   shows: 
       gi_on: stop
+      topper_on: stop
       skillshot_chase: stop
       top_drop_chase: stop
       mode_chase: stop
@@ -46,6 +51,7 @@
       game_over: stop
       hacksaw_mb_lock: stop
       shackle_mb_lock: stop
+      topper_chase: stop  
       gi_flicker:
         loops: 6
         speed: 2
@@ -192,6 +198,12 @@
           color2: drillchair
           color3: beartrap           
 
+      topper_chase:
+        # loops: 10
+        speed: 6
+        show_tokens:
+          color1: beartrap  
+
 #CHASE LIGHTS - COLOR 2 DRILLCHAIR
 - duration: 5s
   shows:      
@@ -304,6 +316,11 @@
           color2: beartrap
           color3: drillchair          
 
+      topper_chase:
+        # loops: 10
+        speed: 6
+        show_tokens:
+          color1: drillchair 
 
 #CHASE LIGHTS - COLOR 3 JELLY
 - duration: 5s
@@ -417,6 +434,11 @@
           color2: drillchair
           color3: jelly 
 
+      topper_chase:
+        # loops: 10
+        speed: 6
+        show_tokens:
+          color1: jelly
 
 #CHASE LIGHTS - COLOR 3 ZEPTEST
 - duration: 3s
@@ -530,6 +552,12 @@
           color2: drillchair
           color3: jelly 
 
+      topper_chase:
+        # loops: 10
+        speed: 6
+        show_tokens:
+          color1: zepstest         
+
 # COLOR FADE FULL PLAYFIELD
 - duration: 10s
   shows: 
@@ -550,7 +578,8 @@
       flasher_drill_chase: stop
       flasher_razorwire_chase: stop
       flasher_shotgun_chase: stop
-      flasher_zep_chase: stop    
+      flasher_zep_chase: stop 
+      topper_chase: stop   
       colorfade_playfield:
         speed: 8
         show_tokens:
@@ -605,6 +634,10 @@
         show_tokens:
           color1: zepstest
 
+      topper_pulse:
+        show_tokens:
+          color1: beartrap 
+
 - duration: 4s
   shows: 
       colorwash_up_down:
@@ -646,13 +679,24 @@
   shows: 
       game_over: stop
       hacksaw_mb_lock:
-        speed: 30       
+        speed: 30           
+      topper_heartbeat:
+        show_tokens:
+          color1: beartrap 
 
 - duration: 10s
   shows: 
       hacksaw_mb_lock: stop
       shackle_mb_lock:
-        speed: 30           
+        speed: 30    
+
+# Topper Solenoid Test
+# - duration: 5s
+#   shows: 
+#       flash_token:
+#         show_tokens:
+#           led: l_topper
+#           color1: white                  
 
       # flammable_jelly_3:
       #   loops: 2

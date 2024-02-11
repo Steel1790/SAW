@@ -1,0 +1,99 @@
+#show_version=6
+
+#CHOOSE ONE OF THE TWO OPTIONS. COMMENT OUT THE OTHER.
+
+#OPTION 1 - LEFT TO RIGHT REPEAT
+# - time: 0
+#   lights:
+#     l_topper_1: (color1)
+# - time: '+1'
+#   lights:
+#     l_topper_2: (color1)
+# - time: '+1'
+#   lights:
+#     l_topper_3: (color1)
+# - time: '+1'
+#   lights:
+#     l_topper_4: (color1)
+# - time: '+1'
+#   lights:
+#     l_topper_5: (color1)
+# - time: '+1'
+#   lights:
+#     l_topper_6: (color1)
+# - time: '+1'
+#   lights:
+#     l_topper_1: off
+#     l_topper_2: off
+#     l_topper_3: off
+#     l_topper_4: off
+#     l_topper_5: off
+#     l_topper_6: off
+
+
+#OPTION 2  OVERLAPS BETWEEN INSERTS LEFT TO RIGHT AND THEN RIGHT TO LEFT CYLON STYLE
+- time: 0
+  lights:
+    l_topper_1: (color1)
+- time: '+1'
+  lights:
+    l_topper_2: (color1)
+- time: '+1'
+  lights:
+    l_topper_3: (color1)
+- time: '+1'
+  lights:
+    l_topper_4: (color1)
+    l_topper_1: off
+- time: '+1'
+  lights:
+    l_topper_5: (color1)
+    l_topper_2: off
+- time: '+1'
+  lights:
+    l_topper_6: (color1)
+    l_topper_3: off
+- time: '+1'
+  lights:
+    l_topper_4: off
+- time: '+1'
+  lights:
+    l_topper_5: off
+- time: '+1'
+  lights:
+    l_topper_6: off
+- time: '+1'
+  lights:
+    l_topper_6: (color1)
+- time: '+1'
+  lights:
+    l_topper_5: (color1)
+- time: '+1'
+  lights:
+    l_topper_4: (color1)
+- time: '+1'
+  lights:
+    l_topper_3: (color1)
+    l_topper_6: off
+- time: '+1'
+  lights:
+    l_topper_2: (color1)
+    l_topper_5: off
+- time: '+1'
+  lights:
+    l_topper_1: (color1)
+    l_topper_4: off
+- time: '+1'
+  lights:
+     l_topper_3: off
+- time: '+1'
+  lights:
+    l_topper_2: off
+- time: '+1'
+  lights:
+    l_topper_1: off
+
+
+
+
+

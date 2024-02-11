@@ -9,7 +9,7 @@ named_colors:
   zepstest: B200ED
   zeptest: B200ED
   beartrap: ff0800
-  shotgun: 0981D1
+  shotgun: "0981D1"
   jelly: FCE205
   color_jigsaw_mb: FFA500
   color_hacksaw_mb: 2db83d
@@ -854,10 +854,16 @@ lights:
     tags: spotlights    
 
 # billy
-  l_billy:
+  act_billy:
     number: c_billy
     platform: drivers
     tags: billy
+
+# topper
+  act_topper:
+    number: c_topper
+    platform: drivers
+    tags: topper
 
 # dome lights
   l_domes:
@@ -906,29 +912,71 @@ lights:
 
 # topper
   l_topper_1:
-    number: ledneuron-1-12
-    tags: topper
+    channels:
+      red:
+        number: ledneuron-2-1-0
+      green:
+        number: ledneuron-2-1-1
+      blue:
+        number: ledneuron-2-1-2
+      white:
+        number: ledneuron-2-2-1
+    tags: topper, ledneuronp2
   l_topper_2:
-    number: ledneuron-1-13
-    tags: topper
+    channels:
+      red:
+        number: ledneuron-2-2-2
+      green:
+        number: ledneuron-2-2-0
+      blue:
+        number: ledneuron-2-3-1
+      white:
+        number: ledneuron-2-3-0
+    tags: topper, ledneuronp2
   l_topper_3:
-    number: ledneuron-1-14
-    tags: topper
+    channels:
+      red:
+        number: ledneuron-2-4-1
+      green:
+        number: ledneuron-2-3-2
+      blue:
+        number: ledneuron-2-4-0
+      white:
+        number: ledneuron-2-4-2
+    tags: topper, ledneuronp2
   l_topper_4:
-    number: ledneuron-1-15
-    tags: topper
+    channels:
+      red:
+        number: ledneuron-2-5-0
+      green:
+        number: ledneuron-2-5-1
+      blue:
+        number: ledneuron-2-5-2
+      white:
+        number: ledneuron-2-6-1
+    tags: topper, ledneuronp2
   l_topper_5:
-    number: ledneuron-1-16
-    tags: topper
+    channels:
+      red:
+        number: ledneuron-2-6-2
+      green:
+        number: ledneuron-2-6-0
+      blue:
+        number: ledneuron-2-7-1
+      white:
+        number: ledneuron-2-7-0
+    tags: topper, ledneuronp2
   l_topper_6:
-    number: ledneuron-1-17
-    tags: topper
-  l_topper_7:
-    number: ledneuron-1-18
-    tags: topper
-  l_topper_8:
-    number: ledneuron-1-19
-    tags: topper
+    channels:
+      red:
+        number: ledneuron-2-8-1
+      green:
+        number: ledneuron-2-7-2
+      blue:
+        number: ledneuron-2-8-0
+      white:
+        number: ledneuron-2-8-2
+    tags: topper, ledneuronp2
 
   l_left_disc:
       number: c_left_spin_disc
@@ -942,15 +990,6 @@ lights:
 
 
 # backbox
-  # l_backbox_1:
-  #   start_channel: ledneuron-2-1-0
-  #   type: rgbw
-  #   tags: backbox, ledneuronp2
-  # l_backbox_2:
-  #   start_channel: ledneuron-2-2-1
-  #   type: rgbw
-  #   tags: backbox, ledneuronp2
-
   l_backbox_1:
     channels:
       red:
@@ -961,7 +1000,7 @@ lights:
         number: ledneuron-4-1-2
       white:
         number: ledneuron-4-2-1
-    tags: backbox, ledneuronp2
+    tags: backbox, ledneuronp4
 
   l_backbox_2:
     channels:
@@ -973,7 +1012,7 @@ lights:
         number: ledneuron-4-3-1
       white:
         number: ledneuron-4-3-0
-    tags: backbox, ledneuronp2
+    tags: backbox, ledneuronp4
 
   l_backbox_3:
     channels:
@@ -985,7 +1024,7 @@ lights:
         number: ledneuron-4-4-0
       white:
         number: ledneuron-4-4-2
-    tags: backbox, ledneuronp2
+    tags: backbox, ledneuronp4
 
   l_backbox_4:
     channels:
@@ -997,7 +1036,7 @@ lights:
         number: ledneuron-4-5-2
       white:
         number: ledneuron-4-6-1
-    tags: backbox, ledneuronp2
+    tags: backbox, ledneuronp4
 
   l_backbox_5:
     channels:
@@ -1009,7 +1048,7 @@ lights:
         number: ledneuron-4-7-1
       white:
         number: ledneuron-4-7-0
-    tags: backbox, ledneuronp2
+    tags: backbox, ledneuronp4
 
   l_backbox_6:
     channels:
@@ -1021,7 +1060,7 @@ lights:
         number: ledneuron-4-8-0
       white:
         number: ledneuron-4-8-2
-    tags: backbox, ledneuronp2
+    tags: backbox, ledneuronp4
 
   l_backbox_7:
     channels:
@@ -1033,7 +1072,7 @@ lights:
         number: ledneuron-4-9-2
       white:
         number: ledneuron-4-10-1
-    tags: backbox, ledneuronp2
+    tags: backbox, ledneuronp4
 
   l_backbox_8:
     channels:
@@ -1045,7 +1084,7 @@ lights:
         number: ledneuron-4-11-1
       white:
         number: ledneuron-4-11-0
-    tags: backbox, ledneuronp2
+    tags: backbox, ledneuronp4
 
   l_backbox_9:
     channels:
@@ -1057,7 +1096,7 @@ lights:
         number: ledneuron-4-12-0
       white:
         number: ledneuron-4-12-2
-    tags: backbox, ledneuronp2   
+    tags: backbox, ledneuronp4   
 
   l_backbox_10:
     channels:
@@ -1069,7 +1108,7 @@ lights:
         number: ledneuron-4-13-2
       white:
         number: ledneuron-4-14-1
-    tags: backbox, ledneuronp2
+    tags: backbox, ledneuronp4
 
   l_backbox_11:
     channels:
@@ -1081,7 +1120,7 @@ lights:
         number: ledneuron-4-15-1
       white:
         number: ledneuron-4-15-0
-    tags: backbox, ledneuronp2
+    tags: backbox, ledneuronp4
 
   l_backbox_12:
     channels:
@@ -1093,7 +1132,7 @@ lights:
         number: ledneuron-4-16-0
       white:
         number: ledneuron-4-16-2
-    tags: backbox, ledneuronp2 
+    tags: backbox, ledneuronp4 
 
   l_backbox_13:
     channels:
@@ -1105,7 +1144,7 @@ lights:
         number: ledneuron-4-17-2
       white:
         number: ledneuron-4-18-1
-    tags: backbox, ledneuronp2
+    tags: backbox, ledneuronp4
 
   l_backbox_14:
     channels:
@@ -1117,7 +1156,7 @@ lights:
         number: ledneuron-4-19-1
       white:
         number: ledneuron-4-19-0
-    tags: backbox, ledneuronp2
+    tags: backbox, ledneuronp4
 
   l_backbox_15:
     channels:
@@ -1129,7 +1168,7 @@ lights:
         number: ledneuron-4-20-0
       white:
         number: ledneuron-4-20-2
-    tags: backbox, ledneuronp2 
+    tags: backbox, ledneuronp4 
 
   l_backbox_16:
     channels:
@@ -1141,7 +1180,7 @@ lights:
         number: ledneuron-4-21-2
       white:
         number: ledneuron-4-22-1
-    tags: backbox, ledneuronp2
+    tags: backbox, ledneuronp4
 
   l_backbox_17:
     channels:
@@ -1153,7 +1192,7 @@ lights:
         number: ledneuron-4-23-1
       white:
         number: ledneuron-4-23-0
-    tags: backbox, ledneuronp2
+    tags: backbox, ledneuronp4
 
   l_backbox_18:
     channels:
@@ -1165,7 +1204,7 @@ lights:
         number: ledneuron-4-24-0
       white:
         number: ledneuron-4-24-2
-    tags: backbox, ledneuronp2 
+    tags: backbox, ledneuronp4 
 
   l_backbox_19:
     channels:
@@ -1177,7 +1216,7 @@ lights:
         number: ledneuron-4-25-2
       white:
         number: ledneuron-4-26-1
-    tags: backbox, ledneuronp2
+    tags: backbox, ledneuronp4
 
   l_backbox_20:
     channels:
@@ -1189,7 +1228,7 @@ lights:
         number: ledneuron-4-27-1
       white:
         number: ledneuron-4-27-0
-    tags: backbox, ledneuronp2
+    tags: backbox, ledneuronp4
 
   l_backbox_21:
     channels:
@@ -1201,7 +1240,7 @@ lights:
         number: ledneuron-4-28-0
       white:
         number: ledneuron-4-28-2
-    tags: backbox, ledneuronp2 
+    tags: backbox, ledneuronp4 
 
   l_backbox_22:
     channels:
@@ -1213,7 +1252,7 @@ lights:
         number: ledneuron-4-29-2
       white:
         number: ledneuron-4-30-1
-    tags: backbox, ledneuronp2
+    tags: backbox, ledneuronp4
 
   l_backbox_23:
     channels:
@@ -1225,7 +1264,7 @@ lights:
         number: ledneuron-4-31-1
       white:
         number: ledneuron-4-31-0
-    tags: backbox, ledneuronp2
+    tags: backbox, ledneuronp4
 
   l_backbox_24:
     channels:
@@ -1237,7 +1276,7 @@ lights:
         number: ledneuron-4-32-0
       white:
         number: ledneuron-4-32-2
-    tags: backbox, ledneuronp2 
+    tags: backbox, ledneuronp4 
 
   l_backbox_25:
     channels:
@@ -1249,7 +1288,7 @@ lights:
         number: ledneuron-3-1-2
       white:
         number: ledneuron-3-2-1
-    tags: backbox, ledneuronp2
+    tags: backbox, ledneuronp3
 
   l_backbox_26:
     channels:
@@ -1261,7 +1300,7 @@ lights:
         number: ledneuron-3-3-1
       white:
         number: ledneuron-3-3-0
-    tags: backbox, ledneuronp2
+    tags: backbox, ledneuronp3
 
   l_backbox_27:
     channels:
@@ -1273,7 +1312,7 @@ lights:
         number: ledneuron-3-4-0
       white:
         number: ledneuron-3-4-2
-    tags: backbox, ledneuronp2
+    tags: backbox, ledneuronp3
 
   l_backbox_28:
     channels:
@@ -1285,7 +1324,7 @@ lights:
         number: ledneuron-3-5-2
       white:
         number: ledneuron-3-6-1
-    tags: backbox, ledneuronp2
+    tags: backbox, ledneuronp3
 
   l_backbox_29:
     channels:
@@ -1297,7 +1336,7 @@ lights:
         number: ledneuron-3-7-1
       white:
         number: ledneuron-3-7-0
-    tags: backbox, ledneuronp2
+    tags: backbox, ledneuronp3
 
   l_backbox_30:
     channels:
@@ -1309,7 +1348,7 @@ lights:
         number: ledneuron-3-8-0
       white:
         number: ledneuron-3-8-2
-    tags: backbox, ledneuronp2
+    tags: backbox, ledneuronp3
 
   l_backbox_31:
     channels:
@@ -1321,7 +1360,7 @@ lights:
         number: ledneuron-3-9-2
       white:
         number: ledneuron-3-10-1
-    tags: backbox, ledneuronp2
+    tags: backbox, ledneuronp3
 
   l_backbox_32:
     channels:
@@ -1333,7 +1372,7 @@ lights:
         number: ledneuron-3-11-1
       white:
         number: ledneuron-3-11-0
-    tags: backbox, ledneuronp2
+    tags: backbox, ledneuronp3
 
   l_backbox_33:
     channels:
@@ -1345,7 +1384,7 @@ lights:
         number: ledneuron-3-12-0
       white:
         number: ledneuron-3-12-2
-    tags: backbox, ledneuronp2   
+    tags: backbox, ledneuronp3   
 
   l_backbox_34:
     channels:
@@ -1357,7 +1396,7 @@ lights:
         number: ledneuron-3-13-2
       white:
         number: ledneuron-3-14-1
-    tags: backbox, ledneuronp2
+    tags: backbox, ledneuronp3
 
   l_backbox_35:
     channels:
@@ -1369,7 +1408,7 @@ lights:
         number: ledneuron-3-15-1
       white:
         number: ledneuron-3-15-0
-    tags: backbox, ledneuronp2
+    tags: backbox, ledneuronp3
 
   l_backbox_36:
     channels:
@@ -1381,7 +1420,7 @@ lights:
         number: ledneuron-3-16-0
       white:
         number: ledneuron-3-16-2
-    tags: backbox, ledneuronp2 
+    tags: backbox, ledneuronp3 
 
   l_backbox_37:
     channels:
@@ -1393,7 +1432,7 @@ lights:
         number: ledneuron-3-17-2
       white:
         number: ledneuron-3-18-1
-    tags: backbox, ledneuronp2
+    tags: backbox, ledneuronp3
 
   l_backbox_38:
     channels:
@@ -1405,7 +1444,7 @@ lights:
         number: ledneuron-3-19-1
       white:
         number: ledneuron-3-19-0
-    tags: backbox, ledneuronp2
+    tags: backbox, ledneuronp3
 
   l_backbox_39:
     channels:
@@ -1417,7 +1456,7 @@ lights:
         number: ledneuron-3-20-0
       white:
         number: ledneuron-3-20-2
-    tags: backbox, ledneuronp2 
+    tags: backbox, ledneuronp3 
 
   l_backbox_40:
     channels:
@@ -1429,7 +1468,7 @@ lights:
         number: ledneuron-3-21-2
       white:
         number: ledneuron-3-22-1
-    tags: backbox, ledneuronp2
+    tags: backbox, ledneuronp3
 
   l_backbox_41:
     channels:
@@ -1441,7 +1480,7 @@ lights:
         number: ledneuron-3-23-1
       white:
         number: ledneuron-3-23-0
-    tags: backbox, ledneuronp2
+    tags: backbox, ledneuronp3
 
   l_backbox_42:
     channels:
@@ -1453,7 +1492,7 @@ lights:
         number: ledneuron-3-24-0
       white:
         number: ledneuron-3-24-2
-    tags: backbox, ledneuronp2 
+    tags: backbox, ledneuronp3 
 
   l_backbox_43:
     channels:
@@ -1465,7 +1504,7 @@ lights:
         number: ledneuron-3-25-2
       white:
         number: ledneuron-3-26-1
-    tags: backbox, ledneuronp2
+    tags: backbox, ledneuronp3
 
   l_backbox_44:
     channels:
@@ -1477,7 +1516,7 @@ lights:
         number: ledneuron-3-27-1
       white:
         number: ledneuron-3-27-0
-    tags: backbox, ledneuronp2
+    tags: backbox, ledneuronp3
 
   l_backbox_45:
     channels:
@@ -1489,7 +1528,7 @@ lights:
         number: ledneuron-3-28-0
       white:
         number: ledneuron-3-28-2
-    tags: backbox, ledneuronp2 
+    tags: backbox, ledneuronp3 
 
   l_backbox_46:
     channels:
@@ -1501,7 +1540,7 @@ lights:
         number: ledneuron-3-29-2
       white:
         number: ledneuron-3-30-1
-    tags: backbox, ledneuronp2
+    tags: backbox, ledneuronp3
 
   l_backbox_47:
     channels:
@@ -1513,7 +1552,7 @@ lights:
         number: ledneuron-3-31-1
       white:
         number: ledneuron-3-31-0
-    tags: backbox, ledneuronp2
+    tags: backbox, ledneuronp3
 
   l_backbox_48:
     channels:
@@ -1525,7 +1564,7 @@ lights:
         number: ledneuron-3-32-0
       white:
         number: ledneuron-3-32-2
-    tags: backbox, ledneuronp2 
+    tags: backbox, ledneuronp3 
 
 # starpost lights
   l_post_a_1:

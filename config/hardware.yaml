@@ -357,6 +357,10 @@ coils:
     number: 1616_1-11
     default_hold_power: 0.9
     allow_enable: true
+  c_topper:
+    number: 0804-3
+    default_hold_power: 0.9
+    allow_enable: true
 
 drop_targets:
   dt_upper_drop1:
