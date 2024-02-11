@@ -2094,6 +2094,94 @@ widgets:
       outline_color: black
       outline_width: 7
 
+#ball save text
+  w_HeHelpedMe_BallSave:
+    - type: Text
+      text: BALL SAVE
+      color: white
+      x: 50%
+      y: 12%
+      z: 5
+      font_size: 120
+      font_name: Mustkill
+      outline_color: black
+      outline_width: 7   
+
+  w_die_letters:
+    - type: Text
+      text: D I E
+      font_size: 50
+      font_name: sawesome
+      outline_color: black
+      outline_width: 5
+      color: white
+      x: 6%
+      y: 86%
+      z: 2
+  w_die_d_letters:
+    - type: Text
+      text: D
+      font_size: 50
+      font_name: sawesome
+      outline_color: black
+      outline_width: 5
+      color: red
+      x: 3.1%
+      y: 86%
+      z: 3
+  w_die_di_letters:
+    - type: Text
+      text: D
+      font_size: 50
+      font_name: sawesome
+      outline_color: black
+      outline_width: 5
+      color: red
+      x: 3.1%
+      y: 86%
+      z: 3
+    - type: Text
+      text: I
+      font_size: 50
+      font_name: sawesome
+      outline_color: black
+      outline_width: 5
+      color: red
+      x: 6.5%
+      y: 86%
+      z: 3   
+  w_die_die_letters:
+    - type: Text
+      text: D
+      font_size: 50
+      font_name: sawesome
+      outline_color: black
+      outline_width: 5
+      color: red
+      x: 3.1%
+      y: 86%
+      z: 3
+    - type: Text
+      text: I
+      font_size: 50
+      font_name: sawesome
+      outline_color: black
+      outline_width: 5
+      color: red
+      x: 6.5%
+      y: 86%
+      z: 3 
+    - type: Text
+      text: E
+      font_size: 50
+      font_name: sawesome
+      outline_color: black
+      outline_width: 5
+      color: red
+      x: 9.9%
+      y: 86%
+      z: 3
+
 #player 1
   1PlayerGame: 
     - type: text
@@ -2406,6 +2494,9 @@ widget_player:
     w_shackle_mb_progress:
       slide: base_slide_main
       action: add   
+    w_die_letters:
+      slide: base_slide_main
+      action: add
 
   player_1_ball_started: 
     Player1Active:
@@ -2438,6 +2529,15 @@ widget_player:
     w_gears_progress:
       slide: base_slide_main
       action: add  
+    w_hacksaw_mb_progress:
+      slide: base_slide_main
+      action: add 
+    w_jigsaw_mb_progress:
+      slide: base_slide_main
+      action: add 
+    w_shackle_mb_progress:
+      slide: base_slide_main
+      action: add   
     2PlayerGame:
       slide: base_slide_main
       action: add 
@@ -2486,6 +2586,15 @@ widget_player:
     w_gears_progress:
       slide: base_slide_main
       action: add  
+    w_hacksaw_mb_progress:
+      slide: base_slide_main
+      action: add 
+    w_jigsaw_mb_progress:
+      slide: base_slide_main
+      action: add 
+    w_shackle_mb_progress:
+      slide: base_slide_main
+      action: add   
     Player3Inactive:  
       slide: base_slide_main
       action: remove 
@@ -2542,6 +2651,15 @@ widget_player:
     w_gears_progress:
       slide: base_slide_main
       action: add  
+    w_hacksaw_mb_progress:
+      slide: base_slide_main
+      action: add 
+    w_jigsaw_mb_progress:
+      slide: base_slide_main
+      action: add 
+    w_shackle_mb_progress:
+      slide: base_slide_main
+      action: add   
     Player4Inactive:  
       slide: base_slide_main
       action: remove 
@@ -2598,6 +2716,15 @@ widget_player:
     w_gears_progress:
       slide: base_slide_main
       action: add  
+    w_hacksaw_mb_progress:
+      slide: base_slide_main
+      action: add 
+    w_jigsaw_mb_progress:
+      slide: base_slide_main
+      action: add 
+    w_shackle_mb_progress:
+      slide: base_slide_main
+      action: add   
     saw_letters:
       slide: base_slide_main
       action: add
@@ -2640,7 +2767,6 @@ widget_player:
   #  saw_letters:
   #    slide: base_slide_main
   #    action: add      
-      
   logicblock_cnt_saw_qualify_updated{value==1}:
     saw_s_letters:
       slide: base_slide_main
@@ -2654,6 +2780,34 @@ widget_player:
   #    slide: base_slide_main
   #    action: add   
 #multiplayer widget displays
+
+# die progress letters
+  logicblock_make_your_choice_qualify_updated{value==1}:
+    w_die_d_letters:
+      slide: base_slide_main
+      action: add
+  logicblock_make_your_choice_qualify_updated{value==2}:
+    w_die_di_letters:
+      slide: base_slide_main
+      action: add
+  logicblock_make_your_choice_qualify_updated{value==3}:
+    w_die_die_letters:
+      slide: base_slide_main
+      action: add
+  startmode_make_your_choice_hurryup:
+    w_die_letters:
+      action: remove
+    w_die_d_letters:
+      action: remove
+    w_die_di_letters:
+      action: remove
+    w_die_die_letters:
+      action: remove
+  player_make_your_choice_hurryup_t_make_your_choice_timer_tick{value < 1}:
+    w_die_letters:
+      slide: base_slide_main
+      action: add
+
   player_added{game.num_players==2}:
     2PlayerGame:
       slide: base_slide_main
@@ -3070,6 +3224,11 @@ widget_player:
       slide: base_slide_main
       action: remove
     
+  slide_HeHelpedMeVideo_created:
+    w_HeHelpedMe_BallSave:
+      slide: HeHelpedMeVideo
+      action: add
+
 slides:
   base_slide_main: 
     widgets:

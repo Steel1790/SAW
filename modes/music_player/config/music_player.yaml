@@ -91,8 +91,8 @@ sound_pools:
       - DropsCameraShutter5
   startbutton:
     load: preload
-    type: random
-    track: sfx
+    type: random_force_next
+    track: voice
     simultaneous_limit: 1
     stealing_method: skip
     sounds:
@@ -104,8 +104,8 @@ sound_pools:
       - YouMayBegin
   randomswitch:
     load: preload
-    type: random
-    track: sfx
+    type: random_force_next
+    track: voice
     sounds:
       - SawOffFoot
       - RampsGranted
@@ -118,8 +118,89 @@ sound_pools:
       - LifePurpose
       - ISeeYou
       - EndItAllNow
-      - ExistanceForGranted      
- 
+      - ExistanceForGranted    
+# items collected      
+  antidote_collected:
+    load: preload
+    type: random_force_next
+    track: voice
+    sounds:
+      - Antidote1
+      - Antidote2
+      - Antidote3
+      - Antidote4
+      - Antidote5
+  bathtub_collected: 
+    load: preload
+    type: random_force_next
+    track: voice
+    sounds:
+      - Bathtub1
+      - Bathtub2
+      - Bathtub3
+      - Bathtub4
+      - Bathtub5
+  candle_collected:     
+    load: preload
+    type: random_force_next
+    track: voice
+    sounds:
+      - Candle1
+      - Candle2
+      - Candle3
+      - Candle4
+      - Candle5  
+  gears_collected:  
+    load: preload
+    type: random_force_next
+    track: voice
+    sounds:
+      - Gears1
+      - Gears2
+      - Gears3
+      - Gears4
+      - Gears5  
+  hacksaw_collected:
+    load: preload
+    type: random_force_next
+    track: voice
+    sounds:
+      - Hacksaw1
+      - Hacksaw2
+      - Hacksaw3
+      - Hacksaw4
+      - Hacksaw5  
+  handgun_collected:
+    load: preload
+    type: random_force_next
+    track: voice
+    sounds:
+      - Gun1
+      - Gun2
+      - Gun3
+      - Gun4
+      - Gun5
+  key_collected:
+    load: preload
+    type: random_force_next
+    track: voice
+    sounds:
+      - Key1
+      - Key2
+      - Key3
+      - Key4
+      - Key5
+  taperecorder_collected:
+    load: preload
+    type: random_force_next
+    track: voice
+    sounds:
+      - TapeRecorder1
+      - TapeRecorder2
+      - TapeRecorder3
+      - TapeRecorder4
+      - TapeRecorder5
+
 sound_player:
   mode_music_player_started:
     HelloZeppPt1:
@@ -444,6 +525,31 @@ sound_player:
       action: play   
   sg_saw_qualify_subtract_hit{device.counters.cnt_saw_qualify.value==2}:
     SawLetterNegative:
+      action: play
+
+  minimode_drops_complete:
+    antidote_collected:
+      action: play
+  minimode_scoops_complete: 
+    bathtub_collected:
+      action: play
+  minimode_standups_complete: 
+    candle_collected:
+      action: play
+  minimode_pops_complete: 
+    gears_collected:
+      action: play
+  minimode_loops_complete:
+    hacksaw_collected:
+      action: play
+  minimode_spinners_complete:
+    handgun_collected:
+      action: play
+  minimode_ramps_complete:
+    key_collected:
+      action: play
+  minimode_inlanes_complete:
+    taperecorder_collected:
       action: play
 
 # stop all mode music at beginning of mode_bonus

@@ -7,8 +7,6 @@ mode:
   # Spell D-I-E / S-A-W (3 drop target bank) in sequential order to start this hurry up mode.
   # hit X marks the spot to lock in value.
   # orbits the remaining duration to cash in value
-
-  # need to still add D-I-E letter progression in top left to notify player of qualified progression in base mode. 
 timers:
   t_make_your_choice_timer:
     start_value: 20
@@ -17,6 +15,15 @@ timers:
     control_events:
       - action: start
         event: mode_make_your_choice_hurryup_started
+  t_make_your_choice_value_timer:
+    start_value: 200
+    end_value: 0
+    direction: down
+    tick_interval: 0.1s
+    control_events:
+      - action: start
+        event: mode_make_your_choice_hurryup_started
+
 variable_player:
   t_make_your_choice_timer:
     t_make_your_choice_timer:
