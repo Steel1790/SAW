@@ -751,6 +751,14 @@ show_player:
       loops: -1
       show_tokens:
         color1: ffffff
+    trough_on:
+      loops: -1
+      show_tokens:
+        color1: ffffff
+    spotlight_on:
+      loops: -1
+      show_tokens:
+        color1: ffffff
     pops_on:
       loops: -1
       show_tokens:
@@ -759,6 +767,8 @@ show_player:
       loops: -1      
       show_tokens:
         leds: l_left_flipper, l_right_flipper
+
+
 
   playfield_active:
     base_action_button_off:
@@ -769,7 +779,7 @@ show_player:
     ballsave:
       show_tokens:
         leds: l_live_again
-      loops: 10
+      loops: 4
   ball_save_default_disabled:
     ballsave_end:
       show_tokens:
@@ -980,6 +990,10 @@ show_player:
     game_over:
       loops: 0
       speed: 10
+
+  logicblock_trap_select_qualify_counter_complete:
+    trough_on: stop
+    spotlight_on: stop
 
 
 # disc shows
@@ -2550,6 +2564,9 @@ widget_player:
     saw_letters:
       slide: base_slide_main
       action: add
+    w_die_letters:
+      slide: base_slide_main
+      action: add
 
 
   player_2_ball_started: 
@@ -2595,19 +2612,28 @@ widget_player:
     w_shackle_mb_progress:
       slide: base_slide_main
       action: add   
+    3PlayerGame:  
+      slide: base_slide_main
+      action: add      
+    4PlayerGame:  
+      slide: base_slide_main
+      action: add  
     Player3Inactive:  
       slide: base_slide_main
       action: remove 
-    Player3InactiveBall2:  
-      slide: base_slide_main
-      action: add      
+    #Player3InactiveBall2:  
+    #  slide: base_slide_main
+    #  action: add      
     Player4Inactive:  
       slide: base_slide_main
       action: remove 
-    Player4InactiveBall2:  
-      slide: base_slide_main
-      action: add  
+    #Player4InactiveBall2:  
+    #  slide: base_slide_main
+    #  action: add  
     saw_letters:
+      slide: base_slide_main
+      action: add
+    w_die_letters:
       slide: base_slide_main
       action: add
 
@@ -2669,6 +2695,10 @@ widget_player:
     saw_letters:
       slide: base_slide_main
       action: add
+    w_die_letters:
+      slide: base_slide_main
+      action: add
+
 
   player_4_ball_started: 
     1PlayerGame:
@@ -2728,6 +2758,9 @@ widget_player:
     saw_letters:
       slide: base_slide_main
       action: add
+    w_die_letters:
+      slide: base_slide_main
+      action: add
 
   mode_saw_qualify_started:
     saw_letters:
@@ -2761,6 +2794,7 @@ widget_player:
   mode_trap_select_stopped:
     w_trap_select_start:
       action: remove
+  logicblock_trap_select_qualify_counter_complete:
     saw_saw_letters:
       action: remove
   #mode_selection_mode_stopped:

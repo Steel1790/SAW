@@ -93,7 +93,7 @@ sound_pools:
     load: preload
     type: random_force_next
     track: voice
-    simultaneous_limit: 1
+    simultaneous_limit: 2
     stealing_method: skip
     sounds:
       - LowPainTolerance

@@ -7,6 +7,7 @@ mode:
   # Spell D-I-E / S-A-W (3 drop target bank) in sequential order to start this hurry up mode.
   # hit X marks the spot to lock in value.
   # orbits the remaining duration to cash in value
+
 timers:
   t_make_your_choice_timer:
     start_value: 20
@@ -24,11 +25,20 @@ timers:
       - action: start
         event: mode_make_your_choice_hurryup_started
 
+event_player:
+  drop_target_dt_upper_drop1_down: hurryup_value
+
 variable_player:
   t_make_your_choice_timer:
     t_make_your_choice_timer:
       int: device.timers.t_make_your_choice_timer.ticks_remaining
       action: set
+  hurryup_value:
+      int: device.timers.t_make_your_choice_value_timer.ticks_remaining
+      value_type: int
+      action: set
+  drop_target_dt_upper_drop1_down:
+      score: 25000 * (current_player.hurryup_value + 0)
 
 counters:
   cnt_hurryup:

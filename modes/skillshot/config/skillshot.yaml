@@ -110,6 +110,7 @@ show_player:
     ss_show: 
       priority: 900
       loops: 0  
+  mode_skillshot_started:
     skillshot_chase:
       loops: -1
       speed: 5
