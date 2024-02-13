@@ -1,8 +1,8 @@
 #config_version=6
 ##! mode: saw_qualify
 mode:
-  start_events: ball_starting, mode_razorwire_stopped, mode_drillchair_stopped, mode_flammablejelly_stopped, mode_quadshotgun_stopped, mode_reversebeartrap_stopped, mode_zeptest_stopped, mode_hacksaw_multiball_stopped, mode_jigsaw_multiball_stopped, mode_shackle_multiball_stopped
-  stop_events: mode_trap_select_started
+  start_events: ball_starting, mode_razorwire_stopped, mode_drillchair_stopped, mode_flammablejelly_stopped, mode_quadshotgun_stopped, mode_reversebeartrap_stopped, mode_zeptest_stopped, mode_hacksaw_multiball_stopped, mode_jigsaw_multiball_stopped, mode_shackle_multiball_stopped, mode_make_your_choice_hurryup_stopped
+  stop_events: mode_trap_select_started, mode_make_your_choice_hurryup_started
   priority: 120
 
 shots:

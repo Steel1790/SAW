@@ -2841,6 +2841,10 @@ widget_player:
     w_die_letters:
       slide: base_slide_main
       action: add
+  logicblock_acc_make_your_choice_qualify_complete:
+    w_die_letters:
+      slide: base_slide_main
+      action: add
 
   player_added{game.num_players==2}:
     2PlayerGame:

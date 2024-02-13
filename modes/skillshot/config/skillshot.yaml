@@ -1,7 +1,7 @@
 #config_version=6
 mode:
   start_events: ball_starting, start_mode_skillshot
-  stop_events: stop_mode_skillshot
+  stop_events: stop_mode_skillshot, droptargets_skill_hit
   priority: 100
 
 #sound_player:
@@ -83,8 +83,8 @@ event_player:
   dt_drop2_hit: mode_skillshot_complete
   dt_drop3_hit: mode_skillshot_complete
   dt_drop4_hit: mode_skillshot_complete
-  playfield_active: stop_mode_skillshot|2s
-  balldevice_bd_plunger_ball_eject_success: stop_mode_skillshot|2s
+  playfield_active: stop_mode_skillshot|5s
+  balldevice_bd_plunger_ball_eject_success: stop_mode_skillshot|5s
  
   
 shots:

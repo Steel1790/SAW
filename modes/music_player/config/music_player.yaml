@@ -3,7 +3,7 @@
 mode:
   start_events: ball_starting
   stop_events: game_ending
-  priority: 100
+  priority: 200
 
 sound_pools:
   razorwirepops:
@@ -203,7 +203,7 @@ sound_pools:
 
 sound_player:
   mode_music_player_started:
-    HelloZeppPt1:
+    Shithole:
       action: stop
   mode_game_stopping:
     initials:
