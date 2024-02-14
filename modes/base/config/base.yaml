@@ -188,12 +188,21 @@ slide_player:
     trapfailed:
       priority: 400
       expire: 5s     
-      
+ #skillshot     
   mode_skillshot_complete:
     skillshotvideo:
       action: play
       priority: 400
       expire: 8s
+  sh_skillshot_x_hit: 
+    superskillshot:
+      priority: 500
+      expire: 4s
+  ssh_skillshot_leftorbit_innerorbit_hit: 
+    superskillshot:
+      priority: 500
+      expire: 4s
+
   ball_save_default_saving_ball:
     HeHelpedMeVideo:
       action: play
