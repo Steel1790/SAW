@@ -225,30 +225,33 @@ virtual_platform_start_active_switches:
 coils:
   c_flipper_left_main:
     number: 3208-6
-    default_pulse_ms: 80
+    default_pulse_ms: 150
     tags: coils
   c_flipper_left_hold:
     number: 3208-5
-    default_pulse_ms: 80
+    # default_pulse_ms: 80
     default_hold_power: 0.2
+    allow_enable: true
     tags: coils
   c_flipper_right_main:
     number: 3208-3
-    default_pulse_ms: 80
+    default_pulse_ms: 150
     tags: coils
   c_flipper_right_hold:
     number: 3208-4
-    default_pulse_ms: 80
+    # default_pulse_ms: 80
     default_hold_power: 0.2
+    allow_enable: true
     tags: coils
   c_flipper_upper_right_main:
     number: 1616_2-9
-    default_pulse_ms: 80
+    default_pulse_ms: 150
     tags: coils
   c_flipper_upper_right_hold:
     number: 1616_2-8
-    default_pulse_ms: 80
+    # default_pulse_ms: 80
     default_hold_power: 0.2
+    allow_enable: true    
     tags: coils
   c_trough_eject:
     number: 3208-1
@@ -268,7 +271,7 @@ coils:
     default_pulse_power: 0.9
   c_mystery_eject:
     number: 1616_1-15
-    default_pulse_ms: 80
+    default_pulse_ms: 100
   c_right_ramp_lift:
     number: 1616_2-11
     default_pulse_ms: 40
