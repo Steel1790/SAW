@@ -1,0 +1,164 @@
+#config_version=6                 
+mode:
+  start_events: e_puzzle_start
+  stop_events: mode_puzzle_hurryup_complete, stop_mode_puzzle_hurryup, ball_ended, ball_will_end, player_puzzle_hurryup_t_puzzle_timer_tick{value < 1}
+  priority: 120
+
+timers:
+  t_puzzle_timer:
+    start_value: 10
+    end_value: 0
+    direction: down
+    control_events:
+      - action: start
+        event: mode_puzzle_hurryup_started
+
+variable_player:
+  player_puzzle_hurryup_t_puzzle_timer_tick:
+    puzzle_countdown:
+      int: device.timers.t_puzzle_timer.ticks
+      action: set
+  mode_puzzle_hurryup_complete:
+    score: 3000000
+
+
+counters:
+  cnt_puzzle_razorwire_hurryup:
+    starting_count: 0
+    count_complete_value: 1
+    enable_events: e_razorwire_puzzle
+    events_when_complete: mode_puzzle_hurryup_complete  
+    count_events: sw_top_pops
+  cnt_puzzle_drillchair_hurryup:
+    starting_count: 0
+    count_complete_value: 1
+    enable_events: e_drillchair_puzzle
+    events_when_complete: mode_puzzle_hurryup_complete  
+    count_events: sw_bottom_pops
+  cnt_puzzle_quadshotgun_hurryup:
+    starting_count: 0
+    count_complete_value: 1
+    enable_events: e_quadshotgun_puzzle
+    events_when_complete: mode_puzzle_hurryup_complete  
+    count_events: sw_spinner
+  cnt_puzzle_flammablejelly_hurryup:
+    starting_count: 0
+    count_complete_value: 1
+    enable_events: e_flammablejelly_puzzle
+    events_when_complete: mode_puzzle_hurryup_complete  
+    count_events: sw_middle_standup
+  cnt_puzzle_zeptest_hurryup:
+    starting_count: 0
+    count_complete_value: 1
+    enable_events: e_zeptest_puzzle
+    events_when_complete: mode_puzzle_hurryup_complete  
+    count_events: sw_lower_drop_target
+
+widgets:
+  w_puzzle_UI:
+    - type: Text
+      text: 00:(player|puzzle_hurryup_t_puzzle_timer_tick)
+      font_size: 50
+      font_name: digitalclockfont
+      color: red
+      x: 50%
+      y: 83.2%
+      z: 7
+    - type: rectangle
+      width: 210
+      height: 65
+      x: 50%
+      y: 84.5%
+      z: 7
+      corner_radius: 20
+      corner_segments: 20
+      color: black        
+    - type: text
+      text: Collect the Puzzle Piece!
+      x: 50%
+      y: 73.2%
+      z: 7
+      font_size: 60
+      font_name: Mustkill    
+      outline_color: black
+      outline_width: 5
+
+widget_player:
+  mode_puzzle_hurryup_started: 
+    w_puzzle_UI:
+      slide: base_slide_main
+      action: add
+  mode_puzzle_hurryup_complete:
+    w_puzzle_UI:
+      action: remove
+
+shows:
+# mode attempt for puzzle insert
+  sh_razorwire_hurryup:
+    - duration: 0.5s
+      lights:
+        (leds): beartrap
+    - duration: 0.5s
+      lights:
+        (leds): off
+  sh_drillchair_hurryup:
+    - duration: 0.5s
+      lights:
+        (leds): beartrap
+    - duration: 0.5s
+      lights:
+        (leds): off
+  sh_flammablejelly_hurryup:
+    - duration: 0.5s
+      lights:
+        (leds): beartrap
+    - duration: 0.5s
+      lights:
+        (leds): off
+  sh_zeptest_hurryup:
+    - duration: 0.5s
+      lights:
+        (leds): beartrap
+    - duration: 0.5s
+      lights:
+        (leds): off
+  sh_quadshotgun_hurryup:
+    - duration: 0.5s
+      lights:
+        (leds): beartrap
+    - duration: 0.5s
+      lights:
+        (leds): off
+
+show_player:
+# mode attempt for puzzle insert 
+  e_razorwire_puzzle:
+    sh_razorwire_hurryup:
+      show_tokens:
+        leds: razorwire_flasher
+      loops: 39
+      speed: 4
+  e_flammablejelly_puzzle:
+    sh_flammablejelly_hurryup:
+      show_tokens:
+        leds: bear_flasher
+      loops: 39
+      speed: 4
+  e_quadshotgun_puzzle:
+    sh_quadshotgun_hurryup:
+      show_tokens:
+        leds: shotgun_flasher
+      loops: 39
+      speed: 4
+  e_drillchair_puzzle:
+    sh_drillchair_hurryup:
+      show_tokens:
+        leds: drill_flasher
+      loops: 39
+      speed: 4
+  e_zeptest_puzzle:
+    sh_zeptest_hurryup:
+      show_tokens:
+        leds: zep_flasher
+      loops: 39
+      speed: 4

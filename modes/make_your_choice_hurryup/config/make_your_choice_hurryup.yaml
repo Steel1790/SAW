@@ -196,18 +196,33 @@ shots:
     profile: sp_make_your_choice_qualify
     show_tokens:
       leds: l_left_loop_arrow
+    control_events:
+      - events: mode_make_your_choice_hurryup_started
+        state: 0
+      - events: make_your_choice_value_locked
+        state: 1
   shot_inner_loop_hurryup:
     advance_events: logicblock_acc_make_your_choice_qualify_hit{step==3}
     switches: s_inner_loop
     profile: sp_make_your_choice_qualify
     show_tokens:
       leds: l_inner_loop_arrow
+    control_events:
+      - events: mode_make_your_choice_hurryup_started
+        state: 0
+      - events: make_your_choice_value_locked
+        state: 1
   shot_right_loop_hurryp:
     advance_events: logicblock_acc_make_your_choice_qualify_hit{step==2}    
     switches: s_right_loop_bottom, s_right_loop_top
     profile: sp_make_your_choice_qualify
     show_tokens:
       leds: l_right_loop_arrow
+    control_events:
+      - events: mode_make_your_choice_hurryup_started
+        state: 0
+      - events: make_your_choice_value_locked
+        state: 1
 
 shot_profiles:
   sp_make_your_choice_qualify:

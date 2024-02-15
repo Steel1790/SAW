@@ -54,6 +54,13 @@ shows:
     - duration: -1
       lights:
         (leds): off
+  sh_hacksaw_mb_qualify_hit:
+    - duration: 0.3s
+      lights:
+        (leds): color_hacksaw_mb
+    - duration: 0.3s
+      lights:
+        (leds): off
 
 show_player:
   logicblock_acc_hacksaw_mb_qualify_complete{device.multiball_locks.mbl_hacksaw.locked_balls == 0}:
@@ -93,6 +100,18 @@ show_player:
     sh_hacksaw_mb_end:
       show_tokens:
         leds: l_hmb_lock_1,l_hmb_lock_2,l_hmb_lock_3
+  logicblock_acc_hacksaw_mb_qualify_hit{step==0}:
+    sh_hacksaw_mb_qualify_hit:
+      show_tokens:
+        leds: l_left_standup_right_ramp_arrow
+      speed: 4
+      loops: 5
+  logicblock_acc_hacksaw_mb_qualify_hit{step==1}:
+    sh_hacksaw_mb_qualify_hit:
+      show_tokens:
+        leds: l_right_standup_right_ramp_arrow
+      speed: 4
+      loops: 5
 
 slides:
   sl_Hacksaw_locked_1:
