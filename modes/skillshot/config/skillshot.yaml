@@ -1,7 +1,7 @@
 #config_version=6
 mode:
   start_events: ball_starting, start_mode_skillshot
-  stop_events: stop_mode_skillshot
+  stop_events: stop_mode_skillshot, droptargets_skill_hit
   priority: 100
 
 #sound_player:
@@ -57,7 +57,7 @@ timers:
 
 shot_profiles:
   skill:
-    rotation_pattern: r, r, l, l
+    #rotation_pattern: r, r, l, l
     states:
     - name: unlit
       show: off
@@ -72,19 +72,22 @@ shot_profiles:
 shot_groups:
   droptargets_skill:
     shots: dt_drop2, dt_drop3, dt_drop4
-    rotate_events: timer_target_rotator_tick
-    reset_events: mode_skillshot_started|1
+    #rotate_events: timer_target_rotator_tick
+    #reset_events: mode_skillshot_started|1
 
 variable_player:
   droptargets_skill_hit:
     score: 1000000
+  sh_skillshot_x_hit:
+    score: 4000000
 
 event_player:
   dt_drop2_hit: mode_skillshot_complete
   dt_drop3_hit: mode_skillshot_complete
   dt_drop4_hit: mode_skillshot_complete
-  playfield_active: stop_mode_skillshot|2s
-  balldevice_bd_plunger_ball_eject_success: stop_mode_skillshot|2s
+  drop_target_dt_upper_drop1_down: mode_skillshot_complete
+  playfield_active: stop_mode_skillshot|5s
+  balldevice_bd_plunger_ball_eject_success: stop_mode_skillshot|5s
  
   
 shots:
@@ -104,12 +107,15 @@ shots:
     profile: skill
 #    show_tokens:
 #      light: l_3_bank_drop_target_opto_lower
+  sh_skillshot_x:
+    switch: s_upper_bank_drop_target_opto
       
 show_player: 
   mode_skillshot_started{current_player.ball == 1 and player==1}:
     ss_show: 
       priority: 900
       loops: 0  
+  mode_skillshot_started:
     skillshot_chase:
       loops: -1
       speed: 5

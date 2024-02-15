@@ -3,7 +3,7 @@
 mode:
   start_events: ball_starting
   stop_events: game_ending
-  priority: 100
+  priority: 200
 
 sound_pools:
   razorwirepops:
@@ -93,7 +93,7 @@ sound_pools:
     load: preload
     type: random_force_next
     track: voice
-    simultaneous_limit: 1
+    simultaneous_limit: 2
     stealing_method: skip
     sounds:
       - LowPainTolerance
@@ -203,7 +203,7 @@ sound_pools:
 
 sound_player:
   mode_music_player_started:
-    HelloZeppPt1:
+    Shithole:
       action: stop
   mode_game_stopping:
     initials:
@@ -211,6 +211,10 @@ sound_player:
   mode_high_score_started:
     BaseMusic:
       action: stop
+#plunge sound
+  balldevice_bd_plunger_ball_eject_success:
+    HacksawPlunge:
+      action: play
 
   ball_save_default_saving_ball:
     HeHelpedMe:
@@ -304,11 +308,13 @@ sound_player:
       action: play
       block: true
   shot_left_outlane_hit{state=="ball_save_not_ready"}:
-    TortureScream:
+    #TortureScream:
+    refined_billy_laugh:
       action: play
       block: true
   shot_right_outlane_hit{state=="ball_save_not_ready"}:
-    TortureScream:
+    #TortureScream:
+    refined_billy_laugh:
       action: play
       block: true
   shot_left_outlane_hit{state=="lit"}:
@@ -404,6 +410,25 @@ sound_player:
   logicblock_random_switch_hit{hits==725}:  
     randomswitch:
       action: play  
+
+  selection_mode_razorwire_highlighted:
+    ModeHighlightedRazorWire:
+      action: play
+  selection_mode_reversebeartrap_highlighted:
+    ModeHighlightedReverseBearTrap:
+      action: play
+  selection_mode_flammablejelly_highlighted: 
+    ModeHighlightedFlammableJelly:
+      action: play
+  selection_mode_drillchair_highlighted: 
+    ModeHighlightedDrillChair:
+      action: play
+  selection_mode_quadshotgun_highlighted: 
+    ModeHighlightedQuadShotgun:
+      action: play
+  selection_mode_zeptest_highlighted: 
+    ModeHighlightedZepsTest:
+      action: play
 
  # razorwire mode
   mode_razorwire_complete:

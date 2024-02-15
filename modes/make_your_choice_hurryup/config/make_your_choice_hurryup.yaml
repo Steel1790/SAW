@@ -1,12 +1,23 @@
 #config_version=6                 
 mode:
   start_events: startmode_make_your_choice_hurryup
-  stop_events: mode_make_your_choice_hurryup_complete, stop_mode_make_your_choice_hurryup, ball_ended, ball_will_end, player_make_your_choice_hurryup_t_make_your_choice_timer_tick{value < 1}
+  stop_events: mode_make_your_choice_hurryup_complete, stop_mode_make_your_choice_hurryup, ball_ended, ball_will_end, player_make_your_choice_hurryup_t_make_your_choice_timer_tick{value < 1}, logicblock_acc_make_your_choice_qualify_complete
   priority: 120
 
   # Spell D-I-E / S-A-W (3 drop target bank) in sequential order to start this hurry up mode.
   # hit X marks the spot to lock in value.
   # orbits the remaining duration to cash in value
+
+accruals:
+  acc_make_your_choice_qualify:
+    events:
+      - drop_target_dt_upper_drop1_down
+      - ssh_left_orbit_hit
+      - ssh_right_orbit_hit
+      - sw_inner_loop
+    reset_on_complete: false
+    disable_on_complete: false
+
 timers:
   t_make_your_choice_timer:
     start_value: 20
@@ -23,12 +34,31 @@ timers:
     control_events:
       - action: start
         event: mode_make_your_choice_hurryup_started
+      - action: stop
+        event: drop_target_dt_upper_drop1_down
 
 variable_player:
-  t_make_your_choice_timer:
-    t_make_your_choice_timer:
-      int: device.timers.t_make_your_choice_timer.ticks_remaining
+  mode_make_your_choice_hurryup_started:
+    hurryup_value:
+      int: 0
       action: set
+  player_make_your_choice_hurryup_t_make_your_choice_value_timer_tick:
+    hurryup_value_countdown:
+      int: 25123 * device.timers.t_make_your_choice_value_timer.ticks
+      action: set
+  logicblock_acc_make_your_choice_qualify_hit{step==1}:
+    score: 25123 * device.timers.t_make_your_choice_value_timer.ticks
+  logicblock_acc_make_your_choice_qualify_hit{step==2}:
+    score: 25123 * device.timers.t_make_your_choice_value_timer.ticks
+  logicblock_acc_make_your_choice_qualify_hit{step==3}:
+    score: 25123 * device.timers.t_make_your_choice_value_timer.ticks
+  make_your_choice_value_locked:
+    hurryup_value:
+      int: 25123 * device.timers.t_make_your_choice_value_timer.ticks
+      action: set
+  logicblock_acc_make_your_choice_qualify_complete:
+    score: 50000 * device.timers.t_make_your_choice_value_timer.ticks
+
 
 counters:
   cnt_hurryup:
@@ -39,7 +69,7 @@ counters:
     count_events: drop_target_dt_upper_drop1_down
 
 widgets:
-  make_your_choice_UI:
+  w_make_your_choice_UI:
     - type: Text
       text: 00:(player|make_your_choice_hurryup_t_make_your_choice_timer_tick)
       font_size: 50
@@ -57,15 +87,6 @@ widgets:
       corner_radius: 20
       corner_segments: 20
       color: black        
-    - type: rectangle
-      width: 342
-      height: 23
-      x: 8.5%
-      y: 90
-      z: 7
-      color: black
-      corner_radius: 10
-      corner_segments: 10
     - type: text
       text: Make Your Choice
       x: 8.5%
@@ -75,11 +96,147 @@ widgets:
       font_name: Skilt Gothic W04 Thin     
       outline_color: black
       outline_width: 5
+  w_hurryup_instructions_p1:
+    - type: text
+      text: Hit X Marks the Spot to Lock in Value
+      x: 50%
+      y: 45%
+      z: 7
+      font_size: 50
+      font_name: Mustkill     
+      outline_color: black
+      outline_width: 7
+      animations:
+        add_to_slide:
+          - property: opacity
+            value: 0
+            duration: 0.5s
+          - property: opacity
+            value: 1
+            duration: 0.5s
+            repeat: true
+  w_hurryup_instructions_p2:
+    - type: text
+      text: Cash in the Hurry-Up Value at the Orbits
+      x: 50%
+      y: 45%
+      z: 7
+      font_size: 50
+      font_name: Mustkill     
+      outline_color: black
+      outline_width: 7
+      #animations:
+      #  add_to_slide:
+      #    - property: opacity
+      #      value: 0
+      #      duration: 1s
+      #    - property: opacity
+      #      value: 1
+      #      duration: 1s
+      #      repeat: true
+  w_hurryup_value:
+    - type: text
+      #text: (player|make_your_choice_hurryup_t_make_your_choice_value_timer_tick) 
+      text: (player|hurryup_value)
+      number_grouping: true 
+      x: 50%
+      y: 35%
+      z: 7
+      font_size: 90
+      font_name: Mustkill     
+      outline_color: black
+      outline_width: 7
+      animations:
+        add_to_slide:
+          - property: opacity
+            value: 0
+            duration: 1s
+          - property: opacity
+            value: 1
+            duration: 1s
+            repeat: true
+  w_hurryup_value_countdown:
+    - type: text
+      #text: (player|make_your_choice_hurryup_t_make_your_choice_value_timer_tick) 
+      text: (player|hurryup_value_countdown)
+      number_grouping: true 
+      x: 50%
+      y: 35%
+      z: 7
+      font_size: 90
+      font_name: Mustkill     
+      outline_color: black
+      outline_width: 7
+
 widget_player:
   mode_make_your_choice_hurryup_started: 
-    make_your_choice_UI:
+    w_make_your_choice_UI:
       slide: base_slide_main
       action: add
+    w_hurryup_instructions_p1:
+      slide: base_slide_main
+      action: add
+    w_hurryup_value_countdown:
+      slide: base_slide_main
+      action: add
+  make_your_choice_value_locked:
+    w_hurryup_value:
+      slide: base_slide_main
+      action: add
+    w_hurryup_instructions_p1:
+      action: remove
+    w_hurryup_instructions_p2:
+      slide: base_slide_main
+      action: add
+
+shots:
+  shot_left_loop_hurryup:
+    advance_events: logicblock_acc_make_your_choice_qualify_hit{step==1}
+    switches: s_left_loop_bottom, s_left_loop_top
+    profile: sp_make_your_choice_qualify
+    show_tokens:
+      leds: l_left_loop_arrow
+  shot_inner_loop_hurryup:
+    advance_events: logicblock_acc_make_your_choice_qualify_hit{step==3}
+    switches: s_inner_loop
+    profile: sp_make_your_choice_qualify
+    show_tokens:
+      leds: l_inner_loop_arrow
+  shot_right_loop_hurryp:
+    advance_events: logicblock_acc_make_your_choice_qualify_hit{step==2}    
+    switches: s_right_loop_bottom, s_right_loop_top
+    profile: sp_make_your_choice_qualify
+    show_tokens:
+      leds: l_right_loop_arrow
+
+shot_profiles:
+  sp_make_your_choice_qualify:
+    advance_on_hit: false
+    states:
+      - name: hurryup_off
+        show: "off"               # a default show to turn of the led. change if you want to do something on unlit shots
+      - name: lit
+        show: "sh_hurryup_ready"        # a default show to turn of the led. change if you want to do something on unlit shots
+      - name: collected
+        show: "sh_hurryup_collected"    # a default show to turn of the led. change if you want to do something on unlit shots
+
+shows:
+  sh_hurryup_ready:
+    - duration: -1
+      shows:
+        flash_color:
+          show_tokens:
+            color: beartrap
+            leds: (leds)
+          speed: 4
+  sh_hurryup_collected:
+    - duration: -1
+      lights:
+        (leds): beartrap
+  #sh_make_yourchoice_end:
+  #  - duration: -1
+  #    lights:
+  #      (leds): off
 
 show_player:
   mode_make_your_choice_hurryup_started:
@@ -88,8 +245,23 @@ show_player:
         speed: 20
         show_tokens:
           color1: beartrap
-  drop_target_dt_upper_drop1_down:
+  make_your_choice_value_locked:
       top_drop_chase:
         loops: -1
         show_tokens:
           color1: off
+      sh_hurryup_ready:
+        show_tokens:
+          leds: orbit
+  logicblock_acc_make_your_choice_qualify_hit{step==1}:
+      sh_hurryup_collected:
+        show_tokens:
+          leds: l_left_loop_arrow
+  logicblock_acc_make_your_choice_qualify_hit{step==2}:
+      sh_hurryup_collected:
+        show_tokens:
+          leds: l_right_loop_arrow
+  logicblock_acc_make_your_choice_qualify_hit{step==3}:
+      sh_hurryup_collected:
+        show_tokens:
+          leds: l_inner_loop_arrow

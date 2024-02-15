@@ -16,25 +16,19 @@ timers:
     start_running: false
 
 variable_player:
-  ssh_skillshot_orbit_ramp_hit:
-    score: 5000000
-  ssh_skillshot_orbit_ramp_ramp_hit:
-    score: 3000000
+  ssh_skillshot_leftorbit_innerorbit_hit:
+    score: 8000000
 
 event_player:
-  ssh_skillshot_orbit_ramp_ramp_hit: mode_super_skillshot_complete
+  ssh_skillshot_leftorbit_innerorbit_hit: mode_super_skillshot_complete
   playfield_active: stop_mode_super_skillshot|7s
   balldevice_bd_plunger_ball_eject_success: stop_mode_super_skillshot|8s
  
   
 sequence_shots:
-  ssh_skillshot_orbit_ramp:
-    switch_sequence: s_inner_loop, s_enter_left_ramp, s_left_ramp_score_bottom, s_left_ramp_score_top
+  ssh_skillshot_leftorbit_innerorbit:
+    switch_sequence: s_left_loop_bottom, s_left_loop_top, s_inner_loop
     sequence_timeout: 5s
-      
-  ssh_skillshot_orbit_ramp_ramp:
-    switch_sequence: s_inner_loop, s_enter_left_ramp, s_left_ramp_score_bottom, s_left_ramp_score_top, s_right_ramp_score_bottom, s_right_ramp_score_top
-    sequence_timeout: 6s
 
 slides:
   superskillshot:
@@ -44,12 +38,8 @@ slides:
       width: 1366
       height: 768   
 
-slide_player:
-  ssh_skillshot_orbit_ramp_hit: 
-    superskillshot:
-      priority: 500
-      expire: 4s
-  ssh_skillshot_orbit_ramp_ramp_hit: 
-    superskillshot:
-      priority: 500
-      expire: 4s
+#slide_player:
+#  ssh_skillshot_leftorbit_innerorbit_hit: 
+#    superskillshot:
+#      priority: 500
+#      expire: 4s
