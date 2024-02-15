@@ -10,7 +10,9 @@
       topper_on:
        loops: -1
        speed: 1
-
+      cabinet_on:
+       loops: -1
+       speed: 1
       # flash_token:
       #   show_tokens:
       #     led: l_left_spotlight
