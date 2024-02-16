@@ -29,6 +29,7 @@ modes:
   - zeptest
   - tilt
   - make_your_choice_hurryup
+  - puzzle_hurryup
   - mystery
   - saw_qualify
   - mode_tracking

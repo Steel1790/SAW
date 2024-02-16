@@ -43,15 +43,22 @@ shows:
       shows:
         flash_color:
           show_tokens:
-            color: razorwire
+            color: color_hacksaw_mb
             leds: (leds)
           speed: 4
   sh_shackle_mb_qualify_hit_locked:
     - duration: -1
       lights:
-        (leds): razorwire
+        (leds): color_hacksaw_mb
   sh_shackle_mb_end:
     - duration: -1
+      lights:
+        (leds): off
+  sh_shackle_mb_qualify_hit:
+    - duration: 0.3s
+      lights:
+        (leds): color_hacksaw_mb
+    - duration: 0.3s
       lights:
         (leds): off
 
@@ -93,6 +100,18 @@ show_player:
     sh_shackle_mb_end:
       show_tokens:
         leds: l_right_ramp_triangle1, l_right_ramp_triangle2
+  logicblock_acc_shackle_mb_qualify_hit{step==0}:
+    sh_shackle_mb_qualify_hit:
+      show_tokens:
+        leds: l_left_standup_arrow
+      speed: 4
+      loops: 5
+  logicblock_acc_shackle_mb_qualify_hit{step==1}:
+    sh_shackle_mb_qualify_hit:
+      show_tokens:
+        leds: l_right_standup_arrow
+      speed: 4
+      loops: 5
 
 slides:
   sl_Shackle_locked_1:

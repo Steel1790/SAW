@@ -47,15 +47,22 @@ shows:
       shows:
         flash_color:
           show_tokens:
-            color: razorwire
+            color: color_hacksaw_mb
             leds: (leds)
           speed: 4
   sh_jigsaw_mb_qualify_hit_qualified:
     - duration: -1
       lights:
-        (leds): razorwire
+        (leds): color_hacksaw_mb
   sh_jigsaw_mb_end:
     - duration: -1
+      lights:
+        (leds): off
+  sh_jigsaw_mb_qualify_hit:
+    - duration: 0.3s
+      lights:
+        (leds): color_hacksaw_mb
+    - duration: 0.3s
       lights:
         (leds): off
 
@@ -88,6 +95,13 @@ show_player:
     sh_jigsaw_mb_end:
       show_tokens:
         leds: l_left_ramp_triangle1, l_left_ramp_triangle2, l_left_ramp_triangle3
+  e_jigsaw_mb_qualify_hit_one:
+    sh_jigsaw_mb_qualify_hit:
+      show_tokens:
+        leds: bear_flasher
+      speed: 4
+      loops: 5
+    
 
 slides:
   sl_Jigsaw_locked_1:

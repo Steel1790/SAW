@@ -41,6 +41,12 @@ variable_player:
       int: 1
       action: add
 
+# puzzle pieces collected
+  mode_puzzle_hurryup_complete:
+    puzzle_pieces:
+      int: 1
+      action: add
+
 # modes attempted for mini wizard mode -- player_modes_attempted
   mode_drillchair_started:
     modes_attempted:

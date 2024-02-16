@@ -413,21 +413,27 @@ sound_player:
 
   selection_mode_razorwire_highlighted:
     ModeHighlightedRazorWire:
+      max_queue_time: 500ms
       action: play
   selection_mode_reversebeartrap_highlighted:
     ModeHighlightedReverseBearTrap:
+      max_queue_time: 500ms
       action: play
   selection_mode_flammablejelly_highlighted: 
     ModeHighlightedFlammableJelly:
+      max_queue_time: 500ms
       action: play
   selection_mode_drillchair_highlighted: 
     ModeHighlightedDrillChair:
+      max_queue_time: 500ms
       action: play
   selection_mode_quadshotgun_highlighted: 
     ModeHighlightedQuadShotgun:
+      max_queue_time: 500ms
       action: play
   selection_mode_zeptest_highlighted: 
     ModeHighlightedZepsTest:
+      max_queue_time: 500ms
       action: play
 
  # razorwire mode
