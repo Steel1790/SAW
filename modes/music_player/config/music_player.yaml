@@ -234,7 +234,17 @@ sound_pools:
       - ModeIsLit8
       - ModeIsLit9
       - ModeIsLit10
-
+  PuzzlePiece:
+    load: preload
+    type: random_force_next
+    track: voice
+    sounds:
+      - PuzzlePiece1
+      - PuzzlePiece2
+      - PuzzlePiece3
+      - PuzzlePiece4
+      - PuzzlePiece5
+      - PuzzlePiece6
 
 sound_player:
   mode_music_player_started:
@@ -369,6 +379,11 @@ sound_player:
     lowerdropsaudio:
       action: play
       block: true
+#puzzle collected
+  mode_puzzle_hurryup_complete:
+    PuzzlePiece:
+      action: play
+
     
   logicblock_random_switch_hit{hits==29}:  
     randomswitch:

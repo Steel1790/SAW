@@ -314,11 +314,16 @@ show_player:
       speed: 16
       show_tokens:
         led: l_right_loop_arrow
-        color1: shotgun       
+        color1: shotgun     
 
   player_quadshotgun_quadshotgun_60s_timer_tick{value == 1}: 
     shotgun_blast:
       speed: 20
+
+  counter_quadshotgun_spinner_counter_hit:
+    shotgun_blast_top_pops:
+      loops: 0
+      speed: 30
 
   spinner_hit:
     flash_token:

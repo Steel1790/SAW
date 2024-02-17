@@ -739,7 +739,7 @@ shows:
   pops_on:
     - duration: -1
       lights:
-        (leds): beartrap
+        (leds): BBBBBB
 
   sh_escape_outlane_end:
     - duration: -1
@@ -943,6 +943,46 @@ show_player:
       loops: -1    
       priority: 200
 
+# saw letter light show
+  logicblock_cnt_saw_qualify_updated{value==1}:
+    collect_S:
+      loops: 1
+      speed: 30
+  logicblock_cnt_saw_qualify_updated{value==2}:
+    collect_A:
+      loops: 1
+      speed: 30
+  logicblock_cnt_saw_qualify_complete:
+    collect_W:
+      loops: 1
+      speed: 30
+
+# trap mode fail
+  player_drillchair_drillchair_60s_timer_tick{value < 1}:
+      mode_fail:
+        loops: 0
+        speed: 20
+  player_flammablejelly_60s_flammablejelly_timer_tick{value < 1}:
+      mode_fail:
+        loops: 0
+        speed: 20
+  player_quadshotgun_quadshotgun_60s_timer_tick{value < 1}:
+      mode_fail:
+        loops: 0
+        speed: 20
+  player_razorwire_60s_timer_tick{value < 1}:
+      mode_fail:
+        loops: 0
+        speed: 20
+  player_reversebeartrap_120s_reversebeartrap_timer_tick{value < 1}:
+      mode_fail:
+        loops: 0
+        speed: 20  
+  player_zeptest_60s_zeptest_timer_tick{value < 1}:
+      mode_fail:
+        loops: 0
+        speed: 20
+
 # mode attempt for puzzle insert 
   mode_razorwire_stopping:
     mode_razorwire_show_started:
@@ -1005,6 +1045,12 @@ show_player:
         led: l_left_return_lane
         color1: red
 
+# x marks spot glass effect
+  s_upper_bank_drop_target_opto_active:
+    starpost_breaking_glass:
+      loops: 0
+      speed: 40
+
 #  trap completed
   slide_trapcomplete_active:
     rw_complete:
@@ -1028,18 +1074,27 @@ show_player:
       speed: 10
       show_tokens:
         color1: beartrap
+    negative_S:
+      loops: 1
+      speed: 30
   logicblock_cnt_negative_shot_counter_updated{value==2}:
     disc_middle_chase:
       loops: -1
       speed: 10
       show_tokens:
         color1: beartrap
+    negative_A:
+      loops: 1
+      speed: 30
   logicblock_cnt_negative_shot_counter_updated{value==3}:
     disc_left_chase:
       loops: -1
       speed: 10
       show_tokens:
         color1: beartrap
+    negative_W:
+      loops: 1
+      speed: 30
   logicblock_cnt_negative_shot_counter_updated{value==0}:
       disc_left_chase: stop
       disc_middle_chase: stop

@@ -390,6 +390,10 @@ show_player:
         speed: 20
         show_tokens:
           color1: beartrap
+  player_reversebeartrap_120s_reversebeartrap_timer_tick{value < 1}:
+      mode_fail:
+        loops: 0
+        speed: 30
 
 event_player: 
   slide_reversebeartrapUI_active: e_primary_mode_active

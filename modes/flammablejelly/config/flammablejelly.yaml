@@ -312,6 +312,9 @@ show_player:
         show_tokens:
           leds: orbit
           color1: off
+      fire_top_pops:
+        loops: -1
+        speed: 30
       flammablejelly_progress_p1:
         loops: -1
         show_tokens:
@@ -339,11 +342,21 @@ show_player:
         show_tokens:
           leds: orbit
           color1: off
+      fire_bottom_pops:
+        loops: -1
+        speed: 30
 
   mode_flammablejelly_started:     
     gi_on:
       show_tokens:
         color1: jelly
+    fire_starposts:
+      loops: -1
+      speed: 20
+  player_flammablejelly_60s_flammablejelly_timer_tick{value < 1}:
+    fire_starposts: stop
+    fire_top_pops: stop
+    fire_bottom_pops: stop
 
 sound_pools:
   flammablejelly_mode_sound_pool:
