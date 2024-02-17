@@ -979,6 +979,160 @@ lights:
       white:
         number: ledneuron-2-8-2
     tags: topper, ledneuronp2
+  l_topper_7:
+    channels:
+      red:
+        number: ledneuron-2-9-0
+      green:
+        number: ledneuron-2-9-1
+      blue:
+        number: ledneuron-2-9-2
+      white:
+        number: ledneuron-2-10-1
+    tags: topper, ledneuronp2
+  l_topper_8:
+    channels:
+      red:
+        number: ledneuron-2-10-2
+      green:
+        number: ledneuron-2-10-0
+      blue:
+        number: ledneuron-2-11-1
+      white:
+        number: ledneuron-2-11-0
+    tags: topper, ledneuronp2
+  l_topper_9:
+    channels:
+      red:
+        number: ledneuron-2-12-1
+      green:
+        number: ledneuron-2-11-2
+      blue:
+        number: ledneuron-2-12-0
+      white:
+        number: ledneuron-2-12-2
+    tags: topper, ledneuronp2   
+  l_topper_10:
+    channels:
+      red:
+        number: ledneuron-2-13-0
+      green:
+        number: ledneuron-2-13-1
+      blue:
+        number: ledneuron-2-13-2
+      white:
+        number: ledneuron-2-14-1
+    tags: topper, ledneuronp2
+  l_topper_11:
+    channels:
+      red:
+        number: ledneuron-2-14-2
+      green:
+        number: ledneuron-2-14-0
+      blue:
+        number: ledneuron-2-15-1
+      white:
+        number: ledneuron-2-15-0
+    tags: topper, ledneuronp2
+  l_topper_12:
+    channels:
+      red:
+        number: ledneuron-2-16-1
+      green:
+        number: ledneuron-2-15-2
+      blue:
+        number: ledneuron-2-16-0
+      white:
+        number: ledneuron-2-16-2
+    tags: topper, ledneuronp2 
+  l_topper_13:
+    channels:
+      red:
+        number: ledneuron-2-17-0
+      green:
+        number: ledneuron-2-17-1
+      blue:
+        number: ledneuron-2-17-2
+      white:
+        number: ledneuron-2-18-1
+    tags: topper, ledneuronp2
+  l_topper_14:
+    channels:
+      red:
+        number: ledneuron-2-18-2
+      green:
+        number: ledneuron-2-18-0
+      blue:
+        number: ledneuron-2-19-1
+      white:
+        number: ledneuron-2-19-0
+    tags: topper, ledneuronp2
+  l_topper_15:
+    channels:
+      red:
+        number: ledneuron-2-20-1
+      green:
+        number: ledneuron-2-19-2
+      blue:
+        number: ledneuron-2-20-0
+      white:
+        number: ledneuron-2-20-2
+    tags: topper, ledneuronp2 
+  l_topper_16:
+    channels:
+      red:
+        number: ledneuron-2-21-0
+      green:
+        number: ledneuron-2-21-1
+      blue:
+        number: ledneuron-2-21-2
+      white:
+        number: ledneuron-2-22-1
+    tags: topper, ledneuronp2
+  l_topper_17:
+    channels:
+      red:
+        number: ledneuron-2-22-2
+      green:
+        number: ledneuron-2-22-0
+      blue:
+        number: ledneuron-2-23-1
+      white:
+        number: ledneuron-2-23-0
+    tags: topper, ledneuronp2
+  l_topper_18:
+    channels:
+      red:
+        number: ledneuron-2-24-1
+      green:
+        number: ledneuron-2-23-2
+      blue:
+        number: ledneuron-2-24-0
+      white:
+        number: ledneuron-2-24-2
+    tags: topper, ledneuronp2 
+  l_topper_19:
+    channels:
+      red:
+        number: ledneuron-2-25-0
+      green:
+        number: ledneuron-2-25-1
+      blue:
+        number: ledneuron-2-25-2
+      white:
+        number: ledneuron-2-26-1
+    tags: topper, ledneuronp2
+  l_topper_20:
+    channels:
+      red:
+        number: ledneuron-2-26-2
+      green:
+        number: ledneuron-2-26-0
+      blue:
+        number: ledneuron-2-27-1
+      white:
+        number: ledneuron-2-27-0
+    tags: topper, ledneuronp2
 
   l_left_disc:
       number: c_left_spin_disc

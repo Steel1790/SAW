@@ -13,8 +13,34 @@ multiballs:
     start_events: logicblock_jigsaw_multiball_qualify_complete
 
 variable_player:
-  multiball_mb_jigsaw_started:
-    score: 3000000
+  #multiball_mb_jigsaw_started:
+  #  score: 3000000
+  shot_jigsaw_left_loop_sp_jigsaw_mb_lit_hit:
+    score: 1000000
+  shot_jigsaw_left_standup_sp_jigsaw_mb_lit_hit:
+    score: 1000000
+  shot_jigsaw_left_standup_rightramp_sp_jigsaw_mb_lit_hit:
+    score: 1000000
+  shot_jigsaw_right_standup_rightramp_sp_jigsaw_mb_lit_hit:
+    score: 1000000
+  shot_jigsaw_right_loop_sp_jigsaw_mb_lit_hit:
+    score: 1000000
+  shot_jigsaw_right_standup_sp_jigsaw_mb_lit_hit:
+    score: 1000000
+
+  shot_jigsaw_superjackpot1_sp_jigsaw_mb_lit_hit:
+    score: 5000000
+  
+counters:
+  cnt_jigsaw_mb_jackpot_p1:
+    starting_count: 0
+    count_complete_value: 6
+    enable_events: slide_sl_JigsawMB_active
+#    persist_state: true
+    reset_on_complete: true
+    disable_on_complete: false   
+    count_events: shot_jigsaw_left_loop_sp_jigsaw_mb_lit_hit, shot_jigsaw_left_standup_sp_jigsaw_mb_lit_hit, shot_jigsaw_left_standup_rightramp_sp_jigsaw_mb_lit_hit, shot_jigsaw_right_standup_rightramp_sp_jigsaw_mb_lit_hit, shot_jigsaw_right_loop_sp_jigsaw_mb_lit_hit, shot_jigsaw_right_standup_sp_jigsaw_mb_lit_hit
+    events_when_complete: jigsaw_mb_jackpot_p1_complete
 
 slides:
   sl_JigsawMB:
@@ -52,6 +78,18 @@ show_player:
       disc_left_chase: stop
       disc_middle_chase: stop
       disc_right_chase: stop
+  jigsaw_mb_jackpot_p1_complete:
+      top_drop_chase:
+        loops: -1
+        speed: 20
+        show_tokens:
+          color1: beartrap
+  shot_jigsaw_superjackpot1_sp_jigsaw_mb_lit_hit:
+      top_drop_chase:
+        loops: -1
+        show_tokens:
+          color1: off
+  stop_mode_jigsaw_multiball: stop
 coil_player:
   multiball_mb_jigsaw_started:
     c_left_spin_disc:
@@ -77,3 +115,123 @@ coil_player:
       action: off
     c_left_spin_disc:
       action: off
+
+shots:
+  shot_jigsaw_left_loop:
+    reset_events: mode_jigsaw_multiball_stopped, player_turn_stopped, player_turn_ended
+    switches: s_left_loop_bottom, s_left_loop_top
+    profile: sp_jigsaw_mb
+    show_tokens:
+      leds: l_left_loop_arrow
+    control_events:
+      - events: ball_starting
+        state: 0
+      - events: slide_sl_JigsawMB_active
+        state: 1
+      - events: shot_jigsaw_left_loop_sp_jigsaw_mb_lit_hit
+        state: 0
+  shot_jigsaw_left_standup:
+    reset_events: mode_jigsaw_multiball_stopped, player_turn_stopped, player_turn_ended
+    switches: s_left_standup
+    profile: sp_jigsaw_mb
+    show_tokens:
+      leds: l_left_standup_arrow
+    control_events:
+      - events: ball_starting
+        state: 0
+      - events: slide_sl_JigsawMB_active
+        state: 1
+      - events: shot_jigsaw_left_standup_sp_jigsaw_mb_lit_hit
+        state: 0
+  shot_jigsaw_left_standup_rightramp:
+    reset_events: mode_jigsaw_multiball_stopped, player_turn_stopped, player_turn_ended
+    switches: s_left_standup_right_ramp
+    profile: sp_jigsaw_mb
+    show_tokens:
+      leds: l_left_standup_right_ramp_arrow
+    control_events:
+      - events: ball_starting
+        state: 0
+      - events: slide_sl_JigsawMB_active
+        state: 1
+      - events: shot_jigsaw_left_standup_rightramp_sp_jigsaw_mb_lit_hit
+        state: 0
+  shot_jigsaw_right_standup_rightramp:
+    reset_events: mode_jigsaw_multiball_stopped, player_turn_stopped, player_turn_ended
+    switches: s_right_standup_right_ramp
+    profile: sp_jigsaw_mb
+    show_tokens:
+      leds: l_right_standup_right_ramp_arrow
+    control_events:
+      - events: ball_starting
+        state: 0
+      - events: slide_sl_JigsawMB_active
+        state: 1
+      - events: shot_jigsaw_right_standup_rightramp_sp_jigsaw_mb_lit_hit
+        state: 0
+  shot_jigsaw_right_loop:
+    reset_events: mode_jigsaw_multiball_stopped, player_turn_stopped, player_turn_ended
+    switches: s_right_loop_bottom, s_right_loop_top
+    profile: sp_jigsaw_mb
+    show_tokens:
+      leds: l_right_loop_arrow
+    control_events:
+      - events: ball_starting
+        state: 0
+      - events: slide_sl_JigsawMB_active
+        state: 1
+      - events: shot_jigsaw_right_loop_sp_jigsaw_mb_lit_hit
+        state: 0
+  shot_jigsaw_right_standup:
+    reset_events: mode_jigsaw_multiball_stopped, player_turn_stopped, player_turn_ended
+    switches: s_right_standup
+    profile: sp_jigsaw_mb
+    show_tokens:
+      leds: l_right_standup_arrow
+    control_events:
+      - events: ball_starting
+        state: 0
+      - events: slide_sl_JigsawMB_active
+        state: 1
+      - events: shot_jigsaw_right_standup_sp_jigsaw_mb_lit_hit
+        state: 0
+  shot_jigsaw_superjackpot1:
+    reset_events: mode_jigsaw_multiball_stopped, player_turn_stopped, player_turn_ended
+    switches: s_upper_bank_drop_target_opto
+    profile: sp_jigsaw_mb
+    control_events:
+      - events: ball_starting
+        state: 0
+      - events: jigsaw_mb_jackpot_p1_complete
+        state: 1
+      - events: shot_jigsaw_superjackpot1_sp_jigsaw_mb_lit_hit
+        state: 0
+
+shot_profiles:
+  sp_jigsaw_mb:
+    advance_on_hit: false
+    states:
+      - name: jigsaw_not_ready
+        show: "sh_jigsaw_not_ready"
+      - name: lit
+        show: "sh_jigsaw_on"           # a default show to turn of the led. change if you want to do something on unlit shots
+      #- name: collected
+      #  show: "sh_jigsaw_off"               # a default show to turn of the led. change if you want to do something on unlit shots
+
+shot_groups:
+  sg_jigsaw_p1:
+    shots: shot_jigsaw_left_loop, shot_jigsaw_left_standup, shot_jigsaw_left_standup_rightramp, shot_jigsaw_right_standup_rightramp, shot_jigsaw_right_loop, shot_jigsaw_right_standup
+
+
+shows:
+  sh_jigsaw_on:    # define our show to indicate the state
+    - duration: 0.3s
+      lights:
+        (leds): beartrap
+    - duration: 0.3s
+      lights:
+        (leds): off
+  sh_jigsaw_not_ready:    # define our show to indicate the state
+    - duration: 0.3s
+      lights:
+        (leds): off

@@ -28,8 +28,8 @@ multiballs:
     replace_balls_in_play: true
 
 variable_player:
-  multiball_mb_hacksaw_started:
-    score: 3000000
+  #multiball_mb_hacksaw_started:
+    #score: 3000000
 
 slides:
   sl_HacksawMB:
