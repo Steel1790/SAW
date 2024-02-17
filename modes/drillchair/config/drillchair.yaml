@@ -387,7 +387,7 @@ sound_pools:
 
 sound_player:
   mode_drillchair_started:
-    drillchair:
+    DrillChairIntro:
       action: play  
     DrillChairModeStart:
       delay: 6s

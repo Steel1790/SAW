@@ -363,7 +363,7 @@ sound_pools:
 
 sound_player:
   mode_flammablejelly_started:
-    flammablejelly:
+    FlammableJellyIntro:
       action: play
     FlammableJellyModeStart:
       delay: 10s

@@ -323,7 +323,7 @@ show_player:
 
 sound_player:
   mode_zeptest_started:
-    zeptest:
+    ZepsTestIntro:
       action: play
     ZepsTestModeStart:
       delay: 9.2s

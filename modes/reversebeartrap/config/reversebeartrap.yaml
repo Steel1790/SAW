@@ -306,10 +306,10 @@ sound_pools:
       
 sound_player:
   mode_reversebeartrap_started:
-    reversebeartrap:
+    ReverseBearTrapIntro:
       action: play
     ReverseBearTrapModeStart:
-      delay: 24s
+      delay: 10.2s
       action: play
       loops: 2
   player_reversebeartrap_120s_reversebeartrap_timer_tick{value < 1}:

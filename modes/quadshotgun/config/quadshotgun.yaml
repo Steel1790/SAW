@@ -364,7 +364,10 @@ sound_pools:
 
 sound_player:
   mode_quadshotgun_started:
+    QuadShotgunIntro:
+      action: play
     QuadShotgunModeStart:
+      delay: 6.3s
       action: play
   player_quadshotgun_quadshotgun_60s_timer_tick{value < 1}:
     QuadShotgunModeStart:
