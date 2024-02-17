@@ -1,6 +1,7 @@
 #config_version=6
 mode:
   start_events: ball_starting, mode_skillshot_started
+  stop_events: ball_ended, ball_will_end
   priority: 100
   
 ball_saves:
@@ -223,7 +224,8 @@ slide_player:
     HeHelpedMeVideo:
       action: play
       priority: 400
-      expire: 5s
+      expire: 3.8s
+      #expire: 5s
   ball_save_escape_outlane_saving_ball:
     ballsavevideo:
       action: play
@@ -480,7 +482,7 @@ counters:
     
   minimode_spinners_counter:
     starting_count: 0
-    count_complete_value: 50
+    count_complete_value: 40
     enable_events: 
     disable_events: 
     start_enabled: true

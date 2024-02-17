@@ -82,7 +82,7 @@ variable_player:
 counters:
   mystery_qualify:
     starting_count: 0
-    count_complete_value: 3
+    count_complete_value: 5
     start_enabled: true
     persist_state: true
     reset_on_complete: true
