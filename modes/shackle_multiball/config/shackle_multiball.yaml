@@ -4,7 +4,7 @@
 mode:
   start_events: startmode_shackle_multiball
   stop_events: stop_mode_shackle_multiball, mode_shackle_multiball_complete
-  priority: 183
+  priority: 182
 
 multiball_locks:
   mbl_shackle:
