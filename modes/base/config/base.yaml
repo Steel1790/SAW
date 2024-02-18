@@ -2015,7 +2015,7 @@ widgets:
       z: 6
   w_shackle_mb_progress:
     - type: Text
-      text: (player|shackle_mb_lock_counter) /3 Shackle MB locked
+      text: (player|shackle_mb_lock_counter) /2 Shackle MB locked
       color: white
       font_size: 25
       font_name: Skilt Gothic W04 Thin
