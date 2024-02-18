@@ -268,15 +268,7 @@ slide_player:
     razorwire_phase2:
       priority: 405
       expire: 60.5s
-# backup removal test
-  ball_will_end:
-    razorwire_pops:
-      priority: 505
-      expire: 0.1s
-    razorwire_phase2:
-      priority: 505
-      expire: 0.1s
- 
+
 widgets:
    rw_shot_update2:
     #- type: Text
