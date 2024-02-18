@@ -1,7 +1,7 @@
 #config_version=6
 mode:
   start_events: ball_starting, mode_skillshot_started
-  stop_events: ball_ended, ball_will_end
+  #stop_events: ball_ended, ball_will_end
   priority: 100
   
 ball_saves:
