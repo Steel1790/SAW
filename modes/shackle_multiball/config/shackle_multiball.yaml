@@ -63,7 +63,7 @@ slides:
   sl_ShackleMB_Jackpot:
     widgets:
     - type: video
-      video: jackpot_jigsaw
+      video: jackpot_shackle
   sl_ShackleMB_SuperJackpot:
     widgets:
     - type: video
