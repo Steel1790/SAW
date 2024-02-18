@@ -1,8 +1,8 @@
 #config_version=6
 ##! mode: saw_qualify
 mode:
-  start_events: ball_starting, mode_razorwire_stopped, mode_drillchair_stopped, mode_flammablejelly_stopped, mode_quadshotgun_stopped, mode_reversebeartrap_stopped, mode_zeptest_stopped, mode_hacksaw_multiball_stopped, mode_jigsaw_multiball_stopped, mode_shackle_multiball_stopped
-  stop_events: mode_trap_select_started
+  start_events: ball_starting, mode_razorwire_stopped, mode_drillchair_stopped, mode_flammablejelly_stopped, mode_quadshotgun_stopped, mode_reversebeartrap_stopped, mode_zeptest_stopped, mode_hacksaw_multiball_stopped, mode_jigsaw_multiball_stopped, mode_shackle_multiball_stopped, mode_make_your_choice_hurryup_stopped, mode_jigsaw_multiball_complete, mode_hacksaw_multiball_complete, mode_shackle_multiball_complete
+  stop_events: mode_trap_select_started, mode_make_your_choice_hurryup_started, multiball_mb_jigsaw_started, multiball_mb_hacksaw_started, multiball_mb_shackle_started
   priority: 120
 
 shots:
@@ -90,10 +90,10 @@ shot_groups:
 
 shows:
   sh_shot_on:    # define our show to indicate the state
-    - duration: 1s
+    - duration: 0.3s
       lights:
         (leds): white
-    - duration: 1s
+    - duration: 0.3s
       lights:
         (leds): off
   sh_shot_subtract:    # define our show to indicate the state
@@ -172,7 +172,12 @@ show_player:
 event_player:
   sg_saw_qualify_subtract_hit{device.counters.cnt_saw_qualify.value > 0}:
     - e_subtract_a_saw_letter
-
+  logicblock_cnt_negative_shot_counter_updated{value==1}:
+    - e_negative_saw_letter_1|3.75s
+  logicblock_cnt_negative_shot_counter_updated{value==2}:
+    - e_negative_saw_letter_2|3.75s    
+  logicblock_cnt_negative_shot_counter_updated{value==3}:
+    - e_negative_saw_letter_3|3.75s
 counters:
   cnt_saw_qualify:
     starting_count: 0
@@ -210,7 +215,11 @@ slides:
   s_subtract:
     widgets:
     - type: video
-      video: s_subtract     
+      video: s_subtract   
+  s_negativelettervideo:
+    widgets:
+    - type: video
+      video: CircularSawTunnel
     
 slide_player:
   logicblock_cnt_saw_qualify_updated{value==1}:
@@ -225,15 +234,29 @@ slide_player:
   #  saw_collect:
   #    priority: 200
   #    expire: 3s         
-  sg_saw_qualify_subtract_hit:
-    s_subtract:
+  logicblock_cnt_negative_shot_counter_updated{value==1}:
+    s_negativelettervideo:
+      action: play
+      priority: 200
+      expire: 3.8s
+  e_negative_saw_letter_1:
+    sa_subtract:
       priority: 195
       expire: 3s
-  sg_saw_qualify_subtract_hit{device.counters.cnt_saw_qualify.value==2}:
-    sa_subtract:
+  logicblock_cnt_negative_shot_counter_updated{value==2}:
+    s_negativelettervideo:
+      action: play
+      priority: 200
+      expire: 3.8s
+  e_negative_saw_letter_2:
+    s_subtract:
       priority: 196
       expire: 3s
-
+  #logicblock_cnt_negative_shot_counter_updated{value==3}:
+  #  s_negativelettervideo:
+  #    action: play
+  #    priority: 200
+  #    expire: 3.8s
 #sound_player:
 #  logicblock_cnt_saw_qualify_updated{value==1}:
 #    SawLetterS:

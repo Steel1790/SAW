@@ -1,0 +1,333 @@
+#show_version=6
+- time: 0
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+- time: '+1'
+  lights:
+    l_middle_disc_1: 'FE0000'
+    l_middle_disc_10: 'FE0000'
+    l_middle_disc_11: 'FC0000'
+    l_middle_disc_12: '010000'
+    l_middle_disc_15: 'EF0000'
+    l_middle_disc_16: 'FD0000'
+    l_middle_disc_2: 'FE0000'
+    l_middle_disc_3: '7E0000'
+    l_middle_disc_4: '370000'
+    l_middle_disc_6: '360000'
+    l_middle_disc_7: 'FA0000'
+    l_middle_disc_8: 'FE0000'
+    l_middle_disc_9: 'FE0000'
+    
+- time: '+1'
+  lights:
+    l_middle_disc_11: 'FE0000'
+    l_middle_disc_12: 'FE0000'
+    l_middle_disc_13: 'FE0000'
+    l_middle_disc_14: 'FE0000'
+    l_middle_disc_15: 'FE0000'
+    l_middle_disc_16: 'FE0000'
+    l_middle_disc_3: 'FE0000'
+    l_middle_disc_4: 'FE0000'
+    l_middle_disc_5: 'FE0000'
+    l_middle_disc_6: 'FE0000'
+    l_middle_disc_7: 'FE0000'
+    
+- time: '+1'
+  lights:
+    l_right_disc_11: '130000'
+    
+- time: '+1'
+  lights:
+    l_left_disc_3: 'FE0000'
+    l_left_disc_4: 'FE0000'
+    l_right_disc_10: 'FE0000'
+    l_right_disc_11: 'FE0000'
+    
+- time: '+1'
+  lights:
+    l_left_disc_2: 'ED0000'
+    l_left_disc_5: 'FE0000'
+    l_right_disc_12: 'FE0000'
+    l_right_disc_9: 'FE0000'
+    
+- time: '+1'
+  lights:
+    l_left_disc_2: 'FE0000'
+    l_left_disc_6: 'FD0000'
+    
+- time: '+1'
+  lights:
+    l_left_disc_1: 'FE0000'
+    l_left_disc_6: 'FE0000'
+    l_right_disc_1: 'FE0000'
+    l_right_disc_8: 'F90000'
+    
+- time: '+1'
+  lights:
+    l_left_disc_7: 'FE0000'
+    l_right_disc_8: 'FE0000'
+    
+- time: '+1'
+  lights:
+    l_left_disc_12: 'FE0000'
+    l_right_disc_2: 'FE0000'
+    l_right_disc_7: 'FE0000'
+    
+- time: '+1'
+  lights:
+    l_left_disc_11: 'FE0000'
+    l_left_disc_8: 'FE0000'
+    
+- time: '+1'
+  lights:
+    l_left_disc_10: 'FE0000'
+    l_left_disc_9: 'FE0000'
+    l_right_disc_3: 'FE0000'
+    l_right_disc_4: '1E0000'
+    l_right_disc_5: 'FA0000'
+    l_right_disc_6: 'FE0000'
+    
+- time: '+1'
+  lights:
+    l_right_disc_4: 'FE0000'
+    l_right_disc_5: 'FE0000'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+- time: '+1'
+  lights:
+    l_left_disc_1: 'FF0000'
+    l_left_disc_10: 'FF0000'
+    l_left_disc_11: 'FF0000'
+    l_left_disc_12: 'FF0000'
+    l_left_disc_2: 'FF0000'
+    l_left_disc_3: 'FF0000'
+    l_left_disc_4: 'FF0000'
+    l_left_disc_5: 'FF0000'
+    l_left_disc_6: 'FF0000'
+    l_left_disc_7: 'FF0000'
+    l_left_disc_8: 'FF0000'
+    l_left_disc_9: 'FF0000'
+    l_middle_disc_1: 'FF0000'
+    l_middle_disc_10: 'FF0000'
+    l_middle_disc_11: 'FF0000'
+    l_middle_disc_12: 'FF0000'
+    l_middle_disc_13: 'FF0000'
+    l_middle_disc_14: 'FF0000'
+    l_middle_disc_15: 'FF0000'
+    l_middle_disc_16: 'FF0000'
+    l_middle_disc_2: 'FF0000'
+    l_middle_disc_3: 'FF0000'
+    l_middle_disc_4: 'FF0000'
+    l_middle_disc_5: 'FF0000'
+    l_middle_disc_6: 'FF0000'
+    l_middle_disc_7: 'FF0000'
+    l_middle_disc_8: 'FF0000'
+    l_middle_disc_9: 'FF0000'
+    l_right_disc_1: 'FF0000'
+    l_right_disc_10: 'FF0000'
+    l_right_disc_11: 'FF0000'
+    l_right_disc_12: 'FF0000'
+    l_right_disc_2: 'FF0000'
+    l_right_disc_3: 'FF0000'
+    l_right_disc_4: 'FF0000'
+    l_right_disc_5: 'FF0000'
+    l_right_disc_6: 'FF0000'
+    l_right_disc_7: 'FF0000'
+    l_right_disc_8: 'FF0000'
+    l_right_disc_9: 'FF0000'
+    
+- time: '+1'
+  lights:
+    l_left_disc_1: 'FE0000'
+    l_left_disc_10: 'FE0000'
+    l_left_disc_11: 'FE0000'
+    l_left_disc_12: 'FE0000'
+    l_left_disc_2: 'FE0000'
+    l_left_disc_3: 'FE0000'
+    l_left_disc_4: 'FE0000'
+    l_left_disc_5: 'FE0000'
+    l_left_disc_6: 'FE0000'
+    l_left_disc_7: 'FE0000'
+    l_left_disc_8: 'FE0000'
+    l_left_disc_9: 'FE0000'
+    l_middle_disc_1: 'FE0000'
+    l_middle_disc_10: 'FE0000'
+    l_middle_disc_11: 'FE0000'
+    l_middle_disc_12: 'FE0000'
+    l_middle_disc_13: 'FE0000'
+    l_middle_disc_14: 'FE0000'
+    l_middle_disc_15: 'FE0000'
+    l_middle_disc_16: 'FE0000'
+    l_middle_disc_2: 'FE0000'
+    l_middle_disc_3: 'FE0000'
+    l_middle_disc_4: 'FE0000'
+    l_middle_disc_5: 'FE0000'
+    l_middle_disc_6: 'FE0000'
+    l_middle_disc_7: 'FE0000'
+    l_middle_disc_8: 'FE0000'
+    l_middle_disc_9: 'FE0000'
+    l_right_disc_1: 'FE0000'
+    l_right_disc_10: 'FE0000'
+    l_right_disc_11: 'FE0000'
+    l_right_disc_12: 'FE0000'
+    l_right_disc_2: 'FE0000'
+    l_right_disc_3: 'FE0000'
+    l_right_disc_4: 'FE0000'
+    l_right_disc_5: 'FE0000'
+    l_right_disc_6: 'FE0000'
+    l_right_disc_7: 'FE0000'
+    l_right_disc_8: 'FE0000'
+    l_right_disc_9: 'FE0000'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+- time: '+1'
+  lights:
+    l_right_disc_4: '000000'
+    l_right_disc_5: '0D0000'
+    
+- time: '+1'
+  lights:
+    l_left_disc_10: '000000'
+    l_left_disc_11: '000000'
+    l_left_disc_9: '000000'
+    l_right_disc_3: '000000'
+    l_right_disc_5: '000000'
+    l_right_disc_6: '000000'
+    
+- time: '+1'
+  lights:
+    l_left_disc_8: '000000'
+    l_right_disc_7: 'FA0000'
+    
+- time: '+1'
+  lights:
+    l_left_disc_12: '000000'
+    l_right_disc_2: '000000'
+    l_right_disc_7: '000000'
+    
+- time: '+1'
+  lights:
+    l_left_disc_7: '000000'
+    l_right_disc_8: '5F0000'
+    
+- time: '+1'
+  lights:
+    l_left_disc_1: '000000'
+    l_left_disc_6: '410000'
+    l_right_disc_1: '000000'
+    l_right_disc_8: '000000'
+    
+- time: '+1'
+  lights:
+    l_left_disc_2: '000000'
+    l_left_disc_6: '000000'
+    l_right_disc_9: 'A40000'
+    
+- time: '+1'
+  lights:
+    l_left_disc_3: 'FD0000'
+    l_left_disc_5: '000000'
+    l_right_disc_12: '000000'
+    l_right_disc_9: '000000'
+    
+- time: '+1'
+  lights:
+    l_left_disc_3: '000000'
+    l_left_disc_4: '000000'
+    l_right_disc_10: '000000'
+    l_right_disc_11: '000000'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+- time: '+1'
+  lights:
+    l_middle_disc_11: 'F90000'
+    l_middle_disc_12: '010000'
+    l_middle_disc_13: '000000'
+    l_middle_disc_14: '000000'
+    l_middle_disc_15: 'B20000'
+    l_middle_disc_16: 'F50000'
+    l_middle_disc_3: '300000'
+    l_middle_disc_4: '0B0000'
+    l_middle_disc_5: '000000'
+    l_middle_disc_6: '060000'
+    l_middle_disc_7: 'D60000'
+    
+- time: '+1'
+  lights:
+    l_middle_disc_1: '000000'
+    l_middle_disc_10: '000000'
+    l_middle_disc_11: '000000'
+    l_middle_disc_12: '000000'
+    l_middle_disc_15: '000000'
+    l_middle_disc_16: '000000'
+    l_middle_disc_2: '000000'
+    l_middle_disc_3: '000000'
+    l_middle_disc_4: '000000'
+    l_middle_disc_6: '000000'
+    l_middle_disc_7: '000000'
+    l_middle_disc_8: '000000'
+    l_middle_disc_9: '000000'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    

@@ -41,6 +41,12 @@ variable_player:
       int: 1
       action: add
 
+# puzzle pieces collected
+  mode_puzzle_hurryup_complete:
+    puzzle_pieces:
+      int: 1
+      action: add
+
 # modes attempted for mini wizard mode -- player_modes_attempted
   mode_drillchair_started:
     modes_attempted:
@@ -76,7 +82,7 @@ variable_player:
 counters:
   mystery_qualify:
     starting_count: 0
-    count_complete_value: 3
+    count_complete_value: 5
     start_enabled: true
     persist_state: true
     reset_on_complete: true

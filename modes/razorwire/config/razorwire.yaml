@@ -518,7 +518,7 @@ sound_pools:
 
 sound_player:
   mode_razorwire_started:
-    razorwire:
+    RazorwireIntro:
       action: play
     RWModeStart:
       delay: 4s

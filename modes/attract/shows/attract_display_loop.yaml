@@ -146,3 +146,12 @@
       transition:
          type: fade
          duration: 0.2s
+- duration: 55s
+  slides:
+    slide6:
+      widgets:
+      - type: video
+        video: SawTrailer
+      transition:
+         type: fade
+         duration: 0.1s

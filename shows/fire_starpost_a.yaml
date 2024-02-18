@@ -1,0 +1,458 @@
+#show_version=6
+- time: 0
+  lights:
+    post_a: '793200'
+    post_b: 'EC6300'
+    post_c: 'C80611'
+    post_e: 'A73500'
+    post_h: 'C80013'
+    
+- time: '+1'
+  lights:
+    post_a: '6E3100'
+    post_b: 'FD6600'
+    post_c: 'C80A0F'
+    post_d: 'C80212'
+    post_e: 'A83500'
+    post_f: '6B3000'
+    post_g: 'A23500'
+    
+- time: '+1'
+  lights:
+    post_a: '743200'
+    post_b: 'FA6600'
+    post_c: 'C8150A'
+    post_d: 'C80511'
+    post_e: 'B03500'
+    post_f: '672F00'
+    post_g: 'A93500'
+    
+- time: '+1'
+  lights:
+    post_a: '693000'
+    post_b: 'FF6800'
+    post_c: 'C81F06'
+    post_d: 'C80B0E'
+    post_e: 'AF3500'
+    post_f: '612D00'
+    post_g: 'AE3500'
+    post_h: 'C80113'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+- time: '+1'
+  lights:
+    post_a: '622E00'
+    post_b: 'FF6700'
+    post_c: 'C72F00'
+    post_d: 'C8140B'
+    post_e: 'B53400'
+    post_f: '572900'
+    post_g: 'B33500'
+    post_h: 'C80611'
+    
+- time: '+1'
+  lights:
+    post_a: '4C2500'
+    post_b: 'FF6800'
+    post_c: 'C53200'
+    post_d: 'C81F06'
+    post_e: 'B33400'
+    post_f: '452100'
+    post_g: 'B73400'
+    post_h: 'C80A0F'
+    
+- time: '+1'
+  lights:
+    post_b: 'FF6600'
+    post_c: 'BF3300'
+    post_d: 'C72C01'
+    post_e: 'B73400'
+    post_f: '5A2B00'
+    post_g: 'B43400'
+    
+- time: '+1'
+  lights:
+    post_a: '170C00'
+    post_h: 'C8160A'
+    
+- time: '+1'
+  lights:
+    post_c: 'BA3400'
+    post_d: 'C53200'
+    post_e: 'B43400'
+    post_f: '412000'
+    post_g: 'B73400'
+    
+- time: '+1'
+  lights:
+    post_a: '0C0600'
+    post_b: 'FF6300'
+    post_c: 'B13500'
+    post_d: 'C23200'
+    post_e: 'B73400'
+    post_f: '472300'
+    post_g: 'BA3400'
+    post_h: 'C81F06'
+    
+- time: '+1'
+  lights:
+    post_a: '4C2500'
+    post_b: 'FF6400'
+    post_c: 'AA3500'
+    post_d: 'BD3300'
+    post_e: 'B33500'
+    post_f: '4E2700'
+    post_g: 'BB3300'
+    post_h: 'C82703'
+    
+- time: '+1'
+  lights:
+    post_a: '462200'
+    post_b: 'FF6300'
+    post_h: 'C63000'
+    
+- time: '+1'
+  lights:
+    post_a: '642E00'
+    post_b: 'FF5D00'
+    post_c: '9E3500'
+    post_d: 'B73400'
+    post_e: 'B33400'
+    post_f: '682F00'
+    post_g: 'BC3300'
+    post_h: 'C33200'
+    
+- time: '+1'
+  lights:
+    post_a: '672F00'
+    post_b: 'FF5C00'
+    post_c: '963500'
+    post_d: 'AF3500'
+    post_e: 'AE3500'
+    post_f: '6C3000'
+    post_g: 'B73400'
+    
+- time: '+1'
+  lights:
+    post_a: '723100'
+    post_b: 'D23C00'
+    post_c: '883400'
+    post_d: 'A73500'
+    post_e: 'AC3500'
+    post_f: '7A3300'
+    post_h: 'BF3300'
+    
+- time: '+1'
+  lights:
+    post_b: 'D13C00'
+    post_h: 'BC3300'
+    
+- time: '+1'
+  lights:
+    post_a: '7C3300'
+    post_b: 'CE3800'
+    post_c: '7E3300'
+    post_d: '9E3500'
+    post_e: 'A63500'
+    post_f: '7D3300'
+    post_g: 'B63400'
+    post_h: 'B73400'
+    
+- time: '+1'
+  lights:
+    post_a: '853400'
+    post_b: 'C63100'
+    post_c: '793600'
+    post_d: '953500'
+    post_e: 'A23500'
+    post_f: '893400'
+    post_g: 'B53400'
+    post_h: 'B13500'
+    
+- time: '+1'
+  lights:
+    post_a: '8D3500'
+    post_b: 'C53200'
+    post_c: '8A4100'
+    post_d: '8B3500'
+    post_e: '9A3500'
+    post_f: '8B3500'
+    post_g: 'B33400'
+    post_h: 'AD3500'
+    
+- time: '+1'
+  lights:
+    post_b: 'C72F00'
+    post_c: 'BA5700'
+    post_h: 'A53500'
+    
+- time: '+1'
+  lights:
+    post_a: '8E3500'
+    post_c: '7B3A00'
+    post_d: '803300'
+    post_e: '953500'
+    post_f: '963500'
+    post_g: 'AA3500'
+    post_h: 'A93700'
+    
+- time: '+1'
+  lights:
+    post_a: '953500'
+    post_b: 'C72E01'
+    post_c: '6F3200'
+    post_d: '883B00'
+    post_e: '8C3500'
+    post_f: '953500'
+    post_g: 'A63500'
+    post_h: 'DE5700'
+    
+- time: '+1'
+  lights:
+    post_a: '9B3500'
+    post_c: '6E3100'
+    post_d: 'C45A00'
+    post_e: '853400'
+    post_f: '9F3600'
+    post_g: 'A23500'
+    post_h: 'F96100'
+    
+- time: '+1'
+  lights:
+    post_a: 'A13500'
+    post_b: 'C82704'
+    post_c: '793300'
+    post_d: 'BD5700'
+    post_e: '7A3300'
+    post_f: '9D3500'
+    post_g: '9E3500'
+    post_h: 'FF6600'
+    
+- time: '+1'
+  lights:
+    post_b: 'C72B02'
+    post_c: '883400'
+    post_h: 'F16500'
+    
+- time: '+1'
+  lights:
+    post_a: 'A53500'
+    post_d: 'B95100'
+    post_e: '713100'
+    post_f: 'A43500'
+    post_g: '993500'
+    post_h: 'FC6700'
+    
+- time: '+1'
+  lights:
+    post_a: 'AA3500'
+    post_b: 'C62F01'
+    post_c: '953500'
+    post_d: '853400'
+    post_e: '632D00'
+    post_f: 'A13500'
+    post_g: '943500'
+    post_h: 'F76500'
+    
+- time: '+1'
+  lights:
+    post_a: 'A63500'
+    post_d: '943500'
+    post_e: '522700'
+    post_f: 'A63500'
+    post_g: '853400'
+    post_h: 'FF6600'
+    
+- time: '+1'
+  lights:
+    post_b: 'C72D01'
+    post_c: '9E3500'
+    post_h: 'F86400'
+    
+- time: '+1'
+  lights:
+    post_a: 'A93500'
+    post_b: 'C53200'
+    post_c: 'A13500'
+    post_d: '9B3500'
+    post_e: '000000'
+    post_f: 'A33500'
+    post_g: 'A84800'
+    post_h: 'F96100'
+    
+- time: '+1'
+  lights:
+    post_a: 'AC3500'
+    post_c: 'A93500'
+    post_d: 'A83500'
+    post_f: 'A63500'
+    post_g: 'B14F00'
+    post_h: 'E75600'
+    
+- time: '+1'
+  lights:
+    post_a: 'AE3500'
+    post_c: 'B03400'
+    post_d: 'AE3500'
+    post_e: '060300'
+    post_f: 'A13500'
+    post_g: 'CC5C00'
+    post_h: 'B33800'
+    
+- time: '+1'
+  lights:
+    post_b: 'C23200'
+    post_c: 'B33400'
+    post_e: '4D2500'
+    post_h: 'AC3500'
+    
+- time: '+1'
+  lights:
+    post_a: 'AF3400'
+    post_b: 'C13200'
+    post_c: 'BA3400'
+    post_d: 'B83400'
+    post_e: '542800'
+    post_f: 'A23600'
+    post_g: 'CF5E00'
+    post_h: 'B33400'
+    
+- time: '+1'
+  lights:
+    post_a: 'A83500'
+    post_b: 'C43300'
+    post_d: 'BD3400'
+    post_f: '9B3500'
+    post_g: 'A64900'
+    post_h: 'BB3300'
+    
+- time: '+1'
+  lights:
+    post_b: 'CF3D00'
+    post_c: 'C03300'
+    post_d: 'C33200'
+    post_e: '6C3000'
+    post_g: '813500'
+    post_h: 'C03300'
+    
+- time: '+1'
+  lights:
+    post_b: 'CD3E00'
+    post_c: 'C43200'
+    post_e: '6F3100'
+    
+- time: '+1'
+  lights:
+    post_a: 'A73500'
+    post_b: 'E54D00'
+    post_c: 'C53200'
+    post_d: 'C53200'
+    post_e: '7A3300'
+    post_f: '943500'
+    post_g: '883400'
+    post_h: 'C43200'
+    
+- time: '+1'
+  lights:
+    post_a: 'A63500'
+    post_b: 'F75700'
+    post_c: 'C72D01'
+    post_d: 'C82703'
+    post_e: '7D3300'
+    post_f: '913500'
+    post_g: '8D3500'
+    post_h: 'C62F01'
+    
+- time: '+1'
+  lights:
+    post_a: 'A43500'
+    post_b: 'FD5A00'
+    post_d: 'C81F06'
+    post_f: '883400'
+    post_g: '963500'
+    post_h: 'C82504'
+    
+- time: '+1'
+  lights:
+    post_b: 'F25A00'
+    post_c: 'C81F06'
+    post_e: '893400'
+    
+- time: '+1'
+  lights:
+    post_a: '983500'
+    post_b: 'FF6300'
+    post_d: 'C8100D'
+    post_f: '833400'
+    post_g: '993500'
+    post_h: 'C8160A'
+    
+- time: '+1'
+  lights:
+    post_a: '953500'
+    post_b: 'FF6400'
+    post_c: 'C8140B'
+    post_d: 'C80D0E'
+    post_e: '8A3500'
+    post_f: '793300'
+    post_g: 'A13500'
+    post_h: 'C80D0E'
+    
+- time: '+1'
+  lights:
+    post_a: '913500'
+    post_b: 'FE6400'
+    post_c: 'C80B0E'
+    post_d: 'C80511'
+    post_e: '953500'
+    post_f: '733100'
+    post_g: 'A23500'
+    post_h: 'C80710'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+- time: '+1'
+  lights:
+    post_a: '8D3500'
+    post_b: 'F96400'
+    post_c: 'C80511'
+    post_e: '963500'
+    post_f: '672F00'
+    post_g: 'A93500'
+    post_h: 'C80312'
+    
+- time: '+1'
+  lights:
+    post_a: '883400'
+    post_b: 'EF6300'
+    post_c: 'C80710'
+    post_d: 'C80312'
+    post_e: '9F3500'
+    post_f: '5B2B00'
+    post_g: 'A83500'
+    post_h: 'C80112'
+    
+- time: '+1'
+  lights:
+    post_a: '823400'
+    post_b: 'E76200'
+    post_c: 'C80312'
+    post_d: 'C80611'
+    post_e: '9E3500'
+    post_f: '311800'
+    post_g: 'AD3500'
+    post_h: 'C80013'
+    
+- time: '+1'
+  lights:
+    post_a: '7C3300'
+    post_b: 'E56100'
+    post_d: 'C80710'
+    post_f: '000000'
+    post_g: 'AA3500'
+    

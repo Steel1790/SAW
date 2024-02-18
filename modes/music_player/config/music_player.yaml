@@ -3,7 +3,7 @@
 mode:
   start_events: ball_starting
   stop_events: game_ending
-  priority: 100
+  priority: 200
 
 sound_pools:
   razorwirepops:
@@ -102,6 +102,9 @@ sound_pools:
       - PlungeTheBall
       - RiseAndShine
       - YouMayBegin
+      - Alive
+      - ReBirth
+      - TheDevil
   randomswitch:
     load: preload
     type: random_force_next
@@ -119,12 +122,14 @@ sound_pools:
       - ISeeYou
       - EndItAllNow
       - ExistanceForGranted    
+      - CardsYourDealt
 # items collected      
   antidote_collected:
     load: preload
     type: random_force_next
     track: voice
     sounds:
+      - Antidote6
       - Antidote1
       - Antidote2
       - Antidote3
@@ -135,6 +140,7 @@ sound_pools:
     type: random_force_next
     track: voice
     sounds:
+      - Bathtub6
       - Bathtub1
       - Bathtub2
       - Bathtub3
@@ -145,6 +151,7 @@ sound_pools:
     type: random_force_next
     track: voice
     sounds:
+      - Candle6
       - Candle1
       - Candle2
       - Candle3
@@ -155,6 +162,7 @@ sound_pools:
     type: random_force_next
     track: voice
     sounds:
+      - Gears6
       - Gears1
       - Gears2
       - Gears3
@@ -165,6 +173,7 @@ sound_pools:
     type: random_force_next
     track: voice
     sounds:
+      - Hacksaw6
       - Hacksaw1
       - Hacksaw2
       - Hacksaw3
@@ -175,6 +184,7 @@ sound_pools:
     type: random_force_next
     track: voice
     sounds:
+      - Gun6
       - Gun1
       - Gun2
       - Gun3
@@ -185,6 +195,7 @@ sound_pools:
     type: random_force_next
     track: voice
     sounds:
+      - Key6
       - Key1
       - Key2
       - Key3
@@ -195,15 +206,49 @@ sound_pools:
     type: random_force_next
     track: voice
     sounds:
+      - TapeRecorder6
       - TapeRecorder1
       - TapeRecorder2
       - TapeRecorder3
       - TapeRecorder4
       - TapeRecorder5
+  hacksaw_mb_start:
+    load: preload
+    type: random_force_next
+    track: voice
+    sounds:
+      - HacksawMultiballStart1
+      - HacksawMultiballStart2   
+  ModeLit:
+    load: preload
+    type: random_force_next
+    track: voice
+    sounds:
+      - ModeIsLit1
+      - ModeIsLit2
+      - ModeIsLit3
+      - ModeIsLit4
+      - ModeIsLit5
+      - ModeIsLit6
+      - ModeIsLit7
+      - ModeIsLit8
+      - ModeIsLit9
+      - ModeIsLit10
+  PuzzlePiece:
+    load: preload
+    type: random_force_next
+    track: voice
+    sounds:
+      - PuzzlePiece1
+      - PuzzlePiece2
+      - PuzzlePiece3
+      - PuzzlePiece4
+      - PuzzlePiece5
+      - PuzzlePiece6
 
 sound_player:
   mode_music_player_started:
-    HelloZeppPt1:
+    Shithole:
       action: stop
   mode_game_stopping:
     initials:
@@ -211,6 +256,10 @@ sound_player:
   mode_high_score_started:
     BaseMusic:
       action: stop
+#plunge sound
+  balldevice_bd_plunger_ball_eject_success:
+    HacksawPlunge:
+      action: play
 
   ball_save_default_saving_ball:
     HeHelpedMe:
@@ -304,11 +353,13 @@ sound_player:
       action: play
       block: true
   shot_left_outlane_hit{state=="ball_save_not_ready"}:
-    TortureScream:
+    #TortureScream:
+    refined_billy_laugh:
       action: play
       block: true
   shot_right_outlane_hit{state=="ball_save_not_ready"}:
-    TortureScream:
+    #TortureScream:
+    refined_billy_laugh:
       action: play
       block: true
   shot_left_outlane_hit{state=="lit"}:
@@ -328,6 +379,11 @@ sound_player:
     lowerdropsaudio:
       action: play
       block: true
+#puzzle collected
+  mode_puzzle_hurryup_complete:
+    PuzzlePiece:
+      action: play
+
     
   logicblock_random_switch_hit{hits==29}:  
     randomswitch:
@@ -405,6 +461,47 @@ sound_player:
     randomswitch:
       action: play  
 
+  selection_mode_razorwire_highlighted:
+    ModeHighlightedRazorWire:
+      max_queue_time: 500ms
+      action: play
+  selection_mode_reversebeartrap_highlighted:
+    ModeHighlightedReverseBearTrap:
+      max_queue_time: 500ms
+      action: play
+  selection_mode_flammablejelly_highlighted: 
+    ModeHighlightedFlammableJelly:
+      max_queue_time: 500ms
+      action: play
+  selection_mode_drillchair_highlighted: 
+    ModeHighlightedDrillChair:
+      max_queue_time: 500ms
+      action: play
+  selection_mode_quadshotgun_highlighted: 
+    ModeHighlightedQuadShotgun:
+      max_queue_time: 500ms
+      action: play
+  selection_mode_zeptest_highlighted: 
+    ModeHighlightedZepsTest:
+      max_queue_time: 500ms
+      action: play
+
+# trap modes are lit/qualified
+  mode_trap_select_started:
+    ModeLit:
+      action: play
+
+# multiball audio
+  multiball_mb_hacksaw_started:
+    hacksaw_mb_start:
+      action: play
+  multiball_mb_shackle_started:
+    ShackleMultiball:
+      action: play
+  multiball_mb_jigsaw_started:
+    JigsawMultiballStart1:
+      action: play
+
  # razorwire mode
   mode_razorwire_complete:
     trapcomplete:
@@ -428,7 +525,7 @@ sound_player:
   mode_drillchair_complete:
     trapcomplete:
       action: play
-    drillchair:
+    DrillChairIntro:
       action: stop
     DrillChairModeStart:
       action: stop
@@ -556,7 +653,7 @@ sound_player:
   mode_bonus_started:
     QuadShotgunModeStart:
       action: stop
-    drillchair:
+    DrillChairModeStart:
       action: stop
     FlammableJellyModeStart:
       action: stop

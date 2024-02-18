@@ -28,8 +28,8 @@ multiballs:
     replace_balls_in_play: true
 
 variable_player:
-  multiball_mb_hacksaw_started:
-    score: 3000000
+  #multiball_mb_hacksaw_started:
+    #score: 3000000
 
 slides:
   sl_HacksawMB:
@@ -42,3 +42,54 @@ slide_player:
     sl_HacksawMB:
       priority: 500
       expire: 8s
+
+show_player:
+  multiball_mb_hacksaw_started:
+    disc_right_chase:
+      loops: -1
+      speed: 10
+      show_tokens:
+        color1: beartrap
+    disc_middle_chase:
+      loops: -1
+      speed: 10
+      show_tokens:
+        color1: beartrap
+    disc_left_chase:
+      loops: -1
+      speed: 10
+      show_tokens:
+        color1: beartrap
+  mode_hacksaw_multiball_complete:
+      disc_left_chase: stop
+      disc_middle_chase: stop
+      disc_right_chase: stop
+  ball_ending:
+      disc_left_chase: stop
+      disc_middle_chase: stop
+      disc_right_chase: stop
+coil_player:
+  multiball_mb_hacksaw_started:
+    c_left_spin_disc:
+      action: enable
+      hold_power: 1.0
+    c_middle_spin_disc:
+      action: enable
+      hold_power: 1.0
+    c_right_spin_disc:
+      action: enable
+      hold_power: 1.0
+  mode_hacksaw_multiball_complete:
+    c_right_spin_disc:
+      action: off
+    c_middle_spin_disc:
+      action: off
+    c_left_spin_disc:
+      action: off
+  ball_ending:
+    c_right_spin_disc:
+      action: off
+    c_middle_spin_disc:
+      action: off
+    c_left_spin_disc:
+      action: off

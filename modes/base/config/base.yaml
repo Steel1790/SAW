@@ -1,6 +1,7 @@
 #config_version=6
 mode:
   start_events: ball_starting, mode_skillshot_started
+  stop_events: ball_ended, ball_will_end
   priority: 100
   
 ball_saves:
@@ -31,6 +32,21 @@ event_player:
     - startmode_hacksaw_multiball_qualify
     - startmode_shackle_multiball
     - startmode_shackle_multiball_qualify
+  mode_drillchair_stopping: 
+    - e_puzzle_start|5.3s
+    - e_drillchair_puzzle|5.5s
+  mode_flammablejelly_stopping: 
+    - e_puzzle_start|5.3s
+    - e_flammablejelly_puzzle|5.5s
+  mode_quadshotgun_stopping: 
+    - e_puzzle_start|5.3s
+    - e_quadshotgun_puzzle|5.5s
+  mode_razorwire_stopping: 
+    - e_puzzle_start|5.3s
+    - e_razorwire_puzzle|5.5s
+  mode_zeptest_stopping: 
+    - e_puzzle_start|5.3s
+    - e_zeptest_puzzle|5.5s
 
 
   mode_trap_select_started: stop_saw_widget|0.2s
@@ -78,6 +94,7 @@ event_player:
   minimode_spinners_complete: stop_items_widget|2.5s
   minimode_loops_complete: stop_items_widget|2.5s
   minimode_drops_complete: stop_items_widget|2.5s
+  mode_puzzle_hurryup_complete: stop_items_widget|2.5s
 
 #videos:
 #    cameraflashvideo:
@@ -188,17 +205,27 @@ slide_player:
     trapfailed:
       priority: 400
       expire: 5s     
-      
+ #skillshot     
   mode_skillshot_complete:
     skillshotvideo:
       action: play
       priority: 400
       expire: 8s
+  sh_skillshot_x_hit: 
+    superskillshot:
+      priority: 500
+      expire: 4s
+  ssh_skillshot_leftorbit_innerorbit_hit: 
+    superskillshot:
+      priority: 500
+      expire: 4s
+
   ball_save_default_saving_ball:
     HeHelpedMeVideo:
       action: play
       priority: 400
-      expire: 5s
+      expire: 3.8s
+      #expire: 5s
   ball_save_escape_outlane_saving_ball:
     ballsavevideo:
       action: play
@@ -455,7 +482,7 @@ counters:
     
   minimode_spinners_counter:
     starting_count: 0
-    count_complete_value: 50
+    count_complete_value: 40
     enable_events: 
     disable_events: 
     start_enabled: true
@@ -515,7 +542,7 @@ counters:
  
   cnt_negative_shot_counter:
     starting_count: 0
-    count_complete_value: 3
+    count_complete_value: 4
     enable_events: 
     disable_events: 
     start_enabled: true
@@ -650,27 +677,27 @@ shows:
   mode_razorwire_show_started:
     - duration: -1
       lights:
-        (leds): red
+        (leds): beartrap
   mode_drillchair_show_started:
     - duration: -1
       lights:
-        (leds): red
+        (leds): beartrap
   mode_reversebeartrap_show_started:
     - duration: -1
       lights:
-        (leds): red
+        (leds): beartrap
   mode_flammablejelly_show_started:
     - duration: -1
       lights:
-        (leds): red
+        (leds): beartrap
   mode_zeptest_show_started:
     - duration: -1
       lights:
-        (leds): red
+        (leds): beartrap
   mode_quadshotgun_show_started:
     - duration: -1
       lights:
-        (leds): red
+        (leds): beartrap
   
   ballsave:
     - duration: 0.5s
@@ -714,7 +741,7 @@ shows:
   pops_on:
     - duration: -1
       lights:
-        (leds): razorwire    
+        (leds): BBBBBB
 
   sh_escape_outlane_end:
     - duration: -1
@@ -918,35 +945,75 @@ show_player:
       loops: -1    
       priority: 200
 
+# saw letter light show
+  logicblock_cnt_saw_qualify_updated{value==1}:
+    collect_S:
+      loops: 1
+      speed: 30
+  logicblock_cnt_saw_qualify_updated{value==2}:
+    collect_A:
+      loops: 1
+      speed: 30
+  logicblock_cnt_saw_qualify_complete:
+    collect_W:
+      loops: 1
+      speed: 30
+
+# trap mode fail
+  player_drillchair_drillchair_60s_timer_tick{value < 1}:
+      mode_fail:
+        loops: 0
+        speed: 20
+  player_flammablejelly_60s_flammablejelly_timer_tick{value < 1}:
+      mode_fail:
+        loops: 0
+        speed: 20
+  player_quadshotgun_quadshotgun_60s_timer_tick{value < 1}:
+      mode_fail:
+        loops: 0
+        speed: 20
+  player_razorwire_60s_timer_tick{value < 1}:
+      mode_fail:
+        loops: 0
+        speed: 20
+  player_reversebeartrap_120s_reversebeartrap_timer_tick{value < 1}:
+      mode_fail:
+        loops: 0
+        speed: 20  
+  player_zeptest_60s_zeptest_timer_tick{value < 1}:
+      mode_fail:
+        loops: 0
+        speed: 20
+
 # mode attempt for puzzle insert 
   mode_razorwire_stopping:
     mode_razorwire_show_started:
       show_tokens:
-        leds: l_razorwire_flasher_1, l_razorwire_flasher_2, l_razorwire_flasher_3, l_razorwire_flasher_4, l_razorwire_flasher_5, l_razorwire_flasher_6, l_razorwire_flasher_7, l_razorwire_flasher_8, l_razorwire_mode
+        leds: l_razorwire_mode
       loops: -1     
       priority: 100
   mode_flammablejelly_stopping:
     mode_flammablejelly_show_started:
       show_tokens:
-        leds: l_drill_flasher_1, l_drill_flasher_2, l_drill_flasher_3, l_drill_flasher_4, l_drill_flasher_5, l_drill_flasher_6, l_drill_flasher_7, l_drill_flasher_8, l_jelly_mode
+        leds: l_jelly_mode
       loops: -1  
       priority: 100
   mode_quadshotgun_stopping:
     mode_quadshotgun_show_started:
       show_tokens:
-        leds: l_shotgun_flasher_1, l_shotgun_flasher_2, l_shotgun_flasher_3, l_shotgun_flasher_4, l_shotgun_flasher_5, l_shotgun_flasher_6, l_shotgun_flasher_7, l_shotgun_flasher_8, l_quadshotgun_mode
+        leds: l_quadshotgun_mode
       loops: -1  
       priority: 100
   mode_drillchair_stopping:
     mode_drillchair_show_started:
       show_tokens:
-        leds: l_bear_flasher_1, l_bear_flasher_2, l_bear_flasher_3, l_bear_flasher_4, l_bear_flasher_5, l_bear_flasher_6, l_bear_flasher_7, l_bear_flasher_8, l_drillchair_mode
+        leds: l_drillchair_mode
       loops: -1  
       priority: 100
   mode_zeptest_stopping:
     mode_zeptest_show_started:
       show_tokens:
-        leds: l_zep_flasher_1, l_zep_flasher_2, l_zep_flasher_3, l_zep_flasher_4, l_zep_flasher_5, l_zep_flasher_6, l_zep_flasher_7, l_zep_flasher_8, l_zeptest_mode
+        leds: l_zeptest_mode
       loops: -1   
       priority: 100
   mode_reversebeartrap_stopping:
@@ -980,6 +1047,12 @@ show_player:
         led: l_left_return_lane
         color1: red
 
+# x marks spot glass effect
+  s_upper_bank_drop_target_opto_active:
+    starpost_breaking_glass:
+      loops: 0
+      speed: 40
+
 #  trap completed
   slide_trapcomplete_active:
     rw_complete:
@@ -1003,18 +1076,27 @@ show_player:
       speed: 10
       show_tokens:
         color1: beartrap
+    negative_S:
+      loops: 1
+      speed: 30
   logicblock_cnt_negative_shot_counter_updated{value==2}:
     disc_middle_chase:
       loops: -1
       speed: 10
       show_tokens:
         color1: beartrap
+    negative_A:
+      loops: 1
+      speed: 30
   logicblock_cnt_negative_shot_counter_updated{value==3}:
     disc_left_chase:
       loops: -1
       speed: 10
       show_tokens:
         color1: beartrap
+    negative_W:
+      loops: 1
+      speed: 30
   logicblock_cnt_negative_shot_counter_updated{value==0}:
       disc_left_chase: stop
       disc_middle_chase: stop
@@ -1864,7 +1946,40 @@ widgets:
       x: 28%
       y: 70%
       z: 6
-
+# puzzle piece collected
+  w_puzzle_collected:
+    - type: Text
+      text: Puzzle Piece Collected
+      color: white
+      x: 50%
+      y: 70%
+      z: 5
+      font_size: 85
+      font_name: Mustkill
+      outline_color: black
+      outline_width: 7
+    - type: image
+      image: IconPuzzlePieceLarge
+      x: 20%
+      y: 70%
+      z: 6
+# puzzle piece progress
+  w_puzzle_progress:
+    - type: Text
+      text: (player|puzzle_pieces) /5 Puzzle Pieces
+      color: white
+      font_size: 25
+      font_name: Skilt Gothic W04 Thin
+      outline_color: black
+      outline_width: 5
+      x: 11.6%
+      y: 42%
+      z: 6  
+    - type: image
+      image: IconPuzzlePiece
+      x: 3.5%
+      y: 42%
+      z: 6
 # mb progress
   w_hacksaw_mb_progress:
     - type: Text
@@ -2131,6 +2246,16 @@ widgets:
       color: white
       x: 6%
       y: 86%
+      z: 2
+    - type: Text
+      text: Spell to Start Hurry-up
+      font_size: 20
+      font_name: Mustkill
+      outline_color: black
+      outline_width: 5
+      color: white
+      x: 8%
+      y: 80%
       z: 2
   w_die_d_letters:
     - type: Text
@@ -2511,6 +2636,9 @@ widget_player:
     w_die_letters:
       slide: base_slide_main
       action: add
+    w_puzzle_progress:
+      slide: base_slide_main
+      action: add
 
   player_1_ball_started: 
     Player1Active:
@@ -2567,7 +2695,9 @@ widget_player:
     w_die_letters:
       slide: base_slide_main
       action: add
-
+    w_puzzle_progress:
+      slide: base_slide_main
+      action: add
 
   player_2_ball_started: 
     1PlayerGame:
@@ -2636,6 +2766,9 @@ widget_player:
     w_die_letters:
       slide: base_slide_main
       action: add
+    w_puzzle_progress:
+      slide: base_slide_main
+      action: add
 
   player_3_ball_started: 
     1PlayerGame:
@@ -2698,7 +2831,9 @@ widget_player:
     w_die_letters:
       slide: base_slide_main
       action: add
-
+    w_puzzle_progress:
+      slide: base_slide_main
+      action: add
 
   player_4_ball_started: 
     1PlayerGame:
@@ -2759,6 +2894,9 @@ widget_player:
       slide: base_slide_main
       action: add
     w_die_letters:
+      slide: base_slide_main
+      action: add
+    w_puzzle_progress:
       slide: base_slide_main
       action: add
 
@@ -2839,6 +2977,16 @@ widget_player:
       action: remove
   player_make_your_choice_hurryup_t_make_your_choice_timer_tick{value < 1}:
     w_die_letters:
+      slide: base_slide_main
+      action: add
+  logicblock_acc_make_your_choice_qualify_complete:
+    w_die_letters:
+      slide: base_slide_main
+      action: add
+
+#puzzle piece
+  mode_puzzle_hurryup_complete:
+    w_puzzle_collected:
       slide: base_slide_main
       action: add
 
@@ -3255,6 +3403,9 @@ widget_player:
       slide: base_slide_main
       action: remove
     w_gears_collected:
+      slide: base_slide_main
+      action: remove
+    w_puzzle_collected:
       slide: base_slide_main
       action: remove
     

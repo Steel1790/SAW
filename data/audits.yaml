@@ -1,6 +1,6 @@
 events:
   game_ended: 14
-  game_started: 108
+  game_started: 122
 player:
   score:
     average: 12735771.764705881
@@ -20,36 +20,42 @@ shots:
   dt_drop2: 9
   dt_drop3: 7
   dt_drop4: 6
-  lower_l_pop: 8
+  lower_l_pop: 27
   lower_r_pop: 7
   sh_mystery: 24
-  sh_select_mode: 36
-  shot_inner_loop: 132
+  sh_select_mode: 46
+  sh_skillshot_x: 1
+  shot_inner_loop: 139
   shot_left_loop: 96
   shot_left_outlane: 25
   shot_left_return_lane: 39
-  shot_left_standup: 92
-  shot_left_standup_rightramp: 89
+  shot_left_standup: 103
+  shot_left_standup_rightramp: 94
+  shot_multiplier1: 8
+  shot_multiplier2: 8
+  shot_multiplier3: 8
+  shot_multiplier4: 8
+  shot_multiplier5: 8
   shot_right_loop: 159
   shot_right_outlane: 13
-  shot_right_standup: 38
-  shot_right_standup_rightramp: 76
+  shot_right_standup: 46
+  shot_right_standup_rightramp: 82
   up_b_pop: 23
   upper_b_pop: 88
   upper_l_pop: 16
   upper_r_pop: 14
 switches:
-  s_action_button: 211
-  s_ball_shooter_lane: 193
+  s_action_button: 236
+  s_ball_shooter_lane: 212
   s_enter_left_ramp: 48
-  s_inner_loop: 201
+  s_inner_loop: 209
   s_left_110_point: 194
-  s_left_bottom_jet_bumper: 303
+  s_left_bottom_jet_bumper: 323
   s_left_cellar: 28
   s_left_flipper_button: 1184
   s_left_flipper_eos: 1363
-  s_left_inlane: 66
-  s_left_lock_1: 13
+  s_left_inlane: 67
+  s_left_lock_1: 14
   s_left_lock_2: 19
   s_left_lock_3: 31
   s_left_loop_bottom: 88
@@ -59,32 +65,32 @@ switches:
   s_left_ramp_score_top: 8
   s_left_scoop: 167
   s_left_slingshot: 557
-  s_left_standup: 134
-  s_left_standup_right_ramp: 148
-  s_left_top_jet_bumper: 214
+  s_left_standup: 147
+  s_left_standup_right_ramp: 154
+  s_left_top_jet_bumper: 239
   s_lower_bank_drop_target_opto_lower: 76
   s_lower_bank_drop_target_opto_middle: 90
   s_lower_bank_drop_target_opto_upper: 92
-  s_lower_top_jet_bumper: 727
+  s_lower_top_jet_bumper: 732
   s_middle_standup: 145
   s_right_110_point: 318
   s_right_bottom_jet_bumper: 263
   s_right_cellar: 30
-  s_right_flipper_button: 1071
+  s_right_flipper_button: 1091
   s_right_flipper_eos: 670
   s_right_inlane: 74
-  s_right_loop_bottom: 126
+  s_right_loop_bottom: 127
   s_right_loop_top: 113
   s_right_outlane: 14
   s_right_ramp_down: 34
-  s_right_ramp_score_bottom: 20
-  s_right_ramp_score_top: 19
-  s_right_scoop: 55
+  s_right_ramp_score_bottom: 22
+  s_right_ramp_score_top: 21
+  s_right_scoop: 65
   s_right_slingshot: 285
-  s_right_standup: 73
-  s_right_standup_right_ramp: 108
+  s_right_standup: 82
+  s_right_standup_right_ramp: 115
   s_right_top_jet_bumper: 156
-  s_spinner: 483
+  s_spinner: 525
   s_start: 19
   s_top_right_reject: 97
   s_trough1: 327
@@ -94,7 +100,7 @@ switches:
   s_trough5: 167
   s_trough6: 136
   s_trough_jam: 178
-  s_upper_bank_drop_target_opto: 93
+  s_upper_bank_drop_target_opto: 101
   s_upper_bottom_jet_bumper: 141
   s_upper_right_flipper_button: 994
   s_upper_right_flipper_eos: 948
