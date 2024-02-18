@@ -794,10 +794,10 @@ show_player:
       loops: -1      
       show_tokens:
         leds: l_left_flipper, l_right_flipper
-    speaker_lights_on:
-      loops: -1
-      show_tokens:
-        color1: beartrap
+    #speaker_lights_on:
+    #  loops: -1
+    #  show_tokens:
+    #    color1: beartrap
 
 
   playfield_active:
