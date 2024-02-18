@@ -256,6 +256,15 @@ sounds:
   TapeRecorder5:
     file: TapeRecorder5.wav
     volume: 0.2
+  SuperJackpot:
+    file: SuperJackpot.wav
+    volume: 0.2
+  SuperJackpot3:
+    file: SuperJackpot3.wav
+    volume: 0.2
+  SuperJackpot5:
+    file: SuperJackpot5.wav
+    volume: 0.2
 
 assets:
     sounds:

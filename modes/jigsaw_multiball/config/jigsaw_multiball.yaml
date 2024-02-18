@@ -51,6 +51,10 @@ slides:
     widgets:
     - type: video
       video: jackpot_jigsaw
+  sl_JigsawMB_SuperJackpot:
+    widgets:
+    - type: video
+      video: superjackpot_jigsaw
 
 slide_player:
   multiball_mb_jigsaw_started:
@@ -59,6 +63,10 @@ slide_player:
       expire: 6s
   sg_jigsaw_p1_lit_hit:
     sl_JigsawMB_Jackpot:
+      priority: 600
+      expire: 2.2s
+  shot_jigsaw_superjackpot1_sp_jigsaw_mb_lit_hit:
+    sl_JigsawMB_SuperJackpot:
       priority: 600
       expire: 2.2s
 show_player:
@@ -248,6 +256,9 @@ sound_player:
   sg_jigsaw_p1_lit_hit:
     Jackpot:
       action: play
+  shot_jigsaw_superjackpot1_sp_jigsaw_mb_lit_hit:
+    SuperJackpot:
+      action: play
   e_jigsaw_mb_qualify_hit_one:
     LockIsLit:
       action: play
@@ -272,8 +283,18 @@ widgets:
       outline_width: 7
   w_jigsaw_multiball_value:
     - type: text
-      #text: (player|make_your_choice_hurryup_t_make_your_choice_value_timer_tick) 
       text: 1000000
+      number_grouping: true 
+      x: 50%
+      y: 28%
+      z: 7
+      font_size: 90
+      font_name: Mustkill     
+      outline_color: black
+      outline_width: 7
+  w_jigsaw_multiball_SuperJackpot_value:
+    - type: text
+      text: 5000000
       number_grouping: true 
       x: 50%
       y: 28%
@@ -305,6 +326,13 @@ widget_player:
   stop_jackpot_widget:
     w_jigsaw_multiball_value:
       action: remove
+    w_jigsaw_multiball_SuperJackpot_value:
+      action: remove
+  shot_jigsaw_superjackpot1_sp_jigsaw_mb_lit_hit:
+    w_jigsaw_multiball_SuperJackpot_value:
+      slide: sl_JigsawMB_SuperJackpot
+      action: add
 
 event_player:
   sg_jigsaw_p1_lit_hit: stop_jackpot_widget|2.3s
+  shot_jigsaw_superjackpot1_sp_jigsaw_mb_lit_hit: stop_jackpot_widget|2.3s

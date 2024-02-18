@@ -279,6 +279,14 @@ sound_pools:
       - Ball2Locked1
       - Ball2Locked2
       - Ball2Locked3
+  SuperJackpot:
+    load: preload
+    type: random_force_next
+    track: voice
+    sounds:
+      - SuperJackpot
+      - SuperJackpot3
+      - SuperJackpot5
 
 sound_player:
   mode_music_player_started:
