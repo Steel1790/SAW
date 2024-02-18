@@ -494,7 +494,7 @@ counters:
 
   minimode_ramps_counter:
     starting_count: 0
-    count_complete_value: 10
+    count_complete_value: 20
     enable_events: 
     disable_events: 
     start_enabled: true
@@ -506,7 +506,7 @@ counters:
     
   minimode_loops_counter:
     starting_count: 0
-    count_complete_value: 10
+    count_complete_value: 20
     enable_events: 
     disable_events: 
     start_enabled: true
@@ -2901,6 +2901,19 @@ widget_player:
       action: add
 
   mode_saw_qualify_started:
+    saw_letters:
+      slide: base_slide_main
+      action: add
+
+#multiball widgets
+  multiball_mb_jigsaw_started:
+    saw_letters:
+      action: remove
+  stop_mode_jigsaw_multiball:
+    saw_letters:
+      slide: base_slide_main
+      action: add  
+  mode_jigsaw_multiball_complete:
     saw_letters:
       slide: base_slide_main
       action: add

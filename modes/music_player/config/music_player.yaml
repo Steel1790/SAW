@@ -102,7 +102,6 @@ sound_pools:
       - PlungeTheBall
       - RiseAndShine
       - YouMayBegin
-      - Alive
       - ReBirth
       - TheDevil
   randomswitch:
@@ -123,6 +122,7 @@ sound_pools:
       - EndItAllNow
       - ExistanceForGranted    
       - CardsYourDealt
+      - Alive
 # items collected      
   antidote_collected:
     load: preload
@@ -245,6 +245,40 @@ sound_pools:
       - PuzzlePiece4
       - PuzzlePiece5
       - PuzzlePiece6
+  Jackpot:
+    load: preload
+    type: random_force_next
+    track: voice
+    sounds:
+      - Jackpot1
+      - Jackpot2
+      - Jackpot3
+      - Jackpot4
+      - Jackpot5
+  LockIsLit:
+    load: preload
+    type: random_force_next
+    track: voice
+    sounds:
+      - LockIsLit1
+      - LockIsLit2
+      - LockIsLit3
+      - LockIsLit4
+  Ball1Locked:
+    load: preload
+    type: random_force_next
+    track: voice
+    sounds:
+      - Ball1Locked1
+      - Ball1Locked2
+  Ball2Locked:
+    load: preload
+    type: random_force_next
+    track: voice
+    sounds:
+      - Ball2Locked1
+      - Ball2Locked2
+      - Ball2Locked3
 
 sound_player:
   mode_music_player_started:
@@ -381,79 +415,79 @@ sound_player:
       action: play
 
     
-  logicblock_random_switch_hit{hits==29}:  
+  logicblock_random_switch_hit{hits==75}:  
     randomswitch:
       action: play   
-  logicblock_random_switch_hit{hits==58}:  
+  logicblock_random_switch_hit{hits==150}:  
     randomswitch:
       action: play
-  logicblock_random_switch_hit{hits==87}:  
+  logicblock_random_switch_hit{hits==225}:  
     randomswitch:
       action: play
-  logicblock_random_switch_hit{hits==116}:  
+  logicblock_random_switch_hit{hits==300}:  
     randomswitch:
       action: play
-  logicblock_random_switch_hit{hits==145}:  
+  logicblock_random_switch_hit{hits==375}:  
     randomswitch:
       action: play
-  logicblock_random_switch_hit{hits==174}:  
+  logicblock_random_switch_hit{hits==450}:  
     randomswitch:
       action: play
-  logicblock_random_switch_hit{hits==203}:  
+  logicblock_random_switch_hit{hits==525}:  
     randomswitch:
       action: play
-  logicblock_random_switch_hit{hits==232}:  
+  logicblock_random_switch_hit{hits==600}:  
     randomswitch:
       action: play
-  logicblock_random_switch_hit{hits==261}:  
+  logicblock_random_switch_hit{hits==675}:  
     randomswitch:
       action: play
-  logicblock_random_switch_hit{hits==290}:  
+  logicblock_random_switch_hit{hits==750}:  
     randomswitch:
       action: play
-  logicblock_random_switch_hit{hits==319}:  
+  logicblock_random_switch_hit{hits==825}:  
     randomswitch:
       action: play
-  logicblock_random_switch_hit{hits==348}:  
+  logicblock_random_switch_hit{hits==900}:  
     randomswitch:
       action: play
-  logicblock_random_switch_hit{hits==377}:  
+  logicblock_random_switch_hit{hits==975}:  
     randomswitch:
       action: play
-  logicblock_random_switch_hit{hits==406}:  
+  logicblock_random_switch_hit{hits==1050}:  
     randomswitch:
       action: play
-  logicblock_random_switch_hit{hits==435}:  
+  logicblock_random_switch_hit{hits==1125}:  
     randomswitch:
       action: play      
-  logicblock_random_switch_hit{hits==464}:  
+  logicblock_random_switch_hit{hits==1200}:  
     randomswitch:
       action: play  
-  logicblock_random_switch_hit{hits==493}:  
+  logicblock_random_switch_hit{hits==1275}:  
     randomswitch:
       action: play  
-  logicblock_random_switch_hit{hits==522}:  
+  logicblock_random_switch_hit{hits==1350}:  
     randomswitch:
       action: play  
-  logicblock_random_switch_hit{hits==551}:  
+  logicblock_random_switch_hit{hits==1425}:  
     randomswitch:
       action: play  
-  logicblock_random_switch_hit{hits==580}:  
+  logicblock_random_switch_hit{hits==1500}:  
     randomswitch:
       action: play  
-  logicblock_random_switch_hit{hits==609}:  
+  logicblock_random_switch_hit{hits==1575}:  
     randomswitch:
       action: play  
-  logicblock_random_switch_hit{hits==638}:  
+  logicblock_random_switch_hit{hits==1650}:  
     randomswitch:
       action: play  
-  logicblock_random_switch_hit{hits==667}:  
+  logicblock_random_switch_hit{hits==1725}:  
     randomswitch:
       action: play  
-  logicblock_random_switch_hit{hits==696}:  
+  logicblock_random_switch_hit{hits==1800}:  
     randomswitch:
       action: play  
-  logicblock_random_switch_hit{hits==725}:  
+  logicblock_random_switch_hit{hits==1875}:  
     randomswitch:
       action: play  
 

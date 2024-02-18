@@ -47,12 +47,20 @@ slides:
     widgets:
     - type: video
       video: JigsawMB
+  sl_JigsawMB_Jackpot:
+    widgets:
+    - type: video
+      video: jackpot_jigsaw
 
 slide_player:
   multiball_mb_jigsaw_started:
     sl_JigsawMB:
       priority: 600
       expire: 6s
+  sg_jigsaw_p1_lit_hit:
+    sl_JigsawMB_Jackpot:
+      priority: 600
+      expire: 2.2s
 show_player:
   multiball_mb_jigsaw_started:
     disc_right_chase:
@@ -235,3 +243,68 @@ shows:
     - duration: 0.3s
       lights:
         (leds): off
+
+sound_player:
+  sg_jigsaw_p1_lit_hit:
+    Jackpot:
+      action: play
+  e_jigsaw_mb_qualify_hit_one:
+    LockIsLit:
+      action: play
+  slide_sl_Jigsaw_locked_1_active:
+    Ball1Locked:
+      action: play
+  slide_sl_Jigsaw_locked_2_active:
+    Ball2Locked:
+      action: play
+
+widgets:
+  w_jigsaw_multiball:
+    - type: Text
+      text: Jigsaw Multiball - Shoot RED ARROWS to collect JACKPOTS
+      color: white
+      x: 50%
+      y: 95%
+      z: 2
+      font_size: 52
+      font_name: Skilt Gothic W04 Thin
+      outline_color: black
+      outline_width: 7
+  w_jigsaw_multiball_value:
+    - type: text
+      #text: (player|make_your_choice_hurryup_t_make_your_choice_value_timer_tick) 
+      text: 1000000
+      number_grouping: true 
+      x: 50%
+      y: 28%
+      z: 7
+      font_size: 90
+      font_name: Mustkill     
+      outline_color: black
+      outline_width: 7
+
+widget_player:
+  multiball_mb_jigsaw_started:
+    w_jigsaw_multiball:
+      slide: base_slide_main
+      action: add
+  stop_mode_jigsaw_multiball:
+    w_jigsaw_multiball:
+      action: remove
+  mode_jigsaw_multiball_complete:
+    w_jigsaw_multiball:  
+      action: remove
+  ball_ended:
+    w_jigsaw_multiball:
+      action: remove
+
+  sg_jigsaw_p1_lit_hit:
+    w_jigsaw_multiball_value:
+      slide: sl_JigsawMB_Jackpot
+      action: add
+  stop_jackpot_widget:
+    w_jigsaw_multiball_value:
+      action: remove
+
+event_player:
+  sg_jigsaw_p1_lit_hit: stop_jackpot_widget|2.3s
