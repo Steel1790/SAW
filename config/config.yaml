@@ -69,6 +69,194 @@ sound_system:
           simultaneous_sounds: 10
           volume: 1.0
 sounds:
+# cher/amanda callouts volume lowered
+  Antidote1:
+    file: Antidote1.wav
+    volume: 0.2
+  Antidote2:
+    file: Antidote2.wav
+    volume: 0.2
+  Antidote3:
+    file: Antidote3.wav
+    volume: 0.2
+  Antidote4:
+    file: Antidote4.wav
+    volume: 0.2
+  Ball1Locked1:
+    file: Ball1Locked1.wav
+    volume: 0.2
+  Ball1Locked2:
+    file: Ball1Locked2.wav
+    volume: 0.2
+  Ball2Locked1:
+    file: Ball2Locked1.wav
+    volume: 0.2
+  Ball2Locked2:
+    file: Ball2Locked2.wav
+    volume: 0.2
+  Ball2Locked3:
+    file: Ball2Locked3.wav
+    volume: 0.2
+  Bathtub1:
+    file: Bathtub1.wav
+    volume: 0.2
+  Bathtub2:
+    file: Bathtub2.wav
+    volume: 0.2
+  Bathtub3:
+    file: Bathtub3.wav
+    volume: 0.2
+  Bathtub4:
+    file: Bathtub4.wav
+    volume: 0.2
+  Bathtub5:
+    file: Bathtub5.wav
+    volume: 0.2
+  Candle1:
+    file: Candle1.wav
+    volume: 0.2
+  Candle2:
+    file: Candle2.wav
+    volume: 0.2
+  Candle3:
+    file: Candle3.wav
+    volume: 0.2
+  Candle4:
+    file: Candle4.wav
+    volume: 0.2
+  Candle5:
+    file: Candle5.wav
+    volume: 0.2
+  ExtraBall:
+    file: ExtraBall.wav
+    volume: 0.2
+  ExtraBallIsLit1:
+    file: ExtraBallIsLit1.wav
+    volume: 0.2
+  ExtraBallIsLit2:
+    file: ExtraBallIsLit2.wav
+    volume: 0.2
+  Gears1:
+    file: Gears1.wav
+    volume: 0.2
+  Gears2:
+    file: Gears2.wav
+    volume: 0.2
+  Gears3:
+    file: Gears3.wav
+    volume: 0.2
+  Gears4:
+    file: Gears4.wav
+    volume: 0.2
+  Gears5:
+    file: Gears5.wav
+    volume: 0.2
+  Gun1:
+    file: Gun1.wav
+    volume: 0.2
+  Gun2:
+    file: Gun2.wav
+    volume: 0.2
+  Gun3:
+    file: Gun3.wav
+    volume: 0.2
+  Gun4:
+    file: Gun4.wav
+    volume: 0.2
+  Gun5:
+    file: Gun5.wav
+    volume: 0.2
+  Hacksaw1:
+    file: Hacksaw1.wav
+    volume: 0.2
+  Hacksaw2:
+    file: Hacksaw2.wav
+    volume: 0.2
+  Hacksaw3:
+    file: Hacksaw3.wav
+    volume: 0.2
+  Hacksaw4:
+    file: Hacksaw4.wav
+    volume: 0.2
+  Hacksaw5:
+    file: Hacksaw5.wav
+    volume: 0.2
+  HeHelpedMe:
+    file: HeHelpedMe.wav
+    volume: 0.2
+  Jackpot1:
+    file: Jackpot1.wav
+    volume: 0.2
+  Jackpot2:
+    file: Jackpot2.wav
+    volume: 0.2
+  Jackpot3:
+    file: Jackpot3.wav
+    volume: 0.2
+  Jackpot4:
+    file: Jackpot4.wav
+    volume: 0.2
+  Jackpot5:
+    file: Jackpot5.wav
+    volume: 0.2
+  Key1:
+    file: Key1.wav
+    volume: 0.2
+  Key2:
+    file: Key2.wav
+    volume: 0.2
+  Key3:
+    file: Key3.wav
+    volume: 0.2
+  Key4:
+    file: Key4.wav
+    volume: 0.2
+  Key5:
+    file: Key5.wav
+    volume: 0.2
+  LockIsLit1:
+    file: LockisLit1.wav
+    volume: 0.2
+  LockIsLit2:
+    file: LockisLit2.wav
+    volume: 0.2
+  LockIsLit3:
+    file: LockisLit3.wav
+    volume: 0.2
+  LockIsLit4:
+    file: LockisLit4.wav
+    volume: 0.2
+  PuzzlePiece1:
+    file: PuzzlePiece1.wav
+    volume: 0.2
+  PuzzlePiece2:
+    file: PuzzlePiece2.wav
+    volume: 0.2
+  PuzzlePiece3:
+    file: PuzzlePiece3.wav
+    volume: 0.2
+  PuzzlePiece4:
+    file: PuzzlePiece4.wav
+    volume: 0.2
+  PuzzlePiece5:
+    file: PuzzlePiece5.wav
+    volume: 0.2
+  TapeRecorder1:
+    file: TapeRecorder1.wav
+    volume: 0.2
+  TapeRecorder2:
+    file: TapeRecorder2.wav
+    volume: 0.2
+  TapeRecorder3:
+    file: TapeRecorder3.wav
+    volume: 0.2
+  TapeRecorder4:
+    file: TapeRecorder4.wav
+    volume: 0.2
+  TapeRecorder5:
+    file: TapeRecorder5.wav
+    volume: 0.2
+
 assets:
     sounds:
         default:

@@ -3,7 +3,7 @@
 
 mode:
   start_events: startmode_jigsaw_multiball_qualify
-  priority: 150
+  priority: 183
 
 sequences:
   seq_jigsaw_mb_qualify:
@@ -116,12 +116,12 @@ slides:
       video: jigsaw_lock2
       width: 1366
       height: 768 
-  sl_Jigsaw_locked_3:
-    widgets:
-    - type: video
-      video: jigsaw_lock3
-      width: 1366
-      height: 768 
+  #sl_Jigsaw_locked_3:
+  #  widgets:
+  #  - type: video
+  #    video: jigsaw_lock3
+  #    width: 1366
+  #    height: 768 
 
 slide_player:
   logicblock_cnt_jigsaw_mb_qualify_updated{value==1}:
@@ -132,7 +132,7 @@ slide_player:
     sl_Jigsaw_locked_2:
       priority: 500
       expire: 3s
-  logicblock_cnt_jigsaw_mb_qualify_updated{value==3}:
-    sl_Jigsaw_locked_3:
-      priority: 500
-      expire: 3s
+  #logicblock_cnt_jigsaw_mb_qualify_updated{value==3}:
+  #  sl_Jigsaw_locked_3:
+  #    priority: 500
+  #    expire: 3s

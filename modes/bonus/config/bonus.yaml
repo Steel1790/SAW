@@ -1,5 +1,4 @@
 #config_version=6
-priority: 120
 mode_settings:
   display_delay_ms: 2.3s
   hurry_up_delay_ms: 0

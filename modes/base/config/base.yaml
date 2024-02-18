@@ -494,7 +494,7 @@ counters:
 
   minimode_ramps_counter:
     starting_count: 0
-    count_complete_value: 10
+    count_complete_value: 20
     enable_events: 
     disable_events: 
     start_enabled: true
@@ -506,7 +506,7 @@ counters:
     
   minimode_loops_counter:
     starting_count: 0
-    count_complete_value: 10
+    count_complete_value: 20
     enable_events: 
     disable_events: 
     start_enabled: true
@@ -1101,6 +1101,14 @@ show_player:
       disc_left_chase: stop
       disc_middle_chase: stop
       disc_right_chase: stop
+  shot_left_outlane_hit{state=="ball_save_not_ready"}:
+      billy_laugh:
+        loops: 1
+        speed: 2
+  shot_right_outlane_hit{state=="ball_save_not_ready"}:
+      billy_laugh:
+        loops: 1
+        speed: 2
       
 widgets:
   saw_letters:
@@ -2015,7 +2023,7 @@ widgets:
       z: 6
   w_shackle_mb_progress:
     - type: Text
-      text: (player|shackle_mb_lock_counter) /3 Shackle MB locked
+      text: (player|shackle_mb_lock_counter) /2 Shackle MB locked
       color: white
       font_size: 25
       font_name: Skilt Gothic W04 Thin
@@ -2901,6 +2909,19 @@ widget_player:
       action: add
 
   mode_saw_qualify_started:
+    saw_letters:
+      slide: base_slide_main
+      action: add
+
+#multiball widgets
+  multiball_mb_jigsaw_started:
+    saw_letters:
+      action: remove
+  stop_mode_jigsaw_multiball:
+    saw_letters:
+      slide: base_slide_main
+      action: add  
+  mode_jigsaw_multiball_complete:
     saw_letters:
       slide: base_slide_main
       action: add

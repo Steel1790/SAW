@@ -2,7 +2,7 @@
 mode:
   start_events: e_puzzle_start
   stop_events: mode_puzzle_hurryup_complete, stop_mode_puzzle_hurryup, ball_ended, ball_will_end, player_puzzle_hurryup_t_puzzle_timer_tick{value < 1}
-  priority: 120
+  priority: 185
 
 timers:
   t_puzzle_timer:

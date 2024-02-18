@@ -1,0 +1,17 @@
+#show_version=6
+
+- time: 0
+  lights:
+    act_billy: off
+
+- time: '+1'
+  lights:
+    act_billy: on
+
+- time: '+1'
+  lights:
+    act_billy: off
+
+- time: '+1'
+  lights:
+    act_billy: on
