@@ -1,0 +1,44 @@
+#show_version=6
+- time: 0
+  lights:
+    l_jw_bathtub: off
+    l_jw_syringe: (color1) 
+- time: '+1'
+  lights:
+    l_jw_syringe: off
+    l_jw_gears: (color1)
+- time: '+1'
+  lights:
+    l_jw_gears: off
+    l_jw_key: (color1)
+- time: '+1'
+  lights:
+    l_jw_key: off
+    l_jw_gun: (color1)
+- time: '+1'
+  lights:
+    l_jw_gun: off
+    l_jw_drill: (color1)
+- time: '+1'
+  lights:
+    l_jw_drill: off
+    l_jw_candle: (color1)
+  lights:
+    l_jw_candle: off
+    l_jw_taperecorder: (color1)
+- time: '+1'
+  lights:
+    l_jw_taperecorder: off
+    l_jw_bathtub: (color1)
+- time: '+.5'
+  lights:
+    l_jw_bathtub: off
+- time: '+.5'
+  lights:
+    l_jw_bathtub: (color1)
+- time: '+.5'
+  lights:
+    l_jw_bathtub: off
+- time: '+.5'
+  lights:
+    l_jw_bathtub: (color1)      
