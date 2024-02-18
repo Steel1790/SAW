@@ -1,6 +1,6 @@
 #show_version=6
 - time: 0
- lights:
+  lights:
     l_jw_gun: off
     l_jw_drill: (color1)
 - time: '+1'
@@ -31,15 +31,15 @@
   lights:
     l_jw_key: off
     l_jw_gun: (color1)
-- time: '+.5'
+- time: '+1'
   lights:
     l_jw_gun: off
-- time: '+.5'
+- time: '+1'
   lights:
     l_jw_gun: (color1)
-- time: '+.5'
+- time: '+1'
   lights:
     l_jw_gun: off
-- time: '+.5'
+- time: '+1'
   lights:
     l_jw_gun: (color1)  

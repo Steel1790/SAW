@@ -9,3 +9,28 @@ videos:
     width: 1366
     height: 768
     file: razorwirevideo.mp4
+
+#end of ball 3 event that lives outside base mode
+# involves door slam video + light effect then topper actuates
+slides:
+  gameovervideo:
+    widgets:
+    - type: video
+      video: GameOverVideo
+      width: 1366
+      height: 768
+slide_player:
+  ball_will_end{current_player.ball==3}:
+    gameovervideo:
+      action: play
+      priority: 600
+      expire: 2.5s
+show_player:
+# end of ball 3
+  ball_will_end{current_player.ball==3}:
+    game_over:
+      loops: 0
+      speed: 10
+    topper:
+      loops: 0
+      speed: 20

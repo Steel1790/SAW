@@ -420,16 +420,50 @@ sound_player:
 
 show_player:
   display_gears:   
-   jw_chase:
+   jw_chase_gears:
      loops: 0
-     speed: 20
+     speed: 40
      show_tokens:
-       color1: ffffff
-   flash_token:
-     loops: 2
-     speed: 20
-     show_tokens:
-       led: l_jw_gun
        color1: beartrap
-
-
+  display_syringes:
+   jw_chase_syringe:
+     loops: 0
+     speed: 40
+     show_tokens:
+       color1: beartrap
+  display_bathtubs:
+   jw_chase_bathtub:
+     loops: 0
+     speed: 40
+     show_tokens:
+       color1: beartrap
+  display_taperecorders:
+   jw_chase_taperecorder:
+     loops: 0
+     speed: 40
+     show_tokens:
+       color1: beartrap    
+  display_candles:
+   jw_chase_candle:
+     loops: 0
+     speed: 40
+     show_tokens:
+       color1: beartrap    
+  display_hacksaws:
+   jw_chase_drill:
+     loops: 0
+     speed: 40
+     show_tokens:
+       color1: beartrap     
+  display_handguns:
+   jw_chase_gun:
+     loops: 0
+     speed: 40
+     show_tokens:
+       color1: beartrap     
+  display_keys:
+   jw_chase_key:
+     loops: 0
+     speed: 40
+     show_tokens:
+       color1: beartrap

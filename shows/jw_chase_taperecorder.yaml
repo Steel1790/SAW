@@ -27,19 +27,19 @@
   lights:
     l_jw_drill: off
     l_jw_candle: (color1)
- - time: '+1'   
+- time: '+1'   
   lights:
     l_jw_candle: off
     l_jw_taperecorder: (color1)
-- time: '+.5'
+- time: '+1'
   lights:
     l_jw_taperecorder: off
-- time: '+.5'
+- time: '+1'
   lights:
     l_jw_taperecorder: (color1)
-- time: '+.5'
+- time: '+1'
   lights:
     l_jw_taperecorder: off
-- time: '+.5'
+- time: '+1'
   lights:
     l_jw_taperecorder: (color1)  

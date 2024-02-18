@@ -1,0 +1,13 @@
+#show_version=6
+
+- time: 0
+  lights:
+    act_topper: off
+
+- time: '+1'
+  lights:
+    act_topper: on
+
+- time: '+1'
+  lights:
+    act_topper: off

@@ -31,15 +31,15 @@
   lights:
     l_jw_syringe: off
     l_jw_gears: (color1)
-- time: '+.5'
+- time: '+1'
   lights:
     l_jw_gears: off
-- time: '+.5'
+- time: '+1'
   lights:
     l_jw_gears: (color1)
-- time: '+.5'
+- time: '+1'
   lights:
     l_jw_gears: off
-- time: '+.5'
+- time: '+1'
   lights:
     l_jw_gears: (color1)  

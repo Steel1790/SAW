@@ -4,7 +4,7 @@
 mode:
   start_events: startmode_shackle_multiball
   stop_events: stop_mode_shackle_multiball, mode_shackle_multiball_complete
-  priority: 182
+  priority: 183
 
 multiball_locks:
   mbl_shackle:
@@ -26,6 +26,32 @@ multiballs:
 variable_player:
   #multiball_mb_shackle_started:
     #score: 3000000
+  shot_shackle_left_loop_sp_shackle_mb_lit_hit:
+    score: 1000000
+  shot_shackle_left_standup_sp_shackle_mb_lit_hit:
+    score: 1000000
+  shot_shackle_left_standup_rightramp_sp_shackle_mb_lit_hit:
+    score: 1000000
+  shot_shackle_right_standup_rightramp_sp_shackle_mb_lit_hit:
+    score: 1000000
+  shot_shackle_right_loop_sp_shackle_mb_lit_hit:
+    score: 1000000
+  shot_shackle_right_standup_sp_shackle_mb_lit_hit:
+    score: 1000000
+
+  shot_shackle_superjackpot1_sp_shackle_mb_lit_hit:
+    score: 5000000
+  
+counters:
+  cnt_shackle_mb_jackpot_p1:
+    starting_count: 0
+    count_complete_value: 6
+    enable_events: slide_sl_ShackleMB_active
+#    persist_state: true
+    reset_on_complete: true
+    disable_on_complete: false   
+    count_events: shot_shackle_left_loop_sp_shackle_mb_lit_hit, shot_shackle_left_standup_sp_shackle_mb_lit_hit, shot_shackle_left_standup_rightramp_sp_shackle_mb_lit_hit, shot_shackle_right_standup_rightramp_sp_shackle_mb_lit_hit, shot_shackle_right_loop_sp_shackle_mb_lit_hit, shot_shackle_right_standup_sp_shackle_mb_lit_hit
+    events_when_complete: shackle_mb_jackpot_p1_complete
 
 slides:
   sl_ShackleMB:
@@ -34,12 +60,20 @@ slides:
       video: shackleMB
       width: 1366
       height: 768 
+  sl_ShackleMB_Jackpot:
+    widgets:
+    - type: video
+      video: jackpot_jigsaw
 
 slide_player:
   multiball_mb_shackle_started:
     sl_ShackleMB:
       priority: 600
       expire: 7s
+  sg_shackle_p1_lit_hit:
+    sl_ShackleMB_Jackpot:
+      priority: 600
+      expire: 2.2s
 
 show_player:
   multiball_mb_shackle_started:
@@ -66,6 +100,18 @@ show_player:
       disc_left_chase: stop
       disc_middle_chase: stop
       disc_right_chase: stop
+  shackle_mb_jackpot_p1_complete:
+      top_drop_chase:
+        loops: -1
+        speed: 20
+        show_tokens:
+          color1: beartrap
+  shot_shackle_superjackpot1_sp_shackle_mb_lit_hit:
+      top_drop_chase:
+        loops: -1
+        show_tokens:
+          color1: off
+  stop_mode_shackle_multiball: stop
 coil_player:
   multiball_mb_shackle_started:
     c_left_spin_disc:
@@ -91,3 +137,191 @@ coil_player:
       action: off
     c_left_spin_disc:
       action: off
+
+shots:
+  shot_shackle_left_loop:
+    reset_events: mode_shackle_multiball_stopped, player_turn_stopped, player_turn_ended
+    switches: s_left_loop_bottom, s_left_loop_top
+    profile: sp_shackle_mb
+    show_tokens:
+      leds: l_left_loop_arrow
+    control_events:
+      - events: ball_starting
+        state: 0
+      - events: slide_sl_ShackleMB_active
+        state: 1
+      - events: shot_shackle_left_loop_sp_shackle_mb_lit_hit
+        state: 0
+  shot_shackle_left_standup:
+    reset_events: mode_shackle_multiball_stopped, player_turn_stopped, player_turn_ended
+    switches: s_left_standup
+    profile: sp_shackle_mb
+    show_tokens:
+      leds: l_left_standup_arrow
+    control_events:
+      - events: ball_starting
+        state: 0
+      - events: slide_sl_ShackleMB_active
+        state: 1
+      - events: shot_shackle_left_standup_sp_shackle_mb_lit_hit
+        state: 0
+  shot_shackle_left_standup_rightramp:
+    reset_events: mode_shackle_multiball_stopped, player_turn_stopped, player_turn_ended
+    switches: s_left_standup_right_ramp
+    profile: sp_shackle_mb
+    show_tokens:
+      leds: l_left_standup_right_ramp_arrow
+    control_events:
+      - events: ball_starting
+        state: 0
+      - events: slide_sl_ShackleMB_active
+        state: 1
+      - events: shot_shackle_left_standup_rightramp_sp_shackle_mb_lit_hit
+        state: 0
+  shot_shackle_right_standup_rightramp:
+    reset_events: mode_shackle_multiball_stopped, player_turn_stopped, player_turn_ended
+    switches: s_right_standup_right_ramp
+    profile: sp_shackle_mb
+    show_tokens:
+      leds: l_right_standup_right_ramp_arrow
+    control_events:
+      - events: ball_starting
+        state: 0
+      - events: slide_sl_ShackleMB_active
+        state: 1
+      - events: shot_shackle_right_standup_rightramp_sp_shackle_mb_lit_hit
+        state: 0
+  shot_shackle_right_loop:
+    reset_events: mode_shackle_multiball_stopped, player_turn_stopped, player_turn_ended
+    switches: s_right_loop_bottom, s_right_loop_top
+    profile: sp_shackle_mb
+    show_tokens:
+      leds: l_right_loop_arrow
+    control_events:
+      - events: ball_starting
+        state: 0
+      - events: slide_sl_ShackleMB_active
+        state: 1
+      - events: shot_shackle_right_loop_sp_shackle_mb_lit_hit
+        state: 0
+  shot_shackle_right_standup:
+    reset_events: mode_shackle_multiball_stopped, player_turn_stopped, player_turn_ended
+    switches: s_right_standup
+    profile: sp_shackle_mb
+    show_tokens:
+      leds: l_right_standup_arrow
+    control_events:
+      - events: ball_starting
+        state: 0
+      - events: slide_sl_ShackleMB_active
+        state: 1
+      - events: shot_shackle_right_standup_sp_shackle_mb_lit_hit
+        state: 0
+  shot_shackle_superjackpot1:
+    reset_events: mode_shackle_multiball_stopped, player_turn_stopped, player_turn_ended
+    switches: s_upper_bank_drop_target_opto
+    profile: sp_shackle_mb
+    control_events:
+      - events: ball_starting
+        state: 0
+      - events: shackle_mb_jackpot_p1_complete
+        state: 1
+      - events: shot_shackle_superjackpot1_sp_shackle_mb_lit_hit
+        state: 0
+
+shot_profiles:
+  sp_shackle_mb:
+    advance_on_hit: false
+    states:
+      - name: shackle_not_ready
+        show: "sh_shackle_not_ready"
+      - name: lit
+        show: "sh_shackle_on"           # a default show to turn of the led. change if you want to do something on unlit shots
+      #- name: collected
+      #  show: "sh_shackle_off"               # a default show to turn of the led. change if you want to do something on unlit shots
+
+shot_groups:
+  sg_shackle_p1:
+    shots: shot_shackle_left_loop, shot_shackle_left_standup, shot_shackle_left_standup_rightramp, shot_shackle_right_standup_rightramp, shot_shackle_right_loop, shot_shackle_right_standup
+
+
+shows:
+  sh_shackle_on:    # define our show to indicate the state
+    - duration: 0.3s
+      lights:
+        (leds): beartrap
+    - duration: 0.3s
+      lights:
+        (leds): off
+  sh_shackle_not_ready:    # define our show to indicate the state
+    - duration: 0.3s
+      lights:
+        (leds): off
+
+sound_player:
+  sg_shackle_p1_lit_hit:
+    Jackpot:
+      action: play
+  logicblock_acc_shackle_mb_qualify_complete{device.multiball_locks.mbl_shackle.locked_balls == 0}:
+    LockIsLit:
+      action: play
+  logicblock_acc_shackle_mb_qualify_complete{device.multiball_locks.mbl_shackle.locked_balls == 1}:
+    LockIsLit:
+      action: play
+  slide_sl_Shackle_locked_1_active:
+    Ball1Locked:
+      action: play
+  slide_sl_Shackle_locked_2_active:
+    Ball2Locked:
+      action: play
+
+widgets:
+  w_shackle_multiball:
+    - type: Text
+      text: Shackle Multiball - Shoot RED ARROWS to collect JACKPOTS
+      color: white
+      x: 50%
+      y: 95%
+      z: 2
+      font_size: 52
+      font_name: Skilt Gothic W04 Thin
+      outline_color: black
+      outline_width: 7
+  w_shackle_multiball_value:
+    - type: text
+      #text: (player|make_your_choice_hurryup_t_make_your_choice_value_timer_tick) 
+      text: 1000000
+      number_grouping: true 
+      x: 50%
+      y: 28%
+      z: 7
+      font_size: 90
+      font_name: Mustkill     
+      outline_color: black
+      outline_width: 7
+
+widget_player:
+  multiball_mb_shackle_started:
+    w_shackle_multiball:
+      slide: base_slide_main
+      action: add
+  stop_mode_shackle_multiball:
+    w_shackle_multiball:
+      action: remove
+  mode_shackle_multiball_complete:
+    w_shackle_multiball:  
+      action: remove
+  ball_ended:
+    w_shackle_multiball:
+      action: remove
+
+  sg_shackle_p1_lit_hit:
+    w_shackle_multiball_value:
+      slide: sl_ShackleMB_Jackpot
+      action: add
+  stop_jackpot_widget:
+    w_shackle_multiball_value:
+      action: remove
+
+event_player:
+  sg_shackle_p1_lit_hit: stop_jackpot_widget|2.3s

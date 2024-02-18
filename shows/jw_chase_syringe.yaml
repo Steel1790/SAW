@@ -31,15 +31,15 @@
   lights:
     l_jw_bathtub: off
     l_jw_syringe: (color1)
-- time: '+.5'
+- time: '+1'
   lights:
     l_jw_syringe: off
-- time: '+.5'
+- time: '+1'
   lights:
     l_jw_syringe: (color1)
-- time: '+.5'
+- time: '+1'
   lights:
     l_jw_syringe: off
-- time: '+.5'
+- time: '+1'
   lights:
     l_jw_syringe: (color1)  
