@@ -2,7 +2,7 @@
 mode:
   start_events: selection_mode_quadshotgun_selected
   stop_events: stop_mode_quadshotgun, mode_quadshotgun_complete, ball_ended, ball_will_end, player_quadshotgun_quadshotgun_60s_timer_tick{value < 1}
-  priority: 110
+  priority: 181
  
 sequences:
   quadshotgun:

@@ -2,7 +2,7 @@
 mode:
   start_events: selection_mode_drillchair_selected
   stop_events: stop_mode_drillchair, mode_drillchair_complete, ball_ended, ball_will_end, player_drillchair_drillchair_60s_timer_tick{value < 1}
-  priority: 110
+  priority: 181
  
 sequences:
   drillchair:

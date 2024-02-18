@@ -3,7 +3,7 @@
 
 mode:
   start_events: startmode_jigsaw_multiball_qualify
-  priority: 150
+  priority: 183
 
 sequences:
   seq_jigsaw_mb_qualify:

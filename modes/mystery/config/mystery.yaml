@@ -2,7 +2,7 @@
 mode:
   start_events: start_mystery_mode
   stop_events: ball_ended, e_release_mystery
-  priority: 115
+  priority: 182
 
 
 event_player:

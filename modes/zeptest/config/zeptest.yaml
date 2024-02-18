@@ -2,7 +2,7 @@
 mode:
   start_events: selection_mode_zeptest_selected
   stop_events: stop_mode_zeptest, ball_ended, ball_will_end, player_zeptest_60s_zeptest_timer_tick{value < 1}
-  priority: 110
+  priority: 181
  
 sequences:
   zeptest:

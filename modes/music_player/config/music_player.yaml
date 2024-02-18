@@ -256,10 +256,6 @@ sound_player:
   mode_high_score_started:
     BaseMusic:
       action: stop
-#plunge sound
-  balldevice_bd_plunger_ball_eject_success:
-    HacksawPlunge:
-      action: play
 
   ball_save_default_saving_ball:
     HeHelpedMe:

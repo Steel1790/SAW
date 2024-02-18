@@ -3,7 +3,7 @@
 
 mode:
   start_events: startmode_hacksaw_multiball_qualify
-  priority: 160
+  priority: 183
 
 accruals:
   acc_hacksaw_mb_qualify:
