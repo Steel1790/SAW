@@ -31,3 +31,15 @@
   lights:
     l_jw_drill: off
     l_jw_candle: (color1)
+- time: '+.5'
+  lights:
+    l_jw_candle: off
+- time: '+.5'
+  lights:
+    l_jw_candle: (color1)
+- time: '+.5'
+  lights:
+    l_jw_candle: off
+- time: '+.5'
+  lights:
+    l_jw_candle: (color1)  
