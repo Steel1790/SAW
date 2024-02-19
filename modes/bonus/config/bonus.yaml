@@ -420,50 +420,50 @@ sound_player:
 
 show_player:
   display_gears:   
-   jw_chase_gears:
+   jw_bonus_gears:
      loops: 0
-     speed: 40
+     speed: 8
      show_tokens:
        color1: beartrap
   display_syringes:
-   jw_chase_syringe:
+   jw_bonus_syringe:
      loops: 0
-     speed: 40
+     speed: 8
      show_tokens:
        color1: beartrap
   display_bathtubs:
-   jw_chase_bathtub:
+   jw_bonus_bathtub:
      loops: 0
-     speed: 40
+     speed: 8
      show_tokens:
        color1: beartrap
   display_taperecorders:
-   jw_chase_taperecorder:
+   jw_bonus_taperecorder:
      loops: 0
-     speed: 40
+     speed: 8
      show_tokens:
        color1: beartrap    
   display_candles:
-   jw_chase_candle:
+   jw_bonus_candle:
      loops: 0
-     speed: 40
+     speed: 8
      show_tokens:
        color1: beartrap    
   display_hacksaws:
-   jw_chase_drill:
+   jw_bonus_drill:
      loops: 0
-     speed: 40
+     speed: 8
      show_tokens:
        color1: beartrap     
   display_handguns:
-   jw_chase_gun:
+   jw_bonus_gun:
      loops: 0
-     speed: 40
+     speed: 8
      show_tokens:
        color1: beartrap     
   display_keys:
-   jw_chase_key:
+   jw_bonus_key:
      loops: 0
-     speed: 40
+     speed: 8
      show_tokens:
        color1: beartrap

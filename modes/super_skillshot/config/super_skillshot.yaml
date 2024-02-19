@@ -1,7 +1,7 @@
 #config_version=6
 mode:
   start_events: ball_starting, start_mode_super_skillshot
-  stop_events: stop_mode_super_skillshot
+  stop_events: stop_mode_super_skillshot, droptargets_skill_hit
   priority: 100
 
 timers:
@@ -18,16 +18,23 @@ timers:
 variable_player:
   ssh_skillshot_leftorbit_innerorbit_hit:
     score: 8000000
+  ssh_skillshot_innerorbit_leftramp_hit:
+    score: 4000000
+
 
 event_player:
   ssh_skillshot_leftorbit_innerorbit_hit: mode_super_skillshot_complete
-  playfield_active: stop_mode_super_skillshot|7s
+  ssh_skillshot_innerorbit_leftramp_hit: mode_super_skillshot_complete
+  playfield_active: stop_mode_super_skillshot|6.5s
   balldevice_bd_plunger_ball_eject_success: stop_mode_super_skillshot|8s
  
   
 sequence_shots:
   ssh_skillshot_leftorbit_innerorbit:
     switch_sequence: s_left_loop_bottom, s_left_loop_top, s_inner_loop
+    sequence_timeout: 5s
+  ssh_skillshot_innerorbit_leftramp:
+    switch_sequence: s_inner_loop, s_enter_left_ramp, s_left_ramp_score_bottom, s_left_ramp_score_top
     sequence_timeout: 5s
 
 slides:

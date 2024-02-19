@@ -266,7 +266,11 @@ slide_player:
     XMarksTheSpotVideo:
       priority: 406
       expire: 2.1s      
-
+shows:
+  zeptest_dropbank:    
+    - duration: -1      
+      lights:    
+        (leds): (color1)
 show_player:
   logicblock_zeptest_updated{value==0}:
       skillshot_chase:
@@ -277,14 +281,44 @@ show_player:
   logicblock_zeptest_hit{step==1}:
       skillshot_chase:
         loops: -1
+        speed: 5
         show_tokens:
-          color1: off
+          color1: zepstest
+        priority: 181
+      zeptest_dropbank:
+        loops: -1
+        show_tokens:
+          color1: zepstest
+          leds: l_skill_shot3
+        priority: 182
+  logicblock_zeptest_hit{step==2}:
+      skillshot_chase:
+        loops: -1
+        speed: 5
+        show_tokens:
+          color1: zepstest
+        priority: 181
+      zeptest_dropbank:
+        loops: -1
+        show_tokens:
+          color1: zepstest
+          leds: l_skill_shot2,l_skill_shot3
+        priority: 182
   logicblock_zeptest_hit{step==3}:
       top_drop_chase:
         loops: -1
         speed: 20
         show_tokens:
           color1: zepstest
+      zeptest_dropbank: 
+        loops: -1
+        show_tokens:
+          leds: l_skill_shot2, l_skill_shot3
+          color1: off
+      skillshot_chase:
+        loops: -1
+        show_tokens:
+          color1: off
   logicblock_zeptest_hit{step==4}:
       left_ramp_chase:
         loops: -1

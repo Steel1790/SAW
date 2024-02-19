@@ -29,3 +29,21 @@ sound_player:
     ball_ending:
       ModeQualifiedShootScoop:
         action: stop
+
+shows:
+  mode_lit:
+    - duration: 0.5s
+      lights:
+        (leds): razorwire
+    - duration: 0.5s
+      lights:
+        (leds): off
+
+show_player:
+  mode_trap_select_started:
+    mode_lit:
+      show_tokens:
+        leds: l_mode_scoop
+      loops: -1
+  sh_mystery_hit:
+    mode_lit: stop

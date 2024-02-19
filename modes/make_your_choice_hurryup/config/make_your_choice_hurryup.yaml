@@ -1,7 +1,7 @@
 #config_version=6                 
 mode:
   start_events: startmode_make_your_choice_hurryup
-  stop_events: mode_make_your_choice_hurryup_complete, stop_mode_make_your_choice_hurryup, ball_ended, ball_will_end, player_make_your_choice_hurryup_t_make_your_choice_timer_tick{value < 1}, logicblock_acc_make_your_choice_qualify_complete
+  stop_events: mode_make_your_choice_hurryup_complete, stop_mode_make_your_choice_hurryup, ball_ended, ball_will_end, player_make_your_choice_hurryup_t_make_your_choice_timer_tick{value < 1}, logicblock_acc_make_your_choice_qualify_complete, logicblock_trap_select_qualify_counter_complete
   priority: 185
 
   # Spell D-I-E / S-A-W (3 drop target bank) in sequential order to start this hurry up mode.

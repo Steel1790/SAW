@@ -2,24 +2,24 @@
 ##! mode: shackle_multiball
 
 mode:
-  start_events: startmode_shackle_multiball
+  start_events: logicblock_shackle_multiball_qualify_complete
   stop_events: stop_mode_shackle_multiball, mode_shackle_multiball_complete
   priority: 182
 
-multiball_locks:
-  mbl_shackle:
-    #debug: true
-    balls_to_lock: 2
-    lock_devices: bd_top_saucer
-    enable_events: logicblock_acc_shackle_mb_qualify_complete
-      #disable_events: sg_lockshot_complete{state=="unlit"}
-      #reset_count_for_current_player_events: multiball_lock_sword_multiball_lock_full
+#multiball_locks:
+#  mbl_shackle:
+#    #debug: true
+#    balls_to_lock: 2
+#    lock_devices: bd_top_saucer
+#    enable_events: logicblock_acc_shackle_mb_qualify_complete
+#      #disable_events: sg_lockshot_complete{state=="unlit"}
+#      #reset_count_for_current_player_events: multiball_lock_sword_multiball_lock_full
 
 multiballs:
   mb_shackle:
     ball_count: 2
-    shoot_again: 15s
-    start_events: multiball_lock_mbl_shackle_full
+    shoot_again: 5s
+    start_events: start_shackle_multiball
     ball_locks: bd_top_saucer
     # replace_balls_in_play: true
 
@@ -120,6 +120,9 @@ show_player:
         show_tokens:
           color1: off
   stop_mode_shackle_multiball: stop
+  start_shackle_multiball:
+    mb_ballsave:
+      loops: 4
 coil_player:
   multiball_mb_shackle_started:
     c_left_spin_disc:
@@ -351,5 +354,6 @@ widget_player:
       action: add  
 
 event_player:
+  mode_shackle_multiball_started: start_shackle_multiball|0.3s
   sg_shackle_p1_lit_hit: stop_jackpot_widget|2.3s
   shot_shackle_superjackpot1_sp_shackle_mb_lit_hit: stop_jackpot_widget|3s

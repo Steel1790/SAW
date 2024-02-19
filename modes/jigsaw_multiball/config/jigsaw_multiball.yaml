@@ -2,15 +2,16 @@
 ##! mode: jigsaw_multiball
 
 mode:
-  start_events: startmode_jigsaw_multiball
+  #start_events: startmode_jigsaw_multiball
+  start_events: logicblock_jigsaw_multiball_qualify_complete
   stop_events: stop_mode_jigsaw_multiball, mode_jigsaw_multiball_complete, player_turn_stopped, player_turn_ended
-  priority: 182
+  priority: 183
 
 multiballs:
   mb_jigsaw:
     ball_count: 3
-    shoot_again: 15s
-    start_events: logicblock_jigsaw_multiball_qualify_complete
+    shoot_again: 5s
+    start_events: start_jigsaw_multiball
 
 variable_player:
   #multiball_mb_jigsaw_started:
@@ -105,6 +106,10 @@ show_player:
         loops: -1
         show_tokens:
           color1: off
+  start_jigsaw_multiball:
+    mb_ballsave:
+      loops: 4
+
   stop_mode_jigsaw_multiball: stop
 coil_player:
   multiball_mb_jigsaw_started:
@@ -334,5 +339,6 @@ widget_player:
       action: add
 
 event_player:
+  mode_jigsaw_multiball_started: start_jigsaw_multiball|0.3s
   sg_jigsaw_p1_lit_hit: stop_jackpot_widget|2.3s
   shot_jigsaw_superjackpot1_sp_jigsaw_mb_lit_hit: stop_jackpot_widget|2.3s

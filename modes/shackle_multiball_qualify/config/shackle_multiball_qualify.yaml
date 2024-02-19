@@ -18,7 +18,7 @@ accruals:
 counters:
   cnt_shackle_mb_counter:
     starting_count: 0
-    count_complete_value: 3
+    count_complete_value: 2
     enable_events: 
     disable_events: 
     start_enabled: true
@@ -26,6 +26,16 @@ counters:
     reset_on_complete: true
     disable_on_complete: false   
     count_events: multiball_lock_mbl_shackle_locked_ball
+    events_when_complete: logicblock_shackle_multiball_qualify_complete
+
+multiball_locks:
+  mbl_shackle:
+    #debug: true
+    balls_to_lock: 2
+    lock_devices: bd_top_saucer
+    enable_events: logicblock_acc_shackle_mb_qualify_complete
+      #disable_events: sg_lockshot_complete{state=="unlit"}
+      #reset_count_for_current_player_events: multiball_lock_sword_multiball_lock_full
 
 variable_player:
   logicblock_cnt_shackle_mb_counter_hit:

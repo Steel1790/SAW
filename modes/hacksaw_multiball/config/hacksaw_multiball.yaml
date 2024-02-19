@@ -2,29 +2,30 @@
 ##! mode: hacksaw_multiball
 
 mode:
-  start_events: startmode_hacksaw_multiball
+  #start_events: startmode_hacksaw_multiball
+  start_events: multiball_lock_mbl_hacksaw_full
   stop_events: stop_mode_hacksaw_multiball, mode_hacksaw_multiball_complete
-  priority: 165
+  priority: 183
 
-multiball_locks:
-  mbl_hacksaw:
-    #debug: true
-    balls_to_lock: 3
-    balls_to_replace: 2
-    lock_devices: bd_hacksaw
-    enable_events: logicblock_acc_hacksaw_mb_qualify_complete
-    disable_events: multiball_lock_mbl_hacksaw_locked_ball
-    locked_ball_counting_strategy: physical_only
-    reset_all_counts_events: multiball_lock_mbl_hacksaw_full 
-      #disable_events: sg_lockshot_complete{state=="unlit"}
-      #reset_count_for_current_player_events: multiball_lock_sword_multiball_lock_full
+#multiball_locks:
+#  mbl_hacksaw:
+#    #debug: true
+#    balls_to_lock: 3
+#    balls_to_replace: 2
+#    lock_devices: bd_hacksaw
+#    enable_events: logicblock_acc_hacksaw_mb_qualify_complete
+#    disable_events: multiball_lock_mbl_hacksaw_locked_ball
+#    locked_ball_counting_strategy: physical_only
+#    reset_all_counts_events: multiball_lock_mbl_hacksaw_full 
+#      #disable_events: sg_lockshot_complete{state=="unlit"}
+#      #reset_count_for_current_player_events: multiball_lock_sword_multiball_lock_full
 
 multiballs:
   mb_hacksaw:
     ball_count: 3
     ball_locks: bd_hacksaw
-    shoot_again: 15s
-    start_events: multiball_lock_mbl_hacksaw_full
+    shoot_again: 5s
+    start_events: start_hacksaw_multiball
     replace_balls_in_play: true
 
 variable_player:
@@ -68,6 +69,9 @@ show_player:
       disc_left_chase: stop
       disc_middle_chase: stop
       disc_right_chase: stop
+  start_hacksaw_multiball:
+    mb_ballsave:
+      loops: 4
 coil_player:
   multiball_mb_hacksaw_started:
     c_left_spin_disc:
@@ -93,3 +97,6 @@ coil_player:
       action: off
     c_left_spin_disc:
       action: off
+
+event_player:
+  mode_hacksaw_multiball_started: start_hacksaw_multiball|0.3s

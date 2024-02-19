@@ -48,7 +48,7 @@ window:
   height: 768
   title: Mission Pinball Framework - SAW
   resizable: true
-  fullscreen: true
+  fullscreen: false
   borderless: true
   exit_on_escape: true
   source_display: lcd
@@ -284,3 +284,37 @@ assets:
     videos:
         default:
             load: preload
+
+
+#end of ball 3 event that lives outside base mode
+# involves door slam video + light effect then topper actuates
+slides:
+  gameovervideo:
+    widgets:
+    - type: video
+      video: GameOverVideo
+      width: 1366
+      height: 768
+slide_player:
+  ball_will_end{current_player.ball==3}:
+    gameovervideo:
+      action: play
+      priority: 600
+      expire: 2.5s
+show_player:
+# end of ball 3
+  ball_will_end{current_player.ball==3}:
+    game_over:
+      loops: 0
+      speed: 10
+    topper_trigger_on:
+      loops: 0
+      speed: 20
+  shot_left_outlane_hit{state=="ball_save_not_ready"}:
+      billy_laugh:
+        loops: 4
+        speed: 4
+  shot_right_outlane_hit{state=="ball_save_not_ready"}:
+      billy_laugh:
+        loops: 4
+        speed: 4

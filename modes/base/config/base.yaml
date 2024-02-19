@@ -2,7 +2,6 @@
 mode:
   start_events: ball_starting, mode_skillshot_started
   stop_events: stop_base_end_of_ball
-  #stop_events: ball_ended, ball_will_end
   priority: 100
   
 ball_saves:
@@ -12,7 +11,7 @@ ball_saves:
 #    grace_period: 2s
 #    enable_events: mode_base_started
 #    disable_events2: ball_save_default_disabled
-    timer_start_events: playfield_active
+    timer_start_events: e_ballsave
     early_ball_save_events: sw_outlane, s_trough6_active
     auto_launch: true
     balls_to_save: 1
@@ -26,7 +25,7 @@ ball_saves:
 
 event_player:
   ball_will_end: stop_base_end_of_ball|0.3s
-  playfield_active: ballsave_light
+  #playfield_active: ballsave_light
   mode_base_started:
     - startmode_jigsaw_multiball
     - startmode_jigsaw_multiball_qualify
@@ -211,7 +210,7 @@ slide_player:
       priority: 400
       expire: 5s     
  #skillshot     
-  mode_skillshot_complete:
+  droptargets_skill_hit:
     skillshotvideo:
       action: play
       priority: 400
@@ -224,6 +223,10 @@ slide_player:
     superskillshot:
       priority: 500
       expire: 4s
+  ssh_skillshot_innerorbit_leftramp_hit:
+    superskillshot:
+      priority: 500
+      expire: 4s  
 
   ball_save_default_saving_ball:
     HeHelpedMeVideo:
@@ -442,7 +445,7 @@ counters:
     count_complete_value: 1
     start_enabled: true
 #    persist_state: true
-    reset_on_complete: true
+    reset_on_complete: false
     disable_on_complete: false    
     events_when_complete: e_ballsave
     count_events: playfield_active
@@ -1185,14 +1188,14 @@ show_player:
       disc_left_chase: stop
       disc_middle_chase: stop
       disc_right_chase: stop
-  shot_left_outlane_hit{state=="ball_save_not_ready"}:
-      billy_laugh:
-        loops: 4
-        speed: 4
-  shot_right_outlane_hit{state=="ball_save_not_ready"}:
-      billy_laugh:
-        loops: 4
-        speed: 4
+  #shot_left_outlane_hit{state=="ball_save_not_ready"}:
+  #    billy_laugh:
+  #      loops: 4
+  #      speed: 4
+  #shot_right_outlane_hit{state=="ball_save_not_ready"}:
+  #    billy_laugh:
+  #      loops: 4
+  #      speed: 4
       
 widgets:
   saw_letters:
@@ -3001,6 +3004,8 @@ widget_player:
   multiball_mb_jigsaw_started:
     saw_letters:
       action: remove
+    w_trap_select_start:
+      action: remove
   stop_mode_jigsaw_multiball:
     saw_letters:
       slide: base_slide_main
@@ -3012,6 +3017,8 @@ widget_player:
   multiball_mb_shackle_started:
     saw_letters:
       action: remove
+    w_trap_select_start:
+      action: remove
   stop_mode_shackle_multiball:
     saw_letters:
       slide: base_slide_main
@@ -3020,6 +3027,20 @@ widget_player:
     saw_letters:
       slide: base_slide_main
       action: add
+  multiball_mb_hacksaw_started:
+    saw_letters:
+      action: remove
+    w_trap_select_start:
+      action: remove
+  stop_mode_hacksaw_multiball:
+    saw_letters:
+      slide: base_slide_main
+      action: add  
+  mode_hacksaw_multiball_complete:
+    saw_letters:
+      slide: base_slide_main
+      action: add
+
 
   logicblock_cnt_saw_qualify_complete:
     saw_letters:

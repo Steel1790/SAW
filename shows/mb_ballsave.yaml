@@ -1,0 +1,7 @@
+#show_version=6
+- time: '+0.5'
+  lights:
+    l_live_again: drillchair
+- time: '+0.5'
+  lights:
+    l_live_again: off
