@@ -437,6 +437,16 @@ sequences:
     events_when_complete: startmode_make_your_choice_hurryup
 
 counters:
+  ballsave_playfield_active:
+    starting_count: 0
+    count_complete_value: 1
+    start_enabled: true
+#    persist_state: true
+    reset_on_complete: true
+    disable_on_complete: false    
+    events_when_complete: e_ballsave
+    count_events: playfield_active
+
   minimode_pops_counter:
     starting_count: 0
     count_complete_value: 30
@@ -746,7 +756,7 @@ shows:
   pops_on:
     - duration: -1
       lights:
-        (leds): BBBBBB
+        (leds): 999999
 
   sh_escape_outlane_end:
     - duration: -1
@@ -799,6 +809,10 @@ show_player:
       loops: -1      
       show_tokens:
         leds: l_left_flipper, l_right_flipper
+    topper_heartbeat:
+      loops: -1
+      show_tokens:
+        color1: beartrap
     #speaker_lights_on:
     #  loops: -1
     #  show_tokens:
@@ -810,7 +824,8 @@ show_player:
       loops: -1
       show_tokens:
         leds: l_action_button
-  ballsave_light:
+  #ballsave_light:
+  e_ballsave:
     ballsave:
       show_tokens:
         leds: l_live_again
@@ -1128,6 +1143,11 @@ show_player:
   #    loops: 0
   #    speed: 10
 
+  ball_will_end{current_player.ball==3}:
+    pops_on: stop
+    trough_on: stop
+    spotlight_on: stop
+
   logicblock_trap_select_qualify_counter_complete:
     trough_on: stop
     spotlight_on: stop
@@ -1167,11 +1187,11 @@ show_player:
       disc_right_chase: stop
   shot_left_outlane_hit{state=="ball_save_not_ready"}:
       billy_laugh:
-        loops: 1
+        loops: 8
         speed: 2
   shot_right_outlane_hit{state=="ball_save_not_ready"}:
       billy_laugh:
-        loops: 1
+        loops: 8
         speed: 2
       
 widgets:

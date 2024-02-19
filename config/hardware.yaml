@@ -228,7 +228,7 @@ virtual_platform_start_active_switches:
 coils:
   c_flipper_left_main:
     number: 3208-6
-    default_pulse_ms: 90
+    default_pulse_ms: 70
     tags: coils
   c_flipper_left_hold:
     number: 3208-5
@@ -238,7 +238,7 @@ coils:
     tags: coils
   c_flipper_right_main:
     number: 3208-3
-    default_pulse_ms: 90
+    default_pulse_ms: 70
     tags: coils
   c_flipper_right_hold:
     number: 3208-4
@@ -248,7 +248,7 @@ coils:
     tags: coils
   c_flipper_upper_right_main:
     number: 1616_2-9
-    default_pulse_ms: 90
+    default_pulse_ms: 70
     tags: coils
   c_flipper_upper_right_hold:
     number: 1616_2-8
@@ -324,10 +324,10 @@ coils:
     default_pulse_power: 0.9
   c_left_slingshot:
     number: 3208-7
-    default_pulse_ms: 20
+    default_pulse_ms: 35
   c_right_slingshot:
     number: 3208-2
-    default_pulse_ms: 20
+    default_pulse_ms: 35
   c_lower_droptargetreset:
     number: 1616_1-13
     default_pulse_ms: 20
