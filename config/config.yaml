@@ -266,6 +266,11 @@ sounds:
     file: SuperJackpot5.wav
     volume: 0.2
 
+#spinner sound
+  Spinner3:
+    file: Spinner3.wav
+    volume: 0.4
+
 assets:
     sounds:
         default:

@@ -1,7 +1,7 @@
 #config_version=6
 mode:
   start_events: start_mystery_mode
-  stop_events: ball_ended, e_release_mystery
+  stop_events: ball_ended, e_release_mystery, sh_select_mode_hit
   priority: 182
 
 
