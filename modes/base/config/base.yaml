@@ -813,10 +813,10 @@ show_player:
       loops: -1
       show_tokens:
         color1: beartrap
-    #speaker_lights_on:
-    #  loops: -1
-    #  show_tokens:
-    #    color1: beartrap
+    speaker_lights_on:
+      loops: -1
+      show_tokens:
+        color1: beartrap
 
 
   playfield_active:
@@ -1187,12 +1187,12 @@ show_player:
       disc_right_chase: stop
   shot_left_outlane_hit{state=="ball_save_not_ready"}:
       billy_laugh:
-        loops: 8
-        speed: 2
+        loops: 4
+        speed: 4
   shot_right_outlane_hit{state=="ball_save_not_ready"}:
       billy_laugh:
-        loops: 8
-        speed: 2
+        loops: 4
+        speed: 4
       
 widgets:
   saw_letters:
