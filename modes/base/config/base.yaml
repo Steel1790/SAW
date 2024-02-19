@@ -1,6 +1,7 @@
 #config_version=6
 mode:
   start_events: ball_starting, mode_skillshot_started
+  stop_events: stop_base_end_of_ball
   #stop_events: ball_ended, ball_will_end
   priority: 100
   
@@ -24,6 +25,7 @@ ball_saves:
 #    debug: true  
 
 event_player:
+  ball_will_end: stop_base_end_of_ball|0.3s
   playfield_active: ballsave_light
   mode_base_started:
     - startmode_jigsaw_multiball
@@ -32,6 +34,9 @@ event_player:
     - startmode_hacksaw_multiball_qualify
     - startmode_shackle_multiball
     - startmode_shackle_multiball_qualify
+
+# temporarily commented out mode stopping to trigger puzzle hurry up. As the delay was occuring the time to trigger into the next ball if it was drained
+# during a mode.
   mode_drillchair_stopping: 
     - e_puzzle_start|5.3s
     - e_drillchair_puzzle|5.5s
