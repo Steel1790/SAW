@@ -429,12 +429,22 @@ shows:
     - duration: 1s
       lights:
         (leds): off
+  drillchair_mode:
+    - duration: 0.15s
+      lights:
+        (leds): drillchair
+    - duration: 0.15s
+      lights:
+        (leds): off
 
 show_player:
   mode_drillchair_started:     
     gi_on:
       show_tokens:
         color1: drillchair     
+    drillchair_mode:
+      show_tokens:
+        leds: l_drillchair_mode
 
 # pops progress
   logicblock_drillchair_pops_counter_hit{count==1}:

@@ -34,26 +34,41 @@ event_player:
     - startmode_shackle_multiball
     - startmode_shackle_multiball_qualify
 
-  ball_started: mode_qualified_sidestep|0.5s
+  ball_started: mode_qualified_sidestep|0.8s
+  single_player_ball_started: mode_qualified_sidestep|0.6s
+
+# saw collect light progress
+  logicblock_cnt_saw_qualify_updated{value==1}: saw_pops_s|0.3s
+  logicblock_cnt_saw_qualify_updated{value==2}: saw_pops_sa|0.3s
+  logicblock_cnt_saw_qualify_complete: saw_pops_saw|0.3s
 
 # temporarily commented out mode stopping to trigger puzzle hurry up. As the delay was occuring the time to trigger into the next ball if it was drained
 # during a mode.
   mode_drillchair_stopping: 
-    - e_puzzle_start|5.3s
-    - e_drillchair_puzzle|5.5s
+    - e_puzzle_start|0.3s
+    - e_drillchair_puzzle|0.5s
+    #- e_puzzle_start|5.3s
+    #- e_drillchair_puzzle|5.5s
   mode_flammablejelly_stopping: 
-    - e_puzzle_start|5.3s
-    - e_flammablejelly_puzzle|5.5s
+    - e_puzzle_start|0.3s
+    - e_flammablejelly_puzzle|0.5s
+    #- e_puzzle_start|5.3s
+    #- e_flammablejelly_puzzle|5.5s
   mode_quadshotgun_stopping: 
-    - e_puzzle_start|5.3s
-    - e_quadshotgun_puzzle|5.5s
+    - e_puzzle_start|0.3s
+    - e_quadshotgun_puzzle|0.5s
+    #- e_puzzle_start|5.3s
+    #- e_quadshotgun_puzzle|5.5s
   mode_razorwire_stopping: 
-    - e_puzzle_start|5.3s
-    - e_razorwire_puzzle|5.5s
+    - e_puzzle_start|0.3s
+    - e_razorwire_puzzle|0.5s
+    #- e_puzzle_start|5.3s
+    #- e_razorwire_puzzle|5.5s
   mode_zeptest_stopping: 
-    - e_puzzle_start|5.3s
-    - e_zeptest_puzzle|5.5s
-
+    - e_puzzle_start|0.3s
+    - e_zeptest_puzzle|0.5s
+    #- e_puzzle_start|5.3s
+    #- e_zeptest_puzzle|5.5s
 
   mode_trap_select_started: stop_saw_widget|0.2s
   logicblock_minimode_pops_counter_hit{count==1}: stop_pops_widget1|300ms
@@ -718,6 +733,12 @@ shows:
     - duration: -1
       lights:
         (leds): beartrap
+
+#puzzle pieces completed
+  puzzle_piece_collected:
+    - duration: -1
+      lights:
+        (leds): (color1)   
   
   ballsave:
     - duration: 0.5s
@@ -806,7 +827,6 @@ show_player:
       show_tokens:
         color1: ffffff
     pops_on:
-      priority: 168
       show_tokens:
         leds: jet_bumper
         color1: 6E6E6E
@@ -816,6 +836,12 @@ show_player:
         leds: l_left_flipper, l_right_flipper
     topper_heartbeat:
       loops: -1
+      show_tokens:
+        color1: beartrap
+    cabinet_heartbeat:
+      show_tokens:
+        color1: beartrap
+    speaker_heartbeat:
       show_tokens:
         color1: beartrap
     #speaker_lights_on:
@@ -1029,37 +1055,71 @@ show_player:
       loops: -1    
       priority: 200
 
+# puzzle piece collected
+  razorwire_puzzle_complete:
+    puzzle_piece_collected:
+      show_tokens:
+        leds: razorwire_flasher
+        color1: beartrap
+  player_drillchair_puzzle{value==1}:
+    puzzle_piece_collected:
+      show_tokens:
+        leds: drill_flasher
+        color1: beartrap
+      loops: -1
+  zeptest_puzzle_complete:
+    puzzle_piece_collected:
+      show_tokens:
+        leds: zep_flasher
+        color1: beartrap
+  flammablejelly_puzzle_complete:
+    puzzle_piece_collected:
+      show_tokens:
+        leds: bear_flasher
+        color1: beartrap
+  quadshotgun_puzzle_complete:
+    puzzle_piece_collected:
+      show_tokens:
+        leds: shotgun_flasher
+        color1: beartrap
+
 # saw letter light show
   logicblock_cnt_saw_qualify_updated{value==1}:
     collect_S:
       loops: 0
       speed: 30
-      priority: 171
+      priority: 170
+  saw_pops_s:
     pops_on:
       loops: -1
       show_tokens:
+        leds: right_bottom_bumper, lower_top_bumper
         color1: beartrap
-      priority: 172
+      priority: 169
   logicblock_cnt_saw_qualify_updated{value==2}:
     collect_A:
       loops: 0
       speed: 30
-      priority: 171
+      priority: 170
+  saw_pops_sa:
     pops_on:
       loops: -1
       show_tokens:
+        leds: right_bottom_bumper, lower_top_bumper, left_bottom_bumper, left_top_bumper
         color1: beartrap
-      priority: 170
+      priority: 169
   logicblock_cnt_saw_qualify_complete:
     collect_W:
       loops: 0
       speed: 30
-      priority: 171
+      priority: 170
+  saw_pops_saw:
     pops_on:
       loops: -1
       show_tokens:
+        leds: right_bottom_bumper, lower_top_bumper, left_bottom_bumper, left_top_bumper, top_bottom_bumper, right_top_bumper
         color1: beartrap
-      priority: 170
+      priority: 169
 
 # trap mode fail
   player_drillchair_drillchair_60s_timer_tick{value < 1}:
@@ -1170,6 +1230,9 @@ show_player:
     pops_on: stop
     trough_on: stop
     spotlight_on: stop
+#saw letter pops disabled on mode select
+  sh_select_mode_hit:
+    pops_on: stop
 
   logicblock_trap_select_qualify_counter_complete:
     trough_on: stop
@@ -3015,11 +3078,6 @@ widget_player:
       slide: base_slide_main
       action: add
 
-  mode_saw_qualify_started:
-    saw_letters:
-      slide: base_slide_main
-      action: add
-
 #multiball widgets
   multiball_mb_jigsaw_started:
     saw_letters:
@@ -3142,8 +3200,15 @@ widget_player:
       action: add
 
 #puzzle piece
+  mode_puzzle_hurryup_stopped:
+    saw_letters:
+      slide: base_slide_main
+      action: add
   mode_puzzle_hurryup_complete:
     w_puzzle_collected:
+      slide: base_slide_main
+      action: add
+    saw_letters:
       slide: base_slide_main
       action: add
 

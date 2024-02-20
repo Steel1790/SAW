@@ -46,6 +46,26 @@ variable_player:
     puzzle_pieces:
       int: 1
       action: add
+  razorwire_puzzle_complete:
+    razorwire_puzzle:
+      int: 1
+      action: add
+  drillchair_puzzle_complete:
+    drillchair_puzzle:
+      int: 1
+      action: add
+  zeptest_puzzle_complete:
+    zeptest_puzzle:
+      int: 1
+      action: add
+  flammablejelly_puzzle_complete:
+    flammablejelly_puzzle:
+      int: 1
+      action: add
+  quadshotgun_puzzle_complete:
+    quadshotgun_puzzle:
+      int: 1
+      action: add
 
 # modes attempted for mini wizard mode -- player_modes_attempted
   mode_drillchair_started:

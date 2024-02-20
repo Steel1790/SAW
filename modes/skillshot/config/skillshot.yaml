@@ -48,7 +48,7 @@ timers:
     direction: down
     tick_interval: 1s
     control_events:
-    - event: balldevice_playfield_ball_enter
+    - event: ballsave_playfield_active
       action: start
   #  start_running: false
   #target_rotator:

@@ -364,6 +364,13 @@ shows:
     - duration: -1      
       lights:    
         (leds): (color1)
+  razorwire_mode:
+    - duration: 0.15s
+      lights:
+        (leds): razorwire
+    - duration: 0.15s
+      lights:
+        (leds): off
 #EK added 
 
 show_player:
@@ -371,6 +378,9 @@ show_player:
     gi_on:
       show_tokens:
         color1: razorwire
+    razorwire_mode:
+      show_tokens:
+        leds: l_razorwire_mode
   upper_l_pop_hit:
       attract_flash_all:
         loops: 1
@@ -483,7 +493,7 @@ show_player:
   logicblock_razorwire_hit{step==1}:
       top_drop_chase:
         loops: -1
-        speed: 20
+        speed: 14
         show_tokens:
           color1: razorwire
   logicblock_razorwire_hit{step==2}:

@@ -265,6 +265,162 @@ sounds:
   SuperJackpot5:
     file: SuperJackpot5.wav
     volume: 0.2
+  AddABall:
+    file: AddABall.wav
+    volume: 0.2
+  ShootRRToLockABall:
+    file: ShootRRToLockABall.wav
+    volume: 0.2
+  ShootTheRRToLockABall2:
+    file: ShootTheRRToLockABall2.wav
+    volume: 0.2
+  ToLockaBallShootTheRR1:
+    file: ToLockaBallShootTheRR1.wav
+    volume: 0.2
+  ToLockaBallShootTheRR2:
+    file: ToLockaBallShootTheRR2.wav
+    volume: 0.2
+  GetTheSuperJackpot:
+    file: GetTheSuperJackpot.wav
+    volume: 0.2
+  LL1:
+    file: LL1.wav
+    volume: 0.2
+  LL2:
+    file: LL2.wav
+    volume: 0.2
+  LL3: 
+    file: LL3.wav
+    volume: 0.2
+  ShootLRToLockaBall1:
+    file: ShootLRToLockaBall1.wav
+    volume: 0.2
+  ShootLRToLockaBall2:
+    file: ShootLRToLockaBall2.wav
+    volume: 0.2
+  ShootLRToLockaBall3:
+    file: ShootLRToLockaBall3.wav
+    volume: 0.2
+  DSSS1:
+    file: DSSS1.wav
+    volume: 0.2
+  DSSS2:
+    file: DSSS2.wav
+    volume: 0.2
+  DSSS4:
+    file: DSSS4.wav
+    volume: 0.2
+  SkillShot1:
+    file: SkillShot1.wav
+    volume: 0.2
+  SkillShot2:
+    file: SkillShot2.wav
+    volume: 0.2
+  SkillShot3:
+    file: SkillShot3.wav
+    volume: 0.2
+  SkillShot4:
+    file: SkillShot4.wav
+    volume: 0.2
+  SSS1:
+    file: SSS1.wav
+    volume: 0.2
+  SSS2:
+    file: SSS2.wav
+    volume: 0.2
+  SSS4:
+    file: SSS4.wav
+    volume: 0.2
+  SSS5:
+    file: SSS5.wav
+    volume: 0.2
+  SuperSkillShot1:
+    file: SuperSkillShot1.wav
+    volume: 0.2
+  SuperSkillShot2:
+    file: SuperSkillShot2.wav
+    volume: 0.2
+  SuperSkillShot3:
+    file: SuperSkillShot3.wav
+    volume: 0.2
+  SuperSkillShot4:
+    file: SuperSkillShot4.wav
+    volume: 0.2
+  SuperSkillShot5:
+    file: SuperSkillShot5.wav
+    volume: 0.2
+  GetToTheBathroom:
+    file: GetToTheBathroom.wav
+    volume: 0.2
+  GetToTheBathroom2:
+    file: GetToTheBathroom2.wav
+    volume: 0.2
+  ShootTheRightScoopToStartATrap2:
+    file: ShootTheRightScoopToStartATrap2.wav
+    volume: 0.2
+  ShootTheRightScoopToStartATrap:
+    file: ShootTheRightScoopToStartATrap.wav
+    volume: 0.2
+  ShootWhiteArrows:
+    file: ShootWhiteArrows.wav
+    volume: 0.2
+  ShootWhiteArrows1:
+    file: ShootWhiteArrows1.wav
+    volume: 0.2
+  ToStartATrapShootTheRightScoop:
+    file: ToStartATrapShootTheRightScoop.wav
+    volume: 0.2
+  FirstDrillDestroyed:
+    file: FirstDrillDestroyed.wav
+    volume: 0.2
+  ShootLeftOrbit:
+    file: ShootLeftOrbit.wav
+    volume: 0.2
+  YouNeedTheLowerPops:
+    file: YouNeedTheLowerPops.wav
+    volume: 0.2
+  HitTheDropTargetNOW:
+    file: HitTheDropTargetNOW.wav
+    volume: 0.2
+  NiceShotNowTheOrbit:
+    file: NiceShotNowTheOrbit.wav
+    volume: 0.2
+  RipTheSpinner:
+    file: RipTheSpinner.wav
+    volume: 0.2
+  YouJustNeedTheLeftOrbit:
+    file: YouJustNeedTheLeftOrbit.wav
+    volume: 0.2
+  GetToTheUpperPops:
+    file: GetToTheUpperPops.wav
+    volume: 0.2
+  ShootTheLeftRampToLive:
+    file: ShootTheLeftRampToLive.wav
+    volume: 0.2
+  ShootAllTheStandupTargets:
+    file: ShootAllTheStandupTargets.wav
+    volume: 0.2
+  ShootTheCombos:
+    file: ShootTheCombos.wav
+    volume: 0.2
+  ShootTheCombos2:
+    file: ShootTheCombos2.wav
+    volume: 0.2
+  ShootTheDropTargetToEscape:
+    file: ShootTheDropTargetToEscape.wav
+    volume: 0.2
+  CompleteTheLowerDrops:
+    file: CompleteTheLowerDrops.wav
+    volume: 0.2
+  HitTheRightRamp:
+    file: HitTheRightRamp.wav
+    volume: 0.2
+  QuicklyShotTheDropTarget:
+    file: QuicklyShotTheDropTarget.wav
+    volume: 0.2
+  ShootTheLeftRamp:
+    file: ShootTheLeftRamp.wav
+    volume: 0.2
 
 #spinner sound
   Spinner3:

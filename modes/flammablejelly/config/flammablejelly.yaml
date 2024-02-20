@@ -286,6 +286,13 @@ shows:
     - duration: 1s
       lights:
         (leds): off
+  flammablejelly_mode:
+    - duration: 0.15s
+      lights:
+        (leds): jelly
+    - duration: 0.15s
+      lights:
+        (leds): off
 
 show_player:
 #mode progress lights
@@ -334,7 +341,7 @@ show_player:
   logicblock_flammablejelly_hit{step==4}:
       top_drop_chase:
         loops: -1
-        speed: 20
+        speed: 14
         show_tokens:
           color1: jelly
       flammablejelly_progress_p2:
@@ -353,6 +360,9 @@ show_player:
     fire_starposts:
       loops: -1
       speed: 20
+    flammablejelly_mode:
+      show_tokens:
+        leds: l_jelly_mode   
   player_flammablejelly_60s_flammablejelly_timer_tick{value < 1}:
     fire_starposts: stop
     fire_top_pops: stop

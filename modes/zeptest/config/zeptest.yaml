@@ -271,6 +271,13 @@ shows:
     - duration: -1      
       lights:    
         (leds): (color1)
+  zeptest_mode:
+    - duration: 0.15s
+      lights:
+        (leds): zeptest
+    - duration: 0.15s
+      lights:
+        (leds): off
 show_player:
   logicblock_zeptest_updated{value==0}:
       skillshot_chase:
@@ -307,7 +314,7 @@ show_player:
   logicblock_zeptest_hit{step==3}:
       top_drop_chase:
         loops: -1
-        speed: 20
+        speed: 14
         show_tokens:
           color1: zepstest
       zeptest_dropbank: 
@@ -342,7 +349,7 @@ show_player:
   logicblock_zeptest_hit{step==6}:
       top_drop_chase:
         loops: -1
-        speed: 20
+        speed: 14
         show_tokens:
           color1: zepstest
       right_ramp_chase:
@@ -350,10 +357,13 @@ show_player:
         show_tokens:
           color1: off
 
-  mode_quadshotgun_started:     
+  mode_zeptest_started:     
     gi_on:
       show_tokens:
         color1: zepstest
+    zeptest_mode:
+      show_tokens:
+        leds: l_zeptest_mode
 
 sound_player:
   mode_zeptest_started:

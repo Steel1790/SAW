@@ -346,12 +346,23 @@ shows:
     - duration: 1s
       lights:
         (leds): off
+  reversebeartrap_mode:
+    - duration: 0.15s
+      lights:
+        (leds): beartrap
+    - duration: 0.15s
+      lights:
+        (leds): off
+
 
 show_player:
   mode_reversebeartrap_started:     
     gi_on:
       show_tokens:
         color1: beartrap     
+    reversebeartrap_mode:
+      show_tokens:
+        leds: l_beartrap_mode
 #mode progress lights
   logicblock_reversebeartrap_updated{value==0}:
       left_orbit_left_ramp_chase:
@@ -387,7 +398,7 @@ show_player:
           color1: off
       top_drop_chase:
         loops: -1
-        speed: 20
+        speed: 14
         show_tokens:
           color1: beartrap
   player_reversebeartrap_120s_reversebeartrap_timer_tick{value < 1}:

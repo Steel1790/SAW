@@ -11,14 +11,17 @@ variable_player:
   logicblock_trap_select_qualify_counter_complete:
     score: 300000
     
+event_player:   
+  mode_trap_select_started: mode_qualified_sidestep2|0.5s
+
 counters:
   trap_select_qualify_counter:
     starting_count: 0
     count_complete_value: 1
     disable_on_complete: false
     count_events: sh_select_mode_hit, s_right_scoop_active
-    #disable_events: e_primary_mode_active, start_jigsaw_multiball, start_hacksaw_multiball, start_shackle_multiball
-    #enable_events: logicblock_cnt_saw_qualify_complete, mode_qualified_sidestep
+    disable_events: e_primary_mode_active, start_jigsaw_multiball, start_hacksaw_multiball, start_shackle_multiball
+    enable_events: logicblock_cnt_saw_qualify_complete, mode_qualified_sidestep, mode_qualified_sidestep2
 
 
 sound_player:
