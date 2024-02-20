@@ -1,6 +1,6 @@
 events:
   game_ended: 14
-  game_started: 122
+  game_started: 125
 player:
   score:
     average: 12735771.764705881
@@ -23,14 +23,14 @@ shots:
   lower_l_pop: 27
   lower_r_pop: 7
   sh_mystery: 24
-  sh_select_mode: 46
+  sh_select_mode: 58
   sh_skillshot_x: 1
-  shot_inner_loop: 139
+  shot_inner_loop: 142
   shot_left_loop: 96
   shot_left_outlane: 25
   shot_left_return_lane: 39
-  shot_left_standup: 103
-  shot_left_standup_rightramp: 94
+  shot_left_standup: 104
+  shot_left_standup_rightramp: 96
   shot_multiplier1: 8
   shot_multiplier2: 8
   shot_multiplier3: 8
@@ -38,17 +38,17 @@ shots:
   shot_multiplier5: 8
   shot_right_loop: 159
   shot_right_outlane: 13
-  shot_right_standup: 46
-  shot_right_standup_rightramp: 82
+  shot_right_standup: 48
+  shot_right_standup_rightramp: 83
   up_b_pop: 23
   upper_b_pop: 88
   upper_l_pop: 16
   upper_r_pop: 14
 switches:
-  s_action_button: 236
-  s_ball_shooter_lane: 212
+  s_action_button: 239
+  s_ball_shooter_lane: 215
   s_enter_left_ramp: 48
-  s_inner_loop: 209
+  s_inner_loop: 212
   s_left_110_point: 194
   s_left_bottom_jet_bumper: 323
   s_left_cellar: 28
@@ -65,8 +65,8 @@ switches:
   s_left_ramp_score_top: 8
   s_left_scoop: 167
   s_left_slingshot: 557
-  s_left_standup: 147
-  s_left_standup_right_ramp: 154
+  s_left_standup: 148
+  s_left_standup_right_ramp: 156
   s_left_top_jet_bumper: 239
   s_lower_bank_drop_target_opto_lower: 76
   s_lower_bank_drop_target_opto_middle: 90
@@ -85,10 +85,10 @@ switches:
   s_right_ramp_down: 34
   s_right_ramp_score_bottom: 22
   s_right_ramp_score_top: 21
-  s_right_scoop: 65
+  s_right_scoop: 77
   s_right_slingshot: 285
-  s_right_standup: 82
-  s_right_standup_right_ramp: 115
+  s_right_standup: 84
+  s_right_standup_right_ramp: 116
   s_right_top_jet_bumper: 156
   s_spinner: 525
   s_start: 19

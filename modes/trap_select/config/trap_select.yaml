@@ -17,8 +17,8 @@ counters:
     count_complete_value: 1
     disable_on_complete: false
     count_events: sh_select_mode_hit, s_right_scoop_active
-    disable_events: e_primary_mode_active, start_jigsaw_multiball, start_hacksaw_multiball, start_shackle_multiball
-    enable_events: logicblock_cnt_saw_qualify_complete, mode_qualified_sidestep
+    #disable_events: e_primary_mode_active, start_jigsaw_multiball, start_hacksaw_multiball, start_shackle_multiball
+    #enable_events: logicblock_cnt_saw_qualify_complete, mode_qualified_sidestep
 
 
 sound_player:
