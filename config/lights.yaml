@@ -891,26 +891,6 @@ lights:
     number: ledneuron-1-5
     tags: cabinet
 
-# backplayfieldpanel
-  # l_backpanel_1:
-  #   number: led256-5-24
-  #   tags: backpanel, led256p5
-  # l_backpanel_2:
-  #   number: led256-5-25
-  #   tags: backpanel, led256p5
-  # l_backpanel_3:
-  #   number: led256-5-26
-  #   tags: backpanel, led256p5
-  # l_backpanel_4:
-  #   number: led256-5-27
-  #   tags: backpanel, led256p5
-  # l_backpanel_5:
-  #   number: led256-5-28
-  #   tags: backpanel, led256p5
-  # l_backpanel_6:
-  #   number: led256-5-29
-  #   tags: backpanel, led256p5
-
 
 # topper
   l_topper_1:
@@ -1733,7 +1713,7 @@ lights:
         number: led256bb-2-1-2
       white:
         number: led256bb-2-2-1
-    tags: leftspeaker, led256bb-2
+    tags: leftspeaker, speaker, led256bb-2
 
   l_leftspeaker_2:
     channels:
@@ -1745,7 +1725,7 @@ lights:
         number: led256bb-2-3-1
       white:
         number: led256bb-2-3-0
-    tags: leftspeaker, led256bb-2
+    tags: leftspeaker, speaker, led256bb-2
 
   l_leftspeaker_3:
     channels:
@@ -1757,7 +1737,7 @@ lights:
         number: led256bb-2-4-0
       white:
         number: led256bb-2-4-2
-    tags: leftspeaker, led256bb-2
+    tags: leftspeaker, speaker, led256bb-2
 
   l_leftspeaker_4:
     channels:
@@ -1769,7 +1749,7 @@ lights:
         number: led256bb-2-5-2
       white:
         number: led256bb-2-6-1
-    tags: leftspeaker, led256bb-2
+    tags: leftspeaker, speaker, led256bb-2
 
   l_leftspeaker_5:
     channels:
@@ -1781,7 +1761,7 @@ lights:
         number: led256bb-2-7-1
       white:
         number: led256bb-2-7-0
-    tags: leftspeaker, led256bb-2
+    tags: leftspeaker, speaker, led256bb-2
 
   l_leftspeaker_6:
     channels:
@@ -1793,7 +1773,7 @@ lights:
         number: led256bb-2-8-0
       white:
         number: led256bb-2-8-2
-    tags: leftspeaker, led256bb-2
+    tags: leftspeaker, speaker, led256bb-2
 
   l_leftspeaker_7:
     channels:
@@ -1805,7 +1785,7 @@ lights:
         number: led256bb-2-9-2
       white:
         number: led256bb-2-10-1
-    tags: leftspeaker, led256bb-2
+    tags: leftspeaker, speaker, led256bb-2
 
   l_leftspeaker_8:
     channels:
@@ -1817,7 +1797,7 @@ lights:
         number: led256bb-2-11-1
       white:
         number: led256bb-2-11-0
-    tags: leftspeaker, led256bb-2
+    tags: leftspeaker, speaker, led256bb-2
 
   l_leftspeaker_9:
     channels:
@@ -1829,7 +1809,7 @@ lights:
         number: led256bb-2-12-0
       white:
         number: led256bb-2-12-2
-    tags: leftspeaker, led256bb-2   
+    tags: leftspeaker, speaker, led256bb-2   
 
   l_leftspeaker_10:
     channels:
@@ -1841,7 +1821,7 @@ lights:
         number: led256bb-2-13-2
       white:
         number: led256bb-2-14-1
-    tags: leftspeaker, led256bb-2
+    tags: leftspeaker, speaker, led256bb-2
 
   l_leftspeaker_11:
     channels:
@@ -1853,7 +1833,7 @@ lights:
         number: led256bb-2-15-1
       white:
         number: led256bb-2-15-0
-    tags: leftspeaker, led256bb-2
+    tags: leftspeaker, speaker, led256bb-2
 
   l_leftspeaker_12:
     channels:
@@ -1865,7 +1845,7 @@ lights:
         number: led256bb-2-16-0
       white:
         number: led256bb-2-16-2
-    tags: leftspeaker, led256bb-2 
+    tags: leftspeaker, speaker, led256bb-2 
 
   l_leftspeaker_13:
     channels:
@@ -1877,7 +1857,7 @@ lights:
         number: led256bb-2-17-2
       white:
         number: led256bb-2-18-1
-    tags: leftspeaker, led256bb-2
+    tags: leftspeaker, speaker, led256bb-2
 
   l_leftspeaker_14:
     channels:
@@ -1889,7 +1869,7 @@ lights:
         number: led256bb-2-19-1
       white:
         number: led256bb-2-19-0
-    tags: leftspeaker, led256bb-2
+    tags: leftspeaker, speaker, led256bb-2
 
   l_leftspeaker_15:
     channels:
@@ -1901,7 +1881,7 @@ lights:
         number: led256bb-2-20-0
       white:
         number: led256bb-2-20-2
-    tags: leftspeaker, led256bb-2 
+    tags: leftspeaker, speaker, led256bb-2 
 
   l_leftspeaker_16:
     channels:
@@ -1913,7 +1893,7 @@ lights:
         number: led256bb-2-21-2
       white:
         number: led256bb-2-22-1
-    tags: leftspeaker, led256bb-2
+    tags: leftspeaker, speaker, led256bb-2
 
   l_leftspeaker_17:
     channels:
@@ -1925,7 +1905,7 @@ lights:
         number: led256bb-2-23-1
       white:
         number: led256bb-2-23-0
-    tags: leftspeaker, led256bb-2
+    tags: leftspeaker, speaker, led256bb-2
 
   l_leftspeaker_18:
     channels:
@@ -1937,7 +1917,7 @@ lights:
         number: led256bb-2-24-0
       white:
         number: led256bb-2-24-2
-    tags: leftspeaker, led256bb-2
+    tags: leftspeaker, speaker, led256bb-2
 
   l_leftspeaker_19:
     channels:
@@ -1949,7 +1929,7 @@ lights:
         number: led256bb-2-25-2
       white:
         number: led256bb-2-26-1
-    tags: leftspeaker, led256bb-2
+    tags: leftspeaker, speaker, led256bb-2
 
   l_leftspeaker_20:
     channels:
@@ -1961,7 +1941,7 @@ lights:
         number: led256bb-2-27-1
       white:
         number: led256bb-2-27-0
-    tags: leftspeaker, led256bb-2
+    tags: leftspeaker, speaker, led256bb-2
 
   l_leftspeaker_21:
     channels:
@@ -1973,7 +1953,7 @@ lights:
         number: led256bb-2-28-0
       white:
         number: led256bb-2-28-2
-    tags: leftspeaker, led256bb-2 
+    tags: leftspeaker, speaker, led256bb-2 
 
   l_leftspeaker_22:
     channels:
@@ -1985,7 +1965,7 @@ lights:
         number: led256bb-2-29-2
       white:
         number: led256bb-2-30-1
-    tags: leftspeaker, led256bb-2
+    tags: leftspeaker, speaker, led256bb-2
 
   l_leftspeaker_23:
     channels:
@@ -1997,7 +1977,7 @@ lights:
         number: led256bb-2-31-1
       white:
         number: led256bb-2-31-0
-    tags: leftspeaker, led256bb-2
+    tags: leftspeaker, speaker, led256bb-2
 
   l_leftspeaker_24:
     channels:
@@ -2009,7 +1989,7 @@ lights:
         number: led256bb-2-32-0
       white:
         number: led256bb-2-32-2
-    tags: leftspeaker, led256bb-2 
+    tags: leftspeaker, speaker, led256bb-2 
 
 # rightspeaker
   l_rightspeaker_1:
@@ -2022,7 +2002,7 @@ lights:
         number: led256bb-1-1-2
       white:
         number: led256bb-1-2-1
-    tags: rightspeaker, led256bb-1
+    tags: rightspeaker, speaker, led256bb-1
 
   l_rightspeaker_2:
     channels:
@@ -2034,7 +2014,7 @@ lights:
         number: led256bb-1-3-1
       white:
         number: led256bb-1-3-0
-    tags: rightspeaker, led256bb-1
+    tags: rightspeaker, speaker, led256bb-1
 
   l_rightspeaker_3:
     channels:
@@ -2046,7 +2026,7 @@ lights:
         number: led256bb-1-4-0
       white:
         number: led256bb-1-4-2
-    tags: rightspeaker, led256bb-1
+    tags: rightspeaker, speaker, led256bb-1
 
   l_rightspeaker_4:
     channels:
@@ -2058,7 +2038,7 @@ lights:
         number: led256bb-1-5-2
       white:
         number: led256bb-1-6-1
-    tags: rightspeaker, led256bb-1
+    tags: rightspeaker, speaker, led256bb-1
 
   l_rightspeaker_5:
     channels:
@@ -2070,7 +2050,7 @@ lights:
         number: led256bb-1-7-1
       white:
         number: led256bb-1-7-0
-    tags: rightspeaker, led256bb-1
+    tags: rightspeaker, speaker, led256bb-1
 
   l_rightspeaker_6:
     channels:
@@ -2082,7 +2062,7 @@ lights:
         number: led256bb-1-8-0
       white:
         number: led256bb-1-8-2
-    tags: rightspeaker, led256bb-1
+    tags: rightspeaker, speaker, led256bb-1
 
   l_rightspeaker_7:
     channels:
@@ -2094,7 +2074,7 @@ lights:
         number: led256bb-1-9-2
       white:
         number: led256bb-1-10-1
-    tags: rightspeaker, led256bb-1
+    tags: rightspeaker, speaker, led256bb-1
 
   l_rightspeaker_8:
     channels:
@@ -2106,7 +2086,7 @@ lights:
         number: led256bb-1-11-1
       white:
         number: led256bb-1-11-0
-    tags: rightspeaker, led256bb-1
+    tags: rightspeaker, speaker, led256bb-1
 
   l_rightspeaker_9:
     channels:
@@ -2118,7 +2098,7 @@ lights:
         number: led256bb-1-12-0
       white:
         number: led256bb-1-12-2
-    tags: rightspeaker, led256bb-1   
+    tags: rightspeaker, speaker, led256bb-1   
 
   l_rightspeaker_10:
     channels:
@@ -2130,7 +2110,7 @@ lights:
         number: led256bb-1-13-2
       white:
         number: led256bb-1-14-1
-    tags: rightspeaker, led256bb-1
+    tags: rightspeaker, speaker, led256bb-1
 
   l_rightspeaker_11:
     channels:
@@ -2142,7 +2122,7 @@ lights:
         number: led256bb-1-15-1
       white:
         number: led256bb-1-15-0
-    tags: rightspeaker, led256bb-1
+    tags: rightspeaker, speaker, led256bb-1
 
   l_rightspeaker_12:
     channels:
@@ -2154,7 +2134,7 @@ lights:
         number: led256bb-1-16-0
       white:
         number: led256bb-1-16-2
-    tags: rightspeaker, led256bb-1 
+    tags: rightspeaker, speaker, led256bb-1 
 
   l_rightspeaker_13:
     channels:
@@ -2166,7 +2146,7 @@ lights:
         number: led256bb-1-17-2
       white:
         number: led256bb-1-18-1
-    tags: rightspeaker, led256bb-1
+    tags: rightspeaker, speaker, led256bb-1
 
   l_rightspeaker_14:
     channels:
@@ -2178,7 +2158,7 @@ lights:
         number: led256bb-1-19-1
       white:
         number: led256bb-1-19-0
-    tags: rightspeaker, led256bb-1
+    tags: rightspeaker, speaker, led256bb-1
 
   l_rightspeaker_15:
     channels:
@@ -2190,7 +2170,7 @@ lights:
         number: led256bb-1-20-0
       white:
         number: led256bb-1-20-2
-    tags: rightspeaker, led256bb-1 
+    tags: rightspeaker, speaker, led256bb-1 
 
   l_rightspeaker_16:
     channels:
@@ -2202,7 +2182,7 @@ lights:
         number: led256bb-1-21-2
       white:
         number: led256bb-1-22-1
-    tags: rightspeaker, led256bb-1
+    tags: rightspeaker, speaker, led256bb-1
 
   l_rightspeaker_17:
     channels:
@@ -2214,7 +2194,7 @@ lights:
         number: led256bb-1-23-1
       white:
         number: led256bb-1-23-0
-    tags: rightspeaker, led256bb-1
+    tags: rightspeaker, speaker, led256bb-1
 
   l_rightspeaker_18:
     channels:
@@ -2226,7 +2206,7 @@ lights:
         number: led256bb-1-24-0
       white:
         number: led256bb-1-24-2
-    tags: rightspeaker, led256bb-1 
+    tags: rightspeaker, speaker, led256bb-1 
 
   l_rightspeaker_19:
     channels:
@@ -2238,7 +2218,7 @@ lights:
         number: led256bb-1-25-2
       white:
         number: led256bb-1-26-1
-    tags: rightspeaker, led256bb-1
+    tags: rightspeaker, speaker, led256bb-1
 
   l_rightspeaker_20:
     channels:
@@ -2250,7 +2230,7 @@ lights:
         number: led256bb-1-27-1
       white:
         number: led256bb-1-27-0
-    tags: rightspeaker, led256bb-1
+    tags: rightspeaker, speaker, led256bb-1
 
   l_rightspeaker_21:
     channels:
@@ -2262,7 +2242,7 @@ lights:
         number: led256bb-1-28-0
       white:
         number: led256bb-1-28-2
-    tags: rightspeaker, led256bb-1 
+    tags: rightspeaker, speaker, led256bb-1 
 
   l_rightspeaker_22:
     channels:
@@ -2274,7 +2254,7 @@ lights:
         number: led256bb-1-29-2
       white:
         number: led256bb-1-30-1
-    tags: rightspeaker, led256bb-1
+    tags: rightspeaker, speaker, led256bb-1
 
   l_rightspeaker_23:
     channels:
@@ -2286,7 +2266,7 @@ lights:
         number: led256bb-1-31-1
       white:
         number: led256bb-1-31-0
-    tags: rightspeaker, led256bb-1
+    tags: rightspeaker, speaker, led256bb-1
 
   l_rightspeaker_24:
     channels:
@@ -2298,7 +2278,7 @@ lights:
         number: led256bb-1-32-0
       white:
         number: led256bb-1-32-2
-    tags: rightspeaker, led256bb-1 
+    tags: rightspeaker, speaker, led256bb-1 
 
 # starpost lights
   l_post_a_1:
@@ -2600,6 +2580,878 @@ lights:
   l_post_l_8:
     number: led128-6-8
     tags: starpost, post_l, led128p6     
+
+
+# cabinet_front
+  l_cabinet_front_1:
+    channels:
+      red:
+        number: led256bb-3-1-0
+      green:
+        number: led256bb-3-1-1
+      blue:
+        number: led256bb-3-1-2
+      white:
+        number: led256bb-3-2-1
+    tags: cabinet_front, groundeffects, led256bb-3
+
+  l_cabinet_front_2:
+    channels:
+      red:
+        number: led256bb-3-2-2
+      green:
+        number: led256bb-3-2-0
+      blue:
+        number: led256bb-3-3-1
+      white:
+        number: led256bb-3-3-0
+    tags: cabinet_front, groundeffects, led256bb-3
+
+  l_cabinet_front_3:
+    channels:
+      red:
+        number: led256bb-3-4-1
+      green:
+        number: led256bb-3-3-2
+      blue:
+        number: led256bb-3-4-0
+      white:
+        number: led256bb-3-4-2
+    tags: cabinet_front, groundeffects, led256bb-3
+
+  l_cabinet_front_4:
+    channels:
+      red:
+        number: led256bb-3-5-0
+      green:
+        number: led256bb-3-5-1
+      blue:
+        number: led256bb-3-5-2
+      white:
+        number: led256bb-3-6-1
+    tags: cabinet_front, groundeffects, led256bb-3
+
+  l_cabinet_front_5:
+    channels:
+      red:
+        number: led256bb-3-6-2
+      green:
+        number: led256bb-3-6-0
+      blue:
+        number: led256bb-3-7-1
+      white:
+        number: led256bb-3-7-0
+    tags: cabinet_front, groundeffects, led256bb-3
+
+  l_cabinet_front_6:
+    channels:
+      red:
+        number: led256bb-3-8-1
+      green:
+        number: led256bb-3-7-2
+      blue:
+        number: led256bb-3-8-0
+      white:
+        number: led256bb-3-8-2
+    tags: cabinet_front, groundeffects, led256bb-3
+
+  l_cabinet_front_7:
+    channels:
+      red:
+        number: led256bb-3-9-0
+      green:
+        number: led256bb-3-9-1
+      blue:
+        number: led256bb-3-9-2
+      white:
+        number: led256bb-3-10-1
+    tags: cabinet_front, groundeffects, led256bb-3
+
+  l_cabinet_front_8:
+    channels:
+      red:
+        number: led256bb-3-10-2
+      green:
+        number: led256bb-3-10-0
+      blue:
+        number: led256bb-3-11-1
+      white:
+        number: led256bb-3-11-0
+    tags: cabinet_front, groundeffects, led256bb-3
+
+  l_cabinet_front_9:
+    channels:
+      red:
+        number: led256bb-3-12-1
+      green:
+        number: led256bb-3-11-2
+      blue:
+        number: led256bb-3-12-0
+      white:
+        number: led256bb-3-12-2
+    tags: cabinet_front, groundeffects, led256bb-3   
+
+  l_cabinet_front_10:
+    channels:
+      red:
+        number: led256bb-3-13-0
+      green:
+        number: led256bb-3-13-1
+      blue:
+        number: led256bb-3-13-2
+      white:
+        number: led256bb-3-14-1
+    tags: cabinet_front, groundeffects, led256bb-3
+
+  l_cabinet_front_11:
+    channels:
+      red:
+        number: led256bb-3-14-2
+      green:
+        number: led256bb-3-14-0
+      blue:
+        number: led256bb-3-15-1
+      white:
+        number: led256bb-3-15-0
+    tags: cabinet_front, groundeffects, led256bb-3
+
+  l_cabinet_front_12:
+    channels:
+      red:
+        number: led256bb-3-16-1
+      green:
+        number: led256bb-3-15-2
+      blue:
+        number: led256bb-3-16-0
+      white:
+        number: led256bb-3-16-2
+    tags: cabinet_front, groundeffects, led256bb-3 
+
+  l_cabinet_front_13:
+    channels:
+      red:
+        number: led256bb-3-17-0
+      green:
+        number: led256bb-3-17-1
+      blue:
+        number: led256bb-3-17-2
+      white:
+        number: led256bb-3-18-1
+    tags: cabinet_front, groundeffects, led256bb-3
+
+  l_cabinet_front_14:
+    channels:
+      red:
+        number: led256bb-3-18-2
+      green:
+        number: led256bb-3-18-0
+      blue:
+        number: led256bb-3-19-1
+      white:
+        number: led256bb-3-19-0
+    tags: cabinet_front, groundeffects, led256bb-3
+
+  l_cabinet_front_15:
+    channels:
+      red:
+        number: led256bb-3-20-1
+      green:
+        number: led256bb-3-19-2
+      blue:
+        number: led256bb-3-20-0
+      white:
+        number: led256bb-3-20-2
+    tags: cabinet_front, groundeffects, led256bb-3 
+
+  l_cabinet_front_16:
+    channels:
+      red:
+        number: led256bb-3-21-0
+      green:
+        number: led256bb-3-21-1
+      blue:
+        number: led256bb-3-21-2
+      white:
+        number: led256bb-3-22-1
+    tags: cabinet_front, groundeffects, led256bb-3
+
+  l_cabinet_front_17:
+    channels:
+      red:
+        number: led256bb-3-22-2
+      green:
+        number: led256bb-3-22-0
+      blue:
+        number: led256bb-3-23-1
+      white:
+        number: led256bb-3-23-0
+    tags: cabinet_front, groundeffects, led256bb-3
+
+  l_cabinet_front_18:
+    channels:
+      red:
+        number: led256bb-3-24-1
+      green:
+        number: led256bb-3-23-2
+      blue:
+        number: led256bb-3-24-0
+      white:
+        number: led256bb-3-24-2
+    tags: cabinet_front, groundeffects, led256bb-3 
+
+  l_cabinet_front_19:
+    channels:
+      red:
+        number: led256bb-3-25-0
+      green:
+        number: led256bb-3-25-1
+      blue:
+        number: led256bb-3-25-2
+      white:
+        number: led256bb-3-26-1
+    tags: cabinet_front, groundeffects, led256bb-3
+
+  l_cabinet_front_20:
+    channels:
+      red:
+        number: led256bb-3-26-2
+      green:
+        number: led256bb-3-26-0
+      blue:
+        number: led256bb-3-27-1
+      white:
+        number: led256bb-3-27-0
+    tags: cabinet_front, groundeffects, led256bb-3
+
+  l_cabinet_front_21:
+    channels:
+      red:
+        number: led256bb-3-28-1
+      green:
+        number: led256bb-3-27-2
+      blue:
+        number: led256bb-3-28-0
+      white:
+        number: led256bb-3-28-2
+    tags: cabinet_front, groundeffects, led256bb-3 
+
+  l_cabinet_front_22:
+    channels:
+      red:
+        number: led256bb-3-29-0
+      green:
+        number: led256bb-3-29-1
+      blue:
+        number: led256bb-3-29-2
+      white:
+        number: led256bb-3-30-1
+    tags: cabinet_front, groundeffects, led256bb-3
+
+  l_cabinet_front_23:
+    channels:
+      red:
+        number: led256bb-3-30-2
+      green:
+        number: led256bb-3-30-0
+      blue:
+        number: led256bb-3-31-1
+      white:
+        number: led256bb-3-31-0
+    tags: cabinet_front, groundeffects, led256bb-3
+
+  l_cabinet_front_24:
+    channels:
+      red:
+        number: led256bb-3-32-1
+      green:
+        number: led256bb-3-31-2
+      blue:
+        number: led256bb-3-32-0
+      white:
+        number: led256bb-3-32-2
+    tags: cabinet_front, groundeffects, led256bb-3 
+
+
+# cabinet_right
+  l_cabinet_right_1:
+    channels:
+      red:
+        number: led256bb-4-1-0
+      green:
+        number: led256bb-4-1-1
+      blue:
+        number: led256bb-4-1-2
+      white:
+        number: led256bb-4-2-1
+    tags: cabinet_right, groundeffects, led256bb-3
+
+  l_cabinet_right_2:
+    channels:
+      red:
+        number: led256bb-4-2-2
+      green:
+        number: led256bb-4-2-0
+      blue:
+        number: led256bb-4-3-1
+      white:
+        number: led256bb-4-3-0
+    tags: cabinet_right, groundeffects, led256bb-3
+
+  l_cabinet_right_3:
+    channels:
+      red:
+        number: led256bb-4-4-1
+      green:
+        number: led256bb-4-3-2
+      blue:
+        number: led256bb-4-4-0
+      white:
+        number: led256bb-4-4-2
+    tags: cabinet_right, groundeffects, led256bb-3
+
+  l_cabinet_right_4:
+    channels:
+      red:
+        number: led256bb-4-5-0
+      green:
+        number: led256bb-4-5-1
+      blue:
+        number: led256bb-4-5-2
+      white:
+        number: led256bb-4-6-1
+    tags: cabinet_right, groundeffects, led256bb-3
+
+  l_cabinet_right_5:
+    channels:
+      red:
+        number: led256bb-4-6-2
+      green:
+        number: led256bb-4-6-0
+      blue:
+        number: led256bb-4-7-1
+      white:
+        number: led256bb-4-7-0
+    tags: cabinet_right, groundeffects, led256bb-3
+
+  l_cabinet_right_6:
+    channels:
+      red:
+        number: led256bb-4-8-1
+      green:
+        number: led256bb-4-7-2
+      blue:
+        number: led256bb-4-8-0
+      white:
+        number: led256bb-4-8-2
+    tags: cabinet_right, groundeffects, led256bb-3
+
+  l_cabinet_right_7:
+    channels:
+      red:
+        number: led256bb-4-9-0
+      green:
+        number: led256bb-4-9-1
+      blue:
+        number: led256bb-4-9-2
+      white:
+        number: led256bb-4-10-1
+    tags: cabinet_right, groundeffects, led256bb-3
+
+  l_cabinet_right_8:
+    channels:
+      red:
+        number: led256bb-4-10-2
+      green:
+        number: led256bb-4-10-0
+      blue:
+        number: led256bb-4-11-1
+      white:
+        number: led256bb-4-11-0
+    tags: cabinet_right, groundeffects, led256bb-3
+
+  l_cabinet_right_9:
+    channels:
+      red:
+        number: led256bb-4-12-1
+      green:
+        number: led256bb-4-11-2
+      blue:
+        number: led256bb-4-12-0
+      white:
+        number: led256bb-4-12-2
+    tags: cabinet_right, groundeffects, led256bb-3   
+
+  l_cabinet_right_10:
+    channels:
+      red:
+        number: led256bb-4-13-0
+      green:
+        number: led256bb-4-13-1
+      blue:
+        number: led256bb-4-13-2
+      white:
+        number: led256bb-4-14-1
+    tags: cabinet_right, groundeffects, led256bb-3
+
+  l_cabinet_right_11:
+    channels:
+      red:
+        number: led256bb-4-14-2
+      green:
+        number: led256bb-4-14-0
+      blue:
+        number: led256bb-4-15-1
+      white:
+        number: led256bb-4-15-0
+    tags: cabinet_right, groundeffects, led256bb-3
+
+  l_cabinet_right_12:
+    channels:
+      red:
+        number: led256bb-4-16-1
+      green:
+        number: led256bb-4-15-2
+      blue:
+        number: led256bb-4-16-0
+      white:
+        number: led256bb-4-16-2
+    tags: cabinet_right, groundeffects, led256bb-3 
+
+  l_cabinet_right_13:
+    channels:
+      red:
+        number: led256bb-4-17-0
+      green:
+        number: led256bb-4-17-1
+      blue:
+        number: led256bb-4-17-2
+      white:
+        number: led256bb-4-18-1
+    tags: cabinet_right, groundeffects, led256bb-3
+
+  l_cabinet_right_14:
+    channels:
+      red:
+        number: led256bb-4-18-2
+      green:
+        number: led256bb-4-18-0
+      blue:
+        number: led256bb-4-19-1
+      white:
+        number: led256bb-4-19-0
+    tags: cabinet_right, groundeffects, led256bb-3
+
+  l_cabinet_right_15:
+    channels:
+      red:
+        number: led256bb-4-20-1
+      green:
+        number: led256bb-4-19-2
+      blue:
+        number: led256bb-4-20-0
+      white:
+        number: led256bb-4-20-2
+    tags: cabinet_right, groundeffects, led256bb-3 
+
+  l_cabinet_right_16:
+    channels:
+      red:
+        number: led256bb-4-21-0
+      green:
+        number: led256bb-4-21-1
+      blue:
+        number: led256bb-4-21-2
+      white:
+        number: led256bb-4-22-1
+    tags: cabinet_right, groundeffects, led256bb-3
+
+  l_cabinet_right_17:
+    channels:
+      red:
+        number: led256bb-4-22-2
+      green:
+        number: led256bb-4-22-0
+      blue:
+        number: led256bb-4-23-1
+      white:
+        number: led256bb-4-23-0
+    tags: cabinet_right, groundeffects, led256bb-3
+
+  l_cabinet_right_18:
+    channels:
+      red:
+        number: led256bb-4-24-1
+      green:
+        number: led256bb-4-23-2
+      blue:
+        number: led256bb-4-24-0
+      white:
+        number: led256bb-4-24-2
+    tags: cabinet_right, groundeffects, led256bb-3 
+
+  l_cabinet_right_19:
+    channels:
+      red:
+        number: led256bb-4-25-0
+      green:
+        number: led256bb-4-25-1
+      blue:
+        number: led256bb-4-25-2
+      white:
+        number: led256bb-4-26-1
+    tags: cabinet_right, groundeffects, led256bb-3
+
+  l_cabinet_right_20:
+    channels:
+      red:
+        number: led256bb-4-26-2
+      green:
+        number: led256bb-4-26-0
+      blue:
+        number: led256bb-4-27-1
+      white:
+        number: led256bb-4-27-0
+    tags: cabinet_right, groundeffects, led256bb-3
+
+  l_cabinet_right_21:
+    channels:
+      red:
+        number: led256bb-4-28-1
+      green:
+        number: led256bb-4-27-2
+      blue:
+        number: led256bb-4-28-0
+      white:
+        number: led256bb-4-28-2
+    tags: cabinet_right, groundeffects, led256bb-3 
+
+  l_cabinet_right_22:
+    channels:
+      red:
+        number: led256bb-4-29-0
+      green:
+        number: led256bb-4-29-1
+      blue:
+        number: led256bb-4-29-2
+      white:
+        number: led256bb-4-30-1
+    tags: cabinet_right, groundeffects, led256bb-3
+
+  l_cabinet_right_23:
+    channels:
+      red:
+        number: led256bb-4-30-2
+      green:
+        number: led256bb-4-30-0
+      blue:
+        number: led256bb-4-31-1
+      white:
+        number: led256bb-4-31-0
+    tags: cabinet_right, groundeffects, led256bb-3
+
+  l_cabinet_right_24:
+    channels:
+      red:
+        number: led256bb-4-32-1
+      green:
+        number: led256bb-4-31-2
+      blue:
+        number: led256bb-4-32-0
+      white:
+        number: led256bb-4-32-2
+    tags: cabinet_right, groundeffects, led256bb-3 
+
+
+# cabinet_left
+  l_cabinet_left_1:
+    channels:
+      red:
+        number: led256bb-5-1-0
+      green:
+        number: led256bb-5-1-1
+      blue:
+        number: led256bb-5-1-2
+      white:
+        number: led256bb-5-2-1
+    tags: cabinet_left, groundeffects, led256bb-5
+
+  l_cabinet_left_2:
+    channels:
+      red:
+        number: led256bb-5-2-2
+      green:
+        number: led256bb-5-2-0
+      blue:
+        number: led256bb-5-3-1
+      white:
+        number: led256bb-5-3-0
+    tags: cabinet_left, groundeffects, led256bb-5
+
+  l_cabinet_left_3:
+    channels:
+      red:
+        number: led256bb-5-4-1
+      green:
+        number: led256bb-5-3-2
+      blue:
+        number: led256bb-5-4-0
+      white:
+        number: led256bb-5-4-2
+    tags: cabinet_left, groundeffects, led256bb-5
+
+  l_cabinet_left_4:
+    channels:
+      red:
+        number: led256bb-5-5-0
+      green:
+        number: led256bb-5-5-1
+      blue:
+        number: led256bb-5-5-2
+      white:
+        number: led256bb-5-6-1
+    tags: cabinet_left, groundeffects, led256bb-5
+
+  l_cabinet_left_5:
+    channels:
+      red:
+        number: led256bb-5-6-2
+      green:
+        number: led256bb-5-6-0
+      blue:
+        number: led256bb-5-7-1
+      white:
+        number: led256bb-5-7-0
+    tags: cabinet_left, groundeffects, led256bb-5
+
+  l_cabinet_left_6:
+    channels:
+      red:
+        number: led256bb-5-8-1
+      green:
+        number: led256bb-5-7-2
+      blue:
+        number: led256bb-5-8-0
+      white:
+        number: led256bb-5-8-2
+    tags: cabinet_left, groundeffects, led256bb-5
+
+  l_cabinet_left_7:
+    channels:
+      red:
+        number: led256bb-5-9-0
+      green:
+        number: led256bb-5-9-1
+      blue:
+        number: led256bb-5-9-2
+      white:
+        number: led256bb-5-10-1
+    tags: cabinet_left, groundeffects, led256bb-5
+
+  l_cabinet_left_8:
+    channels:
+      red:
+        number: led256bb-5-10-2
+      green:
+        number: led256bb-5-10-0
+      blue:
+        number: led256bb-5-11-1
+      white:
+        number: led256bb-5-11-0
+    tags: cabinet_left, groundeffects, led256bb-5
+
+  l_cabinet_left_9:
+    channels:
+      red:
+        number: led256bb-5-12-1
+      green:
+        number: led256bb-5-11-2
+      blue:
+        number: led256bb-5-12-0
+      white:
+        number: led256bb-5-12-2
+    tags: cabinet_left, groundeffects, led256bb-5   
+
+  l_cabinet_left_10:
+    channels:
+      red:
+        number: led256bb-5-13-0
+      green:
+        number: led256bb-5-13-1
+      blue:
+        number: led256bb-5-13-2
+      white:
+        number: led256bb-5-14-1
+    tags: cabinet_left, groundeffects, led256bb-5
+
+  l_cabinet_left_11:
+    channels:
+      red:
+        number: led256bb-5-14-2
+      green:
+        number: led256bb-5-14-0
+      blue:
+        number: led256bb-5-15-1
+      white:
+        number: led256bb-5-15-0
+    tags: cabinet_left, groundeffects, led256bb-5
+
+  l_cabinet_left_12:
+    channels:
+      red:
+        number: led256bb-5-16-1
+      green:
+        number: led256bb-5-15-2
+      blue:
+        number: led256bb-5-16-0
+      white:
+        number: led256bb-5-16-2
+    tags: cabinet_left, groundeffects, led256bb-5 
+
+  l_cabinet_left_13:
+    channels:
+      red:
+        number: led256bb-5-17-0
+      green:
+        number: led256bb-5-17-1
+      blue:
+        number: led256bb-5-17-2
+      white:
+        number: led256bb-5-18-1
+    tags: cabinet_left, groundeffects, led256bb-5
+
+  l_cabinet_left_14:
+    channels:
+      red:
+        number: led256bb-5-18-2
+      green:
+        number: led256bb-5-18-0
+      blue:
+        number: led256bb-5-19-1
+      white:
+        number: led256bb-5-19-0
+    tags: cabinet_left, groundeffects, led256bb-5
+
+  l_cabinet_left_15:
+    channels:
+      red:
+        number: led256bb-5-20-1
+      green:
+        number: led256bb-5-19-2
+      blue:
+        number: led256bb-5-20-0
+      white:
+        number: led256bb-5-20-2
+    tags: cabinet_left, groundeffects, led256bb-5 
+
+  l_cabinet_left_16:
+    channels:
+      red:
+        number: led256bb-5-21-0
+      green:
+        number: led256bb-5-21-1
+      blue:
+        number: led256bb-5-21-2
+      white:
+        number: led256bb-5-22-1
+    tags: cabinet_left, groundeffects, led256bb-5
+
+  l_cabinet_left_17:
+    channels:
+      red:
+        number: led256bb-5-22-2
+      green:
+        number: led256bb-5-22-0
+      blue:
+        number: led256bb-5-23-1
+      white:
+        number: led256bb-5-23-0
+    tags: cabinet_left, groundeffects, led256bb-5
+
+  l_cabinet_left_18:
+    channels:
+      red:
+        number: led256bb-5-24-1
+      green:
+        number: led256bb-5-23-2
+      blue:
+        number: led256bb-5-24-0
+      white:
+        number: led256bb-5-24-2
+    tags: cabinet_left, groundeffects, led256bb-5 
+
+  l_cabinet_left_19:
+    channels:
+      red:
+        number: led256bb-5-25-0
+      green:
+        number: led256bb-5-25-1
+      blue:
+        number: led256bb-5-25-2
+      white:
+        number: led256bb-5-26-1
+    tags: cabinet_left, groundeffects, led256bb-5
+
+  l_cabinet_left_20:
+    channels:
+      red:
+        number: led256bb-5-26-2
+      green:
+        number: led256bb-5-26-0
+      blue:
+        number: led256bb-5-27-1
+      white:
+        number: led256bb-5-27-0
+    tags: cabinet_left, groundeffects, led256bb-5
+
+  l_cabinet_left_21:
+    channels:
+      red:
+        number: led256bb-5-28-1
+      green:
+        number: led256bb-5-27-2
+      blue:
+        number: led256bb-5-28-0
+      white:
+        number: led256bb-5-28-2
+    tags: cabinet_left, groundeffects, led256bb-5 
+
+  l_cabinet_left_22:
+    channels:
+      red:
+        number: led256bb-5-29-0
+      green:
+        number: led256bb-5-29-1
+      blue:
+        number: led256bb-5-29-2
+      white:
+        number: led256bb-5-30-1
+    tags: cabinet_left, groundeffects, led256bb-5
+
+  l_cabinet_left_23:
+    channels:
+      red:
+        number: led256bb-5-30-2
+      green:
+        number: led256bb-5-30-0
+      blue:
+        number: led256bb-5-31-1
+      white:
+        number: led256bb-5-31-0
+    tags: cabinet_left, groundeffects, led256bb-5
+
+  l_cabinet_left_24:
+    channels:
+      red:
+        number: led256bb-5-32-1
+      green:
+        number: led256bb-5-31-2
+      blue:
+        number: led256bb-5-32-0
+      white:
+        number: led256bb-5-32-2
+    tags: cabinet_left, groundeffects, led256bb-5 
+
+
 
 show_player:
   init_phase_1:
