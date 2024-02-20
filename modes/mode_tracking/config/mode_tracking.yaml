@@ -7,7 +7,7 @@ mode:
 shots:
   sh_select_mode:
     switch: s_right_scoop
-    disable_events: e_primary_mode_active, start_jigsaw_multiball
+    disable_events: e_primary_mode_active, start_jigsaw_multiball, start_hacksaw_multiball, start_shackle_multiball
     enable_events: logicblock_cnt_saw_qualify_complete
 
 variable_player:

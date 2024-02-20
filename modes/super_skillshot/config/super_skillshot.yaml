@@ -19,7 +19,7 @@ variable_player:
   ssh_skillshot_leftorbit_innerorbit_hit:
     score: 8000000
   ssh_skillshot_innerorbit_leftramp_hit:
-    score: 4000000
+    score: 5000000
 
 
 event_player:

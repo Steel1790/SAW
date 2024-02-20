@@ -25,10 +25,10 @@ event_player:
 # this is not working but I don't know why. The show in the base.yaml is working
 shows:
   mystery_lit:
-    - duration: 0.5s
+    - duration: 1.5s
       lights:
         (leds): jelly
-    - duration: 0.5s
+    - duration: 1.5s
       lights:
         (leds): off
   mystery_off:
