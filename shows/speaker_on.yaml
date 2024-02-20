@@ -5,3 +5,6 @@
   lights:
     leftspeaker: (color1)-f200ms    
     rightspeaker: (color1)-f200ms
+    cabinet_front: (color1)-f200ms
+    cabinet_right: (color1)-f200ms
+    cabinet_left: (color1)-f200ms

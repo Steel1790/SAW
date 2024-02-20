@@ -1,0 +1,389 @@
+#show_version=6
+
+#CHOOSE ONE OF THE TWO OPTIONS. COMMENT OUT THE OTHER.
+
+#OPTION 1 - CLOCKWISE CIRCLE REPEAT WITH FADE OUT
+# - time: 0
+#   lights:
+#     l_cabinet_left_1: (color1)
+# - time: '+1'
+#   lights:
+#     l_cabinet_left_2: (color1)
+# - time: '+1'
+#   lights:
+#     l_cabinet_left_3: (color1)
+# - time: '+1'
+#   lights:
+#     l_cabinet_left_4: (color1)
+# - time: '+1'
+#   lights:
+#     l_cabinet_left_5: (color1)
+# - time: '+1'
+#   lights:
+#     l_cabinet_left_6: (color1)
+# - time: '+1'
+#   lights:
+#     l_cabinet_left_7: (color1)
+# - time: '+1'
+#   lights:
+#     l_cabinet_left_8: (color1)
+# - time: '+1'
+#   lights:
+#     l_cabinet_left_9: (color1)
+# - time: '+1'
+#   lights:
+#     l_cabinet_left_10: (color1)
+# - time: '+1'
+#   lights:
+#     l_cabinet_left_11: (color1)
+# - time: '+1'
+#   lights:
+#     l_cabinet_left_12: (color1)
+# - time: '+1'
+#   lights:
+#     l_cabinet_left_13: (color1)
+# - time: '+1'
+#   lights:
+#     l_cabinet_left_14: (color1)
+# - time: '+1'
+#   lights:
+#     l_cabinet_left_15: (color1)
+# - time: '+1'
+#   lights:
+#     l_cabinet_left_16: (color1)
+# - time: '+1'
+#   lights:
+#     l_cabinet_left_17: (color1)
+# - time: '+1'
+#   lights:
+#     l_cabinet_left_18: (color1)
+# - time: '+1'
+#   lights:
+#     l_cabinet_left_19: (color1)
+# - time: '+1'
+#   lights:
+#     l_cabinet_left_20: (color1)
+# - time: '+1'
+#   lights:
+#     l_cabinet_left_21: (color1)
+# - time: '+1'
+#   lights:
+#     l_cabinet_left_22: (color1)
+# - time: '+1'
+#   lights:
+#     l_cabinet_left_23: (color1)
+# - time: '+1'
+#   lights:
+#     l_cabinet_left_24: (color1)
+# - time: '+1'   
+#   lights:
+#     l_cabinet_left_1: off-f200ms
+# - time: '+1'
+#   lights:
+#     l_cabinet_left_2: off-f200ms
+# - time: '+1'
+#   lights:
+#     l_cabinet_left_3: off-f200ms
+# - time: '+1'
+#   lights:
+#     l_cabinet_left_4: off-f200ms
+# - time: '+1'
+#   lights:
+#     l_cabinet_left_5: off-f200ms
+# - time: '+1'
+#   lights:
+#     l_cabinet_left_6: off-f200ms
+# - time: '+1'
+#   lights:
+#     l_cabinet_left_7: off-f200ms
+# - time: '+1'
+#   lights:
+#     l_cabinet_left_8: off-f200ms
+# - time: '+1'
+#   lights:
+#     l_cabinet_left_9: off-f200ms
+# - time: '+1'
+#   lights:
+#     l_cabinet_left_10: off-f200ms
+# - time: '+1'
+#   lights:
+#     l_cabinet_left_11: off-f200ms
+# - time: '+1'
+#   lights:
+#     l_cabinet_left_12: off-f200ms
+# - time: '+1'
+#   lights:
+#     l_cabinet_left_13: off-f200ms
+# - time: '+1'
+#   lights:
+#     l_cabinet_left_14: off-f200ms
+# - time: '+1'
+#   lights:
+#     l_cabinet_left_15: off-f200ms
+# - time: '+1'
+#   lights:
+#     l_cabinet_left_16: off-f200ms
+# - time: '+1'
+#   lights:
+#     l_cabinet_left_17: off-f200ms
+# - time: '+1'
+#   lights:
+#     l_cabinet_left_18: off-f200ms
+# - time: '+1'
+#   lights:
+#     l_cabinet_left_19: off-f200ms
+# - time: '+1'
+#   lights:
+#     l_cabinet_left_20: off-f200ms
+# - time: '+1'
+#   lights:
+#     l_cabinet_left_21: off-f200ms
+# - time: '+1'
+#   lights:
+#     l_cabinet_left_22: off-f200ms
+# - time: '+1'
+#   lights:
+#     l_cabinet_left_23: off-f200ms
+# - time: '+1'
+#   lights:
+#     l_cabinet_left_24: off-f200ms
+
+# - time: '+1'
+#   lights:
+#     l_cabinet_left_1: off-f200ms
+#     l_cabinet_left_2: off-f200ms
+#     l_cabinet_left_3: off-f200ms
+#     l_cabinet_left_4: off-f200ms
+#     l_cabinet_left_5: off-f200ms
+#     l_cabinet_left_6: off-f200ms
+#     l_cabinet_left_7: off-f200ms
+#     l_cabinet_left_8: off-f200ms
+#     l_cabinet_left_9: off-f200ms
+#     l_cabinet_left_10: off-f200ms
+#     l_cabinet_left_11: off-f200ms
+#     l_cabinet_left_12: off-f200ms
+#     l_cabinet_left_13: off-f200ms
+#     l_cabinet_left_14: off-f200ms
+#     l_cabinet_left_15: off-f200ms
+#     l_cabinet_left_16: off-f200ms
+
+#OPTION 2 - OVERLAPS BETWEEN INSERTS CLOCKWISE AND THEN COUNTERCLOCKWISE CYLON STYLE
+- time: 0
+  lights:
+    l_cabinet_left_1: (color1)
+- time: '+1'
+  lights:
+    l_cabinet_left_2: (color1)
+- time: '+1'
+  lights:
+    l_cabinet_left_3: (color1)
+- time: '+1'
+  lights:
+    l_cabinet_left_4: (color1)
+- time: '+1'
+  lights:
+    l_cabinet_left_5: (color1)
+- time: '+1'
+  lights:
+    l_cabinet_left_6: (color1)
+    l_cabinet_left_1: off
+- time: '+1'
+  lights:
+    l_cabinet_left_7: (color1)
+    l_cabinet_left_2: off
+- time: '+1'
+  lights:
+    l_cabinet_left_8: (color1)
+    l_cabinet_left_3: off    
+- time: '+1'
+  lights:
+    l_cabinet_left_9: (color1)
+    l_cabinet_left_4: off
+- time: '+1'
+  lights:
+    l_cabinet_left_10: (color1)
+    l_cabinet_left_5: off
+- time: '+1'
+  lights:
+    l_cabinet_left_11: (color1)
+    l_cabinet_left_6: off
+- time: '+1'
+  lights:
+    l_cabinet_left_12: (color1)
+    l_cabinet_left_7: off
+- time: '+1'
+  lights:
+    l_cabinet_left_13: (color1)
+    l_cabinet_left_8: off
+- time: '+1'
+  lights:
+    l_cabinet_left_14: (color1)
+    l_cabinet_left_9: off
+- time: '+1'
+  lights:
+    l_cabinet_left_15: (color1)
+    l_cabinet_left_10: off
+- time: '+1'
+  lights:
+    l_cabinet_left_16: (color1)
+    l_cabinet_left_11: off
+- time: '+1'
+  lights:
+    l_cabinet_left_17: (color1)
+    l_cabinet_left_12: off
+- time: '+1'
+  lights:
+    l_cabinet_left_18: (color1)
+    l_cabinet_left_13: off
+- time: '+1'
+  lights:
+    l_cabinet_left_19: (color1)
+    l_cabinet_left_14: off
+- time: '+1'
+  lights:
+    l_cabinet_left_20: (color1)
+    l_cabinet_left_15: off
+- time: '+1'
+  lights:
+    l_cabinet_left_21: (color1)
+    l_cabinet_left_16: off
+- time: '+1'
+  lights:
+    l_cabinet_left_22: (color1)
+    l_cabinet_left_17: off
+- time: '+1'
+  lights:
+    l_cabinet_left_23: (color1)
+    l_cabinet_left_18: off
+- time: '+1'
+  lights:
+    l_cabinet_left_24: (color1)
+    l_cabinet_left_19: off
+- time: '+1'
+  lights:
+    l_cabinet_left_20: off
+- time: '+1'
+  lights:
+    l_cabinet_left_21: off
+- time: '+1'
+  lights:
+    l_cabinet_left_22: off
+- time: '+1'
+  lights:
+    l_cabinet_left_23: off
+- time: '+1'
+  lights:
+    l_cabinet_left_24: off
+- time: '+1'
+  lights:
+    l_cabinet_left_24: (color1)
+- time: '+1'
+  lights:
+    l_cabinet_left_23: (color1)
+- time: '+1'
+  lights:
+    l_cabinet_left_22: (color1)
+- time: '+1'
+  lights:
+    l_cabinet_left_21: (color1)
+- time: '+1'
+  lights:
+    l_cabinet_left_20: (color1)
+- time: '+1'
+  lights:
+    l_cabinet_left_19: (color1)
+    l_cabinet_left_24: off
+- time: '+1'
+  lights:
+    l_cabinet_left_18: (color1)
+    l_cabinet_left_23: off
+- time: '+1'
+  lights:
+    l_cabinet_left_17: (color1)
+    l_cabinet_left_22: off
+- time: '+1'
+  lights:
+    l_cabinet_left_16: (color1)
+    l_cabinet_left_21: off
+- time: '+1'
+  lights:
+    l_cabinet_left_15: (color1)
+    l_cabinet_left_20: off
+- time: '+1'
+  lights:
+    l_cabinet_left_14: (color1)
+    l_cabinet_left_19: off
+- time: '+1'
+  lights:
+    l_cabinet_left_13: (color1)
+    l_cabinet_left_18: off
+- time: '+1'
+  lights:
+    l_cabinet_left_12: (color1)
+    l_cabinet_left_17: off
+- time: '+1'
+  lights:
+    l_cabinet_left_11: (color1)
+    l_cabinet_left_16: off    
+- time: '+1'
+  lights:
+    l_cabinet_left_10: (color1)
+    l_cabinet_left_15: off
+- time: '+1'
+  lights:
+    l_cabinet_left_9: (color1)
+    l_cabinet_left_14: off
+- time: '+1'
+  lights:
+    l_cabinet_left_8: (color1)
+    l_cabinet_left_13: off
+- time: '+1'
+  lights:
+    l_cabinet_left_7: (color1)
+    l_cabinet_left_12: off
+- time: '+1'
+  lights:
+    l_cabinet_left_6: (color1)
+    l_cabinet_left_11: off
+- time: '+1'
+  lights:
+    l_cabinet_left_5: (color1)
+    l_cabinet_left_10: off
+- time: '+1'
+  lights:
+    l_cabinet_left_4: (color1)
+    l_cabinet_left_9: off
+- time: '+1'
+  lights:
+    l_cabinet_left_3: (color1)
+    l_cabinet_left_8: off
+- time: '+1'
+  lights:
+    l_cabinet_left_2: (color1)
+    l_cabinet_left_7: off
+- time: '+1'
+  lights:
+    l_cabinet_left_1: (color1)
+    l_cabinet_left_6: off
+- time: '+1'
+  lights:
+    l_cabinet_left_5: off
+- time: '+1'
+  lights:
+    l_cabinet_left_4: off
+- time: '+1'
+  lights:
+    l_cabinet_left_3: off
+- time: '+1'
+  lights:
+    l_cabinet_left_2: off
+- time: '+1'
+  lights:
+    l_cabinet_left_1: off
+
+
+
+
+
+
+

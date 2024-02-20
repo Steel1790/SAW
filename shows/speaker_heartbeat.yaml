@@ -1,0 +1,18 @@
+#show_version=6
+
+#SLOW PULSE ON OFF
+- time: 0
+  lights:
+    speaker: 800800-f1500ms     
+- time: '+1500ms'
+  lights:
+    speaker: (color1)-f80ms    
+- time: '+250ms'
+  lights:
+    speaker: 590800-f80ms   
+- time: '+150ms'
+  lights:
+    speaker: (color1)-f80ms
+- time: '+250ms'
+  lights:
+    speaker: 590800-f200ms  

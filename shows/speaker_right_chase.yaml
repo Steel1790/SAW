@@ -1,0 +1,318 @@
+#show_version=6
+
+#CHOOSE ONE OF THE TWO OPTIONS. COMMENT OUT THE OTHER.
+
+#OPTION 1 - CLOCKWISE CIRCLE REPEAT WITH FADE OUT
+- time: 0
+  lights:
+    l_rightspeaker_1: (color1)
+- time: '+1'
+  lights:
+    l_rightspeaker_2: (color1)
+- time: '+1'
+  lights:
+    l_rightspeaker_3: (color1)
+- time: '+1'
+  lights:
+    l_rightspeaker_4: (color1)
+- time: '+1'
+  lights:
+    l_rightspeaker_5: (color1)
+- time: '+1'
+  lights:
+    l_rightspeaker_6: (color1)
+- time: '+1'
+  lights:
+    l_rightspeaker_7: (color1)
+- time: '+1'
+  lights:
+    l_rightspeaker_8: (color1)
+- time: '+1'
+  lights:
+    l_rightspeaker_9: (color1)
+- time: '+1'
+  lights:
+    l_rightspeaker_10: (color1)
+- time: '+1'
+  lights:
+    l_rightspeaker_11: (color1)
+- time: '+1'
+  lights:
+    l_rightspeaker_12: (color1)
+- time: '+1'
+  lights:
+    l_rightspeaker_13: (color1)
+- time: '+1'
+  lights:
+    l_rightspeaker_14: (color1)
+- time: '+1'
+  lights:
+    l_rightspeaker_15: (color1)
+- time: '+1'
+  lights:
+    l_rightspeaker_16: (color1)
+- time: '+1'
+  lights:
+    l_rightspeaker_17: (color1)
+- time: '+1'
+  lights:
+    l_rightspeaker_18: (color1)
+- time: '+1'
+  lights:
+    l_rightspeaker_19: (color1)
+- time: '+1'
+  lights:
+    l_rightspeaker_20: (color1)
+- time: '+1'
+  lights:
+    l_rightspeaker_21: (color1)
+- time: '+1'
+  lights:
+    l_rightspeaker_22: (color1)
+- time: '+1'
+  lights:
+    l_rightspeaker_23: (color1)
+- time: '+1'
+  lights:
+    l_rightspeaker_24: (color1)
+- time: '+1'   
+  lights:
+    l_rightspeaker_1: off-f200ms
+- time: '+1'
+  lights:
+    l_rightspeaker_2: off-f200ms
+- time: '+1'
+  lights:
+    l_rightspeaker_3: off-f200ms
+- time: '+1'
+  lights:
+    l_rightspeaker_4: off-f200ms
+- time: '+1'
+  lights:
+    l_rightspeaker_5: off-f200ms
+- time: '+1'
+  lights:
+    l_rightspeaker_6: off-f200ms
+- time: '+1'
+  lights:
+    l_rightspeaker_7: off-f200ms
+- time: '+1'
+  lights:
+    l_rightspeaker_8: off-f200ms
+- time: '+1'
+  lights:
+    l_rightspeaker_9: off-f200ms
+- time: '+1'
+  lights:
+    l_rightspeaker_10: off-f200ms
+- time: '+1'
+  lights:
+    l_rightspeaker_11: off-f200ms
+- time: '+1'
+  lights:
+    l_rightspeaker_12: off-f200ms
+- time: '+1'
+  lights:
+    l_rightspeaker_13: off-f200ms
+- time: '+1'
+  lights:
+    l_rightspeaker_14: off-f200ms
+- time: '+1'
+  lights:
+    l_rightspeaker_15: off-f200ms
+- time: '+1'
+  lights:
+    l_rightspeaker_16: off-f200ms
+- time: '+1'
+  lights:
+    l_rightspeaker_17: off-f200ms
+- time: '+1'
+  lights:
+    l_rightspeaker_18: off-f200ms
+- time: '+1'
+  lights:
+    l_rightspeaker_19: off-f200ms
+- time: '+1'
+  lights:
+    l_rightspeaker_20: off-f200ms
+- time: '+1'
+  lights:
+    l_rightspeaker_21: off-f200ms
+- time: '+1'
+  lights:
+    l_rightspeaker_22: off-f200ms
+- time: '+1'
+  lights:
+    l_rightspeaker_23: off-f200ms
+- time: '+1'
+  lights:
+    l_rightspeaker_24: off-f200ms
+
+# - time: '+1'
+#   lights:
+#     l_rightspeaker_1: off-f200ms
+#     l_rightspeaker_2: off-f200ms
+#     l_rightspeaker_3: off-f200ms
+#     l_rightspeaker_4: off-f200ms
+#     l_rightspeaker_5: off-f200ms
+#     l_rightspeaker_6: off-f200ms
+#     l_rightspeaker_7: off-f200ms
+#     l_rightspeaker_8: off-f200ms
+#     l_rightspeaker_9: off-f200ms
+#     l_rightspeaker_10: off-f200ms
+#     l_rightspeaker_11: off-f200ms
+#     l_rightspeaker_12: off-f200ms
+#     l_rightspeaker_13: off-f200ms
+#     l_rightspeaker_14: off-f200ms
+#     l_rightspeaker_15: off-f200ms
+#     l_rightspeaker_16: off-f200ms
+
+#OPTION 2 - OVERLAPS BETWEEN INSERTS CLOCKWISE AND THEN COUNTERCLOCKWISE CYLON STYLE
+# - time: 0
+#   lights:
+#     l_rightspeaker_1: (color1)
+# - time: '+1'
+#   lights:
+#     l_rightspeaker_2: (color1)
+# - time: '+1'
+#   lights:
+#     l_rightspeaker_3: (color1)
+# - time: '+1'
+#   lights:
+#     l_rightspeaker_4: (color1)
+#     l_rightspeaker_1: off
+# - time: '+1'
+#   lights:
+#     l_rightspeaker_5: (color1)
+#     l_rightspeaker_2: off
+# - time: '+1'
+#   lights:
+#     l_rightspeaker_6: (color1)
+#     l_rightspeaker_3: off
+# - time: '+1'
+#   lights:
+#     l_rightspeaker_7: (color1)
+#     l_rightspeaker_4: off
+# - time: '+1'
+#   lights:
+#     l_rightspeaker_8: (color1)
+#     l_rightspeaker_5: off    
+# - time: '+1'
+#   lights:
+#     l_rightspeaker_9: (color1)
+#     l_rightspeaker_6: off
+# - time: '+1'
+#   lights:
+#     l_rightspeaker_10: (color1)
+#     l_rightspeaker_7: off
+# - time: '+1'
+#   lights:
+#     l_rightspeaker_11: (color1)
+#     l_rightspeaker_8: off
+# - time: '+1'
+#   lights:
+#     l_rightspeaker_12: (color1)
+#     l_rightspeaker_9: off
+# - time: '+1'
+#   lights:
+#     l_rightspeaker_13: (color1)
+#     l_rightspeaker_10: off
+# - time: '+1'
+#   lights:
+#     l_rightspeaker_14: (color1)
+#     l_rightspeaker_11: off
+# - time: '+1'
+#   lights:
+#     l_rightspeaker_15: (color1)
+#     l_rightspeaker_12: off
+# - time: '+1'
+#   lights:
+#     l_rightspeaker_16: (color1)
+#     l_rightspeaker_13: off
+# - time: '+1'
+#   lights:
+#     l_rightspeaker_14: off
+# - time: '+1'
+#   lights:
+#     l_rightspeaker_15: off
+# - time: '+1'
+#   lights:
+#     l_rightspeaker_16: off
+# - time: '+1'
+#   lights:
+#     l_rightspeaker_16: (color1)
+# - time: '+1'
+#   lights:
+#     l_rightspeaker_15: (color1)
+# - time: '+1'
+#   lights:
+#     l_rightspeaker_14: (color1)
+
+# - time: '+1'
+#   lights:
+#     l_rightspeaker_13: (color1)
+#     l_rightspeaker_16: off
+# - time: '+1'
+#   lights:
+#     l_rightspeaker_12: (color1)
+#     l_rightspeaker_15: off
+# - time: '+1'
+#   lights:
+#     l_rightspeaker_11: (color1)
+#     l_rightspeaker_14: off
+# - time: '+1'
+#   lights:
+#     l_rightspeaker_10: (color1)
+#     l_rightspeaker_13: off
+# - time: '+1'
+#   lights:
+#     l_rightspeaker_9: (color1)
+#     l_rightspeaker_12: off
+# - time: '+1'
+#   lights:
+#     l_rightspeaker_8: (color1)
+#     l_rightspeaker_11: off
+# - time: '+1'
+#   lights:
+#     l_rightspeaker_7: (color1)
+#     l_rightspeaker_10: off
+# - time: '+1'
+#   lights:
+#     l_rightspeaker_6: (color1)
+#     l_rightspeaker_9: off
+# - time: '+1'
+#   lights:
+#     l_rightspeaker_5: (color1)
+#     l_rightspeaker_8: off    
+# - time: '+1'
+#   lights:
+#     l_rightspeaker_4: (color1)
+#     l_rightspeaker_7: off
+# - time: '+1'
+#   lights:
+#     l_rightspeaker_3: (color1)
+#     l_rightspeaker_6: off
+# - time: '+1'
+#   lights:
+#     l_rightspeaker_2: (color1)
+#     l_rightspeaker_5: off
+# - time: '+1'
+#   lights:
+#     l_rightspeaker_1: (color1)
+#     l_rightspeaker_4: off
+# - time: '+1'
+#   lights:
+#     l_rightspeaker_3: off
+# - time: '+1'
+#   lights:
+#     l_rightspeaker_2: off
+# - time: '+1'
+#   lights:
+#     l_rightspeaker_1: off
+
+
+
+
+
+
+

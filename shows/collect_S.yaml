@@ -398,4 +398,89 @@
     l_right_bottom_bumper_16: 'CD0000'
     l_right_bottom_bumper_2: 'CD0000'
     l_right_bottom_bumper_3: '730000'
+
+- time: '+.25'
+  lights:
+    l_lower_top_bumper_1: beartrap
+    l_right_bottom_bumper_1: beartrap
+
+- time: '+.25'
+  lights:
+    l_lower_top_bumper_2: beartrap
+    l_right_bottom_bumper_2: beartrap
+
+- time: '+.25'
+  lights:
+    l_lower_top_bumper_3: beartrap
+    l_right_bottom_bumper_3: beartrap
     
+- time: '+.25'
+  lights:
+    l_lower_top_bumper_4: beartrap
+    l_right_bottom_bumper_4: beartrap
+
+- time: '+.25'
+  lights:
+    l_lower_top_bumper_5: beartrap
+    l_right_bottom_bumper_5: beartrap
+
+- time: '+.25'
+  lights:
+    l_lower_top_bumper_6: beartrap
+    l_right_bottom_bumper_6: beartrap
+
+- time: '+.25'
+  lights:
+    l_lower_top_bumper_7: beartrap
+    l_right_bottom_bumper_7: beartrap 
+    
+- time: '+.25'
+  lights:
+    l_lower_top_bumper_8: beartrap
+    l_right_bottom_bumper_8: beartrap
+
+- time: '+.25'
+  lights:
+    l_lower_top_bumper_9: beartrap
+    l_right_bottom_bumper_9: beartrap  
+
+- time: '+.25'
+  lights:
+    l_lower_top_bumper_10: beartrap
+    l_right_bottom_bumper_10: beartrap
+    
+- time: '+.25'
+  lights:
+    l_lower_top_bumper_11: beartrap
+    l_right_bottom_bumper_11: beartrap
+
+- time: '+.25'
+  lights:
+    l_lower_top_bumper_12: beartrap
+    l_right_bottom_bumper_12: beartrap
+
+- time: '+.25'
+  lights:
+    l_lower_top_bumper_13: beartrap
+    l_right_bottom_bumper_13: beartrap
+
+- time: '+.25'
+  lights:
+    l_lower_top_bumper_13: beartrap
+    l_right_bottom_bumper_13: beartrap 
+    
+- time: '+.25'
+  lights:
+    l_lower_top_bumper_14: beartrap
+    l_right_bottom_bumper_14: beartrap
+
+- time: '+.25'
+  lights:
+    l_lower_top_bumper_15: beartrap
+    l_right_bottom_bumper_15: beartrap    
+
+- time: '+.25'
+  lights:
+    l_lower_top_bumper_16: beartrap
+    l_right_bottom_bumper_16: beartrap    
+

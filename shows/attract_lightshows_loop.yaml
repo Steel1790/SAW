@@ -13,11 +13,35 @@
       cabinet_on:
        loops: -1
        speed: 1
-      speaker_on:
-        loops: -1
-        speed: 1
-        show_tokens:
-          color1: beartrap         
+      # speaker_left_cylon:
+      #  speed: 20       
+      #  show_tokens:
+      #    color1: beartrap    
+      # speaker_right_cylon:
+      #  speed: 20
+      #  show_tokens:
+      #    color1: beartrap   
+      speaker_heartbeat:
+       speed: 1
+       show_tokens:
+         color1: beartrap 
+      cabinet_heartbeat:
+       speed: 1
+       show_tokens:
+         color1: beartrap     
+      # cabinet_left_cylon:
+      #  speed: 20
+      #  show_tokens:
+      #    color1: beartrap 
+      # cabinet_right_cylon:
+      #  speed: 20
+      #  show_tokens:
+      #    color1: beartrap 
+      # cabinet_front_cylon:
+      #  speed: 20
+      #  show_tokens:
+      #    color1: beartrap 
+
       # flash_token:
       #   show_tokens:
       #     led: l_left_spotlight
