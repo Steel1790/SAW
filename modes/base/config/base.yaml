@@ -783,6 +783,10 @@ shows:
     - duration: -1
       lights:
         (leds): (color1)
+  pops_on2:
+    - duration: -1
+      lights:
+        (leds): (color1)
 
   sh_escape_outlane_end:
     - duration: -1
@@ -1096,6 +1100,11 @@ show_player:
         leds: right_bottom_bumper, lower_top_bumper
         color1: beartrap
       priority: 169
+    pops_on2:
+      show_tokens:
+        leds: left_bottom_bumper, left_top_bumper, top_bottom_bumper, right_top_bumper 
+        color1: 6E6E6E
+      priority: 169
   logicblock_cnt_saw_qualify_updated{value==2}:
     collect_A:
       loops: 0
@@ -1107,6 +1116,11 @@ show_player:
       show_tokens:
         leds: right_bottom_bumper, lower_top_bumper, left_bottom_bumper, left_top_bumper
         color1: beartrap
+      priority: 169
+    pops_on2:
+      show_tokens:
+        leds: top_bottom_bumper, right_top_bumper 
+        color1: 6E6E6E 
       priority: 169
   logicblock_cnt_saw_qualify_complete:
     collect_W:
@@ -1228,11 +1242,13 @@ show_player:
 
   ball_will_end{current_player.ball==3}:
     pops_on: stop
+    pops_on2: stop
     trough_on: stop
     spotlight_on: stop
 #saw letter pops disabled on mode select
   sh_select_mode_hit:
     pops_on: stop
+    pops_on2: stop
 
   logicblock_trap_select_qualify_counter_complete:
     trough_on: stop
