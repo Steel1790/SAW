@@ -822,6 +822,9 @@ show_player:
     gi_on:
       show_tokens:
         color1: ffffff
+    starpost_on:
+      show_tokens:
+        color1: 6E6E6E    
     trough_on:
       loops: -1
       show_tokens:
@@ -1093,6 +1096,12 @@ show_player:
       loops: 0
       speed: 30
       priority: 170
+    starpost_cycle:
+      loops: 1
+      speed: 20
+      show_tokens:
+        color1: beartrap
+      priority: 170  
   saw_pops_s:
     pops_on:
       loops: -1
@@ -1105,11 +1114,21 @@ show_player:
         leds: left_bottom_bumper, left_top_bumper, top_bottom_bumper, right_top_bumper 
         color1: 6E6E6E
       priority: 169
+    starpost_on:
+      show_tokens:
+        color1: 6E6E6E 
+      priority: 169
   logicblock_cnt_saw_qualify_updated{value==2}:
     collect_A:
       loops: 0
       speed: 30
       priority: 170
+    starpost_cycle:
+      loops: 1
+      speed: 20
+      show_tokens:
+        color1: beartrap
+      priority: 170        
   saw_pops_sa:
     pops_on:
       loops: -1
@@ -1122,18 +1141,27 @@ show_player:
         leds: top_bottom_bumper, right_top_bumper 
         color1: 6E6E6E 
       priority: 169
+    starpost_on:
+      show_tokens:
+        color1: 6E6E6E 
+      priority: 169      
   logicblock_cnt_saw_qualify_complete:
     collect_W:
       loops: 0
       speed: 30
       priority: 170
   saw_pops_saw:
-    pops_on:
-      loops: -1
+    jet_bumpers_pulse:
+      speed: 1.25
       show_tokens:
-        leds: right_bottom_bumper, lower_top_bumper, left_bottom_bumper, left_top_bumper, top_bottom_bumper, right_top_bumper
         color1: beartrap
-      priority: 169
+      priority: 170
+    starpost_pulse:
+      speed: 1.25
+      show_tokens:
+        color1: beartrap
+      priority: 170    
+
 
 # trap mode fail
   player_drillchair_drillchair_60s_timer_tick{value < 1}:
@@ -1249,11 +1277,14 @@ show_player:
   sh_select_mode_hit:
     pops_on: stop
     pops_on2: stop
-
+    jet_bumpers_pulse: stop
+    starpost_pulse: stop
+    speaker_heartbeat: stop
+   
   logicblock_trap_select_qualify_counter_complete:
     trough_on: stop
     spotlight_on: stop
-
+    
 
 # disc shows
   logicblock_cnt_negative_shot_counter_updated{value==1}:
