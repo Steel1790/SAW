@@ -1,12 +1,12 @@
 #config_version=6                 
 mode:
   start_events: e_puzzle_start
-  stop_events: mode_puzzle_hurryup_complete, stop_mode_puzzle_hurryup, ball_ended, ball_will_end, player_puzzle_hurryup_t_puzzle_timer_tick{value < 1}
+  stop_events: mode_puzzle_hurryup_complete, stop_mode_puzzle_hurryup, ball_ended, ball_will_end, player_puzzle_hurryup_t_puzzle_timer_tick{value < 1}, mode_qualified_sidestep
   priority: 185
 
 timers:
   t_puzzle_timer:
-    start_value: 10
+    start_value: 14
     end_value: 0
     direction: down
     control_events:
@@ -27,31 +27,31 @@ counters:
     starting_count: 0
     count_complete_value: 1
     enable_events: e_razorwire_puzzle
-    events_when_complete: mode_puzzle_hurryup_complete  
+    events_when_complete: mode_puzzle_hurryup_complete, razorwire_puzzle_complete
     count_events: sw_top_pops
   cnt_puzzle_drillchair_hurryup:
     starting_count: 0
     count_complete_value: 1
     enable_events: e_drillchair_puzzle
-    events_when_complete: mode_puzzle_hurryup_complete  
+    events_when_complete: mode_puzzle_hurryup_complete, drillchair_puzzle_complete
     count_events: sw_bottom_pops
   cnt_puzzle_quadshotgun_hurryup:
     starting_count: 0
     count_complete_value: 1
     enable_events: e_quadshotgun_puzzle
-    events_when_complete: mode_puzzle_hurryup_complete  
+    events_when_complete: mode_puzzle_hurryup_complete, quadshotgun_puzzle_complete
     count_events: sw_spinner
   cnt_puzzle_flammablejelly_hurryup:
     starting_count: 0
     count_complete_value: 1
     enable_events: e_flammablejelly_puzzle
-    events_when_complete: mode_puzzle_hurryup_complete  
+    events_when_complete: mode_puzzle_hurryup_complete, flammablejelly_puzzle_complete  
     count_events: sw_middle_standup
   cnt_puzzle_zeptest_hurryup:
     starting_count: 0
     count_complete_value: 1
     enable_events: e_zeptest_puzzle
-    events_when_complete: mode_puzzle_hurryup_complete  
+    events_when_complete: mode_puzzle_hurryup_complete, zeptest_puzzle_complete 
     count_events: sw_lower_drop_target
 
 widgets:
@@ -89,6 +89,9 @@ widget_player:
       slide: base_slide_main
       action: add
   mode_puzzle_hurryup_complete:
+    w_puzzle_UI:
+      action: remove
+  player_puzzle_hurryup_t_puzzle_timer_tick{value==1}:
     w_puzzle_UI:
       action: remove
 
@@ -136,29 +139,29 @@ show_player:
     sh_razorwire_hurryup:
       show_tokens:
         leds: razorwire_flasher
-      loops: 39
+      loops: 55
       speed: 4
   e_flammablejelly_puzzle:
     sh_flammablejelly_hurryup:
       show_tokens:
         leds: bear_flasher
-      loops: 39
+      loops: 55
       speed: 4
   e_quadshotgun_puzzle:
     sh_quadshotgun_hurryup:
       show_tokens:
         leds: shotgun_flasher
-      loops: 39
+      loops: 5
       speed: 4
   e_drillchair_puzzle:
     sh_drillchair_hurryup:
       show_tokens:
         leds: drill_flasher
-      loops: 39
+      loops: 55
       speed: 4
   e_zeptest_puzzle:
     sh_zeptest_hurryup:
       show_tokens:
         leds: zep_flasher
-      loops: 39
+      loops: 55
       speed: 4

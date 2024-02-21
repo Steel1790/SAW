@@ -364,11 +364,24 @@ shows:
     - duration: -1      
       lights:    
         (leds): (color1)
+  razorwire_mode:
+    - duration: 0.15s
+      lights:
+        (leds): razorwire
+    - duration: 0.15s
+      lights:
+        (leds): off
 #EK added 
 
 show_player:
   mode_razorwire_started:     
     gi_on:
+      show_tokens:
+        color1: razorwire
+    razorwire_mode:
+      show_tokens:
+        leds: l_razorwire_mode
+    speaker_heartbeat:
       show_tokens:
         color1: razorwire
   upper_l_pop_hit:
@@ -483,7 +496,7 @@ show_player:
   logicblock_razorwire_hit{step==1}:
       top_drop_chase:
         loops: -1
-        speed: 20
+        speed: 14
         show_tokens:
           color1: razorwire
   logicblock_razorwire_hit{step==2}:
@@ -496,6 +509,33 @@ show_player:
         loops: -1
         show_tokens:
           color1: off
+
+#speaker lights increase as timer drops
+  player_razorwire_60s_timer_tick{value==50}:
+    speaker_heartbeat:
+      speed: 2
+      show_tokens:
+        color1: razorwire
+  player_razorwire_60s_timer_tick{value==40}:
+    speaker_heartbeat:
+      speed: 3
+      show_tokens:
+        color1: razorwire
+  player_razorwire_60s_timer_tick{value==30}:
+    speaker_heartbeat:
+      speed: 4
+      show_tokens:
+        color1: razorwire
+  player_razorwire_60s_timer_tick{value==20}:
+    speaker_heartbeat:
+      speed: 5
+      show_tokens:
+        color1: razorwire
+  player_razorwire_60s_timer_tick{value==10}:
+    speaker_heartbeat:
+      speed: 6
+      show_tokens:
+        color1: razorwire
 
 sound_pools:
   razorwire_mode_sound_pool:

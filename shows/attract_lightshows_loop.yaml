@@ -504,6 +504,10 @@
         speed: 4
         show_tokens:
           color1: jelly
+#topper test in attract
+      topper_trigger_on:
+        loops: 0
+        speed: 2
 
       jet_bumpers_color_chase_2:
         loops: 1

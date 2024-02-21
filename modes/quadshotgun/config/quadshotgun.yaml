@@ -294,12 +294,22 @@ shows:
     - duration: 1s
       lights:
         (leds): off
+  quadshotgun_mode:
+    - duration: 0.15s
+      lights:
+        (leds): shotgun
+    - duration: 0.15s
+      lights:
+        (leds): off
 
 show_player:
   mode_quadshotgun_started:     
     gi_on:
       show_tokens:
         color1: shotgun
+    quadshotgun_mode:
+      show_tokens:
+        leds: l_quadshotgun_mode
   player_quadshotgun_quadshotgun_60s_timer_tick{value == 67}: 
     flash_token:
       loops: -1

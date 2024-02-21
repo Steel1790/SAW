@@ -257,7 +257,7 @@ show_player:
   mode_make_your_choice_hurryup_started:
       top_drop_chase:
         loops: -1
-        speed: 20
+        speed: 14
         show_tokens:
           color1: beartrap
   make_your_choice_value_locked:
