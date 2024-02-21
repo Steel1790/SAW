@@ -146,9 +146,263 @@
       transition:
          type: fade
          duration: 0.2s
-- duration: 55s
+- duration: 3
   slides:
     slide6:
+      widgets:
+      - type: text
+        text: HIGH SCORES
+        font_name: TrajanProRegular
+        font_size: 70
+        color: yellow
+        y: 90%
+      - type: text
+        text: (machine|score1_label)
+        number_grouping: true
+        min_digits: 2
+        font_size: 50
+        color: C2E3E0
+        y: 80%
+      - type: text
+        text: (machine|score1_name)
+        number_grouping: true
+        min_digits: 2
+        font_size: 50
+        color: yellow
+        y: 73%   
+      - type: text
+        text: (machine|score1_value)
+        number_grouping: true
+        min_digits: 2
+        font_size: 50
+        color: C2E3E0
+        y: 66%                
+
+      - type: text
+        text: (machine|score2_label)
+        number_grouping: true
+        min_digits: 2
+        font_size: 35
+        color: C2E3E0
+        x: 25%
+        y: 60%
+      - type: text
+        text: (machine|score2_name)
+        number_grouping: true
+        min_digits: 2
+        font_size: 35
+        color: yellow
+        x: 25%
+        y: 53%    
+      - type: text
+        text: (machine|score2_value)
+        number_grouping: true
+        min_digits: 2
+        font_size: 35
+        color: C2E3E0
+        x: 25%
+        y: 46%           
+
+      - type: text
+        text: (machine|score3_label)
+        number_grouping: true
+        min_digits: 2
+        font_size: 35
+        color: C2E3E0
+        x: 75%
+        y: 60%
+      - type: text
+        text: (machine|score3_name)
+        number_grouping: true
+        min_digits: 2
+        font_size: 35
+        color: yellow
+        x: 75%
+        y: 53%       
+      - type: text
+        text: (machine|score3_value)
+        number_grouping: true
+        min_digits: 2
+        font_size: 35
+        color: C2E3E0
+        x: 75%
+        y: 46%           
+
+      - type: text
+        text: (machine|score4_label)
+        number_grouping: true
+        min_digits: 2
+        font_size: 35
+        color: C2E3E0
+        x: 25%
+        y: 33% 
+      - type: text
+        text: (machine|score4_name)
+        number_grouping: true
+        min_digits: 2
+        font_size: 35
+        color: yellow
+        x: 25%
+        y: 26%    
+      - type: text
+        text: (machine|score4_value)
+        number_grouping: true
+        min_digits: 2
+        font_size: 35
+        color: C2E3E0
+        x: 25%
+        y: 19%         
+
+      - type: text
+        text: (machine|score5_label)
+        number_grouping: true
+        min_digits: 2
+        font_size: 35
+        color: C2E3E0
+        x: 75%
+        y: 33% 
+      - type: text
+        text: (machine|score5_name)
+        number_grouping: true
+        min_digits: 2
+        font_size: 35
+        color: yellow
+        x: 75%
+        y: 26%   
+      - type: text
+        text: (machine|score5_value)
+        number_grouping: true
+        min_digits: 2
+        font_size: 35
+        color: C2E3E0
+        x: 75%
+        y: 19%               
+      - type: image
+        opacity: 0.65
+        image: lastgamescores
+      transition:
+         type: fade
+         duration: 0.2s
+- duration: 3
+  slides:
+    slide5:
+      widgets:
+      - type: text
+        text: HIGH SCORES
+        font_name: TrajanProRegular
+        font_size: 70
+        color: yellow
+        y: 90%              
+
+      - type: text
+        text: (machine|puzzle_pieces1_label)
+        number_grouping: true
+        min_digits: 2
+        font_size: 35
+        color: C2E3E0
+        x: 25%
+        y: 60%
+      - type: text
+        text: (machine|puzzle_pieces1_name)
+        number_grouping: true
+        min_digits: 2
+        font_size: 35
+        color: yellow
+        x: 25%
+        y: 53%    
+      - type: text
+        text: (machine|puzzle_pieces1_value) Pieces Collected
+        number_grouping: true
+        min_digits: 2
+        font_size: 35
+        color: C2E3E0
+        x: 25%
+        y: 46%           
+
+      - type: text
+        text: (machine|modes_completed1_label)
+        number_grouping: true
+        min_digits: 2
+        font_size: 35
+        color: C2E3E0
+        x: 75%
+        y: 60%
+      - type: text
+        text: (machine|modes_completed1_name)
+        number_grouping: true
+        min_digits: 2
+        font_size: 35
+        color: yellow
+        x: 75%
+        y: 53%       
+      - type: text
+        text: (machine|modes_completed1_value) Traps Completed
+        number_grouping: true
+        min_digits: 2
+        font_size: 35
+        color: C2E3E0
+        x: 75%
+        y: 46%    
+        
+      - type: text
+        text: (machine|modes_attempted1_label)
+        number_grouping: true
+        min_digits: 2
+        font_size: 35
+        color: C2E3E0
+        x: 25%
+        y: 33% 
+      - type: text
+        text: (machine|modes_attempted1_name)
+        number_grouping: true
+        min_digits: 2
+        font_size: 35
+        color: yellow
+        x: 25%
+        y: 26%    
+      - type: text
+        text: (machine|modes_attempted1_value) Traps Attempted
+        number_grouping: true
+        min_digits: 2
+        font_size: 35
+        color: C2E3E0
+        x: 25%
+        y: 19%         
+
+      - type: text
+        text: (machine|choice_hurryup_hits1_label)
+        number_grouping: true
+        min_digits: 2
+        font_size: 35
+        color: C2E3E0
+        x: 75%
+        y: 33% 
+      - type: text
+        text: (machine|choice_hurryup_hits1_name)
+        number_grouping: true
+        min_digits: 2
+        font_size: 35
+        color: yellow
+        x: 75%
+        y: 26%   
+      - type: text
+        text: (machine|choice_hurryup_hits1_value) HurryUps Collected
+        number_grouping: true
+        min_digits: 2
+        font_size: 35
+        color: C2E3E0
+        x: 75%
+        y: 19%           
+
+      - type: image
+        opacity: 0.65
+        image: lastgamescores
+      transition:
+         type: fade
+         duration: 0.2s
+- duration: 55s
+  slides:
+    slide8:
       widgets:
       - type: video
         video: SawTrailer

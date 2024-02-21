@@ -69,6 +69,9 @@ sound_system:
           simultaneous_sounds: 10
           volume: 1.0
 sounds:
+  OrbitWoosh6:
+    file: OrbitWoosh6.wav
+    volume: 0.3
 # cher/amanda callouts volume lowered
   Antidote1:
     file: Antidote1.wav
@@ -468,9 +471,15 @@ show_player:
       speed: 2
   shot_left_outlane_hit{state=="ball_save_not_ready"}:
       billy_laugh:
-        loops: 4
+        loops: 7
         speed: 4
+      spotlight_taperecorder_on:
+        show_tokens:
+          color1: white
   shot_right_outlane_hit{state=="ball_save_not_ready"}:
       billy_laugh:
-        loops: 4
+        loops: 7
         speed: 4
+      spotlight_taperecorder_on:
+        show_tokens:
+          color1: white

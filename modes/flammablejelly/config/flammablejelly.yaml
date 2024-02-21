@@ -303,6 +303,10 @@ show_player:
           leds: l_right_standup_arrow
           color1: jelly
   logicblock_flammablejelly_hit{step==1}:
+      fire_starposts:
+        loops: 1
+        speed: 20
+        priority: 170
       flammablejelly_progress_p1:
         loops: -1
         show_tokens:
@@ -314,6 +318,10 @@ show_player:
           leds: orbit
           color1: jelly
   logicblock_flammablejelly_hit{step==2}:
+      fire_starposts:
+        loops: 1
+        speed: 20
+        priority: 170
       flammablejelly_progress_p2:
         loops: -1
         show_tokens:
@@ -328,6 +336,10 @@ show_player:
           leds: l_left_standup_arrow
           color1: jelly
   logicblock_flammablejelly_hit{step==3}:
+      fire_starposts:
+        loops: 1
+        speed: 20
+        priority: 170
       flammablejelly_progress_p1:
         loops: -1
         show_tokens:
@@ -339,6 +351,10 @@ show_player:
           leds: orbit
           color1: jelly
   logicblock_flammablejelly_hit{step==4}:
+      fire_starposts:
+        loops: 1
+        speed: 20
+        priority: 170
       top_drop_chase:
         loops: -1
         speed: 14
@@ -353,20 +369,72 @@ show_player:
         loops: -1
         speed: 30
 
-  mode_flammablejelly_started:     
+  mode_flammablejelly_started:    
+    flipper_on:
+      show_tokens:
+        color1: jelly
+    starpost_on:
+      show_tokens:
+        color1: 6E6E6E   
+      priority: 169  
     gi_on:
       show_tokens:
         color1: jelly
-    fire_starposts:
-      loops: -1
-      speed: 20
     flammablejelly_mode:
       show_tokens:
         leds: l_jelly_mode   
+    speaker_heartbeat:
+      show_tokens:
+        color1: jelly
+    trough_on:
+      show_tokens:
+        color1: jelly
+    cabinet_heartbeat:
+      show_tokens:
+        color1: jelly
+    topper_heartbeat:
+      show_tokens:
+        color1: jelly
+
+  player_flammablejelly_60s_flammablejelly_timer_tick{value==50}:
+    speaker_heartbeat:
+      speed: 2
+      show_tokens:
+        color1: jelly
+  player_flammablejelly_60s_flammablejelly_timer_tick{value==40}:
+    speaker_heartbeat:
+      speed: 3
+      show_tokens:
+        color1: jelly
+  player_flammablejelly_60s_flammablejelly_timer_tick{value==30}:
+    speaker_heartbeat:
+      speed: 4
+      show_tokens:
+        color1: jelly
+  player_flammablejelly_60s_flammablejelly_timer_tick{value==20}:
+    speaker_heartbeat:
+      speed: 5
+      show_tokens:
+        color1: jelly
+  player_flammablejelly_60s_flammablejelly_timer_tick{value==10}:
+    speaker_heartbeat:
+      speed: 6
+      show_tokens:
+        color1: jelly
+  player_flammablejelly_60s_flammablejelly_timer_tick{value==5}:
+    speaker_heartbeat:
+      speed: 9
+      show_tokens:
+        color1: jelly
+
   player_flammablejelly_60s_flammablejelly_timer_tick{value < 1}:
     fire_starposts: stop
     fire_top_pops: stop
     fire_bottom_pops: stop
+    flipper_on: stop
+    speaker_heartbeat: stop
+    cabinet_heartbeat: stop
+    topper_heartbeat: stop
 
 sound_pools:
   flammablejelly_mode_sound_pool:

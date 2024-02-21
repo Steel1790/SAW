@@ -378,10 +378,26 @@ show_player:
     gi_on:
       show_tokens:
         color1: razorwire
+    starpost_on:
+      show_tokens:
+        color1: 6E6E6E   
+      priority: 169
     razorwire_mode:
       show_tokens:
         leds: l_razorwire_mode
     speaker_heartbeat:
+      show_tokens:
+        color1: razorwire
+    flipper_on:
+      show_tokens:
+        color1: razorwire
+    trough_on:
+      show_tokens:
+        color1: razorwire
+    cabinet_heartbeat:
+      show_tokens:
+        color1: razorwire
+    topper_heartbeat:
       show_tokens:
         color1: razorwire
   upper_l_pop_hit:
@@ -451,6 +467,12 @@ show_player:
         show_tokens:
           leds: l_lower_top_bumper_1, l_left_top_bumper_1, l_right_top_bumper_1, l_lower_top_bumper_2, l_left_top_bumper_2, l_right_top_bumper_2, l_lower_top_bumper_16, l_left_top_bumper_16, l_right_top_bumper_16
           color1: razorwire
+      starpost_cycle:
+        loops: 1
+        speed: 20
+        show_tokens:
+          color1: razorwire
+        priority: 170  
   logicblock_razorwire_pops_counter_hit{count==7}:
       razorwire_pops_progress:
         loops: -1
@@ -463,6 +485,12 @@ show_player:
         show_tokens:
           leds: l_lower_top_bumper_1, l_left_top_bumper_1, l_right_top_bumper_1, l_lower_top_bumper_2, l_left_top_bumper_2, l_right_top_bumper_2, l_lower_top_bumper_16, l_left_top_bumper_16, l_right_top_bumper_16, l_lower_top_bumper_3, l_left_top_bumper_3, l_right_top_bumper_3, l_lower_top_bumper_15, l_left_top_bumper_15, l_right_top_bumper_15, l_lower_top_bumper_4, l_left_top_bumper_4, l_right_top_bumper_4, l_lower_top_bumper_14, l_left_top_bumper_14, l_right_top_bumper_14
           color1: razorwire
+      starpost_cycle:
+        loops: 1
+        speed: 20
+        show_tokens:
+          color1: razorwire
+        priority: 170  
   logicblock_razorwire_pops_counter_hit{count==13}:
       razorwire_pops_progress:
         loops: -1
@@ -475,6 +503,12 @@ show_player:
         show_tokens:
           leds: l_lower_top_bumper_1, l_left_top_bumper_1, l_right_top_bumper_1, l_lower_top_bumper_2, l_left_top_bumper_2, l_right_top_bumper_2, l_lower_top_bumper_16, l_left_top_bumper_16, l_right_top_bumper_16, l_lower_top_bumper_3, l_left_top_bumper_3, l_right_top_bumper_3, l_lower_top_bumper_15, l_left_top_bumper_15, l_right_top_bumper_15, l_lower_top_bumper_4, l_left_top_bumper_4, l_right_top_bumper_4, l_lower_top_bumper_14, l_left_top_bumper_14, l_right_top_bumper_14, l_lower_top_bumper_5, l_left_top_bumper_5, l_right_top_bumper_5, l_lower_top_bumper_13, l_left_top_bumper_13, l_right_top_bumper_13
           color1: razorwire
+      starpost_cycle:
+        loops: 1
+        speed: 20
+        show_tokens:
+          color1: razorwire
+        priority: 170  
   logicblock_razorwire_pops_counter_hit{count==19}:
       razorwire_pops_progress:
         loops: -1
@@ -487,6 +521,12 @@ show_player:
         show_tokens:
           leds: l_lower_top_bumper_1, l_left_top_bumper_1, l_right_top_bumper_1, l_lower_top_bumper_2, l_left_top_bumper_2, l_right_top_bumper_2, l_lower_top_bumper_16, l_left_top_bumper_16, l_right_top_bumper_16, l_lower_top_bumper_3, l_left_top_bumper_3, l_right_top_bumper_3, l_lower_top_bumper_15, l_left_top_bumper_15, l_right_top_bumper_15, l_lower_top_bumper_4, l_left_top_bumper_4, l_right_top_bumper_4, l_lower_top_bumper_14, l_left_top_bumper_14, l_right_top_bumper_14, l_lower_top_bumper_5, l_left_top_bumper_5, l_right_top_bumper_5, l_lower_top_bumper_13, l_left_top_bumper_13, l_right_top_bumper_13, l_lower_top_bumper_7, l_left_top_bumper_7, l_right_top_bumper_7, l_lower_top_bumper_11, l_left_top_bumper_11, l_right_top_bumper_11, l_lower_top_bumper_8, l_left_top_bumper_8, l_right_top_bumper_8, l_lower_top_bumper_10, l_left_top_bumper_10, l_right_top_bumper_10
           color1: razorwire
+      starpost_cycle:
+        loops: 1
+        speed: 20
+        show_tokens:
+          color1: razorwire
+        priority: 170  
   logicblock_razorwire_pops_counter_hit{count==25}:
       razorwire_pops_progress:
         loops: -1
@@ -534,6 +574,11 @@ show_player:
   player_razorwire_60s_timer_tick{value==10}:
     speaker_heartbeat:
       speed: 6
+      show_tokens:
+        color1: razorwire
+  player_razorwire_60s_timer_tick{value==5}:
+    speaker_heartbeat:
+      speed: 9
       show_tokens:
         color1: razorwire
 

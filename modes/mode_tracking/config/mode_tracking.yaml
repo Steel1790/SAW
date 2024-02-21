@@ -92,6 +92,12 @@ variable_player:
     modes_attempted:
       int: 1
       action: add
+
+  logicblock_acc_make_your_choice_qualify_hit:
+    choice_hurryup_hits:
+      int: 1
+      action: add
+
 # set qualification requirement to mode quadshotgun
 # 1 = default . 2 = mode_drillchair_complete
   #slide_base_slide_main_created:

@@ -877,10 +877,10 @@ lights:
     tags: cabinet
   l_left_flipper:
     number: ledneuron-1-1
-    tags: cabinet
+    tags: cabinet, flipper
   l_right_flipper:
     number: ledneuron-1-3
-    tags: cabinet
+    tags: cabinet, flipper
   l_action_button:
     number: ledneuron-1-2
     tags: cabinet

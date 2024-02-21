@@ -15,8 +15,14 @@ high_score:
       - HIGH SCORE 2
       - HIGH SCORE 3
       - HIGH SCORE 4
-    loops:
-      - LOOP CHAMPION
+    puzzle_pieces:
+      - PUZZLE PIECE CHAMPION
+    modes_completed:
+      - ESCAPE GAME CHAMPION
+    modes_attempted:
+      - ESCAPE ATTEMPT CHAMPION
+    choice_hurryup_hits:
+      - DECISION MAKER CHAMPION
   defaults:
     score:
       - JWF: 1000000
@@ -25,11 +31,23 @@ high_score:
       - SAW: 700000
       - TST: 6000
 
-    loops:
-      - TST: 4
+    puzzle_pieces:
+      - TST: 0
+    modes_completed:
+      - TST: 0
+    modes_attempted:
+      - TST: 0
+    choice_hurryup_hits:
+      - TST: 0
   vars:
-    loops:
-      - player: character
+    puzzle_pieces:
+      - player: puzzle_pieces
+    modes_completed:
+      - player: modes_completed
+    modes_attempted:
+      - player: modes_attempted
+    choice_hurryup_hits:
+      - player: choice_hurryup_hits
  #   tilt_bonus:
  #     - TST: 250000
 # optional: change the slides (you can omit all the following)

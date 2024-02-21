@@ -298,6 +298,12 @@ show_player:
           color1: zepstest
           leds: l_skill_shot3
         priority: 182
+      starpost_cycle:
+        loops: 1
+        speed: 20
+        show_tokens:
+          color1: zepstest
+        priority: 170
   logicblock_zeptest_hit{step==2}:
       skillshot_chase:
         loops: -1
@@ -311,6 +317,12 @@ show_player:
           color1: zepstest
           leds: l_skill_shot2,l_skill_shot3
         priority: 182
+      starpost_cycle:
+        loops: 1
+        speed: 20
+        show_tokens:
+          color1: zepstest
+        priority: 170
   logicblock_zeptest_hit{step==3}:
       top_drop_chase:
         loops: -1
@@ -326,6 +338,12 @@ show_player:
         loops: -1
         show_tokens:
           color1: off
+      starpost_cycle:
+        loops: 1
+        speed: 20
+        show_tokens:
+          color1: zepstest
+        priority: 170
   logicblock_zeptest_hit{step==4}:
       left_ramp_chase:
         loops: -1
@@ -336,6 +354,12 @@ show_player:
         loops: -1
         show_tokens:
           color1: off
+      starpost_cycle:
+        loops: 1
+        speed: 20
+        show_tokens:
+          color1: zepstest
+        priority: 170
   logicblock_zeptest_hit{step==5}:
       right_ramp_chase:
         loops: -1
@@ -346,6 +370,12 @@ show_player:
         loops: -1
         show_tokens:
           color1: off
+      starpost_cycle:
+        loops: 1
+        speed: 20
+        show_tokens:
+          color1: zepstest
+        priority: 170
   logicblock_zeptest_hit{step==6}:
       top_drop_chase:
         loops: -1
@@ -356,6 +386,12 @@ show_player:
         loops: -1
         show_tokens:
           color1: off
+      starpost_cycle:
+        loops: 1
+        speed: 20
+        show_tokens:
+          color1: zepstest
+        priority: 170
 
   mode_zeptest_started:     
     gi_on:
@@ -364,6 +400,53 @@ show_player:
     zeptest_mode:
       show_tokens:
         leds: l_zeptest_mode
+    starpost_on:
+      show_tokens:
+        color1: 6E6E6E   
+      priority: 169
+    speaker_heartbeat:
+      show_tokens:
+        color1: zepstest
+    flipper_on:
+      show_tokens:
+        color1: zepstest
+    cabinet_heartbeat:
+      show_tokens:
+        color1: zepstest
+    topper_heartbeat:
+      show_tokens:
+        color1: zepstest
+
+  player_zeptest_60s_zeptest_timer_tick{value==50}:
+    speaker_heartbeat:
+      speed: 2
+      show_tokens:
+        color1: zepstest
+  player_zeptest_60s_zeptest_timer_tick{value==40}:
+    speaker_heartbeat:
+      speed: 3
+      show_tokens:
+        color1: zepstest
+  player_zeptest_60s_zeptest_timer_tick{value==30}:
+    speaker_heartbeat:
+      speed: 4
+      show_tokens:
+        color1: zepstest
+  player_zeptest_60s_zeptest_timer_tick{value==20}:
+    speaker_heartbeat:
+      speed: 5
+      show_tokens:
+        color1: zepstest
+  player_zeptest_60s_zeptest_timer_tick{value==10}:
+    speaker_heartbeat:
+      speed: 6
+      show_tokens:
+        color1: zepstest
+  player_zeptest_60s_zeptest_timer_tick{value==5}:
+    speaker_heartbeat:
+      speed: 9
+      show_tokens:
+        color1: zepstest
 
 sound_player:
   mode_zeptest_started:

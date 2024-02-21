@@ -763,10 +763,6 @@ shows:
     - duration: -1
       lights:
         (leds): off   
-  flipper_buttons:
-    - duration: -1
-      lights:
-        (leds): 8A0303
   sh_outlane_on:
     - duration: -1
       lights:
@@ -815,6 +811,7 @@ show_player:
     #backbox_on:
     #  loops: -1
     #  speed: 1 
+    spotlight_taperecorder_on: stop
     base_action_button:
       loops: -1
       show_tokens:
@@ -837,9 +834,10 @@ show_player:
       show_tokens:
         leds: jet_bumper
         color1: 6E6E6E
-    flipper_buttons:
+    flipper_on:
       loops: -1      
       show_tokens:
+        color1: 8A0303
         leds: l_left_flipper, l_right_flipper
     topper_heartbeat:
       loops: -1
@@ -851,10 +849,6 @@ show_player:
     speaker_heartbeat:
       show_tokens:
         color1: beartrap
-    #speaker_lights_on:
-    #  loops: -1
-    #  show_tokens:
-    #    color1: beartrap
 
 
   playfield_active:
@@ -1262,6 +1256,7 @@ show_player:
     rw_complete:
       loops: 2
       speed: 25    
+
 # end of ball 3
   #ball_will_end{current_player.ball==3}:
   #  game_over:
@@ -1279,12 +1274,11 @@ show_player:
     pops_on2: stop
     jet_bumpers_pulse: stop
     starpost_pulse: stop
-    speaker_heartbeat: stop
    
   logicblock_trap_select_qualify_counter_complete:
     trough_on: stop
     spotlight_on: stop
-    
+    speaker_heartbeat: stop
 
 # disc shows
   logicblock_cnt_negative_shot_counter_updated{value==1}:

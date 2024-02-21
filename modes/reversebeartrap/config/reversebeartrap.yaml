@@ -363,6 +363,22 @@ show_player:
     reversebeartrap_mode:
       show_tokens:
         leds: l_beartrap_mode
+    starpost_on:
+      show_tokens:
+        color1: 6E6E6E   
+      priority: 169
+    speaker_heartbeat:
+      show_tokens:
+        color1: beartrap
+    flipper_on:
+      show_tokens:
+        color1: beartrap
+    cabinet_heartbeat:
+      show_tokens:
+        color1: beartrap
+    topper_heartbeat:
+      show_tokens:
+        color1: beartrap
 #mode progress lights
   logicblock_reversebeartrap_updated{value==0}:
       left_orbit_left_ramp_chase:
@@ -380,6 +396,12 @@ show_player:
         speed: 5
         show_tokens:
           color1: beartrap
+      starpost_cycle:
+        loops: 1
+        speed: 20
+        show_tokens:
+          color1: beartrap
+        priority: 170
   logicblock_reversebeartrap_hit{step==2}:
       right_orbit_right_ramp_chase:
         loops: -1
@@ -391,6 +413,12 @@ show_player:
         show_tokens:
           leds: standup
           color1: beartrap
+      starpost_cycle:
+        loops: 1
+        speed: 20
+        show_tokens:
+          color1: beartrap
+        priority: 170
   logicblock_reversebeartrap_hit{step==6}:
       reversebeartrap_progress:
         loops: -1
@@ -401,10 +429,78 @@ show_player:
         speed: 14
         show_tokens:
           color1: beartrap
+      starpost_cycle:
+        loops: 1
+        speed: 20
+        show_tokens:
+          color1: beartrap
+        priority: 170
   player_reversebeartrap_120s_reversebeartrap_timer_tick{value < 1}:
       mode_fail:
         loops: 0
         speed: 30
+
+
+  player_reversebeartrap_120s_reversebeartrap_timer_tick{value==110}:
+    speaker_heartbeat:
+      speed: 1.5
+      show_tokens:
+        color1: beartrap
+  player_reversebeartrap_120s_reversebeartrap_timer_tick{value==100}:
+    speaker_heartbeat:
+      speed: 2
+      show_tokens:
+        color1: beartrap
+  player_reversebeartrap_120s_reversebeartrap_timer_tick{value==90}:
+    speaker_heartbeat:
+      speed: 2.5
+      show_tokens:
+        color1: beartrap
+  player_reversebeartrap_120s_reversebeartrap_timer_tick{value==80}:
+    speaker_heartbeat:
+      speed: 3
+      show_tokens:
+        color1: beartrap
+  player_reversebeartrap_120s_reversebeartrap_timer_tick{value==70}:
+    speaker_heartbeat:
+      speed: 3.5
+      show_tokens:
+        color1: beartrap
+  player_reversebeartrap_120s_reversebeartrap_timer_tick{value==60}:
+    speaker_heartbeat:
+      speed: 4
+      show_tokens:
+        color1: beartrap
+  player_reversebeartrap_120s_reversebeartrap_timer_tick{value==50}:
+    speaker_heartbeat:
+      speed: 4.5
+      show_tokens:
+        color1: beartrap
+  player_reversebeartrap_120s_reversebeartrap_timer_tick{value==40}:
+    speaker_heartbeat:
+      speed: 5
+      show_tokens:
+        color1: beartrap
+  player_reversebeartrap_120s_reversebeartrap_timer_tick{value==30}:
+    speaker_heartbeat:
+      speed: 5.5
+      show_tokens:
+        color1: beartrap
+  player_reversebeartrap_120s_reversebeartrap_timer_tick{value==20}:
+    speaker_heartbeat:
+      speed: 6
+      show_tokens:
+        color1: beartrap
+  player_reversebeartrap_120s_reversebeartrap_timer_tick{value==10}:
+    speaker_heartbeat:
+      speed: 6.5
+      show_tokens:
+        color1: beartrap
+  player_reversebeartrap_120s_reversebeartrap_timer_tick{value==5}:
+    speaker_heartbeat:
+      speed: 9
+      show_tokens:
+        color1: beartrap
 
 event_player: 
   slide_reversebeartrapUI_active: e_primary_mode_active

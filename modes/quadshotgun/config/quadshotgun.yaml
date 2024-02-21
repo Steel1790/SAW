@@ -310,6 +310,26 @@ show_player:
     quadshotgun_mode:
       show_tokens:
         leds: l_quadshotgun_mode
+    starpost_on:
+      show_tokens:
+        color1: 6E6E6E   
+      priority: 169
+    speaker_heartbeat:
+      show_tokens:
+        color1: shotgun
+    flipper_on:
+      show_tokens:
+        color1: shotgun
+    trough_on:
+      show_tokens:
+        color1: shotgun
+    cabinet_heartbeat:
+      show_tokens:
+        color1: shotgun
+    topper_heartbeat:
+      show_tokens:
+        color1: shotgun
+
   player_quadshotgun_quadshotgun_60s_timer_tick{value == 67}: 
     flash_token:
       loops: -1
@@ -318,22 +338,46 @@ show_player:
         led: l_right_loop_arrow
         color1: shotgun
 
-  player_quadshotgun_quadshotgun_60s_timer_tick{value == 30}: 
+  player_quadshotgun_quadshotgun_60s_timer_tick{value==50}: 
+    speaker_heartbeat:
+      speed: 2
+      show_tokens:
+        color1: shotgun
+  player_quadshotgun_quadshotgun_60s_timer_tick{value==40}: 
+    speaker_heartbeat:
+      speed: 3
+      show_tokens:
+        color1: shotgun
+  player_quadshotgun_quadshotgun_60s_timer_tick{value==30}: 
     flash_token:
       loops: -1
       speed: 16
       show_tokens:
         led: l_right_loop_arrow
         color1: shotgun     
+    speaker_heartbeat:
+      speed: 4
+      show_tokens:
+        color1: shotgun
+  player_quadshotgun_quadshotgun_60s_timer_tick{value==20}: 
+    speaker_heartbeat:
+      speed: 5
+      show_tokens:
+        color1: shotgun
+  player_quadshotgun_quadshotgun_60s_timer_tick{value==10}: 
+    speaker_heartbeat:
+      speed: 6
+      show_tokens:
+        color1: shotgun
+  player_quadshotgun_quadshotgun_60s_timer_tick{value==5}: 
+    speaker_heartbeat:
+      speed: 9
+      show_tokens:
+        color1: shotgun
 
   player_quadshotgun_quadshotgun_60s_timer_tick{value == 1}: 
     shotgun_blast:
       speed: 20
-
-  counter_quadshotgun_spinner_counter_hit:
-    shotgun_blast_top_pops:
-      loops: 0
-      speed: 30
 
   spinner_hit:
     flash_token:
@@ -354,6 +398,47 @@ show_player:
         show_tokens:
           leds: l_left_loop_arrow
           color1: shotgun
+
+  logicblock_quadshotgun_spinner_counter_hit{count==1}:
+      starpost_cycle:
+        loops: 1
+        speed: 20
+        show_tokens:
+          color1: shotgun
+        priority: 170  
+      shotgun_blast_top_pops:
+        loops: 0
+        speed: 30
+  logicblock_quadshotgun_spinner_counter_hit{count==9}:
+      starpost_cycle:
+        loops: 1
+        speed: 20
+        show_tokens:
+          color1: shotgun
+        priority: 170  
+      shotgun_blast_top_pops:
+        loops: 0
+        speed: 30
+  logicblock_quadshotgun_spinner_counter_hit{count==18}:
+      starpost_cycle:
+        loops: 1
+        speed: 20
+        show_tokens:
+          color1: shotgun
+        priority: 170  
+      shotgun_blast_top_pops:
+        loops: 0
+        speed: 30
+  logicblock_quadshotgun_spinner_counter_hit{count==26}:
+      starpost_cycle:
+        loops: 1
+        speed: 20
+        show_tokens:
+          color1: shotgun
+        priority: 170  
+      shotgun_blast_top_pops:
+        loops: 0
+        speed: 30
 
 sound_pools:
   quadshotgun_mode_sound_pool:
