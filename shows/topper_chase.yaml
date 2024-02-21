@@ -55,22 +55,140 @@
     l_topper_3: off
 - time: '+1'
   lights:
+    l_topper_7: (color1)
     l_topper_4: off
 - time: '+1'
   lights:
+    l_topper_8: (color1)    
     l_topper_5: off
 - time: '+1'
   lights:
+    l_topper_9: (color1)    
     l_topper_6: off
 - time: '+1'
   lights:
+    l_topper_10: (color1)    
+    l_topper_7: off
+- time: '+1'
+  lights:
+    l_topper_11: (color1)    
+    l_topper_8: off
+- time: '+1'
+  lights:
+    l_topper_12: (color1)    
+    l_topper_9: off
+- time: '+1'
+  lights:
+    l_topper_13: (color1)    
+    l_topper_10: off
+- time: '+1'
+  lights:
+    l_topper_14: (color1)    
+    l_topper_11: off    
+- time: '+1'
+  lights:
+    l_topper_15: (color1)    
+    l_topper_12: off
+- time: '+1'
+  lights:
+    l_topper_16: (color1)    
+    l_topper_13: off
+- time: '+1'
+  lights:
+    l_topper_17: (color1)    
+    l_topper_14: off
+- time: '+1'
+  lights:
+    l_topper_18: (color1)    
+    l_topper_15: off
+- time: '+1'
+  lights:
+    l_topper_19: (color1)    
+    l_topper_16: off
+- time: '+1'
+  lights:
+    l_topper_20: (color1)    
+    l_topper_17: off
+- time: '+1'
+  lights:
+     l_topper_18: off
+- time: '+1'
+  lights:
+    l_topper_19: off
+- time: '+1'
+  lights:
+    l_topper_20: off
+
+
+
+
+
+
+- time: '+1'
+  lights:
+    l_topper_20: (color1)
+- time: '+1'
+  lights:
+    l_topper_19: (color1)
+- time: '+1'
+  lights:
+    l_topper_18: (color1)
+- time: '+1'
+  lights:
+    l_topper_17: (color1)
+    l_topper_20: off
+- time: '+1'
+  lights:
+    l_topper_16: (color1)
+    l_topper_19: off
+- time: '+1'
+  lights:
+    l_topper_15: (color1)
+    l_topper_18: off
+- time: '+1'
+  lights:
+    l_topper_14: (color1)
+    l_topper_17: off
+- time: '+1'
+  lights:
+    l_topper_13: (color1)
+    l_topper_16: off
+- time: '+1'
+  lights:
+    l_topper_12: (color1)
+    l_topper_15: off    
+- time: '+1'
+  lights:
+    l_topper_11: (color1)
+    l_topper_14: off
+- time: '+1'
+  lights:
+    l_topper_10: (color1)
+    l_topper_13: off
+- time: '+1'
+  lights:
+    l_topper_9: (color1)
+    l_topper_12: off
+- time: '+1'
+  lights:
+    l_topper_8: (color1)
+    l_topper_11: off
+- time: '+1'
+  lights:
+    l_topper_7: (color1)
+    l_topper_10: off
+- time: '+1'
+  lights:
     l_topper_6: (color1)
+    l_topper_9: off
 - time: '+1'
   lights:
     l_topper_5: (color1)
+    l_topper_8: off
 - time: '+1'
   lights:
     l_topper_4: (color1)
+    l_topper_7: off
 - time: '+1'
   lights:
     l_topper_3: (color1)
@@ -85,7 +203,7 @@
     l_topper_4: off
 - time: '+1'
   lights:
-     l_topper_3: off
+    l_topper_3: off
 - time: '+1'
   lights:
     l_topper_2: off

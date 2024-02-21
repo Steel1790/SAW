@@ -83,6 +83,8 @@
       hacksaw_mb_lock: stop
       shackle_mb_lock: stop
       topper_chase: stop  
+      topper_heartbeat: stop
+      cabinet_heartbeat: stop
       test_jetbumper_ordercheck: stop
       fire_bottom_pops: stop
       fire_top_pops: stop
@@ -122,12 +124,34 @@
       #     color1: beartrap        
 
 # #CHASE LIGHTS - COLOR 1 BEARTRAP
-- duration: 5s
-  shows:      
+- duration: 10s
+  shows:     
+      speaker_heartbeat: stop 
+
       starpost_cycle:
         show_tokens:
           color1: beartrap 
         speed: 20   
+
+      speaker_left_cylon:
+       speed: 20    
+       show_tokens:
+         color1: beartrap    
+
+      speaker_right_cylon:
+       speed: 20
+       show_tokens:
+         color1: beartrap  
+
+      cabinet_left_cylon:
+       speed: 20
+       show_tokens:
+         color1: beartrap  
+
+      cabinet_right_cylon:
+       speed: 20
+       show_tokens:
+         color1: beartrap  
 
       skillshot_chase:
         # loops: 15
@@ -235,17 +259,27 @@
 
       topper_chase:
         # loops: 10
-        speed: 6
+        speed: 16
         show_tokens:
           color1: beartrap  
 
 #CHASE LIGHTS - COLOR 2 DRILLCHAIR
-- duration: 5s
+- duration: 10s
   shows:      
       starpost_cycle:
         show_tokens:
           color1: drillchair 
         speed: 20   
+
+      speaker_left_cylon:
+       speed: 20      
+       show_tokens:
+         color1: drillchair   
+
+      speaker_right_cylon:
+       speed: 20
+       show_tokens:
+         color1: drillchair
 
       skillshot_chase:
         # loops: 15
@@ -353,17 +387,27 @@
 
       topper_chase:
         # loops: 10
-        speed: 6
+        speed: 16
         show_tokens:
           color1: drillchair 
 
 #CHASE LIGHTS - COLOR 3 JELLY
-- duration: 5s
+- duration: 10s
   shows:      
       starpost_cycle:
         show_tokens:
           color1: jelly
         speed: 20   
+
+      speaker_left_cylon:
+       speed: 20      
+       show_tokens:
+         color1: jelly    
+
+      speaker_right_cylon:
+       speed: 20
+       show_tokens:
+         color1: jelly
 
       skillshot_chase:
         # loops: 15
@@ -471,17 +515,27 @@
 
       topper_chase:
         # loops: 10
-        speed: 6
+        speed: 16
         show_tokens:
           color1: jelly
 
-#CHASE LIGHTS - COLOR 3 ZEPTEST
-- duration: 3s
+#CHASE LIGHTS - COLOR 4 ZEPTEST
+- duration: 10s
   shows: 
       starpost_cycle:
         show_tokens:
           color1: zepstest
         speed: 20   
+
+      speaker_left_cylon:
+       speed: 20       
+       show_tokens:
+         color1: zepstest   
+
+      speaker_right_cylon:
+       speed: 20
+       show_tokens:
+         color1: zepstest  
 
       skillshot_chase:
         # loops: 15
@@ -589,7 +643,7 @@
 
       topper_chase:
         # loops: 10
-        speed: 6
+        speed: 16
         show_tokens:
           color1: zepstest         
 
@@ -615,12 +669,18 @@
       flasher_shotgun_chase: stop
       flasher_zep_chase: stop 
       topper_chase: stop   
+      speaker_left_cylon: stop
+      speaker_right_cylon: stop
       colorfade_playfield:
         speed: 8
         show_tokens:
           color1: zepstest
           color2: beartrap
           color3: drillchair
+      topper_heartbeat:
+        speed: 8
+        show_tokens:
+          color1: zepstest        
 
 - duration: 15s
   shows: 
@@ -649,34 +709,41 @@
         show_tokens:
           color1: zepstest
           color2: razorwire
-          color3: jelly          
+          color3: jelly   
+      topper_heartbeat:
+        speed: 3
+        show_tokens:
+          color1: drillchair         
 
-- duration: 15s
+- duration: 4s
   shows: 
       colorfade_gi: stop
       colorfade_discs: stop
       colorfade_pops: stop
       colorfade_inserts: stop
       gi_on: stop
-      attract_color_stacks:
-        speed: 30
-
-- duration: 4s
-  shows: 
-      attract_color_stacks: stop
+      # attract_color_stacks:
+      #   speed: 30
+      # attract_color_stacks: stop
       colorwash_up_down:
         speed: 30
         show_tokens:
           color1: zepstest
 
-      topper_pulse:
+      topper_heartbeat:
+        speed: 3
         show_tokens:
-          color1: beartrap 
+          color1: zepstest
 
 - duration: 4s
   shows: 
       colorwash_up_down:
         speed: 30
+        show_tokens:
+          color1: drillchair
+
+      topper_heartbeat:
+        speed: 3
         show_tokens:
           color1: drillchair
 
@@ -694,6 +761,11 @@
         show_tokens:
           color1: beartrap
 
+      topper_heartbeat:
+        speed: 3
+        show_tokens:
+          color1: beartrap
+
 - duration: 4s
   shows: 
       colorwash_up_down:
@@ -701,10 +773,14 @@
         show_tokens:
           color1: shotgun
 
+      topper_heartbeat:
+        speed: 3
+        show_tokens:
+          color1: shotgun
+
 # START TEST SECTION - SHOWS BELOW THIS LINE ARE TEST ONLY. NOT IN THE FINAL SHOW.
-- duration: 33s
-  shows: 
-      colorwash_up_down: stop 
+# - duration: 33s
+#   shows: 
 #       test_jetbumper_ordercheck:
 #         speed: 1
 #         show_tokens:
@@ -747,6 +823,8 @@
 
 - duration: 10s
   shows: 
+      colorwash_up_down: stop 
+      topper_pulse: stop    
       test_jetbumper_ordercheck: stop
       test_starpost_ordercheck: stop
       fire_top_pops:
