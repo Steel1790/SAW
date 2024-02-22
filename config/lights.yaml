@@ -863,7 +863,11 @@ lights:
   act_topper:
     number: c_topper
     platform: drivers
-    tags: topper
+
+# start light
+  l_start_button:
+    number: c_start_light
+    platform: drivers
 
 # dome lights
   l_domes:

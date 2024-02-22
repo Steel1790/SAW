@@ -1,7 +1,18 @@
 #show_version=6
 
 # EK Notes: If loops are not defined, it will repeat for the duration time. If loops = 0, then it will play once. 1 loop = 2 plays.
-
+#- duration: 60s
+  #shows:
+      #topper_on: stop
+      #backbox_on: stop
+#- duration: 2s
+  #shows:
+      #topper_on:
+        #loops: -1
+        #speed: 1
+#- duration: 5s
+  #shows:
+      #topper_on: stop
 - duration: .5s
   shows: 
       backbox_on:
@@ -13,6 +24,12 @@
       cabinet_on:
        loops: -1
        speed: 1
+      flash_token:
+       loops: -1
+       speed: 1
+       show_tokens:
+        led: l_start_button
+        color1: on
       # speaker_left_cylon:
       #  speed: 20       
       #  show_tokens:
@@ -102,9 +119,11 @@
        # loops: -1
         show_tokens:
           color1: ffffff   
+- duration: 1s
+  shows:
 #topper test in attract
-      # topper_trigger_on:
-      #   speed: 2               
+      topper_trigger_on:
+        speed: 6            
 
 # STARPOST SHOWS FOR REFERENCE
 #   shows: 
@@ -130,7 +149,7 @@
 - duration: 10s
   shows:     
       speaker_heartbeat: stop 
-
+      topper_trigger_on: stop
       starpost_cycle:
         show_tokens:
           color1: beartrap 

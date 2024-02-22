@@ -47,9 +47,11 @@ switches:
   s_left_flipper_eos:
     number: 3208-30
     tags: left_flipper
+    type: 'NC'
   s_right_flipper_eos:
     number: 3208-31
     tags: right_flipper
+    type: 'NC'
   s_left_flipper_button:
     number: 0804-0
     tags: left_flipper
@@ -59,6 +61,7 @@ switches:
   s_upper_right_flipper_eos:
     number: 1616_2-8
     tags: upper_right_flipper
+    type: 'NC'
   s_upper_right_flipper_button:
     number: 0804-2
     tags: upper_right_flipper
@@ -228,31 +231,34 @@ virtual_platform_start_active_switches:
 coils:
   c_flipper_left_main:
     number: 3208-6
-    default_pulse_ms: 25
+    default_pulse_ms: 40
+    default_hold_power: 0.3
     tags: coils
   c_flipper_left_hold:
     number: 3208-5
-    # default_pulse_ms: 80
+    default_pulse_ms: 5
     default_hold_power: 0.8
     allow_enable: true
     tags: coils
   c_flipper_right_main:
     number: 3208-3
-    default_pulse_ms: 25
+    default_pulse_ms: 40
+    default_hold_power: 0.3
     tags: coils
   c_flipper_right_hold:
     number: 3208-4
-    # default_pulse_ms: 80
+    default_pulse_ms: 5
     default_hold_power: 0.8
     allow_enable: true
     tags: coils
   c_flipper_upper_right_main:
     number: 1616_2-9
-    default_pulse_ms: 25
+    default_pulse_ms: 30
+    default_hold_power: 0.3
     tags: coils
   c_flipper_upper_right_hold:
     number: 1616_2-8
-    # default_pulse_ms: 80
+    default_pulse_ms: 5
     default_hold_power: 0.8
     allow_enable: true    
     tags: coils
@@ -369,6 +375,11 @@ coils:
   c_topper:
     number: 0804-3
     default_hold_power: 0.9
+    max_hold_power: 1.0
+    allow_enable: true
+  c_start_light:
+    number: 0804-0
+    default_hold_power: 0.9
     allow_enable: true
 
 drop_targets:
@@ -459,6 +470,10 @@ flippers:
     main_coil: c_flipper_left_main
     hold_coil: c_flipper_left_hold
     activation_switch: s_left_flipper_button
+    #eos_switch: s_left_flipper_eos
+    #use_eos: true
+    #repulse_on_eos_open: true
+    #eos_active_ms_before_repulse: 500
   right_flipper:
     main_coil: c_flipper_right_main
     hold_coil: c_flipper_right_hold
