@@ -366,11 +366,13 @@ coils:
     number: 1616_1-10
     #default_hold_power: 0.9
     default_hold_power: 0.95
+    max_hold_power: 1.0
     allow_enable: true
   c_mystery_scoop:
     number: 1616_1-11
     #default_hold_power: 0.9
     default_hold_power: 0.95
+    max_hold_power: 1.0
     allow_enable: true
   c_topper:
     number: 0804-3
