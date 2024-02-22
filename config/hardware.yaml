@@ -528,7 +528,7 @@ diverters:
     activation_time: 3s
     activation_switches: s_right_ramp_score_bottom
     enable_events: logicblock_acc_hacksaw_mb_qualify_complete
-    disable_events: ball_ended
+    disable_events: ball_ended, multiball_lock_mbl_hacksaw_locked_ball
     targets_when_active: bd_hacksaw
     targets_when_inactive: playfield
 
