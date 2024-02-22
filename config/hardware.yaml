@@ -41,9 +41,9 @@ machine:
   min_balls: 5 #How few balls can be accounted for before you can start a game
 
 switches:
-  # s_plumb_bob_tilt:
-  #   number: 0808-1
-  #   tags: tilt_bob
+  s_plumb_bob_tilt:
+    number: 0804-5
+    tags: tilt_bob
   s_left_flipper_eos:
     number: 3208-30
     tags: left_flipper
@@ -366,11 +366,13 @@ coils:
     number: 1616_1-10
     #default_hold_power: 0.9
     default_hold_power: 0.95
+    max_hold_power: 1.0
     allow_enable: true
   c_mystery_scoop:
     number: 1616_1-11
     #default_hold_power: 0.9
     default_hold_power: 0.95
+    max_hold_power: 1.0
     allow_enable: true
   c_topper:
     number: 0804-3
