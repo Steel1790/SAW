@@ -3454,3 +3454,13 @@ lights:
       white:
         number: led256bb-5-32-2
     tags: cabinet_left, groundeffects, led256bb-5
+
+show_player:
+    init_phase_1:
+      backbox_on:
+        loops: -1
+        speed: 1
+    init_phase_4:
+      backbox_on:
+        loops: -1
+        speed: 1
