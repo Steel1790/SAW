@@ -22,25 +22,58 @@ multiballs:
     start_events: start_shackle_multiball
     ball_locks: bd_top_saucer
     # replace_balls_in_play: true
+timers:
+  t_shackle_value_timer:
+    start_value: 300
+    end_value: 0
+    direction: down
+    tick_interval: 0.1s
+    control_events:
+      - action: start
+        event: multiball_mb_shackle_started
+      - action: stop
+        event: drop_target_dt_upper_drop1_down
 
 variable_player:
   #multiball_mb_shackle_started:
     #score: 3000000
   shot_shackle_left_loop_sp_shackle_mb_lit_hit:
-    score: 1000000
+    score: 1000000 + (device.timers.t_shackle_value_timer.ticks * 5331)
   shot_shackle_left_standup_sp_shackle_mb_lit_hit:
-    score: 1000000
+    score: 1000000 + (device.timers.t_shackle_value_timer.ticks * 5331)
   shot_shackle_left_standup_rightramp_sp_shackle_mb_lit_hit:
-    score: 1000000
+    score: 1000000 + (device.timers.t_shackle_value_timer.ticks * 5331)
   shot_shackle_right_standup_rightramp_sp_shackle_mb_lit_hit:
-    score: 1000000
+    score: 1000000 + (device.timers.t_shackle_value_timer.ticks * 5331)
   shot_shackle_right_loop_sp_shackle_mb_lit_hit:
-    score: 1000000
+    score: 1000000 + (device.timers.t_shackle_value_timer.ticks * 5331)
   shot_shackle_right_standup_sp_shackle_mb_lit_hit:
-    score: 1000000
+    score: 1000000 + (device.timers.t_shackle_value_timer.ticks * 5331)
 
   shot_shackle_superjackpot1_sp_shackle_mb_lit_hit:
-    score: 5000000
+    score: 1000000 + (device.timers.t_shackle_value_timer.ticks * 5331 * 3) 
+  shot_shackle_superjackpot2_sp_shackle_mb_lit_hit:
+    score: 1000000 + (device.timers.t_shackle_value_timer.ticks * 5331 * 3) 
+
+  player_shackle_multiball_t_shackle_value_timer_tick:
+    shackle_value_countdown:
+      int: 1000000 + (device.timers.t_shackle_value_timer.ticks * 5331)
+      action: set
+
+  multiball_mb_shackle_started:
+    shackle_value:
+      int: 0
+      action: set
+    shackle_super_value:
+      int: 0
+      action: set
+  shackle_value_locked:
+    shackle_value:
+      int: 1000000 + (device.timers.t_shackle_value_timer.ticks * 5331)
+      action: set
+    shackle_super_value:
+      int: 1000000 + (device.timers.t_shackle_value_timer.ticks * 5331 * 3) 
+      action: set
   
 counters:
   cnt_shackle_mb_jackpot_p1:
@@ -52,6 +85,21 @@ counters:
     disable_on_complete: false   
     count_events: shot_shackle_left_loop_sp_shackle_mb_lit_hit, shot_shackle_left_standup_sp_shackle_mb_lit_hit, shot_shackle_left_standup_rightramp_sp_shackle_mb_lit_hit, shot_shackle_right_standup_rightramp_sp_shackle_mb_lit_hit, shot_shackle_right_loop_sp_shackle_mb_lit_hit, shot_shackle_right_standup_sp_shackle_mb_lit_hit
     events_when_complete: shackle_mb_jackpot_p1_complete
+
+# currently set to jackpot set + super + jackpot set + super
+  cnt_shackle_phase_tracking:
+    starting_count: 0
+    count_complete_value: 2
+    start_enabled: true
+    events_when_complete: shackle_phase2
+    count_events: sg_shackle_p1_lit_complete
+
+  cnt_shackle_jackpot:
+    starting_count: 0
+    count_complete_value: 1
+    start_enabled: true
+    events_when_complete: shackle_value_locked  
+    count_events: drop_target_dt_upper_drop1_down
 
 slides:
   sl_ShackleMB:
@@ -82,6 +130,10 @@ slide_player:
     sl_ShackleMB_SuperJackpot:
       priority: 600
       expire: 2.2s
+  shot_shackle_superjackpot2_sp_shackle_mb_lit_hit:
+    sl_ShackleMB_SuperJackpot:
+      priority: 600
+      expire: 2.2s
 
 show_player:
   multiball_mb_shackle_started:
@@ -100,6 +152,15 @@ show_player:
       speed: 10
       show_tokens:
         color1: beartrap
+
+    top_drop_chase:
+      loops: -1
+      speed: 14
+      show_tokens:
+        color1: beartrap
+  shackle_value_locked:
+    top_drop_chase: stop
+
   mode_shackle_multiball_complete:
       disc_left_chase: stop
       disc_middle_chase: stop
@@ -119,7 +180,14 @@ show_player:
         loops: -1
         show_tokens:
           color1: off
-  stop_mode_shackle_multiball: stop
+  shot_shackle_superjackpot2_sp_shackle_mb_lit_hit:
+      top_drop_chase:
+        loops: -1
+        show_tokens:
+          color1: off
+  
+  stop_mode_shackle_multiball: 
+    w_shackle_multiball: stop
   start_shackle_multiball:
     mb_ballsave:
       loops: 4
@@ -159,10 +227,12 @@ shots:
     control_events:
       - events: ball_starting
         state: 0
-      - events: slide_sl_ShackleMB_active
+      - events: shackle_value_locked
         state: 1
       - events: shot_shackle_left_loop_sp_shackle_mb_lit_hit
         state: 0
+      - events: shot_shackle_superjackpot1_sp_shackle_mb_lit_hit
+        state: 1
   shot_shackle_left_standup:
     reset_events: mode_shackle_multiball_stopped, player_turn_stopped, player_turn_ended
     switches: s_left_standup
@@ -172,10 +242,12 @@ shots:
     control_events:
       - events: ball_starting
         state: 0
-      - events: slide_sl_ShackleMB_active
+      - events: shackle_value_locked
         state: 1
       - events: shot_shackle_left_standup_sp_shackle_mb_lit_hit
         state: 0
+      - events: shot_shackle_superjackpot1_sp_shackle_mb_lit_hit
+        state: 1
   shot_shackle_left_standup_rightramp:
     reset_events: mode_shackle_multiball_stopped, player_turn_stopped, player_turn_ended
     switches: s_left_standup_right_ramp
@@ -185,10 +257,12 @@ shots:
     control_events:
       - events: ball_starting
         state: 0
-      - events: slide_sl_ShackleMB_active
+      - events: shackle_value_locked
         state: 1
       - events: shot_shackle_left_standup_rightramp_sp_shackle_mb_lit_hit
         state: 0
+      - events: shot_shackle_superjackpot1_sp_shackle_mb_lit_hit
+        state: 1
   shot_shackle_right_standup_rightramp:
     reset_events: mode_shackle_multiball_stopped, player_turn_stopped, player_turn_ended
     switches: s_right_standup_right_ramp
@@ -198,10 +272,12 @@ shots:
     control_events:
       - events: ball_starting
         state: 0
-      - events: slide_sl_ShackleMB_active
+      - events: shackle_value_locked
         state: 1
       - events: shot_shackle_right_standup_rightramp_sp_shackle_mb_lit_hit
         state: 0
+      - events: shot_shackle_superjackpot1_sp_shackle_mb_lit_hit
+        state: 1
   shot_shackle_right_loop:
     reset_events: mode_shackle_multiball_stopped, player_turn_stopped, player_turn_ended
     switches: s_right_loop_bottom, s_right_loop_top
@@ -211,10 +287,12 @@ shots:
     control_events:
       - events: ball_starting
         state: 0
-      - events: slide_sl_ShackleMB_active
+      - events: shackle_value_locked
         state: 1
       - events: shot_shackle_right_loop_sp_shackle_mb_lit_hit
         state: 0
+      - events: shot_shackle_superjackpot1_sp_shackle_mb_lit_hit
+        state: 1
   shot_shackle_right_standup:
     reset_events: mode_shackle_multiball_stopped, player_turn_stopped, player_turn_ended
     switches: s_right_standup
@@ -224,10 +302,12 @@ shots:
     control_events:
       - events: ball_starting
         state: 0
-      - events: slide_sl_ShackleMB_active
+      - events: shackle_value_locked
         state: 1
       - events: shot_shackle_right_standup_sp_shackle_mb_lit_hit
         state: 0
+      - events: shot_shackle_superjackpot1_sp_shackle_mb_lit_hit
+        state: 1
   shot_shackle_superjackpot1:
     reset_events: mode_shackle_multiball_stopped, player_turn_stopped, player_turn_ended
     switches: s_upper_bank_drop_target_opto
@@ -235,9 +315,20 @@ shots:
     control_events:
       - events: ball_starting
         state: 0
-      - events: shackle_mb_jackpot_p1_complete
+      - events: shackle_value_locked
         state: 1
       - events: shot_shackle_superjackpot1_sp_shackle_mb_lit_hit
+        state: 0
+  shot_shackle_superjackpot2:
+    reset_events: mode_shackle_multiball_stopped, player_turn_stopped, player_turn_ended
+    switches: s_upper_bank_drop_target_opto
+    profile: sp_shackle_mb
+    control_events:
+      - events: ball_starting
+        state: 0
+      - events: shackle_phase2
+        state: 1
+      - events: shot_shackle_superjackpot2_sp_shackle_mb_lit_hit
         state: 0
 
 shot_profiles:
@@ -303,7 +394,7 @@ widgets:
       outline_width: 7
   w_shackle_multiball_value:
     - type: text
-      text: 1000000
+      text: (player|shackle_value)
       number_grouping: true 
       x: 50%
       y: 28%
@@ -314,7 +405,7 @@ widgets:
       outline_width: 7
   w_shackle_multiball_SuperJackpot_value:
     - type: text
-      text: 5000000
+      text: (player|shackle_super_value) 
       number_grouping: true 
       x: 50%
       y: 28%
@@ -324,30 +415,99 @@ widgets:
       outline_color: black
       outline_width: 7
 
+  w_shackle_value:
+    - type: text
+      text: X Marks the Spot to lock in Jackpot Value
+      x: 50%
+      y: 45%
+      z: 7
+      font_size: 50
+      font_name: Mustkill     
+      outline_color: black
+      outline_width: 7
+    - type: text
+      text: (player|shackle_value_countdown)
+      number_grouping: true 
+      x: 50%
+      y: 35%
+      z: 7
+      font_size: 110
+      font_name: Mustkill     
+      outline_color: black
+      outline_width: 7
+      #animations:
+      #  add_to_slide:
+      #    - property: opacity
+      #      value: 0
+      #      duration: 1s
+      #    - property: opacity
+      #      value: 1
+      #      duration: 1s
+      #      repeat: true
+  w_shackle_value_locked:
+    - type: text
+      text: Jackpot Value Locked
+      x: 50%
+      y: 45%
+      z: 7
+      font_size: 50
+      font_name: Mustkill     
+      outline_color: black
+      outline_width: 7
+    - type: text
+      text: (player|shackle_value_countdown)
+      number_grouping: true 
+      x: 50%
+      y: 35%
+      z: 7
+      font_size: 110
+      font_name: Mustkill     
+      outline_color: black
+      outline_width: 7
+
 widget_player:
   multiball_mb_shackle_started:
     w_shackle_multiball:
       slide: base_slide_main
       action: add
+    w_shackle_value:
+      slide: base_slide_main
+      action: add
   stop_mode_shackle_multiball:
     w_shackle_multiball:
+      action: remove
+    w_shackle_value:
       action: remove
   mode_shackle_multiball_complete:
     w_shackle_multiball:  
       action: remove
+    w_shackle_value:
+      action: remove  
   ball_ended:
     w_shackle_multiball:
+      action: remove
+    w_shackle_value:
+      action: remove
+  shackle_value_locked:
+    w_shackle_value:
+      action: remove
+    w_shackle_value_locked:
+      slide: base_slide_main
+      action: add
+
+  stop_shackle_jackpot_widget:
+    w_shackle_value_locked:
       action: remove
 
   sg_shackle_p1_lit_hit:
     w_shackle_multiball_value:
       slide: sl_ShackleMB_Jackpot
       action: add
-  stop_jackpot_widget:
-    w_shackle_multiball_value:
-      action: remove
-    w_shackle_multiball_SuperJackpot_value:
-      action: remove
+  #stop_jackpot_widget:
+  #  w_shackle_multiball_value:
+  #    action: remove
+  #  w_shackle_multiball_SuperJackpot_value:
+  #    action: remove
   shot_shackle_superjackpot1_sp_shackle_mb_lit_hit:
     w_shackle_multiball_SuperJackpot_value:
       slide: sl_ShackleMB_SuperJackpot
@@ -355,5 +515,6 @@ widget_player:
 
 event_player:
   mode_shackle_multiball_started: start_shackle_multiball|0.3s
+  shackle_value_locked: stop_shackle_jackpot_widget|2s
   sg_shackle_p1_lit_hit: stop_jackpot_widget|2.3s
   shot_shackle_superjackpot1_sp_shackle_mb_lit_hit: stop_jackpot_widget|3s

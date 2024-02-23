@@ -43,7 +43,7 @@ machine:
 switches:
   s_plumb_bob_tilt:
     number: 0804-5
-    tags: tilt_bob
+    tags: tilt_bob, tilt_warning
   s_left_flipper_eos:
     number: 3208-30
     tags: left_flipper
