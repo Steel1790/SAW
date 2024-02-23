@@ -10,15 +10,17 @@ slides:
     widgets:
       - type: video
         video: tiltwarning
-    expire: 8s
+    expire: 3s
   tilt_warning_2:
     widgets:
       - type: video
         video: tiltwarning
-    expire: 8s
+    expire: 3s
   tilt:
-    - type: text
-      text: TILT
+    widgets:
+      - type: video
+        video: tilt
+    #expire: 3s
 
 # EK test adding light show in mode. Not working yet.
 show_player: 

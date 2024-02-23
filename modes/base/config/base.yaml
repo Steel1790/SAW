@@ -37,6 +37,8 @@ event_player:
   ball_started: mode_qualified_sidestep|0.8s
   single_player_ball_started: mode_qualified_sidestep|0.6s
 
+  #ball_started{is_extra_ball==True}: e_shoot_again
+
 # saw collect light progress
   logicblock_cnt_saw_qualify_updated{value==1}: saw_pops_s|0.3s
   logicblock_cnt_saw_qualify_updated{value==2}: saw_pops_sa|0.3s
@@ -152,6 +154,12 @@ slide_player:
       priority: 400
       expire: 3s   
 
+  e_shoot_again:
+    ShootAgain:
+      priority: 400
+      expire: 5s
+      
+
   s_left_standup_active: 
     cameraflashvideo:
       priority: 400
@@ -256,21 +264,12 @@ slide_player:
       action: play
       priority: 400
       expire: 5s
-  tiltwarningtemp_hit:
-    tiltwarningvideo:
-      action: play
-      priority: 400
-      expire: 8s
-  e_enable_mystery:
-    mysteryawardvideo:
-      action: play
-      priority: 400
-      expire: 8s
-  extraballtemp_hit:
-    extraballvideo:
-      action: play
-      priority: 400
-      expire: 8s
+  #e_enable_mystery:
+  #  mysteryawardvideo:
+  #    action: play
+  #    priority: 400
+  #    expire: 8s
+
   
       
   single_player_ball_started:
@@ -3813,6 +3812,12 @@ slides:
     widgets:
     - type: video
       video: CameraFlash4
+      width: 1366
+      height: 768
+  ShootAgain:
+    widgets:
+    - type: video
+      video: ShootAgain
       width: 1366
       height: 768
   #gameovervideo:

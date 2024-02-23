@@ -91,7 +91,7 @@ slides:
   MysteryExtraBall:
     widgets:
     - type: video
-      video: MysteryExtraBall    
+      video: extraball  
       width: 1366
       height: 768
   MysteryEscapeOutlane:
