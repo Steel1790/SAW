@@ -468,7 +468,7 @@ show_player:
       speed: 10
     topper_trigger_on:
       loops: 0
-      speed: 2
+      speed: 4
   shot_left_outlane_hit{state=="ball_save_not_ready"}:
       billy_laugh:
         loops: 7
