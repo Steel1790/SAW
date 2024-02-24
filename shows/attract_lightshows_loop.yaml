@@ -26,7 +26,7 @@
        speed: 1
       flash_token:
        loops: -1
-       speed: 1
+       speed: 2
        show_tokens:
         led: l_start_button
         color1: on
@@ -106,6 +106,7 @@
       fire_bottom_pops: stop
       fire_top_pops: stop
       flammable_jelly_3: stop
+      colorwash_opposite_glitter: stop
       gi_flicker:
         loops: 6
         speed: 2
@@ -119,11 +120,12 @@
        # loops: -1
         show_tokens:
           color1: ffffff   
-- duration: .5s
-  shows:
-#topper test in attract
-      topper_trigger_on:
-        speed: 4
+
+#topper test in attract         
+# - duration: .5s
+#   shows:
+#       topper_trigger_on:
+#         speed: 4
 
 # STARPOST SHOWS FOR REFERENCE
 #   shows: 
@@ -857,6 +859,15 @@
         speed: 15     
       fire_starpost_a:
         speed: 15  
+
+- duration: 10s
+  shows: 
+      fire_top_pops: stop
+      fire_bottom_pops: stop
+      flammable_jelly_3: stop
+      fire_starpost_a: stop
+      colorwash_opposite_glitter:
+        speed: 20
 
       # attract_color_stacker:
       #   loops: -1

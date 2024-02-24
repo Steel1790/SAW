@@ -9,7 +9,7 @@ named_colors:
   zepstest: B200ED
   zeptest: B200ED
   beartrap: ff0900
-  shotgun: "0981D1"
+  shotgun: "174BE8"
   jelly: fccd05
   color_jigsaw_mb: FFA500
   color_hacksaw_mb: 2db83d
@@ -3454,3 +3454,13 @@ lights:
       white:
         number: led256bb-5-32-2
     tags: cabinet_left, groundeffects, led256bb-5
+
+show_player:
+    init_phase_1:
+      backbox_on:
+        loops: -1
+        speed: 1
+    init_phase_4:
+      backbox_on:
+        loops: -1
+        speed: 1
