@@ -11,7 +11,7 @@ sequences:
       - sw_lower_drop_target
       - sw_lower_drop_target
       - drop_target_dt_upper_drop1_down
-      - ssh_left_ramp_hit
+      #- ssh_left_ramp_hit
       - machine_var_audits_switches_s_right_ramp_score_top
       - drop_target_dt_upper_drop1_down   
     reset_on_complete: false
@@ -33,8 +33,8 @@ variable_player:
     score: 1000000
   logicblock_zeptest_hit{step==5}:
     score: 1000000
-  logicblock_zeptest_hit{step==6}:
-    score: 1000000    
+  #logicblock_zeptest_hit{step==6}:
+  #  score: 1000000    
   mode_zeptest_complete:
     score: 5000000      
   timer_your_timer_tick:
@@ -164,23 +164,23 @@ widgets:
             value: 1
             duration: 1000ms
             timing: after_previous
-   zep_shot_update3:
-    - type: Text
-      text: " Hit the Left Ramp"
-      font_size: 60
-      font_name: TrajanProRegular
-      color: BDD5E7
-      x: 58%
-      y: 48%   
-      z: 1
-      animations:
-        add_to_slide:
-          - property: opacity
-            value: 0
-          - property: opacity
-            value: 1
-            duration: 1000ms
-            timing: after_previous
+   #zep_shot_update3:
+   # - type: Text
+   #   text: " Hit the Left Ramp"
+   #   font_size: 60
+   #   font_name: TrajanProRegular
+   #   color: BDD5E7
+   #   x: 58%
+   #   y: 48%   
+   #   z: 1
+   #   animations:
+   #     add_to_slide:
+   #       - property: opacity
+   #         value: 0
+   #       - property: opacity
+   #         value: 1
+   #         duration: 1000ms
+   #         timing: after_previous
    zep_shot_update4:
     - type: Text
       text: " Hit the Right Ramp"
@@ -235,23 +235,32 @@ widget_player:
   zep_shot_update2:
     slide: zeptestUI
     action: remove
-  zep_shot_update3:
+  #zep_shot_update3:
+  #  slide: zeptestUI
+  #  action: add
+  zep_shot_update4:
     slide: zeptestUI
     action: add
  logicblock_zeptest_hit{step==5}: 
-  zep_shot_update3:
-    slide: zeptestUI
-    action: remove
-  zep_shot_update4:
-    slide: zeptestUI
-    action: add
- logicblock_zeptest_hit{step==6}: 
+  #zep_shot_update3:
+  #  slide: zeptestUI
+  #  action: remove
   zep_shot_update4:
     slide: zeptestUI
     action: remove
+  #zep_shot_update4:
+  #  slide: zeptestUI
+  #  action: add
   zep_shot_update5:
     slide: zeptestUI
     action: add
+ #logicblock_zeptest_hit{step==6}: 
+ # zep_shot_update4:
+ #   slide: zeptestUI
+ #   action: remove
+ # zep_shot_update5:
+ #   slide: zeptestUI
+ #   action: add
 
 slide_player:
   mode_zeptest_started: 
@@ -344,23 +353,23 @@ show_player:
         show_tokens:
           color1: zepstest
         priority: 170
+  #logicblock_zeptest_hit{step==4}:
+  #    left_ramp_chase:
+  #      loops: -1
+  #      speed: 5
+  #      show_tokens:
+  #        color1: zepstest
+  #    top_drop_chase:
+  #      loops: -1
+  #      show_tokens:
+  #        color1: off
+  #    starpost_cycle:
+  #      loops: 1
+  #      speed: 20
+  #      show_tokens:
+  #        color1: zepstest
+  #      priority: 170
   logicblock_zeptest_hit{step==4}:
-      left_ramp_chase:
-        loops: -1
-        speed: 5
-        show_tokens:
-          color1: zepstest
-      top_drop_chase:
-        loops: -1
-        show_tokens:
-          color1: off
-      starpost_cycle:
-        loops: 1
-        speed: 20
-        show_tokens:
-          color1: zepstest
-        priority: 170
-  logicblock_zeptest_hit{step==5}:
       right_ramp_chase:
         loops: -1
         speed: 5
@@ -376,7 +385,11 @@ show_player:
         show_tokens:
           color1: zepstest
         priority: 170
-  logicblock_zeptest_hit{step==6}:
+      top_drop_chase:
+        loops: -1
+        show_tokens:
+          color1: off
+  logicblock_zeptest_hit{step==5}:
       top_drop_chase:
         loops: -1
         speed: 14
