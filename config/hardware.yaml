@@ -231,24 +231,24 @@ virtual_platform_start_active_switches:
 coils:
   c_flipper_left_main:
     number: 3208-6
-    default_pulse_ms: 40
+    default_pulse_ms: 25
     default_hold_power: 0.3
     tags: coils
   c_flipper_left_hold:
     number: 3208-5
     default_pulse_ms: 5
-    default_hold_power: 0.8
+    default_hold_power: 0.6
     allow_enable: true
     tags: coils
   c_flipper_right_main:
     number: 3208-3
-    default_pulse_ms: 20
+    default_pulse_ms: 25
     default_hold_power: 0.3
     tags: coils
   c_flipper_right_hold:
     number: 3208-4
     default_pulse_ms: 5
-    default_hold_power: 0.3
+    default_hold_power: 0.6
     allow_enable: true
     tags: coils
   c_flipper_upper_right_main:

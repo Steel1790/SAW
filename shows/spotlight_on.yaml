@@ -3,4 +3,4 @@
 
 - time: '+1'
   lights:
-    spotlights: (color1)-f200ms
+    spotlights: on

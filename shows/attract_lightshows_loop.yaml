@@ -1,18 +1,18 @@
 #show_version=6
 
 # EK Notes: If loops are not defined, it will repeat for the duration time. If loops = 0, then it will play once. 1 loop = 2 plays.
-#- duration: 60s
-  #shows:
-      #topper_on: stop
-      #backbox_on: stop
-#- duration: 2s
-  #shows:
-      #topper_on:
-        #loops: -1
-        #speed: 1
-#- duration: 5s
-  #shows:
-      #topper_on: stop
+# - duration: 60s
+#   shows:
+#       topper_on: stop
+#       backbox_on: stop
+# - duration: 2s
+#   shows:
+#       topper_on:
+#         loops: -1
+#         speed: 1
+# - duration: 5s
+#   shows:
+#       topper_on: stop
 - duration: .5s
   shows: 
       backbox_on:
@@ -151,7 +151,7 @@
 - duration: 10s
   shows:     
       speaker_heartbeat: stop 
-      topper_trigger_on: stop
+      # topper_trigger_on: stop
       starpost_cycle:
         show_tokens:
           color1: beartrap 
@@ -227,7 +227,7 @@
 
       disc_middle_chase:
         # loops: 10
-        speed: 13.3
+        speed: 13
         show_tokens:
           color1: beartrap
 
@@ -239,31 +239,31 @@
 
       flasher_beartrap_chase:
         # loops: 10
-        speed: 6.67
+        speed: 7
         show_tokens:
           color1: beartrap
 
       flasher_drill_chase:
         # loops: 10
-        speed: 6.67
+        speed: 7
         show_tokens:
           color1: beartrap
 
       flasher_razorwire_chase:
         # loops: 10
-        speed: 6.67
+        speed: 7
         show_tokens:
           color1: beartrap
 
       flasher_shotgun_chase:
         # loops: 10
-        speed: 6.67
+        speed: 7
         show_tokens:
           color1: beartrap
 
       flasher_zep_chase:
         # loops: 10
-        speed: 6.67
+        speed: 7
         show_tokens:
           color1: beartrap
 
@@ -355,7 +355,7 @@
 
       disc_middle_chase:
         # loops: 10
-        speed: 13.3
+        speed: 13
         show_tokens:
           color1: drillchair
 
@@ -367,31 +367,31 @@
 
       flasher_beartrap_chase:
         # loops: 10
-        speed: 6.67
+        speed: 7
         show_tokens:
           color1: drillchair
 
       flasher_drill_chase:
         # loops: 10
-        speed: 6.67
+        speed: 7
         show_tokens:
           color1: drillchair
 
       flasher_razorwire_chase:
         # loops: 10
-        speed: 6.67
+        speed: 7
         show_tokens:
           color1: drillchair
 
       flasher_shotgun_chase:
         # loops: 10
-        speed: 6.67
+        speed: 7
         show_tokens:
           color1: drillchair
 
       flasher_zep_chase:
         # loops: 10
-        speed: 6.67
+        speed: 7
         show_tokens:
           color1: drillchair
 
@@ -483,7 +483,7 @@
 
       disc_middle_chase:
         # loops: 10
-        speed: 13.3
+        speed: 13
         show_tokens:
           color1: jelly
 
@@ -495,31 +495,31 @@
 
       flasher_beartrap_chase:
         # loops: 10
-        speed: 6.67
+        speed: 7
         show_tokens:
           color1: jelly
 
       flasher_drill_chase:
         # loops: 10
-        speed: 6.67
+        speed: 7
         show_tokens:
           color1: jelly
 
       flasher_razorwire_chase:
         # loops: 10
-        speed: 6.67
+        speed: 7
         show_tokens:
           color1: jelly
 
       flasher_shotgun_chase:
         # loops: 10
-        speed: 6.67
+        speed: 7
         show_tokens:
           color1: jelly
 
       flasher_zep_chase:
         # loops: 10
-        speed: 6.67
+        speed: 7
         show_tokens:
           color1: jelly
 
@@ -611,7 +611,7 @@
 
       disc_middle_chase:
         # loops: 10
-        speed: 13.3
+        speed: 13
         show_tokens:
           color1: zepstest
 
@@ -623,31 +623,31 @@
 
       flasher_beartrap_chase:
         # loops: 10
-        speed: 6.67
+        speed: 7
         show_tokens:
           color1: zepstest
 
       flasher_drill_chase:
         # loops: 10
-        speed: 6.67
+        speed: 7
         show_tokens:
           color1: zepstest
 
       flasher_razorwire_chase:
         # loops: 10
-        speed: 6.67
+        speed: 7
         show_tokens:
           color1: zepstest
 
       flasher_shotgun_chase:
         # loops: 10
-        speed: 6.67
+        speed: 7
         show_tokens:
           color1: zepstest
 
       flasher_zep_chase:
         # loops: 10
-        speed: 6.67
+        speed: 7
         show_tokens:
           color1: zepstest
 
