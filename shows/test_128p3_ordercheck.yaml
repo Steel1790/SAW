@@ -7,18 +7,12 @@
     l_gi_4: 0
 - time: '+1'
   lights:
-    l_mystery_scoop: (color1)    
-- time: '+1'
-  lights:
-    l_mystery_scoop: 0
     l_left_loop_arrow: (color1)    
 - time: '+1'
   lights:
     l_left_loop_arrow: 0
-    l_mode_scoop: (color1)    
 - time: '+1'
   lights:
-    l_mode_scoop: 0
     l_left_standup_arrow: (color1)    
 - time: '+1'
   lights:

@@ -12,14 +12,6 @@
     l_gi_18: (color1)    
 - time: '+1'
   lights:
-    l_gi_18: 0
-    l_tape_spotlight: (color1)    
-- time: '+1'
-  lights:
-    l_tape_spotlight: 0
-    l_skill_shot1: (color1)    
-- time: '+1'
-  lights:
     l_skill_shot1: 0
     l_jw_drill: (color1)    
 - time: '+1'

@@ -59,16 +59,6 @@
       #  show_tokens:
       #    color1: beartrap 
 
-      # flash_token:
-      #   show_tokens:
-      #     led: l_left_spotlight
-      #     color1: white
- 
-      # flash_token:
-      #   show_tokens:
-      #     led: l_mystery_scoop, l_mode_scoop, l_left_spotlight, l_right_spotlight, l_tape_spotlight, l_billy
-      #     color1: white
-
 - duration: 5s
   shows: 
       gi_on: stop

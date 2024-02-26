@@ -21,10 +21,8 @@
 - time: '+1'
   lights:
     l_left_return_lane: 0
-    l_left_spotlight: (color1)    
 - time: '+1'
   lights:
-    l_left_spotlight: 0
     l_gi_3: (color1)    
 - time: '+1'
   lights:
@@ -110,10 +108,3 @@
   lights:
     l_right_escape: 0
     l_gi_20: (color1) 
-- time: '+1'
-  lights:
-    l_gi_20: 0
-    l_right_spotlight: (color1) 
-- time: '+1'
-  lights:
-    l_right_spotlight: 0

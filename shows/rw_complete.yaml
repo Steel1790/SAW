@@ -159,7 +159,6 @@
     l_left_ramp_triangle3: (color1)
     l_left_top_bumper_1: (color1)
     l_lower_top_bumper_1: '000000'
-    l_mode_scoop: (color1)
     l_right_loop_arrow: '000000'
     l_right_ramp_triangle1: '000000'
     l_right_standup_right_ramp_arrow: '000000'
@@ -187,7 +186,6 @@
     l_gi_9: '000000'
     l_inner_loop_arrow: '000000'
     l_left_bottom_bumper_1: '000000'
-    l_mystery_scoop: (color1)
     l_left_ramp_triangle2: (color1)
     l_left_standup_arrow: (color1)
     l_left_standup_right_ramp_arrow: (color1)
@@ -233,7 +231,6 @@
     l_left_ramp_triangle3: '000000'
     l_left_top_bumper_1: '000000'
     l_lower_top_bumper_1: (color1)
-    l_mode_scoop: '000000'
     l_right_loop_arrow: (color1)
     l_right_escape: 'FFFFFF'
     l_right_ramp_triangle1: (color1)
@@ -265,7 +262,6 @@
     l_gi_9: (color1)
     l_inner_loop_arrow: (color1)
     l_left_bottom_bumper_1: (color1)
-    l_mystery_scoop: '000000'
     l_left_ramp_triangle2: '000000'
     l_left_standup_arrow: '000000'
     l_left_standup_right_ramp_arrow: '000000'
@@ -312,7 +308,6 @@
     l_left_return_lane: 'FFFFFF'
     l_left_top_bumper_1: (color1)
     l_lower_top_bumper_1: '000000'
-    l_mode_scoop: (color1)
     l_right_loop_arrow: '000000'
     l_right_escape: '000000'
     l_right_ramp_triangle1: '000000'
@@ -344,7 +339,6 @@
     l_gi_9: '000000'
     l_inner_loop_arrow: '000000'
     l_left_bottom_bumper_1: '000000'
-    l_mystery_scoop: (color1)
     l_left_ramp_triangle2: (color1)
     l_left_standup_arrow: (color1)
     l_left_standup_right_ramp_arrow: (color1)
@@ -390,7 +384,6 @@
     l_left_return_lane: (color1)
     l_left_top_bumper_1: '000000'
     l_lower_top_bumper_1: (color1)
-    l_mode_scoop: '000000'
     l_right_loop_arrow: (color1)
     l_right_escape: 'FFFFFF'
     l_right_ramp_triangle1: (color1)
@@ -417,7 +410,6 @@
     l_gi_7: '000000'
     l_inner_loop_arrow: (color1)
     l_left_bottom_bumper_1: (color1)
-    l_mystery_scoop: '000000'
     l_left_ramp_triangle2: '000000'
     l_left_return_lane: '000000'
     l_left_standup_arrow: '000000'
@@ -456,7 +448,6 @@
     l_gi_5: '000000'
     l_gi_6: '000000'
     l_left_bottom_bumper_1: (color1)
-    l_mystery_scoop: 'FFFFFF'
     l_left_loop_arrow: (color1)
     l_left_escape: (color1)
     l_left_ramp_triangle1: '000000'
@@ -464,7 +455,6 @@
     l_left_return_lane: 'FFFFFF'
     l_left_standup_arrow: 'FFFFFF'
     l_lower_top_bumper_1: '000000'
-    l_mode_scoop: (color1)
     l_right_loop_arrow: '000000'
     l_right_escape: (color1)
     l_right_ramp_triangle1: '000000'
@@ -498,7 +488,6 @@
     l_left_ramp_triangle2: (color1)
     l_left_standup_right_ramp_arrow: (color1)
     l_right_bottom_bumper_1: '000000'
-    l_mode_scoop: 'FFFFFF'
     l_right_escape: '000000'
     l_right_ramp_triangle2: (color1)
     l_skill_shot1: 'FFFFFF'
@@ -532,7 +521,6 @@
     l_gi_5: (color1)
     l_gi_6: (color1)
     l_left_bottom_bumper_1: 'FFFFFF'
-    l_mystery_scoop: (color1)
     l_left_escape: 'FFFFFF'
     l_left_ramp_triangle1: (color1)
     l_left_ramp_triangle3: '000000'
@@ -573,14 +561,12 @@
     l_gi_3: (color1)
     l_gi_5: 'FFFFFF'
     l_gi_6: 'FFFFFF'
-    l_mystery_scoop: '000000'
     l_left_loop_arrow: '000000'
     l_left_ramp_triangle1: 'FFFFFF'
     l_left_ramp_triangle2: '000000'
     l_left_return_lane: '000000'
     l_left_standup_arrow: '000000'
     l_left_standup_right_ramp_arrow: '000000'
-    l_mode_scoop: '000000'
     l_right_loop_arrow: 'FFFFFF'
     l_right_ramp_triangle1: 'FFFFFF'
     l_right_ramp_triangle2: '000000'
@@ -613,7 +599,6 @@
     l_gi_3: (color1)
     l_gi_4: (color1)
     l_left_bottom_bumper_1: '000000'
-    l_mystery_scoop: 'FFFFFF'
     l_left_loop_arrow: (color1)
     l_left_escape: (color1)
     l_left_ramp_triangle2: 'FFFFFF'
@@ -622,7 +607,6 @@
     l_left_standup_arrow: 'FFFFFF'
     l_left_standup_right_ramp_arrow: 'FFFFFF'
     l_right_bottom_bumper_1: (color1)
-    l_mode_scoop: (color1)
     l_right_escape: (color1)
     l_right_ramp_triangle2: 'FFFFFF'
     l_right_standup_arrow: '000000'
@@ -654,7 +638,6 @@
     l_left_escape: '000000'
     l_left_ramp_triangle1: '000000'
     l_right_bottom_bumper_1: '000000'
-    l_mode_scoop: 'FFFFFF'
     l_right_loop_arrow: '000000'
     l_right_escape: '000000'
     l_right_ramp_triangle1: '000000'
@@ -688,7 +671,6 @@
     l_gi_4: 'FFFFFF'
     l_inner_loop_arrow: 'FFFFFF'
     l_left_bottom_bumper_1: 'FFFFFF'
-    l_mystery_scoop: (color1)
     l_left_escape: 'FFFFFF'
     l_left_ramp_triangle2: '000000'
     l_left_ramp_triangle3: (color1)
@@ -730,14 +712,12 @@
     l_gi_3: (color1)
     l_gi_5: 'FFFFFF'
     l_gi_6: 'FFFFFF'
-    l_mystery_scoop: '000000'
     l_left_loop_arrow: '000000'
     l_left_ramp_triangle1: 'FFFFFF'
     l_left_ramp_triangle3: '000000'
     l_left_return_lane: '000000'
     l_left_standup_arrow: '000000'
     l_lower_top_bumper_1: 'FFFFFF'
-    l_mode_scoop: '000000'
     l_right_loop_arrow: 'FFFFFF'
     l_right_ramp_triangle1: 'FFFFFF'
     l_right_standup_right_ramp_arrow: 'FFFFFF'
@@ -762,7 +742,6 @@
     l_gi_7: 'FFFFFF'
     l_inner_loop_arrow: '000000'
     l_left_bottom_bumper_1: '000000'
-    l_mystery_scoop: 'FFFFFF'
     l_left_escape: (color1)
     l_left_ramp_triangle2: 'FFFFFF'
     l_left_ramp_triangle3: (color1)
@@ -812,7 +791,6 @@
     l_left_ramp_triangle3: 'FFFFFF'
     l_left_top_bumper_1: 'FFFFFF'
     l_lower_top_bumper_1: '000000'
-    l_mode_scoop: 'FFFFFF'
     l_right_loop_arrow: '000000'
     l_right_escape: '000000'
     l_right_ramp_triangle1: '000000'
@@ -841,7 +819,6 @@
     l_gi_9: 'FFFFFF'
     l_inner_loop_arrow: 'FFFFFF'
     l_left_bottom_bumper_1: 'FFFFFF'
-    l_mystery_scoop: '000000'
     l_left_ramp_triangle2: '000000'
     l_left_ramp_triangle3: (color1)
     l_left_return_lane: (color1)
@@ -892,7 +869,6 @@
     l_left_return_lane: '000000'
     l_left_top_bumper_1: '000000'
     l_lower_top_bumper_1: 'FFFFFF'
-    l_mode_scoop: '000000'
     l_right_loop_arrow: 'FFFFFF'
     l_right_escape: (color1)
     l_right_ramp_triangle1: 'FFFFFF'
@@ -921,7 +897,6 @@
     l_gi_9: '000000'
     l_inner_loop_arrow: '000000'
     l_left_bottom_bumper_1: '000000'
-    l_mystery_scoop: 'FFFFFF'
     l_left_ramp_triangle2: 'FFFFFF'
     l_left_ramp_triangle3: (color1)
     l_left_standup_arrow: 'FFFFFF'
@@ -969,7 +944,6 @@
     l_left_ramp_triangle3: 'FFFFFF'
     l_left_top_bumper_1: 'FFFFFF'
     l_lower_top_bumper_1: '000000'
-    l_mode_scoop: 'FFFFFF'
     l_right_loop_arrow: '000000'
     l_right_escape: '000000'
     l_right_ramp_triangle1: '000000'
@@ -995,7 +969,6 @@
     l_gi_9: 'FFFFFF'
     l_inner_loop_arrow: 'FFFFFF'
     l_left_bottom_bumper_1: 'FFFFFF'
-    l_mystery_scoop: '000000'
     l_left_ramp_triangle2: '000000'
     l_left_ramp_triangle3: (color1)
     l_left_standup_arrow: '000000'
@@ -1038,7 +1011,6 @@
     l_left_ramp_triangle3: '000000'
     l_left_top_bumper_1: '000000'
     l_lower_top_bumper_1: 'FFFFFF'
-    l_mode_scoop: '000000'
     l_right_loop_arrow: 'FFFFFF'
     l_right_ramp_triangle1: 'FFFFFF'
     l_right_standup_right_ramp_arrow: 'FFFFFF'

@@ -76,9 +76,7 @@
 - time: '+1'
   lights:
     l_left_escape: (color1)
-    l_left_spotlight: (color1)
     l_right_escape: (color1)
-    l_right_spotlight: (color1)
     
 #No change this frame - take another step
 #  lights:
@@ -167,7 +165,6 @@
   lights:
     l_jw_bathtub: (color1)
     l_jw_drill: (color1)
-    l_mystery_scoop: (color1)
     l_skill_shot1: (color1)
     
 - time: '+1'
@@ -175,7 +172,6 @@
     l_jw_gun: (color1)
     l_jw_syringe: (color1)
     l_left_loop_arrow: (color1)
-    l_mode_scoop: (color1)
     
 - time: '+1'
   lights:
@@ -188,7 +184,6 @@
     l_right_bottom_bumper_3: (color1)
     l_right_bottom_bumper_4: (color1)
     l_tape_speaker: (color1)
-    l_tape_spotlight: (color1)
     l_zep_flasher_3: (color1)
     l_zep_flasher_4: (color1)
     l_zep_flasher_5: (color1)
@@ -714,7 +709,6 @@
     l_right_bottom_bumper_5: '000000'
     l_skill_shot2: '000000'
     l_tape_speaker: '000000'
-    l_tape_spotlight: '000000'
     l_zep_flasher_2: '000000'
     l_zep_flasher_3: '000000'
     l_zep_flasher_6: '000000'
@@ -724,7 +718,6 @@
   lights:
     l_jw_gears: '000000'
     l_jw_gun: '000000'
-    l_mode_scoop: '000000'
     l_right_bottom_bumper_1: '000000'
     l_right_bottom_bumper_16: '000000'
     l_right_bottom_bumper_2: '000000'
@@ -743,7 +736,6 @@
     l_jw_bathtub: '000000'
     l_jw_candle: '000000'
     l_jw_taperecorder: '000000'
-    l_mystery_scoop: '000000'
     
 - time: '+1'
   lights:
@@ -830,9 +822,7 @@
 - time: '+1'
   lights:
     l_left_escape: '000000'
-    l_left_spotlight: '000000'
     l_right_escape: '000000'
-    l_right_spotlight: '000000'
     
 - time: '+1'
   lights:

@@ -176,7 +176,6 @@
   lights:
     l_jw_bathtub: '820000'
     l_jw_candle: '820000'
-    l_mystery_scoop: '820000'
     
 - time: '+1'
   lights:
@@ -188,7 +187,6 @@
     l_jw_gun: '820000'
     l_jw_syringe: '820000'
     l_left_loop_arrow: '820000'
-    l_mode_scoop: '820000'
     
 - time: '+1'
   lights:
@@ -645,7 +643,6 @@
     l_jw_gun: '000000'
     l_jw_syringe: '000000'
     l_left_loop_arrow: '000000'
-    l_mode_scoop: '000000'
     
 - time: '+1'
   lights:
@@ -656,7 +653,6 @@
   lights:
     l_jw_bathtub: '000000'
     l_jw_candle: '000000'
-    l_mystery_scoop: '000000'
     
 - time: '+1'
   lights:
