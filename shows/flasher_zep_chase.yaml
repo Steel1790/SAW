@@ -29,14 +29,14 @@
 #     l_zep_flasher_8: (color1)
 # - time: '+1'
 #   lights:
-#     l_zep_flasher_1: off-f200ms
-#     l_zep_flasher_2: off-f200ms
-#     l_zep_flasher_3: off-f200ms
-#     l_zep_flasher_4: off-f200ms
-#     l_zep_flasher_5: off-f200ms
-#     l_zep_flasher_6: off-f200ms
-#     l_zep_flasher_7: off-f200ms
-#     l_zep_flasher_8: off-f200ms
+#     l_zep_flasher_1: off # -f200ms
+#     l_zep_flasher_2: off # -f200ms
+#     l_zep_flasher_3: off # -f200ms
+#     l_zep_flasher_4: off # -f200ms
+#     l_zep_flasher_5: off # -f200ms
+#     l_zep_flasher_6: off # -f200ms
+#     l_zep_flasher_7: off # -f200ms
+#     l_zep_flasher_8: off # -f200ms
 
 #OPTION 2 - OVERLAPS BETWEEN INSERTS CLOCKWISE AND THEN COUNTERCLOCKWISE CYLON STYLE
 - time: 0

@@ -3,16 +3,16 @@
 #SLOW PULSE ON OFF
 - time: 0
   lights:
-    groundeffects: 800800-f1500ms     
+    groundeffects: 800800 # -f1500ms     
 - time: '+1500ms'
   lights:
-    groundeffects: (color1)-f80ms    
+    groundeffects: (color1) # -f80ms    
 - time: '+250ms'
   lights:
-    groundeffects: 590800-f80ms   
+    groundeffects: 590800 # -f80ms   
 - time: '+150ms'
   lights:
-    groundeffects: (color1)-f80ms
+    groundeffects: (color1) # -f80ms
 - time: '+250ms'
   lights:
-    groundeffects: 590800-f200ms  
+    groundeffects: 590800 # -f200ms  

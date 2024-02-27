@@ -3,42 +3,42 @@
 
 - time: '+100ms'
   lights:
-    gi_right: (color1)-f0ms
-    topper: (color1)-f0ms
+    gi_right: (color1) # -f0ms
+    topper: (color1) # -f0ms
 
 - time: '+100ms'
   lights:
-    gi_right: off-f0ms
-    topper: off-f0ms
-    gi_left: (color1)-f0ms
+    gi_right: off # -f0ms
+    topper: off # -f0ms
+    gi_left: (color1) # -f0ms
 
 - time: '+100ms'
   lights:
-    gi_right: (color1)-f0ms
-    topper: (color1)-f0ms
+    gi_right: (color1) # -f0ms
+    topper: (color1) # -f0ms
 
 - time: '+60ms'
   lights:
-    gi_left: off-f0ms
-    topper: off-f0ms
+    gi_left: off # -f0ms
+    topper: off # -f0ms
 
 - time: '+80ms'
   lights:
-    gi_left: (color1)-f0ms
+    gi_left: (color1) # -f0ms
 
 - time: '+80ms'
   lights:
-    gi_top: off-f0ms
+    gi_top: off # -f0ms
 
 - time: '+200ms'
   lights:
-    gi_top: (color1)-f0ms
+    gi_top: (color1) # -f0ms
 
 - time: '+100ms'
   lights:
-    gi: off-f0ms
+    gi: off # -f0ms
 
 - time: '+60ms'
   lights:
-    gi: (color1)-f0ms
-    topper: (color1)-f0ms
+    gi: (color1) # -f0ms
+    topper: (color1) # -f0ms

@@ -3,10 +3,10 @@
 
 - time: '+10'
   lights:
-    jet_bumper: (color1)-f800ms
+    jet_bumper: (color1) # -f800ms
 - time: '+10'
   lights:
-    jet_bumper: (color2)-f800ms
+    jet_bumper: (color2) # -f800ms
 - time: '+10'
   lights:
-    jet_bumper: (color3)-f800ms  
+    jet_bumper: (color3) # -f800ms  

@@ -77,95 +77,95 @@
 #     l_leftspeaker_24: (color1)
 # - time: '+1'   
 #   lights:
-#     l_leftspeaker_1: off-f200ms
+#     l_leftspeaker_1: off # -f200ms
 # - time: '+1'
 #   lights:
-#     l_leftspeaker_2: off-f200ms
+#     l_leftspeaker_2: off # -f200ms
 # - time: '+1'
 #   lights:
-#     l_leftspeaker_3: off-f200ms
+#     l_leftspeaker_3: off # -f200ms
 # - time: '+1'
 #   lights:
-#     l_leftspeaker_4: off-f200ms
+#     l_leftspeaker_4: off # -f200ms
 # - time: '+1'
 #   lights:
-#     l_leftspeaker_5: off-f200ms
+#     l_leftspeaker_5: off # -f200ms
 # - time: '+1'
 #   lights:
-#     l_leftspeaker_6: off-f200ms
+#     l_leftspeaker_6: off # -f200ms
 # - time: '+1'
 #   lights:
-#     l_leftspeaker_7: off-f200ms
+#     l_leftspeaker_7: off # -f200ms
 # - time: '+1'
 #   lights:
-#     l_leftspeaker_8: off-f200ms
+#     l_leftspeaker_8: off # -f200ms
 # - time: '+1'
 #   lights:
-#     l_leftspeaker_9: off-f200ms
+#     l_leftspeaker_9: off # -f200ms
 # - time: '+1'
 #   lights:
-#     l_leftspeaker_10: off-f200ms
+#     l_leftspeaker_10: off # -f200ms
 # - time: '+1'
 #   lights:
-#     l_leftspeaker_11: off-f200ms
+#     l_leftspeaker_11: off # -f200ms
 # - time: '+1'
 #   lights:
-#     l_leftspeaker_12: off-f200ms
+#     l_leftspeaker_12: off # -f200ms
 # - time: '+1'
 #   lights:
-#     l_leftspeaker_13: off-f200ms
+#     l_leftspeaker_13: off # -f200ms
 # - time: '+1'
 #   lights:
-#     l_leftspeaker_14: off-f200ms
+#     l_leftspeaker_14: off # -f200ms
 # - time: '+1'
 #   lights:
-#     l_leftspeaker_15: off-f200ms
+#     l_leftspeaker_15: off # -f200ms
 # - time: '+1'
 #   lights:
-#     l_leftspeaker_16: off-f200ms
+#     l_leftspeaker_16: off # -f200ms
 # - time: '+1'
 #   lights:
-#     l_leftspeaker_17: off-f200ms
+#     l_leftspeaker_17: off # -f200ms
 # - time: '+1'
 #   lights:
-#     l_leftspeaker_18: off-f200ms
+#     l_leftspeaker_18: off # -f200ms
 # - time: '+1'
 #   lights:
-#     l_leftspeaker_19: off-f200ms
+#     l_leftspeaker_19: off # -f200ms
 # - time: '+1'
 #   lights:
-#     l_leftspeaker_20: off-f200ms
+#     l_leftspeaker_20: off # -f200ms
 # - time: '+1'
 #   lights:
-#     l_leftspeaker_21: off-f200ms
+#     l_leftspeaker_21: off # -f200ms
 # - time: '+1'
 #   lights:
-#     l_leftspeaker_22: off-f200ms
+#     l_leftspeaker_22: off # -f200ms
 # - time: '+1'
 #   lights:
-#     l_leftspeaker_23: off-f200ms
+#     l_leftspeaker_23: off # -f200ms
 # - time: '+1'
 #   lights:
-#     l_leftspeaker_24: off-f200ms
+#     l_leftspeaker_24: off # -f200ms
 
 # - time: '+1'
 #   lights:
-#     l_leftspeaker_1: off-f200ms
-#     l_leftspeaker_2: off-f200ms
-#     l_leftspeaker_3: off-f200ms
-#     l_leftspeaker_4: off-f200ms
-#     l_leftspeaker_5: off-f200ms
-#     l_leftspeaker_6: off-f200ms
-#     l_leftspeaker_7: off-f200ms
-#     l_leftspeaker_8: off-f200ms
-#     l_leftspeaker_9: off-f200ms
-#     l_leftspeaker_10: off-f200ms
-#     l_leftspeaker_11: off-f200ms
-#     l_leftspeaker_12: off-f200ms
-#     l_leftspeaker_13: off-f200ms
-#     l_leftspeaker_14: off-f200ms
-#     l_leftspeaker_15: off-f200ms
-#     l_leftspeaker_16: off-f200ms
+#     l_leftspeaker_1: off # -f200ms
+#     l_leftspeaker_2: off # -f200ms
+#     l_leftspeaker_3: off # -f200ms
+#     l_leftspeaker_4: off # -f200ms
+#     l_leftspeaker_5: off # -f200ms
+#     l_leftspeaker_6: off # -f200ms
+#     l_leftspeaker_7: off # -f200ms
+#     l_leftspeaker_8: off # -f200ms
+#     l_leftspeaker_9: off # -f200ms
+#     l_leftspeaker_10: off # -f200ms
+#     l_leftspeaker_11: off # -f200ms
+#     l_leftspeaker_12: off # -f200ms
+#     l_leftspeaker_13: off # -f200ms
+#     l_leftspeaker_14: off # -f200ms
+#     l_leftspeaker_15: off # -f200ms
+#     l_leftspeaker_16: off # -f200ms
 
 #OPTION 2 - OVERLAPS BETWEEN INSERTS CLOCKWISE AND THEN COUNTERCLOCKWISE CYLON STYLE
 - time: 0

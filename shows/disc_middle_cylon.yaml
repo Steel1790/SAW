@@ -53,22 +53,22 @@
 #     l_middle_disc_16: (color1)
 # - time: '+1'
 #   lights:
-#     l_middle_disc_1: off-f200ms
-#     l_middle_disc_2: off-f200ms
-#     l_middle_disc_3: off-f200ms
-#     l_middle_disc_4: off-f200ms
-#     l_middle_disc_5: off-f200ms
-#     l_middle_disc_6: off-f200ms
-#     l_middle_disc_7: off-f200ms
-#     l_middle_disc_8: off-f200ms
-#     l_middle_disc_9: off-f200ms
-#     l_middle_disc_10: off-f200ms
-#     l_middle_disc_11: off-f200ms
-#     l_middle_disc_12: off-f200ms
-#     l_middle_disc_13: off-f200ms
-#     l_middle_disc_14: off-f200ms
-#     l_middle_disc_15: off-f200ms
-#     l_middle_disc_16: off-f200ms
+#     l_middle_disc_1: off # -f200ms
+#     l_middle_disc_2: off # -f200ms
+#     l_middle_disc_3: off # -f200ms
+#     l_middle_disc_4: off # -f200ms
+#     l_middle_disc_5: off # -f200ms
+#     l_middle_disc_6: off # -f200ms
+#     l_middle_disc_7: off # -f200ms
+#     l_middle_disc_8: off # -f200ms
+#     l_middle_disc_9: off # -f200ms
+#     l_middle_disc_10: off # -f200ms
+#     l_middle_disc_11: off # -f200ms
+#     l_middle_disc_12: off # -f200ms
+#     l_middle_disc_13: off # -f200ms
+#     l_middle_disc_14: off # -f200ms
+#     l_middle_disc_15: off # -f200ms
+#     l_middle_disc_16: off # -f200ms
 
 #OPTION 2 - OVERLAPS BETWEEN INSERTS CLOCKWISE AND THEN COUNTERCLOCKWISE CYLON STYLE
 - time: 0

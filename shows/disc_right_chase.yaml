@@ -41,18 +41,18 @@
     l_right_disc_12: (color1)
 - time: '+1'
   lights:
-    l_right_disc_1: off-f200ms
-    l_right_disc_2: off-f200ms
-    l_right_disc_3: off-f200ms
-    l_right_disc_4: off-f200ms
-    l_right_disc_5: off-f200ms
-    l_right_disc_6: off-f200ms
-    l_right_disc_7: off-f200ms
-    l_right_disc_8: off-f200ms
-    l_right_disc_9: off-f200ms
-    l_right_disc_10: off-f200ms
-    l_right_disc_11: off-f200ms
-    l_right_disc_12: off-f200ms
+    l_right_disc_1: off # -f200ms
+    l_right_disc_2: off # -f200ms
+    l_right_disc_3: off # -f200ms
+    l_right_disc_4: off # -f200ms
+    l_right_disc_5: off # -f200ms
+    l_right_disc_6: off # -f200ms
+    l_right_disc_7: off # -f200ms
+    l_right_disc_8: off # -f200ms
+    l_right_disc_9: off # -f200ms
+    l_right_disc_10: off # -f200ms
+    l_right_disc_11: off # -f200ms
+    l_right_disc_12: off # -f200ms
 
 #OPTION 2 - OVERLAPS BETWEEN INSERTS CLOCKWISE AND THEN COUNTERCLOCKWISE CYLON STYLE
 # - time: 0

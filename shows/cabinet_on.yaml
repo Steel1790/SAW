@@ -2,4 +2,4 @@
 
 - time: '+1'
   lights:
-    cabinet: beartrap-f300ms
+    cabinet: beartrap # -f300ms

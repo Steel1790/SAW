@@ -77,95 +77,95 @@
 #     l_cabinet_front_24: (color1)
 # - time: '+1'   
 #   lights:
-#     l_cabinet_front_1: off-f200ms
+#     l_cabinet_front_1: off # -f200ms
 # - time: '+1'
 #   lights:
-#     l_cabinet_front_2: off-f200ms
+#     l_cabinet_front_2: off # -f200ms
 # - time: '+1'
 #   lights:
-#     l_cabinet_front_3: off-f200ms
+#     l_cabinet_front_3: off # -f200ms
 # - time: '+1'
 #   lights:
-#     l_cabinet_front_4: off-f200ms
+#     l_cabinet_front_4: off # -f200ms
 # - time: '+1'
 #   lights:
-#     l_cabinet_front_5: off-f200ms
+#     l_cabinet_front_5: off # -f200ms
 # - time: '+1'
 #   lights:
-#     l_cabinet_front_6: off-f200ms
+#     l_cabinet_front_6: off # -f200ms
 # - time: '+1'
 #   lights:
-#     l_cabinet_front_7: off-f200ms
+#     l_cabinet_front_7: off # -f200ms
 # - time: '+1'
 #   lights:
-#     l_cabinet_front_8: off-f200ms
+#     l_cabinet_front_8: off # -f200ms
 # - time: '+1'
 #   lights:
-#     l_cabinet_front_9: off-f200ms
+#     l_cabinet_front_9: off # -f200ms
 # - time: '+1'
 #   lights:
-#     l_cabinet_front_10: off-f200ms
+#     l_cabinet_front_10: off # -f200ms
 # - time: '+1'
 #   lights:
-#     l_cabinet_front_11: off-f200ms
+#     l_cabinet_front_11: off # -f200ms
 # - time: '+1'
 #   lights:
-#     l_cabinet_front_12: off-f200ms
+#     l_cabinet_front_12: off # -f200ms
 # - time: '+1'
 #   lights:
-#     l_cabinet_front_13: off-f200ms
+#     l_cabinet_front_13: off # -f200ms
 # - time: '+1'
 #   lights:
-#     l_cabinet_front_14: off-f200ms
+#     l_cabinet_front_14: off # -f200ms
 # - time: '+1'
 #   lights:
-#     l_cabinet_front_15: off-f200ms
+#     l_cabinet_front_15: off # -f200ms
 # - time: '+1'
 #   lights:
-#     l_cabinet_front_16: off-f200ms
+#     l_cabinet_front_16: off # -f200ms
 # - time: '+1'
 #   lights:
-#     l_cabinet_front_17: off-f200ms
+#     l_cabinet_front_17: off # -f200ms
 # - time: '+1'
 #   lights:
-#     l_cabinet_front_18: off-f200ms
+#     l_cabinet_front_18: off # -f200ms
 # - time: '+1'
 #   lights:
-#     l_cabinet_front_19: off-f200ms
+#     l_cabinet_front_19: off # -f200ms
 # - time: '+1'
 #   lights:
-#     l_cabinet_front_20: off-f200ms
+#     l_cabinet_front_20: off # -f200ms
 # - time: '+1'
 #   lights:
-#     l_cabinet_front_21: off-f200ms
+#     l_cabinet_front_21: off # -f200ms
 # - time: '+1'
 #   lights:
-#     l_cabinet_front_22: off-f200ms
+#     l_cabinet_front_22: off # -f200ms
 # - time: '+1'
 #   lights:
-#     l_cabinet_front_23: off-f200ms
+#     l_cabinet_front_23: off # -f200ms
 # - time: '+1'
 #   lights:
-#     l_cabinet_front_24: off-f200ms
+#     l_cabinet_front_24: off # -f200ms
 
 # - time: '+1'
 #   lights:
-#     l_cabinet_front_1: off-f200ms
-#     l_cabinet_front_2: off-f200ms
-#     l_cabinet_front_3: off-f200ms
-#     l_cabinet_front_4: off-f200ms
-#     l_cabinet_front_5: off-f200ms
-#     l_cabinet_front_6: off-f200ms
-#     l_cabinet_front_7: off-f200ms
-#     l_cabinet_front_8: off-f200ms
-#     l_cabinet_front_9: off-f200ms
-#     l_cabinet_front_10: off-f200ms
-#     l_cabinet_front_11: off-f200ms
-#     l_cabinet_front_12: off-f200ms
-#     l_cabinet_front_13: off-f200ms
-#     l_cabinet_front_14: off-f200ms
-#     l_cabinet_front_15: off-f200ms
-#     l_cabinet_front_16: off-f200ms
+#     l_cabinet_front_1: off # -f200ms
+#     l_cabinet_front_2: off # -f200ms
+#     l_cabinet_front_3: off # -f200ms
+#     l_cabinet_front_4: off # -f200ms
+#     l_cabinet_front_5: off # -f200ms
+#     l_cabinet_front_6: off # -f200ms
+#     l_cabinet_front_7: off # -f200ms
+#     l_cabinet_front_8: off # -f200ms
+#     l_cabinet_front_9: off # -f200ms
+#     l_cabinet_front_10: off # -f200ms
+#     l_cabinet_front_11: off # -f200ms
+#     l_cabinet_front_12: off # -f200ms
+#     l_cabinet_front_13: off # -f200ms
+#     l_cabinet_front_14: off # -f200ms
+#     l_cabinet_front_15: off # -f200ms
+#     l_cabinet_front_16: off # -f200ms
 
 #OPTION 2 - OVERLAPS BETWEEN INSERTS CLOCKWISE AND THEN COUNTERCLOCKWISE CYLON STYLE
 - time: 0

@@ -770,10 +770,10 @@ shows:
   slingshots_flash:
     - duration: 0.3s
       lights:
-        (leds): red-f200ms
+        (leds): red # -f200ms
     - duration: 0.1s
       lights:
-        (leds): white-f200ms 
+        (leds): white # -f200ms 
   pops_on:
     - duration: -1
       lights:
@@ -1024,36 +1024,66 @@ show_player:
         leds: l_razorwire_mode
       loops: -1   
       priority: 200
+    rw_complete:
+      loops: 2
+      speed: 25    
+      show_tokens:
+        color1: razorwire
   mode_drillchair_complete:
     mode_drillchair_show_complete:
       show_tokens:
         leds: l_drillchair_mode
       loops: -1  
       priority: 200
+    rw_complete:
+      loops: 2
+      speed: 25    
+      show_tokens:
+        color1: drillchair
   mode_quadshotgun_complete:
     mode_quadshotgun_show_complete:
       show_tokens:
         leds: l_quadshotgun_mode
       loops: -1    
       priority: 200
+    rw_complete:
+      loops: 2
+      speed: 25    
+      show_tokens:
+        color1: shotgun
   mode_reversebeartrap_complete:
     mode_reversebeartrap_show_complete:
       show_tokens:
         leds: l_beartrap_mode
       loops: -1  
       priority: 200
+    rw_complete:
+      loops: 2
+      speed: 25    
+      show_tokens:
+        color1: beartrap
   mode_zeptest_complete:
     mode_zeptest_show_complete:
       show_tokens:
         leds: l_zeptest_mode
       loops: -1  
       priority: 200
+    rw_complete:
+      loops: 2
+      speed: 25    
+      show_tokens:
+        color1: zeptest
   mode_flammablejelly_complete:
     mode_flammablejelly_show_complete:
       show_tokens:
         leds: l_jelly_mode
       loops: -1    
       priority: 200
+    rw_complete:
+      loops: 2
+      speed: 25    
+      show_tokens:
+        color1: jelly
 
 # puzzle piece collected
   razorwire_puzzle_complete:
@@ -1249,12 +1279,6 @@ show_player:
     starpost_breaking_glass:
       loops: 0
       speed: 40
-
-#  trap completed
-  slide_trapcomplete_active:
-    rw_complete:
-      loops: 2
-      speed: 25    
 
 # end of ball 3
   #ball_will_end{current_player.ball==3}:

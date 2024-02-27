@@ -29,14 +29,14 @@
 #     l_drill_flasher_8: (color1)
 # - time: '+1'
 #   lights:
-#     l_drill_flasher_1: off-f200ms
-#     l_drill_flasher_2: off-f200ms
-#     l_drill_flasher_3: off-f200ms
-#     l_drill_flasher_4: off-f200ms
-#     l_drill_flasher_5: off-f200ms
-#     l_drill_flasher_6: off-f200ms
-#     l_drill_flasher_7: off-f200ms
-#     l_drill_flasher_8: off-f200ms
+#     l_drill_flasher_1: off # -f200ms
+#     l_drill_flasher_2: off # -f200ms
+#     l_drill_flasher_3: off # -f200ms
+#     l_drill_flasher_4: off # -f200ms
+#     l_drill_flasher_5: off # -f200ms
+#     l_drill_flasher_6: off # -f200ms
+#     l_drill_flasher_7: off # -f200ms
+#     l_drill_flasher_8: off # -f200ms
 
 #OPTION 2 - OVERLAPS BETWEEN INSERTS CLOCKWISE AND THEN COUNTERCLOCKWISE CYLON STYLE
 - time: 0

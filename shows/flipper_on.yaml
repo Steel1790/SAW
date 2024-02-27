@@ -3,4 +3,4 @@
 
 - time: '+1'
   lights:
-    flipper: (color1)-f200ms
+    flipper: (color1) # -f200ms

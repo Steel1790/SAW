@@ -3,10 +3,10 @@
 
 - time: '+10'
   lights:
-    insert: (color1)-f800ms
+    insert: (color1) # -f800ms
 - time: '+10'
   lights:
-    insert: (color2)-f800ms
+    insert: (color2) # -f800ms
 - time: '+10'
   lights:
-    insert: (color3)-f800ms  
+    insert: (color3) # -f800ms  

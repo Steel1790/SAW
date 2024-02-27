@@ -3,16 +3,16 @@
 #SLOW PULSE ON OFF
 - time: 0
   lights:
-    starpost: 800800-f1500ms     
+    starpost: 800800 # -f1500ms     
 - time: '+1500ms'
   lights:
-    starpost: (color1)-f80ms    
+    starpost: (color1) # -f80ms    
 - time: '+250ms'
   lights:
-    starpost: 590800-f80ms   
+    starpost: 590800 # -f80ms   
 - time: '+150ms'
   lights:
-    starpost: (color1)-f80ms
+    starpost: (color1) # -f80ms
 - time: '+250ms'
   lights:
-    starpost: 590800-f200ms  
+    starpost: 590800 # -f200ms  

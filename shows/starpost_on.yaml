@@ -3,4 +3,4 @@
 
 - time: '+1'
   lights:
-    starpost: (color1)-f200ms
+    starpost: (color1) # -f200ms
