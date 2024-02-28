@@ -5,12 +5,13 @@ mode:
   priority: 181
  
 sequences:
-  razorwire:
+  razorwire_phase2:
     events:
-      - razorwire_pops_complete
       - drop_target_dt_upper_drop1_down
-      - ssh_left_ramp_hit
     reset_on_complete: false
+    persist_state: true
+    enable_events: razorwire_pops_complete
+    disable_events: mode_razorwire_complete
     events_when_complete: mode_razorwire_complete, stop_mode_razorwire
  
 timers:
@@ -26,10 +27,10 @@ counters:
   razorwire_pops_counter:
     starting_count: 0
     count_complete_value: 12
-    enable_events: enable_qualify
-    disable_events: disable_qualify
+    enable_events: mode_razorwire_started
+    disable_events: razorwire_pops_complete, logicblock_razorwire_phase2_updated{enabled==True}
     start_enabled: true
-#    persist_state: true
+    persist_state: true
     reset_on_complete: false
 #    events_when_complete: mode_razorwire_complete, stop_mode_razorwire
     events_when_complete: razorwire_pops_complete   
@@ -49,9 +50,7 @@ shots:
     
 
 variable_player:
-  logicblock_razorwire_hit{step==1}:
-    score: 1000000
-  logicblock_razorwire_hit{step==2}:
+  razorwire_pops_complete:
     score: 1000000
   mode_razorwire_complete:
     score: 6500000 
@@ -257,7 +256,7 @@ slide_player:
     razorwirevideo:
       priority: 500
       expire: 12.7s
-  slide_razorwirevideo_removed: 
+  slide_razorwirevideo_removed:
     razorwire_pops:
       priority: 400
       expire: 70.5s
@@ -268,6 +267,10 @@ slide_player:
     razorwire_phase2:
       priority: 405
       expire: 60.5s
+  logicblock_razorwire_updated{enabled==True}:
+    razorwire_phase2:
+      priority: 405
+      expire: 60.5s  
 
 widgets:
    rw_shot_update2:
@@ -308,56 +311,56 @@ widgets:
    #   font_size: 70
    #   font_name: TrajanProRegular
 
-   rw_shot_update3:
-    - type: Text
-      text: " Hit The Left Ramp To Escape"
-      font_size: 80
-      font_name: TrajanProRegular
-      outline_color: black
-      outline_width: 7
-      color: 65fe08 
-      x: 50%
-      y: 62%
-      z: 1
-      animations:
-        add_to_slide:
-          - property: opacity
-            value: 0
-          - property: opacity
-            value: 1
-            duration: 1000ms
-            timing: after_previous
-    - type: Text
-      text: " & Complete The Trap"
-      font_size: 80
-      font_name: TrajanProRegular
-      outline_color: black
-      outline_width: 7
-      color: 65fe08 
-      x: 50%
-      y: 48%
-      z: 1
-      animations:
-        add_to_slide:
-          - property: opacity
-            value: 0
-          - property: opacity
-            value: 1
-            duration: 1000ms
-            timing: after_previous
+   #rw_shot_update3:
+   # - type: Text
+   #   text: " Hit The Left Ramp To Escape"
+   #   font_size: 80
+   #   font_name: TrajanProRegular
+   #   outline_color: black
+   #   outline_width: 7
+   #   color: 65fe08 
+   #   x: 50%
+   #   y: 62%
+   #   z: 1
+   #   animations:
+   #     add_to_slide:
+   #       - property: opacity
+   #         value: 0
+   #       - property: opacity
+   #         value: 1
+   #         duration: 1000ms
+   #         timing: after_previous
+   # - type: Text
+   #   text: " & Complete The Trap"
+   #   font_size: 80
+   #   font_name: TrajanProRegular
+   #   outline_color: black
+   #   outline_width: 7
+   #   color: 65fe08 
+   #   x: 50%
+   #   y: 48%
+   #   z: 1
+   #   animations:
+   #     add_to_slide:
+   #       - property: opacity
+   #         value: 0
+   #       - property: opacity
+   #         value: 1
+   #         duration: 1000ms
+   #         timing: after_previous
 
 widget_player:
- logicblock_razorwire_hit{step==1}: 
+ logicblock_razorwire_phase2_updated{enabled==True}:
   rw_shot_update2:
     slide: razorwire_phase2
     action: add
- logicblock_razorwire_hit{step==2}: 
-  rw_shot_update2:
-    slide: razorwire_phase2
-    action: remove
-  rw_shot_update3:
-    slide: razorwire_phase2
-    action: add
+ #logicblock_razorwire_hit{step==2}: 
+ # rw_shot_update2:
+ #   slide: razorwire_phase2
+ #   action: remove
+ # rw_shot_update3:
+ #   slide: razorwire_phase2
+ #   action: add
 
 shows:
   razorwire_pops_progress:    
@@ -369,6 +372,13 @@ shows:
       lights:
         (leds): razorwire
     - duration: 0.15s
+      lights:
+        (leds): off
+  razorwire_pops_start:
+    - duration: 0.3s
+      lights:
+        (leds): razorwire
+    - duration: 0.3s
       lights:
         (leds): off
 #EK added 
@@ -454,6 +464,25 @@ show_player:
         show_tokens:
           color1: ffffff
       top_drop_chase: stop
+
+  logicblock_razorwire_pops_counter_updated{value<12}:
+    flash_token:
+      loops: -1
+      show_tokens:
+        led: top_bumper
+        color1: razorwire
+      priority: 180
+  razorwire_pops_complete:
+    flash_token:
+      loops: -1
+      show_tokens:
+        leds: top_bumper
+        color1: off
+    razorwire_pops_progress:
+      loops: -1
+      show_tokens:
+        leds: top_bumper
+        color1: razorwire
 # pops progress
   #logicblock_razorwire_pops_counter_hit{count==1}:
   #    razorwire_pops_progress:
@@ -467,6 +496,7 @@ show_player:
         show_tokens:
           leds: l_lower_top_bumper_1, l_left_top_bumper_1, l_right_top_bumper_1, l_lower_top_bumper_2, l_left_top_bumper_2, l_right_top_bumper_2, l_lower_top_bumper_16, l_left_top_bumper_16, l_right_top_bumper_16
           color1: razorwire
+        priority: 181
       starpost_cycle:
         loops: 1
         speed: 20
@@ -479,12 +509,14 @@ show_player:
         show_tokens:
           leds: l_lower_top_bumper_1, l_left_top_bumper_1, l_right_top_bumper_1, l_lower_top_bumper_2, l_left_top_bumper_2, l_right_top_bumper_2, l_lower_top_bumper_16, l_left_top_bumper_16, l_right_top_bumper_16, l_lower_top_bumper_3, l_left_top_bumper_3, l_right_top_bumper_3, l_lower_top_bumper_15, l_left_top_bumper_15, l_right_top_bumper_15
           color1: razorwire
+        priority: 181
   logicblock_razorwire_pops_counter_hit{count==4}:
       razorwire_pops_progress:
         loops: -1
         show_tokens:
           leds: l_lower_top_bumper_1, l_left_top_bumper_1, l_right_top_bumper_1, l_lower_top_bumper_2, l_left_top_bumper_2, l_right_top_bumper_2, l_lower_top_bumper_16, l_left_top_bumper_16, l_right_top_bumper_16, l_lower_top_bumper_3, l_left_top_bumper_3, l_right_top_bumper_3, l_lower_top_bumper_15, l_left_top_bumper_15, l_right_top_bumper_15, l_lower_top_bumper_4, l_left_top_bumper_4, l_right_top_bumper_4, l_lower_top_bumper_14, l_left_top_bumper_14, l_right_top_bumper_14
           color1: razorwire
+        priority: 181
       starpost_cycle:
         loops: 1
         speed: 20
@@ -497,12 +529,14 @@ show_player:
         show_tokens:
           leds: l_lower_top_bumper_1, l_left_top_bumper_1, l_right_top_bumper_1, l_lower_top_bumper_2, l_left_top_bumper_2, l_right_top_bumper_2, l_lower_top_bumper_16, l_left_top_bumper_16, l_right_top_bumper_16, l_lower_top_bumper_3, l_left_top_bumper_3, l_right_top_bumper_3, l_lower_top_bumper_15, l_left_top_bumper_15, l_right_top_bumper_15, l_lower_top_bumper_4, l_left_top_bumper_4, l_right_top_bumper_4, l_lower_top_bumper_14, l_left_top_bumper_14, l_right_top_bumper_14, l_lower_top_bumper_5, l_left_top_bumper_5, l_right_top_bumper_5, l_lower_top_bumper_13, l_left_top_bumper_13, l_right_top_bumper_13
           color1: razorwire
+        priority: 181
   logicblock_razorwire_pops_counter_hit{count==8}:
       razorwire_pops_progress:
         loops: -1
         show_tokens:
           leds: l_lower_top_bumper_1, l_left_top_bumper_1, l_right_top_bumper_1, l_lower_top_bumper_2, l_left_top_bumper_2, l_right_top_bumper_2, l_lower_top_bumper_16, l_left_top_bumper_16, l_right_top_bumper_16, l_lower_top_bumper_3, l_left_top_bumper_3, l_right_top_bumper_3, l_lower_top_bumper_15, l_left_top_bumper_15, l_right_top_bumper_15, l_lower_top_bumper_4, l_left_top_bumper_4, l_right_top_bumper_4, l_lower_top_bumper_14, l_left_top_bumper_14, l_right_top_bumper_14, l_lower_top_bumper_5, l_left_top_bumper_5, l_right_top_bumper_5, l_lower_top_bumper_13, l_left_top_bumper_13, l_right_top_bumper_13
           color1: razorwire
+        priority: 181
       starpost_cycle:
         loops: 1
         speed: 20
@@ -515,12 +549,14 @@ show_player:
         show_tokens:
           leds: l_lower_top_bumper_1, l_left_top_bumper_1, l_right_top_bumper_1, l_lower_top_bumper_2, l_left_top_bumper_2, l_right_top_bumper_2, l_lower_top_bumper_16, l_left_top_bumper_16, l_right_top_bumper_16, l_lower_top_bumper_3, l_left_top_bumper_3, l_right_top_bumper_3, l_lower_top_bumper_15, l_left_top_bumper_15, l_right_top_bumper_15, l_lower_top_bumper_4, l_left_top_bumper_4, l_right_top_bumper_4, l_lower_top_bumper_14, l_left_top_bumper_14, l_right_top_bumper_14, l_lower_top_bumper_5, l_left_top_bumper_5, l_right_top_bumper_5, l_lower_top_bumper_13, l_left_top_bumper_13, l_right_top_bumper_13, l_lower_top_bumper_7, l_left_top_bumper_7, l_right_top_bumper_7, l_lower_top_bumper_11, l_left_top_bumper_11, l_right_top_bumper_11
           color1: razorwire
+        priority: 181
   logicblock_razorwire_pops_counter_hit{count==11}:
       razorwire_pops_progress:
         loops: -1
         show_tokens:
           leds: l_lower_top_bumper_1, l_left_top_bumper_1, l_right_top_bumper_1, l_lower_top_bumper_2, l_left_top_bumper_2, l_right_top_bumper_2, l_lower_top_bumper_16, l_left_top_bumper_16, l_right_top_bumper_16, l_lower_top_bumper_3, l_left_top_bumper_3, l_right_top_bumper_3, l_lower_top_bumper_15, l_left_top_bumper_15, l_right_top_bumper_15, l_lower_top_bumper_4, l_left_top_bumper_4, l_right_top_bumper_4, l_lower_top_bumper_14, l_left_top_bumper_14, l_right_top_bumper_14, l_lower_top_bumper_5, l_left_top_bumper_5, l_right_top_bumper_5, l_lower_top_bumper_13, l_left_top_bumper_13, l_right_top_bumper_13, l_lower_top_bumper_7, l_left_top_bumper_7, l_right_top_bumper_7, l_lower_top_bumper_11, l_left_top_bumper_11, l_right_top_bumper_11, l_lower_top_bumper_8, l_left_top_bumper_8, l_right_top_bumper_8, l_lower_top_bumper_10, l_left_top_bumper_10, l_right_top_bumper_10
           color1: razorwire
+        priority: 181
       starpost_cycle:
         loops: 1
         speed: 20
@@ -533,22 +569,22 @@ show_player:
         show_tokens:
           leds: top_bumper
           color1: razorwire
-  logicblock_razorwire_hit{step==1}:
+  logicblock_razorwire_phase2_updated{enabled==True}:
       top_drop_chase:
         loops: -1
         speed: 14
         show_tokens:
           color1: razorwire
-  logicblock_razorwire_hit{step==2}:
-      left_ramp_chase:
-        loops: -1
-        speed: 5
-        show_tokens:
-          color1: razorwire
-      top_drop_chase:
-        loops: -1
-        show_tokens:
-          color1: off
+  #logicblock_razorwire_hit{step==2}:
+  #    left_ramp_chase:
+  #      loops: -1
+  #      speed: 5
+  #      show_tokens:
+  #        color1: razorwire
+  #    top_drop_chase:
+  #      loops: -1
+  #      show_tokens:
+  #        color1: off
 
 #speaker lights increase as timer drops
   player_razorwire_60s_timer_tick{value==50}:

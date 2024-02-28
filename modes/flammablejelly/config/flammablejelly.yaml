@@ -13,6 +13,8 @@ sequences:
       #- sw_loop
       - drop_target_dt_upper_drop1_down    
     reset_on_complete: false
+    persist_state: true
+    disable_events: mode_flammablejelly_complete
     events_when_complete: mode_flammablejelly_complete, stop_mode_flammablejelly
 
 timers:
@@ -228,21 +230,21 @@ widget_player:
   flammablejelly_shot_update1:
     slide: flammablejellyUI
     action: add
- logicblock_flammablejelly_hit{step==1}: 
+ logicblock_flammablejelly_updated{value==1}:
   flammablejelly_shot_update1:
     slide: flammablejellyUI
     action: remove
   flammablejelly_shot_update2:
     slide: flammablejellyUI
     action: add
- logicblock_flammablejelly_hit{step==2}: 
+ logicblock_flammablejelly_updated{value==2}:
   flammablejelly_shot_update2:
     slide: flammablejellyUI
     action: remove
   flammablejelly_shot_update3:
     slide: flammablejellyUI
     action: add
- logicblock_flammablejelly_hit{step==3}: 
+ logicblock_flammablejelly_updated{value==3}:
   flammablejelly_shot_update3:
     slide: flammablejellyUI
     action: remove
@@ -267,7 +269,7 @@ slide_player:
       priority: 400
       expire: 60.5s
   #logicblock_flammablejelly_hit{step==4}:
-  logicblock_flammablejelly_hit{step==3}:
+  logicblock_flammablejelly_updated{value==3}:
     XMarksTheSpotVideo:
       priority: 406
       expire: 2.1s    
@@ -303,7 +305,7 @@ show_player:
         show_tokens:
           leds: l_right_standup_arrow
           color1: jelly
-  logicblock_flammablejelly_hit{step==1}:
+  logicblock_flammablejelly_updated{value==1}:
       fire_starposts:
         loops: 1
         speed: 20
@@ -318,7 +320,7 @@ show_player:
         show_tokens:
           leds: orbit
           color1: jelly
-  logicblock_flammablejelly_hit{step==2}:
+  logicblock_flammablejelly_updated{value==2}:
       fire_starposts:
         loops: 1
         speed: 20
@@ -351,7 +353,7 @@ show_player:
       #  show_tokens:
       #    leds: orbit
       #    color1: jelly
-  logicblock_flammablejelly_hit{step==3}:
+  logicblock_flammablejelly_updated{value==3}:
       top_drop_chase:
         loops: -1
         speed: 14

@@ -24,6 +24,8 @@ sequences:
       - sw_standup
       - drop_target_dt_upper_drop1_down
     reset_on_complete: false
+    persist_state: true
+    disable_events: mode_reversebeartrap_complete
     events_when_complete: mode_reversebeartrap_complete, stop_mode_reversebeartrap
 
 timers:
@@ -236,21 +238,21 @@ widget_player:
    rbt_shot_update1:
      slide: reversebeartrapUI
      action: add
- logicblock_reversebeartrap_hit{step==1}: 
+ logicblock_reversebeartrap_updated{value==1}: 
    rbt_shot_update1:
      slide: reversebeartrapUI
      action: remove
    rbt_shot_update2:
      slide: reversebeartrapUI
      action: add
- logicblock_reversebeartrap_hit{step==2}: 
+ logicblock_reversebeartrap_updated{value==2}:
    rbt_shot_update2:
      slide: reversebeartrapUI
      action: remove
    rbt_shot_update3:
      slide: reversebeartrapUI
      action: add
- logicblock_reversebeartrap_hit{step==6}: 
+ logicblock_reversebeartrap_updated{value==6}: 
    rbt_shot_update3:
      slide: reversebeartrapUI
      action: remove
@@ -386,7 +388,7 @@ show_player:
         speed: 5
         show_tokens:
           color1: beartrap
-  logicblock_reversebeartrap_hit{step==1}:
+  logicblock_reversebeartrap_updated{value==1}: 
       left_orbit_left_ramp_chase:
         loops: -1
         show_tokens:
@@ -402,7 +404,7 @@ show_player:
         show_tokens:
           color1: beartrap
         priority: 170
-  logicblock_reversebeartrap_hit{step==2}:
+  logicblock_reversebeartrap_updated{value==2}:
       right_orbit_right_ramp_chase:
         loops: -1
         show_tokens:
@@ -419,7 +421,7 @@ show_player:
         show_tokens:
           color1: beartrap
         priority: 170
-  logicblock_reversebeartrap_hit{step==6}:
+  logicblock_reversebeartrap_updated{value==6}: 
       reversebeartrap_progress:
         loops: -1
         show_tokens:

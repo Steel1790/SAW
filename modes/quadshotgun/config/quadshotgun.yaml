@@ -5,11 +5,13 @@ mode:
   priority: 181
  
 sequences:
-  quadshotgun:
+  quadshotgun_phase2:
     events:
-      - quadshotgun_spinner_complete
       - ssh_left_orbit_hit
     reset_on_complete: false
+    persist_state: true
+    enable_events: quadshotgun_spinner_complete
+    disable_events: mode_quadshotgun_complete
     events_when_complete: mode_quadshotgun_complete, stop_mode_quadshotgun
  
 timers:
@@ -25,12 +27,12 @@ counters:
   quadshotgun_spinner_counter:
     starting_count: 0
     count_complete_value: 20
-    enable_events: enable_qualify
-    disable_events: disable_qualify
-    start_enabled: true
-#    persist_state: true
+    enable_events: mode_quadshotgun_started
+    disable_events: quadshotgun_spinner_complete, logicblock_quadshotgun_phase2_updated{enabled==True}
+#    start_enabled: true
+    persist_state: true
     reset_on_complete: false
-    events_when_complete: quadshotgun_spinner_complete   
+    events_when_complete: quadshotgun_spinner_complete 
     count_events: spinner_spinner_hit
 
 #shots:
@@ -38,7 +40,7 @@ counters:
 #    switch: s_spinner   
 
 variable_player:
-  logicblock_quadshotgun_hit{step==1}:
+  quadshotgun_spinner_complete:
     score: 2500000
   mode_quadshotgun_complete:
     score: 6000000 
@@ -266,7 +268,11 @@ slide_player:
   quadshotgun_spinner_complete:
     quadshotgun_phase2:
       priority: 405
-      expire: 49.5s
+      expire: 64.5s
+  logicblock_quadshotgun_phase2_updated{enabled==True}:
+    quadshotgun_phase2:
+      priority: 405
+      expire: 64.5s
       
 #widgets:
 #   quadshotgun_shot_update2:
@@ -330,7 +336,8 @@ show_player:
       show_tokens:
         color1: shotgun
 
-  player_quadshotgun_quadshotgun_60s_timer_tick{value == 67}: 
+#  player_quadshotgun_quadshotgun_60s_timer_tick{value == 67}: 
+  logicblock_quadshotgun_spinner_counter_updated{value<20}:
     flash_token:
       loops: -1
       speed: 8
@@ -387,7 +394,7 @@ show_player:
         led: l_shotgun_flasher_4
         color1: shotgun
 
-  logicblock_quadshotgun_hit{step==1}:
+  quadshotgun_spinner_complete:
       flash_token:
         loops: -1
         show_tokens:
@@ -398,6 +405,18 @@ show_player:
         show_tokens:
           leds: l_left_loop_arrow
           color1: shotgun
+  logicblock_quadshotgun_phase2_updated{enabled==True}:
+      flash_token:
+        show_tokens:
+          leds: l_right_loop_arrow
+          color1: off
+      quadshotgun_progress:
+        loops: -1
+        show_tokens:
+          leds: l_left_loop_arrow
+          color1: shotgun
+
+    
 
   logicblock_quadshotgun_spinner_counter_hit{count==1}:
       starpost_cycle:
@@ -409,7 +428,7 @@ show_player:
       shotgun_blast_top_pops:
         loops: 0
         speed: 30
-  logicblock_quadshotgun_spinner_counter_hit{count==9}:
+  logicblock_quadshotgun_spinner_counter_hit{count==6}:
       starpost_cycle:
         loops: 1
         speed: 20
@@ -419,7 +438,7 @@ show_player:
       shotgun_blast_top_pops:
         loops: 0
         speed: 30
-  logicblock_quadshotgun_spinner_counter_hit{count==18}:
+  logicblock_quadshotgun_spinner_counter_hit{count==12}:
       starpost_cycle:
         loops: 1
         speed: 20
@@ -429,7 +448,7 @@ show_player:
       shotgun_blast_top_pops:
         loops: 0
         speed: 30
-  logicblock_quadshotgun_spinner_counter_hit{count==26}:
+  logicblock_quadshotgun_spinner_counter_hit{count==19}:
       starpost_cycle:
         loops: 1
         speed: 20

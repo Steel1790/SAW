@@ -12,6 +12,8 @@ sequences:
       - drillchair_pops2_complete
       - ssh_left_orbit_hit
     reset_on_complete: false
+    persist_state: true
+    disable_events: mode_drillchair_complete
     events_when_complete: mode_drillchair_complete, stop_mode_drillchair
  
 timers:
@@ -27,20 +29,20 @@ counters:
   drillchair_pops_counter:
     starting_count: 0
     count_complete_value: 5
-    enable_events: enable_qualify
-    disable_events: disable_qualify
     start_enabled: true
-#    persist_state: true
+    persist_state: true
     reset_on_complete: false
+    disable_events: drillchair_pops_complete, logicblock_drillchair_updated{value==1}
     events_when_complete: drillchair_pops_complete   
     count_events: lower_l_pop_hit, lower_r_pop_hit, up_b_pop_hit
   drillchair_pops2_counter:
     starting_count: 0
     count_complete_value: 5
-    enable_events: logicblock_drillchair_hit{step==2}
-    disable_events: disable_qualify
+    enable_events: logicblock_drillchair_updated{value==2}
+    disable_events: drillchair_pops2_complete, logicblock_drillchair_updated{value==3}
     start_enabled: false
-#    persist_state: true
+#    start_enabled: true
+    persist_state: true
     reset_on_complete: false
     events_when_complete: drillchair_pops2_complete   
     count_events: lower_l_pop_hit, lower_r_pop_hit, up_b_pop_hit    
@@ -273,7 +275,7 @@ slide_player:
     drillchair_pops:
       priority: 400
       expire: 66.5s
-  drillchair_pops_complete:
+  logicblock_drillchair_updated{value>0}:
     drillchair_phase2:
       priority: 405
       expire: 60.5s
@@ -337,7 +339,7 @@ widgets:
             timing: after_previous
    dc_shot_update4:
     - type: Text
-      text: " Hit The Left Loop To Escape"
+      text: " Hit The Left Orbit To Escape"
       font_size: 80
       font_name: TrajanProRegular
       outline_color: black
@@ -375,18 +377,18 @@ widgets:
 
  
 widget_player:
- logicblock_drillchair_hit{step==1}: 
+ logicblock_drillchair_updated{value==1}: 
   dc_shot_update2:
     slide: drillchair_phase2
     action: add
- logicblock_drillchair_hit{step==2}: 
+ logicblock_drillchair_updated{value==2}:
   dc_shot_update2:
     slide: drillchair_phase2
     action: remove
   dc_shot_update3:
     slide: drillchair_phase2 
     action: add
- logicblock_drillchair_hit{step==3}: 
+ logicblock_drillchair_updated{value==3}:
   dc_shot_update3:
     slide: drillchair_phase2
     action: remove
@@ -475,6 +477,13 @@ shows:
     - duration: 0.15s
       lights:
         (leds): off
+  drillchair_pops_start:
+    - duration: 0.3s
+      lights:
+        (leds): drillchair
+    - duration: 0.3s
+      lights:
+        (leds): off
 
 show_player:
   mode_drillchair_started:     
@@ -517,18 +526,20 @@ show_player:
   #      show_tokens:
   #        color1: drillchair
   #      priority: 170 
-  logicblock_drillchair_pops_counter_hit{count==1}:
+  logicblock_drillchair_pops_counter_updated{value==1}:
       drillchair_pops_progress:
         loops: -1
         show_tokens:
           leds: l_left_bottom_bumper_1, l_right_bottom_bumper_1, l_top_bottom_bumper_1, l_left_bottom_bumper_2, l_right_bottom_bumper_2, l_top_bottom_bumper_2, l_left_bottom_bumper_16, l_right_bottom_bumper_16
           color1: drillchair
-  logicblock_drillchair_pops_counter_hit{count==2}:
+        priority: 181
+  logicblock_drillchair_pops_counter_updated{value==2}:
       drillchair_pops_progress:
         loops: -1
         show_tokens:
           leds: l_left_bottom_bumper_1, l_right_bottom_bumper_1, l_top_bottom_bumper_1, l_left_bottom_bumper_2, l_right_bottom_bumper_2, l_top_bottom_bumper_2, l_left_bottom_bumper_16, l_right_bottom_bumper_16, l_left_bottom_bumper_3, l_right_bottom_bumper_3, l_top_bottom_bumper_3, l_left_bottom_bumper_15, l_right_bottom_bumper_15
           color1: drillchair
+        priority: 181
       starpost_cycle:
         loops: 1
         speed: 20
@@ -541,12 +552,13 @@ show_player:
   #      show_tokens:
   #        leds: l_left_bottom_bumper_1, l_right_bottom_bumper_1, l_top_bottom_bumper_1, l_left_bottom_bumper_2, l_right_bottom_bumper_2, l_top_bottom_bumper_2, l_left_bottom_bumper_16, l_right_bottom_bumper_16, l_left_bottom_bumper_3, l_right_bottom_bumper_3, l_top_bottom_bumper_3, l_left_bottom_bumper_15, l_right_bottom_bumper_15, l_left_bottom_bumper_4, l_right_bottom_bumper_4, l_top_bottom_bumper_4, l_left_bottom_bumper_14, l_right_bottom_bumper_14
   #        color1: drillchair
-  logicblock_drillchair_pops_counter_hit{count==3}:
+  logicblock_drillchair_pops_counter_updated{value==3}:
       drillchair_pops_progress:
         loops: -1
         show_tokens:
           leds: l_left_bottom_bumper_1, l_right_bottom_bumper_1, l_top_bottom_bumper_1, l_left_bottom_bumper_2, l_right_bottom_bumper_2, l_top_bottom_bumper_2, l_left_bottom_bumper_16, l_right_bottom_bumper_16, l_left_bottom_bumper_3, l_right_bottom_bumper_3, l_top_bottom_bumper_3, l_left_bottom_bumper_15, l_right_bottom_bumper_15, l_left_bottom_bumper_4, l_right_bottom_bumper_4, l_top_bottom_bumper_4, l_left_bottom_bumper_14, l_right_bottom_bumper_14, l_left_bottom_bumper_5, l_right_bottom_bumper_5, l_top_bottom_bumper_5, l_left_bottom_bumper_13, l_right_bottom_bumper_13
           color1: drillchair
+        priority: 181
       starpost_cycle:
         loops: 1
         speed: 20
@@ -571,26 +583,48 @@ show_player:
   #      show_tokens:
   #        color1: drillchair
   #      priority: 170 
-  logicblock_drillchair_pops_counter_hit{count==4}:
+  logicblock_drillchair_pops_counter_updated{value==4}:
       drillchair_pops_progress:
         loops: -1
         show_tokens:
           leds: l_left_bottom_bumper_1, l_right_bottom_bumper_1, l_top_bottom_bumper_1, l_left_bottom_bumper_2, l_right_bottom_bumper_2, l_top_bottom_bumper_2, l_left_bottom_bumper_16, l_right_bottom_bumper_16, l_left_bottom_bumper_3, l_right_bottom_bumper_3, l_top_bottom_bumper_3, l_left_bottom_bumper_15, l_right_bottom_bumper_15, l_left_bottom_bumper_4, l_right_bottom_bumper_4, l_top_bottom_bumper_4, l_left_bottom_bumper_14, l_right_bottom_bumper_14, l_left_bottom_bumper_5, l_right_bottom_bumper_5, l_top_bottom_bumper_5, l_left_bottom_bumper_13, l_right_bottom_bumper_13, l_left_bottom_bumper_6, l_right_bottom_bumper_6, l_top_bottom_bumper_6, l_left_bottom_bumper_12, l_right_bottom_bumper_12, l_top_bottom_bumper_12, l_left_bottom_bumper_7, l_right_bottom_bumper_7, l_top_bottom_bumper_7, l_left_bottom_bumper_11, l_right_bottom_bumper_11, l_top_bottom_bumper_11, l_left_bottom_bumper_8, l_right_bottom_bumper_8, l_top_bottom_bumper_8, l_left_bottom_bumper_10, l_right_bottom_bumper_10, l_top_bottom_bumper_10
           color1: drillchair
-  logicblock_drillchair_pops_counter_hit{count==5}:
+        priority: 181
+  logicblock_drillchair_pops_counter_updated{value==5}:
       drillchair_pops_progress:
         loops: -1
         show_tokens:
           leds: bottom_bumper
           color1: drillchair
+        priority: 181
       starpost_cycle:
         loops: 1
         speed: 20
         show_tokens:
           color1: drillchair
         priority: 170 
+
+  logicblock_drillchair_pops_counter_updated{value<5}:
+    flash_token:
+      loops: -1
+      show_tokens:
+        led: bottom_bumper
+        color1: drillchair
+      priority: 180
+  drillchair_pops_complete:
+    flash_token:
+      loops: -1
+      show_tokens:
+        leds: bottom_bumper
+        color1: off
+    razorwire_pops_progress:
+      loops: -1
+      show_tokens:
+        leds: bottom_bumper
+        color1: drillchair
+
 #first left orbit shot
-  logicblock_drillchair_hit{step==1}:
+  logicblock_drillchair_updated{value==1}:
       drillchair_left_orbit:
         loops: -1
         show_tokens:
@@ -598,12 +632,28 @@ show_player:
           color1: drillchair
 
 #pops progress p2
-  logicblock_drillchair_hit{step==2}:
+  logicblock_drillchair_updated{value==2}:
+      drillchair_left_orbit:
+        show_tokens:
+          leds: l_left_loop_arrow
+          color1: off
+      flash_token:
+        loops: -1
+        show_tokens:
+          led: bottom_bumper
+          color1: drillchair
+        priority: 182
+  drillchair_pops2_complete:
+      flash_token:
+        loops: -1
+        show_tokens:
+          leds: bottom_bumper
+          color1: off
       drillchair_pops_progress:
         loops: -1
         show_tokens:
-          leds: bottom_bumper, l_left_loop_arrow
-          color1: off
+          leds: bottom_bumper
+          color1: drillchair
   #logicblock_drillchair_pops2_counter_hit{count==1}:
   #    drillchair_pops_progress:
   #      loops: -1
@@ -616,18 +666,20 @@ show_player:
   #      show_tokens:
   #        color1: drillchair
   #      priority: 170 
-  logicblock_drillchair_pops2_counter_hit{count==1}:
+  logicblock_drillchair_pops2_counter_updated{value==1}:
       drillchair_pops_progress:
         loops: -1
         show_tokens:
           leds: l_left_bottom_bumper_1, l_right_bottom_bumper_1, l_top_bottom_bumper_1, l_left_bottom_bumper_2, l_right_bottom_bumper_2, l_top_bottom_bumper_2, l_left_bottom_bumper_16, l_right_bottom_bumper_16
           color1: drillchair
-  logicblock_drillchair_pops2_counter_hit{count==2}:
+        priority: 183
+  logicblock_drillchair_pops2_counter_updated{value==2}:
       drillchair_pops_progress:
         loops: -1
         show_tokens:
           leds: l_left_bottom_bumper_1, l_right_bottom_bumper_1, l_top_bottom_bumper_1, l_left_bottom_bumper_2, l_right_bottom_bumper_2, l_top_bottom_bumper_2, l_left_bottom_bumper_16, l_right_bottom_bumper_16, l_left_bottom_bumper_3, l_right_bottom_bumper_3, l_top_bottom_bumper_3, l_left_bottom_bumper_15, l_right_bottom_bumper_15
           color1: drillchair
+        priority: 183
       starpost_cycle:
         loops: 1
         speed: 20
@@ -640,12 +692,13 @@ show_player:
   #      show_tokens:
   #        leds: l_left_bottom_bumper_1, l_right_bottom_bumper_1, l_top_bottom_bumper_1, l_left_bottom_bumper_2, l_right_bottom_bumper_2, l_top_bottom_bumper_2, l_left_bottom_bumper_16, l_right_bottom_bumper_16, l_left_bottom_bumper_3, l_right_bottom_bumper_3, l_top_bottom_bumper_3, l_left_bottom_bumper_15, l_right_bottom_bumper_15, l_left_bottom_bumper_4, l_right_bottom_bumper_4, l_top_bottom_bumper_4, l_left_bottom_bumper_14, l_right_bottom_bumper_14
   #        color1: drillchair
-  logicblock_drillchair_pops2_counter_hit{count==3}:
+  logicblock_drillchair_pops2_counter_updated{value==3}:
       drillchair_pops_progress:
         loops: -1
         show_tokens:
           leds: l_left_bottom_bumper_1, l_right_bottom_bumper_1, l_top_bottom_bumper_1, l_left_bottom_bumper_2, l_right_bottom_bumper_2, l_top_bottom_bumper_2, l_left_bottom_bumper_16, l_right_bottom_bumper_16, l_left_bottom_bumper_3, l_right_bottom_bumper_3, l_top_bottom_bumper_3, l_left_bottom_bumper_15, l_right_bottom_bumper_15, l_left_bottom_bumper_4, l_right_bottom_bumper_4, l_top_bottom_bumper_4, l_left_bottom_bumper_14, l_right_bottom_bumper_14, l_left_bottom_bumper_5, l_right_bottom_bumper_5, l_top_bottom_bumper_5, l_left_bottom_bumper_13, l_right_bottom_bumper_13
           color1: drillchair
+        priority: 183
       starpost_cycle:
         loops: 1
         speed: 20
@@ -670,18 +723,20 @@ show_player:
   #      show_tokens:
   #        color1: drillchair
   #      priority: 170 
-  logicblock_drillchair_pops2_counter_hit{count==4}:
+  logicblock_drillchair_pops2_counter_updated{value==4}:
       drillchair_pops_progress:
         loops: -1
         show_tokens:
           leds: l_left_bottom_bumper_1, l_right_bottom_bumper_1, l_top_bottom_bumper_1, l_left_bottom_bumper_2, l_right_bottom_bumper_2, l_top_bottom_bumper_2, l_left_bottom_bumper_16, l_right_bottom_bumper_16, l_left_bottom_bumper_3, l_right_bottom_bumper_3, l_top_bottom_bumper_3, l_left_bottom_bumper_15, l_right_bottom_bumper_15, l_left_bottom_bumper_4, l_right_bottom_bumper_4, l_top_bottom_bumper_4, l_left_bottom_bumper_14, l_right_bottom_bumper_14, l_left_bottom_bumper_5, l_right_bottom_bumper_5, l_top_bottom_bumper_5, l_left_bottom_bumper_13, l_right_bottom_bumper_13, l_left_bottom_bumper_6, l_right_bottom_bumper_6, l_top_bottom_bumper_6, l_left_bottom_bumper_12, l_right_bottom_bumper_12, l_top_bottom_bumper_12, l_left_bottom_bumper_7, l_right_bottom_bumper_7, l_top_bottom_bumper_7, l_left_bottom_bumper_11, l_right_bottom_bumper_11, l_top_bottom_bumper_11, l_left_bottom_bumper_8, l_right_bottom_bumper_8, l_top_bottom_bumper_8, l_left_bottom_bumper_10, l_right_bottom_bumper_10, l_top_bottom_bumper_10
           color1: drillchair
-  logicblock_drillchair_pops2_counter_hit{count==5}:
+        priority: 183
+  logicblock_drillchair_pops2_counter_updated{value==5}:
       drillchair_pops_progress:
         loops: -1
         show_tokens:
           leds: bottom_bumper
           color1: drillchair
+        priority: 183
       starpost_cycle:
         loops: 1
         speed: 20
@@ -690,7 +745,7 @@ show_player:
         priority: 170 
 
 # second left orbit shot
-  logicblock_drillchair_hit{step==3}:
+  logicblock_drillchair_updated{value==3}:
       drillchair_left_orbit:
         loops: -1
         show_tokens:
