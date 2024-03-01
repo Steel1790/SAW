@@ -31,21 +31,293 @@ multiballs:
 variable_player:
   #multiball_mb_hacksaw_started:
     #score: 3000000
+  shot_hacksaw_left_loop_sp_hacksaw_mb_lit_hit:
+    score: 600000 + (device.counters.cnt_hacksaw_jackpot_value.value * 50000) + (device.counters.cnt_hacksaw_jackpot_value_decrease.value * -5000)
+  shot_hacksaw_inner_loop_sp_hacksaw_mb_lit_hit:
+    score: 600000 + (device.counters.cnt_hacksaw_jackpot_value.value * 50000) + (device.counters.cnt_hacksaw_jackpot_value_decrease.value * -5000)
+  shot_hacksaw_left_standup_rightramp_sp_hacksaw_mb_lit_hit:
+    score: 600000 + (device.counters.cnt_hacksaw_jackpot_value.value * 50000) + (device.counters.cnt_hacksaw_jackpot_value_decrease.value * -5000)
+  shot_hacksaw_right_standup_rightramp_sp_hacksaw_mb_lit_hit:
+    score: 600000 + (device.counters.cnt_hacksaw_jackpot_value.value * 50000) + (device.counters.cnt_hacksaw_jackpot_value_decrease.value * -5000)
+  shot_hacksaw_right_loop_sp_hacksaw_mb_lit_hit:
+    score: 600000 + (device.counters.cnt_hacksaw_jackpot_value.value * 50000) + (device.counters.cnt_hacksaw_jackpot_value_decrease.value * -5000)
+  shot_hacksaw_left_standup_sp_hacksaw_mb_lit_hit:
+    score: 600000 + (device.counters.cnt_hacksaw_jackpot_value.value * 50000) + (device.counters.cnt_hacksaw_jackpot_value_decrease.value * -5000)
+  shot_hacksaw_right_standup_sp_hacksaw_mb_lit_hit:
+    score: 600000 + (device.counters.cnt_hacksaw_jackpot_value.value * 50000) + (device.counters.cnt_hacksaw_jackpot_value_decrease.value * -5000)
+
+  shot_hacksaw_superjackpot1_sp_hacksaw_mb_lit_hit:
+    score: 600000 + (device.counters.cnt_hacksaw_jackpot_value.value * 50000) + (device.counters.cnt_hacksaw_jackpot_value_decrease.value * -5000)
+
+  start_hacksaw_multiball:
+    hacksaw_value:
+      int: 600000
+      action: set
+    hacksaw_super_value:
+      int: 600000
+      action: set
+  e_hacksaw_jackpot_value_increase:
+    hacksaw_value:
+      int: 600000 + (device.counters.cnt_hacksaw_jackpot_value.value * 50000) + (device.counters.cnt_hacksaw_jackpot_value_decrease.value * -5000)
+      action: set
+    hacksaw_super_value:
+      int: 600000 + (device.counters.cnt_hacksaw_jackpot_value.value * 50000 * 3) + (device.counters.cnt_hacksaw_jackpot_value_decrease.value * -5000)
+      action: set
+  e_hacksaw_jackpot_value_decrease:
+    hacksaw_value:
+      int: 600000 + (device.counters.cnt_hacksaw_jackpot_value.value * 50000) + (device.counters.cnt_hacksaw_jackpot_value_decrease.value * -5000)
+      action: set
+    hacksaw_super_value:
+      int: 600000 + (device.counters.cnt_hacksaw_jackpot_value.value * 50000 * 3) + (device.counters.cnt_hacksaw_jackpot_value_decrease.value * -5000)
+      action: set
+  
+counters:
+  cnt_hacksaw_mb_jackpot_p1:
+    starting_count: 0
+    count_complete_value: 7
+    enable_events: start_hacksaw_multiball
+#    persist_state: true
+    reset_on_complete: true
+    disable_on_complete: false   
+    count_events: shot_hacksaw_left_loop_sp_hacksaw_mb_lit_hit, shot_hacksaw_inner_loop_sp_hacksaw_mb_lit_hit, shot_hacksaw_left_standup_rightramp_sp_hacksaw_mb_lit_hit, shot_hacksaw_right_standup_rightramp_sp_hacksaw_mb_lit_hit, shot_hacksaw_right_loop_sp_hacksaw_mb_lit_hit, shot_hacksaw_right_standup_sp_hacksaw_mb_lit_hit, shot_hacksaw_left_standup_sp_hacksaw_mb_lit_hit
+    events_when_complete: hacksaw_mb_jackpot_p1_complete
+
+# currently set to jackpot set + super + jackpot set + super
+  cnt_hacksaw_phase_tracking:
+    starting_count: 0
+    count_complete_value: 2
+    start_enabled: true
+    events_when_complete: e_hacksaw_phase2
+    count_events: hacksaw_mb_jackpot_p1_complete
+  cnt_hacksaw_phase1_tracking:
+    starting_count: 0
+    count_complete_value: 1
+    start_enabled: true
+    events_when_complete: e_hacksaw_phase1
+    count_events: hacksaw_mb_jackpot_p1_complete
+
+  cnt_hacksaw_jackpot_value:
+    starting_count: 0
+#    count_complete_value: 10
+    start_enabled: true
+#    events_when_complete: e_hacksaw_jackpot_max
+    count_events: e_hacksaw_jackpot_value_increase
+  cnt_hacksaw_jackpot_value_decrease:
+    starting_count: 0
+#    count_complete_value: 10
+    start_enabled: true
+#    events_when_complete: e_hacksaw_jackpot_max
+    count_events: e_hacksaw_jackpot_value_decrease
+
+shots:
+  shot_hacksaw_left_loop:
+    reset_events: mode_hacksaw_multiball_stopped, player_turn_stopped, player_turn_ended
+    switches: s_left_loop_bottom, s_left_loop_top
+    profile: sp_hacksaw_mb
+    show_tokens:
+      leds: l_left_loop_arrow
+    control_events:
+      - events: ball_starting
+        state: 0
+      - events: slide_sl_HacksawMB_active
+        state: 1
+      - events: shot_hacksaw_left_loop_sp_hacksaw_mb_lit_hit
+        state: 0
+      - events: shot_hacksaw_superjackpot1_sp_hacksaw_mb_lit_hit
+        state: 1
+  shot_hacksaw_inner_loop:
+    reset_events: mode_hacksaw_multiball_stopped, player_turn_stopped, player_turn_ended
+    switches: s_inner_loop
+    profile: sp_hacksaw_mb
+    show_tokens:
+      leds: l_inner_loop_arrow
+    control_events:
+      - events: ball_starting
+        state: 0
+      - events: slide_sl_HacksawMB_active
+        state: 1
+      - events: shot_hacksaw_inner_loop_sp_hacksaw_mb_lit_hit
+        state: 0
+      - events: shot_hacksaw_superjackpot1_sp_hacksaw_mb_lit_hit
+        state: 1
+  shot_hacksaw_left_standup_rightramp:
+    reset_events: mode_hacksaw_multiball_stopped, player_turn_stopped, player_turn_ended
+    switches: s_left_standup_right_ramp
+    profile: sp_hacksaw_mb
+    show_tokens:
+      leds: l_left_standup_right_ramp_arrow
+    control_events:
+      - events: ball_starting
+        state: 0
+      - events: slide_sl_HacksawMB_active
+        state: 1
+      - events: shot_hacksaw_left_standup_rightramp_sp_hacksaw_mb_lit_hit
+        state: 0
+      - events: shot_hacksaw_superjackpot1_sp_hacksaw_mb_lit_hit
+        state: 1
+  shot_hacksaw_right_standup_rightramp:
+    reset_events: mode_hacksaw_multiball_stopped, player_turn_stopped, player_turn_ended
+    switches: s_right_standup_right_ramp
+    profile: sp_hacksaw_mb
+    show_tokens:
+      leds: l_right_standup_right_ramp_arrow
+    control_events:
+      - events: ball_starting
+        state: 0
+      - events: slide_sl_HacksawMB_active
+        state: 1
+      - events: shot_hacksaw_right_standup_rightramp_sp_hacksaw_mb_lit_hit
+        state: 0
+      - events: shot_hacksaw_superjackpot1_sp_hacksaw_mb_lit_hit
+        state: 1
+  shot_hacksaw_right_loop:
+    reset_events: mode_hacksaw_multiball_stopped, player_turn_stopped, player_turn_ended
+    switches: s_right_loop_bottom, s_right_loop_top
+    profile: sp_hacksaw_mb
+    show_tokens:
+      leds: l_right_loop_arrow
+    control_events:
+      - events: ball_starting
+        state: 0
+      - events: slide_sl_HacksawMB_active
+        state: 1
+      - events: shot_hacksaw_right_loop_sp_hacksaw_mb_lit_hit
+        state: 0
+      - events: shot_hacksaw_superjackpot1_sp_hacksaw_mb_lit_hit
+        state: 1
+  shot_hacksaw_right_standup:
+    reset_events: mode_hacksaw_multiball_stopped, player_turn_stopped, player_turn_ended
+    switches: s_right_standup
+    profile: sp_hacksaw_mb
+    show_tokens:
+      leds: l_right_standup_arrow
+    control_events:
+      - events: ball_starting
+        state: 0
+      - events: slide_sl_HacksawMB_active
+        state: 1
+      - events: shot_hacksaw_right_standup_sp_hacksaw_mb_lit_hit
+        state: 0
+      - events: shot_hacksaw_superjackpot1_sp_hacksaw_mb_lit_hit
+        state: 1
+  shot_hacksaw_left_standup:
+    reset_events: mode_hacksaw_multiball_stopped, player_turn_stopped, player_turn_ended
+    switches: s_left_standup
+    profile: sp_hacksaw_mb
+    show_tokens:
+      leds: l_left_standup_arrow
+    control_events:
+      - events: ball_starting
+        state: 0
+      - events: slide_sl_HacksawMB_active
+        state: 1
+      - events: shot_hacksaw_left_standup_sp_hacksaw_mb_lit_hit
+        state: 0
+      - events: shot_hacksaw_superjackpot1_sp_hacksaw_mb_lit_hit
+        state: 1
+  shot_hacksaw_superjackpot1:
+    reset_events: mode_hacksaw_multiball_stopped, player_turn_stopped, player_turn_ended
+    switches: s_upper_bank_drop_target_opto
+    profile: sp_hacksaw_mb
+    control_events:
+      - events: ball_starting
+        state: 0
+      - events: e_hacksaw_phase1
+        state: 1
+      - events: shot_hacksaw_superjackpot1_sp_hacksaw_mb_lit_hit
+        state: 0
+  shot_hacksaw_superjackpot2:
+    reset_events: mode_hacksaw_multiball_stopped, player_turn_stopped, player_turn_ended
+    switches: s_upper_bank_drop_target_opto
+    profile: sp_hacksaw_mb
+    control_events:
+      - events: ball_starting
+        state: 0
+      - events: e_hacksaw_phase2
+        state: 1
+      - events: shot_hacksaw_superjackpot2_sp_hacksaw_mb_lit_hit
+        state: 0
+
+shot_profiles:
+  sp_hacksaw_mb:
+    advance_on_hit: false
+    states:
+      - name: hacksaw_not_ready
+        show: "sh_hacksaw_not_ready"
+      - name: lit
+        show: "sh_hacksaw_on"           # a default show to turn of the led. change if you want to do something on unlit shots
+      #- name: collected
+      #  show: "sh_hacksaw_off"               # a default show to turn of the led. change if you want to do something on unlit shots
+
+shot_groups:
+  sg_hacksaw_p1:
+    shots: shot_hacksaw_left_loop, shot_hacksaw_left_standup_rightramp, shot_hacksaw_right_standup_rightramp, shot_hacksaw_right_loop, shot_hacksaw_inner_loop, shot_hacksaw_right_standup, shot_hacksaw_left_standup
+
+
+shows:
+  sh_hacksaw_on:    # define our show to indicate the state
+    - duration: 0.3s
+      lights:
+        (leds): beartrap
+    - duration: 0.3s
+      lights:
+        (leds): off
+  sh_hacksaw_not_ready:    # define our show to indicate the state
+    - duration: 0.3s
+      lights:
+        (leds): off
+  sh_hacksaw_jackpot:
+    - duration: 0.3s
+      lights:
+        (leds): jelly
+    - duration: 0.3s
+      lights:
+        (leds): off
 
 slides:
   sl_HacksawMB:
     widgets:
     - type: video
       video: HacksawMB
+  sl_HacksawMB_Jackpot:
+    widgets:
+    - type: video
+      video: jackpot_hacksaw
+  sl_HacksawMB_SuperJackpot:
+    widgets:
+    - type: video
+      video: superjackpot_hacksaw
 
 slide_player:
   multiball_mb_hacksaw_started:
     sl_HacksawMB:
       priority: 500
-      expire: 8s
+      expire: 6s
+  sg_hacksaw_p1_lit_hit:
+    sl_HacksawMB_Jackpot:
+      priority: 600
+      expire: 2.2s
+  shot_hacksaw_superjackpot1_sp_hacksaw_mb_lit_hit:
+    sl_HacksawMB_SuperJackpot:
+      priority: 600
+      expire: 2.2s
+  shot_hacksaw_superjackpot2_sp_hacksaw_mb_lit_hit:
+    sl_HacksawMB_SuperJackpot:
+      priority: 600
+      expire: 2.2s
 
 show_player:
   multiball_mb_hacksaw_started:
+    sh_hacksaw_jackpot:
+      speed: 1
+      show_tokens: 
+        leds: jet_bumper
+    skillshot_chase:
+      loops: -1
+      speed: 5
+      show_tokens:
+        color1: shotgun
+
     disc_right_chase:
       loops: -1
       speed: 10
@@ -72,6 +344,30 @@ show_player:
   start_hacksaw_multiball:
     mb_ballsave:
       loops: 4
+  hacksaw_mb_jackpot_p1_complete:
+      top_drop_chase:
+        loops: -1
+        speed: 20
+        show_tokens:
+          color1: beartrap
+  e_hacksaw_phase2:
+      top_drop_chase:
+        loops: -1
+        speed: 20
+        show_tokens:
+          color1: beartrap
+  shot_hacksaw_superjackpot1_sp_hacksaw_mb_lit_hit:
+      top_drop_chase:
+        loops: -1
+        show_tokens:
+          color1: off
+  shot_hacksaw_superjackpot2_sp_hacksaw_mb_lit_hit:
+      top_drop_chase:
+        loops: -1
+        show_tokens:
+          color1: off
+
+
 coil_player:
   multiball_mb_hacksaw_started:
     c_left_spin_disc:
@@ -98,5 +394,74 @@ coil_player:
     c_left_spin_disc:
       action: off
 
+sound_player:
+  sg_hacksaw_p1_lit_hit:
+    Jackpot:
+      action: play
+  shot_hacksaw_superjackpot1_sp_hacksaw_mb_lit_hit:
+    SuperJackpot:
+      action: play
+
+widgets:
+  w_hacksaw_multiball:
+    - type: Text
+      text: Hacksaw Multiball - Shoot RED ARROWS to collect JACKPOTS
+      color: white
+      x: 50%
+      y: 95%
+      z: 2
+      font_size: 52
+      font_name: Skilt Gothic W04 Thin
+      outline_color: black
+      outline_width: 7
+  w_hacksaw_multiball_value:
+    - type: text
+      text: (player|hacksaw_value)
+      number_grouping: true 
+      x: 50%
+      y: 28%
+      z: 7
+      font_size: 90
+      font_name: Mustkill     
+      outline_color: black
+      outline_width: 7
+  w_hacksaw_multiball_SuperJackpot_value:
+    - type: text
+      text: (player|hacksaw_super_value)
+      number_grouping: true 
+      x: 50%
+      y: 28%
+      z: 7
+      font_size: 90
+      font_name: Mustkill     
+      outline_color: black
+      outline_width: 7
+
+widget_player:
+  multiball_mb_hacksaw_started:
+    w_hacksaw_multiball:
+      slide: base_slide_main
+      action: add
+  stop_mode_hacksaw_multiball:
+    w_hacksaw_multiball:
+      action: remove
+  mode_hacksaw_multiball_complete:
+    w_hacksaw_multiball:  
+      action: remove
+  ball_ended:
+    w_hacksaw_multiball:
+      action: remove
+
+  sg_hacksaw_p1_lit_hit:
+    w_hacksaw_multiball_value:
+      slide: sl_HacksawMB_Jackpot
+      action: add
+  shot_hacksaw_superjackpot1_sp_hacksaw_mb_lit_hit:
+    w_hacksaw_multiball_SuperJackpot_value:
+      slide: sl_HacksawMB_SuperJackpot
+      action: add
+
 event_player:
   mode_hacksaw_multiball_started: start_hacksaw_multiball|0.3s
+  sw_pops: e_hacksaw_jackpot_value_decrease|0.2s
+  sw_lower_drop_target: e_hacksaw_jackpot_value_increase|0.2s

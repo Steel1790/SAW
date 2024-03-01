@@ -77,6 +77,17 @@ shows:
       lights:
         (leds): off
 
+sound_player:
+  e_hacksaw_mb_qualify_hit_one:
+    LockIsLit:
+      action: play
+  slide_sl_Hacksaw_locked_1_active:
+    Ball1Locked:
+      action: play
+  slide_sl_Hacksaw_locked_2_active:
+    Ball2Locked:
+      action: play
+
 show_player:
   logicblock_acc_hacksaw_mb_qualify_complete{device.multiball_locks.mbl_hacksaw.locked_balls == 0}:
     sh_hacksaw_mb_qualify_hit_ready:

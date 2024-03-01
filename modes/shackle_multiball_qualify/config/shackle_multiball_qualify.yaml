@@ -149,6 +149,16 @@ show_player:
       show_tokens:
         leds: l_right_ramp_triangle1, l_right_ramp_triangle2
 
+sound_player:
+  e_shackle_mb_qualify_hit_one:
+    LockIsLit:
+      action: play
+  slide_sl_Shackle_locked_1_active:
+    Ball1Locked:
+      action: play
+  slide_sl_Shackle_locked_2_active:
+    Ball2Locked:
+      action: play
 
 slides:
   sl_Shackle_locked_1:

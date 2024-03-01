@@ -326,15 +326,6 @@ sound_player:
   shot_jigsaw_superjackpot1_sp_jigsaw_mb_lit_hit:
     SuperJackpot:
       action: play
-  e_jigsaw_mb_qualify_hit_one:
-    LockIsLit:
-      action: play
-  slide_sl_Jigsaw_locked_1_active:
-    Ball1Locked:
-      action: play
-  slide_sl_Jigsaw_locked_2_active:
-    Ball2Locked:
-      action: play
 
 widgets:
   w_jigsaw_multiball:

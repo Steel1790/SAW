@@ -128,6 +128,17 @@ show_player:
       show_tokens:
         leds: l_left_ramp_triangle3, l_left_ramp_triangle2
 
+sound_player:
+  e_jigsaw_mb_qualify_hit_one:
+    LockIsLit:
+      action: play
+  slide_sl_Jigsaw_locked_1_active:
+    Ball1Locked:
+      action: play
+  slide_sl_Jigsaw_locked_2_active:
+    Ball2Locked:
+      action: play
+
 slides:
   sl_Jigsaw_locked_1:
     widgets:

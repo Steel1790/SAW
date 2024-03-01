@@ -367,18 +367,6 @@ sound_player:
   shot_shackle_superjackpot1_sp_shackle_mb_lit_hit:
     SuperJackpot:
       action: play
-  logicblock_acc_shackle_mb_qualify_complete{device.multiball_locks.mbl_shackle.locked_balls == 0}:
-    LockIsLit:
-      action: play
-  logicblock_acc_shackle_mb_qualify_complete{device.multiball_locks.mbl_shackle.locked_balls == 1}:
-    LockIsLit:
-      action: play
-  slide_sl_Shackle_locked_1_active:
-    Ball1Locked:
-      action: play
-  slide_sl_Shackle_locked_2_active:
-    Ball2Locked:
-      action: play
 
 widgets:
   w_shackle_multiball:
