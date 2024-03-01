@@ -17,31 +17,65 @@ variable_player:
   #multiball_mb_jigsaw_started:
   #  score: 3000000
   shot_jigsaw_left_loop_sp_jigsaw_mb_lit_hit:
-    score: 1000000
-  shot_jigsaw_left_standup_sp_jigsaw_mb_lit_hit:
-    score: 1000000
+    score: 750000 + (device.counters.cnt_jigsaw_jackpot_value.value * 75000)
+  shot_jigsaw_inner_loop_sp_jigsaw_mb_lit_hit:
+    score: 750000 + (device.counters.cnt_jigsaw_jackpot_value.value * 75000)
   shot_jigsaw_left_standup_rightramp_sp_jigsaw_mb_lit_hit:
-    score: 1000000
+    score: 750000 + (device.counters.cnt_jigsaw_jackpot_value.value * 75000)
   shot_jigsaw_right_standup_rightramp_sp_jigsaw_mb_lit_hit:
-    score: 1000000
+    score: 750000 + (device.counters.cnt_jigsaw_jackpot_value.value * 75000)
   shot_jigsaw_right_loop_sp_jigsaw_mb_lit_hit:
-    score: 1000000
-  shot_jigsaw_right_standup_sp_jigsaw_mb_lit_hit:
-    score: 1000000
+    score: 750000 + (device.counters.cnt_jigsaw_jackpot_value.value * 75000)
 
   shot_jigsaw_superjackpot1_sp_jigsaw_mb_lit_hit:
-    score: 5000000
+    score: 750000  + (device.counters.cnt_jigsaw_jackpot_value.value * 75000 * 3)
+
+  start_jigsaw_multiball:
+    jigsaw_value:
+      int: 750000
+      action: set
+    jigsaw_super_value:
+      int: 750000
+      action: set
+  e_jigsaw_jackpot_value:
+    jigsaw_value:
+      int: 750000 + (device.counters.cnt_jigsaw_jackpot_value.value * 75000)
+      action: set
+    jigsaw_super_value:
+      int: 750000 + (device.counters.cnt_jigsaw_jackpot_value.value * 75000 * 3) 
+      action: set
   
 counters:
   cnt_jigsaw_mb_jackpot_p1:
     starting_count: 0
-    count_complete_value: 6
+    count_complete_value: 5
     enable_events: slide_sl_JigsawMB_active
 #    persist_state: true
     reset_on_complete: true
     disable_on_complete: false   
-    count_events: shot_jigsaw_left_loop_sp_jigsaw_mb_lit_hit, shot_jigsaw_left_standup_sp_jigsaw_mb_lit_hit, shot_jigsaw_left_standup_rightramp_sp_jigsaw_mb_lit_hit, shot_jigsaw_right_standup_rightramp_sp_jigsaw_mb_lit_hit, shot_jigsaw_right_loop_sp_jigsaw_mb_lit_hit, shot_jigsaw_right_standup_sp_jigsaw_mb_lit_hit
+    count_events: shot_jigsaw_left_loop_sp_jigsaw_mb_lit_hit, shot_jigsaw_inner_loop_sp_jigsaw_mb_lit_hit, shot_jigsaw_left_standup_rightramp_sp_jigsaw_mb_lit_hit, shot_jigsaw_right_standup_rightramp_sp_jigsaw_mb_lit_hit, shot_jigsaw_right_loop_sp_jigsaw_mb_lit_hit
     events_when_complete: jigsaw_mb_jackpot_p1_complete
+
+# currently set to jackpot set + super + jackpot set + super
+  cnt_jigsaw_phase_tracking:
+    starting_count: 0
+    count_complete_value: 2
+    start_enabled: true
+    events_when_complete: e_jigsaw_phase2
+    count_events: sg_jigsaw_p1_lit_complete
+  cnt_jigsaw_phase1_tracking:
+    starting_count: 0
+    count_complete_value: 1
+    start_enabled: true
+    events_when_complete: e_jigsaw_phase1
+    count_events: sg_jigsaw_p1_lit_complete
+
+  cnt_jigsaw_jackpot_value:
+    starting_count: 0
+#    count_complete_value: 10
+    start_enabled: true
+#    events_when_complete: e_jigsaw_jackpot_max
+    count_events: e_jigsaw_jackpot_value
 
 slides:
   sl_JigsawMB:
@@ -70,6 +104,10 @@ slide_player:
     sl_JigsawMB_SuperJackpot:
       priority: 600
       expire: 2.2s
+  shot_jigsaw_superjackpot2_sp_jigsaw_mb_lit_hit:
+    sl_JigsawMB_SuperJackpot:
+      priority: 600
+      expire: 2.2s
 show_player:
   multiball_mb_jigsaw_started:
     disc_right_chase:
@@ -77,6 +115,10 @@ show_player:
       speed: 10
       show_tokens:
         color1: beartrap
+    sh_jigsaw_jackpot:
+      speed: 1
+      show_tokens: 
+        leds: l_right_standup_arrow, bear_flasher
     disc_middle_chase:
       loops: -1
       speed: 10
@@ -102,6 +144,11 @@ show_player:
         show_tokens:
           color1: beartrap
   shot_jigsaw_superjackpot1_sp_jigsaw_mb_lit_hit:
+      top_drop_chase:
+        loops: -1
+        show_tokens:
+          color1: off
+  shot_jigsaw_superjackpot2_sp_jigsaw_mb_lit_hit:
       top_drop_chase:
         loops: -1
         show_tokens:
@@ -151,19 +198,23 @@ shots:
         state: 1
       - events: shot_jigsaw_left_loop_sp_jigsaw_mb_lit_hit
         state: 0
-  shot_jigsaw_left_standup:
+      - events: shot_jigsaw_superjackpot1_sp_jigsaw_mb_lit_hit
+        state: 1
+  shot_jigsaw_inner_loop:
     reset_events: mode_jigsaw_multiball_stopped, player_turn_stopped, player_turn_ended
-    switches: s_left_standup
+    switches: s_inner_loop
     profile: sp_jigsaw_mb
     show_tokens:
-      leds: l_left_standup_arrow
+      leds: l_inner_loop_arrow
     control_events:
       - events: ball_starting
         state: 0
       - events: slide_sl_JigsawMB_active
         state: 1
-      - events: shot_jigsaw_left_standup_sp_jigsaw_mb_lit_hit
+      - events: shot_jigsaw_inner_loop_sp_jigsaw_mb_lit_hit
         state: 0
+      - events: shot_jigsaw_superjackpot1_sp_jigsaw_mb_lit_hit
+        state: 1
   shot_jigsaw_left_standup_rightramp:
     reset_events: mode_jigsaw_multiball_stopped, player_turn_stopped, player_turn_ended
     switches: s_left_standup_right_ramp
@@ -177,6 +228,8 @@ shots:
         state: 1
       - events: shot_jigsaw_left_standup_rightramp_sp_jigsaw_mb_lit_hit
         state: 0
+      - events: shot_jigsaw_superjackpot1_sp_jigsaw_mb_lit_hit
+        state: 1
   shot_jigsaw_right_standup_rightramp:
     reset_events: mode_jigsaw_multiball_stopped, player_turn_stopped, player_turn_ended
     switches: s_right_standup_right_ramp
@@ -190,6 +243,8 @@ shots:
         state: 1
       - events: shot_jigsaw_right_standup_rightramp_sp_jigsaw_mb_lit_hit
         state: 0
+      - events: shot_jigsaw_superjackpot1_sp_jigsaw_mb_lit_hit
+        state: 1
   shot_jigsaw_right_loop:
     reset_events: mode_jigsaw_multiball_stopped, player_turn_stopped, player_turn_ended
     switches: s_right_loop_bottom, s_right_loop_top
@@ -203,19 +258,8 @@ shots:
         state: 1
       - events: shot_jigsaw_right_loop_sp_jigsaw_mb_lit_hit
         state: 0
-  shot_jigsaw_right_standup:
-    reset_events: mode_jigsaw_multiball_stopped, player_turn_stopped, player_turn_ended
-    switches: s_right_standup
-    profile: sp_jigsaw_mb
-    show_tokens:
-      leds: l_right_standup_arrow
-    control_events:
-      - events: ball_starting
-        state: 0
-      - events: slide_sl_JigsawMB_active
+      - events: shot_jigsaw_superjackpot1_sp_jigsaw_mb_lit_hit
         state: 1
-      - events: shot_jigsaw_right_standup_sp_jigsaw_mb_lit_hit
-        state: 0
   shot_jigsaw_superjackpot1:
     reset_events: mode_jigsaw_multiball_stopped, player_turn_stopped, player_turn_ended
     switches: s_upper_bank_drop_target_opto
@@ -223,9 +267,20 @@ shots:
     control_events:
       - events: ball_starting
         state: 0
-      - events: jigsaw_mb_jackpot_p1_complete
+      - events: e_jigsaw_phase1
         state: 1
       - events: shot_jigsaw_superjackpot1_sp_jigsaw_mb_lit_hit
+        state: 0
+  shot_jigsaw_superjackpot2:
+    reset_events: mode_jigsaw_multiball_stopped, player_turn_stopped, player_turn_ended
+    switches: s_upper_bank_drop_target_opto
+    profile: sp_jigsaw_mb
+    control_events:
+      - events: ball_starting
+        state: 0
+      - events: e_jigsaw_phase2
+        state: 1
+      - events: shot_jigsaw_superjackpot2_sp_jigsaw_mb_lit_hit
         state: 0
 
 shot_profiles:
@@ -241,7 +296,7 @@ shot_profiles:
 
 shot_groups:
   sg_jigsaw_p1:
-    shots: shot_jigsaw_left_loop, shot_jigsaw_left_standup, shot_jigsaw_left_standup_rightramp, shot_jigsaw_right_standup_rightramp, shot_jigsaw_right_loop, shot_jigsaw_right_standup
+    shots: shot_jigsaw_left_loop, shot_jigsaw_left_standup_rightramp, shot_jigsaw_right_standup_rightramp, shot_jigsaw_right_loop, shot_jigsaw_inner_loop
 
 
 shows:
@@ -253,6 +308,13 @@ shows:
       lights:
         (leds): off
   sh_jigsaw_not_ready:    # define our show to indicate the state
+    - duration: 0.3s
+      lights:
+        (leds): off
+  sh_jigsaw_jackpot:
+    - duration: 0.3s
+      lights:
+        (leds): shotgun
     - duration: 0.3s
       lights:
         (leds): off
@@ -288,7 +350,7 @@ widgets:
       outline_width: 7
   w_jigsaw_multiball_value:
     - type: text
-      text: 1000000
+      text: (player|jigsaw_value)
       number_grouping: true 
       x: 50%
       y: 28%
@@ -299,7 +361,7 @@ widgets:
       outline_width: 7
   w_jigsaw_multiball_SuperJackpot_value:
     - type: text
-      text: 5000000
+      text: (player|jigsaw_super_value)
       number_grouping: true 
       x: 50%
       y: 28%
@@ -328,11 +390,11 @@ widget_player:
     w_jigsaw_multiball_value:
       slide: sl_JigsawMB_Jackpot
       action: add
-  stop_jackpot_widget:
-    w_jigsaw_multiball_value:
-      action: remove
-    w_jigsaw_multiball_SuperJackpot_value:
-      action: remove
+  #stop_jackpot_widget:
+  #  w_jigsaw_multiball_value:
+  #    action: remove
+  #  w_jigsaw_multiball_SuperJackpot_value:
+  #    action: remove
   shot_jigsaw_superjackpot1_sp_jigsaw_mb_lit_hit:
     w_jigsaw_multiball_SuperJackpot_value:
       slide: sl_JigsawMB_SuperJackpot
@@ -342,3 +404,5 @@ event_player:
   mode_jigsaw_multiball_started: start_jigsaw_multiball|0.3s
   sg_jigsaw_p1_lit_hit: stop_jackpot_widget|2.3s
   shot_jigsaw_superjackpot1_sp_jigsaw_mb_lit_hit: stop_jackpot_widget|2.3s
+  s_middle_standup_active: e_jigsaw_jackpot_value|0.2s
+  s_right_standup_active: e_jigsaw_jackpot_value|0.2s
