@@ -16,12 +16,12 @@ sequence_shots:
 sequences:
   reversebeartrap:
     events:
-      - ssh_leftloop_leftramp_hit
+      - sw_standup
+      - sw_standup
       - ssh_rightramp_rightloop_hit
       - sw_standup
       - sw_standup
-      - sw_standup
-      - sw_standup
+      - ssh_leftloop_leftramp_hit
       - drop_target_dt_upper_drop1_down
     reset_on_complete: false
     persist_state: true
@@ -50,14 +50,16 @@ timers:
     
 
 variable_player:
-  logicblock_reversebeartrap_hit{step==1}:
-    score: 500000
   logicblock_reversebeartrap_hit{step==2}:
     score: 1000000
+  logicblock_reversebeartrap_hit{step==3}:
+    score: 2500000
+  logicblock_reversebeartrap_hit{step==5}:
+    score: 1000000
   logicblock_reversebeartrap_hit{step==6}:
-    score: 2000000
+    score: 2500000
   mode_reversebeartrap_complete:
-    score: 5000000
+    score: 2000000
        
   timer_your_timer_tick:
     120s_reversebeartrap_timer:
@@ -157,7 +159,7 @@ slides:
 widgets:
    rbt_shot_update1:
     - type: Text
-      text: " Combo the Left Loop into the Left Ramp"
+      text: " Combo the Left Orbit into the Left Ramp"
       font_size: 50
       font_name: TrajanProRegular
       outline_color: black
@@ -176,7 +178,7 @@ widgets:
             timing: after_previous
    rbt_shot_update2:      
     - type: Text
-      text: " Combo the Right Ramp into the Right Loop"
+      text: " Combo the Right Ramp into the Right Orbit"
       font_size: 50
       font_name: TrajanProRegular
       outline_color: black
@@ -195,7 +197,7 @@ widgets:
             timing: after_previous
    rbt_shot_update3:      
     - type: Text
-      text: " Hit 4 Stand-ups"
+      text: " Hit 2 Stand-ups"
       font_size: 60
       font_name: TrajanProRegular
       outline_color: black
@@ -235,25 +237,32 @@ widgets:
  
 widget_player:
  logicblock_reversebeartrap_updated{value==0}: 
-   rbt_shot_update1:
+   rbt_shot_update3:
      slide: reversebeartrapUI
      action: add
- logicblock_reversebeartrap_updated{value==1}: 
-   rbt_shot_update1:
+ logicblock_reversebeartrap_updated{value==2}: 
+   rbt_shot_update3:
      slide: reversebeartrapUI
      action: remove
    rbt_shot_update2:
      slide: reversebeartrapUI
      action: add
- logicblock_reversebeartrap_updated{value==2}:
+ logicblock_reversebeartrap_updated{value==3}:
    rbt_shot_update2:
      slide: reversebeartrapUI
      action: remove
    rbt_shot_update3:
      slide: reversebeartrapUI
      action: add
+ logicblock_reversebeartrap_updated{value==5}:
+   rbt_shot_update1:
+     slide: reversebeartrapUI
+     action: add
+   rbt_shot_update3:
+     slide: reversebeartrapUI
+     action: remove
  logicblock_reversebeartrap_updated{value==6}: 
-   rbt_shot_update3:
+   rbt_shot_update1:
      slide: reversebeartrapUI
      action: remove
    rbt_shot_update4:
@@ -383,13 +392,21 @@ show_player:
         color1: beartrap
 #mode progress lights
   logicblock_reversebeartrap_updated{value==0}:
-      left_orbit_left_ramp_chase:
+      reversebeartrap_progress:
         loops: -1
         speed: 5
         show_tokens:
+          leds: standup
           color1: beartrap
   logicblock_reversebeartrap_updated{value==1}: 
-      left_orbit_left_ramp_chase:
+      starpost_cycle:
+        loops: 1
+        speed: 20
+        show_tokens:
+          color1: beartrap
+        priority: 170
+  logicblock_reversebeartrap_updated{value==2}: 
+      reversebeartrap_progress:
         loops: -1
         show_tokens:
           color1: off
@@ -404,7 +421,7 @@ show_player:
         show_tokens:
           color1: beartrap
         priority: 170
-  logicblock_reversebeartrap_updated{value==2}:
+  logicblock_reversebeartrap_updated{value==3}:
       right_orbit_right_ramp_chase:
         loops: -1
         show_tokens:
@@ -421,11 +438,23 @@ show_player:
         show_tokens:
           color1: beartrap
         priority: 170
-  logicblock_reversebeartrap_updated{value==6}: 
+  logicblock_reversebeartrap_updated{value==5}: 
       reversebeartrap_progress:
         loops: -1
         show_tokens:
           color1: off
+      left_orbit_left_ramp_chase:
+        loops: -1
+        speed: 5
+        show_tokens:
+          color1: beartrap
+      starpost_cycle:
+        loops: 1
+        speed: 20
+        show_tokens:
+          color1: beartrap
+        priority: 170
+  logicblock_reversebeartrap_updated{value==6}: 
       top_drop_chase:
         loops: -1
         speed: 14
@@ -437,6 +466,11 @@ show_player:
         show_tokens:
           color1: beartrap
         priority: 170
+      left_orbit_left_ramp_chase:
+        speed: 5
+        show_tokens:
+          color1: off
+
   player_reversebeartrap_120s_reversebeartrap_timer_tick{value < 1}:
       mode_fail:
         loops: 0

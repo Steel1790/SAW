@@ -526,7 +526,7 @@ diverters:
     activate_events: logicblock_acc_shackle_mb_qualify_complete
     deactivate_events: balldevice_bd_top_saucer_ball_entered, ball_started
     type: pulse
-    ball_search_hold_time: 3s
+    ball_search_hold_time: 2.2s
     ball_search_order: 1
 
   dv_hacksaw_lock_diverter:
@@ -543,3 +543,10 @@ spinners:
   spinner:
     switch: s_spinner
     active_ms: 500
+# flipper cancel default is left_flipper + right_flipper tag. this overrides and generates a different default event
+combo_switches:
+  both_flippers:
+    tag_1: left_flipper
+    tag_2: right_flipper
+    events_when_both: flipper_cancel_removed
+    max_offset_time: 0ms

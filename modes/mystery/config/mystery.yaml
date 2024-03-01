@@ -102,17 +102,26 @@ slides:
       height: 768
 
 slide_player:
+  e_enable_mystery:
+    mysteryawardvideo:
+      action: play
+      priority: 185
+      expire: 8s
   e_mystery_5million: 
     Mystery5Million:
+      priority: 184
       expire: 11s
   e_mystery_minus5million: 
     MysteryMinus5Million:
+      priority: 184
       expire: 11s
   e_mystery_extraball: 
     MysteryExtraBall:
+      priority: 184
       expire: 11s
   e_mystery_outlane: 
     MysteryEscapeOutlane:
+      priority: 184
       expire: 11s
 
 

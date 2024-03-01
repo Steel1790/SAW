@@ -264,13 +264,6 @@ slide_player:
       action: play
       priority: 400
       expire: 5s
-  #e_enable_mystery:
-  #  mysteryawardvideo:
-  #    action: play
-  #    priority: 400
-  #    expire: 8s
-
-  
       
   single_player_ball_started:
     Player1Active: 

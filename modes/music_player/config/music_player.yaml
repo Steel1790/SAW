@@ -93,8 +93,8 @@ sound_pools:
     load: preload
     type: random_force_next
     track: voice
-    simultaneous_limit: 2
-    stealing_method: skip
+    simultaneous_limit: 1
+    stealing_method: newest
     sounds:
       - LowPainTolerance
       - FlipperFingers
