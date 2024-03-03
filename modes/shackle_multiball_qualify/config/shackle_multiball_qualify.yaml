@@ -91,7 +91,7 @@ shows:
 
 show_player:
   logicblock_acc_shackle_mb_qualify_complete{device.multiball_locks.mbl_shackle.locked_balls == 0}:
-    sh_shackle_mb_qualify_hit_ready:
+    sh_shackle_mb_qualify_hit:
       show_tokens:
         leds: l_right_ramp_triangle1
   multiball_lock_mbl_shackle_locked_ball{device.multiball_locks.mbl_shackle.locked_balls == 1}:
@@ -102,9 +102,12 @@ show_player:
       loops: 0
       speed: 30
   logicblock_acc_shackle_mb_qualify_complete{device.multiball_locks.mbl_shackle.locked_balls == 1}:
-    sh_shackle_mb_qualify_hit_ready:
+    sh_shackle_mb_qualify_hit_locked:
       show_tokens:
         leds: l_right_ramp_triangle1
+    sh_shackle_mb_qualify_hit:
+      show_tokens:
+        leds: l_right_ramp_triangle2
   multiball_lock_mbl_shackle_locked_ball{device.multiball_locks.mbl_shackle.locked_balls == 2}:
     sh_shackle_mb_qualify_hit_locked:
       show_tokens:
