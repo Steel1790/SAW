@@ -143,16 +143,23 @@ show_player:
         speed: 20
         show_tokens:
           color1: beartrap
+  sg_hacksaw_p1_lit_hit:
+      colorwash_opposite_glitter:
+        speed: 20
   shot_jigsaw_superjackpot1_sp_jigsaw_mb_lit_hit:
       top_drop_chase:
         loops: -1
         show_tokens:
           color1: off
+      colorwash_opposite_glitter:
+        speed: 20
   shot_jigsaw_superjackpot2_sp_jigsaw_mb_lit_hit:
       top_drop_chase:
         loops: -1
         show_tokens:
           color1: off
+      colorwash_opposite_glitter:
+        speed: 20
   start_jigsaw_multiball:
     mb_ballsave:
       loops: 4

@@ -49,6 +49,9 @@ event_player:
   mode_drillchair_stopping: 
     - e_puzzle_start|0.3s
     - e_drillchair_puzzle|0.5s
+  mode_drillchair_complete: 
+    - e_puzzle_start|0.3s
+    - e_drillchair_puzzle|0.5s
     #- e_puzzle_start|5.3s
     #- e_drillchair_puzzle|5.5s
   mode_flammablejelly_stopping: 
@@ -56,7 +59,13 @@ event_player:
     - e_flammablejelly_puzzle|0.5s
     #- e_puzzle_start|5.3s
     #- e_flammablejelly_puzzle|5.5s
+  mode_flammablejelly_complete:
+    - e_puzzle_start|0.3s
+    - e_flammablejelly_puzzle|0.5s
   mode_quadshotgun_stopping: 
+    - e_puzzle_start|0.3s
+    - e_quadshotgun_puzzle|0.5s
+  mode_quadshotgun_complete:
     - e_puzzle_start|0.3s
     - e_quadshotgun_puzzle|0.5s
     #- e_puzzle_start|5.3s
@@ -64,9 +73,15 @@ event_player:
   mode_razorwire_stopping: 
     - e_puzzle_start|0.3s
     - e_razorwire_puzzle|0.5s
+  mode_razorwire_complete:
+    - e_puzzle_start|0.3s
+    - e_razorwire_puzzle|0.5s
     #- e_puzzle_start|5.3s
     #- e_razorwire_puzzle|5.5s
   mode_zeptest_stopping: 
+    - e_puzzle_start|0.3s
+    - e_zeptest_puzzle|0.5s
+  mode_zeptest_complete:
     - e_puzzle_start|0.3s
     - e_zeptest_puzzle|0.5s
     #- e_puzzle_start|5.3s

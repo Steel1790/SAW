@@ -59,7 +59,6 @@ variable_player:
   logicblock_acc_make_your_choice_qualify_complete:
     score: 50000 * device.timers.t_make_your_choice_value_timer.ticks
 
-
 counters:
   cnt_hurryup:
     starting_count: 0

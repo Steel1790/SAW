@@ -687,6 +687,19 @@ sound_player:
     taperecorder_collected:
       action: play
 
+#puzzle hurryup
+  mode_puzzle_hurryup_started:
+    PuzzlePieceHurryUp:
+      delay: 4s
+      action: play
+    BaseMusic:
+      action: stop
+  player_puzzle_hurryup_t_puzzle_timer_tick{value < 1}:
+    PuzzlePieceHurryUp:
+      action: stop
+    BaseMusic:
+      action: play
+
 # stop all mode music at beginning of mode_bonus
   mode_bonus_started:
     QuadShotgunModeStart:

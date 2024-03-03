@@ -161,6 +161,10 @@ show_player:
   shackle_value_locked:
     top_drop_chase: stop
 
+  sg_shackle_p1_lit_hit:
+    colorwash_opposite_glitter:
+      speed: 20
+
   mode_shackle_multiball_complete:
       disc_left_chase: stop
       disc_middle_chase: stop
@@ -180,11 +184,15 @@ show_player:
         loops: -1
         show_tokens:
           color1: off
+      colorwash_opposite_glitter:
+        speed: 20
   shot_shackle_superjackpot2_sp_shackle_mb_lit_hit:
       top_drop_chase:
         loops: -1
         show_tokens:
           color1: off
+      colorwash_opposite_glitter:
+        speed: 20
   
   stop_mode_shackle_multiball: 
     w_shackle_multiball: stop
