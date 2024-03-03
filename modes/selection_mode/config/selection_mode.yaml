@@ -390,6 +390,10 @@ show_player:
       show_tokens:
         leds: l_action_button, top_bumper, l_razorwire_mode, l_beartrap_mode, l_jelly_mode, l_drillchair_mode, l_quadshotgun_mode, l_zeptest_mode, bottom_bumper, l_right_standup_arrow, shotgun_flasher, skillshot, l_left_loop_arrow
       loops: -1
+  mode_selection_mode_started:
+      disc_left_chase: stop
+      disc_middle_chase: stop
+      disc_right_chase: stop
 
 sound_player:
   selection_mode_razorwire_highlighted:

@@ -160,6 +160,8 @@ show_player:
           color1: off
       colorwash_opposite_glitter:
         speed: 20
+  e_jackpot_show_off:
+      colorwash_opposite_glitter: stop
   start_jigsaw_multiball:
     mb_ballsave:
       loops: 4
@@ -401,6 +403,8 @@ widget_player:
 event_player:
   mode_jigsaw_multiball_started: start_jigsaw_multiball|0.3s
   sg_jigsaw_p1_lit_hit: stop_jackpot_widget|2.3s
-  shot_jigsaw_superjackpot1_sp_jigsaw_mb_lit_hit: stop_jackpot_widget|2.3s
+  shot_jigsaw_superjackpot1_sp_jigsaw_mb_lit_hit: stop_jackpot_widget|2.3s, e_jackpot_show_off|1s
   s_middle_standup_active: e_jigsaw_jackpot_value|0.2s
   s_right_standup_active: e_jigsaw_jackpot_value|0.2s
+  sg_hacksaw_p1_lit_hit: e_jackpot_show_off|1s
+  shot_jigsaw_superjackpot2_sp_jigsaw_mb_lit_hit: e_jackpot_show_off|1s

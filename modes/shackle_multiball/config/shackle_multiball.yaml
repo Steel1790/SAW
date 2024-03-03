@@ -193,6 +193,8 @@ show_player:
           color1: off
       colorwash_opposite_glitter:
         speed: 20
+  e_jackpot_show_off:
+      colorwash_opposite_glitter: stop
   
   stop_mode_shackle_multiball: 
     w_shackle_multiball: stop
@@ -512,5 +514,6 @@ widget_player:
 event_player:
   mode_shackle_multiball_started: start_shackle_multiball|0.3s
   shackle_value_locked: stop_shackle_jackpot_widget|2s
-  sg_shackle_p1_lit_hit: stop_jackpot_widget|2.3s
-  shot_shackle_superjackpot1_sp_shackle_mb_lit_hit: stop_jackpot_widget|3s
+  sg_shackle_p1_lit_hit: stop_jackpot_widget|2.3s, e_jackpot_show_off|1s
+  shot_shackle_superjackpot1_sp_shackle_mb_lit_hit: stop_jackpot_widget|3s, e_jackpot_show_off|1s
+  shot_shackle_superjackpot2_sp_shackle_mb_lit_hit: e_jackpot_show_off|1s
