@@ -112,10 +112,10 @@
           color1: ffffff   
 
 #topper test in attract         
-# - duration: .5s
-#   shows:
-#       topper_trigger_on:
-#         speed: 4
+ - duration: .5s
+   shows:
+       topper_trigger_on:
+         speed: 4
 
 # STARPOST SHOWS FOR REFERENCE
 #   shows: 
@@ -141,7 +141,7 @@
 - duration: 10s
   shows:     
       speaker_heartbeat: stop 
-      # topper_trigger_on: stop
+      topper_trigger_on: stop
       starpost_cycle:
         show_tokens:
           color1: beartrap 
