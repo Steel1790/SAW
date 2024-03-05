@@ -10,7 +10,52 @@ shots:
     disable_events: e_primary_mode_active, start_jigsaw_multiball, start_hacksaw_multiball, start_shackle_multiball
     enable_events: logicblock_cnt_saw_qualify_complete
 
+  shot_drillchair_button:
+    advance_events: minimode_spinners_complete
+    switches: s_action_button
+    profile: sp_drillchair
+    disable_events: stop_mode_drillchair, mode_drillchair_complete, ball_ended, ball_will_end
+    enable_events: mode_drillchair_started
+    show_tokens:
+      leds: l_action_button
+    control_events:
+      - events: minimode_spinners_complete
+        state: 1
+      - events: shot_drillchair_button_sp_drillchair_lit_hit
+        state: 0
+
+shot_profiles:
+  sp_drillchair:
+    advance_on_hit: false
+    states:
+      - name: drillchair_off
+        show: "off"               # a default show to turn of the led. change if you want to do something on unlit shots
+      - name: lit
+        show: "sh_drillchair_ready"        # a default show to turn of the led. change if you want to do something on unlit shots 
+        priority: 200
+
+shows:
+  sh_drillchair_ready:
+    - duration: 0.3s
+      lights:
+        (leds): drillchair
+    - duration: 0.3s
+      lights:
+        (leds): off
+  sh_item_used:
+    - duration: -1
+      lights:
+        (leds): (color1)
+
 variable_player:
+#drillchair mode item used
+  shot_drillchair_button_sp_drillchair_lit_hit:
+#    score: 123456    
+    bonus_handguns: -1
+    value_type: int   
+    handguns_used:
+      int: 1
+      action: set
 
  # track modes completed for wizard mode qualifications -- player_modes_completed
   mode_drillchair_complete:
@@ -129,3 +174,11 @@ counters:
     reset_on_complete: true
     events_when_complete: random_switch_complete
     count_events: sw_pops, sw_standup, sw_inlane, sw_spinner, sw_ramp, sw_loop, sw_drop_target
+
+show_player:
+  shot_drillchair_button_sp_drillchair_lit_hit:
+    sh_item_used:
+      show_tokens:
+        leds: l_jw_gun
+        color1: off
+      priority: 200

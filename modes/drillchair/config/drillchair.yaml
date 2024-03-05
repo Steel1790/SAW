@@ -56,19 +56,19 @@ shots:
   up_b_pop:
     switch: s_upper_bottom_jet_bumper 
 
-#  shot_drillchair_button:
-#    advance_events: minimode_spinners_complete
-#    switches: s_action_button
-#    profile: sp_drillchair
-#    show_tokens:
-#      leds: l_action_button
-#    control_events:
-#      - events: mode_drillchair_started
-#        state: 0
-#      - events: minimode_spinners_complete
-#        state: 1
-#      - events: shot_drillchair_button_sp_drillchair_lit_hit
-#        state: 0
+  #shot_drillchair_button:
+  #  advance_events: minimode_spinners_complete
+  #  switches: s_action_button
+  #  profile: sp_drillchair
+  #  show_tokens:
+  #    leds: l_action_button
+  #  control_events:
+  #    - events: mode_drillchair_started
+  #      state: 0
+  #    - events: minimode_spinners_complete
+  #      state: 1
+  #    - events: shot_drillchair_button_sp_drillchair_lit_hit
+  #      state: 0
 
 #shot_profiles:
 #  sp_drillchair:
@@ -81,11 +81,11 @@ shots:
 
 variable_player:
   logicblock_drillchair_hit{step==1}:
-    score: 1000000
+    score: 1000000 + (current_player.handguns_used * 1250000)
   logicblock_drillchair_hit{step==3}:
-    score: 1000000
+    score: 1000000 + (current_player.handguns_used * 1250000)
   mode_drillchair_complete:
-    score: 6500000   
+    score: 6500000 + (current_player.handguns_used * 1500000)
   counter_drillchair_pops_counter_hit:
     drillchair_pops_counter:
       action: set
@@ -103,14 +103,14 @@ variable_player:
       int: device.timers.your_timer.ticks_remaining
       action: set
 
-#action button
-  #player_bonus_handguns{value==1}:
-  #  bonus_handguns: 0
-  #  action: set
-  #shot_drillchair_button_sp_drillchair_lit_hit:
-  #  score: 123456    
-  #  bonus_handguns: -1
-  #  value_type: int   
+## action button
+#  player_bonus_handguns{value==1}:
+#    bonus_handguns: 0
+#    action: set
+#  shot_drillchair_button_sp_drillchair_lit_hit:
+#    score: 123456    
+#    bonus_handguns: -1
+#    value_type: int   
  
 slides:
   drillchairvideo:
@@ -450,13 +450,13 @@ sound_player:
       block: true
 
 shows:
-  sh_drillchair_ready:
-    - duration: 0.3s
-      lights:
-        (leds): drillchair
-    - duration: 0.3s
-      lights:
-        (leds): off
+  #sh_drillchair_ready:
+  #  - duration: 0.3s
+  #    lights:
+  #      (leds): drillchair
+  #  - duration: 0.3s
+  #    lights:
+  #      (leds): off
 
 
   drillchair_pops_progress:    

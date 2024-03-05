@@ -26,7 +26,7 @@ timers:
 counters:
   quadshotgun_spinner_counter:
     starting_count: 0
-    count_complete_value: 20
+    count_complete_value: 25
     enable_events: mode_quadshotgun_started
     disable_events: quadshotgun_spinner_complete, logicblock_quadshotgun_phase2_updated{enabled==True}
 #    start_enabled: true
@@ -47,7 +47,7 @@ variable_player:
   counter_quadshotgun_spinner_counter_hit:
     quadshotgun_spinner_counter:
       action: set
-      int: (count)*35
+      int: (count)*28
     quadshotgun_visual_spinner_counter:
       action: set
       int: (count)
@@ -147,7 +147,7 @@ slides:
 #      x: 825
 #      y: 85%
     - type: Text
-      text: (player|quadshotgun_visual_spinner_counter) / 20 spins
+      text: (player|quadshotgun_visual_spinner_counter) / 25 spins
       font_size: 50
       font_name: TrajanProRegular
       outline_color: black
@@ -155,7 +155,7 @@ slides:
       color: d8d8d8
       y: 35%
     - type: Text
-      text: You Have 60 Seconds To Hit 20 Spins!
+      text: You Have 60 Seconds To Hit 25 Spins!
       color: "006ee6"
       font_name: TrajanProRegular
       font_size: 35
