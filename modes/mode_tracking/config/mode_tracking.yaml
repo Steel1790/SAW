@@ -14,7 +14,7 @@ shots:
     advance_events: minimode_spinners_complete
     switches: s_action_button
     profile: sp_drillchair
-    disable_events: stop_mode_drillchair, mode_drillchair_complete, ball_ended, ball_will_end
+    disable_events: mode_drillchair_stopped, mode_drillchair_complete, ball_ended, ball_will_end
     enable_events: mode_drillchair_started
     show_tokens:
       leds: l_action_button
@@ -22,6 +22,44 @@ shots:
       - events: minimode_spinners_complete
         state: 1
       - events: shot_drillchair_button_sp_drillchair_lit_hit
+        state: 0
+      - events: mode_drillchair_stopped
+        state: 0
+      - events: mode_drillchair_complete
+        state: 0
+  shot_razorwire_button:
+    advance_events: minimode_loops_complete
+    switches: s_action_button
+    profile: sp_razorwire
+    disable_events: mode_razorwire_stopped, mode_razorwire_complete, ball_ended, ball_will_end
+    enable_events: mode_razorwire_started
+    show_tokens:
+      leds: l_action_button
+    control_events:
+      - events: minimode_loops_complete
+        state: 1
+      - events: shot_razorwire_button_sp_razorwire_lit_hit
+        state: 0
+      - events: mode_razorwire_stopped
+        state: 0
+      - events: mode_razorwire_complete
+        state: 0
+  shot_reversebeartrap_button:
+    advance_events: minimode_ramps_complete
+    switches: s_action_button
+    profile: sp_reversebeartrap
+    disable_events: mode_reversebeartrap_stopped, mode_reversebeartrap_complete, ball_ended, ball_will_end
+    enable_events: mode_reversebeartrap_started
+    show_tokens:
+      leds: l_action_button
+    control_events:
+      - events: minimode_ramps_complete
+        state: 1
+      - events: shot_reversebeartrap_button_sp_reversebeartrap_lit_hit
+        state: 0
+      - events: mode_reversebeartrap_stopped
+        state: 0
+      - events: mode_reversebeartrap_complete
         state: 0
 
 shot_profiles:
@@ -33,12 +71,42 @@ shot_profiles:
       - name: lit
         show: "sh_drillchair_ready"        # a default show to turn of the led. change if you want to do something on unlit shots 
         priority: 200
+  sp_razorwire:
+    advance_on_hit: false
+    states:
+      - name: razorwire_off
+        show: "off"               # a default show to turn of the led. change if you want to do something on unlit shots
+      - name: lit
+        show: "sh_razorwire_ready"        # a default show to turn of the led. change if you want to do something on unlit shots 
+        priority: 200
+  sp_reversebeartrap:
+    advance_on_hit: false
+    states:
+      - name: reversebeartrap_off
+        show: "off"               # a default show to turn of the led. change if you want to do something on unlit shots
+      - name: lit
+        show: "sh_reversebeartrap_ready"        # a default show to turn of the led. change if you want to do something on unlit shots 
+        priority: 200
 
 shows:
   sh_drillchair_ready:
     - duration: 0.3s
       lights:
         (leds): drillchair
+    - duration: 0.3s
+      lights:
+        (leds): off
+  sh_razorwire_ready:
+    - duration: 0.3s
+      lights:
+        (leds): razorwire
+    - duration: 0.3s
+      lights:
+        (leds): off
+  sh_reversebeartrap_ready:
+    - duration: 0.3s
+      lights:
+        (leds): beartrap
     - duration: 0.3s
       lights:
         (leds): off
@@ -54,6 +122,20 @@ variable_player:
     bonus_handguns: -1
     value_type: int   
     handguns_used:
+      int: 1
+      action: set
+#razorwire mode item used
+  shot_razorwire_button_sp_razorwire_lit_hit:
+    bonus_hacksaws: -1
+    value_type: int   
+    hacksaws_used:
+      int: 1
+      action: set
+#reversebeartrap mode item used
+  shot_reversebeartrap_button_sp_reversebeartrap_lit_hit:
+    bonus_keys: -1
+    value_type: int   
+    keys_used:
       int: 1
       action: set
 
@@ -180,5 +262,17 @@ show_player:
     sh_item_used:
       show_tokens:
         leds: l_jw_gun
+        color1: off
+      priority: 200
+  shot_razorwire_button_sp_razorwire_lit_hit:
+    sh_item_used:
+      show_tokens:
+        leds: l_jw_drill
+        color1: off
+      priority: 200
+  shot_reversebeartrap_button_sp_reversebeartrap_lit_hit:
+    sh_item_used:
+      show_tokens:
+        leds: l_jw_key
         color1: off
       priority: 200
