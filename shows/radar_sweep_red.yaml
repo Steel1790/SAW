@@ -170,7 +170,7 @@
   lights:
     l_hmb_lock_1: 'FF0000'
     l_jw_candle: 'FF0000'
-    l_jw_drill: 'FF0000'
+    l_jw_hacksaw: 'FF0000'
     l_jw_key: '000000'
     l_left_disc_5: '960000'
     l_left_disc_6: '130000'
@@ -231,7 +231,7 @@
 - time: '+1'
   lights:
     l_jw_candle: 'F30000'
-    l_jw_drill: '000000'
+    l_jw_hacksaw: '000000'
     l_jw_taperecorder: '000000'
     l_left_disc_3: '730000'
     l_left_disc_8: 'FF0000'

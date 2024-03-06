@@ -137,7 +137,7 @@
     l_jelly_mode: 'FFFFFF'
     l_quadshotgun_mode: 'FFFFFF'
     l_jw_gun: (color1)
-    l_jw_drill: (color1)
+    l_jw_hacksaw: (color1)
     l_jw_bathtub: (color1)
     l_jw_syringe: (color1)
     l_gi_1: 'FFFFFF'
@@ -206,7 +206,7 @@
     l_quadshotgun_mode: '000000'
     l_razorwire_mode: (color1)
     l_jw_gun: '000000'
-    l_jw_drill: '000000'
+    l_jw_hacksaw: '000000'
     l_jw_bathtub: '000000'
     l_jw_syringe: '000000'
     l_gi_1: '000000'
@@ -282,7 +282,7 @@
     l_quadshotgun_mode: 'FFFFFF'
     l_razorwire_mode: (color1)
     l_jw_gun: (color1)
-    l_jw_drill: (color1)
+    l_jw_hacksaw: (color1)
     l_jw_bathtub: (color1)
     l_jw_syringe: (color1)
     l_gi_1: 'FFFFFF'
@@ -359,7 +359,7 @@
     l_quadshotgun_mode: '000000'
     l_razorwire_mode: (color1)
     l_jw_gun: '000000'
-    l_jw_drill: '000000'
+    l_jw_hacksaw: '000000'
     l_jw_bathtub: '000000'
     l_jw_syringe: '000000'
     l_gi_1: '000000'
@@ -431,7 +431,7 @@
     l_quadshotgun_mode: 'FFFFFF'
     l_razorwire_mode: (color1)
     l_jw_gun: (color1)
-    l_jw_drill: (color1)
+    l_jw_hacksaw: (color1)
     l_jw_candle: 'FFFFFF'
     l_jw_taperecorder: 'FFFFFF'
     l_jw_bathtub: 'FFFFFF'
@@ -473,7 +473,7 @@
     l_razorwire_mode: 'FFFFFF'
     l_jw_key: '000000'
     l_jw_gun: 'FFFFFF'
-    l_jw_drill: 'FFFFFF'
+    l_jw_hacksaw: 'FFFFFF'
     l_jw_syringe: 'FFFFFF'
     l_jw_gears: 'FFFFFF'
     l_gi_18: (color1)
@@ -548,7 +548,7 @@
     l_razorwire_mode: '000000'
     l_jw_key: (color1)
     l_jw_gun: '000000'
-    l_jw_drill: '000000'
+    l_jw_hacksaw: '000000'
     l_jw_candle: '000000'
     l_jw_taperecorder: '000000'
     l_jw_syringe: '000000'
@@ -585,7 +585,7 @@
     l_razorwire_mode: (color1)
     l_jw_key: (color1)
     l_jw_gun: (color1)
-    l_jw_drill: (color1)
+    l_jw_hacksaw: (color1)
     l_jw_candle: 'FFFFFF'
     l_jw_taperecorder: 'FFFFFF'
     l_jw_bathtub: 'FFFFFF'
@@ -623,7 +623,7 @@
     l_razorwire_mode: 'FFFFFF'
     l_jw_key: (color1)
     l_jw_gun: 'FFFFFF'
-    l_jw_drill: 'FFFFFF'
+    l_jw_hacksaw: 'FFFFFF'
     l_jw_syringe: 'FFFFFF'
     l_jw_gears: 'FFFFFF'
     l_gi_17: 'FFFFFF'
@@ -698,7 +698,7 @@
     l_razorwire_mode: '000000'
     l_jw_key: (color1)
     l_jw_gun: '000000'
-    l_jw_drill: '000000'
+    l_jw_hacksaw: '000000'
     l_jw_candle: '000000'
     l_jw_taperecorder: '000000'
     l_jw_syringe: '000000'
@@ -767,7 +767,7 @@
     l_quadshotgun_mode: (color1)
     l_jw_key: (color1)
     l_jw_gun: 'FFFFFF'
-    l_jw_drill: 'FFFFFF'
+    l_jw_hacksaw: 'FFFFFF'
     l_jw_syringe: 'FFFFFF'
     l_jw_gears: 'FFFFFF'
     l_gi_1: (color1)
@@ -843,7 +843,7 @@
     l_quadshotgun_mode: '000000'
     l_jw_key: (color1)
     l_jw_gun: '000000'
-    l_jw_drill: '000000'
+    l_jw_hacksaw: '000000'
     l_jw_syringe: '000000'
     l_jw_gears: '000000'
     l_gi_1: '000000'
@@ -919,7 +919,7 @@
     l_quadshotgun_mode: (color1)
     l_jw_key: (color1)
     l_jw_gun: 'FFFFFF'
-    l_jw_drill: 'FFFFFF'
+    l_jw_hacksaw: 'FFFFFF'
     l_jw_syringe: 'FFFFFF'
     l_jw_gears: 'FFFFFF'
     l_gi_1: (color1)
@@ -990,7 +990,7 @@
     l_quadshotgun_mode: '000000'
     l_jw_key: (color1)
     l_jw_gun: '000000'
-    l_jw_drill: '000000'
+    l_jw_hacksaw: '000000'
     l_jw_syringe: '000000'
     l_jw_gears: '000000'
     l_gi_1: '000000'

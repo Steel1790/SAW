@@ -59,7 +59,7 @@
   lights:
     l_jw_key: '000000'
     l_jw_gun: '000000'
-    l_jw_drill: '0C0C0C'
+    l_jw_hacksaw: '0C0C0C'
     l_jw_candle: '141414'
     l_jw_bathtub: '000000'
     l_jw_syringe: '000000'
@@ -82,7 +82,7 @@
     l_zeptest_mode: 'B6B6B6'
     l_jelly_mode: 'E4E4E4'
     l_quadshotgun_mode: 'F9F9F9'
-    l_jw_drill: '000000'
+    l_jw_hacksaw: '000000'
     l_jw_candle: '000000'
     l_left_escape: '000000'
     l_left_return_lane: '000000'
@@ -134,7 +134,7 @@
   lights:
     l_jw_key: '00BB06'
     l_jw_gun: '00BF06'
-    l_jw_drill: '00A205'
+    l_jw_hacksaw: '00A205'
     l_jw_candle: '006803'
     l_jw_taperecorder: '003B02'
     l_jw_bathtub: '003402'
@@ -153,7 +153,7 @@
   lights:
     l_jw_key: '000000'
     l_jw_gun: '000000'
-    l_jw_drill: '000000'
+    l_jw_hacksaw: '000000'
     l_jw_candle: '000000'
     l_jw_taperecorder: '000000'
     l_jw_bathtub: '000000'

@@ -999,7 +999,7 @@ show_player:
         color1: beartrap
     minimode_loops_show_complete:
       show_tokens:
-        leds: l_jw_drill
+        leds: l_jw_hacksaw
       loops: -1  
       priority: 119
   minimode_spinners_complete:

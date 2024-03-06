@@ -3,7 +3,7 @@
   lights:
     l_jw_bathtub: '793200'
     l_jw_candle: 'EC6300'
-    l_jw_drill: 'C80611'
+    l_jw_hacksaw: 'C80611'
     l_jw_gun: 'A73500'
     l_jw_taperecorder: 'C80013'
     
@@ -11,7 +11,7 @@
   lights:
     l_jw_bathtub: '6E3100'
     l_jw_candle: 'FD6600'
-    l_jw_drill: 'C80A0F'
+    l_jw_hacksaw: 'C80A0F'
     l_jw_gears: 'C80212'
     l_jw_gun: 'A83500'
     l_jw_key: '6B3000'
@@ -21,7 +21,7 @@
   lights:
     l_jw_bathtub: '743200'
     l_jw_candle: 'FA6600'
-    l_jw_drill: 'C8150A'
+    l_jw_hacksaw: 'C8150A'
     l_jw_gears: 'C80511'
     l_jw_gun: 'B03500'
     l_jw_key: '672F00'
@@ -31,7 +31,7 @@
   lights:
     l_jw_bathtub: '693000'
     l_jw_candle: 'FF6800'
-    l_jw_drill: 'C81F06'
+    l_jw_hacksaw: 'C81F06'
     l_jw_gears: 'C80B0E'
     l_jw_gun: 'AF3500'
     l_jw_key: '612D00'
@@ -46,7 +46,7 @@
   lights:
     l_jw_bathtub: '622E00'
     l_jw_candle: 'FF6700'
-    l_jw_drill: 'C72F00'
+    l_jw_hacksaw: 'C72F00'
     l_jw_gears: 'C8140B'
     l_jw_gun: 'B53400'
     l_jw_key: '572900'
@@ -57,7 +57,7 @@
   lights:
     l_jw_bathtub: '4C2500'
     l_jw_candle: 'FF6800'
-    l_jw_drill: 'C53200'
+    l_jw_hacksaw: 'C53200'
     l_jw_gears: 'C81F06'
     l_jw_gun: 'B33400'
     l_jw_key: '452100'
@@ -67,7 +67,7 @@
 - time: '+1'
   lights:
     l_jw_candle: 'FF6600'
-    l_jw_drill: 'BF3300'
+    l_jw_hacksaw: 'BF3300'
     l_jw_gears: 'C72C01'
     l_jw_gun: 'B73400'
     l_jw_key: '5A2B00'
@@ -80,7 +80,7 @@
     
 - time: '+1'
   lights:
-    l_jw_drill: 'BA3400'
+    l_jw_hacksaw: 'BA3400'
     l_jw_gears: 'C53200'
     l_jw_gun: 'B43400'
     l_jw_key: '412000'
@@ -90,7 +90,7 @@
   lights:
     l_jw_bathtub: '0C0600'
     l_jw_candle: 'FF6300'
-    l_jw_drill: 'B13500'
+    l_jw_hacksaw: 'B13500'
     l_jw_gears: 'C23200'
     l_jw_gun: 'B73400'
     l_jw_key: '472300'
@@ -101,7 +101,7 @@
   lights:
     l_jw_bathtub: '4C2500'
     l_jw_candle: 'FF6400'
-    l_jw_drill: 'AA3500'
+    l_jw_hacksaw: 'AA3500'
     l_jw_gears: 'BD3300'
     l_jw_gun: 'B33500'
     l_jw_key: '4E2700'
@@ -118,7 +118,7 @@
   lights:
     l_jw_bathtub: '642E00'
     l_jw_candle: 'FF5D00'
-    l_jw_drill: '9E3500'
+    l_jw_hacksaw: '9E3500'
     l_jw_gears: 'B73400'
     l_jw_gun: 'B33400'
     l_jw_key: '682F00'
@@ -129,7 +129,7 @@
   lights:
     l_jw_bathtub: '672F00'
     l_jw_candle: 'FF5C00'
-    l_jw_drill: '963500'
+    l_jw_hacksaw: '963500'
     l_jw_gears: 'AF3500'
     l_jw_gun: 'AE3500'
     l_jw_key: '6C3000'
@@ -139,7 +139,7 @@
   lights:
     l_jw_bathtub: '723100'
     l_jw_candle: 'D23C00'
-    l_jw_drill: '883400'
+    l_jw_hacksaw: '883400'
     l_jw_gears: 'A73500'
     l_jw_gun: 'AC3500'
     l_jw_key: '7A3300'
@@ -154,7 +154,7 @@
   lights:
     l_jw_bathtub: '7C3300'
     l_jw_candle: 'CE3800'
-    l_jw_drill: '7E3300'
+    l_jw_hacksaw: '7E3300'
     l_jw_gears: '9E3500'
     l_jw_gun: 'A63500'
     l_jw_key: '7D3300'
@@ -165,7 +165,7 @@
   lights:
     l_jw_bathtub: '853400'
     l_jw_candle: 'C63100'
-    l_jw_drill: '793600'
+    l_jw_hacksaw: '793600'
     l_jw_gears: '953500'
     l_jw_gun: 'A23500'
     l_jw_key: '893400'
@@ -176,7 +176,7 @@
   lights:
     l_jw_bathtub: '8D3500'
     l_jw_candle: 'C53200'
-    l_jw_drill: '8A4100'
+    l_jw_hacksaw: '8A4100'
     l_jw_gears: '8B3500'
     l_jw_gun: '9A3500'
     l_jw_key: '8B3500'
@@ -186,13 +186,13 @@
 - time: '+1'
   lights:
     l_jw_candle: 'C72F00'
-    l_jw_drill: 'BA5700'
+    l_jw_hacksaw: 'BA5700'
     l_jw_taperecorder: 'A53500'
     
 - time: '+1'
   lights:
     l_jw_bathtub: '8E3500'
-    l_jw_drill: '7B3A00'
+    l_jw_hacksaw: '7B3A00'
     l_jw_gears: '803300'
     l_jw_gun: '953500'
     l_jw_key: '963500'
@@ -203,7 +203,7 @@
   lights:
     l_jw_bathtub: '953500'
     l_jw_candle: 'C72E01'
-    l_jw_drill: '6F3200'
+    l_jw_hacksaw: '6F3200'
     l_jw_gears: '883B00'
     l_jw_gun: '8C3500'
     l_jw_key: '953500'
@@ -213,7 +213,7 @@
 - time: '+1'
   lights:
     l_jw_bathtub: '9B3500'
-    l_jw_drill: '6E3100'
+    l_jw_hacksaw: '6E3100'
     l_jw_gears: 'C45A00'
     l_jw_gun: '853400'
     l_jw_key: '9F3600'
@@ -224,7 +224,7 @@
   lights:
     l_jw_bathtub: 'A13500'
     l_jw_candle: 'C82704'
-    l_jw_drill: '793300'
+    l_jw_hacksaw: '793300'
     l_jw_gears: 'BD5700'
     l_jw_gun: '7A3300'
     l_jw_key: '9D3500'
@@ -234,7 +234,7 @@
 - time: '+1'
   lights:
     l_jw_candle: 'C72B02'
-    l_jw_drill: '883400'
+    l_jw_hacksaw: '883400'
     l_jw_taperecorder: 'F16500'
     
 - time: '+1'
@@ -250,7 +250,7 @@
   lights:
     l_jw_bathtub: 'AA3500'
     l_jw_candle: 'C62F01'
-    l_jw_drill: '953500'
+    l_jw_hacksaw: '953500'
     l_jw_gears: '853400'
     l_jw_gun: '632D00'
     l_jw_key: 'A13500'
@@ -269,14 +269,14 @@
 - time: '+1'
   lights:
     l_jw_candle: 'C72D01'
-    l_jw_drill: '9E3500'
+    l_jw_hacksaw: '9E3500'
     l_jw_taperecorder: 'F86400'
     
 - time: '+1'
   lights:
     l_jw_bathtub: 'A93500'
     l_jw_candle: 'C53200'
-    l_jw_drill: 'A13500'
+    l_jw_hacksaw: 'A13500'
     l_jw_gears: '9B3500'
     l_jw_gun: '000000'
     l_jw_key: 'A33500'
@@ -286,7 +286,7 @@
 - time: '+1'
   lights:
     l_jw_bathtub: 'AC3500'
-    l_jw_drill: 'A93500'
+    l_jw_hacksaw: 'A93500'
     l_jw_gears: 'A83500'
     l_jw_key: 'A63500'
     l_jw_syringe: 'B14F00'
@@ -295,7 +295,7 @@
 - time: '+1'
   lights:
     l_jw_bathtub: 'AE3500'
-    l_jw_drill: 'B03400'
+    l_jw_hacksaw: 'B03400'
     l_jw_gears: 'AE3500'
     l_jw_gun: '060300'
     l_jw_key: 'A13500'
@@ -305,7 +305,7 @@
 - time: '+1'
   lights:
     l_jw_candle: 'C23200'
-    l_jw_drill: 'B33400'
+    l_jw_hacksaw: 'B33400'
     l_jw_gun: '4D2500'
     l_jw_taperecorder: 'AC3500'
     
@@ -313,7 +313,7 @@
   lights:
     l_jw_bathtub: 'AF3400'
     l_jw_candle: 'C13200'
-    l_jw_drill: 'BA3400'
+    l_jw_hacksaw: 'BA3400'
     l_jw_gears: 'B83400'
     l_jw_gun: '542800'
     l_jw_key: 'A23600'
@@ -332,7 +332,7 @@
 - time: '+1'
   lights:
     l_jw_candle: 'CF3D00'
-    l_jw_drill: 'C03300'
+    l_jw_hacksaw: 'C03300'
     l_jw_gears: 'C33200'
     l_jw_gun: '6C3000'
     l_jw_syringe: '813500'
@@ -341,14 +341,14 @@
 - time: '+1'
   lights:
     l_jw_candle: 'CD3E00'
-    l_jw_drill: 'C43200'
+    l_jw_hacksaw: 'C43200'
     l_jw_gun: '6F3100'
     
 - time: '+1'
   lights:
     l_jw_bathtub: 'A73500'
     l_jw_candle: 'E54D00'
-    l_jw_drill: 'C53200'
+    l_jw_hacksaw: 'C53200'
     l_jw_gears: 'C53200'
     l_jw_gun: '7A3300'
     l_jw_key: '943500'
@@ -359,7 +359,7 @@
   lights:
     l_jw_bathtub: 'A63500'
     l_jw_candle: 'F75700'
-    l_jw_drill: 'C72D01'
+    l_jw_hacksaw: 'C72D01'
     l_jw_gears: 'C82703'
     l_jw_gun: '7D3300'
     l_jw_key: '913500'
@@ -378,7 +378,7 @@
 - time: '+1'
   lights:
     l_jw_candle: 'F25A00'
-    l_jw_drill: 'C81F06'
+    l_jw_hacksaw: 'C81F06'
     l_jw_gun: '893400'
     
 - time: '+1'
@@ -394,7 +394,7 @@
   lights:
     l_jw_bathtub: '953500'
     l_jw_candle: 'FF6400'
-    l_jw_drill: 'C8140B'
+    l_jw_hacksaw: 'C8140B'
     l_jw_gears: 'C80D0E'
     l_jw_gun: '8A3500'
     l_jw_key: '793300'
@@ -405,7 +405,7 @@
   lights:
     l_jw_bathtub: '913500'
     l_jw_candle: 'FE6400'
-    l_jw_drill: 'C80B0E'
+    l_jw_hacksaw: 'C80B0E'
     l_jw_gears: 'C80511'
     l_jw_gun: '953500'
     l_jw_key: '733100'
@@ -420,7 +420,7 @@
   lights:
     l_jw_bathtub: '8D3500'
     l_jw_candle: 'F96400'
-    l_jw_drill: 'C80511'
+    l_jw_hacksaw: 'C80511'
     l_jw_gun: '963500'
     l_jw_key: '672F00'
     l_jw_syringe: 'A93500'
@@ -430,7 +430,7 @@
   lights:
     l_jw_bathtub: '883400'
     l_jw_candle: 'EF6300'
-    l_jw_drill: 'C80710'
+    l_jw_hacksaw: 'C80710'
     l_jw_gears: 'C80312'
     l_jw_gun: '9F3500'
     l_jw_key: '5B2B00'
@@ -441,7 +441,7 @@
   lights:
     l_jw_bathtub: '823400'
     l_jw_candle: 'E76200'
-    l_jw_drill: 'C80312'
+    l_jw_hacksaw: 'C80312'
     l_jw_gears: 'C80611'
     l_jw_gun: '9E3500'
     l_jw_key: '311800'

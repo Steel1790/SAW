@@ -48,7 +48,7 @@ lights:
   l_jw_gun:
     number: led128-2-12
     tags: insert, led128p2, jw_insert
-  l_jw_drill:
+  l_jw_hacksaw:
     number: led128-2-5
     tags: insert, led128p2, jw_insert
   l_jw_candle:

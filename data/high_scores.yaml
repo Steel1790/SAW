@@ -1,14 +1,26 @@
-loops:
+choice_hurryup_hits:
+- - ECC
+  - 3
+  - player_choice_hurryup_hits: 3
+modes_attempted:
+- - AAA
+  - 2
+  - player_modes_attempted: 2
+modes_completed:
 - - TST
-  - 4
+  - 0
+puzzle_pieces:
+- - DLS
+  - 1
+  - player_puzzle_pieces: 1
 score:
-- - XXX
-  - 24806620
+- - PRU
+  - 26879669
+- - DLS
+  - 20154090
+- - ''
+  - 19954894
+- - BDO
+  - 19660318
 - - AAA
-  - 21416327
-- - AAA
-  - 15673981
-- - JWF
-  - 1000000
-- - ECK
-  - 900000
+  - 18892274

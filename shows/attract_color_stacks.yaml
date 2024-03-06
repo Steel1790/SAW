@@ -286,7 +286,7 @@
     l_bear_flasher_6: '000000'
     l_bear_flasher_7: '000000'
     l_bear_flasher_8: '000000'
-    l_jw_drill: 'FF00FF'
+    l_jw_hacksaw: 'FF00FF'
     l_jw_gun: 'FF00FF'
     l_jw_syringe: 'FF00FF'
     l_left_loop_arrow: 'FF00FF'
@@ -453,7 +453,7 @@
 - time: '+1'
   lights:
     l_jw_bathtub: '000000'
-    l_jw_drill: '000000'
+    l_jw_hacksaw: '000000'
     l_skill_shot1: '000000'
     
 - time: '+1'
@@ -879,7 +879,7 @@
     
 - time: '+1'
   lights:
-    l_jw_drill: '0000FF'
+    l_jw_hacksaw: '0000FF'
     l_jw_syringe: '0000FF'
     l_left_loop_arrow: '0000FF'
     l_left_ramp_triangle2: '000000'
@@ -1002,7 +1002,7 @@
   lights:
     l_gi_19: '0000FF'
     l_jw_bathtub: '000000'
-    l_jw_drill: '000000'
+    l_jw_hacksaw: '000000'
     l_left_disc_10: '0000FF'
     l_left_disc_4: '0000FF'
     l_left_disc_5: '0000FF'
@@ -1411,7 +1411,7 @@
     
 - time: '+1'
   lights:
-    l_jw_drill: '00FFFF'
+    l_jw_hacksaw: '00FFFF'
     l_jw_syringe: '00FFFF'
     l_left_loop_arrow: '00FFFF'
     l_left_ramp_triangle2: '000000'
@@ -1530,7 +1530,7 @@
   lights:
     l_gi_19: '00FFFF'
     l_jw_bathtub: '000000'
-    l_jw_drill: '000000'
+    l_jw_hacksaw: '000000'
     l_left_disc_10: '00FFFF'
     l_left_disc_4: '00FFFF'
     l_left_disc_5: '00FFFF'
@@ -1897,7 +1897,7 @@
 - time: '+1'
   lights:
     l_jw_bathtub: '00FF00'
-    l_jw_drill: '00FF00'
+    l_jw_hacksaw: '00FF00'
     l_left_ramp_triangle1: '000000'
     l_right_loop_arrow: '000000'
     l_right_ramp_triangle2: '000000'

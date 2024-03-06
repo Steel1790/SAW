@@ -1,10 +1,10 @@
 #show_version=6
 - time: 0
   lights:
-    l_jw_drill: (color1)
+    l_jw_hacksaw: (color1)
 - time: '+1'
   lights:
-    l_jw_drill: off
+    l_jw_hacksaw: off
 - time: '+1'
   lights:
-    l_jw_drill: (color1)      
+    l_jw_hacksaw: (color1)      

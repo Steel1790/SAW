@@ -164,7 +164,7 @@
 - time: '+1'
   lights:
     l_jw_bathtub: (color1)
-    l_jw_drill: (color1)
+    l_jw_hacksaw: (color1)
     l_skill_shot1: (color1)
     
 - time: '+1'
@@ -726,7 +726,7 @@
     
 - time: '+1'
   lights:
-    l_jw_drill: '000000'
+    l_jw_hacksaw: '000000'
     l_jw_syringe: '000000'
     l_left_loop_arrow: '000000'
     l_skill_shot1: '000000'

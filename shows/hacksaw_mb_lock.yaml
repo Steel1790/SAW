@@ -520,7 +520,7 @@
     
 - time: '+1'
   lights:
-    l_jw_drill: '00FD00'
+    l_jw_hacksaw: '00FD00'
     l_jw_gears: '00FD00'
     l_left_ramp_triangle1: '000000'
     l_left_ramp_triangle2: '000000'
@@ -577,7 +577,7 @@
 - time: '+1'
   lights:
     l_jw_candle: '00FD00'
-    l_jw_drill: '000000'
+    l_jw_hacksaw: '000000'
     l_jw_gun: '000000'
     l_jw_key: '000000'
     l_jw_syringe: '006A00'
@@ -1216,7 +1216,7 @@
     
 - time: '+1'
   lights:
-    l_jw_drill: '00FD00'
+    l_jw_hacksaw: '00FD00'
     l_jw_gears: '00FD00'
     l_left_disc_2: '01F100'
     l_left_disc_3: '019100'
@@ -1299,7 +1299,7 @@
 - time: '+1'
   lights:
     l_jw_candle: '00FD00'
-    l_jw_drill: '000000'
+    l_jw_hacksaw: '000000'
     l_jw_gun: '000000'
     l_jw_key: '000000'
     l_jw_syringe: '006A00'
@@ -1851,7 +1851,7 @@
     
 - time: '+1'
   lights:
-    l_jw_drill: '00FD00'
+    l_jw_hacksaw: '00FD00'
     l_jw_gears: '00FD00'
     l_left_disc_2: '01F100'
     l_left_disc_3: '019100'
@@ -1917,7 +1917,7 @@
 - time: '+1'
   lights:
     l_jw_candle: '00FD00'
-    l_jw_drill: '000000'
+    l_jw_hacksaw: '000000'
     l_jw_gun: '000000'
     l_jw_key: '000000'
     l_jw_syringe: '006A00'

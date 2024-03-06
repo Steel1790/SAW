@@ -3,7 +3,7 @@
   lights:
     l_jw_bathtub: '000000'
     l_jw_candle: '000000'
-    l_jw_drill: '000000'
+    l_jw_hacksaw: '000000'
     l_jw_gears: '000000'
     l_jw_gun: '000000'
     l_jw_key: '000000'
@@ -233,7 +233,7 @@
     
 - time: '+1'
   lights:
-    l_jw_drill: '00EE00'
+    l_jw_hacksaw: '00EE00'
     l_left_return_lane: '005200'
     l_post_e_1: '00FF00'
     l_post_e_2: '00FF00'
@@ -260,7 +260,7 @@
     
 - time: '+1'
   lights:
-    l_jw_drill: '00EF00'
+    l_jw_hacksaw: '00EF00'
     l_jw_syringe: '00FF00'
     l_left_return_lane: '003C00'
     l_post_e_3: '00FF00'
@@ -313,7 +313,7 @@
 - time: '+1'
   lights:
     l_jw_bathtub: '00FF00'
-    l_jw_drill: '00F000'
+    l_jw_hacksaw: '00F000'
     l_jw_taperecorder: '00FF00'
     l_left_disc_5: '00FF00'
     l_left_disc_6: '00FF00'
@@ -373,7 +373,7 @@
     
 - time: '+1'
   lights:
-    l_jw_drill: '00F100'
+    l_jw_hacksaw: '00F100'
     l_left_disc_1: '005500'
     l_left_disc_2: '00FF00'
     l_left_disc_3: '00FF00'
@@ -404,7 +404,7 @@
     
 - time: '+1'
   lights:
-    l_jw_drill: '00F400'
+    l_jw_hacksaw: '00F400'
     l_jw_syringe: '00F100'
     l_left_disc_1: '004000'
     l_left_disc_8: '00F200'
@@ -438,7 +438,7 @@
     
 - time: '+1'
   lights:
-    l_jw_drill: '00F500'
+    l_jw_hacksaw: '00F500'
     l_jw_syringe: '00E400'
     l_left_disc_1: '005100'
     l_left_disc_8: '00F300'
@@ -471,7 +471,7 @@
     
 - time: '+1'
   lights:
-    l_jw_drill: '00F600'
+    l_jw_hacksaw: '00F600'
     l_jw_syringe: '00D600'
     l_left_disc_1: '003A00'
     l_left_disc_8: '00F100'
@@ -503,7 +503,7 @@
     
 - time: '+1'
   lights:
-    l_jw_drill: '00F800'
+    l_jw_hacksaw: '00F800'
     l_jw_syringe: '00B700'
     l_left_disc_1: '005F00'
     l_left_disc_8: '00F400'

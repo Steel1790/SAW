@@ -179,7 +179,7 @@
     
 - time: '+1'
   lights:
-    l_jw_drill: '820000'
+    l_jw_hacksaw: '820000'
     l_skill_shot1: '820000'
     
 - time: '+1'
@@ -646,7 +646,7 @@
     
 - time: '+1'
   lights:
-    l_jw_drill: '000000'
+    l_jw_hacksaw: '000000'
     l_skill_shot1: '000000'
     
 - time: '+1'

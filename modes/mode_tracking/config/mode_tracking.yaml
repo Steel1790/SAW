@@ -267,7 +267,7 @@ show_player:
   shot_razorwire_button_sp_razorwire_lit_hit:
     sh_item_used:
       show_tokens:
-        leds: l_jw_drill
+        leds: l_jw_hacksaw
         color1: off
       priority: 200
   shot_reversebeartrap_button_sp_reversebeartrap_lit_hit:
