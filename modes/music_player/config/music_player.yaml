@@ -418,9 +418,11 @@ sound_player:
       action: play
       block: true
 #puzzle collected
-  mode_puzzle_hurryup_complete:
+  e_puzzle_music_start:
     PuzzlePiece:
       action: play
+    BaseMusic:
+      action: stop
 
     
   logicblock_random_switch_hit{hits==75}:  

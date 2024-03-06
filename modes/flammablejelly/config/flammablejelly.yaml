@@ -28,15 +28,15 @@ timers:
         
 variable_player:
   logicblock_flammablejelly_hit{step==1}:
-    score: 500000
+    score: 500000 + (current_player.candles_used * 1250000)
   logicblock_flammablejelly_hit{step==2}:
-    score: 1000000
+    score: 1000000 + (current_player.candles_used * 1250000)
   logicblock_flammablejelly_hit{step==3}:
-    score: 1000000
+    score: 1000000 + (current_player.candles_used * 1250000)
   #logicblock_flammablejelly_hit{step==4}:
   #  score: 1000000    
   mode_flammablejelly_complete:
-    score: 5000000      
+    score: 5000000 + (current_player.candles_used * 1000000)     
   timer_your_timer_tick:
     60s_flammablejelly_timer:
       int: device.timers.your_timer.ticks_remaining

@@ -28,15 +28,15 @@ timers:
         
 variable_player:
   logicblock_zeptest_hit{step==3}:
-    score: 500000
+    score: 500000 + (current_player.syringes_used * 1250000)
   logicblock_zeptest_hit{step==4}:
-    score: 1000000
+    score: 1000000 + (current_player.syringes_used * 1250000)
   logicblock_zeptest_hit{step==5}:
-    score: 1000000
+    score: 1000000 + (current_player.syringes_used * 1250000)
   #logicblock_zeptest_hit{step==6}:
   #  score: 1000000    
   mode_zeptest_complete:
-    score: 5000000      
+    score: 5000000 + (current_player.syringes_used * 1000000)   
   timer_your_timer_tick:
     60s_zeptest_timer:
       int: device.timers.your_timer.ticks_remaining

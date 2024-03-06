@@ -991,7 +991,7 @@ show_player:
       loops: -1  
       priority: 119
   minimode_loops_complete:
-    jw_chase_drill:
+    jw_chase_hacksaw:
       loops: 0
       speed: 8
       priority: 120

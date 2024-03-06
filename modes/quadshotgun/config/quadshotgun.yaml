@@ -41,9 +41,9 @@ counters:
 
 variable_player:
   quadshotgun_spinner_complete:
-    score: 2500000
+    score: 2500000 + (current_player.gears_used * 2500000)
   mode_quadshotgun_complete:
-    score: 6000000 
+    score: 6000000 + (current_player.gears_used * 2000000) 
   counter_quadshotgun_spinner_counter_hit:
     quadshotgun_spinner_counter:
       action: set

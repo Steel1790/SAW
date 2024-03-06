@@ -61,6 +61,57 @@ shots:
         state: 0
       - events: mode_reversebeartrap_complete
         state: 0
+  shot_quadshotgun_button:
+    advance_events: minimode_pops_complete
+    switches: s_action_button
+    profile: sp_quadshotgun
+    disable_events: mode_quadshotgun_stopped, mode_quadshotgun_complete, ball_ended, ball_will_end
+    enable_events: mode_quadshotgun_started
+    show_tokens:
+      leds: l_action_button
+    control_events:
+      - events: minimode_pops_complete
+        state: 1
+      - events: shot_quadshotgun_button_sp_quadshotgun_lit_hit
+        state: 0
+      - events: mode_quadshotgun_stopped
+        state: 0
+      - events: mode_quadshotgun_complete
+        state: 0
+  shot_flammablejelly_button:
+    advance_events: minimode_standups_complete
+    switches: s_action_button
+    profile: sp_flammablejelly
+    disable_events: mode_flammablejelly_stopped, mode_flammablejelly_complete, ball_ended, ball_will_end
+    enable_events: mode_flammablejelly_started
+    show_tokens:
+      leds: l_action_button
+    control_events:
+      - events: minimode_standups_complete
+        state: 1
+      - events: shot_flammablejelly_button_sp_flammablejelly_lit_hit
+        state: 0
+      - events: mode_flammablejelly_stopped
+        state: 0
+      - events: mode_flammablejelly_complete
+        state: 0
+  shot_zeptest_button:
+    advance_events: minimode_drops_complete
+    switches: s_action_button
+    profile: sp_zeptest
+    disable_events: mode_zeptest_stopped, mode_zeptest_complete, ball_ended, ball_will_end
+    enable_events: mode_zeptest_started
+    show_tokens:
+      leds: l_action_button
+    control_events:
+      - events: minimode_drops_complete
+        state: 1
+      - events: shot_zeptest_button_sp_zeptest_lit_hit
+        state: 0
+      - events: mode_zeptest_stopped
+        state: 0
+      - events: mode_zeptest_complete
+        state: 0
 
 shot_profiles:
   sp_drillchair:
@@ -75,17 +126,41 @@ shot_profiles:
     advance_on_hit: false
     states:
       - name: razorwire_off
-        show: "off"               # a default show to turn of the led. change if you want to do something on unlit shots
+        show: "off" 
       - name: lit
-        show: "sh_razorwire_ready"        # a default show to turn of the led. change if you want to do something on unlit shots 
+        show: "sh_razorwire_ready"    
         priority: 200
   sp_reversebeartrap:
     advance_on_hit: false
     states:
       - name: reversebeartrap_off
-        show: "off"               # a default show to turn of the led. change if you want to do something on unlit shots
+        show: "off" 
       - name: lit
-        show: "sh_reversebeartrap_ready"        # a default show to turn of the led. change if you want to do something on unlit shots 
+        show: "sh_reversebeartrap_ready"    
+        priority: 200
+  sp_quadshotgun:
+    advance_on_hit: false
+    states:
+      - name: quadshotgun_off
+        show: "off" 
+      - name: lit
+        show: "sh_quadshotgun_ready"    
+        priority: 200
+  sp_flammablejelly:
+    advance_on_hit: false
+    states:
+      - name: flammablejelly_off
+        show: "off" 
+      - name: lit
+        show: "sh_flammablejelly_ready"    
+        priority: 200
+  sp_zeptest:
+    advance_on_hit: false
+    states:
+      - name: zeptest_off
+        show: "off" 
+      - name: lit
+        show: "sh_zeptest_ready"    
         priority: 200
 
 shows:
@@ -107,6 +182,27 @@ shows:
     - duration: 0.3s
       lights:
         (leds): beartrap
+    - duration: 0.3s
+      lights:
+        (leds): off
+  sh_quadshotgun_ready:
+    - duration: 0.3s
+      lights:
+        (leds): shotgun
+    - duration: 0.3s
+      lights:
+        (leds): off
+  sh_flammablejelly_ready:
+    - duration: 0.3s
+      lights:
+        (leds): jelly
+    - duration: 0.3s
+      lights:
+        (leds): off
+  sh_zeptest_ready:
+    - duration: 0.3s
+      lights:
+        (leds): zeptest
     - duration: 0.3s
       lights:
         (leds): off
@@ -136,6 +232,27 @@ variable_player:
     bonus_keys: -1
     value_type: int   
     keys_used:
+      int: 1
+      action: set
+#quadshotgun mode item used
+  shot_quadshotgun_button_sp_quadshotgun_lit_hit:
+    bonus_gears: -1
+    value_type: int   
+    gears_used:
+      int: 1
+      action: set
+#flammablejelly mode item used
+  shot_flammablejelly_button_sp_flammablejelly_lit_hit:
+    bonus_candles: -1
+    value_type: int   
+    candles_used:
+      int: 1
+      action: set
+#zeptest mode item used
+  shot_zeptest_button_sp_zeptest_lit_hit:
+    bonus_syringes: -1
+    value_type: int   
+    syringes_used:
       int: 1
       action: set
 
@@ -274,5 +391,23 @@ show_player:
     sh_item_used:
       show_tokens:
         leds: l_jw_key
+        color1: off
+      priority: 200
+  shot_quadshotgun_button_sp_quadshotgun_lit_hit:
+    sh_item_used:
+      show_tokens:
+        leds: l_jw_gears
+        color1: off
+      priority: 200
+  shot_flammablejelly_button_sp_flammablejelly_lit_hit:
+    sh_item_used:
+      show_tokens:
+        leds: l_jw_candle
+        color1: off
+      priority: 200
+  shot_zeptest_button_sp_zeptest_lit_hit:
+    sh_item_used:
+      show_tokens:
+        leds: l_jw_syringe
         color1: off
       priority: 200
