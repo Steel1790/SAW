@@ -248,6 +248,9 @@ variable_player:
     candles_used:
       int: 1
       action: set
+    candle_multiplier:
+      int: 3
+      action: set
 #zeptest mode item used
   shot_zeptest_button_sp_zeptest_lit_hit:
     bonus_syringes: -1
@@ -320,6 +323,9 @@ variable_player:
     modes_attempted:
       int: 1
       action: add
+    candle_multiplier:
+      int: 1
+      action: set
   mode_quadshotgun_started:
     modes_attempted:
       int: 1

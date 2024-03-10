@@ -22,11 +22,18 @@ timers:
     control_events:
       - action: start
         event: mode_razorwire_started
+  razorwire_2x_timer:
+    start_value: 30
+    end_value: 0
+    direction: down
+    control_events:
+      - action: start
+        event: shot_razorwire_button_sp_razorwire_lit_hit
 
 counters:
   razorwire_pops_counter:
     starting_count: 0
-    count_complete_value: 12
+    count_complete_value: 24
     enable_events: mode_razorwire_started
     disable_events: razorwire_pops_complete, logicblock_razorwire_phase2_updated{enabled==True}
     start_enabled: true
@@ -34,6 +41,17 @@ counters:
     reset_on_complete: false
 #    events_when_complete: mode_razorwire_complete, stop_mode_razorwire
     events_when_complete: razorwire_pops_complete   
+    count_events: upper_l_pop_hit, upper_r_pop_hit, upper_b_pop_hit, logicblock_razorwire_item_pops_counter_hit
+  razorwire_item_pops_counter:
+    starting_count: 0
+    count_complete_value: 12
+    enable_events: shot_razorwire_button_sp_razorwire_lit_hit
+    disable_events: e_stop_hacksaw
+    start_enabled: false
+    persist_state: true
+    reset_on_complete: false
+#    events_when_complete: mode_razorwire_complete, stop_mode_razorwire
+    #events_when_complete: razorwire_pops_complete   
     count_events: upper_l_pop_hit, upper_r_pop_hit, upper_b_pop_hit
 
 shots:
@@ -50,14 +68,15 @@ shots:
     
 
 variable_player:
-  razorwire_pops_complete:
-    score: 1000000 + (current_player.hacksaws_used * 1500000)
+  #razorwire_pops_complete:
+  #  score: 1000000 + (current_player.hacksaws_used * 1500000)
   mode_razorwire_complete:
-    score: 6500000 + (current_player.hacksaws_used * 1750000)
+    score: 6500000 + (current_player.hacksaws_used * 2000000)
   counter_razorwire_pops_counter_hit:
     razorwire_pops_counter:
       action: set
-      int: (count)*54
+      int: (count)*28
+    score: 250000
     razorwire_visual_pops_counter:
       action: set
       int: (count)
@@ -67,6 +86,9 @@ variable_player:
     60s_timer:
       int: device.timers.your_timer.ticks_remaining
       action: set
+    razorwire_2x_timer:
+      int: device.timers.your_timer.ticks_remaining
+      action: set   
  
 slides:
   razorwirevideo:
@@ -153,7 +175,7 @@ slides:
 #      y: 85%
     - type: Text
 # work on displaying the count of spins
-      text: (player|razorwire_visual_pops_counter) / 12 Pops Hit
+      text: (player|razorwire_visual_pops_counter) / 24 Pops Hit
       font_size: 50
       font_name: TrajanProRegular
       outline_color: black
@@ -161,7 +183,7 @@ slides:
       color: 65fe08
       y: 35%
     - type: Text
-      text: You Have 60 Seconds To Hit 12 Pop Bumpers!
+      text: You Have 60 Seconds To Hit 24 Pop Bumpers!
       color: yellow
       font_name: TrajanProRegular
       font_size: 35
@@ -302,6 +324,33 @@ widgets:
             value: 1
             duration: 1000ms
             timing: after_previous
+   w_hacksaw_button:
+    - type: image
+      image: HacksawButtonImg
+      x: 91%
+      y: 14%
+      z: 1        
+    - type: Text
+      text: 2x Pops
+      font_size: 45
+      font_name: Mustkill
+      outline_color: black
+      outline_width: 7
+      color: 65fe08
+      x: 88%
+      y: 3%   
+      z: 1
+    - type: Text
+      text: (player|razorwire_razorwire_2x_timer_tick)
+      font_size: 30
+      font_name: Mustkill
+      outline_color: black
+      outline_width: 7
+      color: 65fe08
+      x: 88%
+      y: 8%      
+      z: 1
+
    #rw_shot_update3:
    # - type: Text
    #   text: X
@@ -354,6 +403,14 @@ widget_player:
   rw_shot_update2:
     slide: razorwire_phase2
     action: add
+ shot_razorwire_button_sp_razorwire_lit_hit:
+  w_hacksaw_button:
+    slide: razorwire_pops
+    action: add
+ timer_razorwire_2x_timer_stopped:
+  w_hacksaw_button:
+    slide: razorwire_pops
+    action: remove
  #logicblock_razorwire_hit{step==2}: 
  # rw_shot_update2:
  #   slide: razorwire_phase2
@@ -490,31 +547,11 @@ show_player:
   #      show_tokens:
   #        leds: l_lower_top_bumper_1, l_left_top_bumper_1, l_right_top_bumper_1
   #        color1: razorwire
-  logicblock_razorwire_pops_counter_hit{count==1}:
-      razorwire_pops_progress:
-        loops: -1
-        show_tokens:
-          leds: l_lower_top_bumper_1, l_left_top_bumper_1, l_right_top_bumper_1, l_lower_top_bumper_2, l_left_top_bumper_2, l_right_top_bumper_2, l_lower_top_bumper_16, l_left_top_bumper_16, l_right_top_bumper_16
-          color1: razorwire
-        priority: 181
-      starpost_cycle:
-        loops: 1
-        speed: 20
-        show_tokens:
-          color1: razorwire
-        priority: 170  
   logicblock_razorwire_pops_counter_hit{count==2}:
       razorwire_pops_progress:
         loops: -1
         show_tokens:
-          leds: l_lower_top_bumper_1, l_left_top_bumper_1, l_right_top_bumper_1, l_lower_top_bumper_2, l_left_top_bumper_2, l_right_top_bumper_2, l_lower_top_bumper_16, l_left_top_bumper_16, l_right_top_bumper_16, l_lower_top_bumper_3, l_left_top_bumper_3, l_right_top_bumper_3, l_lower_top_bumper_15, l_left_top_bumper_15, l_right_top_bumper_15
-          color1: razorwire
-        priority: 181
-  logicblock_razorwire_pops_counter_hit{count==4}:
-      razorwire_pops_progress:
-        loops: -1
-        show_tokens:
-          leds: l_lower_top_bumper_1, l_left_top_bumper_1, l_right_top_bumper_1, l_lower_top_bumper_2, l_left_top_bumper_2, l_right_top_bumper_2, l_lower_top_bumper_16, l_left_top_bumper_16, l_right_top_bumper_16, l_lower_top_bumper_3, l_left_top_bumper_3, l_right_top_bumper_3, l_lower_top_bumper_15, l_left_top_bumper_15, l_right_top_bumper_15, l_lower_top_bumper_4, l_left_top_bumper_4, l_right_top_bumper_4, l_lower_top_bumper_14, l_left_top_bumper_14, l_right_top_bumper_14
+          leds: l_lower_top_bumper_8, l_left_top_bumper_8, l_right_top_bumper_8, l_lower_top_bumper_9, l_left_top_bumper_9, l_right_top_bumper_9
           color1: razorwire
         priority: 181
       starpost_cycle:
@@ -523,18 +560,18 @@ show_player:
         show_tokens:
           color1: razorwire
         priority: 170  
-  logicblock_razorwire_pops_counter_hit{count==6}:
+  logicblock_razorwire_pops_counter_hit{count==5}:
       razorwire_pops_progress:
         loops: -1
         show_tokens:
-          leds: l_lower_top_bumper_1, l_left_top_bumper_1, l_right_top_bumper_1, l_lower_top_bumper_2, l_left_top_bumper_2, l_right_top_bumper_2, l_lower_top_bumper_16, l_left_top_bumper_16, l_right_top_bumper_16, l_lower_top_bumper_3, l_left_top_bumper_3, l_right_top_bumper_3, l_lower_top_bumper_15, l_left_top_bumper_15, l_right_top_bumper_15, l_lower_top_bumper_4, l_left_top_bumper_4, l_right_top_bumper_4, l_lower_top_bumper_14, l_left_top_bumper_14, l_right_top_bumper_14, l_lower_top_bumper_5, l_left_top_bumper_5, l_right_top_bumper_5, l_lower_top_bumper_13, l_left_top_bumper_13, l_right_top_bumper_13
+          leds: l_lower_top_bumper_8, l_left_top_bumper_8, l_right_top_bumper_8, l_lower_top_bumper_9, l_left_top_bumper_9, l_right_top_bumper_9, l_lower_top_bumper_7, l_left_top_bumper_7, l_right_top_bumper_7, l_lower_top_bumper_10, l_left_top_bumper_10, l_right_top_bumper_10, l_lower_top_bumper_6, l_left_top_bumper_6, l_right_top_bumper_6
           color1: razorwire
         priority: 181
   logicblock_razorwire_pops_counter_hit{count==8}:
       razorwire_pops_progress:
         loops: -1
         show_tokens:
-          leds: l_lower_top_bumper_1, l_left_top_bumper_1, l_right_top_bumper_1, l_lower_top_bumper_2, l_left_top_bumper_2, l_right_top_bumper_2, l_lower_top_bumper_16, l_left_top_bumper_16, l_right_top_bumper_16, l_lower_top_bumper_3, l_left_top_bumper_3, l_right_top_bumper_3, l_lower_top_bumper_15, l_left_top_bumper_15, l_right_top_bumper_15, l_lower_top_bumper_4, l_left_top_bumper_4, l_right_top_bumper_4, l_lower_top_bumper_14, l_left_top_bumper_14, l_right_top_bumper_14, l_lower_top_bumper_5, l_left_top_bumper_5, l_right_top_bumper_5, l_lower_top_bumper_13, l_left_top_bumper_13, l_right_top_bumper_13
+          leds: l_lower_top_bumper_8, l_left_top_bumper_8, l_right_top_bumper_8, l_lower_top_bumper_9, l_left_top_bumper_9, l_right_top_bumper_9, l_lower_top_bumper_7, l_left_top_bumper_7, l_right_top_bumper_7, l_lower_top_bumper_10, l_left_top_bumper_10, l_right_top_bumper_10, l_lower_top_bumper_6, l_left_top_bumper_6, l_right_top_bumper_6, l_lower_top_bumper_11, l_left_top_bumper_11, l_right_top_bumper_11, l_lower_top_bumper_5, l_left_top_bumper_5, l_right_top_bumper_5
           color1: razorwire
         priority: 181
       starpost_cycle:
@@ -543,18 +580,18 @@ show_player:
         show_tokens:
           color1: razorwire
         priority: 170  
-  logicblock_razorwire_pops_counter_hit{count==10}:
-      razorwire_pops_progress:
-        loops: -1
-        show_tokens:
-          leds: l_lower_top_bumper_1, l_left_top_bumper_1, l_right_top_bumper_1, l_lower_top_bumper_2, l_left_top_bumper_2, l_right_top_bumper_2, l_lower_top_bumper_16, l_left_top_bumper_16, l_right_top_bumper_16, l_lower_top_bumper_3, l_left_top_bumper_3, l_right_top_bumper_3, l_lower_top_bumper_15, l_left_top_bumper_15, l_right_top_bumper_15, l_lower_top_bumper_4, l_left_top_bumper_4, l_right_top_bumper_4, l_lower_top_bumper_14, l_left_top_bumper_14, l_right_top_bumper_14, l_lower_top_bumper_5, l_left_top_bumper_5, l_right_top_bumper_5, l_lower_top_bumper_13, l_left_top_bumper_13, l_right_top_bumper_13, l_lower_top_bumper_7, l_left_top_bumper_7, l_right_top_bumper_7, l_lower_top_bumper_11, l_left_top_bumper_11, l_right_top_bumper_11
-          color1: razorwire
-        priority: 181
   logicblock_razorwire_pops_counter_hit{count==11}:
       razorwire_pops_progress:
         loops: -1
         show_tokens:
-          leds: l_lower_top_bumper_1, l_left_top_bumper_1, l_right_top_bumper_1, l_lower_top_bumper_2, l_left_top_bumper_2, l_right_top_bumper_2, l_lower_top_bumper_16, l_left_top_bumper_16, l_right_top_bumper_16, l_lower_top_bumper_3, l_left_top_bumper_3, l_right_top_bumper_3, l_lower_top_bumper_15, l_left_top_bumper_15, l_right_top_bumper_15, l_lower_top_bumper_4, l_left_top_bumper_4, l_right_top_bumper_4, l_lower_top_bumper_14, l_left_top_bumper_14, l_right_top_bumper_14, l_lower_top_bumper_5, l_left_top_bumper_5, l_right_top_bumper_5, l_lower_top_bumper_13, l_left_top_bumper_13, l_right_top_bumper_13, l_lower_top_bumper_7, l_left_top_bumper_7, l_right_top_bumper_7, l_lower_top_bumper_11, l_left_top_bumper_11, l_right_top_bumper_11, l_lower_top_bumper_8, l_left_top_bumper_8, l_right_top_bumper_8, l_lower_top_bumper_10, l_left_top_bumper_10, l_right_top_bumper_10
+          leds: l_lower_top_bumper_8, l_left_top_bumper_8, l_right_top_bumper_8, l_lower_top_bumper_9, l_left_top_bumper_9, l_right_top_bumper_9, l_lower_top_bumper_7, l_left_top_bumper_7, l_right_top_bumper_7, l_lower_top_bumper_10, l_left_top_bumper_10, l_right_top_bumper_10, l_lower_top_bumper_6, l_left_top_bumper_6, l_right_top_bumper_6, l_lower_top_bumper_11, l_left_top_bumper_11, l_right_top_bumper_11, l_lower_top_bumper_5, l_left_top_bumper_5, l_right_top_bumper_5, l_lower_top_bumper_12, l_left_top_bumper_12, l_right_top_bumper_12, l_lower_top_bumper_4, l_left_top_bumper_4, l_right_top_bumper_4
+          color1: razorwire
+        priority: 181
+  logicblock_razorwire_pops_counter_hit{count==14}:
+      razorwire_pops_progress:
+        loops: -1
+        show_tokens:
+          leds: l_lower_top_bumper_8, l_left_top_bumper_8, l_right_top_bumper_8, l_lower_top_bumper_9, l_left_top_bumper_9, l_right_top_bumper_9, l_lower_top_bumper_7, l_left_top_bumper_7, l_right_top_bumper_7, l_lower_top_bumper_10, l_left_top_bumper_10, l_right_top_bumper_10, l_lower_top_bumper_6, l_left_top_bumper_6, l_right_top_bumper_6, l_lower_top_bumper_11, l_left_top_bumper_11, l_right_top_bumper_11, l_lower_top_bumper_5, l_left_top_bumper_5, l_right_top_bumper_5, l_lower_top_bumper_12, l_left_top_bumper_12, l_right_top_bumper_12, l_lower_top_bumper_4, l_left_top_bumper_4, l_right_top_bumper_4, l_lower_top_bumper_13, l_left_top_bumper_13, l_right_top_bumper_13
           color1: razorwire
         priority: 181
       starpost_cycle:
@@ -563,7 +600,27 @@ show_player:
         show_tokens:
           color1: razorwire
         priority: 170  
-  logicblock_razorwire_pops_counter_hit{count==12}:
+  logicblock_razorwire_pops_counter_hit{count==18}:
+      razorwire_pops_progress:
+        loops: -1
+        show_tokens:
+          leds: l_lower_top_bumper_8, l_left_top_bumper_8, l_right_top_bumper_8, l_lower_top_bumper_9, l_left_top_bumper_9, l_right_top_bumper_9, l_lower_top_bumper_7, l_left_top_bumper_7, l_right_top_bumper_7, l_lower_top_bumper_10, l_left_top_bumper_10, l_right_top_bumper_10, l_lower_top_bumper_6, l_left_top_bumper_6, l_right_top_bumper_6, l_lower_top_bumper_11, l_left_top_bumper_11, l_right_top_bumper_11, l_lower_top_bumper_5, l_left_top_bumper_5, l_right_top_bumper_5, l_lower_top_bumper_12, l_left_top_bumper_12, l_right_top_bumper_12, l_lower_top_bumper_4, l_left_top_bumper_4, l_right_top_bumper_4, l_lower_top_bumper_13, l_left_top_bumper_13, l_right_top_bumper_13, l_lower_top_bumper_3, l_left_top_bumper_3, l_right_top_bumper_3, l_lower_top_bumper_14, l_left_top_bumper_14, l_right_top_bumper_14
+          color1: razorwire
+        priority: 181
+  logicblock_razorwire_pops_counter_hit{count==22}:
+      razorwire_pops_progress:
+        loops: -1
+        show_tokens:
+          leds: l_lower_top_bumper_8, l_left_top_bumper_8, l_right_top_bumper_8, l_lower_top_bumper_9, l_left_top_bumper_9, l_right_top_bumper_9, l_lower_top_bumper_7, l_left_top_bumper_7, l_right_top_bumper_7, l_lower_top_bumper_10, l_left_top_bumper_10, l_right_top_bumper_10, l_lower_top_bumper_6, l_left_top_bumper_6, l_right_top_bumper_6, l_lower_top_bumper_11, l_left_top_bumper_11, l_right_top_bumper_11, l_lower_top_bumper_5, l_left_top_bumper_5, l_right_top_bumper_5, l_lower_top_bumper_12, l_left_top_bumper_12, l_right_top_bumper_12, l_lower_top_bumper_4, l_left_top_bumper_4, l_right_top_bumper_4, l_lower_top_bumper_13, l_left_top_bumper_13, l_right_top_bumper_13, l_lower_top_bumper_3, l_left_top_bumper_3, l_right_top_bumper_3, l_lower_top_bumper_14, l_left_top_bumper_14, l_right_top_bumper_14, l_lower_top_bumper_2, l_left_top_bumper_2, l_right_top_bumper_2, l_lower_top_bumper_15, l_left_top_bumper_15, l_right_top_bumper_15
+          color1: razorwire
+        priority: 181
+      starpost_cycle:
+        loops: 1
+        speed: 20
+        show_tokens:
+          color1: razorwire
+        priority: 170  
+  logicblock_razorwire_pops_counter_hit{count==24}:
       razorwire_pops_progress:
         loops: -1
         show_tokens:
@@ -671,3 +728,4 @@ sound_player:
 
 event_player: 
   slide_razorwire_pops_active: e_primary_mode_active
+  shot_razorwire_button_sp_razorwire_lit_hit: e_stop_hacksaw|30s

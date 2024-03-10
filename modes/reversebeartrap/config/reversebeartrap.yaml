@@ -36,6 +36,9 @@ timers:
     control_events:
       - action: start
         event: mode_reversebeartrap_started
+      - action: add
+        value: 30
+        event: shot_reversebeartrap_button_sp_reversebeartrap_lit_hit
 
 #counters:
 #  razorwire_spinner_counter:
@@ -51,15 +54,15 @@ timers:
 
 variable_player:
   logicblock_reversebeartrap_hit{step==2}:
-    score: 1000000 + (current_player.keys_used * 1500000)
+    score: 1000000 + (current_player.keys_used * 500000)
   logicblock_reversebeartrap_hit{step==3}:
-    score: 2500000 + (current_player.keys_used * 1500000)
+    score: 2500000 + (current_player.keys_used * 1250000)
   logicblock_reversebeartrap_hit{step==5}:
-    score: 1000000 + (current_player.keys_used * 1500000)
+    score: 1000000 + (current_player.keys_used * 500000)
   logicblock_reversebeartrap_hit{step==6}:
-    score: 2500000 + (current_player.keys_used * 1500000)
+    score: 2500000 + (current_player.keys_used * 1250000)
   mode_reversebeartrap_complete:
-    score: 2000000 + (current_player.keys_used * 1500000)
+    score: 2000000 + (current_player.keys_used * 1000000)
        
   timer_your_timer_tick:
     120s_reversebeartrap_timer:
@@ -136,7 +139,7 @@ slides:
       text: "You Have 120 Seconds To Find The Key & Earn Your Salvation"
       color: D1E5F4
       font_name: TrajanProRegular
-      font_size: 35
+      font_size: 33
       y: 90
       animations:
        pre_show_slide:
@@ -233,6 +236,32 @@ widgets:
             value: 1
             duration: 1000ms
             timing: after_previous
+   w_key_button:
+    - type: image
+      image: KeyButtonImg
+      x: 95%
+      y: 20%
+      z: 1        
+    - type: Text
+      text: +30 Seconds
+      font_size: 30
+      font_name: Mustkill
+      outline_color: black
+      outline_width: 7
+      color: FFBF00
+      x: 88%
+      y: 8%   
+      z: 1
+    - type: Text
+      text: 1.5X
+      font_size: 45
+      font_name: Mustkill
+      outline_color: black
+      outline_width: 7
+      color: FFBF00
+      x: 88%
+      y: 3%      
+      z: 1
     
  
 widget_player:
@@ -268,6 +297,10 @@ widget_player:
    rbt_shot_update4:
      slide: reversebeartrapUI
      action: add
+ shot_reversebeartrap_button_sp_reversebeartrap_lit_hit:
+  w_key_button:
+    slide: reversebeartrapUI
+    action: add
    
 
 slide_player:

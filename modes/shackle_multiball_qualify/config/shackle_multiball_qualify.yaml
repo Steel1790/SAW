@@ -50,7 +50,7 @@ multiball_locks:
     #debug: true
     balls_to_lock: 2
     lock_devices: bd_top_saucer
-    enable_events: logicblock_acc_shackle_mb_qualify_complete
+    enable_events: logicblock_acc_shackle_mb_qualify_complete 
       #disable_events: sg_lockshot_complete{state=="unlit"}
       #reset_count_for_current_player_events: multiball_lock_sword_multiball_lock_full
 

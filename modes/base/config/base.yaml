@@ -476,7 +476,7 @@ counters:
 
   minimode_pops_counter:
     starting_count: 0
-    count_complete_value: 30
+    count_complete_value: 20
     enable_events: 
     disable_events: 
     start_enabled: true
@@ -536,7 +536,7 @@ counters:
 
   minimode_ramps_counter:
     starting_count: 0
-    count_complete_value: 20
+    count_complete_value: 10
     enable_events: 
     disable_events: 
     start_enabled: true
@@ -548,7 +548,7 @@ counters:
     
   minimode_loops_counter:
     starting_count: 0
-    count_complete_value: 20
+    count_complete_value: 10
     enable_events: 
     disable_events: 
     start_enabled: true
@@ -815,9 +815,9 @@ show_player:
       #   color1: white
 
   mode_base_started:  
-    #backbox_on:
-    #  loops: -1
-    #  speed: 1 
+    backbox_on:
+      loops: -1
+      speed: 1 
     spotlight_taperecorder_on: stop
     base_action_button:
       loops: -1

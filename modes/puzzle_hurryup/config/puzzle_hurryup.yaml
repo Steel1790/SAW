@@ -6,7 +6,7 @@ mode:
 
 timers:
   t_puzzle_timer:
-    start_value: 18
+    start_value: 23
     end_value: 0
     direction: down
     control_events:
@@ -139,32 +139,32 @@ show_player:
     sh_razorwire_hurryup:
       show_tokens:
         leds: razorwire_flasher
-      loops: 70
+      loops: 90
       speed: 4
   e_flammablejelly_puzzle:
     sh_flammablejelly_hurryup:
       show_tokens:
         leds: bear_flasher
-      loops: 70
+      loops: 90
       speed: 4
   e_quadshotgun_puzzle:
     sh_quadshotgun_hurryup:
       show_tokens:
         leds: shotgun_flasher
-      loops: 70
+      loops: 90
       speed: 4
   e_drillchair_puzzle:
     sh_drillchair_hurryup:
       show_tokens:
         leds: drill_flasher
-      loops: 70
+      loops: 90
       speed: 4
   e_zeptest_puzzle:
     sh_zeptest_hurryup:
       show_tokens:
         leds: zep_flasher
-      loops: 70
+      loops: 90
       speed: 4
 
 event_player:
-  mode_puzzle_hurryup_started: e_puzzle_music_start|8s
+  mode_puzzle_hurryup_started: e_puzzle_music_start|5.5s

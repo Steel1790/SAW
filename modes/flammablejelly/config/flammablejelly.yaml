@@ -23,24 +23,52 @@ timers:
     end_value: 0
     direction: down
     control_events:
+      - event: mode_flammablejelly_started
+        action: start
+      - event: shot_flammablejelly_button_sp_flammablejelly_lit_hit
+        action: set_tick_interval
+        value: 0.59
+      - event: e_stop_candle
+        action: set_tick_interval
+        value: 1
+      #- action: add
+      #  value: 30
+      #  event: shot_flammablejelly_button_sp_flammablejelly_lit_hit
+  flammablejelly_3x_timer:
+    start_value: 30
+    end_value: 0
+    direction: down
+    control_events:
       - action: start
-        event: mode_flammablejelly_started
+        event: shot_flammablejelly_button_sp_flammablejelly_lit_hit
         
 variable_player:
   logicblock_flammablejelly_hit{step==1}:
-    score: 500000 + (current_player.candles_used * 1250000)
+    score: 500000 * current_player.candle_multiplier
   logicblock_flammablejelly_hit{step==2}:
-    score: 1000000 + (current_player.candles_used * 1250000)
+    score: 1000000 * current_player.candle_multiplier
   logicblock_flammablejelly_hit{step==3}:
-    score: 1000000 + (current_player.candles_used * 1250000)
+    score: 1000000 * current_player.candle_multiplier
   #logicblock_flammablejelly_hit{step==4}:
   #  score: 1000000    
   mode_flammablejelly_complete:
-    score: 5000000 + (current_player.candles_used * 1000000)     
+    score: 5000000 * current_player.candle_multiplier    
   timer_your_timer_tick:
     60s_flammablejelly_timer:
       int: device.timers.your_timer.ticks_remaining
-      action: set        
+      action: set      
+    flammablejelly_3x_timer:
+      int: device.timers.your_timer.ticks_remaining
+      action: set    
+# candle action button
+  shot_flammablejelly_button_sp_flammablejelly_lit_hit:
+    candle_multiplier:
+      int: 3
+      action: set  
+  timer_flammablejelly_3x_timer_stopped:
+    candle_multiplier:
+      int: 1
+      action: set
     
 slides:
   flammablejellyvideo:
@@ -222,7 +250,33 @@ widgets:
           - property: opacity
             value: 1
             duration: 1000ms
-            timing: after_previous   
+            timing: after_previous 
+   w_candle_button:
+    - type: image
+      image: CandleButtonImg
+      x: 95%
+      y: 20%
+      z: 1        
+    - type: Text
+      text: (player|flammablejelly_flammablejelly_3x_timer_tick)
+      font_size: 30
+      font_name: Mustkill
+      outline_color: black
+      outline_width: 7
+      color: FFBF00
+      x: 88%
+      y: 8%   
+      z: 1
+    - type: Text
+      text: 3X
+      font_size: 45
+      font_name: Mustkill
+      outline_color: black
+      outline_width: 7
+      color: FFBF00
+      x: 88%
+      y: 3%      
+      z: 1
     
  
 widget_player:
@@ -258,6 +312,14 @@ widget_player:
   flammablejelly_shot_update5:
     slide: flammablejellyUI      
     action: add
+ shot_flammablejelly_button_sp_flammablejelly_lit_hit:
+  w_candle_button:
+    slide: flammablejellyUI
+    action: add
+ timer_flammablejelly_3x_timer_stopped:
+  w_candle_button:
+    slide: flammablejellyUI
+    action: remove
 
 slide_player:
   mode_flammablejelly_started: 
@@ -500,3 +562,4 @@ sound_player:
 
 event_player: 
   slide_flammablejellyUI_active: e_primary_mode_active
+  shot_flammablejelly_button_sp_flammablejelly_lit_hit: e_stop_candle|20s, e_start_candle_multiplier|10s

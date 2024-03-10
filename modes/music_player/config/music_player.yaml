@@ -287,6 +287,26 @@ sound_pools:
       - SuperJackpot
       - SuperJackpot3
       - SuperJackpot5
+  ActionButton:
+    load: preload
+    type: random_force_next
+    track: voice
+    sounds:
+      - AB1
+      - AB2
+      - AB3
+      - AB4
+      - AB5
+      - AB6
+      - AB7
+      - AB8
+      - AB9
+      - AB10
+      - AB11
+      - AB12
+      - AB13
+      - AB14
+      - AB15
 
 sound_player:
   mode_music_player_started:
@@ -305,6 +325,13 @@ sound_player:
   ball_will_end{current_player.ball==3}:
     GameOver:
       action: play
+#turn puzzle music off if drain during mode
+  e_puzzle_music_off1:
+    PuzzlePieceHurryUp:
+      action: stop
+  e_puzzle_music_off2:
+    PuzzlePieceHurryUp:
+      action: stop
 
   mode_base_started{current_player.ball == 1 and player==1}:
     1playerGame:
@@ -417,13 +444,6 @@ sound_player:
     lowerdropsaudio:
       action: play
       block: true
-#puzzle collected
-  e_puzzle_music_start:
-    PuzzlePiece:
-      action: play
-    BaseMusic:
-      action: stop
-
     
   logicblock_random_switch_hit{hits==75}:  
     randomswitch:
@@ -690,9 +710,9 @@ sound_player:
       action: play
 
 #puzzle hurryup
-  mode_puzzle_hurryup_started:
+  e_puzzle_music_start:
     PuzzlePieceHurryUp:
-      delay: 4s
+      #delay: 2s
       action: play
     BaseMusic:
       action: stop
@@ -701,7 +721,44 @@ sound_player:
       action: stop
     BaseMusic:
       action: play
+#puzzle collected
+  mode_puzzle_hurryup_complete:
+    PuzzlePiece:
+      action: play
+    PuzzlePieceHurryUp:
+      action: stop
 
+#action button pressed
+  shot_drillchair_button_sp_drillchair_lit_hit:
+    ActionButton:
+      action: play
+  shot_razorwire_button_sp_razorwire_lit_hit:
+    ActionButton:
+      action: play
+  shot_reversebeartrap_button_sp_reversebeartrap_lit_hit:
+    ActionButton:
+      action: play
+  shot_quadshotgun_button_sp_quadshotgun_lit_hit:
+    ActionButton:
+      action: play
+  shot_flammablejelly_button_sp_flammablejelly_lit_hit:
+    ActionButton:
+      action: play
+  shot_zeptest_button_sp_zeptest_lit_hit:
+    ActionButton:
+      action: play
+
+#make your choice hurry up
+  mode_make_your_choice_hurryup_started:
+    LiveOrDieHurryup:
+      action: play
+    BaseMusic:
+      action: stop
+  player_make_your_choice_hurryup_t_make_your_choice_timer_tick{value < 1}:
+    LiveOrDieHurryup:
+      action: stop
+    BaseMusic:
+      action: play
 # stop all mode music at beginning of mode_bonus
   mode_bonus_started:
     QuadShotgunModeStart:
@@ -718,3 +775,7 @@ sound_player:
       action: stop      
     BaseMusic:
       action: stop
+
+#event_player: 
+#  slide_base_slide_main_active: e_puzzle_music_off1|0.83s
+#  e_puzzle_music_off1: e_puzzle_music_off2|0.1s
