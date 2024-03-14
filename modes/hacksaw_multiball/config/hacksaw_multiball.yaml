@@ -26,7 +26,7 @@ multiballs:
     ball_locks: bd_hacksaw
     shoot_again: 5s
     start_events: start_hacksaw_multiball
-    replace_balls_in_play: true
+    replace_balls_in_play: false
 
 variable_player:
   #multiball_mb_hacksaw_started:

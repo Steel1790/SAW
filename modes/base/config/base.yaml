@@ -333,6 +333,8 @@ variable_player:
     score: 95000
   sw_loop:
     score: 115000
+  sw_110:
+    score: 110
 # combo hits
   logicblock_cnt_leftloop_leftramp_combo_counter_hit:
     score: 2000000
@@ -1321,6 +1323,8 @@ show_player:
     negative_S:
       loops: 1
       speed: 30
+    disc_middle_chase: stop
+    disc_left_chase: stop
   logicblock_cnt_negative_shot_counter_updated{value==2}:
     disc_middle_chase:
       loops: -1
@@ -1330,6 +1334,7 @@ show_player:
     negative_A:
       loops: 1
       speed: 30
+    disc_left_chase: stop
   logicblock_cnt_negative_shot_counter_updated{value==3}:
     disc_left_chase:
       loops: -1

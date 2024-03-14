@@ -417,6 +417,10 @@ sound_player:
     RightOrbit:
       action: play
       block: true
+  sw_110:
+    slingsaudio:
+      action: play
+      block: true   
   shot_left_outlane_hit{state=="ball_save_not_ready"}:
     #TortureScream:
     refined_billy_laugh:
@@ -709,24 +713,24 @@ sound_player:
     taperecorder_collected:
       action: play
 
-#puzzle hurryup
-  e_puzzle_music_start:
-    PuzzlePieceHurryUp:
-      #delay: 2s
-      action: play
-    BaseMusic:
-      action: stop
+##puzzle hurryup
+#  e_puzzle_music_start:
+#    PuzzlePieceHurryUp:
+#      #delay: 2s
+#      action: play
+#    BaseMusic:
+#      action: stop
   player_puzzle_hurryup_t_puzzle_timer_tick{value < 1}:
-    PuzzlePieceHurryUp:
-      action: stop
+    #PuzzlePieceHurryUp:
+    #  action: stop
     BaseMusic:
       action: play
 #puzzle collected
   mode_puzzle_hurryup_complete:
     PuzzlePiece:
       action: play
-    PuzzlePieceHurryUp:
-      action: stop
+    #PuzzlePieceHurryUp:
+    #  action: stop
 
 #action button pressed
   shot_drillchair_button_sp_drillchair_lit_hit:

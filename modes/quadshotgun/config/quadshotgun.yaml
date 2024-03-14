@@ -26,7 +26,7 @@ timers:
 counters:
   quadshotgun_spinner_counter:
     starting_count: 0
-    count_complete_value: 25
+    count_complete_value: 30
     enable_events: mode_quadshotgun_started
     disable_events: quadshotgun_spinner_complete, logicblock_quadshotgun_phase2_updated{enabled==True}
 #    start_enabled: true
@@ -34,20 +34,33 @@ counters:
     reset_on_complete: false
     events_when_complete: quadshotgun_spinner_complete 
     count_events: spinner_spinner_hit
+  quadshotgun_action_button_counter:
+    starting_count: 0
+    count_complete_value: 30
+    enable_events: shot_quadshotgun_button_sp_quadshotgun_lit_hit
+    disable_events: quadshotgun_spinner_complete, logicblock_quadshotgun_phase2_updated{enabled==True}
+#    start_enabled: true
+    persist_state: true
+    reset_on_complete: false
+    #events_when_complete: quadshotgun_spinner_complete 
+    count_events: spinner_spinner_hit
 
 #shots:
 #  spinner:
 #    switch: s_spinner   
 
 variable_player:
-  quadshotgun_spinner_complete:
-    score: 2500000 + (current_player.gears_used * 2500000)
+  #quadshotgun_spinner_complete:
+  #  score: 2500000 + (current_player.gears_used * 2500000)
+  counter_quadshotgun_action_button_counter_hit:
+    score: 175000
   mode_quadshotgun_complete:
-    score: 6000000 + (current_player.gears_used * 2000000) 
+    score: 6000000 
   counter_quadshotgun_spinner_counter_hit:
+    score: 220000
     quadshotgun_spinner_counter:
       action: set
-      int: (count)*28
+      int: (count)*23
     quadshotgun_visual_spinner_counter:
       action: set
       int: (count)
@@ -147,7 +160,7 @@ slides:
 #      x: 825
 #      y: 85%
     - type: Text
-      text: (player|quadshotgun_visual_spinner_counter) / 25 spins
+      text: (player|quadshotgun_visual_spinner_counter) / 30 spins
       font_size: 50
       font_name: TrajanProRegular
       outline_color: black
@@ -155,7 +168,7 @@ slides:
       color: d8d8d8
       y: 35%
     - type: Text
-      text: You Have 60 Seconds To Hit 25 Spins!
+      text: You Have 60 Seconds To Hit 30 Spins!
       color: "006ee6"
       font_name: TrajanProRegular
       font_size: 35
@@ -274,7 +287,23 @@ slide_player:
       priority: 405
       expire: 64.5s
       
-#widgets:
+widgets:
+   w_gears_button:
+    - type: image
+      image: GearsButtonImg
+      x: 90%
+      y: 16%
+      z: 2      
+    - type: Text
+      text: Spinner + 175k
+      font_size: 40
+      font_name: Mustkill
+      outline_color: black
+      outline_width: 7
+      color: shotgun
+      x: 89%
+      y: 4%   
+      z: 1
 #   quadshotgun_shot_update2:
 #    - type: Text
 #      text: X
@@ -285,7 +314,11 @@ slide_player:
 #      font_name: TrajanProRegular
 
  
-#widget_player:
+widget_player:
+ shot_quadshotgun_button_sp_quadshotgun_lit_hit:
+  w_gears_button:
+    slide: quadshotgun_spinner
+    action: add
 # logicblock_quadshotgun_hit{step==2}: 
 #  quadshotgun_shot_update2:
 #    slide: quadshotgun_phase2

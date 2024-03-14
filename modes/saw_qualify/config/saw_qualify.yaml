@@ -226,11 +226,11 @@ slides:
       video: CircularSawTunnel
     
 slide_player:
-  logicblock_cnt_saw_qualify_updated{value==1}:
+  logicblock_cnt_saw_qualify_hit{count==1}:
     s_collect:
       priority: 190
       expire: 3s
-  logicblock_cnt_saw_qualify_updated{value==2}:
+  logicblock_cnt_saw_qualify_hit{count==2}:
     sa_collect:
       priority: 190
       expire: 3s

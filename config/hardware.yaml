@@ -189,10 +189,10 @@ switches:
     tags: standup, switch_hit, playfield_active
   s_left_110_point:
     number: 3208-12
-    tags: switch_hit, playfield_active
+    tags: switch_hit, 110, playfield_active
   s_right_110_point:
     number: 3208-11
-    tags: switch_hit, playfield_active
+    tags: switch_hit, 110, playfield_active
   s_left_top_jet_bumper:
     number: 1616_1-2
     tags: top_pops, pops, switch_hit

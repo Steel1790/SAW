@@ -307,58 +307,58 @@ shows:
 
 show_player:
   selection_mode_razorwire_highlighted:
-    razorwire:
-      show_tokens:
-        leds: l_action_button, l_razorwire_mode, top_bumper
-      loops: -1
     ActionOff:
       show_tokens:
         leds: l_beartrap_mode, l_jelly_mode, l_drillchair_mode, l_quadshotgun_mode, l_zeptest_mode, bottom_bumper, l_right_standup_arrow, shotgun_flasher, skillshot, standup
       loops: -1
-  selection_mode_reversebeartrap_highlighted:
-    reversebeartrap:
+    razorwire:
       show_tokens:
-        leds: l_action_button, l_beartrap_mode, standup
+        leds: l_action_button, l_razorwire_mode, top_bumper
       loops: -1
+  selection_mode_reversebeartrap_highlighted:
     ActionOff:
       show_tokens:
         leds: l_razorwire_mode, l_jelly_mode, l_drillchair_mode, l_quadshotgun_mode, l_zeptest_mode, jet_bumper, l_right_standup_arrow, shotgun_flasher, skillshot
       loops: -1
-  selection_mode_flammablejelly_highlighted:
-    flammablejelly:
+    reversebeartrap:
       show_tokens:
-        leds: l_action_button, l_jelly_mode, l_right_standup_arrow
+        leds: l_action_button, l_beartrap_mode, standup
       loops: -1
+  selection_mode_flammablejelly_highlighted:
     ActionOff:
       show_tokens:
         leds: l_razorwire_mode, l_beartrap_mode, l_drillchair_mode, l_quadshotgun_mode, l_zeptest_mode, jet_bumper, shotgun_flasher, skillshot, l_left_standup_arrow, l_left_standup_right_ramp_arrow, l_right_standup_right_ramp_arrow
       loops: -1
-  selection_mode_drillchair_highlighted:
-    drillchair:
+    flammablejelly:
       show_tokens:
-        leds: l_action_button, l_drillchair_mode, bottom_bumper
+        leds: l_action_button, l_jelly_mode, l_right_standup_arrow
       loops: -1
+  selection_mode_drillchair_highlighted:
     ActionOff:
       show_tokens:
         leds: l_razorwire_mode, l_beartrap_mode, l_jelly_mode, l_quadshotgun_mode, l_zeptest_mode, top_bumper, l_right_standup_arrow, shotgun_flasher, skillshot, standup
       loops: -1
-  selection_mode_quadshotgun_highlighted:
-    quadshotgun:
+    drillchair:
       show_tokens:
-        leds: l_action_button, l_quadshotgun_mode, shotgun_flasher
+        leds: l_action_button, l_drillchair_mode, jet_bumper
       loops: -1
+  selection_mode_quadshotgun_highlighted:
     ActionOff:
       show_tokens:
         leds: l_razorwire_mode, l_beartrap_mode, l_jelly_mode, l_drillchair_mode, l_zeptest_mode, jet_bumper, l_right_standup_arrow, skillshot, standup
       loops: -1
-  selection_mode_zeptest_highlighted:
-    zeptest:
+    quadshotgun:
       show_tokens:
-        leds: l_action_button , l_zeptest_mode, skillshot
+        leds: l_action_button, l_quadshotgun_mode, shotgun_flasher
       loops: -1
+  selection_mode_zeptest_highlighted:
     ActionOff:
       show_tokens:
         leds: l_razorwire_mode, l_beartrap_mode, l_jelly_mode, l_drillchair_mode, l_quadshotgun_mode, jet_bumper, l_right_standup_arrow, shotgun_flasher, standup
+      loops: -1
+    zeptest:
+      show_tokens:
+        leds: l_action_button , l_zeptest_mode, skillshot
       loops: -1
   selection_mode_razorwire_selected:
     ActionOff:

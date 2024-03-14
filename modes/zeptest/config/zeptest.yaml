@@ -15,6 +15,7 @@ sequences:
       - machine_var_audits_switches_s_right_ramp_score_top
       - drop_target_dt_upper_drop1_down   
     reset_on_complete: false
+    persist_state: true
     events_when_complete: mode_zeptest_complete, stop_mode_zeptest
 
 timers:
@@ -251,14 +252,14 @@ widget_player:
   zep_shot_update1:
     slide: zeptestUI
     action: add
- logicblock_zeptest_hit{step==3}: 
+ logicblock_zeptest_updated{value==3}: 
   zep_shot_update1:
     slide: zeptestUI
     action: remove
   zep_shot_update2:
     slide: zeptestUI
     action: add
- logicblock_zeptest_hit{step==4}: 
+ logicblock_zeptest_updated{value==4}: 
   zep_shot_update2:
     slide: zeptestUI
     action: remove
@@ -268,7 +269,7 @@ widget_player:
   zep_shot_update4:
     slide: zeptestUI
     action: add
- logicblock_zeptest_hit{step==5}: 
+ logicblock_zeptest_updated{value==5}: 
   #zep_shot_update3:
   #  slide: zeptestUI
   #  action: remove
@@ -325,7 +326,7 @@ show_player:
         speed: 5
         show_tokens:
           color1: zepstest
-  logicblock_zeptest_hit{step==1}:
+  logicblock_zeptest_updated{value==1}:
       skillshot_chase:
         loops: -1
         speed: 5
@@ -344,7 +345,7 @@ show_player:
         show_tokens:
           color1: zepstest
         priority: 170
-  logicblock_zeptest_hit{step==2}:
+  logicblock_zeptest_updated{value==2}:
       skillshot_chase:
         loops: -1
         speed: 5
@@ -363,7 +364,7 @@ show_player:
         show_tokens:
           color1: zepstest
         priority: 170
-  logicblock_zeptest_hit{step==3}:
+  logicblock_zeptest_updated{value==3}:
       top_drop_chase:
         loops: -1
         speed: 14
@@ -400,7 +401,7 @@ show_player:
   #      show_tokens:
   #        color1: zepstest
   #      priority: 170
-  logicblock_zeptest_hit{step==4}:
+  logicblock_zeptest_updated{value==4}:
       right_ramp_chase:
         loops: -1
         speed: 5
@@ -420,7 +421,7 @@ show_player:
         loops: -1
         show_tokens:
           color1: off
-  logicblock_zeptest_hit{step==5}:
+  logicblock_zeptest_updated{value==5}:
       top_drop_chase:
         loops: -1
         speed: 14
