@@ -36,6 +36,7 @@ event_player:
 
   ball_started: mode_qualified_sidestep|0.8s
   single_player_ball_started: mode_qualified_sidestep|0.6s
+  ball_will_end{current_player.ball==3}: e_topper_trigger|3s
 
   #ball_started{is_extra_ball==True}: e_shoot_again
 
@@ -1315,7 +1316,7 @@ show_player:
 
 # disc shows
   logicblock_cnt_negative_shot_counter_updated{value==1}:
-    disc_right_chase:
+    disc_middle_chase:
       loops: -1
       speed: 10
       show_tokens:
@@ -1323,10 +1324,10 @@ show_player:
     negative_S:
       loops: 1
       speed: 30
-    disc_middle_chase: stop
+    disc_right_chase: stop
     disc_left_chase: stop
   logicblock_cnt_negative_shot_counter_updated{value==2}:
-    disc_middle_chase:
+    disc_right_chase:
       loops: -1
       speed: 10
       show_tokens:
@@ -3882,10 +3883,10 @@ coil_player:
       action: off
   logicblock_cnt_negative_shot_counter_updated{value==1}:
     c_right_spin_disc:
+      action: off
+    c_middle_spin_disc:
       action: enable
       hold_power: 1.0
-    c_middle_spin_disc:
-      action: off
     c_left_spin_disc:
       action: off
   logicblock_cnt_negative_shot_counter_updated{value==2}:
