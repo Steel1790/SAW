@@ -3,7 +3,7 @@
 #SLOW PULSE ON OFF
 - time: 0
   lights:
-    starpost: (color1) # -f2000ms     
+    starpost: (color1) -f2000ms     
 - time: '+3'
   lights:
-    starpost: 520801 # -f1000ms    
+    starpost: 520801 -f1000ms    

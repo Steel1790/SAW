@@ -3,4 +3,4 @@
 
 - time: '+1'
   lights:
-    l_tape_spotlight: (color1) # -f200ms
+    l_tape_spotlight: (color1) -f200ms

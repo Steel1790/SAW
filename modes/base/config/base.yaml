@@ -781,10 +781,10 @@ shows:
   slingshots_flash:
     - duration: 0.3s
       lights:
-        (leds): red # -f200ms
+        (leds): red -f200ms
     - duration: 0.1s
       lights:
-        (leds): white # -f200ms 
+        (leds): white -f200ms 
   pops_on:
     - duration: -1
       lights:

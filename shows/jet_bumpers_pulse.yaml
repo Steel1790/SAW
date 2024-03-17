@@ -3,7 +3,7 @@
 #SLOW PULSE ON OFF
 - time: 0
   lights:
-    jet_bumper: (color1) # -f2000ms     
+    jet_bumper: (color1) -f2000ms     
 - time: '+3'
   lights:
-    jet_bumper: 520801 # -f1000ms    
+    jet_bumper: 520801 -f1000ms    

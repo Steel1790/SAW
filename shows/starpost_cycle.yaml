@@ -29,14 +29,14 @@
 #     l_post_a_8: (color1)
 # - time: '+1'
 #   lights:
-#     l_post_a_1: off # -f200ms
-#     l_post_a_2: off # -f200ms
-#     l_post_a_3: off # -f200ms
-#     l_post_a_4: off # -f200ms
-#     l_post_a_5: off # -f200ms
-#     l_post_a_6: off # -f200ms
-#     l_post_a_7: off # -f200ms
-#     l_post_a_8: off # -f200ms
+#     l_post_a_1: off -f200ms
+#     l_post_a_2: off -f200ms
+#     l_post_a_3: off -f200ms
+#     l_post_a_4: off -f200ms
+#     l_post_a_5: off -f200ms
+#     l_post_a_6: off -f200ms
+#     l_post_a_7: off -f200ms
+#     l_post_a_8: off -f200ms
 
 #OPTION 2 - OVERLAPS BETWEEN INSERTS CLOCKWISE AND THEN COUNTERCLOCKWISE CYLON STYLE
 - time: 0

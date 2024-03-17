@@ -3,16 +3,16 @@
 #SLOW PULSE ON OFF
 - time: 0
   lights:
-    topper: 800800 # -f1500ms     
+    topper: 800800 -f1500ms     
 - time: '+1500ms'
   lights:
-    topper: (color1) # -f80ms    
+    topper: (color1) -f80ms    
 - time: '+250ms'
   lights:
-    topper: 590800 # -f80ms   
+    topper: 590800 -f80ms   
 - time: '+150ms'
   lights:
-    topper: (color1) # -f80ms
+    topper: (color1) -f80ms
 - time: '+250ms'
   lights:
-    topper: 590800 # -f200ms  
+    topper: 590800 -f200ms  

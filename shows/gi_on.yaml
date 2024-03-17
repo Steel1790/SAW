@@ -3,4 +3,4 @@
 
 - time: '+1'
   lights:
-    gi: (color1) # -f200ms
+    gi: (color1) -f200ms

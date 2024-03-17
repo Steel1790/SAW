@@ -2,4 +2,4 @@
 
 - time: '+1'
   lights:
-    topper: white # -f300ms
+    topper: white -f300ms

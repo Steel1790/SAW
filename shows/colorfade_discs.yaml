@@ -3,10 +3,10 @@
 
 - time: '+10'
   lights:
-    discs: (color1) # -f800ms
+    discs: (color1) -f800ms
 - time: '+10'
   lights:
-    discs: (color2) # -f800ms
+    discs: (color2) -f800ms
 - time: '+10'
   lights:
-    discs: (color3) # -f800ms  
+    discs: (color3) -f800ms  

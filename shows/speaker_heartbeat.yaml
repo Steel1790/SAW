@@ -6,13 +6,13 @@
     speaker: off  
 - time: '+1500ms'
   lights:
-    speaker: (color1) # -f80ms    
+    speaker: (color1) -f80ms    
 - time: '+250ms'
   lights:
     speaker: off
 - time: '+150ms'
   lights:
-    speaker: (color1) # -f80ms
+    speaker: (color1) -f80ms
 - time: '+250ms'
   lights:
     speaker: off  

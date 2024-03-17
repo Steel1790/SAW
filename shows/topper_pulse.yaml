@@ -3,7 +3,7 @@
 #SLOW PULSE ON OFF
 - time: 0
   lights:
-    topper: (color1) # -f2000ms     
+    topper: (color1) -f2000ms     
 - time: '+3'
   lights:
-    topper: 590800 # -f1000ms    
+    topper: 590800 -f1000ms    

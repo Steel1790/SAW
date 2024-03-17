@@ -3,4 +3,4 @@
 
 - time: '+1'
   lights:
-    trough: (color1) # -f200ms
+    trough: (color1) -f200ms
