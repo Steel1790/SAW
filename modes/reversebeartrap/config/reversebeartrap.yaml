@@ -4,24 +4,23 @@ mode:
   stop_events: stop_mode_reversebeartrap, ball_ended, ball_will_end, player_reversebeartrap_120s_reversebeartrap_timer_tick{value < 1}
   priority: 181
  
-sequence_shots:
-  ssh_leftloop_leftramp:
-    switch_sequence: s_left_loop_bottom, s_left_loop_top, s_enter_left_ramp, s_left_ramp_score_bottom, s_left_ramp_score_top
-    sequence_timeout: 6s
-  ssh_rightramp_rightloop:
-    switch_sequence: s_right_ramp_score_bottom, s_right_ramp_score_top, s_right_loop_bottom, s_right_loop_top
-    sequence_timeout: 6s 
+#sequence_shots:
+#  ssh_leftloop_leftramp:
+#    switch_sequence: s_left_loop_bottom, s_left_loop_top, s_enter_left_ramp, s_left_ramp_score_bottom, s_left_ramp_score_top
+#    sequence_timeout: 6s
+#  ssh_rightramp_rightloop:
+#    switch_sequence: s_right_ramp_score_bottom, s_right_ramp_score_top, s_right_loop_bottom, s_right_loop_top
+#    sequence_timeout: 6s 
  
  
 sequences:
   reversebeartrap:
     events:
-      - sw_standup
-      - sw_standup
-      - ssh_rightramp_rightloop_hit
-      - sw_standup
-      - sw_standup
-      - ssh_leftloop_leftramp_hit
+      - s_top_right_reject_active
+      - sw_loop
+      - sw_ramp
+      - sw_loop
+      - sw_ramp
       - drop_target_dt_upper_drop1_down
     reset_on_complete: false
     persist_state: true
@@ -53,21 +52,41 @@ timers:
     
 
 variable_player:
+  logicblock_reversebeartrap_hit{step==1}:
+    score: 1000000 + (current_player.keys_used * 500000) + (current_player.spinner_value * 42500)
   logicblock_reversebeartrap_hit{step==2}:
-    score: 1000000 + (current_player.keys_used * 500000)
+    score: 1000000 + (current_player.keys_used * 500000) + (current_player.spinner_value * 42500)
   logicblock_reversebeartrap_hit{step==3}:
-    score: 2500000 + (current_player.keys_used * 1250000)
+    score: 1000000 + (current_player.keys_used * 1250000) + (current_player.spinner_value * 42500)
   logicblock_reversebeartrap_hit{step==5}:
-    score: 1000000 + (current_player.keys_used * 500000)
-  logicblock_reversebeartrap_hit{step==6}:
-    score: 2500000 + (current_player.keys_used * 1250000)
+    score: 1000000 + (current_player.keys_used * 500000) + (current_player.spinner_value * 42500)
   mode_reversebeartrap_complete:
-    score: 2000000 + (current_player.keys_used * 1000000)
+    score: 2000000 + (current_player.keys_used * 1000000) + (current_player.spinner_value * 42500)
        
   timer_your_timer_tick:
     120s_reversebeartrap_timer:
       int: device.timers.your_timer.ticks_remaining
       action: set     
+  mode_reversebeartrap_started:
+    spinner_value:
+      int: 0
+      action: set
+  counter_cnt_reversebeartrap_spinner_hit:
+    spinner_value:
+      action: set
+      int: (count)
+    spinner_value_display:
+      action: set
+      int: (count) * 45000
+
+counters:
+  cnt_reversebeartrap_spinner:
+    starting_count: 0
+#    count_complete_value: 1
+    start_enabled: true
+#    events_when_complete: 
+    disable_events: s_top_right_reject_active
+    count_events: sw_spinner
  
 slides:
   reversebeartrapvideo:
@@ -75,7 +94,31 @@ slides:
     - type: video
       video: reversebeartrapvideo 
       width: 1366
-      height: 768      
+      height: 768     
+  mode_rbt01:
+    widgets:
+    - type: video
+      video: mode_rbt01
+      width: 1366
+      height: 768    
+  mode_rbt02:
+    widgets:
+    - type: video
+      video: mode_rbt02
+      width: 1366
+      height: 768       
+  mode_rbt03:
+    widgets:
+    - type: video
+      video: mode_rbt03
+      width: 1366
+      height: 768    
+  mode_rbt04:
+    widgets:
+    - type: video
+      video: mode_rbt04
+      width: 1366
+      height: 768            
       
   reversebeartrapUI:
    widgets:
@@ -160,82 +203,118 @@ slides:
 #     duration: 0.2s
 
 widgets:
-   rbt_shot_update1:
-    - type: Text
-      text: " Combo the Left Orbit into the Left Ramp"
-      font_size: 50
-      font_name: TrajanProRegular
-      outline_color: black
-      outline_width: 7
-      color: BDD5E7
-      x: 50%
-      y: 48%
-      z: 1
-      animations:
-        add_to_slide:
-          - property: opacity
-            value: 0
-          - property: opacity
-            value: 1
-            duration: 1000ms
-            timing: after_previous
-   rbt_shot_update2:      
-    - type: Text
-      text: " Combo the Right Ramp into the Right Orbit"
-      font_size: 50
-      font_name: TrajanProRegular
-      outline_color: black
-      outline_width: 7
-      color: BDD5E7
-      x: 50%
-      y: 48%
-      z: 1
-      animations:
-        add_to_slide:
-          - property: opacity
-            value: 0
-          - property: opacity
-            value: 1
-            duration: 1000ms
-            timing: after_previous
-   rbt_shot_update3:      
-    - type: Text
-      text: " Hit 2 Stand-ups"
-      font_size: 60
-      font_name: TrajanProRegular
-      outline_color: black
-      outline_width: 7
-      color: BDD5E7
-      x: 50%
-      y: 48%
-      z: 1
-      animations:
-        add_to_slide:
-          - property: opacity
-            value: 0
-          - property: opacity
-            value: 1
-            duration: 1000ms
-            timing: after_previous
-   rbt_shot_update4:      
-    - type: Text
-      text: " X marks the Spot to Find the Key"
-      font_size: 60
-      font_name: TrajanProRegular
-      outline_color: black
-      outline_width: 7
-      color: BDD5E7
-      x: 50%
-      y: 48%     
-      z: 1
-      animations:
-        add_to_slide:
-          - property: opacity
-            value: 0
-          - property: opacity
-            value: 1
-            duration: 1000ms
-            timing: after_previous
+   #rbt_shot_update1:
+   # - type: Text
+   #   text: " Hit Any Ramp"
+   #   font_size: 50
+   #   font_name: TrajanProRegular
+   #   outline_color: black
+   #   outline_width: 7
+   #   color: BDD5E7
+   #   x: 50%
+   #   y: 48%
+   #   z: 1
+   #   animations:
+   #     add_to_slide:
+   #       - property: opacity
+   #         value: 0
+   #       - property: opacity
+   #         value: 1
+   #         duration: 1000ms
+   #         timing: after_previous
+   #rbt_shot_update2:      
+   # - type: Text
+   #   text: " Hit Any Orbit"
+   #   font_size: 50
+   #   font_name: TrajanProRegular
+   #   outline_color: black
+   #   outline_width: 7
+   #   color: BDD5E7
+   #   x: 50%
+   #   y: 48%
+   #   z: 1
+   #   animations:
+   #     add_to_slide:
+   #       - property: opacity
+   #         value: 0
+   #       - property: opacity
+   #         value: 1
+   #         duration: 1000ms
+   #         timing: after_previous
+   #rbt_shot_update3:   
+   # - type: Text
+   #   text: " Spinner"
+   #   font_size: 50
+   #   font_name: TrajanProRegular
+   #   outline_color: black
+   #   outline_width: 7
+   #   color: shotgun
+   #   x: 31%
+   #   y: 48%
+   #   z: 1
+   #   animations:
+   #     add_to_slide:
+   #       - property: opacity
+   #         value: 0
+   #       - property: opacity
+   #         value: 1
+   #         duration: 1000ms
+   #         timing: after_previous   
+   # - type: Text
+   #   text: "        Builds Value"
+   #   font_size: 50
+   #   font_name: TrajanProRegular
+   #   outline_color: black
+   #   outline_width: 7
+   #   color: BDD5E7
+   #   x: 50%
+   #   y: 48%
+   #   z: 1
+   #   animations:
+   #     add_to_slide:
+   #       - property: opacity
+   #         value: 0
+   #       - property: opacity
+   #         value: 1
+   #         duration: 1000ms
+   #         timing: after_previous
+   # - type: Text
+   #   text: "Saucer Under Right Ramp to Lock Value"
+   #   font_size: 50
+   #   font_name: TrajanProRegular
+   #   outline_color: black
+   #   outline_width: 7
+   #   color: BDD5E7
+   #   x: 50%
+   #   y: 39%
+   #   z: 1
+   #   animations:
+   #     add_to_slide:
+   #       - property: opacity
+   #         value: 0
+   #       - property: opacity
+   #         value: 1
+   #         duration: 1000ms
+   #         timing: after_previous
+   #rbt_shot_update4:      
+   # - type: Text
+   #   text: " X marks the Spot to Find the Key"
+   #   font_size: 60
+   #   font_name: TrajanProRegular
+   #   outline_color: black
+   #   outline_width: 7
+   #   color: BDD5E7
+   #   x: 50%
+   #   y: 48%     
+   #   z: 1
+   #   animations:
+   #     add_to_slide:
+   #       - property: opacity
+   #         value: 0
+   #       - property: opacity
+   #         value: 1
+   #         duration: 1000ms
+   #         timing: after_previous
    w_key_button:
     - type: image
       image: KeyButtonImg
@@ -262,40 +341,92 @@ widgets:
       x: 88%
       y: 3%      
       z: 1
-    
+   w_reversebeartrapUI:
+    - type: image
+      image: hacksawUI
+      opacity: 0.9
+      y: 1
+      x: 1
+      z: 2
+      anchor_x: left
+      anchor_y: bottom
+    - type: text
+      text: (score)
+      number_grouping: true
+      y: 16
+      x: 25
+      z: 2
+      font_size: 36
+      anchor_x: left
+      anchor_y: bottom
+      font_name: TrajanProRegular
+      color: F5FBFF
+   w_reversebeartrap_timer:
+    - type: Text
+      text: (player|reversebeartrap_120s_reversebeartrap_timer_tick)
+      font_size: 80
+      font_name: badaboom
+      color: ffffff
+      y: 91.4%
+      x: 37%
+      z: 2
+   w_reversebeartrap_spinner:
+    - type: Text
+      text: (player|spinner_value_display)
+      number_grouping: true
+      font_size: 80
+      font_name: badaboom
+      color: ffffff
+      y: 33.5%
+      x: 33%
+      z: 2
  
 widget_player:
- logicblock_reversebeartrap_updated{value==0}: 
-   rbt_shot_update3:
-     slide: reversebeartrapUI
+ player_reversebeartrap_120s_reversebeartrap_timer_tick{value==120}:
+   w_reversebeartrap_spinner:
+     slide: mode_rbt01
      action: add
- logicblock_reversebeartrap_updated{value==2}: 
-   rbt_shot_update3:
-     slide: reversebeartrapUI
-     action: remove
-   rbt_shot_update2:
-     slide: reversebeartrapUI
+   w_reversebeartrap_timer:
+     slide: mode_rbt01
+     action: add
+ logicblock_reversebeartrap_updated{value==0}: 
+   w_reversebeartrapUI:
+     slide: mode_rbt01
+     action: add
+ logicblock_reversebeartrap_updated{value==1}: 
+   w_reversebeartrap_timer:
+     slide: mode_rbt02
+     action: add
+   w_reversebeartrapUI:
+     slide: mode_rbt02
+     action: add
+ logicblock_reversebeartrap_updated{value==2}:
+   w_reversebeartrap_timer:
+     slide: mode_rbt03
+     action: add
+   w_reversebeartrapUI:
+     slide: mode_rbt03
      action: add
  logicblock_reversebeartrap_updated{value==3}:
-   rbt_shot_update2:
-     slide: reversebeartrapUI
-     action: remove
-   rbt_shot_update3:
-     slide: reversebeartrapUI
+   w_reversebeartrap_timer:
+     slide: mode_rbt02
      action: add
- logicblock_reversebeartrap_updated{value==5}:
-   rbt_shot_update1:
-     slide: reversebeartrapUI
+   w_reversebeartrapUI:
+     slide: mode_rbt02
      action: add
-   rbt_shot_update3:
-     slide: reversebeartrapUI
-     action: remove
- logicblock_reversebeartrap_updated{value==6}: 
-   rbt_shot_update1:
-     slide: reversebeartrapUI
-     action: remove
-   rbt_shot_update4:
-     slide: reversebeartrapUI
+ logicblock_reversebeartrap_updated{value==4}: 
+   w_reversebeartrap_timer:
+     slide: mode_rbt03
+     action: add
+   w_reversebeartrapUI:
+     slide: mode_rbt03
+     action: add
+ logicblock_reversebeartrap_updated{value==5}: 
+   w_reversebeartrap_timer:
+     slide: mode_rbt04
+     action: add
+   w_reversebeartrapUI:
+     slide: mode_rbt04
      action: add
  shot_reversebeartrap_button_sp_reversebeartrap_lit_hit:
   w_key_button:
@@ -309,13 +440,45 @@ slide_player:
       priority: 500
       expire: 8s
   slide_reversebeartrapvideo_removed: 
-    reversebeartrapUI:
+    mode_rbt01:
       priority: 400
       expire: 126.5s
-  logicblock_reversebeartrap_hit{step==6}:
+    #reversebeartrapUI:
+    #  priority: 400
+    #  expire: 126.5s
+  logicblock_reversebeartrap_updated{value==1}:
+    mode_rbt02:
+      priority: 401
+      expire: 126.5s
+    mode_rbt01:
+     action: remove
+  logicblock_reversebeartrap_updated{value==2}:
+    mode_rbt03:
+      priority: 401
+      expire: 126.5s
+    mode_rbt02:
+     action: remove
+  logicblock_reversebeartrap_updated{value==3}:
+    mode_rbt02:
+      priority: 401
+      expire: 126.5s
+    mode_rbt03:
+     action: remove
+  logicblock_reversebeartrap_updated{value==4}:
+    mode_rbt03:
+      priority: 401
+      expire: 126.5s
+    mode_rbt02:
+     action: remove
+  logicblock_reversebeartrap_updated{value==5}:
     XMarksTheSpotVideo:
       priority: 406
-      expire: 2.1s      
+      expire: 2.1s    
+    mode_rbt04:
+      priority: 401
+      expire: 126.5s
+    mode_rbt03:
+     action: remove      
   
 #  logicblock_reversebeartrap_hit:
 #    ShotUpdated:
@@ -397,6 +560,13 @@ shows:
     - duration: 0.15s
       lights:
         (leds): off
+  reversebeartrap_spinner:
+    - duration: 0.25s
+      lights:
+        (leds): shotgun
+    - duration: 0.25s
+      lights:
+        (leds): off
 
 
 show_player:
@@ -425,13 +595,30 @@ show_player:
         color1: beartrap
 #mode progress lights
   logicblock_reversebeartrap_updated{value==0}:
+      right_ramp_chase:
+        loops: -1
+        speed: 5
+        show_tokens:
+          color1: beartrap
+      reversebeartrap_spinner:
+        loops: -1
+        show_tokens:
+          leds: shotgun_flasher
+  logicblock_reversebeartrap_updated{value==1}: 
+      right_ramp_chase:
+        loops: -1
+        show_tokens:
+          color1: off
+      reversebeartrap_spinner:
+        loops: -1
+        show_tokens:
+          color1: off
       reversebeartrap_progress:
         loops: -1
         speed: 5
         show_tokens:
-          leds: standup
+          leds: orbit
           color1: beartrap
-  logicblock_reversebeartrap_updated{value==1}: 
       starpost_cycle:
         loops: 1
         speed: 20
@@ -443,7 +630,12 @@ show_player:
         loops: -1
         show_tokens:
           color1: off
-      right_orbit_right_ramp_chase:
+      right_ramp_chase:
+        loops: -1
+        speed: 5
+        show_tokens:
+          color1: beartrap
+      left_ramp_chase:
         loops: -1
         speed: 5
         show_tokens:
@@ -455,7 +647,11 @@ show_player:
           color1: beartrap
         priority: 170
   logicblock_reversebeartrap_updated{value==3}:
-      right_orbit_right_ramp_chase:
+      right_ramp_chase:
+        loops: -1
+        show_tokens:
+          color1: off
+      left_ramp_chase:
         loops: -1
         show_tokens:
           color1: off
@@ -463,7 +659,28 @@ show_player:
         loops: -1
         speed: 5
         show_tokens:
-          leds: standup
+          leds: orbit
+          color1: beartrap
+      starpost_cycle:
+        loops: 1
+        speed: 20
+        show_tokens:
+          color1: beartrap
+        priority: 170
+  logicblock_reversebeartrap_updated{value==4}: 
+      reversebeartrap_progress:
+        loops: -1
+        show_tokens:
+          color1: off
+      right_ramp_chase:
+        loops: -1
+        speed: 5
+        show_tokens:
+          color1: beartrap
+      left_ramp_chase:
+        loops: -1
+        speed: 5
+        show_tokens:
           color1: beartrap
       starpost_cycle:
         loops: 1
@@ -472,22 +689,14 @@ show_player:
           color1: beartrap
         priority: 170
   logicblock_reversebeartrap_updated{value==5}: 
-      reversebeartrap_progress:
+      right_ramp_chase:
         loops: -1
         show_tokens:
           color1: off
-      left_orbit_left_ramp_chase:
+      left_ramp_chase:
         loops: -1
-        speed: 5
         show_tokens:
-          color1: beartrap
-      starpost_cycle:
-        loops: 1
-        speed: 20
-        show_tokens:
-          color1: beartrap
-        priority: 170
-  logicblock_reversebeartrap_updated{value==6}: 
+          color1: off
       top_drop_chase:
         loops: -1
         speed: 14
@@ -499,10 +708,6 @@ show_player:
         show_tokens:
           color1: beartrap
         priority: 170
-      left_orbit_left_ramp_chase:
-        speed: 5
-        show_tokens:
-          color1: off
 
   player_reversebeartrap_120s_reversebeartrap_timer_tick{value < 1}:
       mode_fail:

@@ -3290,6 +3290,12 @@ widget_player:
       slide: base_slide_main
       action: add
 
+#reversebeartrap since no puzzle piece
+  mode_reversebeartrap_stopped:
+    saw_letters:
+      slide: base_slide_main
+      action: add
+
   player_added{game.num_players==2}:
     2PlayerGame:
       slide: base_slide_main
