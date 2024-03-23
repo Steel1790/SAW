@@ -145,7 +145,13 @@ slides:
   drillchairvideo:
     widgets:
     - type: video
-      video: drillchairvideo  
+      video: drillchairvideo 
+  mode_drillchair01:
+    widgets:
+    - type: video
+      video: mode_drillchair01    
+      width: 1366
+      height: 768           
       
   drillchair_pops:
     widgets:
@@ -231,7 +237,7 @@ slides:
       width: 0
       height: 45
       x: 3%
-      y: 200
+      y: 205
       anchor_x: left
       corner_radius: 10
       corner_segments: 10
@@ -244,7 +250,7 @@ slides:
       width: 600
       height: 46
       x: 25%
-      y: 200
+      y: 205
       color: black
       corner_radius: 10
       corner_segments: 10
@@ -252,7 +258,7 @@ slides:
       width: 0
       height: 45
       x: 53%
-      y: 200
+      y: 205
       anchor_x: left
       corner_radius: 10
       corner_segments: 10
@@ -265,7 +271,7 @@ slides:
       width: 600
       height: 46
       x: 75%
-      y: 200
+      y: 205
       color: black
       corner_radius: 10
       corner_segments: 10
@@ -368,15 +374,119 @@ slide_player:
       priority: 500
       expire: 8.7s
   slide_drillchairvideo_removed: 
-    drillchair_pops:
+    mode_drillchair01:
       priority: 400
       expire: 66.5s
-  logicblock_drillchair_updated{value>0}:
-    drillchair_phase2:
-      priority: 405
-      expire: 60.5s
+  # logicblock_drillchair_updated{value>0}:
+  #   drillchair_phase2:
+  #     priority: 405
+  #     expire: 60.5s
       
 widgets:
+   w_drillchairUI:
+    - type: image
+      image: hacksawUI
+      opacity: 1.0
+      y: 1
+      x: 1
+      z: 2
+      anchor_x: left
+      anchor_y: bottom
+    - type: text
+      text: (score)
+      number_grouping: true
+      y: 16
+      x: 25
+      z: 2
+      font_size: 36
+      anchor_x: left
+      anchor_y: bottom
+      font_name: TrajanProRegular
+      color: ff6700     
+    - type: Text
+      text: 00:(player|drillchair_drillchair_60s_timer_tick)
+      font_size: 100
+      font_name: digitalclockfont
+      color: red
+      x: 50%
+      y: 83.2%
+      z: 2
+    - type: rectangle
+      width: 420
+      height: 130
+      x: 50%
+      y: 84.5%
+      z: 2
+      corner_radius: 20
+      corner_segments: 20
+      color: black  
+    - type: rectangle
+      width: 0
+      height: 45
+      x: 3%
+      y: 200
+      z: 2
+      anchor_x: left
+      corner_radius: 10
+      corner_segments: 10
+      color: ff6700
+      animations:
+        player_drillchair_pops_counter:
+         - property: width
+           value: (value)           
+    - type: rectangle
+      width: 600
+      height: 46
+      x: 25%
+      y: 200
+      z: 2
+      color: black
+      corner_radius: 10
+      corner_segments: 10
+    - type: rectangle
+      width: 0
+      height: 45
+      x: 53%
+      y: 200
+      z: 2
+      anchor_x: left
+      corner_radius: 10
+      corner_segments: 10
+      color: ff6700
+      animations:
+        player_drillchair_pops2_counter:
+         - property: width
+           value: (value)           
+    - type: rectangle
+      width: 600
+      height: 46
+      x: 75%
+      y: 200
+      z: 2
+      color: black
+      corner_radius: 10
+      corner_segments: 10
+    - type: Text
+      text: (player|drillchair_visual_pops_counter)
+      font_size: 40
+      font_name: Mustkill
+      outline_color: black
+      outline_width: 5
+      color: ffffff
+      x: 14%
+      y: 35%
+      z: 2
+    - type: Text
+      text: (player|drillchair_visual_pops2_counter)
+      font_size: 40
+      font_name: Mustkill
+      outline_color: black
+      outline_width: 5
+      color: ffffff
+      x: 63%
+      y: 35%
+      z: 2
+
    dc_shot_update2: 
     - type: Text
       text: " Hit The Left Orbit"
@@ -498,24 +608,28 @@ widgets:
       z: 1
  
 widget_player:
- logicblock_drillchair_updated{value==1}: 
-  dc_shot_update2:
-    slide: drillchair_phase2
-    action: add
- logicblock_drillchair_updated{value==2}:
-  dc_shot_update2:
-    slide: drillchair_phase2
-    action: remove
-  #dc_shot_update3:
-  #  slide: drillchair_phase2 
-  #  action: add
- logicblock_drillchair_updated{value==3}:
-  #dc_shot_update3:
-  #  slide: drillchair_phase2
-  #  action: remove
-  dc_shot_update4:
-    slide: drillchair_phase2
-    action: add
+ slide_mode_drillchair01_active:
+   w_drillchairUI:
+     slide: mode_drillchair01
+     action: add
+ # logicblock_drillchair_updated{value==1}: 
+ #  dc_shot_update2:
+ #    slide: drillchair_phase2
+ #    action: add
+ # logicblock_drillchair_updated{value==2}:
+ #  dc_shot_update2:
+ #    slide: drillchair_phase2
+ #    action: remove
+ #  #dc_shot_update3:
+ #  #  slide: drillchair_phase2 
+ #  #  action: add
+ # logicblock_drillchair_updated{value==3}:
+ #  #dc_shot_update3:
+ #  #  slide: drillchair_phase2
+ #  #  action: remove
+ #  dc_shot_update4:
+ #    slide: drillchair_phase2
+ #    action: add
  shot_drillchair_button_sp_drillchair_lit_hit:
   w_handgun_button:
     slide: drillchair_pops

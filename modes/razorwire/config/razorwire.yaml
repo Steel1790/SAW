@@ -99,6 +99,18 @@ slides:
     widgets:
     - type: video
       video: XMarksTheSpotVideo
+  mode_razorwire01:
+    widgets:
+    - type: video
+      video: mode_razorwire01
+      width: 1366
+      height: 768
+  mode_razorwire02:
+    widgets:
+    - type: video
+      video: mode_razorwire02
+      width: 1366
+      height: 768
       
   razorwire_pops:
     widgets:
@@ -279,14 +291,14 @@ slide_player:
       priority: 500
       expire: 12.7s
   slide_razorwirevideo_removed:
-    razorwire_pops:
+    mode_razorwire01:
       priority: 400
       expire: 70.5s
   razorwire_pops_complete:
     XMarksTheSpotVideo:
       priority: 406
       expire: 2.1s
-    razorwire_phase2:
+    mode_razorwire02:
       priority: 405
       expire: 60.5s
   logicblock_razorwire_updated{enabled==True}:
@@ -295,6 +307,116 @@ slide_player:
       expire: 60.5s  
 
 widgets:
+   w_razorwireUI:
+    - type: Text
+# work on displaying the count of spins
+      text: (player|razorwire_visual_pops_counter)
+      font_size: 68
+      font_name: JandaManateeSolid
+      outline_color: black
+      outline_width: 9
+      color: 65fe08
+      x: 33.5%
+      y: 36%
+      z: 3
+    - type: image
+      image: hacksawUI
+      opacity: 1.0
+      y: 1
+      x: 1
+      z: 2
+      anchor_x: left
+      anchor_y: bottom
+    - type: text
+      text: (score)
+      number_grouping: true
+      y: 16
+      x: 25
+      z: 2
+      font_size: 36
+      anchor_x: left
+      anchor_y: bottom
+      font_name: TrajanProRegular
+      color: 65fe08
+    - type: Text
+      text: 00:(player|razorwire_60s_timer_tick)
+      font_size: 100
+      font_name: digitalclockfont
+      color: red
+      x: 50%
+      y: 83.2%
+      z: 2
+    - type: rectangle
+      width: 420
+      height: 130
+      x: 50%
+      y: 84.5%
+      z: 2
+      corner_radius: 20
+      corner_segments: 20
+      color: black     
+    - type: rectangle
+      width: 0
+      height: 45
+      x: 25%
+      y: 180
+      z: 2
+      anchor_x: left
+      corner_radius: 10
+      corner_segments: 10
+      color: 65fe08
+      animations:
+        player_razorwire_pops_counter:
+         - property: width
+           value: (value)           
+    - type: rectangle
+      width: 685
+      height: 46
+      x: 50%
+      y: 180
+      z: 2
+      color: black
+      corner_radius: 10
+      corner_segments: 10
+   w_razorwireUI_phase2:
+    - type: image
+      image: hacksawUI
+      opacity: 1.0
+      y: 1
+      x: 1
+      z: 2
+      anchor_x: left
+      anchor_y: bottom
+    - type: text
+      text: (score)
+      number_grouping: true
+      y: 16
+      x: 25
+      z: 2
+      font_size: 36
+      anchor_x: left
+      anchor_y: bottom
+      font_name: TrajanProRegular
+      color: 65fe08
+    - type: Text
+      text: 00:(player|razorwire_60s_timer_tick)
+      font_size: 100
+      font_name: digitalclockfont
+      color: red
+      x: 50%
+      y: 83.2%
+      z: 2
+    - type: rectangle
+      width: 420
+      height: 130
+      x: 50%
+      y: 84.5%
+      z: 2
+      corner_radius: 20
+      corner_segments: 20
+      color: black     
+
+
    rw_shot_update2:
     #- type: Text
     #  text: X
@@ -399,9 +521,13 @@ widgets:
    #         timing: after_previous
 
 widget_player:
+ player_razorwire_60s_timer_tick{value==60}:
+  w_razorwireUI:
+    slide: mode_razorwire01
+    action: add
  logicblock_razorwire_phase2_updated{enabled==True}:
-  rw_shot_update2:
-    slide: razorwire_phase2
+  w_razorwireUI_phase2:
+    slide: mode_razorwire02
     action: add
  shot_razorwire_button_sp_razorwire_lit_hit:
   w_hacksaw_button:
