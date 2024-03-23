@@ -20,12 +20,13 @@ shots:
   shot_left_loop:
     advance_events: shot_left_loop_sp_saw_qualify_lit_hit
     reset_events: slide_trapcomplete_removed, mode_razorwire_stopped, mode_drillchair_stopped, mode_quadshotgun_stopped, mode_reversebeartrap_stopped, mode_zeptest_stopped, mode_flammablejelly_stopped, ball_started
-    switches: s_left_loop_bottom
+    #switches: s_left_loop_bottom
+    hit_events: ssh_leftloop_hit
     profile: sp_saw_qualify
     show_tokens:
       leds: l_left_loop_arrow
-    delay_switch:
-      s_right_loop_top: 3s
+    #delay_switch:
+      #s_right_loop_top: 3s
   shot_left_standup:
     advance_events: shot_left_standup_sp_saw_qualify_lit_hit  
     reset_events: slide_trapcomplete_removed, sg_saw_reset_complete, mode_razorwire_stopped, mode_drillchair_stopped, mode_quadshotgun_stopped, mode_reversebeartrap_stopped, mode_zeptest_stopped, mode_flammablejelly_stopped, ball_started 
@@ -57,12 +58,13 @@ shots:
   shot_right_loop:
     advance_events: shot_right_loop_sp_saw_qualify_lit_hit
     reset_events: slide_trapcomplete_removed, sg_saw_reset_complete, mode_razorwire_stopped, mode_drillchair_stopped, mode_quadshotgun_stopped, mode_reversebeartrap_stopped, mode_zeptest_stopped, mode_flammablejelly_stopped, ball_started  
-    switches: s_right_loop_bottom
+    #switches: s_right_loop_bottom
+    hit_events: ssh_rightloop_hit
     profile: sp_saw_qualify
     show_tokens:
       leds: l_right_loop_arrow
-    delay_switch:
-      s_left_loop_top: 3s
+    #delay_switch:
+      #s_left_loop_top: 3s
   shot_right_standup:
     advance_events: shot_right_standup_sp_saw_qualify_lit_hit
     reset_events: slide_trapcomplete_removed, sg_saw_reset_complete, mode_razorwire_stopped, mode_drillchair_stopped, mode_quadshotgun_stopped, mode_reversebeartrap_stopped, mode_zeptest_stopped, mode_flammablejelly_stopped, ball_started
