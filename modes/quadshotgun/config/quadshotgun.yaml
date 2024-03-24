@@ -4,13 +4,28 @@ mode:
   stop_events: stop_mode_quadshotgun, mode_quadshotgun_complete, ball_ended, ball_will_end, player_quadshotgun_quadshotgun_60s_timer_tick{value < 1}
   priority: 181
  
+accruals:
+  acc_quadshotgun_phase1:
+    events:
+      - shot_quadshotgun_left_standup_sp_quadshotgun_lit_hit
+      - shot_quadshotgun_left_standup_right_ramp_sp_quadshotgun_lit_hit
+      - shot_quadshotgun_right_standup_right_ramp_sp_quadshotgun_lit_hit
+      - shot_quadshotgun_right_standup_sp_quadshotgun_lit_hit
+    reset_on_complete: false
+    persist_state: true
+    disable_on_complete: false
+
+shot_groups:
+  sg_quadshotgun_p1:
+    shots: shot_quadshotgun_left_standup, shot_quadshotgun_left_standup_right_ramp, shot_quadshotgun_right_standup_right_ramp, shot_quadshotgun_right_standup
+
 sequences:
   quadshotgun_phase2:
     events:
-      - ssh_left_orbit_hit
+      - quadshotgun_spinner_complete
     reset_on_complete: false
     persist_state: true
-    enable_events: quadshotgun_spinner_complete
+    enable_events:  logicblock_acc_quadshotgun_phase1_complete
     disable_events: mode_quadshotgun_complete
     events_when_complete: mode_quadshotgun_complete, stop_mode_quadshotgun
  
@@ -27,8 +42,8 @@ counters:
   quadshotgun_spinner_counter:
     starting_count: 0
     count_complete_value: 30
-    enable_events: mode_quadshotgun_started
-    disable_events: quadshotgun_spinner_complete, logicblock_quadshotgun_phase2_updated{enabled==True}
+    enable_events:  logicblock_acc_quadshotgun_phase1_complete
+    disable_events: quadshotgun_spinner_complete
 #    start_enabled: true
     persist_state: true
     reset_on_complete: false
@@ -38,16 +53,96 @@ counters:
     starting_count: 0
     count_complete_value: 30
     enable_events: shot_quadshotgun_button_sp_quadshotgun_lit_hit
-    disable_events: quadshotgun_spinner_complete, logicblock_quadshotgun_phase2_updated{enabled==True}
+    disable_events: quadshotgun_spinner_complete
 #    start_enabled: true
     persist_state: true
     reset_on_complete: false
     #events_when_complete: quadshotgun_spinner_complete 
     count_events: spinner_spinner_hit
+#shotgun 1
+  quadshotgun_left_standup_counter:
+    starting_count: 0
+    count_complete_value: 1
+    start_enabled: true
+    persist_state: true
+    reset_on_complete: false
+    count_events: shot_quadshotgun_left_standup_sp_quadshotgun_lit_hit
+#shotgun 2
+  quadshotgun_left_standup_right_ramp_counter:
+    starting_count: 0
+    count_complete_value: 30
+    start_enabled: true
+    persist_state: true
+    reset_on_complete: false
+    count_events: shot_quadshotgun_left_standup_right_ramp_sp_quadshotgun_lit_hit
+#shotgun 3
+  quadshotgun_right_standup_right_ramp_counter:
+    starting_count: 0
+    count_complete_value: 30
+    start_enabled: true
+    persist_state: true
+    reset_on_complete: false
+    count_events: shot_quadshotgun_right_standup_right_ramp_sp_quadshotgun_lit_hit
+#shotgun 4
+  quadshotgun_right_standup_counter:
+    starting_count: 0
+    count_complete_value: 1
+    start_enabled: true
+    persist_state: true
+    reset_on_complete: false
+    count_events: shot_quadshotgun_right_standup_sp_quadshotgun_lit_hit
 
-#shots:
-#  spinner:
-#    switch: s_spinner   
+shots:
+  shot_quadshotgun_left_standup:
+    switches: s_left_standup
+    profile: sp_quadshotgun
+    show_tokens:
+      leds: l_left_standup_arrow
+    control_events:
+      - events: mode_quadshotgun_started
+        state: 1
+      - events: shot_quadshotgun_left_standup_sp_quadshotgun_lit_hit
+        state: 0
+  shot_quadshotgun_left_standup_right_ramp:
+    switches: s_left_standup_right_ramp
+    profile: sp_quadshotgun
+    show_tokens:
+      leds: l_left_standup_right_ramp_arrow
+    control_events:
+      - events: mode_quadshotgun_started
+        state: 1
+      - events: shot_quadshotgun_left_standup_right_ramp_sp_quadshotgun_lit_hit
+        state: 0
+  shot_quadshotgun_right_standup_right_ramp:
+    switches: s_right_standup_right_ramp
+    profile: sp_quadshotgun
+    show_tokens:
+      leds: l_right_standup_right_ramp_arrow
+    control_events:
+      - events: mode_quadshotgun_started
+        state: 1
+      - events: shot_quadshotgun_right_standup_right_ramp_sp_quadshotgun_lit_hit
+        state: 0
+  shot_quadshotgun_right_standup:
+    switches: s_right_standup
+    profile: sp_quadshotgun
+    show_tokens:
+      leds: l_right_standup_arrow
+    control_events:
+      - events: mode_quadshotgun_started
+        state: 1
+      - events: shot_quadshotgun_right_standup_sp_quadshotgun_lit_hit
+        state: 0
+
+
+shot_profiles:
+  sp_quadshotgun_mode:
+    advance_on_hit: false
+    states:
+      - name: quadshotgun_not_ready
+        show: "sh_quadshotgun_not_ready"
+      - name: lit
+        show: "sh_quadshotgun_on"
 
 variable_player:
   #quadshotgun_spinner_complete:
@@ -64,6 +159,22 @@ variable_player:
     quadshotgun_visual_spinner_counter:
       action: set
       int: (count)
+  counter_quadshotgun_left_standup_counter_hit:
+    quadshotgun_left_standup_counter:
+      action: set
+      int: (count)*250
+  counter_quadshotgun_right_standup_counter_hit:
+    quadshotgun_right_standup_counter:
+      action: set
+      int: (count)*250
+  counter_quadshotgun_left_standup_right_ramp_counter_hit:
+    quadshotgun_left_standup_right_ramp_counter:
+      action: set
+      int: (count)*250
+  counter_quadshotgun_right_standup_right_ramp_counter_hit:
+    quadshotgun_right_standup_right_ramp_counter:
+      action: set
+      int: (count)*250
        
   timer_your_timer_tick:
     quadshotgun_60s_timer:
@@ -76,7 +187,19 @@ slides:
     - type: video
       video: quadshotgunvideo  
       width: 1366
-      height: 768      
+      height: 768     
+  sl_mode_quadshotgun01:
+    widgets:
+    - type: video
+      video: mode_quadshotgun01
+      width: 1366
+      height: 768     
+  sl_mode_quadshotgun02:
+    widgets:
+    - type: video
+      video: mode_quadshotgun02
+      width: 1366
+      height: 768 
       
   quadshotgun_spinner:
     widgets:
@@ -98,7 +221,7 @@ slides:
       
     - type: image
       image: hacksawUI
-      opacity: 0.5
+      opacity: 1.0
       y: 1
       x: 1
       anchor_x: left
@@ -128,26 +251,12 @@ slides:
       y: 84.5%
       corner_radius: 20
       corner_segments: 20
-      color: black
-      
+      color: black      
     - type: rectangle
-      width: 0
-      height: 45
-      x: 25%
-      y: 180
-      anchor_x: left
-      corner_radius: 10
-      corner_segments: 10
-      color: "006ee6"
-      animations:
-        player_quadshotgun_spinner_counter:
-         - property: width
-           value: (value)           
-    - type: rectangle
-      width: 685
+      width: 250
       height: 46
-      x: 50%
-      y: 180
+      x: 25%
+      y: 130
       color: black
       corner_radius: 10
       corner_segments: 10
@@ -275,19 +384,192 @@ slide_player:
       priority: 500
       expire: 7.8s 
   slide_quadshotgunvideo_removed:  
-    quadshotgun_spinner:
+    sl_mode_quadshotgun01:
       priority: 400
       expire: 64.5s
-  quadshotgun_spinner_complete:
-    quadshotgun_phase2:
+  logicblock_acc_quadshotgun_phase1_complete:
+    sl_mode_quadshotgun01:
+     action: remove
+    sl_mode_quadshotgun02:
       priority: 405
       expire: 64.5s
-  logicblock_quadshotgun_phase2_updated{enabled==True}:
-    quadshotgun_phase2:
-      priority: 405
-      expire: 64.5s
+  # logicblock_quadshotgun_phase2_updated{enabled==True}:
+  #   quadshotgun_phase2:
+  #     priority: 405
+  #     expire: 64.5s
       
 widgets:
+   w_quadshotgunUI:
+    - type: image
+      image: hacksawUI
+      opacity: 0.5
+      y: 1
+      x: 1
+      z: 2
+      anchor_x: left
+      anchor_y: bottom
+    - type: text
+      text: (score)
+      number_grouping: true
+      y: 16
+      x: 25
+      z: 2
+      font_size: 36
+      anchor_x: left
+      anchor_y: bottom
+      font_name: TrajanProRegular
+      color: "006ee6"
+      
+    - type: Text
+      text: 00:(player|quadshotgun_quadshotgun_60s_timer_tick)
+      font_size: 100
+      font_name: digitalclockfont
+      color: red
+      x: 50%
+      y: 83.2%
+      z: 2
+    - type: rectangle
+      width: 420
+      height: 130
+      x: 50%
+      y: 84.5%
+      z: 2
+      corner_radius: 20
+      corner_segments: 20
+      color: black
+
+   w_quadshotgun_phase1:
+#shotgun 1
+    - type: rectangle
+      width: 0
+      height: 45
+      x: 25.7%
+      y: 33%
+      z: 3
+      anchor_x: left
+      corner_radius: 10
+      corner_segments: 10
+      color: shotgun
+      animations:
+        player_quadshotgun_left_standup_counter:
+         - property: width
+           value: (value)           
+    - type: rectangle
+      width: 250
+      height: 46
+      x: 35%
+      y: 33%
+      z: 2
+      color: black
+      corner_radius: 10
+      corner_segments: 10
+#shotgun 2
+    - type: rectangle
+      width: 0
+      height: 45
+      x: 60.7%
+      y: 33%
+      z: 3
+      anchor_x: left
+      corner_radius: 10
+      corner_segments: 10
+      color: shotgun
+      animations:
+        player_quadshotgun_left_standup_right_ramp_counter:
+         - property: width
+           value: (value)           
+    - type: rectangle
+      width: 250
+      height: 46
+      x: 70%
+      y: 33%
+      z: 2
+      color: black
+      corner_radius: 10
+      corner_segments: 10
+#shotgun 3
+    - type: rectangle
+      width: 0
+      height: 45
+      x: 25.7%
+      y: 11%
+      z: 3
+      anchor_x: left
+      corner_radius: 10
+      corner_segments: 10
+      color: shotgun
+      animations:
+        player_quadshotgun_right_standup_right_ramp_counter:
+         - property: width
+           value: (value)           
+    - type: rectangle
+      width: 250
+      height: 46
+      x: 35%
+      y: 11%
+      z: 2
+      color: black
+      corner_radius: 10
+      corner_segments: 10
+#shotgun 4
+    - type: rectangle
+      width: 0
+      height: 45
+      x: 60.7%
+      y: 11%
+      z: 3
+      anchor_x: left
+      corner_radius: 10
+      corner_segments: 10
+      color: shotgun
+      animations:
+        player_quadshotgun_right_standup_counter:
+         - property: width
+           value: (value)           
+    - type: rectangle
+      width: 250
+      height: 46
+      x: 70%
+      y: 11%
+      z: 2
+      color: black
+      corner_radius: 10
+      corner_segments: 10
+      
+   w_quadshotgun_phase2:
+    - type: rectangle
+      width: 0
+      height: 45
+      x: 25%
+      y: 180
+      z: 2
+      anchor_x: left
+      corner_radius: 10
+      corner_segments: 10
+      color: shotgun
+      animations:
+        player_quadshotgun_spinner_counter:
+         - property: width
+           value: (value)           
+    - type: rectangle
+      width: 685
+      height: 46
+      x: 50%
+      y: 180
+      z: 2
+      color: black
+      corner_radius: 10
+      corner_segments: 10
+    - type: Text
+      text: (player|quadshotgun_visual_spinner_counter) / 30 spins
+      font_size: 60
+      font_name: Mustkill
+      outline_color: black
+      outline_width: 7
+      color: d8d8d8
+      y: 35%
+      z: 2
+
    w_gears_button:
     - type: image
       image: GearsButtonImg
@@ -304,17 +586,22 @@ widgets:
       x: 89%
       y: 4%   
       z: 1
-#   quadshotgun_shot_update2:
-#    - type: Text
-#      text: X
-#      color: "006ee6"
-#      x: 5.5%
-#      y: 52%
-#      font_size: 70
-#      font_name: TrajanProRegular
-
  
 widget_player:
+ player_quadshotgun_quadshotgun_60s_timer_tick{value==59}:  
+  w_quadshotgunUI:
+    slide: sl_mode_quadshotgun01
+    action: add
+  w_quadshotgun_phase1:
+    slide: sl_mode_quadshotgun01
+    action: add
+ logicblock_acc_quadshotgun_phase1_complete: 
+  w_quadshotgunUI:
+    slide: sl_mode_quadshotgun02
+    action: add
+  w_quadshotgun_phase2:
+    slide: sl_mode_quadshotgun02
+    action: add
  shot_quadshotgun_button_sp_quadshotgun_lit_hit:
   w_gears_button:
     slide: quadshotgun_spinner
@@ -338,6 +625,17 @@ shows:
       lights:
         (leds): shotgun
     - duration: 0.15s
+      lights:
+        (leds): off
+  sh_quadshotgun_on:
+    - duration: 0.3s
+      lights:
+        (leds): shotgun
+    - duration: 0.3s
+      lights:
+        (leds): off
+  sh_quadshotgun_not_ready:
+    - duration: 0.3s
       lights:
         (leds): off
 
@@ -369,14 +667,13 @@ show_player:
       show_tokens:
         color1: shotgun
 
-#  player_quadshotgun_quadshotgun_60s_timer_tick{value == 67}: 
-  logicblock_quadshotgun_spinner_counter_updated{value<20}:
-    flash_token:
-      loops: -1
-      speed: 8
-      show_tokens:
-        led: l_right_loop_arrow
-        color1: shotgun
+  # logicblock_acc_quadshotgun_phase1_complete:
+  #   flash_token:
+  #     loops: -1
+  #     speed: 8
+  #     show_tokens:
+  #       led: l_right_loop_arrow
+  #       color1: shotgun
 
   player_quadshotgun_quadshotgun_60s_timer_tick{value==50}: 
     speaker_heartbeat:
@@ -389,12 +686,12 @@ show_player:
       show_tokens:
         color1: shotgun
   player_quadshotgun_quadshotgun_60s_timer_tick{value==30}: 
-    flash_token:
-      loops: -1
-      speed: 16
-      show_tokens:
-        led: l_right_loop_arrow
-        color1: shotgun     
+    # flash_token:
+    #   loops: -1
+    #   speed: 16
+    #   show_tokens:
+    #     led: l_right_loop_arrow
+    #     color1: shotgun     
     speaker_heartbeat:
       speed: 4
       show_tokens:
@@ -418,6 +715,11 @@ show_player:
   player_quadshotgun_quadshotgun_60s_timer_tick{value == 1}: 
     shotgun_blast:
       speed: 20
+    flash_token:
+      loops: -1
+      show_tokens:
+        leds: l_right_loop_arrow
+        color1: off
 
   spinner_hit:
     flash_token:
@@ -433,20 +735,17 @@ show_player:
         show_tokens:
           leds: l_right_loop_arrow
           color1: off
-      quadshotgun_progress:
-        loops: -1
-        show_tokens:
-          leds: l_left_loop_arrow
-          color1: shotgun
+      # quadshotgun_progress:
+      #   loops: -1
+      #   show_tokens:
+      #     leds: l_left_loop_arrow
+      #     color1: shotgun
   logicblock_quadshotgun_phase2_updated{enabled==True}:
       flash_token:
-        show_tokens:
-          leds: l_right_loop_arrow
-          color1: off
-      quadshotgun_progress:
         loops: -1
+        speed: 8
         show_tokens:
-          leds: l_left_loop_arrow
+          led: l_right_loop_arrow
           color1: shotgun
 
     

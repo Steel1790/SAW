@@ -76,6 +76,30 @@ slides:
     - type: video
       video: flammablejellyvideo 
       width: 1366
+      height: 768
+  sl_mode_flammablejelly01:
+    widgets:
+    - type: video
+      video: mode_flammablejelly01 
+      width: 1366
+      height: 768
+  sl_mode_flammablejelly02:
+    widgets:
+    - type: video
+      video: mode_flammablejelly02
+      width: 1366
+      height: 768
+  sl_mode_flammablejelly03:
+    widgets:
+    - type: video
+      video: mode_flammablejelly03
+      width: 1366
+      height: 768
+  sl_mode_flammablejelly04:
+    widgets:
+    - type: video
+      video: mode_flammablejelly04
+      width: 1366
       height: 768      
       
   flammablejellyUI:
@@ -138,6 +162,44 @@ slides:
 #     duration: 0.2s
 
 widgets:
+   w_flammablejellyUI:
+    - type: image
+      image: hacksawUI
+      opacity: 1.0
+      y: 1
+      x: 1
+      z: 2
+      anchor_x: left
+      anchor_y: bottom
+    - type: text
+      text: (score)
+      number_grouping: true
+      y: 16
+      x: 25
+      z: 2
+      font_size: 36
+      anchor_x: left
+      anchor_y: bottom
+      font_name: TrajanProRegular
+      color: FFA500
+    - type: Text
+      text: 00:(player|flammablejelly_60s_flammablejelly_timer_tick)
+      font_size: 100
+      font_name: digitalclockfont
+      color: red
+      x: 50%
+      y: 83.2%
+      z: 2
+    - type: rectangle
+      width: 420
+      height: 130
+      x: 50%
+      y: 84.5%
+      z: 2
+      corner_radius: 20
+      corner_segments: 20
+      color: black
+
    flammablejelly_shot_update1:            
     - type: Text
       text: " The First Digit is the Rightmost Stand Up"
@@ -256,7 +318,7 @@ widgets:
       image: CandleButtonImg
       x: 95%
       y: 20%
-      z: 1        
+      z: 2     
     - type: Text
       text: (player|flammablejelly_flammablejelly_3x_timer_tick)
       font_size: 30
@@ -266,7 +328,7 @@ widgets:
       color: FFBF00
       x: 88%
       y: 8%   
-      z: 1
+      z: 2
     - type: Text
       text: 3X
       font_size: 45
@@ -276,32 +338,26 @@ widgets:
       color: FFBF00
       x: 88%
       y: 3%      
-      z: 1
+      z: 2
     
  
 widget_player:
- logicblock_flammablejelly_updated{value==0}: 
-  flammablejelly_shot_update1:
-    slide: flammablejellyUI
+ player_flammablejelly_60s_flammablejelly_timer_tick{value==60}: 
+  w_flammablejellyUI:
+    slide: sl_mode_flammablejelly01
     action: add
  logicblock_flammablejelly_updated{value==1}:
-  flammablejelly_shot_update1:
-    slide: flammablejellyUI
-    action: remove
-  flammablejelly_shot_update2:
-    slide: flammablejellyUI
+  w_flammablejellyUI:
+    slide: sl_mode_flammablejelly02
     action: add
  logicblock_flammablejelly_updated{value==2}:
-  flammablejelly_shot_update2:
-    slide: flammablejellyUI
-    action: remove
-  flammablejelly_shot_update3:
-    slide: flammablejellyUI
+  w_flammablejellyUI:
+    slide: sl_mode_flammablejelly03
     action: add
- logicblock_flammablejelly_updated{value==3}:
-  flammablejelly_shot_update3:
-    slide: flammablejellyUI
-    action: remove
+ slide_sl_mode_flammablejelly04_active:
+  w_flammablejellyUI:
+    slide: sl_mode_flammablejelly04
+    action: add
  # flammablejelly_shot_update4:
  #   slide: flammablejellyUI
  #   action: add
@@ -314,11 +370,11 @@ widget_player:
     action: add
  shot_flammablejelly_button_sp_flammablejelly_lit_hit:
   w_candle_button:
-    slide: flammablejellyUI
+    slide: sl_mode_flammablejelly01
     action: add
  timer_flammablejelly_3x_timer_stopped:
   w_candle_button:
-    slide: flammablejellyUI
+    slide: sl_mode_flammablejelly01
     action: remove
 
 slide_player:
@@ -327,14 +383,31 @@ slide_player:
       priority: 500
       expire: 10s
   slide_flammablejellyvideo_removed: 
-    flammablejellyUI:
+    sl_mode_flammablejelly01:
+      priority: 400
+      expire: 60.5s
+  logicblock_flammablejelly_updated{value==1}:
+    sl_mode_flammablejelly01:
+     action: remove
+    sl_mode_flammablejelly02:
+      priority: 400
+      expire: 60.5s
+  logicblock_flammablejelly_updated{value==2}:
+    sl_mode_flammablejelly02:
+     action: remove
+    sl_mode_flammablejelly03:
       priority: 400
       expire: 60.5s
   #logicblock_flammablejelly_hit{step==4}:
   logicblock_flammablejelly_updated{value==3}:
+    sl_mode_flammablejelly03:
+     action: remove
     XMarksTheSpotVideo:
       priority: 406
       expire: 2.1s    
+    sl_mode_flammablejelly04:
+      priority: 400
+      expire: 60.5s
       
 shows:
   flammablejelly_progress_p1:    

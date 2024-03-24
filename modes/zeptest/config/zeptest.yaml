@@ -50,6 +50,30 @@ slides:
       video: zeptestvideo 
       width: 1366
       height: 768      
+  sl_mode_zeptest01:
+    widgets:
+    - type: video
+      video: mode_zeptest01
+      width: 1366
+      height: 768
+  sl_mode_zeptest02:
+    widgets:
+    - type: video
+      video: mode_zeptest02
+      width: 1366
+      height: 768
+  sl_mode_zeptest03:
+    widgets:
+    - type: video
+      video: mode_zeptest03
+      width: 1366
+      height: 768
+  sl_mode_zeptest04:
+    widgets:
+    - type: video
+      video: mode_zeptest04
+      width: 1366
+      height: 768
       
   zeptestUI:
    widgets:
@@ -127,6 +151,45 @@ slides:
 #     duration: 0.2s
 
 widgets:
+   w_zeptestUI:
+    - type: image
+      image: hacksawUI
+      opacity: 1.0
+      y: 1
+      x: 1
+      z: 2
+      anchor_x: left
+      anchor_y: bottom
+    - type: text
+      text: (score)
+      number_grouping: true
+      y: 16
+      x: 25
+      z: 2
+      font_size: 36
+      anchor_x: left
+      anchor_y: bottom
+      font_name: TrajanProRegular
+      color: B17BE3
+    - type: Text
+      text: 00:(player|zeptest_60s_zeptest_timer_tick)
+      font_size: 100
+      font_name: digitalclockfont
+      color: red
+      x: 50%
+      y: 83.2%
+      z: 2
+    - type: rectangle
+      width: 420
+      height: 130
+      x: 50%
+      y: 84.5%
+      z: 2
+      corner_radius: 20
+      corner_segments: 20
+      color: black
+
+
    zep_shot_update1:
     - type: Text
       text: " Hit All 3 Drop Targets"
@@ -223,7 +286,7 @@ widgets:
       image: SyringeButtonImg
       x: 89%
       y: 22%
-      z: 1        
+      z: 2      
     - type: Text
       text: Press To Spot Next Shot
       font_size: 45
@@ -233,7 +296,7 @@ widgets:
       color: BDD5E7
       x: 83.8%
       y: 8%   
-      z: 1
+      z: 2
     - type: Text
       text: Shots Worth +250k
       font_size: 45
@@ -243,55 +306,30 @@ widgets:
       color: BDD5E7
       x: 87%
       y: 3%   
-      z: 1
+      z: 2
 
     
  
 widget_player:
- logicblock_zeptest_updated{value==0}:
-  zep_shot_update1:
-    slide: zeptestUI
-    action: add
+ player_zeptest_60s_zeptest_timer_tick{value==60}:
+   w_zeptestUI:
+     slide: sl_mode_zeptest01
+     action: add
  logicblock_zeptest_updated{value==3}: 
-  zep_shot_update1:
-    slide: zeptestUI
-    action: remove
-  zep_shot_update2:
-    slide: zeptestUI
-    action: add
+   w_zeptestUI:
+     slide: sl_mode_zeptest02
+     action: add
  logicblock_zeptest_updated{value==4}: 
-  zep_shot_update2:
-    slide: zeptestUI
-    action: remove
-  #zep_shot_update3:
-  #  slide: zeptestUI
-  #  action: add
-  zep_shot_update4:
-    slide: zeptestUI
-    action: add
- logicblock_zeptest_updated{value==5}: 
-  #zep_shot_update3:
-  #  slide: zeptestUI
-  #  action: remove
-  zep_shot_update4:
-    slide: zeptestUI
-    action: remove
-  #zep_shot_update4:
-  #  slide: zeptestUI
-  #  action: add
-  zep_shot_update5:
-    slide: zeptestUI
-    action: add
- #logicblock_zeptest_hit{step==6}: 
- # zep_shot_update4:
- #   slide: zeptestUI
- #   action: remove
- # zep_shot_update5:
- #   slide: zeptestUI
- #   action: add
+   w_zeptestUI:
+     slide: sl_mode_zeptest03
+     action: add
+ logicblock_zeptest_updated{value==5}:
+   w_zeptestUI:
+     slide: sl_mode_zeptest04
+     action: add
  shot_zeptest_button_sp_zeptest_lit_hit:
   w_syringe_button:
-    slide: zeptestUI
+    slide: sl_mode_zeptest01, sl_mode_zeptest02, sl_mode_zeptest03, sl_mode_zeptest04
     action: add
 
 slide_player:
@@ -300,10 +338,30 @@ slide_player:
       priority: 500
       expire: 8s
   slide_zeptestvideo_removed: 
-    zeptestUI:
+    sl_mode_zeptest01:
       priority: 400
       expire: 60.5s
-  logicblock_zeptest_hit{step==6}:
+
+  logicblock_zeptest_updated{value==3}: 
+    sl_mode_zeptest01:
+      action: remove  
+    sl_mode_zeptest02:
+      priority: 400
+      expire: 60s
+  logicblock_zeptest_updated{value==4}: 
+    sl_mode_zeptest02:
+      action: remove 
+    sl_mode_zeptest03:
+      priority: 400
+      expire: 60s
+  logicblock_zeptest_updated{value==5}:
+    sl_mode_zeptest03:
+      action: remove 
+    sl_mode_zeptest04:
+      priority: 400
+      expire: 60s
+
+  logicblock_zeptest_hit{step==5}:
     XMarksTheSpotVideo:
       priority: 406
       expire: 2.1s      

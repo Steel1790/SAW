@@ -608,7 +608,7 @@ widgets:
       z: 1
  
 widget_player:
- slide_mode_drillchair01_active:
+ player_drillchair_drillchair_60s_timer_tick{value==60}:
    w_drillchairUI:
      slide: mode_drillchair01
      action: add
