@@ -1,7 +1,7 @@
 #config_version=6                 
 mode:
   start_events: startmode_make_your_choice_hurryup
-  stop_events: mode_make_your_choice_hurryup_complete, stop_mode_make_your_choice_hurryup, ball_ended, ball_will_end, player_make_your_choice_hurryup_t_make_your_choice_timer_tick{value < 1}, logicblock_acc_make_your_choice_qualify_complete, logicblock_trap_select_qualify_counter_complete
+  stop_events: mode_make_your_choice_hurryup_complete, stop_mode_make_your_choice_hurryup, ball_ended, ball_will_end, player_make_your_choice_hurryup_t_make_your_choice_timer_tick{value < 1}, logicblock_acc_make_your_choice_qualify_complete, logicblock_trap_select_qualify_counter_complete, mode_selection_mode_started, multiball_mb_jigsaw_started, multiball_mb_hacksaw_started, multiball_mb_shackle_started, mode_razorwire_started, mode_drillchair_started, mode_flammablejelly_started, mode_quadshotgun_started, mode_reversebeartrap_started, mode_zeptest_started
   priority: 185
 
   # Spell D-I-E / S-A-W (3 drop target bank) in sequential order to start this hurry up mode.
@@ -279,3 +279,11 @@ show_player:
       sh_hurryup_collected:
         show_tokens:
           leds: l_inner_loop_arrow
+
+sound_player:
+  mode_make_your_choice_hurryup_started:
+    LiveOrDieHurryup:
+      priority: 202
+      action: play
+    BaseMusic:
+      action: stop    

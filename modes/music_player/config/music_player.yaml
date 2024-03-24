@@ -721,8 +721,8 @@ sound_player:
 #    BaseMusic:
 #      action: stop
   player_puzzle_hurryup_t_puzzle_timer_tick{value < 1}:
-    #PuzzlePieceHurryUp:
-    #  action: stop
+    PuzzlePieceHurryUp:
+     action: stop
     BaseMusic:
       action: play
 #puzzle collected
@@ -753,11 +753,11 @@ sound_player:
       action: play
 
 #make your choice hurry up
-  mode_make_your_choice_hurryup_started:
-    LiveOrDieHurryup:
-      action: play
-    BaseMusic:
-      action: stop
+  # mode_make_your_choice_hurryup_started:
+  #   LiveOrDieHurryup:
+  #     action: play
+  #   BaseMusic:
+  #     action: stop
   player_make_your_choice_hurryup_t_make_your_choice_timer_tick{value < 1}:
     LiveOrDieHurryup:
       action: stop
