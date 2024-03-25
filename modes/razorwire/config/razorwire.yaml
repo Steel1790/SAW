@@ -853,5 +853,5 @@ sound_player:
       block: true
 
 event_player: 
-  slide_razorwire_pops_active: e_primary_mode_active
+  slide_mode_razorwire01_active: e_primary_mode_active
   shot_razorwire_button_sp_razorwire_lit_hit: e_stop_hacksaw|30s

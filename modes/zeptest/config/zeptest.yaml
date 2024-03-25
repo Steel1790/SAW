@@ -563,7 +563,7 @@ sound_player:
       action: stop
 
 event_player: 
-  slide_zeptestUI_active: e_primary_mode_active
+  slide_sl_mode_zeptest01_active: e_primary_mode_active
   shot_zeptest_button_sp_zeptest_lit_hit{device.sequences.zeptest.value == 0}: 
     - sw_lower_drop_target|0.1s
     - sw_lower_drop_target|0.2s

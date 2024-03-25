@@ -777,4 +777,4 @@ show_player:
         color1: beartrap
 
 event_player: 
-  slide_reversebeartrapUI_active: e_primary_mode_active
+  slide_mode_rbt01_active: e_primary_mode_active

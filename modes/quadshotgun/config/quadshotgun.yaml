@@ -851,4 +851,4 @@ sound_player:
 
    
 event_player: 
-  slide_quadshotgun_spinner_active: e_primary_mode_active
+  slide_sl_mode_quadshotgun01_active: e_primary_mode_active

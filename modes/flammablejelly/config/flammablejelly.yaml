@@ -634,5 +634,5 @@ sound_player:
       block: true
 
 event_player: 
-  slide_flammablejellyUI_active: e_primary_mode_active
+  slide_sl_mode_flammablejelly01_active: e_primary_mode_active
   shot_flammablejelly_button_sp_flammablejelly_lit_hit: e_stop_candle|20s, e_start_candle_multiplier|10s

@@ -1071,7 +1071,7 @@ show_player:
         color1: drillchair
 
 event_player: 
-  slide_drillchair_pops_active: e_primary_mode_active
+  slide_mode_drillchair01_active: e_primary_mode_active
   shot_drillchair_button_sp_drillchair_lit_hit{device.counters.drillchair_pops_counter.value<1}:
     - sw_bottom_pops|0.1s
     - sw_bottom_pops|0.15s
