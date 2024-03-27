@@ -45,10 +45,12 @@ shows:
         (leds): off
 
 show_player:
-  mode_trap_select_started:
+  logicblock_trap_select_qualify_counter_updated{enabled==True}:
     mode_lit:
       show_tokens:
         leds: l_mode_scoop
       loops: -1
+  logicblock_trap_select_qualify_counter_updated{enabled==False}:
+    mode_lit: stop
   sh_mystery_hit:
     mode_lit: stop

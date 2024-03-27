@@ -4,13 +4,13 @@
 mode:
   #start_events: startmode_jigsaw_multiball
   start_events: logicblock_jigsaw_multiball_qualify_complete
-  stop_events: stop_mode_jigsaw_multiball, mode_jigsaw_multiball_complete, player_turn_stopped, player_turn_ended
+  stop_events: stop_mode_jigsaw_multiball, mode_jigsaw_multiball_complete, player_turn_stopped, player_turn_ended,  multiball_mb_jigsaw_ended
   priority: 183
 
 multiballs:
   mb_jigsaw:
     ball_count: 3
-    shoot_again: 5s
+    shoot_again: 10s
     start_events: start_jigsaw_multiball
 
 variable_player:
@@ -164,7 +164,7 @@ show_player:
       colorwash_opposite_glitter: stop
   start_jigsaw_multiball:
     mb_ballsave:
-      loops: 4
+      loops: 9
 
   stop_mode_jigsaw_multiball: stop
 coil_player:

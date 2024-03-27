@@ -264,6 +264,9 @@ variable_player:
     modes_completed:
       int: 1
       action: add
+    drillchair_mode_complete:
+      int: 1
+      action: set
     drillchair_complete:
       int: 2
       action: set
@@ -271,22 +274,37 @@ variable_player:
     modes_completed:
       int: 1
       action: add
+    flammablejelly_mode_complete:
+      int: 1
+      action: set
   mode_quadshotgun_complete:
     modes_completed:
       int: 1
       action: add
+    quadshotgun_mode_complete:
+      int: 1
+      action: set
   mode_razorwire_complete:
     modes_completed:
       int: 1
       action: add
+    razorwire_mode_complete:
+      int: 1
+      action: set
   mode_reversebeartrap_complete:
     modes_completed:
       int: 1
       action: add
+    reversebeartrap_mode_complete:
+      int: 1
+      action: set
   mode_zeptest_complete:
     modes_completed:
       int: 1
       action: add
+    zeptest_mode_complete:
+      int: 1
+      action: set
 
 # puzzle pieces collected
   mode_puzzle_hurryup_complete:
@@ -319,10 +337,16 @@ variable_player:
     modes_attempted:
       int: 1
       action: add
+    drillchair_attempted:
+      int: 1
+      action: set
   mode_flammablejelly_started:
     modes_attempted:
       int: 1
       action: add
+    flammablejelly_attempted:
+      int: 1
+      action: set
     candle_multiplier:
       int: 1
       action: set
@@ -330,18 +354,30 @@ variable_player:
     modes_attempted:
       int: 1
       action: add
+    quadshotgun_attempted:
+      int: 1
+      action: set
   mode_razorwire_started:
     modes_attempted:
       int: 1
       action: add
+    razorwire_attempted:
+      int: 1
+      action: set
   mode_reversebeartrap_started:
     modes_attempted:
       int: 1
       action: add
+    reversebeartrap_attempted:
+      int: 1
+      action: set
   mode_zeptest_started:
     modes_attempted:
       int: 1
       action: add
+    zeptest_attempted:
+      int: 1
+      action: set
 
   logicblock_acc_make_your_choice_qualify_hit:
     choice_hurryup_hits:

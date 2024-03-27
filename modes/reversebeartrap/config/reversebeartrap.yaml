@@ -203,118 +203,6 @@ slides:
 #     duration: 0.2s
 
 widgets:
-   #rbt_shot_update1:
-   # - type: Text
-   #   text: " Hit Any Ramp"
-   #   font_size: 50
-   #   font_name: TrajanProRegular
-   #   outline_color: black
-   #   outline_width: 7
-   #   color: BDD5E7
-   #   x: 50%
-   #   y: 48%
-   #   z: 1
-   #   animations:
-   #     add_to_slide:
-   #       - property: opacity
-   #         value: 0
-   #       - property: opacity
-   #         value: 1
-   #         duration: 1000ms
-   #         timing: after_previous
-   #rbt_shot_update2:      
-   # - type: Text
-   #   text: " Hit Any Orbit"
-   #   font_size: 50
-   #   font_name: TrajanProRegular
-   #   outline_color: black
-   #   outline_width: 7
-   #   color: BDD5E7
-   #   x: 50%
-   #   y: 48%
-   #   z: 1
-   #   animations:
-   #     add_to_slide:
-   #       - property: opacity
-   #         value: 0
-   #       - property: opacity
-   #         value: 1
-   #         duration: 1000ms
-   #         timing: after_previous
-   #rbt_shot_update3:   
-   # - type: Text
-   #   text: " Spinner"
-   #   font_size: 50
-   #   font_name: TrajanProRegular
-   #   outline_color: black
-   #   outline_width: 7
-   #   color: shotgun
-   #   x: 31%
-   #   y: 48%
-   #   z: 1
-   #   animations:
-   #     add_to_slide:
-   #       - property: opacity
-   #         value: 0
-   #       - property: opacity
-   #         value: 1
-   #         duration: 1000ms
-   #         timing: after_previous   
-   # - type: Text
-   #   text: "        Builds Value"
-   #   font_size: 50
-   #   font_name: TrajanProRegular
-   #   outline_color: black
-   #   outline_width: 7
-   #   color: BDD5E7
-   #   x: 50%
-   #   y: 48%
-   #   z: 1
-   #   animations:
-   #     add_to_slide:
-   #       - property: opacity
-   #         value: 0
-   #       - property: opacity
-   #         value: 1
-   #         duration: 1000ms
-   #         timing: after_previous
-   # - type: Text
-   #   text: "Saucer Under Right Ramp to Lock Value"
-   #   font_size: 50
-   #   font_name: TrajanProRegular
-   #   outline_color: black
-   #   outline_width: 7
-   #   color: BDD5E7
-   #   x: 50%
-   #   y: 39%
-   #   z: 1
-   #   animations:
-   #     add_to_slide:
-   #       - property: opacity
-   #         value: 0
-   #       - property: opacity
-   #         value: 1
-   #         duration: 1000ms
-   #         timing: after_previous
-   #rbt_shot_update4:      
-   # - type: Text
-   #   text: " X marks the Spot to Find the Key"
-   #   font_size: 60
-   #   font_name: TrajanProRegular
-   #   outline_color: black
-   #   outline_width: 7
-   #   color: BDD5E7
-   #   x: 50%
-   #   y: 48%     
-   #   z: 1
-   #   animations:
-   #     add_to_slide:
-   #       - property: opacity
-   #         value: 0
-   #       - property: opacity
-   #         value: 1
-   #         duration: 1000ms
-   #         timing: after_previous
    w_key_button:
     - type: image
       image: KeyButtonImg
@@ -429,9 +317,9 @@ widget_player:
      slide: mode_rbt04
      action: add
  shot_reversebeartrap_button_sp_reversebeartrap_lit_hit:
-  w_key_button:
-    slide: reversebeartrapUI
-    action: add
+   w_key_button:
+     slide: reversebeartrapUI
+     action: add
    
 
 slide_player:

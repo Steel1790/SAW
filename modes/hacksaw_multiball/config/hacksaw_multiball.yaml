@@ -4,7 +4,7 @@
 mode:
   #start_events: startmode_hacksaw_multiball
   start_events: multiball_lock_mbl_hacksaw_full
-  stop_events: stop_mode_hacksaw_multiball, mode_hacksaw_multiball_complete
+  stop_events: stop_mode_hacksaw_multiball, mode_hacksaw_multiball_complete, multiball_mb_hacksaw_ended
   priority: 183
 
 #multiball_locks:
@@ -24,7 +24,7 @@ multiballs:
   mb_hacksaw:
     ball_count: 3
     ball_locks: bd_hacksaw
-    shoot_again: 5s
+    shoot_again: 10s
     start_events: start_hacksaw_multiball
     replace_balls_in_play: false
 
@@ -343,7 +343,7 @@ show_player:
       disc_right_chase: stop
   start_hacksaw_multiball:
     mb_ballsave:
-      loops: 4
+      loops: 9
   hacksaw_mb_jackpot_p1_complete:
       top_drop_chase:
         loops: -1

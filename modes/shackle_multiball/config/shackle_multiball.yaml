@@ -3,7 +3,7 @@
 
 mode:
   start_events: logicblock_shackle_multiball_qualify_complete
-  stop_events: stop_mode_shackle_multiball, mode_shackle_multiball_complete
+  stop_events: stop_mode_shackle_multiball, mode_shackle_multiball_complete, multiball_mb_shackle_ended
   priority: 182
 
 #multiball_locks:
@@ -18,7 +18,7 @@ mode:
 multiballs:
   mb_shackle:
     ball_count: 2
-    shoot_again: 5s
+    shoot_again: 10s
     start_events: start_shackle_multiball
     ball_locks: bd_top_saucer
     # replace_balls_in_play: true
@@ -200,7 +200,7 @@ show_player:
     w_shackle_multiball: stop
   start_shackle_multiball:
     mb_ballsave:
-      loops: 4
+      loops: 9
 coil_player:
   multiball_mb_shackle_started:
     c_left_spin_disc:

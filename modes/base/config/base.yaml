@@ -1031,6 +1031,13 @@ show_player:
         leds: l_jw_key
       loops: -1 
       priority: 119
+#mode progress
+  mode_base_started{current_player.razorwire_mode_complete==1}:  
+    mode_razorwire_show_complete:
+      show_tokens:
+        leds: l_razorwire_mode
+      loops: -1   
+      priority: 200
   mode_razorwire_complete:
     mode_razorwire_show_complete:
       show_tokens:
@@ -1042,6 +1049,12 @@ show_player:
       speed: 25    
       show_tokens:
         color1: razorwire
+  mode_base_started{current_player.drillchair_mode_complete==1}: 
+    mode_drillchair_show_complete:
+      show_tokens:
+        leds: l_drillchair_mode
+      loops: -1  
+      priority: 200
   mode_drillchair_complete:
     mode_drillchair_show_complete:
       show_tokens:
@@ -1053,6 +1066,12 @@ show_player:
       speed: 25    
       show_tokens:
         color1: drillchair
+  mode_base_started{current_player.quadshotgun_mode_complete==1}: 
+    mode_quadshotgun_show_complete:
+      show_tokens:
+        leds: l_quadshotgun_mode
+      loops: -1    
+      priority: 200
   mode_quadshotgun_complete:
     mode_quadshotgun_show_complete:
       show_tokens:
@@ -1064,6 +1083,12 @@ show_player:
       speed: 25    
       show_tokens:
         color1: shotgun
+  mode_base_started{current_player.reversebeartrap_mode_complete==1}: 
+    mode_reversebeartrap_show_complete:
+      show_tokens:
+        leds: l_beartrap_mode
+      loops: -1  
+      priority: 200
   mode_reversebeartrap_complete:
     mode_reversebeartrap_show_complete:
       show_tokens:
@@ -1075,6 +1100,12 @@ show_player:
       speed: 25    
       show_tokens:
         color1: beartrap
+  mode_base_started{current_player.zeptest_mode_complete==1}: 
+    mode_zeptest_show_complete:
+      show_tokens:
+        leds: l_zeptest_mode
+      loops: -1  
+      priority: 200
   mode_zeptest_complete:
     mode_zeptest_show_complete:
       show_tokens:
@@ -1086,6 +1117,12 @@ show_player:
       speed: 25    
       show_tokens:
         color1: zeptest
+  mode_base_started{current_player.flammablejelly_mode_complete==1}: 
+    mode_flammablejelly_show_complete:
+      show_tokens:
+        leds: l_jelly_mode
+      loops: -1    
+      priority: 200
   mode_flammablejelly_complete:
     mode_flammablejelly_show_complete:
       show_tokens:
@@ -1271,13 +1308,13 @@ show_player:
 #        led: l_left_return_lane
 #        color1: red
 
-  spinner_spinner_hit:
-    flash_token:
-      loops: 2
-      speed: 8
-      show_tokens:
-        led: l_right_loop_arrow
-        color1: 46eb34
+  # spinner_spinner_hit:
+  #   flash_token:
+  #     loops: 2
+  #     speed: 8
+  #     show_tokens:
+  #       led: l_right_loop_arrow
+  #       color1: shotgun
 
   left_inlane_hit:
     flash_token:
@@ -3168,6 +3205,10 @@ widget_player:
     saw_letters:
       slide: base_slide_main
       action: add  
+  multiball_mb_jigsaw_ended:
+    saw_letters:
+      slide: base_slide_main
+      action: add      
   mode_jigsaw_multiball_complete:
     saw_letters:
       slide: base_slide_main
@@ -3181,6 +3222,10 @@ widget_player:
     saw_letters:
       slide: base_slide_main
       action: add  
+  multiball_mb_shackle_ended:
+    saw_letters:
+      slide: base_slide_main
+      action: add   
   mode_shackle_multiball_complete:
     saw_letters:
       slide: base_slide_main
@@ -3194,6 +3239,10 @@ widget_player:
     saw_letters:
       slide: base_slide_main
       action: add  
+  multiball_mb_hacksaw_ended:
+    saw_letters:
+      slide: base_slide_main
+      action: add   
   mode_hacksaw_multiball_complete:
     saw_letters:
       slide: base_slide_main
@@ -3216,7 +3265,7 @@ widget_player:
   sg_saw_qualify_subtract_hit{device.counters.cnt_saw_qualify.value==2}:
     saw_sa_letters:
       action: remove    
-  mode_trap_select_started:
+  logicblock_trap_select_qualify_counter_updated{enabled==True}:
     w_trap_select_start:
       slide: base_slide_main
       action: add
