@@ -3766,10 +3766,10 @@ widget_player:
       slide: base_slide_main
       action: remove
     
-  slide_HeHelpedMeVideo_created:
-    w_HeHelpedMe_BallSave:
-      slide: HeHelpedMeVideo
-      action: add
+  # slide_HeHelpedMeVideo_created:
+  #   w_HeHelpedMe_BallSave:
+  #     slide: HeHelpedMeVideo
+  #     action: add
 
 slides:
   base_slide_main: 

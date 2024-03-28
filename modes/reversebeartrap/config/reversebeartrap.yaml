@@ -253,7 +253,7 @@ widgets:
     - type: Text
       text: (player|reversebeartrap_120s_reversebeartrap_timer_tick)
       font_size: 80
-      font_name: badaboom
+      font_name: badaboom_bb
       color: ffffff
       y: 91.4%
       x: 37%
@@ -263,7 +263,7 @@ widgets:
       text: (player|spinner_value_display)
       number_grouping: true
       font_size: 80
-      font_name: badaboom
+      font_name: badaboom_bb
       color: ffffff
       y: 33.5%
       x: 33%
