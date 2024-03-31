@@ -200,6 +200,9 @@ counters:
       - event: e_subtract_a_saw_letter
         action: subtract
         value: 1
+      - event: e_mystery_letter
+        action: add
+        value: 1
 
 slides:    
   s_collect:

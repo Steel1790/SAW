@@ -14,6 +14,8 @@ event_player:
   slide_MysteryItemWorkshop_removed: e_release_mystery
   slide_MysteryBonusMultiplier_removed: e_release_mystery
   slide_MysteryPlayfieldMultiplier_removed: e_release_mystery
+  slide_MysteryAddALetter_removed: e_release_mystery
+  slide_MysteryAdvanceVirtualLock_removed: e_release_mystery
 
   e_mystery_5million: e_slide_5million|8s
   e_mystery_minus1million: e_slide_minus1million|8s
@@ -22,6 +24,8 @@ event_player:
   e_mystery_workshop: e_slide_workshop|8s
   e_mystery_bonus: e_slide_bonus|8s
   e_mystery_playfield: e_slide_playfield|8s
+  e_mystery_letter: e_slide_letter|8s
+  e_mystery_mb_lock: e_slide_mb_lock|8s
 
 #ball_holds:
 #  mystery_scoop:
@@ -70,13 +74,15 @@ show_player:
 random_event_player:
   sh_mystery_hit:
     events:
-      e_mystery_5million: 20 #numbers show probability of event
+      e_mystery_5million: 12 #numbers show probability of event
       e_mystery_minus1million: 5
       e_mystery_extraballlit: 6
-      e_mystery_outlane: 25
-      e_mystery_workshop: 30
+      e_mystery_outlane: 14
+      e_mystery_workshop: 25
       e_mystery_bonus: 7
       e_mystery_playfield: 7
+      e_mystery_letter{device.counters.cnt_saw_qualify.value<3}: 15
+      e_mystery_mb_lock{device.counters.cnt_jigsaw_mb_qualify.value<3}: 9
 #      mystery_award_3_event: 20
 #      mystery_award_4_event: 30
     force_all: true
@@ -129,7 +135,7 @@ slides:
   MysteryExtraBallLit:
     widgets:
     - type: video
-      video: MysteryExtraBallLit
+      video: ExtraBallIsLit
       width: 1366
       height: 768
   MysteryEscapeOutlane:
@@ -156,54 +162,76 @@ slides:
       video: MysteryPlayfieldMultiplier
       width: 1366
       height: 768
+  MysteryAddALetter:
+    widgets:
+    - type: video
+      video: MysteryAddALetter
+      width: 1366
+      height: 768
+  MysteryAdvanceVirtualLock:
+    widgets:
+    - type: video
+      video: MysteryAdvanceVirtualLock
+      width: 1366
+      height: 768
 
 slide_player:
   e_enable_mystery:
     mysteryawardvideo:
       action: play
-      priority: 185
+      priority: 192
       expire: 8s
   e_slide_5million: 
-    mysteryawardvideo:
-      action: remove
+    # mysteryawardvideo:
+    #   action: remove
     Mystery5Million:
-      priority: 184
+      priority: 191
       expire: 3s
   e_slide_minus1million: 
-    mysteryawardvideo:
-      action: remove
+    # mysteryawardvideo:
+    #   action: remove
     MysteryMinus1Million:
-      priority: 184
+      priority: 191
       expire: 3s
   e_slide_extraballlit: 
-    mysteryawardvideo:
-      action: remove
+    # mysteryawardvideo:
+    #   action: remove
     MysteryExtraBallLit:
-      priority: 184
-      expire: 3s
+      priority: 191
+      expire: 5s
   e_slide_outlane: 
-    mysteryawardvideo:
-      action: remove
+    # mysteryawardvideo:
+    #   action: remove
     MysteryEscapeOutlane:
-      priority: 184
+      priority: 191
       expire: 3s
   e_slide_workshop: 
-    mysteryawardvideo:
-      action: remove
+    # mysteryawardvideo:
+    #   action: remove
     MysteryItemWorkshop:
-      priority: 184
+      priority: 191
       expire: 3s
   e_slide_bonus: 
-    mysteryawardvideo:
-      action: remove
+    # mysteryawardvideo:
+    #   action: remove
     MysteryBonusMultiplier:
-      priority: 184
+      priority: 191
       expire: 3s
   e_slide_playfield: 
-    mysteryawardvideo:
-      action: remove
+    # mysteryawardvideo:
+    #   action: remove
     MysteryPlayfieldMultiplier:
-      priority: 184
+      priority: 191
+      expire: 3s
+  e_slide_letter:
+    # mysteryawardvideo:
+    #   action: remove
+    MysteryAddALetter:
+      priority: 191
+      expire: 3s
+  e_slide_mb_lock:
+    MysteryAdvanceVirtualLock:
+      priority: 191
       expire: 3s
 
 widgets:
