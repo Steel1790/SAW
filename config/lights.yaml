@@ -39,7 +39,7 @@ lights:
     tags: insert, led256p5, billy
   l_top_drop_triangle:
     number: led256-5-7
-    tags: insert, led256p5, billy
+    tags: insert, led256p5, billy, extraball
 
 # jigsaw's workshop circle of 8 round inserts
   l_jw_key:

@@ -329,8 +329,20 @@ widget_player:
      action: add
  shot_zeptest_button_sp_zeptest_lit_hit:
   w_syringe_button:
-    slide: sl_mode_zeptest01, sl_mode_zeptest02, sl_mode_zeptest03, sl_mode_zeptest04
+    slide: sl_mode_zeptest01
     action: add
+ slide_sl_mode_zeptest02_active{current_player.syringes_used==1}:
+   w_syringe_button:
+     slide: sl_mode_zeptest02
+     action: add
+ slide_sl_mode_zeptest03_active{current_player.syringes_used==1}:
+   w_syringe_button:
+     slide: sl_mode_zeptest03
+     action: add 
+ slide_sl_mode_zeptest04_active{current_player.syringes_used==1}:
+   w_syringe_button:
+     slide: sl_mode_zeptest04
+     action: add 
 
 slide_player:
   mode_zeptest_started: 

@@ -1,0 +1,5 @@
+#config_version=6
+mode:
+  start_events: logicblock_cnt_negative_shot_counter_updated{value==3}
+  stop_events: ball_ended, mode_hacksaw_multiball_started, mode_shackle_multiball_started, mode_jigsaw_multiball_started
+  priority: 182

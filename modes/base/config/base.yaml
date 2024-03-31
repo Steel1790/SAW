@@ -38,7 +38,7 @@ event_player:
   single_player_ball_started: mode_qualified_sidestep|0.6s
   ball_will_end{current_player.ball==3}: e_topper_trigger|3s
 
-  #ball_started{is_extra_ball==True}: e_shoot_again
+  # ball_starting{is_extra_ball==True}: e_shoot_again
 
 # saw collect light progress
   logicblock_cnt_saw_qualify_updated{value==1}: saw_pops_s|0.3s
@@ -169,13 +169,10 @@ slide_player:
     saw_collect:
       priority: 400
       expire: 3s   
-
-  e_shoot_again:
-    ShootAgain:
-      priority: 400
-      expire: 5s
-      
-
+  # e_shoot_again:
+  #   ShootAgain:
+  #     priority: 400
+  #     expire: 5s    
   s_left_standup_active: 
     cameraflashvideo:
       priority: 400
@@ -319,23 +316,23 @@ variable_player:
       action: set
 
   sw_slingshot:
-    score: 333
+    score: 333 * (current_player.pf_multiplier)
   sw_inlane:
-    score: 25000
+    score: 25000 * (current_player.pf_multiplier)
   sw_outlane:
-    score: 100000
+    score: 100000 * (current_player.pf_multiplier)
   sw_standup:
-    score: 75000
+    score: 75000 * (current_player.pf_multiplier)
   sw_ramp:
-    score: 125000
+    score: 125000 * (current_player.pf_multiplier)
   spinner_spinner_hit:
-    score: 30000
+    score: 30000 * (current_player.pf_multiplier)
   sw_drop_target:
-    score: 95000
+    score: 95000 * (current_player.pf_multiplier)
   sw_loop:
-    score: 115000
+    score: 115000 * (current_player.pf_multiplier)
   sw_110:
-    score: 110
+    score: 110 * (current_player.pf_multiplier)
 # combo hits
   logicblock_cnt_leftloop_leftramp_combo_counter_hit:
     score: 2000000
@@ -397,7 +394,10 @@ variable_player:
       action: set   
     bonus_x:
       int: 1
-      action: set      
+      action: set  
+    pf_multiplier:
+      int: 1
+      action: set        
     bonus_bathtubs:
       int: 0
       action: set
@@ -779,6 +779,10 @@ shows:
     - duration: -1
       lights:
         (leds): 8A0303
+  sh_extraball_on:
+    - duration: -1
+      lights:
+        (leds): drillchair
 
   slingshots_flash:
     - duration: 0.3s
@@ -3871,12 +3875,6 @@ slides:
       video: mysteryaward
       width: 1366
       height: 768
-  extraballvideo:
-    widgets:
-    - type: video
-      video: extraball
-      width: 1366
-      height: 768
   #cameraflash:
   #  - type: video
   #    video: cameraflashpool
@@ -3909,12 +3907,12 @@ slides:
       video: CameraFlash4
       width: 1366
       height: 768
-  ShootAgain:
-    widgets:
-    - type: video
-      video: ShootAgain
-      width: 1366
-      height: 768
+  # ShootAgain:
+  #   widgets:
+  #   - type: video
+  #     video: ShootAgain
+  #     width: 1366
+  #     height: 768
   #gameovervideo:
   #  widgets:
   #  - type: video
@@ -3995,6 +3993,17 @@ shots:
     show_tokens:
       leds: l_right_escape
 
+  shot_extraball:
+    switches: s_upper_bank_drop_target_opto
+    profile: sp_extraball
+    show_tokens:
+      leds: l_top_drop_triangle
+    control_events:
+      - events: e_mystery_extraballlit
+        state: 1
+      - events: shot_extraball_sp_extraball_lit_hit
+        state: 0
+
   shot_multiplier1:
     advance_events: logicblock_multiplier_progress_counter_hit{count==1}
     reset_events: multiplier_progress_counter_complete
@@ -4042,6 +4051,14 @@ shot_profiles:
       - name: ball_save_collected
         show: "off"   
 
+  sp_extraball:
+    advance_on_hit: false
+    states:
+      - name: extraball_not_ready
+        show: "off"
+      - name: lit
+        show: "sh_extraball_on"
+
   sp_multiplier:
     advance_on_hit: false
     states:
@@ -4057,3 +4074,8 @@ shot_groups:
     rotate_left_events: s_left_flipper_button_active
     rotate_right_events: s_right_flipper_button_active
     reset_events: sg_outlane_ballsave_lit_hit
+
+
+extra_balls:
+  mystery_extraball_award:
+    award_events: shot_extraball_sp_extraball_lit_hit

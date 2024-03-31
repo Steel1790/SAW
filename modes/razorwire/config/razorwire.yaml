@@ -531,11 +531,11 @@ widget_player:
     action: add
  shot_razorwire_button_sp_razorwire_lit_hit:
   w_hacksaw_button:
-    slide: razorwire_pops
+    slide: mode_razorwire01
     action: add
  timer_razorwire_2x_timer_stopped:
   w_hacksaw_button:
-    slide: razorwire_pops
+    slide: mode_razorwire01
     action: remove
  #logicblock_razorwire_hit{step==2}: 
  # rw_shot_update2:

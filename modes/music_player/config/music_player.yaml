@@ -333,7 +333,7 @@ sound_player:
     PuzzlePieceHurryUp:
       action: stop
 
-  mode_base_started{current_player.ball == 1 and player==1}:
+  mode_base_started{current_player.ball == 1 and player==1 and is_extra_ball==False}:
     1playerGame:
       action: play
   mode_base_started:

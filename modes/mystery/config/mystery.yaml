@@ -8,9 +8,20 @@ mode:
 event_player:
   sh_mystery_hit: e_enable_mystery
   slide_Mystery5Million_removed: e_release_mystery
-  slide_MysteryMinus5Million_removed: e_release_mystery
-  slide_MysteryExtraBall_removed: e_release_mystery
+  slide_MysteryMinus1Million_removed: e_release_mystery
+  slide_MysteryExtraBallLit_removed: e_release_mystery
   slide_MysteryEscapeOutlane_removed: e_release_mystery
+  slide_MysteryItemWorkshop_removed: e_release_mystery
+  slide_MysteryBonusMultiplier_removed: e_release_mystery
+  slide_MysteryPlayfieldMultiplier_removed: e_release_mystery
+
+  e_mystery_5million: e_slide_5million|8s
+  e_mystery_minus1million: e_slide_minus1million|8s
+  e_mystery_extraballlit: e_slide_extraballlit|8s
+  e_mystery_outlane: e_slide_outlane|8s
+  e_mystery_workshop: e_slide_workshop|8s
+  e_mystery_bonus: e_slide_bonus|8s
+  e_mystery_playfield: e_slide_playfield|8s
 
 #ball_holds:
 #  mystery_scoop:
@@ -47,33 +58,60 @@ show_player:
       show_tokens:
         leds: l_mystery_scoop
       loops: -1
-  e_enable_mystery:
-    mystery_flash:
-       loops: 0
-       show_tokens:
-        led: insert, gi, jet_bumper, flasher, l_mystery_scoop
-        color1: white
+
+# light show temporarily disabled as it was throwing c_mystery_scoop over 1.0 hold power almost every mystery award since neg. led value fix.
+  # e_enable_mystery:
+  #   mystery_flash:
+  #      loops: 0
+  #      show_tokens:
+  #       led: insert, gi, jet_bumper, flasher, l_mystery_scoop
+  #       color1: white
 
 random_event_player:
   sh_mystery_hit:
     events:
-      e_mystery_5million: 75 #numbers show probability of event
-      e_mystery_minus5million: 5
-      e_mystery_extraball: 5
-      e_mystery_outlane: 15
+      e_mystery_5million: 20 #numbers show probability of event
+      e_mystery_minus1million: 5
+      e_mystery_extraballlit: 6
+      e_mystery_outlane: 25
+      e_mystery_workshop: 30
+      e_mystery_bonus: 7
+      e_mystery_playfield: 7
 #      mystery_award_3_event: 20
 #      mystery_award_4_event: 30
+    force_all: true
+  e_mystery_workshop:
+    events:
+      minimode_pops_complete: 12.5
+      minimode_standups_complete: 12.5 
+      minimode_scoops_complete: 12.5
+      minimode_inlanes_complete: 12.5
+      minimode_spinners_complete: 12.5   
+      minimode_ramps_complete: 12.5   
+      minimode_loops_complete: 12.5
+      minimode_drops_complete: 12.5
     force_all: true
 
 variable_player:
   e_mystery_5million:
     score: 5000000
-  e_mystery_minus5million:
-    score: -5000000
+  e_mystery_minus1million:
+    score: -1000000
+  e_mystery_bonus:
+    bonus_multiplier:
+      int: 1
+      action: add 
+    bonus_x:
+      int: 1
+      action: add
+  e_mystery_playfield:
+    pf_multiplier:
+      int: 1
+      action: add    
 
-extra_balls:
-  mystery_extraball_award:
-    award_events: e_mystery_extraball
+# extra_balls:
+#   mystery_extraball_award:
+#     award_events: e_mystery_extraball
 
 slides:
   Mystery5Million:
@@ -82,22 +120,40 @@ slides:
       video: Mystery5Million    
       width: 1366
       height: 768
-  MysteryMinus5Million:
+  MysteryMinus1Million:
     widgets:
     - type: video
-      video: MysteryMinus5Million    
+      video: MysteryMinus1Million    
       width: 1366
       height: 768
-  MysteryExtraBall:
+  MysteryExtraBallLit:
     widgets:
     - type: video
-      video: extraball  
+      video: MysteryExtraBallLit
       width: 1366
       height: 768
   MysteryEscapeOutlane:
     widgets:
     - type: video
       video: MysteryEscapeOutlane 
+      width: 1366
+      height: 768
+  MysteryItemWorkshop:
+    widgets:
+    - type: video
+      video: MysteryItemWorkshop
+      width: 1366
+      height: 768
+  MysteryBonusMultiplier:
+    widgets:
+    - type: video
+      video: MysteryBonusMultiplier
+      width: 1366
+      height: 768
+  MysteryPlayfieldMultiplier:
+    widgets:
+    - type: video
+      video: MysteryPlayfieldMultiplier
       width: 1366
       height: 768
 
@@ -107,23 +163,48 @@ slide_player:
       action: play
       priority: 185
       expire: 8s
-  e_mystery_5million: 
+  e_slide_5million: 
+    mysteryawardvideo:
+      action: remove
     Mystery5Million:
       priority: 184
-      expire: 11s
-  e_mystery_minus5million: 
-    MysteryMinus5Million:
+      expire: 3s
+  e_slide_minus1million: 
+    mysteryawardvideo:
+      action: remove
+    MysteryMinus1Million:
       priority: 184
-      expire: 11s
-  e_mystery_extraball: 
-    MysteryExtraBall:
+      expire: 3s
+  e_slide_extraballlit: 
+    mysteryawardvideo:
+      action: remove
+    MysteryExtraBallLit:
       priority: 184
-      expire: 11s
-  e_mystery_outlane: 
+      expire: 3s
+  e_slide_outlane: 
+    mysteryawardvideo:
+      action: remove
     MysteryEscapeOutlane:
       priority: 184
-      expire: 11s
-
+      expire: 3s
+  e_slide_workshop: 
+    mysteryawardvideo:
+      action: remove
+    MysteryItemWorkshop:
+      priority: 184
+      expire: 3s
+  e_slide_bonus: 
+    mysteryawardvideo:
+      action: remove
+    MysteryBonusMultiplier:
+      priority: 184
+      expire: 3s
+  e_slide_playfield: 
+    mysteryawardvideo:
+      action: remove
+    MysteryPlayfieldMultiplier:
+      priority: 184
+      expire: 3s
 
 widgets:
   mystery_ready:

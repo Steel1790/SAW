@@ -111,7 +111,7 @@ shots:
     switch: s_upper_bank_drop_target_opto
       
 show_player: 
-  mode_skillshot_started{current_player.ball == 1 and player==1}:
+  mode_skillshot_started{current_player.ball == 1 and player==1 and is_extra_ball==False}:
     ss_show: 
       priority: 900
       loops: 0  

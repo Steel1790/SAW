@@ -372,9 +372,33 @@ widget_player:
   w_candle_button:
     slide: sl_mode_flammablejelly01
     action: add
+ slide_sl_mode_flammablejelly02_active{current_player.candles_used==1}:
+   w_candle_button:
+     slide: sl_mode_flammablejelly02
+     action: add
+ slide_sl_mode_flammablejelly03_active{current_player.candles_used==1}:
+   w_candle_button:
+     slide: sl_mode_flammablejelly03
+     action: add
+ slide_sl_mode_flammablejelly04_active{current_player.candles_used==1}:
+   w_candle_button:
+     slide: sl_mode_flammablejelly04
+     action: add
  timer_flammablejelly_3x_timer_stopped:
   w_candle_button:
     slide: sl_mode_flammablejelly01
+    action: remove
+ e_jelly_3x_slide02_off:
+  w_candle_button:
+    slide: sl_mode_flammablejelly02
+    action: remove
+ e_jelly_3x_slide03_off:
+  w_candle_button:
+    slide: sl_mode_flammablejelly03
+    action: remove
+ e_jelly_3x_slide04_off:
+  w_candle_button:
+    slide: sl_mode_flammablejelly04
     action: remove
 
 slide_player:
@@ -636,3 +660,7 @@ sound_player:
 event_player: 
   slide_sl_mode_flammablejelly01_active: e_primary_mode_active
   shot_flammablejelly_button_sp_flammablejelly_lit_hit: e_stop_candle|20s, e_start_candle_multiplier|10s
+  timer_flammablejelly_3x_timer_stopped:
+    - e_jelly_3x_slide02_off|0.3s
+    - e_jelly_3x_slide03_off|0.6s
+    - e_jelly_3x_slide04_off|0.9s

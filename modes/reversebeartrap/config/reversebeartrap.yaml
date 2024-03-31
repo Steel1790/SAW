@@ -35,9 +35,9 @@ timers:
     control_events:
       - action: start
         event: mode_reversebeartrap_started
-      - action: add
-        value: 30
-        event: shot_reversebeartrap_button_sp_reversebeartrap_lit_hit
+      # - action: add
+      #   value: 30
+      #   event: shot_reversebeartrap_button_sp_reversebeartrap_lit_hit
 
 #counters:
 #  razorwire_spinner_counter:
@@ -208,17 +208,17 @@ widgets:
       image: KeyButtonImg
       x: 95%
       y: 20%
-      z: 1        
-    - type: Text
-      text: +30 Seconds
-      font_size: 30
-      font_name: Mustkill
-      outline_color: black
-      outline_width: 7
-      color: FFBF00
-      x: 88%
-      y: 8%   
-      z: 1
+      z: 2      
+    # - type: Text
+    #   text: +30 Seconds
+    #   font_size: 30
+    #   font_name: Mustkill
+    #   outline_color: black
+    #   outline_width: 7
+    #   color: FFBF00
+    #   x: 88%
+    #   y: 8%   
+    #   z: 1
     - type: Text
       text: 1.5X
       font_size: 45
@@ -228,7 +228,7 @@ widgets:
       color: FFBF00
       x: 88%
       y: 3%      
-      z: 1
+      z: 2
    w_reversebeartrapUI:
     - type: image
       image: hacksawUI
@@ -318,7 +318,18 @@ widget_player:
      action: add
  shot_reversebeartrap_button_sp_reversebeartrap_lit_hit:
    w_key_button:
-     slide: reversebeartrapUI
+     action: add
+ slide_mode_rbt02_active{current_player.keys_used==1}:
+   w_key_button:
+     slide: mode_rbt02
+     action: add
+ slide_mode_rbt03_active{current_player.keys_used==1}:
+   w_key_button:
+     slide: mode_rbt03
+     action: add
+ slide_mode_rbt04_active{current_player.keys_used==1}:
+   w_key_button:
+     slide: mode_rbt04
      action: add
    
 

@@ -585,7 +585,7 @@ widgets:
       color: shotgun
       x: 89%
       y: 4%   
-      z: 1
+      z: 2
  
 widget_player:
  player_quadshotgun_quadshotgun_60s_timer_tick{value==59}:  
@@ -604,7 +604,7 @@ widget_player:
     action: add
  shot_quadshotgun_button_sp_quadshotgun_lit_hit:
   w_gears_button:
-    slide: quadshotgun_spinner
+    slide: sl_mode_quadshotgun02
     action: add
 # logicblock_quadshotgun_hit{step==2}: 
 #  quadshotgun_shot_update2:

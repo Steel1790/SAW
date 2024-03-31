@@ -632,7 +632,7 @@ widget_player:
  #    action: add
  shot_drillchair_button_sp_drillchair_lit_hit:
   w_handgun_button:
-    slide: drillchair_pops
+    slide: mode_drillchair01
     action: add
 
 sound_pools:

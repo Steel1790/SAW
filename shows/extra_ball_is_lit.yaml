@@ -1,0 +1,6 @@
+#show_version=6
+- time: 0
+
+- time: '+1'
+  lights:
+    extraball: (color1) -f200ms
