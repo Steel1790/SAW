@@ -15,6 +15,17 @@ mode:
 #    persist_state: true
 #    disable_events: mode_drillchair_complete
 #    events_when_complete: mode_drillchair_complete, stop_mode_drillchair
+ball_saves:
+  bs_drillchair:
+    active_time: 5s
+    hurry_up_time: 2s
+#    grace_period: 2s
+#    enable_events: mode_base_started
+#    disable_events2: ball_save_default_disabled
+    timer_start_events: player_drillchair_drillchair_60s_timer_tick{value==60}
+    early_ball_save_events: sw_outlane, s_trough6_active
+    auto_launch: true
+    balls_to_save: 1
 
 accruals:
   drillchair:
@@ -377,6 +388,11 @@ slide_player:
     mode_drillchair01:
       priority: 400
       expire: 66.5s
+  ball_save_bs_drillchair_saving_ball:
+    ballsavevideo:
+      action: play
+      priority: 400
+      expire: 5s
   # logicblock_drillchair_updated{value>0}:
   #   drillchair_phase2:
   #     priority: 405
@@ -696,7 +712,17 @@ shows:
   #  - duration: 0.3s
   #    lights:
   #      (leds): off
-
+  sh_drillchair_ballsave:
+    - duration: 0.5s
+      lights:
+        (leds): drillchair
+    - duration: 0.5s
+      lights:
+        (leds): off
+  sh_drillchair_ballsave_end:
+    - duration: -1
+      lights:
+        (leds): off  
 
   drillchair_pops_progress:    
     - duration: -1      
@@ -763,6 +789,16 @@ show_player:
       show_tokens:
         leds: standup
 
+  player_drillchair_drillchair_60s_timer_tick{value==60}:
+    sh_drillchair_ballsave:
+      show_tokens:
+        leds: l_live_again
+      loops: 4
+  ball_save_bs_drillchair_disabled:
+    sh_drillchair_ballsave_end:
+      show_tokens:
+        leds: l_live_again
+      loops: -1
 # pops progress
   #logicblock_drillchair_pops_counter_hit{count==1}:
   #    drillchair_pops_progress:

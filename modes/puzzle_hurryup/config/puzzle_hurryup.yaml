@@ -177,3 +177,6 @@ sound_player:
      action: play
    BaseMusic:
      action: stop    
+ mode_puzzle_hurryup_stopping:
+   PuzzlePieceHurryUp:
+     action: stop

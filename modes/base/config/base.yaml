@@ -310,9 +310,9 @@ variable_player:
   logicblock_cnt_saw_qualify_complete:
     score: 100000
   sw_pops:
-    score: 50000
+    score: 50000 * (current_player.pf_multiplier)
     pops:
-      int: 50000
+      int: 50000 * (current_player.pf_multiplier)
       action: set
 
   sw_slingshot:

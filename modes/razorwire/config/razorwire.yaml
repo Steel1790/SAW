@@ -4,6 +4,18 @@ mode:
   stop_events: stop_mode_razorwire, ball_ended, ball_will_end, player_razorwire_60s_timer_tick{value < 1}
   priority: 181
  
+ball_saves:
+  bs_razorwire:
+    active_time: 5s
+    hurry_up_time: 2s
+#    grace_period: 2s
+#    enable_events: mode_base_started
+#    disable_events2: ball_save_default_disabled
+    timer_start_events: player_razorwire_60s_timer_tick{value==60}
+    early_ball_save_events: sw_outlane, s_trough6_active
+    auto_launch: true
+    balls_to_save: 1
+
 sequences:
   razorwire_phase2:
     events:
@@ -305,6 +317,11 @@ slide_player:
     razorwire_phase2:
       priority: 405
       expire: 60.5s  
+  ball_save_bs_razorwire_saving_ball:
+    ballsavevideo:
+      action: play
+      priority: 400
+      expire: 5s
 
 widgets:
    w_razorwireUI:
@@ -546,6 +563,17 @@ widget_player:
  #   action: add
 
 shows:
+  sh_razorwire_ballsave:
+    - duration: 0.5s
+      lights:
+        (leds): drillchair
+    - duration: 0.5s
+      lights:
+        (leds): off
+  sh_razorwire_ballsave_end:
+    - duration: -1
+      lights:
+        (leds): off  
   razorwire_pops_progress:    
     - duration: -1      
       lights:    
@@ -567,6 +595,16 @@ shows:
 #EK added 
 
 show_player:
+  player_razorwire_60s_timer_tick{value==60}:
+    sh_razorwire_ballsave:
+      show_tokens:
+        leds: l_live_again
+      loops: 4
+  ball_save_bs_razorwire_disabled:
+    sh_razorwire_ballsave_end:
+      show_tokens:
+        leds: l_live_again
+      loops: -1
   mode_razorwire_started:     
     gi_on:
       show_tokens:

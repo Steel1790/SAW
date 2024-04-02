@@ -4,6 +4,18 @@ mode:
   stop_events: stop_mode_quadshotgun, mode_quadshotgun_complete, ball_ended, ball_will_end, player_quadshotgun_quadshotgun_60s_timer_tick{value < 1}
   priority: 181
  
+ball_saves:
+  bs_quadshotgun:
+    active_time: 5s
+    hurry_up_time: 2s
+#    grace_period: 2s
+#    enable_events: mode_base_started
+#    disable_events2: ball_save_default_disabled
+    timer_start_events: player_quadshotgun_quadshotgun_60s_timer_tick{value==60}
+    early_ball_save_events: sw_outlane, s_trough6_active
+    auto_launch: true
+    balls_to_save: 1
+
 accruals:
   acc_quadshotgun_phase1:
     events:
@@ -393,6 +405,11 @@ slide_player:
     sl_mode_quadshotgun02:
       priority: 405
       expire: 64.5s
+  ball_save_bs_quadshotgun_saving_ball:
+    ballsavevideo:
+      action: play
+      priority: 400
+      expire: 5s
   # logicblock_quadshotgun_phase2_updated{enabled==True}:
   #   quadshotgun_phase2:
   #     priority: 405
@@ -613,6 +630,17 @@ widget_player:
 
 #EK added 
 shows:
+  sh_quadshotgun_ballsave:
+    - duration: 0.5s
+      lights:
+        (leds): drillchair
+    - duration: 0.5s
+      lights:
+        (leds): off
+  sh_quadshotgun_ballsave_end:
+    - duration: -1
+      lights:
+        (leds): off  
   quadshotgun_progress:    
     - duration: 1s
       lights:
@@ -640,6 +668,16 @@ shows:
         (leds): off
 
 show_player:
+  player_quadshotgun_quadshotgun_60s_timer_tick{value==60}:
+    sh_quadshotgun_ballsave:
+      show_tokens:
+        leds: l_live_again
+      loops: 4
+  ball_save_bs_quadshotgun_disabled:
+    sh_quadshotgun_ballsave_end:
+      show_tokens:
+        leds: l_live_again
+      loops: -1
   mode_quadshotgun_started:     
     gi_on:
       show_tokens:

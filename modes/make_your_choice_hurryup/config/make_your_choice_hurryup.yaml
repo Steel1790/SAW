@@ -287,3 +287,6 @@ sound_player:
       action: play
     BaseMusic:
       action: stop    
+  mode_make_your_choice_hurryup_stopping:
+    LiveOrDieHurryup:
+      action: stop

@@ -1,5 +1,157 @@
 #config_version=6
 mode:
   start_events: logicblock_cnt_negative_shot_counter_updated{value==3}
-  stop_events: ball_ended, mode_hacksaw_multiball_started, mode_shackle_multiball_started, mode_jigsaw_multiball_started
-  priority: 182
+  stop_events: ball_ended, ball_ending, ball_will_end, mode_hacksaw_multiball_started, mode_shackle_multiball_started, mode_jigsaw_multiball_started, logicblock_cnt_hostage_complete
+  priority: 181
+
+# 90second frenzy mode. All shots are +50k base. Right Ramp disables each disc. Upon the 3rd right ramp shot. Mode Complete. +1x Playfield Multiplier.
+counters:
+  cnt_hostage:
+    starting_count: 0
+    count_complete_value: 3
+    start_enabled: true
+    # persist_state: true
+    # reset_events:
+    #   slide_trapcomplete_removed, mode_razorwire_stopped, mode_drillchair_stopped, mode_quadshotgun_stopped, mode_reversebeartrap_stopped, mode_zeptest_stopped, mode_flammablejelly_stopped
+    disable_on_complete: false
+    count_events: ssh_right_ramp_hit
+
+variable_player:
+  sw_pops:
+    score: 50000 * (current_player.pf_multiplier)
+  sw_slingshot:
+    score: 50000 * (current_player.pf_multiplier)
+  sw_inlane:
+    score: 50000 * (current_player.pf_multiplier)
+  sw_outlane:
+    score: 50000 * (current_player.pf_multiplier)
+  sw_standup:
+    score: 50000 * (current_player.pf_multiplier)
+  sw_ramp:
+    score: 50000 * (current_player.pf_multiplier)
+  spinner_spinner_hit:
+    score: 50000 * (current_player.pf_multiplier)
+  sw_drop_target:
+    score: 50000 * (current_player.pf_multiplier)
+  sw_loop:
+    score: 50000 * (current_player.pf_multiplier)
+  sw_110:
+    score: 50000 * (current_player.pf_multiplier)
+
+show_player:
+  mode_hostage_started:
+    gi_on:
+      show_tokens:
+        color1: beartrap     
+    starpost_on:
+      show_tokens:
+        color1: 6E6E6E   
+      priority: 169
+    flipper_on:
+      show_tokens:
+        color1: beartrap
+    speaker_heartbeat:
+      show_tokens:
+        color1: beartrap
+    trough_on:
+      show_tokens:
+        color1: beartrap
+    cabinet_heartbeat:
+      show_tokens:
+        color1: beartrap
+    topper_heartbeat:
+      show_tokens:
+        color1: beartrap
+
+    disc_right_chase:
+      loops: -1
+      speed: 10
+      show_tokens:
+        color1: beartrap
+    disc_middle_chase:
+      loops: -1
+      speed: 10
+      show_tokens:
+        color1: beartrap
+    disc_left_chase:
+      loops: -1
+      speed: 10
+      show_tokens:
+        color1: beartrap
+  logicblock_cnt_hostage_updated{value==1}:
+    disc_middle_chase: stop
+    negative_W:
+      loops: 1
+      speed: 30
+    disc_right_chase:
+      loops: -1
+      speed: 10
+      show_tokens:
+        color1: beartrap
+    disc_left_chase:
+      loops: -1
+      speed: 10
+      show_tokens:
+        color1: beartrap
+  logicblock_cnt_hostage_updated{value==2}:
+    disc_middle_chase: stop
+    negative_A:
+      loops: 1
+      speed: 30
+    disc_right_chase: stop
+    disc_left_chase:
+      loops: -1
+      speed: 10
+      show_tokens:
+        color1: beartrap
+  mode_hostage_complete:
+      disc_left_chase: stop
+      disc_middle_chase: stop
+      disc_right_chase: stop
+  ball_ending:
+      disc_left_chase: stop
+      disc_middle_chase: stop
+      disc_right_chase: stop
+
+coil_player:
+  mode_hostage_started:
+    c_left_spin_disc:
+      action: enable
+      hold_power: 1.0
+    c_middle_spin_disc:
+      action: enable
+      hold_power: 1.0
+    c_right_spin_disc:
+      action: enable
+      hold_power: 1.0
+  logicblock_cnt_hostage_updated{value==1}:
+    c_right_spin_disc:
+      action: enable
+      hold_power: 1.0
+    c_middle_spin_disc:
+      action: off
+    c_left_spin_disc:
+      action: enable
+      hold_power: 1.0
+  logicblock_cnt_hostage_updated{value==2}:
+    c_right_spin_disc:
+      action: off
+    c_middle_spin_disc:
+      action: off
+    c_left_spin_disc:
+      action: enable
+      hold_power: 1.0
+  mode_hostage_complete:
+    c_right_spin_disc:
+      action: off
+    c_middle_spin_disc:
+      action: off
+    c_left_spin_disc:
+      action: off
+  ball_ending:
+    c_right_spin_disc:
+      action: off
+    c_middle_spin_disc:
+      action: off
+    c_left_spin_disc:
+      action: off

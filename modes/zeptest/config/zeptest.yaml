@@ -4,6 +4,18 @@ mode:
   stop_events: stop_mode_zeptest, ball_ended, ball_will_end, player_zeptest_60s_zeptest_timer_tick{value < 1}
   priority: 181
  
+ball_saves:
+  bs_zeptest:
+    active_time: 5s
+    hurry_up_time: 2s
+#    grace_period: 2s
+#    enable_events: mode_base_started
+#    disable_events2: ball_save_default_disabled
+    timer_start_events: player_zeptest_60s_zeptest_timer_tick{value==60}
+    early_ball_save_events: sw_outlane, s_trough6_active
+    auto_launch: true
+    balls_to_save: 1
+
 sequences:
   zeptest:
     events:
@@ -353,6 +365,11 @@ slide_player:
     sl_mode_zeptest01:
       priority: 400
       expire: 60.5s
+  ball_save_bs_zeptest_saving_ball:
+    ballsavevideo:
+      action: play
+      priority: 400
+      expire: 5s
 
   logicblock_zeptest_updated{value==3}: 
     sl_mode_zeptest01:
@@ -378,6 +395,17 @@ slide_player:
       priority: 406
       expire: 2.1s      
 shows:
+  sh_zeptest_ballsave:
+    - duration: 0.5s
+      lights:
+        (leds): drillchair
+    - duration: 0.5s
+      lights:
+        (leds): off
+  sh_zeptest_ballsave_end:
+    - duration: -1
+      lights:
+        (leds): off 
   zeptest_dropbank:    
     - duration: -1      
       lights:    
@@ -390,6 +418,16 @@ shows:
       lights:
         (leds): off
 show_player:
+  player_zeptest_60s_zeptest_timer_tick{value==60}:
+    sh_zeptest_ballsave:
+      show_tokens:
+        leds: l_live_again
+      loops: 4
+  ball_save_bs_zeptest_disabled:
+    sh_zeptest_ballsave_end:
+      show_tokens:
+        leds: l_live_again
+      loops: -1
   logicblock_zeptest_updated{value==0}:
       skillshot_chase:
         loops: -1

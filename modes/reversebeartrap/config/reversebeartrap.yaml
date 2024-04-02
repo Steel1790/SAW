@@ -4,6 +4,17 @@ mode:
   stop_events: stop_mode_reversebeartrap, ball_ended, ball_will_end, player_reversebeartrap_120s_reversebeartrap_timer_tick{value < 1}
   priority: 181
  
+ball_saves:
+  bs_reversebeartrap:
+    active_time: 5s
+    hurry_up_time: 2s
+#    grace_period: 2s
+#    enable_events: mode_base_started
+#    disable_events2: ball_save_default_disabled
+    timer_start_events: player_reversebeartrap_120s_reversebeartrap_timer_tick{value==120}
+    early_ball_save_events: sw_outlane, s_trough6_active
+    auto_launch: true
+    balls_to_save: 1
 #sequence_shots:
 #  ssh_leftloop_leftramp:
 #    switch_sequence: s_left_loop_bottom, s_left_loop_top, s_enter_left_ramp, s_left_ramp_score_bottom, s_left_ramp_score_top
@@ -378,6 +389,11 @@ slide_player:
       expire: 126.5s
     mode_rbt03:
      action: remove      
+  ball_save_bs_reversebeartrap_saving_ball:
+    ballsavevideo:
+      action: play
+      priority: 400
+      expire: 5s
   
 #  logicblock_reversebeartrap_hit:
 #    ShotUpdated:
@@ -445,6 +461,17 @@ sound_player:
 
 
 shows:
+  sh_reversebeartrap_ballsave:
+    - duration: 0.5s
+      lights:
+        (leds): drillchair
+    - duration: 0.5s
+      lights:
+        (leds): off
+  sh_reversebeartrap_ballsave_end:
+    - duration: -1
+      lights:
+        (leds): off  
   reversebeartrap_progress:    
     - duration: 1s
       lights:
@@ -469,6 +496,16 @@ shows:
 
 
 show_player:
+  player_reversebeartrap_120s_reversebeartrap_timer_tick{value==120}:
+    sh_reversebeartrap_ballsave:
+      show_tokens:
+        leds: l_live_again
+      loops: 4
+  ball_save_bs_reversebeartrap_disabled:
+    sh_reversebeartrap_ballsave_end:
+      show_tokens:
+        leds: l_live_again
+      loops: -1
   mode_reversebeartrap_started:     
     gi_on:
       show_tokens:

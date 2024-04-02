@@ -4,6 +4,18 @@ mode:
   stop_events: stop_mode_flammablejelly, ball_ended, ball_ending, ball_will_end, player_flammablejelly_60s_flammablejelly_timer_tick{value < 1}
   priority: 184
  
+ball_saves:
+  bs_flammablejelly:
+    active_time: 5s
+    hurry_up_time: 2s
+#    grace_period: 2s
+#    enable_events: mode_base_started
+#    disable_events2: ball_save_default_disabled
+    timer_start_events: player_flammablejelly_60s_flammablejelly_timer_tick{value==60}
+    early_ball_save_events: sw_outlane, s_trough6_active
+    auto_launch: true
+    balls_to_save: 1
+
 sequences:
   flammablejelly:
     events:
@@ -432,8 +444,24 @@ slide_player:
     sl_mode_flammablejelly04:
       priority: 400
       expire: 60.5s
+  ball_save_bs_flammablejelly_saving_ball:
+    ballsavevideo:
+      action: play
+      priority: 400
+      expire: 5s
       
 shows:
+  sh_flammablejelly_ballsave:
+    - duration: 0.5s
+      lights:
+        (leds): drillchair
+    - duration: 0.5s
+      lights:
+        (leds): off
+  sh_flammablejelly_ballsave_end:
+    - duration: -1
+      lights:
+        (leds): off  
   flammablejelly_progress_p1:    
     - duration: 1s
       lights:
@@ -457,6 +485,16 @@ shows:
         (leds): off
 
 show_player:
+  player_flammablejelly_60s_flammablejelly_timer_tick{value==60}:
+    sh_flammablejelly_ballsave:
+      show_tokens:
+        leds: l_live_again
+      loops: 4
+  ball_save_bs_flammablejelly_disabled:
+    sh_flammablejelly_ballsave_end:
+      show_tokens:
+        leds: l_live_again
+      loops: -1
 #mode progress lights
   logicblock_flammablejelly_updated{value==0}:
       flammablejelly_progress_p1:
