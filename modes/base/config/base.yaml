@@ -37,6 +37,7 @@ event_player:
   ball_started: mode_qualified_sidestep|0.8s
   single_player_ball_started: mode_qualified_sidestep|0.6s
   ball_will_end{current_player.ball==3}: e_topper_trigger|3s
+  mode_hostage_complete: e_mystery_workshop
 
   # ball_starting{is_extra_ball==True}: e_shoot_again
 
@@ -135,6 +136,18 @@ event_player:
   minimode_drops_complete: stop_items_widget|2.5s
   mode_puzzle_hurryup_complete: stop_items_widget|2.5s
 
+random_event_player:
+  e_mystery_workshop:
+    events:
+      minimode_pops_complete: 12.5
+      minimode_standups_complete: 12.5 
+      minimode_scoops_complete: 12.5
+      minimode_inlanes_complete: 12.5
+      minimode_spinners_complete: 12.5   
+      minimode_ramps_complete: 12.5   
+      minimode_loops_complete: 12.5
+      minimode_drops_complete: 12.5
+    force_all: true
 #videos:
 #    cameraflashvideo:
 #      width: 1366
@@ -300,6 +313,10 @@ slide_player:
     base_slide_main:
       action: play
 
+  mode_hostage_complete:
+    HostageItemWorkshop:
+      priority: 191
+      expire: 3s
   #ball_will_end{current_player.ball==3}:
   #  gameovervideo:
   #    action: play
@@ -3843,6 +3860,12 @@ slides:
       video: TrapFailed
       width: 1366
       height: 768    
+  HostageItemWorkshop:
+    widgets:
+    - type: video
+      video: MysteryItemWorkshop
+      width: 1366
+      height: 768
       
   skillshotvideo:
     widgets:

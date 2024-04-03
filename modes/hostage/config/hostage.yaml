@@ -1,9 +1,17 @@
 #config_version=6
 mode:
   start_events: logicblock_cnt_negative_shot_counter_updated{value==3}
-  stop_events: ball_ended, ball_ending, ball_will_end, mode_hacksaw_multiball_started, mode_shackle_multiball_started, mode_jigsaw_multiball_started, logicblock_cnt_hostage_complete
+  stop_events: ball_ended, ball_ending, ball_will_end, mode_hacksaw_multiball_started, mode_shackle_multiball_started, mode_jigsaw_multiball_started, mode_hostage_complete
   priority: 181
 
+timers:
+  hostage_90s_timer:
+    start_value: 90
+    end_value: 0
+    direction: down
+    control_events:
+      - action: start
+        event: mode_hostage_started
 # 90second frenzy mode. All shots are +50k base. Right Ramp disables each disc. Upon the 3rd right ramp shot. Mode Complete. +1x Playfield Multiplier.
 counters:
   cnt_hostage:
@@ -15,6 +23,43 @@ counters:
     #   slide_trapcomplete_removed, mode_razorwire_stopped, mode_drillchair_stopped, mode_quadshotgun_stopped, mode_reversebeartrap_stopped, mode_zeptest_stopped, mode_flammablejelly_stopped
     disable_on_complete: false
     count_events: ssh_right_ramp_hit
+    events_when_complete: mode_hostage_complete
+#disc 1 / right ramp 1
+  cnt_hostage_right_ramp_1:
+    starting_count: 0
+    count_complete_value: 1
+    start_enabled: true
+    # persist_state: true
+#    reset_on_complete: true
+    disable_on_complete: false
+    count_events: logicblock_cnt_hostage_updated{value==1}
+#disc 2 / right ramp 2
+  cnt_hostage_right_ramp_2:
+    starting_count: 0
+    count_complete_value: 1
+    start_enabled: true
+    # persist_state: true
+#    reset_on_complete: true
+    disable_on_complete: false
+    count_events: logicblock_cnt_hostage_updated{value==2}
+#disc3/ right ramp 3
+  cnt_hostage_right_ramp_3:
+    starting_count: 0
+    count_complete_value: 1
+    start_enabled: true
+    # persist_state: true
+#    reset_on_complete: true
+    disable_on_complete: false
+    count_events: logicblock_cnt_hostage_updated{value==3}
+
+shows:
+  sh_hostage_on:   
+    - duration: 0.2s
+      lights:
+        (leds): beartrap
+    - duration: 0.2s
+      lights:
+        (leds): off
 
 variable_player:
   sw_pops:
@@ -37,6 +82,18 @@ variable_player:
     score: 50000 * (current_player.pf_multiplier)
   sw_110:
     score: 50000 * (current_player.pf_multiplier)
+  counter_cnt_hostage_right_ramp_1_hit:
+    cnt_hostage_right_ramp_1:
+      action: set
+      int: (count)*250
+  counter_cnt_hostage_right_ramp_2_hit:
+    cnt_hostage_right_ramp_2:
+      action: set
+      int: (count)*250
+  counter_cnt_hostage_right_ramp_3_hit:
+    cnt_hostage_right_ramp_3:
+      action: set
+      int: (count)*250
 
 show_player:
   mode_hostage_started:
@@ -62,6 +119,9 @@ show_player:
     topper_heartbeat:
       show_tokens:
         color1: beartrap
+    sh_hostage_on:
+      show_tokens:
+        leds: insert
 
     disc_right_chase:
       loops: -1
@@ -155,3 +215,136 @@ coil_player:
       action: off
     c_left_spin_disc:
       action: off
+
+slides:
+  sl_mode_hostage01:
+    widgets:
+    - type: video
+      video: mode_hostage01 
+      width: 1366
+      height: 768
+
+slide_player:
+  mode_hostage_started: 
+    sl_mode_hostage01:
+      priority: 500
+      expire: 90s
+     
+widgets:
+   w_hostageUI:
+    - type: image
+      image: hacksawUI
+      opacity: 1.0
+      y: 1
+      x: 1
+      z: 2
+      anchor_x: left
+      anchor_y: bottom
+    - type: text
+      text: (score)
+      number_grouping: true
+      y: 16
+      x: 25
+      z: 2
+      font_size: 36
+      anchor_x: left
+      anchor_y: bottom
+      font_name: TrajanProRegular
+      color: beartrap
+      
+    - type: Text
+      text: 00:(player|hostage_hostage_90s_timer_tick)
+      font_size: 100
+      font_name: digitalclockfont
+      color: red
+      x: 50%
+      y: 83.2%
+      z: 2
+    - type: rectangle
+      width: 420
+      height: 130
+      x: 50%
+      y: 84.5%
+      z: 2
+      corner_radius: 20
+      corner_segments: 20
+      color: black      
+#disc 1 / right ramp 1
+    - type: rectangle
+      width: 0
+      height: 45
+      x: 15.7%
+      y: 29%
+      z: 3
+      anchor_x: left
+      corner_radius: 10
+      corner_segments: 10
+      color: beartrap
+      animations:
+        player_cnt_hostage_right_ramp_1:
+         - property: width
+           value: (value)           
+    - type: rectangle
+      width: 250
+      height: 46
+      x: 25%
+      y: 29%
+      z: 2
+      color: black
+      corner_radius: 10
+      corner_segments: 10
+#disc 2 / right ramp 2
+    - type: rectangle
+      width: 0
+      height: 45
+      x: 43.7%
+      y: 29%
+      z: 3
+      anchor_x: left
+      corner_radius: 10
+      corner_segments: 10
+      color: beartrap
+      animations:
+        player_cnt_hostage_right_ramp_2:
+         - property: width
+           value: (value)           
+    - type: rectangle
+      width: 250
+      height: 46
+      x: 53%
+      y: 29%
+      z: 2
+      color: black
+      corner_radius: 10
+      corner_segments: 10
+#disc 3 / right ramp 3
+    - type: rectangle
+      width: 0
+      height: 45
+      x: 70.7%
+      y: 29%
+      z: 3
+      anchor_x: left
+      corner_radius: 10
+      corner_segments: 10
+      color: beartrap
+      animations:
+        player_cnt_hostage_right_ramp_3:
+         - property: width
+           value: (value)         
+    - type: rectangle
+      width: 250
+      height: 46
+      x: 80%
+      y: 29%
+      z: 2
+      color: black
+      corner_radius: 10
+      corner_segments: 10           
+
+widget_player:
+ player_hostage_hostage_90s_timer_tick{value==89}:  
+  w_hostageUI: 
+    slide: sl_mode_hostage01
+    action: add
+   
