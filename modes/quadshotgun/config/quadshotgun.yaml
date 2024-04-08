@@ -160,11 +160,11 @@ variable_player:
   #quadshotgun_spinner_complete:
   #  score: 2500000 + (current_player.gears_used * 2500000)
   counter_quadshotgun_action_button_counter_hit:
-    score: 175000
+    score: 75000
   mode_quadshotgun_complete:
-    score: 6000000 
+    score: 6000000 + (current_player.gears_used * 1500000)
   counter_quadshotgun_spinner_counter_hit:
-    score: 220000
+    score: 100000
     quadshotgun_spinner_counter:
       action: set
       int: (count)*23
@@ -175,18 +175,22 @@ variable_player:
     quadshotgun_left_standup_counter:
       action: set
       int: (count)*250
+    score: 500000
   counter_quadshotgun_right_standup_counter_hit:
     quadshotgun_right_standup_counter:
       action: set
       int: (count)*250
+    score: 500000
   counter_quadshotgun_left_standup_right_ramp_counter_hit:
     quadshotgun_left_standup_right_ramp_counter:
       action: set
       int: (count)*250
+    score: 500000
   counter_quadshotgun_right_standup_right_ramp_counter_hit:
     quadshotgun_right_standup_right_ramp_counter:
       action: set
       int: (count)*250
+    score: 500000
        
   timer_your_timer_tick:
     quadshotgun_60s_timer:

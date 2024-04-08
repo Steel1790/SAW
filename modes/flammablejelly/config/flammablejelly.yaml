@@ -64,7 +64,7 @@ variable_player:
   #logicblock_flammablejelly_hit{step==4}:
   #  score: 1000000    
   mode_flammablejelly_complete:
-    score: 5000000 * current_player.candle_multiplier    
+    score: 5000000 + (current_player.candles_used * 3000000)   
   timer_your_timer_tick:
     60s_flammablejelly_timer:
       int: device.timers.your_timer.ticks_remaining

@@ -68,11 +68,13 @@ variable_player:
   logicblock_reversebeartrap_hit{step==2}:
     score: 1000000 + (current_player.keys_used * 500000) + (current_player.spinner_value * 42500)
   logicblock_reversebeartrap_hit{step==3}:
-    score: 1000000 + (current_player.keys_used * 1250000) + (current_player.spinner_value * 42500)
-  logicblock_reversebeartrap_hit{step==5}:
+    score: 1500000 + (current_player.keys_used * 750000) + (current_player.spinner_value * 42500)
+  logicblock_reversebeartrap_hit{step==4}:
     score: 1000000 + (current_player.keys_used * 500000) + (current_player.spinner_value * 42500)
+  logicblock_reversebeartrap_hit{step==5}:
+    score: 1500000 + (current_player.keys_used * 750000) + (current_player.spinner_value * 42500)
   mode_reversebeartrap_complete:
-    score: 2000000 + (current_player.keys_used * 1000000) + (current_player.spinner_value * 42500)
+    score: 6000000 + (current_player.keys_used * 1000000) + (current_player.spinner_value * 42500)
        
   timer_your_timer_tick:
     120s_reversebeartrap_timer:

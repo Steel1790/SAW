@@ -83,7 +83,7 @@ variable_player:
   #razorwire_pops_complete:
   #  score: 1000000 + (current_player.hacksaws_used * 1500000)
   mode_razorwire_complete:
-    score: 6500000 + (current_player.hacksaws_used * 2000000)
+    score: 6500000 + (current_player.hacksaws_used * 1500000)
   counter_razorwire_pops_counter_hit:
     razorwire_pops_counter:
       action: set
