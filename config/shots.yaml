@@ -18,16 +18,16 @@ sequence_shots:
     sequence_timeout: 6s
   ssh_rightramp_rightloop_combo:
     switch_sequence: s_right_ramp_score_bottom, s_right_ramp_score_top, s_right_loop_bottom, s_right_loop_top
-    sequence_timeout: 7s
+    sequence_timeout: 9s
   ssh_leftloop_innerloop_combo:
     switch_sequence: s_left_loop_bottom, s_left_loop_top, s_inner_loop
     sequence_timeout: 6s
   ssh_rightloop_rightramp_combo:
     switch_sequence: s_right_loop_bottom, s_right_loop_top, s_right_ramp_score_bottom, s_right_ramp_score_top
-    sequence_timeout: 6s
+    sequence_timeout: 9s
   ssh_leftloop_leftramp_leftramp_combo:
     switch_sequence: s_left_loop_bottom, s_left_loop_top, s_enter_left_ramp, s_left_ramp_score_bottom, s_left_ramp_score_top, s_enter_left_ramp, s_left_ramp_score_bottom, s_left_ramp_score_top
-    sequence_timeout: 10s
+    sequence_timeout: 12s
   ssh_leftloop_leftramp_innerloop_combo:
     switch_sequence: s_left_loop_bottom, s_left_loop_top, s_enter_left_ramp, s_left_ramp_score_bottom, s_left_ramp_score_top, s_inner_loop
-    sequence_timeout: 8s
+    sequence_timeout: 10s

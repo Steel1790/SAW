@@ -8,6 +8,6 @@
   lights:
     act_topper: on
 
-- time: '+1'
+- time: '+40'
   lights:
     act_topper: off

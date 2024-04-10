@@ -136,6 +136,15 @@ event_player:
   minimode_drops_complete: stop_items_widget|2.5s
   mode_puzzle_hurryup_complete: stop_items_widget|2.5s
 
+timers:
+  t_playfield_multiplier_timer:
+    start_value: 30
+    end_value: 0
+    direction: down
+    control_events:
+      - action: start
+        event: slide_MysteryPlayfieldMultiplier_removed
+
 random_event_player:
   e_mystery_workshop:
     events:
@@ -367,7 +376,7 @@ variable_player:
   saw_combo_collected:
     combo_progress:
       int: 1
-      action: set
+      action: add
 #minimode / jigsaw workshop
   minimode_pops_complete:
     #score: 3000000
@@ -472,6 +481,10 @@ variable_player:
     score_total:
       int: current_player.score
       action: set   
+  player_base_t_playfield_multiplier_timer_tick{value < 1}:
+    pf_multiplier:
+      int: 1
+      action: set
 
 sequences:
   make_your_choice_qualify:
@@ -1409,6 +1422,11 @@ show_player:
       disc_left_chase: stop
       disc_middle_chase: stop
       disc_right_chase: stop
+
+  mode_hostage_will_start:
+      disc_left_chase: stop
+      disc_middle_chase: stop
+      disc_right_chase: stop
   #shot_left_outlane_hit{state=="ball_save_not_ready"}:
   #    billy_laugh:
   #      loops: 4
@@ -1991,19 +2009,19 @@ widgets:
 #progress
   w_combo_progress:
     - type: Text
-      text: (player|combo_progress) / 6 Combos
+      text: (player|combo_progress) /6 Combos
       color: white
       font_size: 25
       font_name: Skilt Gothic W04 Thin
       outline_color: black
       outline_width: 5
-      x: 93%
-      y: 82%
+      x: 10%
+      y: 49%
       z: 6  
     - type: image
       image: SurveillanceCameraTrackingIcon
-      x: 85%
-      y: 81%
+      x: 2.6%
+      y: 49%
       z: 6
   w_keys_progress:
     - type: Text
@@ -2014,12 +2032,12 @@ widgets:
       outline_color: black
       outline_width: 5
       x: 90.4%
-      y: 74%
+      y: 82%
       z: 6  
     - type: image
       image: IconKey
       x: 85%
-      y: 74%
+      y: 82%
       z: 6
   w_handguns_progress:
     - type: Text
@@ -2030,12 +2048,12 @@ widgets:
       outline_color: black
       outline_width: 5
       x: 92.5%
-      y: 66%
+      y: 74%
       z: 6  
     - type: image
       image: IconHandgun
       x: 85%
-      y: 66%
+      y: 74%
       z: 6
   w_hacksaws_progress:
     - type: Text
@@ -2046,12 +2064,12 @@ widgets:
       outline_color: black
       outline_width: 5
       x: 92.3%
-      y: 58%
+      y: 66%
       z: 6  
     - type: image
       image: IconHacksaw
       x: 85%
-      y: 58%
+      y: 66%
       z: 6
   w_candles_progress:
     - type: Text
@@ -2062,12 +2080,12 @@ widgets:
       outline_color: black
       outline_width: 5
       x: 91.6%
-      y: 50%
+      y: 58%
       z: 6  
     - type: image
       image: IconCandle
       x: 85%
-      y: 50%
+      y: 58%
       z: 6
   w_taperecorders_progress:
     - type: Text
@@ -2078,12 +2096,12 @@ widgets:
       outline_color: black
       outline_width: 5
       x: 94%
-      y: 42%
+      y: 50%
       z: 6  
     - type: image
       image: IconTapeRecorder
       x: 85%
-      y: 42%
+      y: 50%
       z: 6
   w_bathtubs_progress:
     - type: Text
@@ -2094,12 +2112,12 @@ widgets:
       outline_color: black
       outline_width: 5
       x: 92%
-      y: 34%
+      y: 42%
       z: 6  
     - type: image
       image: IconBathtub
       x: 85%
-      y: 34%
+      y: 42%
       z: 6
   w_syringes_progress:
     - type: Text
@@ -2110,12 +2128,12 @@ widgets:
       outline_color: black
       outline_width: 5
       x: 92.2%
-      y: 26%
+      y: 34%
       z: 6  
     - type: image
       image: IconSyringe
       x: 85%
-      y: 26%
+      y: 34%
       z: 6
   w_gears_progress:
     - type: Text
@@ -2126,12 +2144,12 @@ widgets:
       outline_color: black
       outline_width: 5
       x: 91%
-      y: 18%
+      y: 26%
       z: 6  
     - type: image
       image: IconGears
       x: 85%
-      y: 18%
+      y: 26%
       z: 6
 # item collected
   w_keys_collected:
@@ -2293,7 +2311,7 @@ widgets:
       z: 6  
     - type: image
       image: IconPuzzlePiece
-      x: 3.5%
+      x: 3.3%
       y: 42%
       z: 6
 # mb progress
@@ -2636,6 +2654,33 @@ widgets:
       x: 9.9%
       y: 86%
       z: 3
+  w_playfield_multiplier:
+    - type: Text
+      text: 00:(player|base_t_playfield_multiplier_timer_tick)
+      font_size: 50
+      font_name: digitalclockfont
+      color: red
+      x: 63.5%
+      y: 83.2%
+      z: 7
+    - type: rectangle
+      width: 210
+      height: 65
+      x: 63.5%
+      y: 84.5%
+      z: 7
+      corner_radius: 20
+      corner_segments: 20
+      color: black        
+    - type: text
+      text: 2X Playfield
+      x: 63.5%
+      y: 78.5%
+      z: 7
+      font_size: 25
+      font_name: Mustkill     
+      outline_color: black
+      outline_width: 5
 
 #player 1
   1PlayerGame: 
@@ -3786,6 +3831,14 @@ widget_player:
     w_puzzle_collected:
       slide: base_slide_main
       action: remove
+  slide_MysteryPlayfieldMultiplier_removed:
+    w_playfield_multiplier:
+      slide: base_slide_main
+      action: add
+  player_base_t_playfield_multiplier_timer_tick{value < 1}:
+    w_playfield_multiplier:
+      slide: base_slide_main
+      action: remove
     
   # slide_HeHelpedMeVideo_created:
   #   w_HeHelpedMe_BallSave:
@@ -3833,8 +3886,12 @@ slides:
       x: 50%
     - type: image
       image: PipeRightBorderUI
-      y: 41.5%
+      y: 45.3%
       x: 93%
+    - type: image
+      image: PipeUpperLeftBorderUI
+      y: 59.2%
+      x: 12%
     - type: image
       image: PipeLeftBorderUI
       y: 41.5%

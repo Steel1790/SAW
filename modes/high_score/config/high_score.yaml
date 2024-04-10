@@ -5,7 +5,7 @@ mode:
   use_wait_queue: true
 high_score:
   _overwrite: true
-  enter_initials_timeout: 60s
+  enter_initials_timeout: 30s
   award_slide_display_time: 4s
   # define your high score categories and the awards
   categories:

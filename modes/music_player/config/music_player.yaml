@@ -325,13 +325,6 @@ sound_player:
   ball_will_end{current_player.ball==3}:
     GameOver:
       action: play
-#turn puzzle music off if drain during mode
-  e_puzzle_music_off1:
-    PuzzlePieceHurryUp:
-      action: stop
-  e_puzzle_music_off2:
-    PuzzlePieceHurryUp:
-      action: stop
 
   mode_base_started{current_player.ball == 1 and player==1 and is_extra_ball==False}:
     1playerGame:

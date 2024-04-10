@@ -492,7 +492,7 @@ show_player:
     topper_trigger_on:
       loops: 0
       speed: 8
-  mode_reversebeartrap_stopping:
+  mode_reversebeartrap_stopping{current_player.ball<3}:
     topper_trigger_on:
       loops: 0
       speed: 8
