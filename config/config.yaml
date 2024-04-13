@@ -481,6 +481,18 @@ slide_player:
     extraballvideo:
       priority: 400
       expire: 8s
+  player_modes_completed{value==2}: 
+     extraballvideo:
+      priority: 400
+      expire: 8s 
+  player_puzzle_pieces{value==3}: 
+    extraballvideo:
+      priority: 400
+      expire: 8s  
+  player_combo_progress{value==4}:
+    extraballvideo:
+      priority: 400
+      expire: 8s
   
 show_player:
 # end of ball 3

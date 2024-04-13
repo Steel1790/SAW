@@ -16,6 +16,14 @@ ball_saves:
     auto_launch: true
     balls_to_save: 1
 
+multiballs:
+  razorwire_add_a_ball:
+    ball_count: 1
+    ball_count_type: add
+#    shoot_again: 5s
+    start_events: razorwire_add_a_ball_complete
+#    stop_events: 
+
 sequences:
   razorwire_phase2:
     events:
@@ -65,6 +73,16 @@ counters:
 #    events_when_complete: mode_razorwire_complete, stop_mode_razorwire
     #events_when_complete: razorwire_pops_complete   
     count_events: upper_l_pop_hit, upper_r_pop_hit, upper_b_pop_hit
+  razorwire_add_a_ball_counter:
+    starting_count: 0
+    count_complete_value: 1
+    enable_events: mode_razorwire_started
+    disable_events: razorwire_add_a_ball_complete
+    start_enabled: false
+    persist_state: true
+    reset_on_complete: false
+    events_when_complete: razorwire_add_a_ball_complete
+    count_events: drop_target_dt_upper_drop1_down
 
 shots:
   upper_l_pop:
@@ -600,6 +618,11 @@ show_player:
       show_tokens:
         leds: l_live_again
       loops: 4
+    top_drop_chase:
+      loops: -1
+      speed: 14
+      show_tokens:
+        color1: razorwire
   ball_save_bs_razorwire_disabled:
     sh_razorwire_ballsave_end:
       show_tokens:
@@ -685,6 +708,9 @@ show_player:
         show_tokens:
           color1: ffffff
       top_drop_chase: stop
+
+  razorwire_add_a_ball_complete:
+    top_drop_chase: stop
 
   logicblock_razorwire_pops_counter_updated{value<12}:
     flash_token:
@@ -868,7 +894,9 @@ sound_player:
   player_razorwire_60s_timer_tick{value < 1}:
     RWModeStart:
       action: stop
-
+  razorwire_add_a_ball_complete:
+    AddABall:
+      action: play
   sw_bottom_pops:
     razorwire_mode_sound_pool:
       action: play

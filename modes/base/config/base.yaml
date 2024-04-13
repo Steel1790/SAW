@@ -4159,3 +4159,9 @@ shot_groups:
 extra_balls:
   mystery_extraball_award:
     award_events: shot_extraball_sp_extraball_lit_hit
+  modes_completed_extraball_award:
+    award_events: player_modes_completed{value==2} 
+  puzzle_pieces_extraball_award:
+    award_events: player_puzzle_pieces{value==3}
+  combo_progress_extraball_award:
+    award_events: player_combo_progress{value==4}
