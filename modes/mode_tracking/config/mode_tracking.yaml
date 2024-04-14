@@ -112,6 +112,30 @@ shots:
         state: 0
       - events: mode_zeptest_complete
         state: 0
+  shot_outlane_button:
+    advance_events: minimode_scoops_complete
+    switches: s_action_button
+    profile: sp_outlane_button
+    show_tokens:
+      leds: l_action_button
+    control_events:
+      - events: minimode_scoops_complete
+        state: 1
+      - events: shot_outlane_button_sp_outlane_button_lit_hit
+        state: 0
+  shot_add_a_ball_button:
+    advance_events: minimode_inlanes_complete
+    switches: s_action_button
+    profile: sp_add_a_ball_button
+    disable_events: mode_hacksaw_multiball_stopped, mode_jigsaw_multiball_stopped, mode_shackle_multiball_stopped, ball_ended, ball_will_end
+    enable_events: mode_hacksaw_multiball_started, mode_jigsaw_multiball_started, mode_shackle_multiball_started
+    show_tokens:
+      leds: l_action_button
+    control_events:
+      - events: minimode_inlanes_complete
+        state: 1
+      - events: shot_add_a_ball_button_sp_add_a_ball_button_lit_hit
+        state: 0
 
 shot_profiles:
   sp_drillchair:
@@ -162,6 +186,22 @@ shot_profiles:
       - name: lit
         show: "sh_zeptest_ready"    
         priority: 200
+  sp_outlane_button:
+    advance_on_hit: false
+    states:
+      - name: outlane_button_off
+        show: "off" 
+      - name: lit
+        show: "sh_outlane_button_ready"    
+        priority: 200
+  sp_add_a_ball_button:
+    advance_on_hit: false
+    states:
+      - name: add_a_ball_button_off
+        show: "off" 
+      - name: lit
+        show: "sh_add_a_ball_button_ready"    
+        priority: 200
 
 shows:
   sh_drillchair_ready:
@@ -203,6 +243,20 @@ shows:
     - duration: 0.3s
       lights:
         (leds): zeptest
+    - duration: 0.3s
+      lights:
+        (leds): off
+  sh_outlane_button_ready:
+    - duration: 0.3s
+      lights:
+        (leds): drillchair
+    - duration: 0.3s
+      lights:
+        (leds): off
+  sh_add_a_ball_button_ready:
+    - duration: 0.3s
+      lights:
+        (leds): razorwire
     - duration: 0.3s
       lights:
         (leds): off
@@ -258,6 +312,12 @@ variable_player:
     syringes_used:
       int: 1
       action: set
+  shot_outlane_button_sp_outlane_button_lit_hit:
+    bonus_bathtubs: -1
+    value_type: int
+  shot_add_a_ball_button_sp_add_a_ball_button_lit_hit:
+    bonus_taperecorders: -1
+    value_type: int
 
  # track modes completed for wizard mode qualifications -- player_modes_completed
   mode_drillchair_complete:
@@ -451,5 +511,17 @@ show_player:
     sh_item_used:
       show_tokens:
         leds: l_jw_syringe
+        color1: off
+      priority: 200
+  shot_outlane_button_sp_outlane_button_lit_hit:
+    sh_item_used:
+      show_tokens:
+        leds: l_jw_bathtub
+        color1: off
+      priority: 200
+  shot_add_a_ball_button_sp_add_a_ball_button_lit_hit:
+    sh_item_used:
+      show_tokens:
+        leds: l_jw_taperecorder
         color1: off
       priority: 200

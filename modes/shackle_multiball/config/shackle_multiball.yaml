@@ -20,6 +20,7 @@ multiballs:
     ball_count: 2
     shoot_again: 10s
     start_events: start_shackle_multiball
+    add_a_ball_events: shot_add_a_ball_button_sp_add_a_ball_button_lit_hit
     ball_locks: bd_top_saucer
     # replace_balls_in_play: true
 timers:

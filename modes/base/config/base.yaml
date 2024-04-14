@@ -4067,6 +4067,8 @@ shots:
     control_events:
       - events: e_mystery_outlane
         state: 1
+      - events: shot_outlane_button_sp_outlane_button_lit_hit
+        state: 1
   shot_right_outlane:
     switches: s_right_outlane
     profile: sp_outlane
