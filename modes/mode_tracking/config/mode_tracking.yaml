@@ -365,6 +365,13 @@ variable_player:
     zeptest_mode_complete:
       int: 1
       action: set
+  multiball_mb_survival_instinct_ended:
+    modes_completed:
+      int: 1
+      action: add
+    survival_instinct_mode_complete:
+      int: 1
+      action: set
 
 # puzzle pieces collected
   mode_puzzle_hurryup_complete:

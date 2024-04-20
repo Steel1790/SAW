@@ -1,0 +1,355 @@
+#config_version=6                 
+mode:
+  start_events: selection_mode_survivalinstinct_selected
+  stop_events: stop_mode_survival_instinct, mode_survival_instinct_complete, ball_ended, ball_will_end, multiball_mb_survival_instinct_ended
+  priority: 181
+
+multiballs:
+  mb_survival_instinct{current_player.puzzle_pieces==3}:
+    ball_count: 3
+    shoot_again: 10s
+    start_events: mode_survival_instinct_started
+  mb_survival_instinct{current_player.puzzle_pieces==4}:
+    ball_count: 4
+    shoot_again: 10s
+    start_events: mode_survival_instinct_started
+  mb_survival_instinct{current_player.puzzle_pieces==5}:
+    ball_count: 5
+    shoot_again: 10s
+    start_events: mode_survival_instinct_started
+
+variable_player:
+  mode_survival_instinct_started:
+    survival_instinct_value:
+      int: 750000
+      action: set
+  counter_cnt_survival_instinct_jackpot_hit:
+    survival_instinct_value:
+      int: 75000
+      action: add
+  shot_survival_instinct_superjackpot_sp_survival_instinct_jackpot_hit:
+    score: (current_player.survival_instinct_value)
+    survival_instinct_value:
+      int: 750000
+      action: set
+  
+counters:
+  cnt_survival_instinct_jackpot:
+    starting_count: 0
+    enable_events: mode_survival_instinct_started
+#    persist_state: true
+    reset_on_complete: true
+    disable_on_complete: false   
+    count_events: shot_survival_instinct_bottom_pops_sp_survival_instinct_lit_hit, shot_survival_instinct_top_pops_sp_survival_instinct_lit_hit, shot_survival_instinct_right_loop_sp_survival_instinct_lit_hit, shot_survival_instinct_middle_standup_sp_survival_instinct_lit_hit, shot_survival_instinct_drop_bank_sp_survival_instinct_lit_hit
+
+slides:
+  sl_survival_instinctUI:
+    widgets:
+    - type: video
+      video: mode_survivalinstinct01
+      width: 1366
+      height: 768
+#   sl_ShackleMB:
+#     widgets:
+#     - type: video
+#       video: shackleMB
+#       width: 1366
+#       height: 768 
+#   sl_ShackleMB_Jackpot:
+#     widgets:
+#     - type: video
+#       video: jackpot_shackle
+#   sl_ShackleMB_SuperJackpot:
+#     widgets:
+#     - type: video
+#       video: superjackpot_shackle
+
+slide_player:
+  mode_survival_instinct_started:
+    sl_survival_instinctUI:
+      priority: 400
+#     sl_ShackleMB:
+#       priority: 600
+#       expire: 7s
+#   sg_shackle_p1_lit_hit:
+#     sl_ShackleMB_Jackpot:
+#       priority: 600
+#       expire: 2.2s
+#   shot_shackle_superjackpot1_sp_shackle_mb_lit_hit:
+#     sl_ShackleMB_SuperJackpot:
+#       priority: 600
+#       expire: 2.2s
+#   shot_shackle_superjackpot2_sp_shackle_mb_lit_hit:
+#     sl_ShackleMB_SuperJackpot:
+#       priority: 600
+#       expire: 2.2s
+
+show_player:
+  mode_survival_instinct_started:     
+    gi_on:
+      show_tokens:
+        color1: beartrap
+    starpost_on:
+      show_tokens:
+        color1: 6E6E6E   
+      priority: 169
+    flipper_on:
+      show_tokens:
+        color1: beartrap
+    speaker_heartbeat:
+      show_tokens:
+        color1: beartrap
+    trough_on:
+      show_tokens:
+        color1: beartrap
+    cabinet_heartbeat:
+      show_tokens:
+        color1: beartrap
+    topper_heartbeat:
+      show_tokens:
+        color1: beartrap
+    mb_ballsave:
+      loops: 9
+# coil_player:
+#   mode_survival_instinct_started:
+#     c_left_spin_disc:
+#       action: enable
+#       hold_power: 1.0
+#     c_middle_spin_disc:
+#       action: enable
+#       hold_power: 1.0
+#     c_right_spin_disc:
+#       action: enable
+#       hold_power: 1.0
+#   mode_survival_instinct_complete:
+#     c_right_spin_disc:
+#       action: off
+#     c_middle_spin_disc:
+#       action: off
+#     c_left_spin_disc:
+#       action: off
+#   ball_ending:
+#     c_right_spin_disc:
+#       action: off
+#     c_middle_spin_disc:
+#       action: off
+#     c_left_spin_disc:
+#       action: off
+
+shots:
+  shot_survival_instinct_bottom_pops:
+    reset_events: mode_survival_instinct_stopped, player_turn_stopped, player_turn_ended
+    switches: s_left_bottom_jet_bumper, s_right_bottom_jet_bumper, s_upper_bottom_jet_bumper
+    profile: sp_survival_instinct
+    show_tokens:
+      leds: bottom_bumper, drill_flasher
+    control_events:
+      - events: ball_starting
+        state: 0
+      - events: mode_survival_instinct_started
+        state: 1
+      - events: shot_survival_instinct_bottom_pops_sp_survival_instinct_lit_hit
+        state: 0
+      - events: shot_survival_instinct_top_pops_sp_survival_instinct_lit_hit
+        state: 1
+      - events: shot_survival_instinct_right_loop_sp_survival_instinct_lit_hit
+        state: 1
+      - events: shot_survival_instinct_middle_standup_sp_survival_instinct_lit_hit
+        state: 1
+      - events: shot_survival_instinct_drop_bank_sp_survival_instinct_lit_hit
+        state: 1
+  shot_survival_instinct_top_pops:
+    reset_events: mode_survival_instinct_stopped, player_turn_stopped, player_turn_ended
+    switches: s_left_top_jet_bumper, s_right_top_jet_bumper, s_lower_top_jet_bumper
+    profile: sp_survival_instinct
+    show_tokens:
+      leds: top_bumper, razorwire_flasher
+    control_events:
+      - events: ball_starting
+        state: 0
+      - events: mode_survival_instinct_started
+        state: 1
+      - events: shot_survival_instinct_top_pops_sp_survival_instinct_lit_hit
+        state: 0
+      - events: shot_survival_instinct_bottom_pops_sp_survival_instinct_lit_hit
+        state: 1
+      - events: shot_survival_instinct_right_loop_sp_survival_instinct_lit_hit
+        state: 1
+      - events: shot_survival_instinct_middle_standup_sp_survival_instinct_lit_hit
+        state: 1
+      - events: shot_survival_instinct_drop_bank_sp_survival_instinct_lit_hit
+        state: 1
+  shot_survival_instinct_right_loop:
+    reset_events: mode_survival_instinct_stopped, player_turn_stopped, player_turn_ended
+    switches: s_right_loop_bottom
+    profile: sp_survival_instinct
+    show_tokens:
+      leds: shotgun_flasher
+    control_events:
+      - events: ball_starting
+        state: 0
+      - events: mode_survival_instinct_started
+        state: 1
+      - events: shot_survival_instinct_right_loop_sp_survival_instinct_lit_hit
+        state: 0
+      - events: shot_survival_instinct_top_pops_sp_survival_instinct_lit_hit
+        state: 1
+      - events: shot_survival_instinct_bottom_pops_sp_survival_instinct_lit_hit
+        state: 1
+      - events: shot_survival_instinct_middle_standup_sp_survival_instinct_lit_hit
+        state: 1
+      - events: shot_survival_instinct_drop_bank_sp_survival_instinct_lit_hit
+        state: 1
+  shot_survival_instinct_middle_standup:
+    reset_events: mode_survival_instinct_stopped, player_turn_stopped, player_turn_ended
+    switches: s_middle_standup
+    profile: sp_survival_instinct
+    show_tokens:
+      leds: bear_flasher
+    control_events:
+      - events: ball_starting
+        state: 0
+      - events: mode_survival_instinct_started
+        state: 1
+      - events: shot_survival_instinct_middle_standup_sp_survival_instinct_lit_hit
+        state: 0
+      - events: shot_survival_instinct_top_pops_sp_survival_instinct_lit_hit
+        state: 1
+      - events: shot_survival_instinct_right_loop_sp_survival_instinct_lit_hit
+        state: 1
+      - events: shot_survival_instinct_bottom_pops_sp_survival_instinct_lit_hit
+        state: 1
+      - events: shot_survival_instinct_drop_bank_sp_survival_instinct_lit_hit
+        state: 1
+  shot_survival_instinct_drop_bank:
+    reset_events: mode_survival_instinct_stopped, player_turn_stopped, player_turn_ended
+    switches: s_lower_bank_drop_target_opto_upper, s_lower_bank_drop_target_opto_middle, s_lower_bank_drop_target_opto_lower
+    profile: sp_survival_instinct
+    show_tokens:
+      leds: zep_flasher
+    control_events:
+      - events: ball_starting
+        state: 0
+      - events: mode_survival_instinct_started
+        state: 1
+      - events: shot_survival_instinct_drop_bank_sp_survival_instinct_lit_hit
+        state: 0
+      - events: shot_survival_instinct_top_pops_sp_survival_instinct_lit_hit
+        state: 1
+      - events: shot_survival_instinct_right_loop_sp_survival_instinct_lit_hit
+        state: 1
+      - events: shot_survival_instinct_middle_standup_sp_survival_instinct_lit_hit
+        state: 1
+      - events: shot_survival_instinct_bottom_pops_sp_survival_instinct_lit_hit
+        state: 1
+  shot_survival_instinct_superjackpot:
+    reset_events: mode_survival_instinct_stopped, player_turn_stopped, player_turn_ended
+    switches: s_left_ramp_score_top
+    profile: sp_survival_instinct
+    show_tokens:
+      leds: l_left_ramp_triangle1, l_left_ramp_triangle2, l_left_ramp_triangle3
+    control_events:
+      - events: ball_starting
+        state: 0
+      - events: mode_survival_instinct_started
+        state: 2
+      # - events: shot_survival_instinct_superjackpot_sp_survival_instinct_lit_hit
+      #   state: 0
+
+shot_profiles:
+  sp_survival_instinct:
+    advance_on_hit: false
+    states:
+      - name: survival_instinct_not_ready
+        show: "sh_survival_instinct_not_ready"
+      - name: lit
+        show: "sh_survival_instinct_on"
+      - name: jackpot
+        show: "sh_survival_instinct_jackpot"
+
+shot_groups:
+  sg_survival_instinct:
+    shots: shot_survival_instinct_bottom_pops, shot_survival_instinct_top_pops, shot_survival_instinct_right_loop, shot_survival_instinct_middle_standup, shot_survival_instinct_drop_bank
+
+
+shows:
+  sh_survival_instinct_on:
+    - duration: 0.3s
+      lights:
+        (leds): beartrap
+    - duration: 0.3s
+      lights:
+        (leds): off
+  sh_survival_instinct_not_ready:
+    - duration: 0.3s
+      lights:
+        (leds): off
+  sh_survival_instinct_jackpot:
+    - duration: 0.3s
+      lights:
+        (leds): shotgun
+    - duration: 0.3s
+      lights:
+        (leds): off
+
+sound_player:
+  shot_survival_instinct_superjackpot_sp_survival_instinct_jackpot_hit:
+    Jackpot:
+      action: play
+
+widgets:
+  w_survival_instinct_value:
+    - type: text
+      text: (player|survival_instinct_value)
+      number_grouping: true 
+      x: 75%
+      y: 28%
+      z: 7
+      font_size: 90
+      font_name: Mustkill     
+      outline_color: black
+      outline_width: 9
+      color: beartrap
+    - type: image
+      image: currentplayer
+      opacity: 1.0
+      y: 1
+      x: 1
+      z: 3
+      anchor_x: left
+      anchor_y: bottom
+    - type: text
+      text: (score)
+      number_grouping: true
+      y: 16
+      x: 25
+      z: 3
+      font_size: 36
+      anchor_x: left
+      anchor_y: bottom
+      font_name: TrajanProRegular
+      outline_color: black
+      outline_width: 7
+      color: beartrap
+
+widget_player:
+  mode_survival_instinct_started:
+    w_survival_instinct_value:
+      slide: sl_survival_instinctUI
+      action: add
+  stop_mode_survival_instinct:
+    w_survival_instinct_value:
+      action: remove
+  mode_survival_instinct_complete:
+    w_survival_instinct_value:
+      action: remove  
+  ball_ended:
+    w_survival_instinct_value:
+      action: remove  
+  sg_survival_instinct_lit_hit:
+    w_survival_instinct_value:
+      slide: sl_survival_instinctUI
+      action: add
+
+event_player: 
+  slide_sl_survival_instinctUI_active: e_primary_mode_active

@@ -434,7 +434,7 @@ widgets:
       number_grouping: true
       y: 16
       x: 25
-      z: 2
+      z: 3
       font_size: 36
       anchor_x: left
       anchor_y: bottom

@@ -1,12 +1,13 @@
 #config_version=6                   
 mode:
   start_events: logicblock_trap_select_qualify_counter_complete
-  stop_events: carousel_item_selected, ball_ended, mode_razorwire_started, mode_reversebeartrap_started, mode_drillchair_started, mode_quadshotgun_started, mode_zeptest_started, mode_flammablejelly_started, mode_jigsaw_multiball_started, mode_hacksaw_multiball_started, mode_shackle_multiball_started
+  stop_events: carousel_item_selected, ball_ended, mode_survival_instinct_started, mode_razorwire_started, mode_reversebeartrap_started, mode_drillchair_started, mode_quadshotgun_started, mode_zeptest_started, mode_flammablejelly_started, mode_jigsaw_multiball_started, mode_hacksaw_multiball_started, mode_shackle_multiball_started
   restart_on_next_ball: true
   priority: 184
   code: mpf.modes.carousel.code.carousel.Carousel
 mode_settings:
   selectable_items: 
+    - survivalinstinct{current_player.puzzle_pieces>=3 and current_player.survival_instinct_mode_complete==0}
     - drillchair{current_player.drillchair_mode_complete==0}
     - razorwire{current_player.razorwire_mode_complete==0}
     - quadshotgun{current_player.quadshotgun_mode_complete==0}
@@ -18,6 +19,11 @@ mode_settings:
   previous_item_events: s_right_flipper_button_active
 
 variable_player:
+  carousel_survivalinstinct_selected:
+    selected_mode:
+      action: set
+      string: 'selection_mode_survivalinstinct_highlighted'
+
   carousel_razorwire_selected:
     selected_mode:
       action: set
@@ -50,6 +56,33 @@ variable_player:
 
  
 slides:
+  survivalinstinct:
+    widgets:
+    - type: video
+      video: survivalinstinctpuzzle
+    - type: text
+      text: '<                       >'
+      font_size: 120
+      x: center
+      y: center +200
+      z: 1
+      color: C2E3E0 
+    - type: text
+      x: center
+      y: center -210
+      z: 1
+      font_size: 45
+      color: C2E3E0
+      text: Use the Flippers to Select Your Mode
+      animations:
+        pre_show_slide:
+        - property: opacity
+          value: 0
+          duration: 1s
+        - property: opacity
+          value: 1
+          duration: 1s
+          repeat: true
   razorwire:
     widgets:
     - type: video
@@ -228,6 +261,9 @@ slides:
           repeat: true      
 
 slide_player:
+  selection_mode_survivalinstinct_highlighted: 
+    survivalinstinct:
+      priority: 400
   selection_mode_razorwire_highlighted: 
 #    razorwirecassette:
 #      priority: 410
@@ -306,6 +342,14 @@ shows:
         (leds): off
 
 show_player:
+  selection_mode_survivalinstinct_highlighted:
+    ActionOff:
+      show_tokens:
+        leds: l_razorwire_mode, l_beartrap_mode, l_jelly_mode, l_drillchair_mode, l_quadshotgun_mode, l_zeptest_mode, bottom_bumper, l_right_standup_arrow, shotgun_flasher, skillshot, standup
+      loops: -1
+    reversebeartrap:
+      show_tokens:
+        leds: l_action_button      
   selection_mode_razorwire_highlighted:
     ActionOff:
       show_tokens:
@@ -396,6 +440,21 @@ show_player:
       disc_right_chase: stop
 
 sound_player:
+  selection_mode_survivalinstinct_highlighted:
+    ModeQualifiedShootScoop:
+      action: stop
+    FlammableJellyPreview:
+      action: stop
+    QuadShotgunPreview:
+      action: stop
+    ZepsTestPreview:
+      action: stop
+    DrillChairPreview:
+      action: stop
+    ReverseBearTrapPreview:
+      action: stop
+    RazorWirePreview:
+      action: stop
   selection_mode_razorwire_highlighted:
     ModeQualifiedShootScoop:
       action: stop
@@ -493,6 +552,19 @@ sound_player:
       action: play
       loops: -1
 
+  selection_mode_survivalinstinct_selected:
+    FlammableJellyPreview:
+      action: stop
+    QuadShotgunPreview:
+      action: stop
+    ZepsTestPreview:
+      action: stop
+    RazorWirePreview:
+      action: stop
+    DrillChairPreview:
+      action: stop
+    ReverseBearTrapPreview:
+      action: stop
   selection_mode_razorwire_selected:
     FlammableJellyPreview:
       action: stop

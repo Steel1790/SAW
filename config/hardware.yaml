@@ -530,7 +530,7 @@ diverters:
     targets_when_inactive: playfield
     enable_events: ball_starting
     activate_events: logicblock_acc_shackle_mb_qualify_complete, mode_reversebeartrap_started
-    deactivate_events: balldevice_bd_top_saucer_ball_entered, ball_started, mode_selection_mode_started, mode_make_your_choice_hurryup_started, multiball_mb_jigsaw_started, multiball_mb_hacksaw_started, multiball_mb_shackle_started, mode_razorwire_started, mode_drillchair_started, mode_flammablejelly_started, mode_quadshotgun_started, mode_reversebeartrap_stopped, logicblock_reversebeartrap_updated{value==1}, mode_zeptest_started, mode_make_your_choice_hurryup_started
+    deactivate_events: balldevice_bd_top_saucer_ball_entered, ball_started, mode_selection_mode_started, mode_make_your_choice_hurryup_started, multiball_mb_jigsaw_started, multiball_mb_hacksaw_started, multiball_mb_shackle_started, mode_razorwire_started, mode_drillchair_started, mode_flammablejelly_started, mode_quadshotgun_started, mode_reversebeartrap_stopped, logicblock_reversebeartrap_updated{value==1}, mode_zeptest_started, mode_make_your_choice_hurryup_started, mode_survival_instinct_started
     type: pulse
     ball_search_hold_time: 2.2s
     ball_search_order: 1
