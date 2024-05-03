@@ -50,7 +50,8 @@ window:
   height: 768
   title: Mission Pinball Framework - SAW
   resizable: true
-  fullscreen: false
+  fullscreen: true
+#  fullscreen: false
   borderless: true
   exit_on_escape: true
   source_display: lcd
@@ -58,6 +59,9 @@ displays:
   lcd:
     width: 1366
     height: 768
+
+mpf:
+    report_crashes: never
 
 sound_system:
     tracks:
@@ -500,15 +504,15 @@ show_player:
   ball_will_end{current_player.ball==3}:
     game_over:
       loops: 0
-      speed: 10
+      speed: 8
   e_topper_trigger:
     topper_trigger_on:
       loops: 0
-      speed: 8
+      speed: 9
   mode_reversebeartrap_stopping{current_player.ball<3}:
     topper_trigger_on:
       loops: 0
-      speed: 8
+      speed: 9
   shot_left_outlane_hit{state=="ball_save_not_ready"}:
       billy_laugh:
         loops: 7

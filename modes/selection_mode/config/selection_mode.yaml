@@ -7,7 +7,7 @@ mode:
   code: mpf.modes.carousel.code.carousel.Carousel
 mode_settings:
   selectable_items: 
-    - survivalinstinct{current_player.puzzle_pieces>=3 and current_player.survival_instinct_mode_complete==0}
+    - survivalinstinct{current_player.puzzle_pieces>=2 and current_player.survival_instinct_mode_complete==0}
     - drillchair{current_player.drillchair_mode_complete==0}
     - razorwire{current_player.razorwire_mode_complete==0}
     - quadshotgun{current_player.quadshotgun_mode_complete==0}

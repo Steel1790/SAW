@@ -5,6 +5,10 @@ mode:
   priority: 181
 
 multiballs:
+  mb_survival_instinct{current_player.puzzle_pieces==2}:
+    ball_count: 2
+    shoot_again: 10s
+    start_events: mode_survival_instinct_started
   mb_survival_instinct{current_player.puzzle_pieces==3}:
     ball_count: 3
     shoot_again: 10s
@@ -21,16 +25,16 @@ multiballs:
 variable_player:
   mode_survival_instinct_started:
     survival_instinct_value:
-      int: 750000
+      int: 1000000
       action: set
   counter_cnt_survival_instinct_jackpot_hit:
     survival_instinct_value:
-      int: 75000
+      int: 450000
       action: add
   shot_survival_instinct_superjackpot_sp_survival_instinct_jackpot_hit:
     score: (current_player.survival_instinct_value)
     survival_instinct_value:
-      int: 750000
+      int: 1000000
       action: set
   
 counters:

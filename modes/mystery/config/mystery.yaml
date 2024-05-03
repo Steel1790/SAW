@@ -64,12 +64,12 @@ show_player:
       loops: -1
 
 # light show temporarily disabled as it was throwing c_mystery_scoop over 1.0 hold power almost every mystery award since neg. led value fix.
-  # e_enable_mystery:
-  #   mystery_flash:
-  #      loops: 0
-  #      show_tokens:
-  #       led: insert, gi, jet_bumper, flasher, l_mystery_scoop
-  #       color1: white
+  e_enable_mystery:
+    mystery_flash:
+       loops: 0
+       show_tokens:
+        led: insert, gi, jet_bumper, flasher, l_mystery_scoop
+        color1: white
 
 random_event_player:
   sh_mystery_hit:
