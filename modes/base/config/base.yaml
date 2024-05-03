@@ -895,7 +895,15 @@ show_player:
     speaker_heartbeat:
       show_tokens:
         color1: beartrap
+    billy_lowpaintolerance:
+      loops: 0
+      speed: 1
 
+#callouts to sync to billy head
+#  shot_left_outlane_hit{state=="ball_save_not_ready"}:
+#      billy_lowpaintolerance:
+#        loops: 0
+#        speed: 1
 
   playfield_active:
     base_action_button_off:

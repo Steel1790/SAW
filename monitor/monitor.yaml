@@ -1,6 +1,9 @@
 device_size: 0.02
 flipper: {}
 light:
+  act_billy:
+    x: 0.3571690694626474
+    y: 0.013106159895150722
   l_action_button:
     size: 0.03
     x: 0.48695559310307573

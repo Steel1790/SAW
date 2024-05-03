@@ -171,11 +171,14 @@ show_player:
 
 sound_player:
  player_puzzle_hurryup_t_puzzle_timer_tick{value==17}:
+   BaseMusic:
+     action: stop    
    PuzzlePieceHurryUp:
      priority: 202
      action: play
-   BaseMusic:
-     action: stop    
  mode_puzzle_hurryup_stopping:
    PuzzlePieceHurryUp:
      action: stop
+ ball_will_end:
+   PuzzlePieceHurryUp:
+     action: stop    

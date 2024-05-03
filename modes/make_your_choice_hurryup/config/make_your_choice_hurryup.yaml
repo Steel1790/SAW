@@ -282,11 +282,11 @@ show_player:
 
 sound_player:
   mode_make_your_choice_hurryup_started:
+    BaseMusic:
+      action: stop    
     LiveOrDieHurryup:
       priority: 202
       action: play
-    BaseMusic:
-      action: stop    
   mode_make_your_choice_hurryup_stopping:
     LiveOrDieHurryup:
       action: stop

@@ -1,0 +1,75 @@
+#show_version=6
+
+- time: 0
+  lights:
+    act_billy: off
+- time: '+0.2'
+  lights:
+    act_billy: on
+- time: '+0.2'
+  lights:
+    act_billy: off
+- time: '+0.2'
+  lights:
+    act_billy: on
+- time: '+0.2'
+  lights:
+    act_billy: off
+- time: '+0.2'
+  lights:
+    act_billy: on
+- time: '+0.4'
+  lights:
+    act_billy: off
+- time: '+0.2'
+  lights:
+    act_billy: on
+- time: '+0.2'
+  lights:
+    act_billy: off
+- time: '+0.2'
+  lights:
+    act_billy: on
+- time: '+0.5'
+  lights:
+    act_billy: off
+
+- time: '+0.2'
+  lights:
+    act_billy: on
+- time: '+0.2'
+  lights:
+    act_billy: off
+- time: '+0.2'
+  lights:
+    act_billy: on
+- time: '+0.2'
+  lights:
+    act_billy: off
+- time: '+0.2'
+  lights:
+    act_billy: on
+- time: '+0.2'
+  lights:
+    act_billy: off
+- time: '+0.2'
+  lights:
+    act_billy: on
+- time: '+0.2'
+  lights:
+    act_billy: off
+- time: '+0.2'
+  lights:
+    act_billy: on
+- time: '+0.2'
+  lights:
+    act_billy: off
+- time: '+0.2'
+  lights:
+    act_billy: on
+- time: '+0.2'
+  lights:
+    act_billy: off
+- time: '+0.2'
+  lights:
+    act_billy: on

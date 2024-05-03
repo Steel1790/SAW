@@ -277,7 +277,7 @@ coils:
   c_top_eject:
     number: 1616_2-12
     default_pulse_ms: 20
-    default_pulse_power: 0.9
+    default_pulse_power: 0.7
   c_mystery_eject:
     number: 1616_1-15
     default_pulse_ms: 100
