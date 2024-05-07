@@ -32,6 +32,7 @@ modes:
   - puzzle_hurryup
   - hostage
   - survival_instinct
+#  - the_key_to_freedom 
   - mystery
   - saw_qualify
   - mode_tracking
@@ -473,7 +474,7 @@ slides:
       width: 1366
       height: 768
 slide_player:
-  ball_will_end{current_player.ball==3}:
+  ball_will_end{current_player.ball==3 and is_extra_ball==False}:
     gameovervideo:
       action: play
       priority: 600

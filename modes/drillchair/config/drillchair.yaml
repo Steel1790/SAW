@@ -162,7 +162,19 @@ slides:
     - type: video
       video: mode_drillchair01    
       width: 1366
-      height: 768           
+      height: 768          
+  mode_drillchair_shot01:
+    widgets:
+    - type: video
+      video: mode_drillchair_shot01
+      width: 1366
+      height: 768          
+  mode_drillchair_shot02:
+    widgets:
+    - type: video
+      video: mode_drillchair_shot02 
+      width: 1366
+      height: 768                
       
   drillchair_pops:
     widgets:
@@ -393,6 +405,15 @@ slide_player:
       action: play
       priority: 400
       expire: 5s
+
+  logicblock_drillchair_pops_counter_hit{hits==4}:
+    mode_drillchair_shot02:
+      priority: 401
+      expire: 3.1s
+  logicblock_drillchair_pops2_counter_hit{hits==4}: 
+    mode_drillchair_shot01:
+      priority: 401
+      expire: 3.6s
   # logicblock_drillchair_updated{value>0}:
   #   drillchair_phase2:
   #     priority: 405

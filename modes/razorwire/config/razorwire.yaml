@@ -53,7 +53,7 @@ timers:
 counters:
   razorwire_pops_counter:
     starting_count: 0
-    count_complete_value: 24
+    count_complete_value: 16
     enable_events: mode_razorwire_started
     disable_events: razorwire_pops_complete, logicblock_razorwire_phase2_updated{enabled==True}
     start_enabled: true
@@ -64,7 +64,7 @@ counters:
     count_events: upper_l_pop_hit, upper_r_pop_hit, upper_b_pop_hit, logicblock_razorwire_item_pops_counter_hit
   razorwire_item_pops_counter:
     starting_count: 0
-    count_complete_value: 12
+    count_complete_value: 8
     enable_events: shot_razorwire_button_sp_razorwire_lit_hit
     disable_events: e_stop_hacksaw
     start_enabled: false
@@ -105,8 +105,8 @@ variable_player:
   counter_razorwire_pops_counter_hit:
     razorwire_pops_counter:
       action: set
-      int: (count)*28
-    score: 250000
+      int: (count)*42
+    score: 375000
     razorwire_visual_pops_counter:
       action: set
       int: (count)
@@ -139,6 +139,12 @@ slides:
     widgets:
     - type: video
       video: mode_razorwire02
+      width: 1366
+      height: 768
+  mode_razorwire_shot01:
+    widgets:
+    - type: video
+      video: mode_razorwire_shot01
       width: 1366
       height: 768
       
@@ -340,7 +346,14 @@ slide_player:
       action: play
       priority: 400
       expire: 5s
-
+  logicblock_razorwire_pops_counter_hit{count==4}:
+    mode_razorwire_shot01:
+      priority: 401
+      expire: 3s
+  logicblock_razorwire_pops_counter_hit{count==12}:
+    mode_razorwire_shot01:
+      priority: 401
+      expire: 3s
 widgets:
    w_razorwireUI:
     - type: Text
@@ -750,14 +763,14 @@ show_player:
         show_tokens:
           color1: razorwire
         priority: 170  
-  logicblock_razorwire_pops_counter_hit{count==5}:
+  logicblock_razorwire_pops_counter_hit{count==4}:
       razorwire_pops_progress:
         loops: -1
         show_tokens:
           leds: l_lower_top_bumper_8, l_left_top_bumper_8, l_right_top_bumper_8, l_lower_top_bumper_9, l_left_top_bumper_9, l_right_top_bumper_9, l_lower_top_bumper_7, l_left_top_bumper_7, l_right_top_bumper_7, l_lower_top_bumper_10, l_left_top_bumper_10, l_right_top_bumper_10, l_lower_top_bumper_6, l_left_top_bumper_6, l_right_top_bumper_6
           color1: razorwire
         priority: 181
-  logicblock_razorwire_pops_counter_hit{count==8}:
+  logicblock_razorwire_pops_counter_hit{count==6}:
       razorwire_pops_progress:
         loops: -1
         show_tokens:
@@ -770,14 +783,14 @@ show_player:
         show_tokens:
           color1: razorwire
         priority: 170  
-  logicblock_razorwire_pops_counter_hit{count==11}:
+  logicblock_razorwire_pops_counter_hit{count==8}:
       razorwire_pops_progress:
         loops: -1
         show_tokens:
           leds: l_lower_top_bumper_8, l_left_top_bumper_8, l_right_top_bumper_8, l_lower_top_bumper_9, l_left_top_bumper_9, l_right_top_bumper_9, l_lower_top_bumper_7, l_left_top_bumper_7, l_right_top_bumper_7, l_lower_top_bumper_10, l_left_top_bumper_10, l_right_top_bumper_10, l_lower_top_bumper_6, l_left_top_bumper_6, l_right_top_bumper_6, l_lower_top_bumper_11, l_left_top_bumper_11, l_right_top_bumper_11, l_lower_top_bumper_5, l_left_top_bumper_5, l_right_top_bumper_5, l_lower_top_bumper_12, l_left_top_bumper_12, l_right_top_bumper_12, l_lower_top_bumper_4, l_left_top_bumper_4, l_right_top_bumper_4
           color1: razorwire
         priority: 181
-  logicblock_razorwire_pops_counter_hit{count==14}:
+  logicblock_razorwire_pops_counter_hit{count==10}:
       razorwire_pops_progress:
         loops: -1
         show_tokens:
@@ -790,14 +803,14 @@ show_player:
         show_tokens:
           color1: razorwire
         priority: 170  
-  logicblock_razorwire_pops_counter_hit{count==18}:
+  logicblock_razorwire_pops_counter_hit{count==12}:
       razorwire_pops_progress:
         loops: -1
         show_tokens:
           leds: l_lower_top_bumper_8, l_left_top_bumper_8, l_right_top_bumper_8, l_lower_top_bumper_9, l_left_top_bumper_9, l_right_top_bumper_9, l_lower_top_bumper_7, l_left_top_bumper_7, l_right_top_bumper_7, l_lower_top_bumper_10, l_left_top_bumper_10, l_right_top_bumper_10, l_lower_top_bumper_6, l_left_top_bumper_6, l_right_top_bumper_6, l_lower_top_bumper_11, l_left_top_bumper_11, l_right_top_bumper_11, l_lower_top_bumper_5, l_left_top_bumper_5, l_right_top_bumper_5, l_lower_top_bumper_12, l_left_top_bumper_12, l_right_top_bumper_12, l_lower_top_bumper_4, l_left_top_bumper_4, l_right_top_bumper_4, l_lower_top_bumper_13, l_left_top_bumper_13, l_right_top_bumper_13, l_lower_top_bumper_3, l_left_top_bumper_3, l_right_top_bumper_3, l_lower_top_bumper_14, l_left_top_bumper_14, l_right_top_bumper_14
           color1: razorwire
         priority: 181
-  logicblock_razorwire_pops_counter_hit{count==22}:
+  logicblock_razorwire_pops_counter_hit{count==14}:
       razorwire_pops_progress:
         loops: -1
         show_tokens:
@@ -810,7 +823,7 @@ show_player:
         show_tokens:
           color1: razorwire
         priority: 170  
-  logicblock_razorwire_pops_counter_hit{count==24}:
+  logicblock_razorwire_pops_counter_hit{count==16}:
       razorwire_pops_progress:
         loops: -1
         show_tokens:

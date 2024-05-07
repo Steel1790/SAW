@@ -112,7 +112,13 @@ slides:
     - type: video
       video: mode_flammablejelly04
       width: 1366
-      height: 768      
+      height: 768
+  FlammableJellyModeShot1:
+    widgets:
+    - type: video
+      video: FlammableJellyModeShot1
+      width: 1366
+      height: 768
       
   flammablejellyUI:
    widgets:
@@ -449,7 +455,17 @@ slide_player:
       action: play
       priority: 400
       expire: 5s
-      
+  logicblock_flammablejelly_hit{step==1}:
+    FlammableJellyModeShot1:
+      action: play
+      priority: 401
+      expire: 2.4s
+  logicblock_flammablejelly_hit{step==2}:
+    FlammableJellyModeShot1:
+      action: play
+      priority: 401
+      expire: 2.4s
+
 shows:
   sh_flammablejelly_ballsave:
     - duration: 0.5s

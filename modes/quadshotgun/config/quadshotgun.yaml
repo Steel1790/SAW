@@ -216,6 +216,24 @@ slides:
       video: mode_quadshotgun02
       width: 1366
       height: 768 
+  mode_quadshotgun_shot01:
+    widgets:
+    - type: video
+      video: mode_quadshotgun_shot01
+      width: 1366
+      height: 768
+  mode_quadshotgun_shot02:
+    widgets:
+    - type: video
+      video: mode_quadshotgun_shot02
+      width: 1366
+      height: 768
+  mode_quadshotgun_shot03:
+    widgets:
+    - type: video
+      video: mode_quadshotgun_shot03
+      width: 1366
+      height: 768
       
   quadshotgun_spinner:
     widgets:
@@ -414,6 +432,19 @@ slide_player:
       action: play
       priority: 400
       expire: 5s
+
+  logicblock_quadshotgun_spinner_counter_hit{count==4}:
+    mode_quadshotgun_shot01:
+      priority: 406
+      expire: 3s
+  logicblock_quadshotgun_spinner_counter_hit{count==15}:
+    mode_quadshotgun_shot02:
+      priority: 406
+      expire: 3s
+  logicblock_quadshotgun_spinner_counter_hit{count==23}:
+    mode_quadshotgun_shot03:
+      priority: 406
+      expire: 2.5s
   # logicblock_quadshotgun_phase2_updated{enabled==True}:
   #   quadshotgun_phase2:
   #     priority: 405

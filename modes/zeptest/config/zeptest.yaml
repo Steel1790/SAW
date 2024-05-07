@@ -86,6 +86,24 @@ slides:
       video: mode_zeptest04
       width: 1366
       height: 768
+  mode_zeptest_shot01:
+    widgets:
+    - type: video
+      video: mode_zeptest_shot01
+      width: 1366
+      height: 768
+  mode_zeptest_shot02:
+    widgets:
+    - type: video
+      video: mode_zeptest_shot02
+      width: 1366
+      height: 768
+  mode_zeptest_shot03:
+    widgets:
+    - type: video
+      video: mode_zeptest_shot03
+      width: 1366
+      height: 768
       
   zeptestUI:
    widgets:
@@ -390,10 +408,18 @@ slide_player:
       priority: 400
       expire: 60s
 
+  logicblock_zeptest_hit{step==3}:
+    mode_zeptest_shot01:
+      priority: 401
+      expire: 3s
+  logicblock_zeptest_hit{step==4}:
+    mode_zeptest_shot02:
+      priority: 401
+      expire: 3s
   logicblock_zeptest_hit{step==5}:
-    XMarksTheSpotVideo:
-      priority: 406
-      expire: 2.1s      
+    mode_zeptest_shot03:
+      priority: 401
+      expire: 3s   
 shows:
   sh_zeptest_ballsave:
     - duration: 0.5s

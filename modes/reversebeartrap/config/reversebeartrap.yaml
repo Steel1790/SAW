@@ -134,7 +134,37 @@ slides:
     - type: video
       video: mode_rbt04
       width: 1366
-      height: 768            
+      height: 768      
+  mode_rbt_shot01:
+    widgets:
+    - type: video
+      video: mode_rbt_shot01
+      width: 1366
+      height: 768  
+  mode_rbt_shot02:
+    widgets:
+    - type: video
+      video: mode_rbt_shot02
+      width: 1366
+      height: 768  
+  mode_rbt_shot03:
+    widgets:
+    - type: video
+      video: mode_rbt_shot03
+      width: 1366
+      height: 768  
+  mode_rbt_shot04:
+    widgets:
+    - type: video
+      video: mode_rbt_shot04
+      width: 1366
+      height: 768  
+  mode_rbt_shot05:
+    widgets:
+    - type: video
+      video: mode_rbt_shot05
+      width: 1366
+      height: 768        
       
   reversebeartrapUI:
    widgets:
@@ -386,9 +416,6 @@ slide_player:
     mode_rbt02:
      action: remove
   logicblock_reversebeartrap_updated{value==5}:
-    XMarksTheSpotVideo:
-      priority: 406
-      expire: 2.1s    
     mode_rbt04:
       priority: 401
       expire: 126.5s
@@ -399,6 +426,26 @@ slide_player:
       action: play
       priority: 400
       expire: 5s
+  logicblock_reversebeartrap_hit{step==1}:
+    mode_rbt_shot01:
+      priority: 402
+      expire: 2.5
+  logicblock_reversebeartrap_hit{step==2}:
+    mode_rbt_shot02:
+      priority: 402
+      expire: 2.5
+  logicblock_reversebeartrap_hit{step==3}:
+    mode_rbt_shot03:
+      priority: 402
+      expire: 3.5
+  logicblock_reversebeartrap_hit{step==4}:
+    mode_rbt_shot04:
+      priority: 402
+      expire: 3.0
+  logicblock_reversebeartrap_hit{step==5}:
+    mode_rbt_shot05:
+      priority: 402
+      expire: 3.0
   
 #  logicblock_reversebeartrap_hit:
 #    ShotUpdated:
