@@ -1,26 +1,30 @@
 #config_version=6                 
 mode:
   start_events: selection_mode_survivalinstinct_selected
-  stop_events: stop_mode_survival_instinct, mode_survival_instinct_complete, ball_ended, ball_will_end, multiball_mb_survival_instinct_ended
+  stop_events: stop_mode_survival_instinct, mode_survival_instinct_complete, ball_ended, ball_will_end, multiball_mb_survival_instinct{current_player.puzzle_pieces==2}_ended, multiball_mb_survival_instinct{current_player.puzzle_pieces==3}_ended, multiball_mb_survival_instinct{current_player.puzzle_pieces==4}_ended, multiball_mb_survival_instinct{current_player.puzzle_pieces==5}_ended
   priority: 181
 
 multiballs:
   mb_survival_instinct{current_player.puzzle_pieces==2}:
     ball_count: 2
     shoot_again: 10s
+#    enable_events: player_puzzle_pieces{value==2}
     start_events: mode_survival_instinct_started
   mb_survival_instinct{current_player.puzzle_pieces==3}:
     ball_count: 3
     shoot_again: 10s
-    start_events: mode_survival_instinct_started
+    enable_events: player_puzzle_pieces{value==3}
+#    start_events: mode_survival_instinct_started
   mb_survival_instinct{current_player.puzzle_pieces==4}:
     ball_count: 4
     shoot_again: 10s
-    start_events: mode_survival_instinct_started
+    enable_events: player_puzzle_pieces{value==4}
+#    start_events: mode_survival_instinct_started
   mb_survival_instinct{current_player.puzzle_pieces==5}:
     ball_count: 5
     shoot_again: 10s
-    start_events: mode_survival_instinct_started
+    enable_events: player_puzzle_pieces{value==5}
+#    start_events: mode_survival_instinct_started
 
 variable_player:
   mode_survival_instinct_started:
@@ -297,6 +301,13 @@ shows:
         (leds): off
 
 sound_player:
+  mode_survival_instinct_started:
+    SurvivalInstinctModeSong:
+      action: play
+      loops: -1
+  mode_survival_instinct_stopping:
+    SurvivalInstinctModeSong:
+      action: stop
   shot_survival_instinct_superjackpot_sp_survival_instinct_jackpot_hit:
     Jackpot:
       action: play

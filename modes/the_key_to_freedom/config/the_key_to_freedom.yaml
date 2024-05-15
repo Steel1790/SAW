@@ -1,31 +1,78 @@
 #config_version=6                 
 mode:
-  start_events: selection_mode_the_key_to_freedom_selected
+  start_events: selection_mode_thekeytofreedom_selected
   stop_events: stop_mode_the_key_to_freedom, ball_ended, ball_will_end
   priority: 181
 
+sequences:
+  thekeytofreedom:
+    events:
+      - key_to_freedom_p1_complete
+      - key_to_freedom_p2_complete
+      - key_to_freedom_p3_complete
+      - key_to_freedom_p4_complete
+    reset_on_complete: false
+#    persist_state: true
+    disable_events: mode_the_key_to_freedom_complete
+    events_when_complete: mode_the_key_to_freedom_complete, stop_mode_the_key_to_freedom
 
 counters:
   cnt_key_to_freedom_p1_counter:
     starting_count: 0
-    count_complete_value: 16
+    count_complete_value: 10
     enable_events: mode_the_key_to_freedom_started
-    disable_events: key_to_freedom_p1_complete #, logicblock_razorwire_phase2_updated{enabled==True}
+    disable_events: key_to_freedom_p1_complete
     start_enabled: true
 #    persist_state: true
 #    reset_on_complete: false
     events_when_complete: key_to_freedom_p1_complete  
-    count_events: sw_lower_drop_target
+    count_events: sw_standup
 
 variable_player:
   counter_cnt_key_to_freedom_p1_counter_hit:
     key_to_freedom_p1_counter:
       action: set
-      int: (count)*120
-      # should be for 5 hits on center drops to bash zep
+      int: (count)*69
+      # 10 hits to break off toilet lid
+  counter_cnt_key_to_freedom_p2_counter_hit:
+    key_to_freedom_p2_counter:
+      action: set
+      int: (count)*12
+      # 50 switch hits to attack zep
+  counter_cnt_key_to_freedom_p3_counter_hit:
+    key_to_freedom_p3_counter:
+      action: set
+      int: (count)*240
+      # 5 puzzle pieces to finish off zep
+  logicblock_thekeytofreedom_hit{step==1}:
+    score: 7500000
+  logicblock_thekeytofreedom_hit{step==2}:
+    score: 8500000
+  logicblock_thekeytofreedom_hit{step==3}:
+    score: 9500000
+
+slides:
+  mode_thekeytofreedom01:
+    widgets:
+    - type: video
+      video: mode_thekeytofreedom01
+      width: 1366
+      height: 768     
+  mode_thekeytofreedom02:
+    widgets:
+    - type: video
+      video: mode_thekeytofreedom02
+      width: 1366
+      height: 768     
+  mode_thekeytofreedom03:
+    widgets:
+    - type: video
+      video: mode_thekeytofreedom03
+      width: 1366
+      height: 768     
 
 widgets:
-   w_razorwireUI:
+   w_thekeytofreedomUI:
     - type: image
       image: hacksawUI
       opacity: 1.0
@@ -44,19 +91,19 @@ widgets:
       anchor_x: left
       anchor_y: bottom
       font_name: TrajanProRegular
-      color: 65fe08
+      color: beartrap
     - type: rectangle
       width: 0
       height: 45
       x: 25%
       y: 180
-      z: 2
+      z: 3
       anchor_x: left
       corner_radius: 10
       corner_segments: 10
       color: beartrap
       animations:
-        player_cnt_key_to_freedom_p1_counter:
+        player_key_to_freedom_p1_counter:
          - property: width
            value: (value)           
     - type: rectangle
@@ -68,20 +115,35 @@ widgets:
       color: black
       corner_radius: 10
       corner_segments: 10
-    # - type: Text
-    #   text: 00:(player|razorwire_60s_timer_tick)
-    #   font_size: 100
-    #   font_name: digitalclockfont
-    #   color: red
-    #   x: 50%
-    #   y: 83.2%
-    #   z: 2
-    # - type: rectangle
-    #   width: 420
-    #   height: 130
-    #   x: 50%
-    #   y: 84.5%
-    #   z: 2
-    #   corner_radius: 20
-    #   corner_segments: 20
-    #   color: black     
+
+widget_player:
+ logicblock_thekeytofreedom_updated{value==0}: 
+   w_thekeytofreedomUI:
+     slide: mode_thekeytofreedom01
+     action: add    
+ logicblock_thekeytofreedom_updated{value==1}: 
+   w_thekeytofreedomUI:
+     slide: mode_thekeytofreedom02
+     action: add    
+ logicblock_thekeytofreedom_updated{value==2}: 
+   w_thekeytofreedomUI:
+     slide: mode_thekeytofreedom03
+     action: add    
+
+slide_player:
+  mode_the_key_to_freedom_started: 
+    mode_thekeytofreedom01:
+      priority: 400
+#      expire: 8s
+  logicblock_thekeytofreedom_updated{value==1}:
+    mode_thekeytofreedom02:
+      priority: 401
+#      expire: 120s
+    mode_thekeytofreedom01:
+     action: remove
+  logicblock_thekeytofreedom_updated{value==2}:
+    mode_thekeytofreedom03:
+      priority: 401
+#      expire: 120s
+    mode_thekeytofreedom02:
+     action: remove

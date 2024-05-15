@@ -135,11 +135,12 @@ sound_player:
     OrbitWoosh6:
       action: play      
   mode_high_score_started: 
-    initials:
-      action: play
-      loops: -1
     BaseMusic:
       action: stop
+    initials:
+      priority: 500
+      action: play
+      loops: -1
   mode_high_score_stopped:
     BaseMusic:
       action: stop

@@ -372,6 +372,13 @@ variable_player:
     survival_instinct_mode_complete:
       int: 1
       action: set
+  mode_the_key_to_freedom_complete:
+    modes_completed:
+      int: 1
+      action: add
+    the_key_to_freedom_mode_complete:
+      int: 1
+      action: set
 
 # puzzle pieces collected
   mode_puzzle_hurryup_complete:
