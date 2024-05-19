@@ -1,36 +1,50 @@
 #config_version=6                 
 mode:
   start_events: selection_mode_survivalinstinct_selected
-  stop_events: stop_mode_survival_instinct, mode_survival_instinct_complete, ball_ended, ball_will_end, multiball_mb_survival_instinct{current_player.puzzle_pieces==2}_ended, multiball_mb_survival_instinct{current_player.puzzle_pieces==3}_ended, multiball_mb_survival_instinct{current_player.puzzle_pieces==4}_ended, multiball_mb_survival_instinct{current_player.puzzle_pieces==5}_ended
+  stop_events: stop_mode_survival_instinct, mode_survival_instinct_complete, ball_ended, ball_will_end, multiball_mb_survival_instinct_2ball_ended, multiball_mb_survival_instinct_3ball_ended, multiball_mb_survival_instinct_4ball_ended, multiball_mb_survival_instinct_5ball_ended
   priority: 181
 
 multiballs:
-  mb_survival_instinct{current_player.puzzle_pieces==2}:
+  mb_survival_instinct_2ball:
     ball_count: 2
     shoot_again: 10s
-#    enable_events: player_puzzle_pieces{value==2}
-    start_events: mode_survival_instinct_started
-  mb_survival_instinct{current_player.puzzle_pieces==3}:
+    enable_events: player_puzzle_pieces{value==2}
+    start_events: player_puzzle_pieces{value==2}
+    disable_events: player_puzzle_pieces{value==3}, player_puzzle_pieces{value==4}, player_puzzle_pieces{value==5}
+  mb_survival_instinct_3ball:
     ball_count: 3
     shoot_again: 10s
     enable_events: player_puzzle_pieces{value==3}
-#    start_events: mode_survival_instinct_started
-  mb_survival_instinct{current_player.puzzle_pieces==4}:
+    start_events: player_puzzle_pieces{value==3}
+    disable_events: player_puzzle_pieces{value==2}, player_puzzle_pieces{value==4}, player_puzzle_pieces{value==5}
+  mb_survival_instinct_4ball:
     ball_count: 4
     shoot_again: 10s
     enable_events: player_puzzle_pieces{value==4}
-#    start_events: mode_survival_instinct_started
-  mb_survival_instinct{current_player.puzzle_pieces==5}:
+    start_events: player_puzzle_pieces{value==4}
+    disable_events: player_puzzle_pieces{value==2}, player_puzzle_pieces{value==3}, player_puzzle_pieces{value==5}
+  mb_survival_instinct_5ball:
     ball_count: 5
     shoot_again: 10s
     enable_events: player_puzzle_pieces{value==5}
-#    start_events: mode_survival_instinct_started
+    start_events: player_puzzle_pieces{value==5}
+    disable_events: player_puzzle_pieces{value==2}, player_puzzle_pieces{value==3}, player_puzzle_pieces{value==4}
 
 variable_player:
   mode_survival_instinct_started:
     survival_instinct_value:
       int: 1000000
       action: set
+    puzzle_pieces:
+      int: 10
+      action: add
+    update_puzzle_count_trigger:
+      int: 1
+      action: set
+  player_update_puzzle_count_trigger:
+    puzzle_pieces:
+      int: -10
+      action: add
   counter_cnt_survival_instinct_jackpot_hit:
     survival_instinct_value:
       int: 450000
@@ -301,12 +315,26 @@ shows:
         (leds): off
 
 sound_player:
-  mode_survival_instinct_started:
-    SurvivalInstinctModeSong:
+  multiball_mb_survival_instinct_2ball_started:
+    PuzzlePiece2BallModeSong:
+      action: play
+      loops: -1
+  multiball_mb_survival_instinct_3ball_started:
+    PuzzlePiece3BallModeSong:
+      action: play
+      loops: -1
+  multiball_mb_survival_instinct_4ball_started:
+    PuzzlePiece3BallModeSong:
+      action: play
+      loops: -1
+  multiball_mb_survival_instinct_5ball_started:
+    PuzzlePiece3BallModeSong:
       action: play
       loops: -1
   mode_survival_instinct_stopping:
-    SurvivalInstinctModeSong:
+    PuzzlePiece2BallModeSong:
+      action: stop
+    PuzzlePiece3BallModeSong:
       action: stop
   shot_survival_instinct_superjackpot_sp_survival_instinct_jackpot_hit:
     Jackpot:

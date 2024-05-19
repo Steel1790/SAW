@@ -307,12 +307,14 @@ coils:
   c_left_top_jet_bumper:
     number: 1616_1-2
     default_pulse_ms: 20
-    default_pulse_power: 0.9
+    default_pulse_power: 0.7
+#    default_pulse_power: 0.9
     max_hold_duration: 1s
   c_right_top_jet_bumper:
     number: 1616_1-1
     default_pulse_ms: 20
-    default_pulse_power: 0.9
+    default_pulse_power: 0.7
+#    default_pulse_power: 0.9
     max_hold_duration: 1s
   c_lower_top_jet_bumper:
     number: 1616_1-3
@@ -332,7 +334,8 @@ coils:
   c_upper_bottom_jet_bumper:
     number: 1616_1-4
     default_pulse_ms: 20
-    default_pulse_power: 0.9
+    default_pulse_power: 0.7
+#    default_pulse_power: 0.9
     max_hold_duration: 1s
   c_left_slingshot:
     number: 3208-7

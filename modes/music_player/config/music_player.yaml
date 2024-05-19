@@ -676,6 +676,22 @@ sound_player:
       action: play
       loops: -1
 
+# # survival instinct mode
+#   mode_survival_instinct_complete:
+#     PuzzlePiece2BallModeSong:
+#       action: stop
+#     PuzzlePiece3BallModeSong:
+#       action: stop
+#     BaseMusic:
+#       delay: 3s
+#       action: play
+#       loops: -1           
+  mode_survival_instinct_stopped:
+    BaseMusic:
+      delay: 3s
+      action: play
+      loops: -1
+
   sg_saw_qualify_subtract_hit{device.counters.cnt_saw_qualify.value==1}:
     SawLetterNegative:
       action: play   
