@@ -5,14 +5,14 @@ mode:
   priority: 181
 
 timers:
-  hostage_90s_timer:
-    start_value: 90
+  hostage_66s_timer:
+    start_value: 66
     end_value: 0
     direction: down
     control_events:
       - action: start
         event: mode_hostage_started
-# 90second frenzy mode. All shots are +50k base. Right Ramp disables each disc. Upon the 3rd right ramp shot. Mode Complete. +1x Playfield Multiplier.
+# 66second frenzy mode. All shots are +50k base. Right Ramp disables each disc. Upon the 3rd right ramp shot. Mode Complete. +1x Playfield Multiplier.
 counters:
   cnt_hostage:
     starting_count: 0
@@ -228,7 +228,7 @@ slide_player:
   mode_hostage_started: 
     sl_mode_hostage01:
       priority: 500
-      expire: 90s
+      expire: 66s
      
 widgets:
    w_hostageUI:
@@ -253,7 +253,7 @@ widgets:
       color: beartrap
       
     - type: Text
-      text: 00:(player|hostage_hostage_90s_timer_tick)
+      text: 00:(player|hostage_hostage_66s_timer_tick)
       font_size: 100
       font_name: digitalclockfont
       color: red
@@ -343,7 +343,7 @@ widgets:
       corner_segments: 10           
 
 widget_player:
- player_hostage_hostage_90s_timer_tick{value==89}:  
+ player_hostage_hostage_66s_timer_tick{value==65}:  
   w_hostageUI: 
     slide: sl_mode_hostage01
     action: add

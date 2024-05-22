@@ -28,6 +28,16 @@ sound_player:
     mode_trap_select_started:
       BaseMusic:
         action: stop
+      DrillAndTapp:
+        action: stop
+      OutOfTime:
+        action: stop
+      Jonas:
+        action: stop
+      TheRules:
+        action: stop
+      FuckThisShit:
+        action: stop
       ModeQualifiedShootScoop:
         action: play   
         loops: -1

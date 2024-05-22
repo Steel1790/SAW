@@ -318,6 +318,8 @@ sound_player:
   mode_high_score_started:
     BaseMusic:
       action: stop
+    DrillAndTapp:
+      action: stop
 
   ball_save_default_saving_ball:
     HeHelpedMe:
@@ -336,28 +338,53 @@ sound_player:
       delay: 2.5s
       action: play
       events_when_played: Que_BaseMusic
-  Que_BaseMusic:
+  Que_BaseMusic{current_player.modes_completed==0}:
     BaseMusic:
       delay: 5s
       action: play
       loops: -1
-  # mode_bonus_stopped{current_player.ball == 1 or current_player.ball == 2}:
-  #   BaseMusic:
-  #     delay: 5s
-  #     action: play
-  #     loops: -1
+  Que_BaseMusic{current_player.modes_completed==1}:
+    DrillAndTapp:
+      delay: 5s
+      action: play
+      loops: -1
+  Que_BaseMusic{current_player.modes_completed==2}:
+    OutOfTime:
+      delay: 5s
+      action: play
+      loops: -1   
+  Que_BaseMusic{current_player.modes_completed==3}:
+    Jonas:
+      delay: 5s
+      action: play
+      loops: -1   
+  Que_BaseMusic{current_player.modes_completed==4}:
+    TheRules:
+      delay: 5s
+      action: play
+      loops: -1   
+  Que_BaseMusic{current_player.modes_completed>=5}:
+    FuckThisShit:
+      delay: 5s
+      action: play
+      loops: -1   
+
 
   mode_base_stopped:
     BaseMusic:
       action: stop
       events_when_played: StopModeQualifiedShootScoop
+    DrillAndTapp:
+      action: stop
   StopModeQualifiedShootScoop:
     ModeQualifiedShootScoop:
       action: stop
 
   mode_selection_mode_started:
     BaseMusic:
-      action: stop  
+      action: stop 
+    DrillAndTapp:
+      action: stop
     ModeQualifiedShootScoop:
       action: stop
 
@@ -564,117 +591,133 @@ sound_player:
  # razorwire mode
   mode_razorwire_complete:
     trapcomplete:
+      delay: 0.5s
       action: play
+      events_when_played: Que_BaseMusic_Progression
     RWModeStart:
       action: stop 
+  Que_BaseMusic_Progression{current_player.modes_completed==0}:
     BaseMusic:
+      delay: 10s
+      action: play
+      loops: -1   
+  Que_BaseMusic_Progression{current_player.modes_completed==1}:
+    DrillAndTapp:
+      delay: 10s
+      action: play
+      loops: -1   
+  Que_BaseMusic_Progression{current_player.modes_completed==2}:
+    OutOfTime:
+      delay: 10s
+      action: play
+      loops: -1   
+  Que_BaseMusic_Progression{current_player.modes_completed==3}:
+    Jonas:
+      delay: 10s
+      action: play
+      loops: -1   
+  Que_BaseMusic_Progression{current_player.modes_completed==4}:
+    TheRules:
+      delay: 10s
+      action: play
+      loops: -1   
+  Que_BaseMusic_Progression{current_player.modes_completed>=5}:
+    FuckThisShit:
       delay: 10s
       action: play
       loops: -1   
   player_razorwire_60s_timer_tick{value < 1}:
     RazorWireFail:
       action: play
-  mode_razorwire_stopped:
+
+  e_que_basemusic{current_player.modes_completed==0}:
     BaseMusic:
-      delay: 3s
+      delay: 2.5s
       action: play
       loops: -1 
+  e_que_basemusic{current_player.modes_completed==1}:
+    DrillAndTapp:
+      delay: 2.5s
+      action: play
+      loops: -1 
+  e_que_basemusic{current_player.modes_completed==2}:
+    OutOfTime:
+      delay: 2.5s
+      action: play
+      loops: -1   
+  e_que_basemusic{current_player.modes_completed==3}:
+    Jonas:
+      delay: 2.5s
+      action: play
+      loops: -1   
+  e_que_basemusic{current_player.modes_completed==4}:
+    TheRules:
+      delay: 2.5s
+      action: play
+      loops: -1   
+  e_que_basemusic{current_player.modes_completed>=5}:
+    FuckThisShit:
+      delay: 2.5s
+      action: play
+      loops: -1   
       
  # drillchair mode     
   mode_drillchair_complete:
     trapcomplete:
+      delay: 0.5s
       action: play
+      events_when_played: Que_BaseMusic_Progression
     DrillChairIntro:
       action: stop
     DrillChairModeStart:
       action: stop
-    BaseMusic:
-      delay: 10s
-      action: play
-      loops: -1      
   player_drillchair_drillchair_60s_timer_tick{value < 1}:
     DrillChairFail:
       action: play
   mode_drillchair_stopped:
     DrillChairModeStart:
       action: stop
-    BaseMusic:
-      delay: 3s
-      action: play
-      loops: -1      
 
 # reversebeartrap mode
   mode_reversebeartrap_complete:
     trapcomplete:
       action: play
+      events_when_played: Que_BaseMusic_Progression
     ReverseBearTrapModeStart:
       action: stop
-    BaseMusic:
-      delay: 10s
-      action: play
-      loops: -1      
   player_reversebeartrap_120s_reversebeartrap_timer_tick{value < 1}:
     ReverseBearTrapFail:
       action: play
-  mode_reversebeartrap_stopped:
-    BaseMusic:
-      delay: 3s
-      action: play
-      loops: -1      
 
 # quadshotgun mode  
   mode_quadshotgun_complete:
     trapcomplete:
       action: play
+      events_when_played: Que_BaseMusic_Progression
     QuadShotgunModeStart:
       action: stop
-    BaseMusic:
-      delay: 10s
-      action: play
-      loops: -1      
   player_quadshotgun_quadshotgun_60s_timer_tick{value == 1}:
     QuadShotgunFail:
       action: play
-  mode_quadshotgun_stopped:
-    BaseMusic:
-      delay: 3s
-      action: play
-      loops: -1
       
 # zeptest mode
   mode_zeptest_complete:
     trapcomplete:
       action: play
+      events_when_played: Que_BaseMusic_Progression
     ZepsTestModeStart:
       action: stop
-    BaseMusic:
-      delay: 10s
-      action: play
-      loops: -1           
-  mode_zeptest_stopped:
-    BaseMusic:
-      delay: 3s
-      action: play
-      loops: -1
  
 # flammable jelly mode      
   mode_flammablejelly_complete:
     trapcomplete:
       action: play  
+      events_when_played: Que_BaseMusic_Progression
     FlammableJellyModeStart:
       action: stop
-    BaseMusic:
-      delay: 10s
-      action: play
-      loops: -1             
   player_flammablejelly_60s_flammablejelly_timer_tick{value < 1}:
     FlammableJellyFail:
       action: play
-  mode_flammablejelly_stopped:
-    BaseMusic:
-      delay: 3s
-      action: play
-      loops: -1
 
 # # survival instinct mode
 #   mode_survival_instinct_complete:
@@ -686,11 +729,6 @@ sound_player:
 #       delay: 3s
 #       action: play
 #       loops: -1           
-  mode_survival_instinct_stopped:
-    BaseMusic:
-      delay: 3s
-      action: play
-      loops: -1
 
   sg_saw_qualify_subtract_hit{device.counters.cnt_saw_qualify.value==1}:
     SawLetterNegative:
@@ -734,8 +772,6 @@ sound_player:
   player_puzzle_hurryup_t_puzzle_timer_tick{value < 1}:
     PuzzlePieceHurryUp:
      action: stop
-    BaseMusic:
-      action: play
 #puzzle collected
   mode_puzzle_hurryup_complete:
     PuzzlePiece:
@@ -790,7 +826,16 @@ sound_player:
       action: stop      
     BaseMusic:
       action: stop
-
+    DrillAndTapp:
+      action: stop
+    OutOfTime:
+      action: stop
+    Jonas:
+      action: stop
+    TheRules:
+      action: stop
+    FuckThisShit:
+      action: stop
 #event_player: 
 #  slide_base_slide_main_active: e_puzzle_music_off1|0.83s
 #  e_puzzle_music_off1: e_puzzle_music_off2|0.1s
