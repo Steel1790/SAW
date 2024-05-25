@@ -99,6 +99,8 @@ event_player:
     - e_que_basemusic|0.5s 
   mode_puzzle_hurryup_stopping:
     - e_que_basemusic|0.5s
+  mode_hostage_stopping:
+    - e_que_basemusic|0.5s
 
 
   mode_trap_select_started: stop_saw_widget|0.2s
@@ -141,7 +143,7 @@ event_player:
   minimode_ramps_complete: stop_items_widget|2.5s
   minimode_pops_complete: stop_items_widget|2.5s
   minimode_standups_complete: stop_items_widget|2.5s
-  minimode_scoops_complete: stop_items_widget|2.5s
+  minimode_slings_complete: stop_items_widget|2.5s
   minimode_inlanes_complete: stop_items_widget|2.5s
   minimode_spinners_complete: stop_items_widget|2.5s
   minimode_loops_complete: stop_items_widget|2.5s
@@ -162,7 +164,7 @@ random_event_player:
     events:
       minimode_pops_complete: 12.5
       minimode_standups_complete: 12.5 
-      minimode_scoops_complete: 12.5
+      minimode_slings_complete: 12.5
       minimode_inlanes_complete: 12.5
       minimode_spinners_complete: 12.5   
       minimode_ramps_complete: 12.5   
@@ -389,6 +391,41 @@ variable_player:
     combo_progress:
       int: 1
       action: add
+
+# jigsaw workshop tracking
+
+  counter_minimode_pops_counter_hit:
+    visual_pops_counter:
+      action: set
+      int: (count)
+  counter_minimode_standups_counter_hit:
+    visual_standups_counter:
+      action: set
+      int: (count)
+  counter_minimode_slings_counter_hit:
+    visual_slings_counter:
+      action: set
+      int: (count)
+  counter_minimode_inlanes_counter_hit:
+    visual_inlanes_counter:
+      action: set
+      int: (count)
+  counter_minimode_spinners_counter_hit:
+    visual_spinners_counter:
+      action: set
+      int: (count)
+  counter_minimode_ramps_counter_hit:
+    visual_ramps_counter:
+      action: set
+      int: (count)
+  counter_minimode_loops_counter_hit:
+    visual_loops_counter:
+      action: set
+      int: (count)
+  counter_minimode_drops_counter_hit:
+    visual_drops_counter:
+      action: set
+      int: (count)
 #minimode / jigsaw workshop
   minimode_pops_complete:
     #score: 3000000
@@ -398,7 +435,7 @@ variable_player:
     #score: 3000000
     bonus_candles: 1
     value_type: int    
-  minimode_scoops_complete:
+  minimode_slings_complete:
     #score: 3000000   
     bonus_bathtubs: 1
     value_type: int    
@@ -492,7 +529,32 @@ variable_player:
       action: set      
     score_total:
       int: current_player.score
-      action: set   
+      action: set 
+#set starting values for jigsaw workshop      
+    visual_pops_counter:
+      int: 20
+      action: set
+    visual_standups_counter:
+      int: 10
+      action: set
+    visual_slings_counter:
+      int: 25
+      action: set
+    visual_inlanes_counter:
+      int: 6
+      action: set
+    visual_spinners_counter:
+      int: 40
+      action: set
+    visual_ramps_counter:
+      int: 10
+      action: set
+    visual_loops_counter:
+      int: 10
+      action: set
+    visual_drops_counter:
+      int: 8
+      action: set
   player_base_t_playfield_multiplier_timer_tick{value < 1}:
     pf_multiplier:
       int: 1
@@ -522,10 +584,9 @@ counters:
     count_events: playfield_active
 
   minimode_pops_counter:
-    starting_count: 0
-    count_complete_value: 20
-    enable_events: 
-    disable_events: 
+    starting_count: 20
+    count_complete_value: 0
+    direction: down
     start_enabled: true
 #    persist_state: true
     reset_on_complete: true
@@ -534,10 +595,9 @@ counters:
     count_events: sw_pops
 
   minimode_standups_counter:
-    starting_count: 0
-    count_complete_value: 10
-    enable_events: 
-    disable_events: 
+    starting_count: 10
+    count_complete_value: 0
+    direction: down
     start_enabled: true
 #    persist_state: true
     reset_on_complete: true
@@ -545,23 +605,21 @@ counters:
     events_when_complete: minimode_standups_complete 
     count_events: sw_standup  
     
-  minimode_scoops_counter:
-    starting_count: 0
-    count_complete_value: 6
-    enable_events: 
-    disable_events: 
+  minimode_slings_counter:
+    starting_count: 25
+    count_complete_value: 0
+    direction: down
     start_enabled: true
 #    persist_state: true
     reset_on_complete: true
     disable_on_complete: false    
-    events_when_complete: minimode_scoops_complete 
-    count_events: sw_right_scoop, sw_left_scoop
+    events_when_complete: minimode_slings_complete 
+    count_events: sw_slingshot
 
   minimode_inlanes_counter:
-    starting_count: 0
-    count_complete_value: 6
-    enable_events: 
-    disable_events: 
+    starting_count: 6
+    count_complete_value: 0
+    direction: down
     start_enabled: true
 #    persist_state: true
     reset_on_complete: true
@@ -570,10 +628,9 @@ counters:
     count_events: sw_inlane    
     
   minimode_spinners_counter:
-    starting_count: 0
-    count_complete_value: 40
-    enable_events: 
-    disable_events: 
+    starting_count: 40
+    count_complete_value: 0
+    direction: down
     start_enabled: true
 #    persist_state: true
     reset_on_complete: true
@@ -582,10 +639,9 @@ counters:
     count_events: spinner_spinner_hit 
 
   minimode_ramps_counter:
-    starting_count: 0
-    count_complete_value: 10
-    enable_events: 
-    disable_events: 
+    starting_count: 10
+    count_complete_value: 0
+    direction: down
     start_enabled: true
 #    persist_state: true
     reset_on_complete: true
@@ -594,10 +650,9 @@ counters:
     count_events: sw_ramp      
     
   minimode_loops_counter:
-    starting_count: 0
-    count_complete_value: 10
-    enable_events: 
-    disable_events: 
+    starting_count: 10
+    count_complete_value: 0
+    direction: down
     start_enabled: true
 #    persist_state: true
     reset_on_complete: true
@@ -606,10 +661,9 @@ counters:
     count_events: sw_loop   
 
   minimode_drops_counter:
-    starting_count: 0
-    count_complete_value: 8
-    enable_events: 
-    disable_events: 
+    starting_count: 8
+    count_complete_value: 0
+    direction: down
     start_enabled: true
 #    persist_state: true
     reset_on_complete: true
@@ -712,7 +766,7 @@ shows:
     - duration: -1      
       lights:    
         (leds): red   
-  minimode_scoops_show_complete:    
+  minimode_slings_show_complete:    
     - duration: -1      
       lights:    
         (leds): red  
@@ -1013,14 +1067,14 @@ show_player:
         leds: l_jw_syringe
       loops: -1  
       priority: 119
-  minimode_scoops_complete:
+  minimode_slings_complete:
     jw_chase_bathtub:
       loops: 0
       speed: 8
       priority: 120
       show_tokens:
         color1: beartrap
-    minimode_scoops_show_complete:
+    minimode_slings_show_complete:
       show_tokens:
         leds: l_jw_bathtub
       loops: -1  
@@ -1460,14 +1514,14 @@ widgets:
   saw_letters:
     - type: Text
       text: Shoot WHITE ARROWS to spell SAW!
-      color: white
+      color: black
       x: 50%
       y: 95%
       z: 2
       font_size: 60
-      font_name: Skilt Gothic W04 Thin
-      outline_color: black
-      outline_width: 7
+      font_name: AeroMaticsDisplaRegular
+      outline_color: ffcc99
+      outline_width: 2
     - type: Text
       text: SAW
       color: white
@@ -1482,14 +1536,14 @@ widgets:
   w_trap_select_start:
     - type: Text
       text: Get to the BATHROOM to Select A Mode!
-      color: white
+      color: black
       x: 50%
       y: 95%
       z: 2
       font_size: 60
-      font_name: Skilt Gothic W04 Thin
-      outline_color: black
-      outline_width: 7
+      font_name: AeroMaticsDisplaRegular
+      outline_color: ffcc99
+      outline_width: 2
       
   saw_s_letters:
      - type: Text
@@ -2029,148 +2083,148 @@ widgets:
 #progress
   w_combo_progress:
     - type: Text
-      text: (player|combo_progress) /6 Combos
-      color: white
-      font_size: 25
-      font_name: Skilt Gothic W04 Thin
+      text: (player|combo_progress)
+      color: d2d3cd
+      font_size: 27
+      font_name: AeroMaticsDisplaRegular
       outline_color: black
-      outline_width: 5
-      x: 10%
-      y: 49%
+      outline_width: 3
+      x: 12.9%
+      y: 46.7%
       z: 6  
-    - type: image
-      image: SurveillanceCameraTrackingIcon
-      x: 2.6%
-      y: 49%
-      z: 6
+    # - type: image
+    #   image: SurveillanceCameraTrackingIcon
+    #   x: 2.6%
+    #   y: 49%
+    #   z: 6
   w_keys_progress:
     - type: Text
-      text: (player|bonus_keys) Keys
-      color: white
-      font_size: 25
-      font_name: Skilt Gothic W04 Thin
+      text: (player|visual_ramps_counter)
+      color: d2d3cd
+      font_size: 32
+      font_name: AeroMaticsDisplaRegular
       outline_color: black
-      outline_width: 5
-      x: 90.4%
-      y: 82%
+      outline_width: 3
+      x: 77.5%
+      y: 34.7%
       z: 6  
-    - type: image
-      image: IconKey
-      x: 85%
-      y: 82%
-      z: 6
+    # - type: image
+    #   image: IconKey
+    #   x: 85%
+    #   y: 82%
+    #   z: 6
   w_handguns_progress:
     - type: Text
-      text: (player|bonus_handguns) Handguns
-      color: white
-      font_size: 25
-      font_name: Skilt Gothic W04 Thin
+      text: (player|visual_spinners_counter)
+      color: d2d3cd
+      font_size: 32
+      font_name: AeroMaticsDisplaRegular
       outline_color: black
-      outline_width: 5
-      x: 92.5%
-      y: 74%
+      outline_width: 3
+      x: 70.5%
+      y: 70.3%
       z: 6  
-    - type: image
-      image: IconHandgun
-      x: 85%
-      y: 74%
-      z: 6
+    # - type: image
+    #   image: IconHandgun
+    #   x: 85%
+    #   y: 74%
+    #   z: 6
   w_hacksaws_progress:
     - type: Text
-      text: (player|bonus_hacksaws) Hacksaws
-      color: white
-      font_size: 25
-      font_name: Skilt Gothic W04 Thin
+      text: (player|visual_loops_counter)
+      color: d2d3cd
+      font_size: 32
+      font_name: AeroMaticsDisplaRegular
       outline_color: black
-      outline_width: 5
-      x: 92.3%
-      y: 66%
+      outline_width: 3
+      x: 89.1%
+      y: 66.5%
       z: 6  
-    - type: image
-      image: IconHacksaw
-      x: 85%
-      y: 66%
-      z: 6
+    # - type: image
+    #   image: IconHacksaw
+    #   x: 85%
+    #   y: 66%
+    #   z: 6
   w_candles_progress:
     - type: Text
-      text: (player|bonus_candles) Candles
-      color: white
-      font_size: 25
-      font_name: Skilt Gothic W04 Thin
+      text: (player|visual_standups_counter)
+      color: d2d3cd
+      font_size: 32
+      font_name: AeroMaticsDisplaRegular
       outline_color: black
-      outline_width: 5
-      x: 91.6%
-      y: 58%
+      outline_width: 3
+      x: 65.2%
+      y: 50%
       z: 6  
-    - type: image
-      image: IconCandle
-      x: 85%
-      y: 58%
-      z: 6
+    # - type: image
+    #   image: IconCandle
+    #   x: 85%
+    #   y: 58%
+    #   z: 6
   w_taperecorders_progress:
     - type: Text
-      text: (player|bonus_taperecorders) Tape Recorders
-      color: white
-      font_size: 25
-      font_name: Skilt Gothic W04 Thin
+      text: (player|visual_inlanes_counter)
+      color: d2d3cd
+      font_size: 32
+      font_name: AeroMaticsDisplaRegular
       outline_color: black
-      outline_width: 5
-      x: 94%
-      y: 50%
+      outline_width: 3
+      x: 77.1%
+      y: 56.5%
       z: 6  
-    - type: image
-      image: IconTapeRecorder
-      x: 85%
-      y: 50%
-      z: 6
+    # - type: image
+    #   image: IconTapeRecorder
+    #   x: 85%
+    #   y: 50%
+    #   z: 6
   w_bathtubs_progress:
     - type: Text
-      text: (player|bonus_bathtubs) Bathtubs
-      color: white
-      font_size: 25
-      font_name: Skilt Gothic W04 Thin
+      text: (player|visual_slings_counter)
+      color: d2d3cd
+      font_size: 32
+      font_name: AeroMaticsDisplaRegular
       outline_color: black
-      outline_width: 5
-      x: 92%
-      y: 42%
+      outline_width: 3
+      x: 65.6%
+      y: 26.6%
       z: 6  
-    - type: image
-      image: IconBathtub
-      x: 85%
-      y: 42%
-      z: 6
+    # - type: image
+    #   image: IconBathtub
+    #   x: 85%
+    #   y: 42%
+    #   z: 6
   w_syringes_progress:
     - type: Text
-      text: (player|bonus_syringes) Antidotes
-      color: white
-      font_size: 25
-      font_name: Skilt Gothic W04 Thin
+      text: (player|visual_drops_counter)
+      color: d2d3cd
+      font_size: 32
+      font_name: AeroMaticsDisplaRegular
       outline_color: black
-      outline_width: 5
-      x: 92.2%
-      y: 34%
+      outline_width: 3
+      x: 89.5%
+      y: 46.5%
       z: 6  
-    - type: image
-      image: IconSyringe
-      x: 85%
-      y: 34%
-      z: 6
+    # - type: image
+    #   image: IconSyringe
+    #   x: 85%
+    #   y: 34%
+    #   z: 6
   w_gears_progress:
     - type: Text
-      text: (player|bonus_gears) Gears
-      color: white
-      font_size: 25
-      font_name: Skilt Gothic W04 Thin
+      text: (player|visual_pops_counter)
+      color: d2d3cd
+      font_size: 32
+      font_name: AeroMaticsDisplaRegular
       outline_color: black
-      outline_width: 5
-      x: 91%
-      y: 26%
+      outline_width: 3
+      x: 90%
+      y: 26.5%
       z: 6  
-    - type: image
-      image: IconGears
-      x: 85%
-      y: 26%
-      z: 6
+    # - type: image
+    #   image: IconGears
+    #   x: 85%
+    #   y: 26%
+    #   z: 6
 # item collected
   w_keys_collected:
     - type: Text
@@ -2257,7 +2311,7 @@ widgets:
       text: Bathtub Collected
       color: white
       x: 50%
-      y: 70%
+      y: 69.8%
       z: 5
       font_size: 85
       font_name: Mustkill
@@ -2320,69 +2374,69 @@ widgets:
 # puzzle piece progress
   w_puzzle_progress:
     - type: Text
-      text: (player|puzzle_pieces) /5 Puzzle Pieces
-      color: white
-      font_size: 25
-      font_name: Skilt Gothic W04 Thin
+      text: (player|puzzle_pieces)
+      color: d2d3cd
+      font_size: 27
+      font_name: AeroMaticsDisplaRegular
       outline_color: black
-      outline_width: 5
-      x: 11.6%
-      y: 42%
+      outline_width: 3
+      x: 6.6%
+      y: 30.9%
       z: 6  
-    - type: image
-      image: IconPuzzlePiece
-      x: 3.3%
-      y: 42%
-      z: 6
+    # - type: image
+    #   image: IconPuzzlePiece
+    #   x: 3.3%
+    #   y: 42%
+    #   z: 6
 # mb progress
-  w_hacksaw_mb_progress:
-    - type: Text
-      text: (player|hacksaw_mb_lock_counter) /3 Hacksaw MB locked
-      color: white
-      font_size: 25
-      font_name: Skilt Gothic W04 Thin
-      outline_color: black
-      outline_width: 5
-      x: 13.5%
-      y: 34%
-      z: 6  
-    - type: image
-      image: HacksawMBIcon
-      x: 3%
-      y: 34%
-      z: 6
-  w_jigsaw_mb_progress:
-    - type: Text
-      text: (player|jigsaw_mb_lock_counter) /3 Jigsaw MB locked
-      color: white
-      font_size: 25
-      font_name: Skilt Gothic W04 Thin
-      outline_color: black
-      outline_width: 5
-      x: 12.5%
-      y: 26%
-      z: 6  
-    - type: image
-      image: JigsawMBIcon
-      x: 3%
-      y: 26%
-      z: 6
-  w_shackle_mb_progress:
-    - type: Text
-      text: (player|shackle_mb_lock_counter) /2 Shackle MB locked
-      color: white
-      font_size: 25
-      font_name: Skilt Gothic W04 Thin
-      outline_color: black
-      outline_width: 5
-      x: 13%
-      y: 18%
-      z: 6  
-    - type: image
-      image: ShackleMBIcon
-      x: 3%
-      y: 18%
-      z: 6
+  # w_hacksaw_mb_progress:
+  #   - type: Text
+  #     text: (player|hacksaw_mb_lock_counter) /3 Hacksaw MB locked
+  #     color: white
+  #     font_size: 25
+  #     font_name: Skilt Gothic W04 Thin
+  #     outline_color: black
+  #     outline_width: 5
+  #     x: 13.5%
+  #     y: 34%
+  #     z: 6  
+  #   - type: image
+  #     image: HacksawMBIcon
+  #     x: 3%
+  #     y: 34%
+  #     z: 6
+  # w_jigsaw_mb_progress:
+  #   - type: Text
+  #     text: (player|jigsaw_mb_lock_counter) /3 Jigsaw MB locked
+  #     color: white
+  #     font_size: 25
+  #     font_name: Skilt Gothic W04 Thin
+  #     outline_color: black
+  #     outline_width: 5
+  #     x: 12.5%
+  #     y: 26%
+  #     z: 6  
+  #   - type: image
+  #     image: JigsawMBIcon
+  #     x: 3%
+  #     y: 26%
+  #     z: 6
+  # w_shackle_mb_progress:
+  #   - type: Text
+  #     text: (player|shackle_mb_lock_counter) /2 Shackle MB locked
+  #     color: white
+  #     font_size: 25
+  #     font_name: Skilt Gothic W04 Thin
+  #     outline_color: black
+  #     outline_width: 5
+  #     x: 13%
+  #     y: 18%
+  #     z: 6  
+  #   - type: image
+  #     image: ShackleMBIcon
+  #     x: 3%
+  #     y: 18%
+  #     z: 6
 
 #combos
   w_leftloop_leftramp_combo:
@@ -2596,20 +2650,30 @@ widgets:
       font_size: 50
       font_name: sawesome
       outline_color: black
-      outline_width: 5
-      color: white
-      x: 6%
-      y: 86%
+      outline_width: 2
+      color: d2d3cd
+      x: 11%
+      y: 63%
       z: 2
     - type: Text
-      text: Spell to Start Hurry-up
+      text: Spell to Start
       font_size: 20
-      font_name: Mustkill
+      font_name: AeroMaticsDisplaRegular
       outline_color: black
-      outline_width: 5
-      color: white
-      x: 8%
-      y: 80%
+      outline_width: 2
+      color: d2d3cd
+      x: 11%
+      y: 58%
+      z: 2
+    - type: Text
+      text: Hurry-up
+      font_size: 20
+      font_name: AeroMaticsDisplaRegular
+      outline_color: black
+      outline_width: 2
+      color: d2d3cd
+      x: 11%
+      y: 55%
       z: 2
   w_die_d_letters:
     - type: Text
@@ -2619,8 +2683,8 @@ widgets:
       outline_color: black
       outline_width: 5
       color: red
-      x: 3.1%
-      y: 86%
+      x: 8.1%
+      y: 63%
       z: 3
   w_die_di_letters:
     - type: Text
@@ -2630,8 +2694,8 @@ widgets:
       outline_color: black
       outline_width: 5
       color: red
-      x: 3.1%
-      y: 86%
+      x: 8.1%
+      y: 63%
       z: 3
     - type: Text
       text: I
@@ -2640,8 +2704,8 @@ widgets:
       outline_color: black
       outline_width: 5
       color: red
-      x: 6.5%
-      y: 86%
+      x: 11.5%
+      y: 63%
       z: 3   
   w_die_die_letters:
     - type: Text
@@ -2651,8 +2715,8 @@ widgets:
       outline_color: black
       outline_width: 5
       color: red
-      x: 3.1%
-      y: 86%
+      x: 8.1%
+      y: 63%
       z: 3
     - type: Text
       text: I
@@ -2661,8 +2725,8 @@ widgets:
       outline_color: black
       outline_width: 5
       color: red
-      x: 6.5%
-      y: 86%
+      x: 11.5%
+      y: 61%
       z: 3 
     - type: Text
       text: E
@@ -2671,8 +2735,8 @@ widgets:
       outline_color: black
       outline_width: 5
       color: red
-      x: 9.9%
-      y: 86%
+      x: 14.9%
+      y: 61%
       z: 3
   w_playfield_multiplier:
     - type: Text
@@ -2709,114 +2773,103 @@ widgets:
       number_grouping: true
       #y: 16
       #x: 25
-      y: 16
-      x: 25
+      y: 36
+      x: 253
       z: 5
       font_size: 36
-      anchor_x: left
+      anchor_x: right
       anchor_y: bottom
-      font_name: TrajanProRegular
-      color: C2E3E0        
-    - type: image
-      image: hacksawUI
-      opacity: 0.9
-      y: 1
-      x: 1
-      z: 5
-      anchor_x: left
-      anchor_y: bottom      
+      font_name: AeroMaticsDisplaRegular
+      color: black
+      outline_color: f0cfab
+      outline_width: 1
   2PlayerGame:       
      - type: Text
        text: (player2|score)
        number_grouping: true   
-       font_name: TrajanProRegular
+       font_name: AeroMaticsDisplaRegular
        font_size: 36
+       anchor_x: right
+       anchor_y: bottom
        y: 35
-       x: left+490
+       x: left+580
        z: 5
-       color: C2E3E0
-     - type: image
-       image: hacksawUI
-       opacity: 0.9
-       y: 1
-       x: left+520
-       z: 5
-       anchor_y: bottom    
+       color: black
+       outline_color: f0cfab
+       outline_width: 1
   3PlayerGame:
      - type: Text
        text: (player3|score)
        number_grouping: true   
-       font_name: TrajanProRegular
+       font_name: AeroMaticsDisplaRegular
        font_size: 36
+       anchor_x: right
+       anchor_y: bottom
        y: 35
-       x: left+840
+       x: left+909
        z: 5
-       color: C2E3E0
-     - type: image
-       image: hacksawUI
-       opacity: 0.9
-       y: 1
-       x: left+870
-       z: 5
-       anchor_y: bottom  
+       color: black
+       outline_color: f0cfab
+       outline_width: 1
   4PlayerGame:
      - type: Text
        text: (player4|score)
        number_grouping: true       
-       font_name: TrajanProRegular
+       font_name: AeroMaticsDisplaRegular
        font_size: 36
-       y: 35
-       x: left+1180
-       z: 5
-       color: C2E3E0
-     - type: image
-       image: hacksawUI
-       opacity: 0.9
-       y: 1
-       x: left+1210
-       z: 5
+       anchor_x: right
        anchor_y: bottom
+       y: 35
+       x: left+1240
+       z: 5
+       color: black
+       outline_color: f0cfab
+       outline_width: 1
 
 #player active
   Player1Active:
     - type: text
       text: (player1|score)
-      number_grouping: true
-      y: 16
-      x: 25
+      number_grouping: true  
+      y: 36
+      x: 253
       z: 7
       font_size: 36
-      anchor_x: left
+      anchor_x: right
       anchor_y: bottom
-      font_name: TrajanProRegular
-      color: C2E3E0    
+      font_name: AeroMaticsDisplaRegular
+      color: black
+      outline_color: f0cfab
+      outline_width: 1
     - type: image
-      image: currentplayer
-      opacity: 0.9
+      image: BloodyHacksaw
+      opacity: 1.0
       y: 1
-      x: 1
+      x: 35
       z: 7
       anchor_x: left
       anchor_y: bottom  
     - type: image
-      image: gordonsaw
+      image: player1UI
   Player2Active:
     - type: text
       text: (player2|score)
       number_grouping: true
-      y: 16
-      x: left+400
+      y: 36
+      x: left+580
       z: 7
       font_size: 36
-      anchor_x: left
+      anchor_x: right
       anchor_y: bottom
-      font_name: TrajanProRegular
-      color: C2E3E0    
+      font_name: AeroMaticsDisplaRegular
+      color: black
+      outline_color: f0cfab
+      outline_width: 1   
     - type: image
-      image: currentplayer
-      opacity: 0.9
+      image: BloodyHacksaw
+      opacity: 1.0
       y: 1
-      x: left+520
+      x: left+515
       z: 7
       anchor_y: bottom       
     - type: image
@@ -2825,19 +2878,21 @@ widgets:
     - type: Text
       text: (player3|score)
       number_grouping: true   
-      font_name: TrajanProRegular
+      font_name: AeroMaticsDisplaRegular
       font_size: 36
-      anchor_x: left
+      anchor_x: right
       anchor_y: bottom
-      y: 16
-      x: left+750
+      y: 36
+      x: left+909
       z: 7
-      color: C2E3E0
+      color: black
+      outline_color: f0cfab
+      outline_width: 1
     - type: image
-      image: currentplayer
-      opacity: 0.9
+      image: BloodyHacksaw
+      opacity: 1.0
       y: 1
-      x: left+870
+      x: left+840
       z: 7
       anchor_y: bottom  
     - type: image
@@ -2846,19 +2901,21 @@ widgets:
     - type: Text
       text: (player4|score)
       number_grouping: true       
-      font_name: TrajanProRegular
+      font_name: AeroMaticsDisplaRegular
       font_size: 36
-      anchor_x: left
+      anchor_x: right
       anchor_y: bottom
-      y: 16
-      x: left+1090
+      y: 36
+      x: left+1240
       z: 5
-      color: C2E3E0
+      color: black
+      outline_color: f0cfab
+      outline_width: 1
     - type: image
-      image: currentplayer
-      opacity: 0.9
+      image: BloodyHacksaw
+      opacity: 1.0
       y: 1
-      x: left+1210
+      x: left+1174
       z: 5
       anchor_y: bottom
     - type: image
@@ -2869,9 +2926,9 @@ widgets:
   Player2Inactive: 
      - type: Text
        text: PRESS START
-       font_name: TrajanProRegular
+       font_name: AeroMaticsDisplaRegular
        font_size: 28
-       y: 35
+       y: 60
        x: left+490
        z: 5
        color: red
@@ -2884,22 +2941,15 @@ widgets:
            value: 1
            duration: 1.5s
            repeat: true
-     - type: image
-       image: hacksawUI
-       opacity: 0.9
-       y: 1
-       x: left+520
-       z: 2
-       anchor_y: bottom
             
 #player 3   
   Player3Inactive:
      - type: Text
        text: PRESS START
-       font_name: TrajanProRegular
+       font_name: AeroMaticsDisplaRegular
        font_size: 28
-       y: 35
-       x: left+840
+       y: 60
+       x: left+820
        z: 5
        color: red
        animations:
@@ -2911,22 +2961,15 @@ widgets:
            value: 1
            duration: 1.5s
            repeat: true 
-     - type: image
-       image: hacksawUI
-       opacity: 0.9
-       y: 1
-       x: left+870
-       z: 4
-       anchor_y: bottom
        
 #player 4   
   Player4Inactive:
      - type: Text
        text: PRESS START
-       font_name: TrajanProRegular
+       font_name: AeroMaticsDisplaRegular
        font_size: 28
-       y: 35
-       x: left+1180
+       y: 60
+       x: left+1150
        z: 5     
        color: red
        animations:
@@ -2938,17 +2981,10 @@ widgets:
            value: 1
            duration: 1.5s
            repeat: true 
-     - type: image
-       image: hacksawUI
-       opacity: 0.9
-       y: 1
-       x: left+1210
-       z: 4
-       anchor_y: bottom   
   Player2InactiveBall2: 
      - type: image
        image: hacksawUI
-       opacity: 0.9
+       opacity: 0.0
        y: 1
        x: left+520
        z: 2
@@ -2956,7 +2992,7 @@ widgets:
   Player3InactiveBall2:
      - type: image
        image: hacksawUI
-       opacity: 0.9
+       opacity: 0.0
        y: 1
        x: left+870
        z: 4
@@ -2964,7 +3000,7 @@ widgets:
   Player4InactiveBall2:
      - type: image
        image: hacksawUI
-       opacity: 0.9
+       opacity: 0.0
        y: 1
        x: left+1210
        z: 4
@@ -3005,15 +3041,15 @@ widget_player:
     w_gears_progress:
       slide: base_slide_main
       action: add  
-    w_hacksaw_mb_progress:
-      slide: base_slide_main
-      action: add 
-    w_jigsaw_mb_progress:
-      slide: base_slide_main
-      action: add 
-    w_shackle_mb_progress:
-      slide: base_slide_main
-      action: add   
+    # w_hacksaw_mb_progress:
+    #   slide: base_slide_main
+    #   action: add 
+    # w_jigsaw_mb_progress:
+    #   slide: base_slide_main
+    #   action: add 
+    # w_shackle_mb_progress:
+    #   slide: base_slide_main
+    #   action: add   
     w_die_letters:
       slide: base_slide_main
       action: add
@@ -3052,15 +3088,15 @@ widget_player:
     w_gears_progress:
       slide: base_slide_main
       action: add  
-    w_hacksaw_mb_progress:
-      slide: base_slide_main
-      action: add 
-    w_jigsaw_mb_progress:
-      slide: base_slide_main
-      action: add 
-    w_shackle_mb_progress:
-      slide: base_slide_main
-      action: add   
+    # w_hacksaw_mb_progress:
+    #   slide: base_slide_main
+    #   action: add 
+    # w_jigsaw_mb_progress:
+    #   slide: base_slide_main
+    #   action: add 
+    # w_shackle_mb_progress:
+    #   slide: base_slide_main
+    #   action: add   
     2PlayerGame:
       slide: base_slide_main
       action: add 
@@ -3114,15 +3150,6 @@ widget_player:
     w_gears_progress:
       slide: base_slide_main
       action: add  
-    w_hacksaw_mb_progress:
-      slide: base_slide_main
-      action: add 
-    w_jigsaw_mb_progress:
-      slide: base_slide_main
-      action: add 
-    w_shackle_mb_progress:
-      slide: base_slide_main
-      action: add   
     3PlayerGame:  
       slide: base_slide_main
       action: add      
@@ -3131,16 +3158,10 @@ widget_player:
       action: add  
     Player3Inactive:  
       slide: base_slide_main
-      action: remove 
-    #Player3InactiveBall2:  
-    #  slide: base_slide_main
-    #  action: add      
+      action: remove      
     Player4Inactive:  
       slide: base_slide_main
       action: remove 
-    #Player4InactiveBall2:  
-    #  slide: base_slide_main
-    #  action: add  
     saw_letters:
       slide: base_slide_main
       action: add
@@ -3191,15 +3212,15 @@ widget_player:
     w_gears_progress:
       slide: base_slide_main
       action: add  
-    w_hacksaw_mb_progress:
-      slide: base_slide_main
-      action: add 
-    w_jigsaw_mb_progress:
-      slide: base_slide_main
-      action: add 
-    w_shackle_mb_progress:
-      slide: base_slide_main
-      action: add   
+    # w_hacksaw_mb_progress:
+    #   slide: base_slide_main
+    #   action: add 
+    # w_jigsaw_mb_progress:
+    #   slide: base_slide_main
+    #   action: add 
+    # w_shackle_mb_progress:
+    #   slide: base_slide_main
+    #   action: add   
     Player4Inactive:  
       slide: base_slide_main
       action: remove 
@@ -3262,15 +3283,15 @@ widget_player:
     w_gears_progress:
       slide: base_slide_main
       action: add  
-    w_hacksaw_mb_progress:
-      slide: base_slide_main
-      action: add 
-    w_jigsaw_mb_progress:
-      slide: base_slide_main
-      action: add 
-    w_shackle_mb_progress:
-      slide: base_slide_main
-      action: add   
+    # w_hacksaw_mb_progress:
+    #   slide: base_slide_main
+    #   action: add 
+    # w_jigsaw_mb_progress:
+    #   slide: base_slide_main
+    #   action: add 
+    # w_shackle_mb_progress:
+    #   slide: base_slide_main
+    #   action: add   
     saw_letters:
       slide: base_slide_main
       action: add
@@ -3823,7 +3844,7 @@ widget_player:
     w_taperecorders_collected:
       slide: base_slide_main
       action: add 
-  minimode_scoops_complete:
+  minimode_slings_complete:
     w_bathtubs_collected:
       slide: base_slide_main
       action: add 
@@ -3900,42 +3921,35 @@ slides:
     #  x: left+95
     #  opacity: 0.5 
     - type: text
-      text: BALL (player|ball)
-      font_name: TrajanProRegular
-      y: top-106
-      x: 50%
-      color: C2E3E0
-      font_size: 32 
+      text: (player|ball)
+      font_name: AeroMaticsDisplaRegular
+      y: top-196
+      x: 11.5%
+      z: 2
+      color: d2d3cd
+      font_size: 50
       outline_color: black
-      outline_width: 2
-    - type: image
-      image: PipeUpperBorderBallUI
-      y: top-110
-      x: 56.2%
-    - type: image
-      image: PipeUpperBorderUI
-      y: top-50
-      x: 50%
-    - type: image
-      image: PipeRightBorderUI
-      y: 45.3%
-      x: 93%
-    - type: image
-      image: PipeUpperLeftBorderUI
-      y: 59.2%
-      x: 12%
-    - type: image
-      image: PipeLeftBorderUI
-      y: 41.5%
-      x: 12%
-    #- type: image
-    #  image: rustpipe2
-    #  y: top-44
-    #  x: right-90
-    #  opacity: 0.5    
-    #- type: image
-    #  image: gordonsaw
-
+      outline_width: 3
+    # - type: image
+    #   image: PipeUpperBorderBallUI
+    #   y: top-110
+    #   x: 56.2%
+    # - type: image
+    #   image: PipeUpperBorderUI
+    #   y: top-50
+    #   x: 50%
+    # - type: image
+    #   image: PipeRightBorderUI
+    #   y: 45.3%
+    #   x: 93%
+    # - type: image
+    #   image: PipeUpperLeftBorderUI
+    #   y: 59.2%
+    #   x: 12%
+    # - type: image
+    #   image: PipeLeftBorderUI
+    #   y: 41.5%
+    #   x: 12%
  
   trapcomplete:
     widgets:

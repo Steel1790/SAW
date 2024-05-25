@@ -1,7 +1,7 @@
 #config_version=6
 mode:
   start_events: logicblock_cnt_negative_shot_counter_updated{value==3}
-  stop_events: ball_ended, ball_ending, ball_will_end, mode_hacksaw_multiball_started, mode_shackle_multiball_started, mode_jigsaw_multiball_started, mode_hostage_complete
+  stop_events: ball_ended, ball_ending, ball_will_end, mode_hacksaw_multiball_started, mode_shackle_multiball_started, mode_jigsaw_multiball_started, mode_hostage_complete, player_hostage_hostage_66s_timer_tick{value < 1}
   priority: 181
 
 timers:
@@ -348,3 +348,25 @@ widget_player:
     slide: sl_mode_hostage01
     action: add
    
+sound_player:
+  mode_hostage_started:
+    BaseMusic:
+      action: stop
+    DrillAndTapp:
+      action: stop
+    OutOfTime:
+      action: stop
+    Jonas:
+      action: stop
+    TheRules:
+      action: stop
+    FuckThisShit:
+      action: stop
+    HostageModeSong:
+      action: play
+  mode_hostage_stopping:
+    HostageModeSong:
+      action: stop
+
+event_player: 
+  slide_sl_mode_hostage01_active: e_primary_mode_active

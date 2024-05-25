@@ -113,13 +113,13 @@ shots:
       - events: mode_zeptest_complete
         state: 0
   shot_outlane_button:
-    advance_events: minimode_scoops_complete
+    advance_events: minimode_slings_complete
     switches: s_action_button
     profile: sp_outlane_button
     show_tokens:
       leds: l_action_button
     control_events:
-      - events: minimode_scoops_complete
+      - events: minimode_slings_complete
         state: 1
       - events: shot_outlane_button_sp_outlane_button_lit_hit
         state: 0

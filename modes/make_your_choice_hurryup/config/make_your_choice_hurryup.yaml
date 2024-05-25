@@ -75,13 +75,13 @@ widgets:
       font_name: digitalclockfont
       color: red
       x: 8.5%
-      y: 83.2%
+      y: 60.2%
       z: 7
     - type: rectangle
       width: 210
       height: 65
       x: 8.5%
-      y: 84.5%
+      y: 61.5%
       z: 7
       corner_radius: 20
       corner_segments: 20
@@ -89,12 +89,12 @@ widgets:
     - type: text
       text: Make Your Choice
       x: 8.5%
-      y: 78.5%
+      y: 55.5%
       z: 7
       font_size: 25
-      font_name: Skilt Gothic W04 Thin     
+      font_name: AeroMaticsDisplaRegular
       outline_color: black
-      outline_width: 5
+      outline_width: 3
   w_hurryup_instructions_p1:
     - type: text
       text: Hit X Marks the Spot to Lock in Value
@@ -102,9 +102,9 @@ widgets:
       y: 45%
       z: 7
       font_size: 50
-      font_name: Mustkill     
+      font_name: AeroMaticsDisplaRegular    
       outline_color: black
-      outline_width: 7
+      outline_width: 5
       animations:
         add_to_slide:
           - property: opacity
@@ -121,9 +121,9 @@ widgets:
       y: 45%
       z: 7
       font_size: 50
-      font_name: Mustkill     
+      font_name: AeroMaticsDisplaRegular   
       outline_color: black
-      outline_width: 7
+      outline_width: 5
       #animations:
       #  add_to_slide:
       #    - property: opacity
