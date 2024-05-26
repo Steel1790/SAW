@@ -269,36 +269,41 @@ variable_player:
 #drillchair mode item used
   shot_drillchair_button_sp_drillchair_lit_hit:
 #    score: 123456    
-    bonus_handguns: -1
-    value_type: int   
+    bonus_handguns:
+      int: 0
+      action: set
     handguns_used:
       int: 1
       action: set
 #razorwire mode item used
   shot_razorwire_button_sp_razorwire_lit_hit:
-    bonus_hacksaws: -1
-    value_type: int   
+    bonus_hacksaws:
+      int: 0
+      action: set 
     hacksaws_used:
       int: 1
       action: set
 #reversebeartrap mode item used
   shot_reversebeartrap_button_sp_reversebeartrap_lit_hit:
-    bonus_keys: -1
-    value_type: int   
+    bonus_keys:
+      int: 0
+      action: set 
     keys_used:
       int: 1
       action: set
 #quadshotgun mode item used
   shot_quadshotgun_button_sp_quadshotgun_lit_hit:
-    bonus_gears: -1
-    value_type: int   
+    bonus_gears:
+      int: 0
+      action: set  
     gears_used:
       int: 1
       action: set
 #flammablejelly mode item used
   shot_flammablejelly_button_sp_flammablejelly_lit_hit:
-    bonus_candles: -1
-    value_type: int   
+    bonus_candles:
+      int: 0
+      action: set 
     candles_used:
       int: 1
       action: set
@@ -307,17 +312,20 @@ variable_player:
       action: set
 #zeptest mode item used
   shot_zeptest_button_sp_zeptest_lit_hit:
-    bonus_syringes: -1
-    value_type: int   
+    bonus_syringes:
+      int: 0
+      action: set  
     syringes_used:
       int: 1
       action: set
   shot_outlane_button_sp_outlane_button_lit_hit:
-    bonus_bathtubs: -1
-    value_type: int
+    bonus_bathtubs:
+      int: 0
+      action: set
   shot_add_a_ball_button_sp_add_a_ball_button_lit_hit:
-    bonus_taperecorders: -1
-    value_type: int
+    bonus_taperecorders:
+      int: 0
+      action: set
 
  # track modes completed for wizard mode qualifications -- player_modes_completed
   mode_drillchair_complete:
