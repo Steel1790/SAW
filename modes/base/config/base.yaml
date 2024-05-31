@@ -48,58 +48,50 @@ event_player:
 
 # temporarily commented out mode stopping to trigger puzzle hurry up. As the delay was occuring the time to trigger into the next ball if it was drained
 # during a mode.
-  mode_drillchair_stopping: 
-    - e_puzzle_start|0.3s
-    - e_drillchair_puzzle|0.5s
-    - e_que_basemusic|0.5s 
+  mode_drillchair_stopping:
+    - e_drillchair_puzzle|8.3s
+#    - e_que_basemusic|0.5s 
   mode_drillchair_complete: 
-    - e_puzzle_start|0.3s
-    - e_drillchair_puzzle|0.5s
+    - e_drillchair_puzzle|8.3s
     #- e_puzzle_start|5.3s
     #- e_drillchair_puzzle|5.5s
-  mode_flammablejelly_stopping: 
-    - e_puzzle_start|0.3s
-    - e_flammablejelly_puzzle|0.5s
-    - e_que_basemusic|0.5s
+  mode_flammablejelly_stopping:
+    - e_flammablejelly_puzzle|8.3s
+#    - e_que_basemusic|0.5s
     #- e_puzzle_start|5.3s
     #- e_flammablejelly_puzzle|5.5s
   mode_flammablejelly_complete:
-    - e_puzzle_start|0.3s
-    - e_flammablejelly_puzzle|0.5s
+    - e_flammablejelly_puzzle|8.3s
   mode_quadshotgun_stopping: 
-    - e_puzzle_start|0.3s
-    - e_quadshotgun_puzzle|0.5s
-    - e_que_basemusic|0.5s
+    - e_quadshotgun_puzzle|8.3s
+#    - e_que_basemusic|0.5s
   mode_quadshotgun_complete:
-    - e_puzzle_start|0.3s
-    - e_quadshotgun_puzzle|0.5s
+    - e_quadshotgun_puzzle|8.3s
     #- e_puzzle_start|5.3s
     #- e_quadshotgun_puzzle|5.5s
-  mode_razorwire_stopping: 
-    - e_puzzle_start|0.3s
-    - e_razorwire_puzzle|0.5s
-    - e_que_basemusic|0.5s
+  mode_razorwire_stopping:
+    - e_razorwire_puzzle|8.3s
+#    - e_que_basemusic|0.5s
   mode_razorwire_complete:
-    - e_puzzle_start|0.3s
-    - e_razorwire_puzzle|0.5s
+    - e_razorwire_puzzle|8.3s
     #- e_puzzle_start|5.3s
     #- e_razorwire_puzzle|5.5s
-  mode_zeptest_stopping: 
-    - e_puzzle_start|0.3s
-    - e_zeptest_puzzle|0.5s
-    - e_que_basemusic|0.5s
+  mode_zeptest_stopping:
+    - e_zeptest_puzzle|8.3s
+#    - e_que_basemusic|0.5s
   mode_zeptest_complete:
-    - e_puzzle_start|0.3s
-    - e_zeptest_puzzle|0.5s
+    - e_zeptest_puzzle|8.3s
     #- e_puzzle_start|5.3s
     #- e_zeptest_puzzle|5.5s
-  mode_reversebeartrap_stopping:
+  mode_reversebeartrap_stopping{current_player.reversebeartrap_mode_attempted>=1}:
     - e_que_basemusic|0.5s
   mode_survival_instinct_stopping:
     - e_que_basemusic|0.5s 
   mode_puzzle_hurryup_stopping:
     - e_que_basemusic|0.5s
   mode_hostage_stopping:
+    - e_que_basemusic|0.5s
+  mode_make_your_choice_hurryup_stopping:
     - e_que_basemusic|0.5s
 
 
@@ -233,11 +225,11 @@ slide_player:
   mode_razorwire_complete: 
     trapcomplete:
       priority: 400
-      expire: 5s   #EK shortened to time with lightshow
+      expire: 8s   #EK shortened to time with lightshow
   player_razorwire_60s_timer_tick{value < 1}:
     trapfailed:
       priority: 400
-      expire: 5s    
+      expire: 8s    
 
   mode_drillchair_complete: 
     trapcomplete:
@@ -246,7 +238,7 @@ slide_player:
   player_drillchair_drillchair_60s_timer_tick{value < 1}:
     trapfailed:
       priority: 400
-      expire: 5s  
+      expire: 8s  
 
   mode_reversebeartrap_complete: 
     trapcomplete:
@@ -255,7 +247,7 @@ slide_player:
   player_reversebeartrap_120s_reversebeartrap_timer_tick{value < 1}:
     trapfailed:
       priority: 400
-      expire: 5s  
+      expire: 8s  
       
   mode_zeptest_complete: 
     trapcomplete:
@@ -264,7 +256,7 @@ slide_player:
   player_zeptest_60s_zeptest_timer_tick{value < 1}:
     trapfailed:
       priority: 400
-      expire: 5s  
+      expire: 8s  
 
   mode_flammablejelly_complete: 
     trapcomplete:
@@ -273,7 +265,7 @@ slide_player:
   player_flammablejelly_60s_flammablejelly_timer_tick{value < 1}:
     trapfailed:
       priority: 400
-      expire: 5s        
+      expire: 8s        
 
   mode_quadshotgun_complete: 
     trapcomplete:
@@ -282,7 +274,7 @@ slide_player:
   player_quadshotgun_quadshotgun_60s_timer_tick{value < 1}:
     trapfailed:
       priority: 400
-      expire: 5s     
+      expire: 8s     
  #skillshot     
   droptargets_skill_hit:
     skillshotvideo:
@@ -538,7 +530,7 @@ variable_player:
       int: 10
       action: set
     visual_slings_counter:
-      int: 25
+      int: 40 
       action: set
     visual_inlanes_counter:
       int: 6
@@ -606,7 +598,7 @@ counters:
     count_events: sw_standup  
     
   minimode_slings_counter:
-    starting_count: 25
+    starting_count: 40
     count_complete_value: 0
     direction: down
     start_enabled: true
@@ -790,64 +782,7 @@ shows:
     - duration: -1      
       lights:    
         (leds): red
-  
-  mode_razorwire_show_complete:
-    - duration: -1      
-      lights:    
-        (leds): green 
-  mode_drillchair_show_complete:
-    - duration: -1      
-      lights:    
-        (leds): green 
-  mode_quadshotgun_show_complete:
-    - duration: -1      
-      lights:    
-        (leds): green 
-  mode_reversebeartrap_show_complete:
-    - duration: -1      
-      lights:    
-        (leds): green 
-  mode_flammablejelly_show_complete:
-    - duration: -1      
-      lights:    
-        (leds): green 
-  mode_zeptest_show_complete:
-    - duration: -1      
-      lights:    
-        (leds): green   
-       
-# mode attempt for puzzle insert
-  mode_razorwire_show_started:
-    - duration: -1
-      lights:
-        (leds): beartrap
-  mode_drillchair_show_started:
-    - duration: -1
-      lights:
-        (leds): beartrap
-  mode_reversebeartrap_show_started:
-    - duration: -1
-      lights:
-        (leds): beartrap
-  mode_flammablejelly_show_started:
-    - duration: -1
-      lights:
-        (leds): beartrap
-  mode_zeptest_show_started:
-    - duration: -1
-      lights:
-        (leds): beartrap
-  mode_quadshotgun_show_started:
-    - duration: -1
-      lights:
-        (leds): beartrap
-
-#puzzle pieces completed
-  puzzle_piece_collected:
-    - duration: -1
-      lights:
-        (leds): (color1)   
-  
+ #ballsave   
   ballsave:
     - duration: 0.5s
       lights:
@@ -1139,137 +1074,6 @@ show_player:
         leds: l_jw_key
       loops: -1 
       priority: 119
-#mode progress
-  mode_base_started{current_player.razorwire_mode_complete==1}:  
-    mode_razorwire_show_complete:
-      show_tokens:
-        leds: l_razorwire_mode
-      loops: -1   
-      priority: 200
-  mode_razorwire_complete:
-    mode_razorwire_show_complete:
-      show_tokens:
-        leds: l_razorwire_mode
-      loops: -1   
-      priority: 200
-    rw_complete:
-      loops: 2
-      speed: 25    
-      show_tokens:
-        color1: razorwire
-  mode_base_started{current_player.drillchair_mode_complete==1}: 
-    mode_drillchair_show_complete:
-      show_tokens:
-        leds: l_drillchair_mode
-      loops: -1  
-      priority: 200
-  mode_drillchair_complete:
-    mode_drillchair_show_complete:
-      show_tokens:
-        leds: l_drillchair_mode
-      loops: -1  
-      priority: 200
-    rw_complete:
-      loops: 2
-      speed: 25    
-      show_tokens:
-        color1: drillchair
-  mode_base_started{current_player.quadshotgun_mode_complete==1}: 
-    mode_quadshotgun_show_complete:
-      show_tokens:
-        leds: l_quadshotgun_mode
-      loops: -1    
-      priority: 200
-  mode_quadshotgun_complete:
-    mode_quadshotgun_show_complete:
-      show_tokens:
-        leds: l_quadshotgun_mode
-      loops: -1    
-      priority: 200
-    rw_complete:
-      loops: 2
-      speed: 25    
-      show_tokens:
-        color1: shotgun
-  mode_base_started{current_player.reversebeartrap_mode_complete==1}: 
-    mode_reversebeartrap_show_complete:
-      show_tokens:
-        leds: l_beartrap_mode
-      loops: -1  
-      priority: 200
-  mode_reversebeartrap_complete:
-    mode_reversebeartrap_show_complete:
-      show_tokens:
-        leds: l_beartrap_mode
-      loops: -1  
-      priority: 200
-    rw_complete:
-      loops: 2
-      speed: 25    
-      show_tokens:
-        color1: beartrap
-  mode_base_started{current_player.zeptest_mode_complete==1}: 
-    mode_zeptest_show_complete:
-      show_tokens:
-        leds: l_zeptest_mode
-      loops: -1  
-      priority: 200
-  mode_zeptest_complete:
-    mode_zeptest_show_complete:
-      show_tokens:
-        leds: l_zeptest_mode
-      loops: -1  
-      priority: 200
-    rw_complete:
-      loops: 2
-      speed: 25    
-      show_tokens:
-        color1: zeptest
-  mode_base_started{current_player.flammablejelly_mode_complete==1}: 
-    mode_flammablejelly_show_complete:
-      show_tokens:
-        leds: l_jelly_mode
-      loops: -1    
-      priority: 200
-  mode_flammablejelly_complete:
-    mode_flammablejelly_show_complete:
-      show_tokens:
-        leds: l_jelly_mode
-      loops: -1    
-      priority: 200
-    rw_complete:
-      loops: 2
-      speed: 25    
-      show_tokens:
-        color1: jelly
-
-# puzzle piece collected
-  razorwire_puzzle_complete:
-    puzzle_piece_collected:
-      show_tokens:
-        leds: razorwire_flasher
-        color1: beartrap
-  player_drillchair_puzzle{value==1}:
-    puzzle_piece_collected:
-      show_tokens:
-        leds: drill_flasher
-        color1: beartrap
-      loops: -1
-  zeptest_puzzle_complete:
-    puzzle_piece_collected:
-      show_tokens:
-        leds: zep_flasher
-        color1: beartrap
-  flammablejelly_puzzle_complete:
-    puzzle_piece_collected:
-      show_tokens:
-        leds: bear_flasher
-        color1: beartrap
-  quadshotgun_puzzle_complete:
-    puzzle_piece_collected:
-      show_tokens:
-        leds: shotgun_flasher
-        color1: beartrap
 
 # saw letter light show
   logicblock_cnt_saw_qualify_updated{value==1}:
@@ -1369,44 +1173,6 @@ show_player:
       mode_fail:
         loops: 0
         speed: 20
-
-# mode attempt for puzzle insert 
-  mode_razorwire_stopping:
-    mode_razorwire_show_started:
-      show_tokens:
-        leds: l_razorwire_mode
-      loops: -1     
-      priority: 100
-  mode_flammablejelly_stopping:
-    mode_flammablejelly_show_started:
-      show_tokens:
-        leds: l_jelly_mode
-      loops: -1  
-      priority: 100
-  mode_quadshotgun_stopping:
-    mode_quadshotgun_show_started:
-      show_tokens:
-        leds: l_quadshotgun_mode
-      loops: -1  
-      priority: 100
-  mode_drillchair_stopping:
-    mode_drillchair_show_started:
-      show_tokens:
-        leds: l_drillchair_mode
-      loops: -1  
-      priority: 100
-  mode_zeptest_stopping:
-    mode_zeptest_show_started:
-      show_tokens:
-        leds: l_zeptest_mode
-      loops: -1   
-      priority: 100
-  mode_reversebeartrap_stopping:
-    mode_reversebeartrap_show_started:
-      show_tokens: 
-        leds: l_beartrap_mode
-      loops: -1
-      priority: 100
          
 #  mode_base_started.1:       
 #   flash_token2:
@@ -2895,9 +2661,9 @@ widgets:
       outline_color: f0cfab
       outline_width: 2
     - type: image
-      image: BloodyHacksaw
+      image: Player1Hacksaw
       opacity: 1.0
-      y: 1
+      y: 4
       x: 35
       z: 6
       anchor_x: left
@@ -2929,9 +2695,9 @@ widgets:
       outline_color: f0cfab
       outline_width: 2
     - type: image
-      image: BloodyHacksaw
+      image: Player2Hacksaw
       opacity: 1.0
-      y: 1
+      y: 4
       x: left+515
       z: 6
       anchor_y: bottom       
@@ -2962,10 +2728,10 @@ widgets:
       outline_color: f0cfab
       outline_width: 2
     - type: image
-      image: BloodyHacksaw
+      image: Player3Hacksaw
       opacity: 1.0
-      y: 1
-      x: left+840
+      y: 4
+      x: left+844
       z: 6
       anchor_y: bottom  
     - type: image
@@ -2995,9 +2761,9 @@ widgets:
       outline_color: f0cfab
       outline_width: 2
     - type: image
-      image: BloodyHacksaw
+      image: Player4Hacksaw
       opacity: 1.0
-      y: 1
+      y: 4
       x: left+1174
       z: 6
       anchor_y: bottom

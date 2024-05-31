@@ -482,8 +482,8 @@ sound_player:
   mode_reversebeartrap_started:
     ReverseBearTrapIntro:
       action: play
+  player_reversebeartrap_120s_reversebeartrap_timer_tick{value==120}:
     ReverseBearTrapModeStart:
-      delay: 10.2s
       action: play
       loops: 2
   player_reversebeartrap_120s_reversebeartrap_timer_tick{value < 1}:
@@ -548,6 +548,13 @@ shows:
 
 
 show_player:
+  player_reversebeartrap_120s_reversebeartrap_timer_tick{value==122}:
+    mystery_flash:
+      loops: 0
+      speed: 5
+      show_tokens:
+        led: l_mystery_scoop
+        color1: white
   player_reversebeartrap_120s_reversebeartrap_timer_tick{value==120}:
     sh_reversebeartrap_ballsave:
       show_tokens:

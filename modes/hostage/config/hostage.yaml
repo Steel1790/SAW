@@ -5,8 +5,8 @@ mode:
   priority: 181
 
 timers:
-  hostage_66s_timer:
-    start_value: 66
+  hostage_75s_timer:
+    start_value: 76
     end_value: 0
     direction: down
     control_events:
@@ -60,6 +60,13 @@ shows:
     - duration: 0.2s
       lights:
         (leds): off
+  sh_hostage_ramp_on:   
+    - duration: 0.1s
+      lights:
+        (leds): white
+    - duration: 0.2s
+      lights:
+        (leds): off
 
 variable_player:
   sw_pops:
@@ -102,7 +109,8 @@ show_player:
         color1: beartrap     
     starpost_on:
       show_tokens:
-        color1: 6E6E6E   
+        # color1: 6E6E6E   
+        color1: beartrap
       priority: 169
     flipper_on:
       show_tokens:
@@ -121,7 +129,11 @@ show_player:
         color1: beartrap
     sh_hostage_on:
       show_tokens:
-        leds: insert
+        leds: billy, jw_insert, jet_bumper, skillshot, arrow, trap, gi, flasher, trough, discs, hmb_locks, spotlights, cabinet
+    sh_hostage_ramp_on:
+      show_tokens:
+        leds: right_ramp
+
 
     disc_right_chase:
       loops: -1
@@ -253,7 +265,7 @@ widgets:
       color: beartrap
       
     - type: Text
-      text: 00:(player|hostage_hostage_66s_timer_tick)
+      text: 00:(player|hostage_hostage_75s_timer_tick)
       font_size: 100
       font_name: digitalclockfont
       color: red
@@ -343,7 +355,7 @@ widgets:
       corner_segments: 10           
 
 widget_player:
- player_hostage_hostage_66s_timer_tick{value==65}:  
+ player_hostage_hostage_75s_timer_tick{value==75}:  
   w_hostageUI: 
     slide: sl_mode_hostage01
     action: add

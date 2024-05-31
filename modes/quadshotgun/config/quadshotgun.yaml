@@ -703,6 +703,13 @@ shows:
         (leds): off
 
 show_player:
+  player_quadshotgun_quadshotgun_60s_timer_tick{value==62}:
+    mystery_flash:
+      loops: 0
+      speed: 5
+      show_tokens:
+        led: l_mystery_scoop
+        color1: white
   player_quadshotgun_quadshotgun_60s_timer_tick{value==60}:
     sh_quadshotgun_ballsave:
       show_tokens:
@@ -890,8 +897,8 @@ sound_player:
   mode_quadshotgun_started:
     QuadShotgunIntro:
       action: play
+  player_quadshotgun_quadshotgun_60s_timer_tick{value==60}:
     QuadShotgunModeStart:
-      delay: 6.3s
       action: play
   player_quadshotgun_quadshotgun_60s_timer_tick{value < 1}:
     QuadShotgunModeStart:

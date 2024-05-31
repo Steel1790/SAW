@@ -7,9 +7,9 @@ mode:
   priority: 120
   restart_on_next_ball: true
 
-variable_player:
-  logicblock_trap_select_qualify_counter_complete:
-    score: 300000
+# variable_player:
+#   logicblock_trap_select_qualify_counter_complete:
+#     score: 300000
     
 event_player:   
   mode_trap_select_started: mode_qualified_sidestep2|0.5s

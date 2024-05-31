@@ -501,6 +501,14 @@ shows:
         (leds): off
 
 show_player:
+  player_flammablejelly_60s_flammablejelly_timer_tick{value==62}:
+    mystery_flash:
+      loops: 0
+      speed: 5
+      show_tokens:
+        led: l_mystery_scoop
+        color1: white
+
   player_flammablejelly_60s_flammablejelly_timer_tick{value==60}:
     sh_flammablejelly_ballsave:
       show_tokens:
@@ -679,8 +687,8 @@ sound_player:
   mode_flammablejelly_started:
     FlammableJellyIntro:
       action: play
+  player_flammablejelly_60s_flammablejelly_timer_tick{value==61}:
     FlammableJellyModeStart:
-      delay: 10s
       action: play        
   player_flammablejelly_60s_flammablejelly_timer_tick{value < 1}:
     FlammableJellyModeStart:

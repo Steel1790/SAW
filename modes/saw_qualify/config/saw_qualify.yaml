@@ -248,7 +248,11 @@ slide_player:
       action: play
       priority: 200
       expire: 3.8s
-  e_negative_saw_letter_1:
+  e_negative_saw_letter_1{device.counters.cnt_saw_qualify.value==0}:
+    s_subtract:
+      priority: 195
+      expire: 3s
+  e_negative_saw_letter_1{device.counters.cnt_saw_qualify.value==1}:
     sa_subtract:
       priority: 195
       expire: 3s
@@ -257,7 +261,7 @@ slide_player:
       action: play
       priority: 200
       expire: 3.8s
-  e_negative_saw_letter_2:
+  e_negative_saw_letter_2{device.counters.cnt_saw_qualify.value==0}:
     s_subtract:
       priority: 196
       expire: 3s

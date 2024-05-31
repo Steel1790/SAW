@@ -444,6 +444,13 @@ shows:
       lights:
         (leds): off
 show_player:
+  player_zeptest_60s_zeptest_timer_tick{value==62}:
+    mystery_flash:
+      loops: 0
+      speed: 5
+      show_tokens:
+        led: l_mystery_scoop
+        color1: white
   player_zeptest_60s_zeptest_timer_tick{value==60}:
     sh_zeptest_ballsave:
       show_tokens:
@@ -586,6 +593,9 @@ show_player:
     speaker_heartbeat:
       show_tokens:
         color1: zepstest
+    trough_on:
+      show_tokens:
+        color1: zepstest
     flipper_on:
       show_tokens:
         color1: zepstest
@@ -631,8 +641,8 @@ sound_player:
   mode_zeptest_started:
     ZepsTestIntro:
       action: play
+  player_zeptest_60s_zeptest_timer_tick{value==60}:
     ZepsTestModeStart:
-      delay: 9.2s
       action: play
   player_zeptest_60s_zeptest_timer_tick{value < 1}:
     ZepsTestModeStart:

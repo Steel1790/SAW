@@ -12,15 +12,15 @@ accruals:
   acc_make_your_choice_qualify:
     events:
       - drop_target_dt_upper_drop1_down
-      - ssh_left_orbit_hit
-      - ssh_right_orbit_hit
+      - ssh_leftloop_hit
+      - ssh_rightloop_hit
       - sw_inner_loop
     reset_on_complete: true
     disable_on_complete: false
 
 timers:
   t_make_your_choice_timer:
-    start_value: 20
+    start_value: 25
     end_value: 0
     direction: down
     control_events:

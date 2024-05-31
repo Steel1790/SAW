@@ -388,24 +388,24 @@ sound_player:
     ModeQualifiedShootScoop:
       action: stop
 
-  player_adding{game.num_players==2}:
-    #2PlayerGame:
-    #  action: play  
-    startbutton:
-      delay: 2.5s
-      action: play      
-  player_adding{game.num_players==3}:
-    #3PlayerGame:
-    #  action: play  
-    startbutton:
-      delay: 2.5s
-      action: play      
-  player_adding{game.num_players==4}:
-    #4PlayerGame:
-    #  action: play   
-    startbutton:
-      delay: 2.5s
-      action: play  
+  # player_adding{game.num_players==2}:
+  #   #2PlayerGame:
+  #   #  action: play  
+  #   startbutton:
+  #     delay: 2.5s
+  #     action: play      
+  # player_adding{game.num_players==3}:
+  #   #3PlayerGame:
+  #   #  action: play  
+  #   startbutton:
+  #     delay: 2.5s
+  #     action: play      
+  # player_adding{game.num_players==4}:
+  #   #4PlayerGame:
+  #   #  action: play   
+  #   startbutton:
+  #     delay: 2.5s
+  #     action: play  
     
   drop_target_bank_upper_dropbank_down:
     SingleDropGlassBreak:
@@ -576,6 +576,7 @@ sound_player:
   mode_trap_select_started:
     ModeLit:
       action: play
+      priority: 201
 
 # multiball audio
   multiball_mb_hacksaw_started:
@@ -808,8 +809,6 @@ sound_player:
   player_make_your_choice_hurryup_t_make_your_choice_timer_tick{value < 1}:
     LiveOrDieHurryup:
       action: stop
-    BaseMusic:
-      action: play
 # stop all mode music at beginning of mode_bonus
   mode_bonus_started:
     QuadShotgunModeStart:

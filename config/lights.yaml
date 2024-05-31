@@ -352,10 +352,10 @@ lights:
 
   l_right_ramp_triangle1:
     number: led128-2-15
-    tags: insert, led128p2, ramp
+    tags: insert, led128p2, ramp, right_ramp
   l_right_ramp_triangle2:
     number: led128-2-17
-    tags: insert, led128p2, ramp
+    tags: insert, led128p2, ramp, right_ramp
   l_left_ramp_triangle1:
     number: led128-3-16
     tags: insert, led128p3, ramp

@@ -697,9 +697,10 @@ sound_player:
   mode_drillchair_started:
     DrillChairIntro:
       action: play  
+  player_drillchair_drillchair_60s_timer_tick{value==60}:
     DrillChairModeStart:
-      delay: 6s
-      action: play      
+      action: play   
+      loops: 1
   player_drillchair_drillchair_60s_timer_tick{value < 1}:
     DrillChairModeStart:
       action: stop      
@@ -809,6 +810,14 @@ show_player:
     drillchair_standups:
       show_tokens:
         leds: standup
+
+  player_drillchair_drillchair_60s_timer_tick{value==62}:
+    mystery_flash:
+      loops: 0
+      speed: 5
+      show_tokens:
+        led: l_mystery_scoop
+        color1: white
 
   player_drillchair_drillchair_60s_timer_tick{value==60}:
     sh_drillchair_ballsave:

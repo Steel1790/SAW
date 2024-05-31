@@ -1,12 +1,12 @@
 #config_version=6                 
 mode:
-  start_events: mode_razorwire_stopped, mode_drillchair_stopped, mode_flammablejelly_stopped, mode_quadshotgun_stopped, mode_zeptest_stopped
+  start_events: slide_trapcomplete_created, slide_trapfailed_created
   stop_events: mode_puzzle_hurryup_complete, stop_mode_puzzle_hurryup, ball_ended, ball_will_end, player_puzzle_hurryup_t_puzzle_timer_tick{value < 1}, mode_qualified_sidestep, mode_selection_mode_started, multiball_mb_jigsaw_started, multiball_mb_hacksaw_started, multiball_mb_shackle_started, mode_razorwire_started, mode_drillchair_started, mode_flammablejelly_started, mode_quadshotgun_started, mode_reversebeartrap_started, mode_zeptest_started, mode_make_your_choice_hurryup_started, mode_high_score_started
   priority: 185
 
 timers:
   t_puzzle_timer:
-    start_value: 23
+    start_value: 28
     end_value: 0
     direction: down
     control_events:
@@ -91,7 +91,7 @@ widget_player:
   mode_puzzle_hurryup_complete:
     w_puzzle_UI:
       action: remove
-  player_puzzle_hurryup_t_puzzle_timer_tick{value==1}:
+  player_puzzle_hurryup_t_puzzle_timer_tick{value<1}:
     w_puzzle_UI:
       action: remove
 
@@ -139,40 +139,51 @@ show_player:
     sh_razorwire_hurryup:
       show_tokens:
         leds: razorwire_flasher
-      loops: 90
+      loops: 120
       speed: 4
   e_flammablejelly_puzzle:
     sh_flammablejelly_hurryup:
       show_tokens:
         leds: bear_flasher
-      loops: 90
+      loops: 120
       speed: 4
   e_quadshotgun_puzzle:
     sh_quadshotgun_hurryup:
       show_tokens:
         leds: shotgun_flasher
-      loops: 90
+      loops: 120
       speed: 4
   e_drillchair_puzzle:
     sh_drillchair_hurryup:
       show_tokens:
         leds: drill_flasher
-      loops: 90
+      loops: 120
       speed: 4
   e_zeptest_puzzle:
     sh_zeptest_hurryup:
       show_tokens:
         leds: zep_flasher
-      loops: 90
+      loops: 120
       speed: 4
 
 # event_player:
-#   mode_puzzle_hurryup_started: e_puzzle_music_start|1s
+#   player_puzzle_countdown{value==15}: e_puzzle_ready
 
 sound_player:
- player_puzzle_hurryup_t_puzzle_timer_tick{value==17}:
+ mode_puzzle_hurryup_started:
    BaseMusic:
      action: stop    
+   DrillAndTapp:
+     action: stop
+   OutOfTime:
+     action: stop
+   Jonas:
+     action: stop
+   TheRules:
+     action: stop
+   FuckThisShit:
+     action: stop
+ player_puzzle_hurryup_t_puzzle_timer_tick{value==20}:
    PuzzlePieceHurryUp:
      priority: 202
      action: play
