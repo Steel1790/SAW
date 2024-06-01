@@ -940,4 +940,7 @@ sound_player:
 
 event_player: 
   slide_mode_razorwire01_active: e_primary_mode_active
+  mode_razorwire_stopping{mode.shackle_multiball.active==True}: e_mode_qualify_disabled|0.5s
+  mode_razorwire_stopping{mode.jigsaw_multiball.active==True}: e_mode_qualify_disabled|0.5s
+  mode_razorwire_stopping{mode.hacksaw_multiball.active==True}: e_mode_qualify_disabled|0.5s
   shot_razorwire_button_sp_razorwire_lit_hit: e_stop_hacksaw|30s

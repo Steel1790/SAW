@@ -660,5 +660,7 @@ event_player:
     - machine_var_audits_switches_s_right_ramp_score_top
   shot_zeptest_button_sp_zeptest_lit_hit{device.sequences.zeptest.value == 5}:
     - drop_target_dt_upper_drop1_down
-
+  mode_zeptest_stopping{mode.shackle_multiball.active==True}: e_mode_qualify_disabled|0.5s
+  mode_zeptest_stopping{mode.jigsaw_multiball.active==True}: e_mode_qualify_disabled|0.5s
+  mode_zeptest_stopping{mode.hacksaw_multiball.active==True}: e_mode_qualify_disabled|0.5s
   player_shot_shot_zeptest_button_enabled{change==1}: e_zeptest_action_button|1s

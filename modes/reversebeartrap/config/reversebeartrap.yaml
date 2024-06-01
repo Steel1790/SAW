@@ -773,3 +773,6 @@ show_player:
 
 event_player: 
   slide_mode_rbt01_active: e_primary_mode_active
+  mode_reversebeartrap_stopping{mode.shackle_multiball.active==True}: e_mode_qualify_disabled|0.5s
+  mode_reversebeartrap_stopping{mode.jigsaw_multiball.active==True}: e_mode_qualify_disabled|0.5s
+  mode_reversebeartrap_stopping{mode.hacksaw_multiball.active==True}: e_mode_qualify_disabled|0.5s

@@ -1138,6 +1138,9 @@ show_player:
 
 event_player: 
   slide_mode_drillchair01_active: e_primary_mode_active
+  mode_drillchair_stopping{mode.shackle_multiball.active==True}: e_mode_qualify_disabled|0.5s
+  mode_drillchair_stopping{mode.jigsaw_multiball.active==True}: e_mode_qualify_disabled|0.5s
+  mode_drillchair_stopping{mode.hacksaw_multiball.active==True}: e_mode_qualify_disabled|0.5s
   shot_drillchair_button_sp_drillchair_lit_hit{device.counters.drillchair_pops_counter.value<1}:
     - sw_bottom_pops|0.1s
     - sw_bottom_pops|0.15s

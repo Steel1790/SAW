@@ -383,14 +383,14 @@ widgets:
   w_shackle_multiball:
     - type: Text
       text: Shackle Multiball - Shoot RED ARROWS to collect JACKPOTS
-      color: white
+      color: black
       x: 50%
-      y: 95%
+      y: 92%
       z: 2
-      font_size: 52
-      font_name: Skilt Gothic W04 Thin
-      outline_color: black
-      outline_width: 7
+      font_size: 40
+      font_name: AeroMaticsDisplaRegular
+      outline_color: white
+      outline_width: 1
   w_shackle_multiball_value:
     - type: text
       text: (player|shackle_value)
@@ -513,8 +513,11 @@ widget_player:
       action: add  
 
 event_player:
-  mode_shackle_multiball_started: start_shackle_multiball|0.3s
+  mode_shackle_multiball_started: 
+    - start_shackle_multiball|0.3s
+    - e_mb_mode_active
   shackle_value_locked: stop_shackle_jackpot_widget|2s
   sg_shackle_p1_lit_hit: stop_jackpot_widget|2.3s, e_jackpot_show_off|1s
   shot_shackle_superjackpot1_sp_shackle_mb_lit_hit: stop_jackpot_widget|3s, e_jackpot_show_off|1s
   shot_shackle_superjackpot2_sp_shackle_mb_lit_hit: e_jackpot_show_off|1s
+  mode_shackle_multiball_stopping: e_mb_mode_stopping

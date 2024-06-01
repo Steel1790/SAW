@@ -506,6 +506,7 @@ show_player:
     game_over:
       loops: 0
       speed: 8
+      priority: 205
   e_topper_trigger:
     topper_trigger_on:
       loops: 0

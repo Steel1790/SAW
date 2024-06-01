@@ -419,49 +419,49 @@ sound_player:
       action: stop
 
 show_player:
-  display_gears:   
+  display_gears{current_player.ball<3}:   
    jw_bonus_gears:
      loops: 0
      speed: 8
      show_tokens:
        color1: beartrap
-  display_syringes:
+  display_syringes{current_player.ball<3}:
    jw_bonus_syringe:
      loops: 0
      speed: 8
      show_tokens:
        color1: beartrap
-  display_bathtubs:
+  display_bathtubs{current_player.ball<3}:
    jw_bonus_bathtub:
      loops: 0
      speed: 8
      show_tokens:
        color1: beartrap
-  display_taperecorders:
+  display_taperecorders{current_player.ball<3}:
    jw_bonus_taperecorder:
      loops: 0
      speed: 8
      show_tokens:
        color1: beartrap    
-  display_candles:
+  display_candles{current_player.ball<3}:
    jw_bonus_candle: 
      loops: 0
      speed: 8
      show_tokens:
        color1: beartrap    
-  display_hacksaws:
+  display_hacksaws{current_player.ball<3}:
    jw_bonus_hacksaw:
      loops: 0
      speed: 8
      show_tokens:
        color1: beartrap     
-  display_handguns:
+  display_handguns{current_player.ball<3}:
    jw_bonus_gun:
      loops: 0
      speed: 8
      show_tokens:
        color1: beartrap     
-  display_keys:
+  display_keys{current_player.ball<3}:
    jw_bonus_key:
      loops: 0
      speed: 8

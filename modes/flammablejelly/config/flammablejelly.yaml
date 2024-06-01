@@ -721,6 +721,9 @@ sound_player:
 
 event_player: 
   slide_sl_mode_flammablejelly01_active: e_primary_mode_active
+  mode_flammablejelly_stopping{mode.shackle_multiball.active==True}: e_mode_qualify_disabled|0.5s
+  mode_flammablejelly_stopping{mode.jigsaw_multiball.active==True}: e_mode_qualify_disabled|0.5s
+  mode_flammablejelly_stopping{mode.hacksaw_multiball.active==True}: e_mode_qualify_disabled|0.5s
   shot_flammablejelly_button_sp_flammablejelly_lit_hit: e_stop_candle|20s, e_start_candle_multiplier|10s
   timer_flammablejelly_3x_timer_stopped:
     - e_jelly_3x_slide02_off|0.3s

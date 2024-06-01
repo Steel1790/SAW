@@ -932,3 +932,6 @@ sound_player:
    
 event_player: 
   slide_sl_mode_quadshotgun01_active: e_primary_mode_active
+  mode_quadshotgun_stopping{mode.shackle_multiball.active==True}: e_mode_qualify_disabled|0.5s
+  mode_quadshotgun_stopping{mode.jigsaw_multiball.active==True}: e_mode_qualify_disabled|0.5s
+  mode_quadshotgun_stopping{mode.hacksaw_multiball.active==True}: e_mode_qualify_disabled|0.5s

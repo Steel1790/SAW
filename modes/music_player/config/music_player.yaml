@@ -334,6 +334,8 @@ sound_player:
     1playerGame:
       action: play
   mode_base_started:
+    BonusModeSong:    
+      action: stop
     startbutton:
       delay: 2.5s
       action: play
@@ -800,6 +802,7 @@ sound_player:
     ActionButton:
       action: play
 
+
 #make your choice hurry up
   # mode_make_your_choice_hurryup_started:
   #   LiveOrDieHurryup:
@@ -834,6 +837,12 @@ sound_player:
     TheRules:
       action: stop
     FuckThisShit:
+      action: stop
+    BonusModeSong:
+      action: play
+      priority: 205
+  mode_bonus_stopped{current_player.ball==3}:
+    BonusModeSong:
       action: stop
 #event_player: 
 #  slide_base_slide_main_active: e_puzzle_music_off1|0.83s
