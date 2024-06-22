@@ -28,8 +28,8 @@ fast:
         model: FP-EXP-0081
         address: 85
       led256bb:
-       model: FP-EXP-0081
-       address: 86
+        model: FP-EXP-0081
+        address: 86
       ledneuron:
         model: FP-EXP-2000
     debug: true
