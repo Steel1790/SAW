@@ -24,6 +24,7 @@ fast:
     boards:
       led256:
         model: FP-EXP-0081
+        address: 84
       led128:
         model: FP-EXP-0081
         address: 85
@@ -32,6 +33,7 @@ fast:
         address: 86
       ledneuron:
         model: FP-EXP-2000
+        address: 48
     debug: true
 mpf: 
   rgbw_white_behavior: duck_rgb
