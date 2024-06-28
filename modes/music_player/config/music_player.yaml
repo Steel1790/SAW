@@ -3,7 +3,7 @@
 mode:
   start_events: ball_starting
   stop_events: game_ending
-  priority: 200
+  priority: 180
 
 sound_pools:
   razorwirepops:
@@ -78,7 +78,43 @@ sound_pools:
       - RSling1
       - RSling2
       - RSling3
- 
+  leftrampentryaudio:
+    load: preload
+    type: random
+    track: sfx
+    sounds:
+      - Cock1
+      - Cock2
+      - Cock3
+      - Cock4
+      - Cock5
+  leftrampexitaudio:
+    load: preload
+    type: random
+    track: sfx
+    sounds:
+      - GunFire1
+      - GunFire2
+      - GunFire2sec
+      - GunFire3
+      - GunFire4
+      - GunFire5
+      - GunFire6
+  rightrampentryaudio:
+    load: preload
+    type: random
+    track: sfx
+    sounds:
+      - Chains1
+      - Chains2
+      - Chains3
+  rightrampexitaudio:
+    load: preload
+    type: random
+    track: sfx
+    sounds:
+      - Clasp1
+      - Clasp2 
   standupaudio:
     load: preload
     type: random
@@ -333,7 +369,14 @@ sound_player:
   mode_base_started{current_player.ball == 1 and player==1 and is_extra_ball==False}:
     1playerGame:
       action: play
-  mode_base_started:
+  mode_base_started{is_extra_ball==True}:
+    BonusModeSong:    
+      action: stop
+    LifePurpose:
+      delay: 2.5s
+      action: play
+      events_when_played: Que_BaseMusic
+  mode_base_started{is_extra_ball==False}:
     BonusModeSong:    
       action: stop
     startbutton:
@@ -445,6 +488,22 @@ sound_player:
     slingsaudio:
       action: play
       block: true   
+  s_left_ramp_score_bottom_active:
+    leftrampentryaudio:
+      action: play
+      block: true
+  s_left_ramp_score_top_active:
+    leftrampexitaudio:
+      action: play
+      block: true
+  s_right_ramp_score_bottom_active:
+    rightrampentryaudio:
+      action: play
+      block: true
+  s_right_ramp_score_top_active:
+    rightrampexitaudio:
+      action: play
+      block: true
   shot_left_outlane_hit{state=="ball_save_not_ready"}:
     #TortureScream:
     refined_billy_laugh:
