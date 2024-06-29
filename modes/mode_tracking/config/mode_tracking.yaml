@@ -557,7 +557,15 @@ variable_player:
     choice_hurryup_hits:
       int: 1
       action: add
-
+# tracks balls in play persisting through modes to allow single ball play to start a mode
+  playfield_ball_count_change{balls==2}:
+    e_multiball_in_playfield:
+      int: 1
+      action: set
+  playfield_ball_count_change{balls==1}:
+    e_multiball_in_playfield:
+      int: 0
+      action: set
 # set qualification requirement to mode quadshotgun
 # 1 = default . 2 = mode_drillchair_complete
   #slide_base_slide_main_created:

@@ -522,6 +522,9 @@ variable_player:
     score_total:
       int: current_player.score
       action: set 
+    e_multiball_in_playfield:
+      int: 0
+      action: set
 #set starting values for jigsaw workshop      
     visual_pops_counter:
       int: 20
@@ -1281,6 +1284,27 @@ widgets:
   saw_letters:
     - type: Text
       text: Shoot WHITE ARROWS to spell SAW!
+      color: black
+      x: 50%
+      y: 97%
+      z: 2
+      font_size: 40
+      font_name: AeroMaticsDisplaRegular
+      outline_color: ffcc99
+      outline_width: 1
+    - type: Text
+      text: SAW
+      color: white
+      x: 50%
+      y: 20%
+      z: 2
+      font_size: 110
+      font_name: sawesome     
+      outline_color: black
+      outline_width: 9
+  razorwire_2ball_in_play:
+    - type: Text
+      text: WHITE ARROWS Currently Disabled During 2 Ball Play
       color: black
       x: 50%
       y: 97%
@@ -3217,6 +3241,21 @@ widget_player:
       slide: base_slide_main
       action: add  
 
+#change instructions during 2 ball play from razorwire in base mode
+  mode_razorwire_stopped{current_player.e_multiball_in_playfield==1}:
+    saw_letters:
+      slide: base_slide_main
+      action: remove
+    razorwire_2ball_in_play:
+      slide: base_slide_main
+      action: add
+  player_e_multiball_in_playfield{value==0}:
+    razorwire_2ball_in_play:
+      slide: base_slide_main
+      action: remove
+    saw_letters:
+      slide: base_slide_main
+      action: add
 
   logicblock_cnt_saw_qualify_complete:
     saw_letters:
