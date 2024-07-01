@@ -141,6 +141,14 @@ show_player:
         leds: razorwire_flasher
       loops: 120
       speed: 4
+    starpost_heartbeat:
+      show_tokens:
+        color1: white
+      # loops: 120
+      # speed: 4  
+    gi_on:
+      show_tokens:
+        color1: 8f8f8f        
   e_flammablejelly_puzzle:
     sh_flammablejelly_hurryup:
       show_tokens:
@@ -153,6 +161,14 @@ show_player:
         leds: shotgun_flasher
       loops: 120
       speed: 4
+    starpost_heartbeat:
+      show_tokens:
+        color1: white
+      # loops: 120
+      # speed: 4  
+    gi_on:
+      show_tokens:
+        color1: 8f8f8f   
   e_drillchair_puzzle:
     sh_drillchair_hurryup:
       show_tokens:

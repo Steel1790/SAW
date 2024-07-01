@@ -701,7 +701,7 @@ show_player:
   upper_b_pop_hit:
       rw_white_sweeps:
         loops: 0
-        speed: 30
+        speed: 10
 #      flash_token:
 #        loops: 5
 #        speed: 20
@@ -731,6 +731,11 @@ show_player:
 
   razorwire_add_a_ball_complete:
     top_drop_chase: stop
+    disc_middle_add_a_ball:
+      loops: 3
+      speed: 10
+      # show_tokens:
+      #   color1: razorwire
 
   logicblock_razorwire_pops_counter_updated{value<12}:
     flash_token:

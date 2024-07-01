@@ -234,19 +234,35 @@ shot_profiles:
       - name: collected
         show: "sh_hurryup_collected"    # a default show to turn of the led. change if you want to do something on unlit shots
 
+event_player:
+  mode_make_your_choice_hurryup_started: e_gi_dim|0.55s
+
 shows:
   sh_hurryup_ready:
     - duration: -1
       shows:
-        flash_color:
+        flash_token:
           show_tokens:
-            color: beartrap
-            leds: (leds)
-          speed: 4
+            color1: beartrap
+            led: (leds)
+          speed: 15
   sh_hurryup_collected:
-    - duration: -1
-      lights:
-        (leds): beartrap
+    - duration: 1
+      shows:
+        flash_token:
+          show_tokens:
+            color1: razorwire
+            led: (leds)
+          speed: 5
+          loops: 0
+          priority: 170
+        flash_token_2:
+          show_tokens:
+            color1: beartrap
+            led: starpost
+          speed: 15
+          loops: 0
+          priority: 170
   #sh_make_yourchoice_end:
   #  - duration: -1
   #    lights:
@@ -259,6 +275,13 @@ show_player:
         speed: 14
         show_tokens:
           color1: beartrap
+      gi_die_hurryup_intro:
+        loops: 0
+        speed: 45
+  e_gi_dim:
+      gi_on:
+        show_tokens:
+          color1: 8f8f8f    
   make_your_choice_value_locked:
       top_drop_chase:
         loops: -1
@@ -290,3 +313,4 @@ sound_player:
   mode_make_your_choice_hurryup_stopping:
     LiveOrDieHurryup:
       action: stop
+

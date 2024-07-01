@@ -661,9 +661,36 @@
         show_tokens:
           color1: zepstest         
 
+- duration: 15s
+  shows: 
+      starpost_cycle: stop      
+      skillshot_chase: stop
+      top_drop_chase: stop
+      mode_chase: stop
+      jw_chase: stop
+      right_ramp_chase: stop
+      left_ramp_chase: stop
+      hmb_chase: stop
+      outlane_alternate: stop
+      jet_bumpers_color_chase_2: stop 
+      disc_left_chase: stop
+      disc_middle_chase: stop
+      disc_right_chase: stop
+      flasher_beartrap_chase: stop
+      flasher_drill_chase: stop
+      flasher_razorwire_chase: stop
+      flasher_shotgun_chase: stop
+      flasher_zep_chase: stop 
+      topper_chase: stop   
+      speaker_left_cylon: stop
+      speaker_right_cylon: stop
+      colorwash_opposite_glitter:
+        speed: 20
+
 # COLOR FADE FULL PLAYFIELD
 - duration: 10s
   shows: 
+      colorwash_opposite_glitter: stop
       starpost_cycle: stop      
       skillshot_chase: stop
       top_drop_chase: stop
@@ -696,6 +723,7 @@
         show_tokens:
           color1: zepstest        
 
+# TWO COLOR FADE FULL PLAYFIELD
 - duration: 15s
   shows: 
       colorfade_playfield: stop
@@ -729,6 +757,7 @@
         show_tokens:
           color1: drillchair         
 
+# COLOR WASH FULL PLAYFIELD
 - duration: 4s
   shows: 
       colorfade_gi: stop

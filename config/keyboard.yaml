@@ -28,3 +28,7 @@ keyboard:
     switch: s_start
   q:
     switch: s_right_outlane
+  r:
+    event: selection_mode_razorwire_selected
+  h:
+    event: selection_mode_quadshotgun_selected

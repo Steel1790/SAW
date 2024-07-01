@@ -1,0 +1,156 @@
+#show_version=6
+- time: 0
+  lights:
+    l_middle_disc_1: '056E09'
+    l_middle_disc_10: '08AB0D'
+    l_middle_disc_2: '011201'
+    
+- time: '+1'
+  lights:
+    l_middle_disc_1: '000000'
+    l_middle_disc_10: '034505'
+    l_middle_disc_11: '079B0C'
+    l_middle_disc_2: '09BF0F'
+    
+- time: '+1'
+  lights:
+    l_middle_disc_10: '000000'
+    l_middle_disc_11: '056008'
+    l_middle_disc_12: '07900B'
+    l_middle_disc_2: '011D02'
+    l_middle_disc_3: '07990C'
+    
+- time: '+1'
+  lights:
+    l_middle_disc_11: '000000'
+    l_middle_disc_12: '067A0A'
+    l_middle_disc_13: '078C0B'
+    l_middle_disc_2: '000000'
+    l_middle_disc_3: '045B07'
+    l_middle_disc_4: '068A0B'
+    
+- time: '+1'
+  lights:
+    l_middle_disc_12: '000000'
+    l_middle_disc_13: '06820A'
+    l_middle_disc_14: '056408'
+    l_middle_disc_3: '000000'
+    l_middle_disc_4: '056408'
+    l_middle_disc_5: '045F07'
+    
+- time: '+1'
+  lights:
+    l_middle_disc_13: '000000'
+    l_middle_disc_14: '08A30D'
+    l_middle_disc_15: '011802'
+    l_middle_disc_4: '000000'
+    l_middle_disc_5: '057309'
+    l_middle_disc_6: '06830A'
+    
+- time: '+1'
+  lights:
+    l_middle_disc_14: '000000'
+    l_middle_disc_15: '09BE0F'
+    l_middle_disc_5: '000000'
+    l_middle_disc_6: '045507'
+    l_middle_disc_7: '067709'
+    
+- time: '+1'
+  lights:
+    l_middle_disc_15: '011C02'
+    l_middle_disc_16: '078E0B'
+    l_middle_disc_6: '000000'
+    l_middle_disc_7: '045507'
+    l_middle_disc_8: '067A0A'
+    
+- time: '+1'
+  lights:
+    l_middle_disc_15: '000000'
+    l_middle_disc_16: '07950C'
+    l_middle_disc_7: '000000'
+    l_middle_disc_8: '078B0B'
+    l_middle_disc_9: '000200'
+    
+- time: '+1'
+  lights:
+    l_middle_disc_1: '08B00E'
+    l_middle_disc_16: '000000'
+    l_middle_disc_8: '000000'
+    l_middle_disc_9: '09BB0F'
+    
+- time: '+1'
+  lights:
+    l_middle_disc_1: '000400'
+    l_middle_disc_16: '045A07'
+    l_middle_disc_8: '079F0C'
+    l_middle_disc_9: '000000'
+    
+- time: '+1'
+  lights:
+    l_middle_disc_1: '000000'
+    l_middle_disc_16: '07980C'
+    l_middle_disc_7: '056908'
+    l_middle_disc_8: '044D06'
+    
+- time: '+1'
+  lights:
+    l_middle_disc_15: '09BE0F'
+    l_middle_disc_16: '000000'
+    l_middle_disc_6: '033804'
+    l_middle_disc_7: '067809'
+    l_middle_disc_8: '000000'
+    
+- time: '+1'
+  lights:
+    l_middle_disc_14: '08A60D'
+    l_middle_disc_15: '000000'
+    l_middle_disc_5: '034505'
+    l_middle_disc_6: '07920B'
+    l_middle_disc_7: '000000'
+    
+- time: '+1'
+  lights:
+    l_middle_disc_13: '067A0A'
+    l_middle_disc_14: '044B06'
+    l_middle_disc_4: '044B06'
+    l_middle_disc_5: '045307'
+    l_middle_disc_6: '000000'
+    
+- time: '+1'
+  lights:
+    l_middle_disc_12: '067B0A'
+    l_middle_disc_13: '056608'
+    l_middle_disc_14: '000000'
+    l_middle_disc_3: '023204'
+    l_middle_disc_4: '078D0B'
+    l_middle_disc_5: '000000'
+    
+- time: '+1'
+  lights:
+    l_middle_disc_11: '056808'
+    l_middle_disc_12: '056108'
+    l_middle_disc_13: '000000'
+    l_middle_disc_3: '079F0C'
+    l_middle_disc_4: '000000'
+    
+- time: '+1'
+  lights:
+    l_middle_disc_10: '023204'
+    l_middle_disc_11: '078C0B'
+    l_middle_disc_12: '000000'
+    l_middle_disc_2: '09BC0F'
+    l_middle_disc_3: '000000'
+    
+- time: '+1'
+  lights:
+    l_middle_disc_1: '034A06'
+    l_middle_disc_10: '08A50D'
+    l_middle_disc_11: '000000'
+    l_middle_disc_2: '000000'
+    
+- time: '+1'
+  lights:
+    l_middle_disc_1: '08A60D'
+    l_middle_disc_10: '000000'
+    l_middle_disc_9: '08B10E'
+    
