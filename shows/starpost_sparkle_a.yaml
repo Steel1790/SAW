@@ -1,0 +1,896 @@
+#show_version=6
+- time: 0
+  lights:
+    l_post_a_1: '212121'
+    l_post_a_2: '050505'
+    l_post_a_3: '414141'
+    l_post_a_4: '080808'
+    l_post_a_5: '595959'
+    l_post_a_6: '242424'
+    l_post_a_7: '555555'
+    l_post_a_8: '060606'
+    
+- time: '+1'
+  lights:
+    l_post_a_1: '090909'
+    l_post_a_2: '080808'
+    l_post_a_3: '2F2F2F'
+    l_post_a_4: '0C0C0C'
+    l_post_a_5: '5B5B5B'
+    l_post_a_6: '363636'
+    l_post_a_7: '2E2E2E'
+    l_post_a_8: '090909'
+    
+- time: '+1'
+  lights:
+    l_post_a_1: '070707'
+    l_post_a_2: '151515'
+    l_post_a_3: '171717'
+    l_post_a_4: '101010'
+    l_post_a_5: '5C5C5C'
+    l_post_a_6: '474747'
+    l_post_a_7: '0F0F0F'
+    l_post_a_8: '1F1F1F'
+    
+- time: '+1'
+  lights:
+    l_post_a_1: '040404'
+    l_post_a_2: '1F1F1F'
+    l_post_a_3: '080808'
+    l_post_a_4: '181818'
+    l_post_a_6: '555555'
+    l_post_a_7: '090909'
+    l_post_a_8: '383838'
+    
+- time: '+1'
+  lights:
+    l_post_a_1: '010101'
+    l_post_a_2: '272727'
+    l_post_a_3: '050505'
+    l_post_a_4: '2D2D2D'
+    l_post_a_5: '5B5B5B'
+    l_post_a_6: '5F5F5F'
+    l_post_a_7: '040404'
+    l_post_a_8: '4F4F4F'
+    
+- time: '+1'
+  lights:
+    l_post_a_1: '000000'
+    l_post_a_2: '3E3E3E'
+    l_post_a_3: '030303'
+    l_post_a_4: '494949'
+    l_post_a_5: '4C4C4C'
+    l_post_a_6: '4B4B4B'
+    l_post_a_7: '000000'
+    l_post_a_8: '5D5D5D'
+    
+- time: '+1'
+  lights:
+    l_post_a_2: '595959'
+    l_post_a_3: '010101'
+    l_post_a_4: '666666'
+    l_post_a_5: '3C3C3C'
+    l_post_a_6: '3F3F3F'
+    l_post_a_8: '4A4A4A'
+    
+- time: '+1'
+  lights:
+    l_post_a_2: '6C6C6C'
+    l_post_a_3: '000000'
+    l_post_a_4: '6D6D6D'
+    l_post_a_5: '2D2D2D'
+    l_post_a_6: '404040'
+    l_post_a_8: '232323'
+    
+- time: '+1'
+  lights:
+    l_post_a_2: '717171'
+    l_post_a_4: '656565'
+    l_post_a_5: '212121'
+    l_post_a_6: '4C4C4C'
+    l_post_a_7: '010101'
+    l_post_a_8: '0D0D0D'
+    
+- time: '+1'
+  lights:
+    l_post_a_1: '010101'
+    l_post_a_2: '747474'
+    l_post_a_4: '515151'
+    l_post_a_5: '181818'
+    l_post_a_6: '555555'
+    l_post_a_8: '080808'
+    
+- time: '+1'
+  lights:
+    l_post_a_1: '030303'
+    l_post_a_2: '5F5F5F'
+    l_post_a_4: '444444'
+    l_post_a_5: '171717'
+    l_post_a_6: '535353'
+    l_post_a_7: '030303'
+    l_post_a_8: '030303'
+    
+- time: '+1'
+  lights:
+    l_post_a_1: '050505'
+    l_post_a_2: '3E3E3E'
+    l_post_a_5: '181818'
+    l_post_a_6: '484848'
+    l_post_a_7: '060606'
+    l_post_a_8: '000000'
+    
+- time: '+1'
+  lights:
+    l_post_a_1: '080808'
+    l_post_a_2: '1E1E1E'
+    l_post_a_3: '020202'
+    l_post_a_5: '1D1D1D'
+    l_post_a_6: '313131'
+    l_post_a_7: '0B0B0B'
+    
+- time: '+1'
+  lights:
+    l_post_a_1: '101010'
+    l_post_a_2: '171717'
+    l_post_a_3: '060606'
+    l_post_a_4: '434343'
+    l_post_a_5: '262626'
+    l_post_a_6: '1D1D1D'
+    l_post_a_7: '161616'
+    
+- time: '+1'
+  lights:
+    l_post_a_1: '282828'
+    l_post_a_2: '101010'
+    l_post_a_3: '0A0A0A'
+    l_post_a_4: '333333'
+    l_post_a_5: '313131'
+    l_post_a_6: '0E0E0E'
+    l_post_a_7: '424242'
+    l_post_a_8: '010101'
+    
+- time: '+1'
+  lights:
+    l_post_a_1: '434343'
+    l_post_a_2: '060606'
+    l_post_a_3: '151515'
+    l_post_a_4: '232323'
+    l_post_a_5: '404040'
+    l_post_a_6: '0B0B0B'
+    l_post_a_7: '747474'
+    
+- time: '+1'
+  lights:
+    l_post_a_1: '626262'
+    l_post_a_2: '040404'
+    l_post_a_3: '3F3F3F'
+    l_post_a_4: '151515'
+    l_post_a_5: '494949'
+    l_post_a_6: '0E0E0E'
+    l_post_a_7: '909090'
+    l_post_a_8: '030303'
+    
+- time: '+1'
+  lights:
+    l_post_a_1: '747474'
+    l_post_a_3: '585858'
+    l_post_a_4: '090909'
+    l_post_a_5: '4E4E4E'
+    l_post_a_6: '121212'
+    l_post_a_7: '676767'
+    l_post_a_8: '070707'
+    
+- time: '+1'
+  lights:
+    l_post_a_1: '525252'
+    l_post_a_2: '060606'
+    l_post_a_3: '434343'
+    l_post_a_5: '4F4F4F'
+    l_post_a_6: '222222'
+    l_post_a_7: '353535'
+    l_post_a_8: '0D0D0D'
+    
+- time: '+1'
+  lights:
+    l_post_a_1: '222222'
+    l_post_a_2: '070707'
+    l_post_a_3: '303030'
+    l_post_a_4: '0A0A0A'
+    l_post_a_5: '515151'
+    l_post_a_6: '3E3E3E'
+    l_post_a_7: '111111'
+    l_post_a_8: '222222'
+    
+- time: '+1'
+  lights:
+    l_post_a_1: '0D0D0D'
+    l_post_a_2: '090909'
+    l_post_a_3: '1D1D1D'
+    l_post_a_4: '131313'
+    l_post_a_5: '565656'
+    l_post_a_6: '606060'
+    l_post_a_7: '050505'
+    l_post_a_8: '505050'
+    
+- time: '+1'
+  lights:
+    l_post_a_1: '080808'
+    l_post_a_2: '131313'
+    l_post_a_3: '080808'
+    l_post_a_4: '252525'
+    l_post_a_5: '5B5B5B'
+    l_post_a_6: '717171'
+    l_post_a_7: '020202'
+    l_post_a_8: '818181'
+    
+- time: '+1'
+  lights:
+    l_post_a_1: '030303'
+    l_post_a_2: '242424'
+    l_post_a_3: '060606'
+    l_post_a_4: '353535'
+    l_post_a_5: '636363'
+    l_post_a_6: '5F5F5F'
+    l_post_a_7: '010101'
+    l_post_a_8: '848484'
+    
+- time: '+1'
+  lights:
+    l_post_a_1: '010101'
+    l_post_a_2: '383838'
+    l_post_a_3: '040404'
+    l_post_a_4: '434343'
+    l_post_a_5: '5B5B5B'
+    l_post_a_6: '4C4C4C'
+    l_post_a_7: '000000'
+    l_post_a_8: '595959'
+    
+- time: '+1'
+  lights:
+    l_post_a_2: '474747'
+    l_post_a_3: '010101'
+    l_post_a_4: '444444'
+    l_post_a_5: '4A4A4A'
+    l_post_a_6: '3D3D3D'
+    l_post_a_8: '272727'
+    
+- time: '+1'
+  lights:
+    l_post_a_2: '4E4E4E'
+    l_post_a_3: '000000'
+    l_post_a_4: '484848'
+    l_post_a_5: '383838'
+    l_post_a_6: '464646'
+    l_post_a_8: '0B0B0B'
+    
+- time: '+1'
+  lights:
+    l_post_a_2: '585858'
+    l_post_a_4: '4D4D4D'
+    l_post_a_5: '262626'
+    l_post_a_6: '535353'
+    l_post_a_8: '040404'
+    
+- time: '+1'
+  lights:
+    l_post_a_2: '646464'
+    l_post_a_4: '555555'
+    l_post_a_5: '161616'
+    l_post_a_6: '626262'
+    l_post_a_8: '020202'
+    
+- time: '+1'
+  lights:
+    l_post_a_1: '040404'
+    l_post_a_2: '6F6F6F'
+    l_post_a_4: '5D5D5D'
+    l_post_a_5: '1B1B1B'
+    l_post_a_6: '6B6B6B'
+    l_post_a_8: '000000'
+    
+- time: '+1'
+  lights:
+    l_post_a_1: '080808'
+    l_post_a_4: '646464'
+    l_post_a_5: '212121'
+    l_post_a_6: '515151'
+    l_post_a_7: '020202'
+    
+- time: '+1'
+  lights:
+    l_post_a_1: '111111'
+    l_post_a_2: '595959'
+    l_post_a_3: '010101'
+    l_post_a_4: '555555'
+    l_post_a_5: '282828'
+    l_post_a_6: '3B3B3B'
+    l_post_a_7: '040404'
+    
+- time: '+1'
+  lights:
+    l_post_a_1: '353535'
+    l_post_a_2: '363636'
+    l_post_a_3: '040404'
+    l_post_a_4: '444444'
+    l_post_a_5: '303030'
+    l_post_a_6: '282828'
+    l_post_a_7: '0A0A0A'
+    
+- time: '+1'
+  lights:
+    l_post_a_1: '636363'
+    l_post_a_2: '151515'
+    l_post_a_3: '060606'
+    l_post_a_4: '353535'
+    l_post_a_5: '363636'
+    l_post_a_6: '181818'
+    l_post_a_7: '202020'
+    
+- time: '+1'
+  lights:
+    l_post_a_1: '8F8F8F'
+    l_post_a_2: '0C0C0C'
+    l_post_a_3: '090909'
+    l_post_a_4: '2C2C2C'
+    l_post_a_5: '383838'
+    l_post_a_6: '0D0D0D'
+    l_post_a_7: '444444'
+    
+- time: '+1'
+  lights:
+    l_post_a_1: '888888'
+    l_post_a_2: '080808'
+    l_post_a_3: '1D1D1D'
+    l_post_a_4: '222222'
+    l_post_a_5: '3B3B3B'
+    l_post_a_6: '080808'
+    l_post_a_7: '5E5E5E'
+    
+- time: '+1'
+  lights:
+    l_post_a_1: '606060'
+    l_post_a_2: '040404'
+    l_post_a_3: '363636'
+    l_post_a_4: '151515'
+    l_post_a_5: '3E3E3E'
+    l_post_a_6: '0C0C0C'
+    l_post_a_7: '5D5D5D'
+    l_post_a_8: '020202'
+    
+- time: '+1'
+  lights:
+    l_post_a_1: '333333'
+    l_post_a_3: '4E4E4E'
+    l_post_a_4: '0A0A0A'
+    l_post_a_5: '464646'
+    l_post_a_6: '121212'
+    l_post_a_7: '3F3F3F'
+    l_post_a_8: '050505'
+    
+- time: '+1'
+  lights:
+    l_post_a_1: '141414'
+    l_post_a_2: '050505'
+    l_post_a_3: '5D5D5D'
+    l_post_a_4: '080808'
+    l_post_a_5: '515151'
+    l_post_a_6: '1A1A1A'
+    l_post_a_7: '1D1D1D'
+    l_post_a_8: '0E0E0E'
+    
+- time: '+1'
+  lights:
+    l_post_a_1: '060606'
+    l_post_a_2: '080808'
+    l_post_a_3: '4D4D4D'
+    l_post_a_5: '5D5D5D'
+    l_post_a_6: '333333'
+    l_post_a_7: '090909'
+    l_post_a_8: '292929'
+    
+- time: '+1'
+  lights:
+    l_post_a_1: '030303'
+    l_post_a_2: '131313'
+    l_post_a_3: '262626'
+    l_post_a_4: '121212'
+    l_post_a_5: '626262'
+    l_post_a_6: '4F4F4F'
+    l_post_a_7: '040404'
+    l_post_a_8: '4E4E4E'
+    
+- time: '+1'
+  lights:
+    l_post_a_1: '020202'
+    l_post_a_2: '2A2A2A'
+    l_post_a_3: '0D0D0D'
+    l_post_a_4: '202020'
+    l_post_a_5: '6B6B6B'
+    l_post_a_6: '6B6B6B'
+    l_post_a_7: '020202'
+    l_post_a_8: '606060'
+    
+- time: '+1'
+  lights:
+    l_post_a_1: '010101'
+    l_post_a_2: '3D3D3D'
+    l_post_a_3: '080808'
+    l_post_a_4: '2F2F2F'
+    l_post_a_5: '626262'
+    l_post_a_7: '010101'
+    l_post_a_8: '575757'
+    
+- time: '+1'
+  lights:
+    l_post_a_2: '484848'
+    l_post_a_3: '030303'
+    l_post_a_4: '3E3E3E'
+    l_post_a_5: '525252'
+    l_post_a_6: '606060'
+    l_post_a_7: '000000'
+    l_post_a_8: '333333'
+    
+- time: '+1'
+  lights:
+    l_post_a_2: '444444'
+    l_post_a_3: '000000'
+    l_post_a_4: '444444'
+    l_post_a_5: '414141'
+    l_post_a_6: '4C4C4C'
+    l_post_a_8: '161616'
+    
+- time: '+1'
+  lights:
+    l_post_a_2: '434343'
+    l_post_a_4: '434343'
+    l_post_a_5: '2D2D2D'
+    l_post_a_6: '444444'
+    l_post_a_8: '070707'
+    
+- time: '+1'
+  lights:
+    l_post_a_2: '5E5E5E'
+    l_post_a_4: '6A6A6A'
+    l_post_a_5: '323232'
+    l_post_a_6: '3C3C3C'
+    l_post_a_7: '010101'
+    l_post_a_8: '171717'
+    
+- time: '+1'
+  lights:
+    l_post_a_4: '707070'
+    l_post_a_5: '444444'
+    l_post_a_6: '3E3E3E'
+    l_post_a_8: '0B0B0B'
+    
+- time: '+1'
+  lights:
+    l_post_a_2: '616161'
+    l_post_a_4: '616161'
+    l_post_a_5: '555555'
+    l_post_a_6: '404040'
+    l_post_a_7: '030303'
+    l_post_a_8: '030303'
+    
+- time: '+1'
+  lights:
+    l_post_a_2: '5E5E5E'
+    l_post_a_4: '474747'
+    l_post_a_5: '656565'
+    l_post_a_6: '3F3F3F'
+    l_post_a_7: '090909'
+    l_post_a_8: '010101'
+    
+- time: '+1'
+  lights:
+    l_post_a_1: '030303'
+    l_post_a_2: '414141'
+    l_post_a_4: '2C2C2C'
+    l_post_a_5: '6E6E6E'
+    l_post_a_6: '3C3C3C'
+    l_post_a_7: '1A1A1A'
+    l_post_a_8: '000000'
+    
+- time: '+1'
+  lights:
+    l_post_a_1: '060606'
+    l_post_a_2: '1C1C1C'
+    l_post_a_3: '020202'
+    l_post_a_4: '131313'
+    l_post_a_5: '656565'
+    l_post_a_6: '424242'
+    l_post_a_7: '2C2C2C'
+    
+- time: '+1'
+  lights:
+    l_post_a_1: '0B0B0B'
+    l_post_a_2: '101010'
+    l_post_a_3: '060606'
+    l_post_a_4: '050505'
+    l_post_a_5: '606060'
+    l_post_a_6: '4D4D4D'
+    l_post_a_7: '4A4A4A'
+    l_post_a_8: '010101'
+    
+- time: '+1'
+  lights:
+    l_post_a_1: '292929'
+    l_post_a_2: '080808'
+    l_post_a_3: '0C0C0C'
+    l_post_a_4: '030303'
+    l_post_a_5: '535353'
+    l_post_a_6: '5A5A5A'
+    l_post_a_7: '6A6A6A'
+    
+- time: '+1'
+  lights:
+    l_post_a_1: '4D4D4D'
+    l_post_a_2: '040404'
+    l_post_a_3: '202020'
+    l_post_a_5: '474747'
+    l_post_a_6: '6A6A6A'
+    l_post_a_7: '7A7A7A'
+    
+- time: '+1'
+  lights:
+    l_post_a_1: '6A6A6A'
+    l_post_a_2: '030303'
+    l_post_a_3: '414141'
+    l_post_a_5: '3E3E3E'
+    l_post_a_6: '616161'
+    l_post_a_7: '656565'
+    l_post_a_8: '030303'
+    
+- time: '+1'
+  lights:
+    l_post_a_2: '040404'
+    l_post_a_3: '3E3E3E'
+    l_post_a_5: '3A3A3A'
+    l_post_a_6: '4E4E4E'
+    l_post_a_7: '4F4F4F'
+    l_post_a_8: '0A0A0A'
+    
+- time: '+1'
+  lights:
+    l_post_a_1: '494949'
+    l_post_a_3: '242424'
+    l_post_a_4: '040404'
+    l_post_a_5: '383838'
+    l_post_a_6: '393939'
+    l_post_a_7: '3A3A3A'
+    l_post_a_8: '161616'
+    
+- time: '+1'
+  lights:
+    l_post_a_1: '262626'
+    l_post_a_2: '050505'
+    l_post_a_3: '090909'
+    l_post_a_4: '0A0A0A'
+    l_post_a_5: '353535'
+    l_post_a_6: '262626'
+    l_post_a_7: '242424'
+    l_post_a_8: '232323'
+    
+- time: '+1'
+  lights:
+    l_post_a_1: '0F0F0F'
+    l_post_a_2: '060606'
+    l_post_a_3: '030303'
+    l_post_a_4: '191919'
+    l_post_a_5: '2F2F2F'
+    l_post_a_6: '212121'
+    l_post_a_7: '101010'
+    l_post_a_8: '4C4C4C'
+    
+- time: '+1'
+  lights:
+    l_post_a_1: '050505'
+    l_post_a_2: '090909'
+    l_post_a_3: '000000'
+    l_post_a_4: '333333'
+    l_post_a_5: '262626'
+    l_post_a_6: '232323'
+    l_post_a_7: '080808'
+    l_post_a_8: '6F6F6F'
+    
+- time: '+1'
+  lights:
+    l_post_a_1: '020202'
+    l_post_a_2: '151515'
+    l_post_a_4: '4D4D4D'
+    l_post_a_5: '1E1E1E'
+    l_post_a_6: '252525'
+    l_post_a_7: '060606'
+    l_post_a_8: '717171'
+    
+- time: '+1'
+  lights:
+    l_post_a_1: '010101'
+    l_post_a_2: '2F2F2F'
+    l_post_a_4: '4F4F4F'
+    l_post_a_5: '171717'
+    l_post_a_6: '272727'
+    l_post_a_7: '040404'
+    l_post_a_8: '5A5A5A'
+    
+- time: '+1'
+  lights:
+    l_post_a_1: '000000'
+    l_post_a_2: '525252'
+    l_post_a_4: '464646'
+    l_post_a_5: '101010'
+    l_post_a_6: '313131'
+    l_post_a_7: '030303'
+    l_post_a_8: '434343'
+    
+- time: '+1'
+  lights:
+    l_post_a_2: '777777'
+    l_post_a_4: '4E4E4E'
+    l_post_a_5: '202020'
+    l_post_a_6: '424242'
+    l_post_a_7: '010101'
+    l_post_a_8: '2C2C2C'
+    
+- time: '+1'
+  lights:
+    l_post_a_2: '848484'
+    l_post_a_4: '585858'
+    l_post_a_5: '333333'
+    l_post_a_6: '535353'
+    l_post_a_7: '000000'
+    l_post_a_8: '161616'
+    
+- time: '+1'
+  lights:
+    l_post_a_2: '797979'
+    l_post_a_4: '454545'
+    l_post_a_5: '454545'
+    l_post_a_6: '646464'
+    l_post_a_7: '030303'
+    l_post_a_8: '090909'
+    
+- time: '+1'
+  lights:
+    l_post_a_2: '535353'
+    l_post_a_4: '242424'
+    l_post_a_5: '565656'
+    l_post_a_6: '676767'
+    l_post_a_7: '090909'
+    l_post_a_8: '070707'
+    
+- time: '+1'
+  lights:
+    l_post_a_1: '020202'
+    l_post_a_2: '2D2D2D'
+    l_post_a_4: '141414'
+    l_post_a_5: '5F5F5F'
+    l_post_a_6: '575757'
+    l_post_a_7: '0D0D0D'
+    l_post_a_8: '040404'
+    
+- time: '+1'
+  lights:
+    l_post_a_1: '060606'
+    l_post_a_2: '141414'
+    l_post_a_4: '0A0A0A'
+    l_post_a_5: '5A5A5A'
+    l_post_a_6: '4B4B4B'
+    l_post_a_7: '131313'
+    l_post_a_8: '030303'
+    
+- time: '+1'
+  lights:
+    l_post_a_1: '090909'
+    l_post_a_2: '090909'
+    l_post_a_3: '030303'
+    l_post_a_4: '050505'
+    l_post_a_5: '555555'
+    l_post_a_6: '414141'
+    l_post_a_7: '343434'
+    l_post_a_8: '010101'
+    
+- time: '+1'
+  lights:
+    l_post_a_1: '191919'
+    l_post_a_2: '020202'
+    l_post_a_3: '050505'
+    l_post_a_4: '040404'
+    l_post_a_5: '4D4D4D'
+    l_post_a_6: '3C3C3C'
+    l_post_a_7: '5A5A5A'
+    l_post_a_8: '000000'
+    
+- time: '+1'
+  lights:
+    l_post_a_1: '3F3F3F'
+    l_post_a_2: '000000'
+    l_post_a_3: '0D0D0D'
+    l_post_a_4: '050505'
+    l_post_a_5: '454545'
+    l_post_a_6: '404040'
+    l_post_a_7: '727272'
+    
+- time: '+1'
+  lights:
+    l_post_a_1: '5D5D5D'
+    l_post_a_3: '2B2B2B'
+    l_post_a_4: '060606'
+    l_post_a_5: '3D3D3D'
+    l_post_a_7: '707070'
+    l_post_a_8: '030303'
+    
+- time: '+1'
+  lights:
+    l_post_a_1: '555555'
+    l_post_a_3: '333333'
+    l_post_a_5: '323232'
+    l_post_a_6: '3E3E3E'
+    l_post_a_7: '6E6E6E'
+    l_post_a_8: '070707'
+    
+- time: '+1'
+  lights:
+    l_post_a_1: '424242'
+    l_post_a_2: '010101'
+    l_post_a_3: '171717'
+    l_post_a_5: '232323'
+    l_post_a_6: '3C3C3C'
+    l_post_a_7: '4E4E4E'
+    l_post_a_8: '0C0C0C'
+    
+- time: '+1'
+  lights:
+    l_post_a_1: '282828'
+    l_post_a_3: '060606'
+    l_post_a_4: '0A0A0A'
+    l_post_a_5: '1C1C1C'
+    l_post_a_6: '3A3A3A'
+    l_post_a_7: '272727'
+    l_post_a_8: '111111'
+    
+- time: '+1'
+  lights:
+    l_post_a_1: '0F0F0F'
+    l_post_a_3: '040404'
+    l_post_a_4: '171717'
+    l_post_a_5: '171717'
+    l_post_a_6: '383838'
+    l_post_a_7: '0D0D0D'
+    l_post_a_8: '3A3A3A'
+    
+- time: '+1'
+  lights:
+    l_post_a_1: '070707'
+    l_post_a_2: '040404'
+    l_post_a_3: '020202'
+    l_post_a_4: '353535'
+    l_post_a_5: '141414'
+    l_post_a_6: '303030'
+    l_post_a_7: '0A0A0A'
+    l_post_a_8: '646464'
+    
+- time: '+1'
+  lights:
+    l_post_a_1: '050505'
+    l_post_a_2: '0D0D0D'
+    l_post_a_3: '010101'
+    l_post_a_4: '565656'
+    l_post_a_5: '161616'
+    l_post_a_6: '272727'
+    l_post_a_7: '070707'
+    l_post_a_8: '727272'
+    
+- time: '+1'
+  lights:
+    l_post_a_1: '030303'
+    l_post_a_2: '191919'
+    l_post_a_3: '000000'
+    l_post_a_4: '6E6E6E'
+    l_post_a_5: '1D1D1D'
+    l_post_a_6: '222222'
+    l_post_a_7: '020202'
+    l_post_a_8: '6A6A6A'
+    
+- time: '+1'
+  lights:
+    l_post_a_1: '010101'
+    l_post_a_2: '2C2C2C'
+    l_post_a_4: '7D7D7D'
+    l_post_a_5: '262626'
+    l_post_a_6: '1C1C1C'
+    l_post_a_7: '000000'
+    l_post_a_8: '5D5D5D'
+    
+- time: '+1'
+  lights:
+    l_post_a_1: '000000'
+    l_post_a_2: '565656'
+    l_post_a_4: '7A7A7A'
+    l_post_a_5: '313131'
+    l_post_a_6: '303030'
+    l_post_a_7: '010101'
+    l_post_a_8: '3A3A3A'
+    
+- time: '+1'
+  lights:
+    l_post_a_2: '777777'
+    l_post_a_4: '565656'
+    l_post_a_5: '3D3D3D'
+    l_post_a_6: '474747'
+    l_post_a_7: '030303'
+    l_post_a_8: '131313'
+    
+- time: '+1'
+  lights:
+    l_post_a_2: '6B6B6B'
+    l_post_a_4: '3A3A3A'
+    l_post_a_5: '474747'
+    l_post_a_6: '5E5E5E'
+    l_post_a_7: '040404'
+    l_post_a_8: '090909'
+    
+- time: '+1'
+  lights:
+    l_post_a_2: '545454'
+    l_post_a_4: '1C1C1C'
+    l_post_a_5: '515151'
+    l_post_a_6: '767676'
+    l_post_a_7: '060606'
+    l_post_a_8: '070707'
+    
+- time: '+1'
+  lights:
+    l_post_a_1: '010101'
+    l_post_a_2: '3D3D3D'
+    l_post_a_4: '0A0A0A'
+    l_post_a_5: '595959'
+    l_post_a_6: '747474'
+    l_post_a_7: '090909'
+    l_post_a_8: '040404'
+    
+- time: '+1'
+  lights:
+    l_post_a_1: '060606'
+    l_post_a_2: '262626'
+    l_post_a_4: '030303'
+    l_post_a_5: '5B5B5B'
+    l_post_a_6: '707070'
+    l_post_a_7: '141414'
+    l_post_a_8: '000000'
+    
+- time: '+1'
+  lights:
+    l_post_a_1: '0A0A0A'
+    l_post_a_2: '111111'
+    l_post_a_4: '000000'
+    l_post_a_5: '5C5C5C'
+    l_post_a_6: '666666'
+    l_post_a_7: '282828'
+    
+- time: '+1'
+  lights:
+    l_post_a_1: '0F0F0F'
+    l_post_a_2: '090909'
+    l_post_a_6: '5B5B5B'
+    l_post_a_7: '3E3E3E'
+    
+- time: '+1'
+  lights:
+    l_post_a_1: '363636'
+    l_post_a_2: '060606'
+    l_post_a_4: '010101'
+    l_post_a_5: '5B5B5B'
+    l_post_a_6: '575757'
+    l_post_a_7: '4E4E4E'
+    l_post_a_8: '020202'
+    
+- time: '+1'
+  lights:
+    l_post_a_1: '5D5D5D'
+    l_post_a_2: '040404'
+    l_post_a_5: '515151'
+    l_post_a_6: '525252'
+    l_post_a_7: '606060'
+    l_post_a_8: '040404'
+    

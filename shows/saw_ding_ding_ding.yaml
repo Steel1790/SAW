@@ -1,0 +1,50 @@
+#show_version=6
+
+- time: 0 
+#SAW ding, ding, ding 1 
+  lights:
+    left_disc: red
+    left_bottom_bumper: red   
+- time: '+120ms' 
+  lights:
+    middle_disc: red  
+    right_bottom_bumper: red 
+- time: '+120ms' 
+  lights:
+    right_disc: red
+    top_bottom_bumper: red
+- time: '+250ms' 
+  lights:
+    left_disc: off -f500ms
+    middle_disc: off -f500ms
+    right_disc: off -f500ms
+    left_bottom_bumper: off -f500ms
+    right_bottom_bumper: off -f500ms
+    top_bottom_bumper: off -f500ms
+
+#SAW ding, ding, ding 2
+- time: '+710ms' #(pause) 
+  lights:
+    left_disc: white
+    left_top_bumper: white   
+- time: '+120ms' 
+  lights:
+    middle_disc: white 
+    right_top_bumper: white 
+- time: '+120ms' 
+  lights:
+    right_disc: white
+    lower_top_bumper: white
+- time: '+250ms' 
+  lights:
+    left_disc: off -f500ms
+    middle_disc: off -f500ms
+    right_disc: off -f500ms
+    left_top_bumper: off -f500ms
+    right_top_bumper: off -f500ms
+    lower_top_bumper: off -f500ms
+- time: '+710ms' #(pause)   
+
+
+
+

@@ -1,0 +1,112 @@
+#show_version=6
+
+#GI White Fade 1
+- time: 0
+  lights:
+    gi: 4a4a4a -f10ms  
+- time: '+1ms'
+  lights:
+    gi: white -f3000ms
+- time: '+2900ms'
+  lights:
+    gi: off -f0ms
+#GI White Fade 2
+- time: '+1ms'
+  lights:
+    gi: 4a4a4a -f10ms  
+- time: '+1ms'
+  lights:
+    gi: white -f3000ms
+- time: '+2900ms'
+  lights:
+    gi: off -f0ms
+#GI White Fade 3
+- time: '+1ms'
+  lights:
+    gi: 4a4a4a -f10ms  
+- time: '+1ms'
+  lights:
+    gi: white -f3000ms
+- time: '+2900ms'
+  lights:
+    gi: off
+
+#Pause 1
+- time: '+700ms' 
+  shows:     
+    starpost_sparkle_a:
+      speed: 30
+    starpost_sparkle_l:
+      speed: 30 
+- time: '+1000ms'   
+  shows:     
+    starpost_sparkle_b:
+      speed: 30
+    starpost_sparkle_k:
+      speed: 30 
+  lights:
+    gi: white -f200ms
+- time: '+200ms'
+  lights:
+    gi: off
+- time: '+800ms'   
+  shows:     
+    starpost_sparkle_c:
+      speed: 30
+    starpost_sparkle_j:
+      speed: 30 
+#Pause 2
+- time: '+1000ms'   
+  shows:     
+    starpost_sparkle_d:
+      speed: 30
+    starpost_sparkle_i:
+      speed: 30 
+  lights:
+    gi: white -f200ms
+- time: '+200ms'
+  lights:
+    gi: off
+- time: '+800ms'   
+  shows:     
+    starpost_sparkle_e:
+      speed: 30
+    starpost_sparkle_f:
+      speed: 30 
+#Pause 3
+- time: '+1000ms'   
+  shows:     
+    starpost_sparkle_g:
+      speed: 30
+    starpost_sparkle_h:
+      speed: 30 
+  lights:
+    gi: white -f200ms
+- time: '+200ms'
+  lights:
+    gi: off
+
+#Flash 3 times
+- time: '+2400ms'
+  lights:
+    gi: white -f50ms
+- time: '+400ms'
+  lights:
+    gi: 4a4a4a -f10ms  
+
+- time: '+10ms'
+  lights:
+    gi: white -f50ms
+- time: '+400ms'
+  lights:
+    gi: 4a4a4a -f10ms  
+
+- time: '+10ms'
+  lights:
+    gi: white -f50ms
+- time: '+400ms'
+  lights:
+    gi: 4a4a4a -f10ms  
+
+
+ 

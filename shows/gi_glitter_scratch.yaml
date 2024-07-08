@@ -1,0 +1,15 @@
+#show_version=6
+
+- time: 0 #0.0s timestamp (glitter)
+  shows:     
+    white_sweeps:
+      speed: 40
+    gi_flicker_one_time:       
+      show_tokens:
+        color1: white
+      speed: 30    
+- time: '+500ms' #.5s timestamp (glitter stop)
+  shows:     
+    white_sweeps: stop
+    gi_flicker_one_time: stop 
+- time: '+3000ms' #3.5s timestamp (glitter pause)   
