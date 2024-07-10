@@ -3,49 +3,62 @@
 #GI White Fade 1
 - time: 0
   lights:
-    gi: 4a4a4a -f10ms  
+    gi: 4a4a4a -f10ms
+    starpost: 4a4a4a -f10ms    
 - time: '+1ms'
   lights:
     gi: white -f3000ms
+    starpost: white -f3000ms
 - time: '+2900ms'
   lights:
     gi: off -f0ms
+    starpost: off -f0ms
 #GI White Fade 2
 - time: '+1ms'
   lights:
-    gi: 4a4a4a -f10ms  
+    gi: 4a4a4a -f10ms
+    starpost: 4a4a4a -f10ms  
 - time: '+1ms'
   lights:
     gi: white -f3000ms
+    starpost: white -f3000ms
 - time: '+2900ms'
   lights:
     gi: off -f0ms
+    starpost: off -f0ms
 #GI White Fade 3
 - time: '+1ms'
   lights:
-    gi: 4a4a4a -f10ms  
+    gi: 4a4a4a -f10ms
+    starpost: 4a4a4a -f10ms 
 - time: '+1ms'
   lights:
     gi: white -f3000ms
-- time: '+2900ms'
+    starpost: white -f3000ms
+- time: '+3000ms' #8.7s timestamp
   lights:
     gi: off
+    starpost: red
 
 #Pause 1
-- time: '+700ms' 
+- time: '+600ms' 
   shows:     
     starpost_sparkle_a:
       speed: 30
     starpost_sparkle_l:
-      speed: 30 
-- time: '+1000ms'   
+      speed: 30
+    jet_bumpers_sparkle_right_bottom:
+      speed: 30
+- time: '+1000ms' #10.4s timestamp
   shows:     
     starpost_sparkle_b:
       speed: 30
     starpost_sparkle_k:
-      speed: 30 
+      speed: 30
+    jet_bumpers_sparkle_left_bottom:
+      speed: 30
   lights:
-    gi: white -f200ms
+    gi: white -f200ms 
 - time: '+200ms'
   lights:
     gi: off
@@ -54,14 +67,18 @@
     starpost_sparkle_c:
       speed: 30
     starpost_sparkle_j:
-      speed: 30 
+      speed: 30
+    jet_bumpers_sparkle_top_bottom:
+      speed: 30
 #Pause 2
-- time: '+1000ms'   
+- time: '+900ms'  #12.3s timestamp
   shows:     
     starpost_sparkle_d:
       speed: 30
     starpost_sparkle_i:
       speed: 30 
+    jet_bumpers_sparkle_lower_top:
+      speed: 30
   lights:
     gi: white -f200ms
 - time: '+200ms'
@@ -72,41 +89,77 @@
     starpost_sparkle_e:
       speed: 30
     starpost_sparkle_f:
-      speed: 30 
+      speed: 30
+    jet_bumpers_sparkle_left_top:
+      speed: 30
 #Pause 3
-- time: '+1000ms'   
+- time: '+900ms'  #14.2s timestamp
   shows:     
     starpost_sparkle_g:
       speed: 30
     starpost_sparkle_h:
-      speed: 30 
+      speed: 30
+    jet_bumpers_sparkle_right_top:
+      speed: 30
   lights:
     gi: white -f200ms
-- time: '+200ms'
+- time: '+1000ms'
   lights:
     gi: off
+    starpost: off
+  shows:  
+    starpost_sparkle_a: stop
+    starpost_sparkle_b: stop
+    starpost_sparkle_c: stop
+    starpost_sparkle_d: stop
+    starpost_sparkle_e: stop
+    starpost_sparkle_f: stop    
+    starpost_sparkle_g: stop
+    starpost_sparkle_h: stop
+    starpost_sparkle_i: stop
+    starpost_sparkle_j: stop
+    starpost_sparkle_k: stop
+    starpost_sparkle_l: stop
+    jet_bumpers_sparkle_left_bottom: stop    
+    jet_bumpers_sparkle_right_bottom: stop   
+    jet_bumpers_sparkle_top_bottom: stop   
+    jet_bumpers_sparkle_left_top: stop
+    jet_bumpers_sparkle_right_top: stop
+    jet_bumpers_sparkle_lower_top: stop            
 
 #Flash 3 times
-- time: '+2400ms'
+- time: '+2000ms'  #17.3s timestamp
   lights:
-    gi: white -f50ms
-- time: '+400ms'
+    gi: white -f150ms
+    starpost: red -f150ms
+    jet_bumper: red -f150ms
+- time: '+150ms'
   lights:
-    gi: 4a4a4a -f10ms  
+    gi: off 
+    starpost: off
+    jet_bumper: off
 
-- time: '+10ms'
+- time: '+250ms' #17.7s timestamp
   lights:
-    gi: white -f50ms
-- time: '+400ms'
+    gi: white -f150ms
+    starpost: red -f150ms
+    jet_bumper: red -f150ms
+- time: '+150ms'
   lights:
-    gi: 4a4a4a -f10ms  
+    gi: off
+    starpost: off 
+    jet_bumper: off
 
-- time: '+10ms'
+- time: '+250ms' #18.1s timestamp
   lights:
-    gi: white -f50ms
-- time: '+400ms'
+    gi: white -f150ms
+    starpost: red -f150ms
+    jet_bumper: red -f150ms
+- time: '+150ms'
   lights:
-    gi: 4a4a4a -f10ms  
+    gi: off
+    starpost: off
+    jet_bumper: off
 
 
  

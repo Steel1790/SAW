@@ -29,7 +29,8 @@ keyboard:
   q:
     switch: s_right_outlane
   r:
-    event: selection_mode_razorwire_selected
+    event: mode_razorwire_complete
+    # event: selection_mode_razorwire_selected
   h:
     event: selection_mode_quadshotgun_selected
 #Trying to add a keyboard command to get to Puzzle Hurry Up. But not sure how to tell it which hurryup mode.

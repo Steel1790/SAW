@@ -1,0 +1,310 @@
+#show_version=6
+
+#GI White Fade 1
+- time: 0
+  lights:
+    gi: 610901 -f2000ms
+    trough: 610901 -f2000ms
+
+- time: '+240ms' #.24s timestamp (SAW ding,ding,ding start. .96s repeat)
+  shows: 
+    saw_ding_ding_ding:
+      speed: 1  
+
+## 1.0 SECONDS
+
+## 2.0 SECONDS
+
+## 3.0 SECONDS
+
+## 4.0 SECONDS
+
+## 5.0 SECONDS
+
+## 6.0 SECONDS
+
+## 7.0 SECONDS
+
+- time: '+6960ms' #7.2s timestamp (bumpbump)
+  lights:
+    gi: red
+- time: '+50ms' #7.25s timestamp (bumpbump)
+  lights:
+    starpost: red
+    gi: 610901 -f500ms
+- time: '+50ms' #7.30s timestamp (bumpbump off)
+  lights:
+    starpost: off -f1000ms
+
+## 8.0 SECONDS
+
+## 9.0 SECONDS
+
+- time: '+2350ms' #9.65s timestamp (glitter scratch start. 3.5s repeat)
+  shows: 
+    gi_glitter_scratch:
+      speed: 1    
+
+## 10.0 SECONDS
+
+- time: '+1050ms' #10.7s timestamp (bumpbump)
+  lights:
+    gi: red    
+- time: '+50ms' #10.75s timestamp (bumpbump)
+  lights:
+    starpost: red
+    gi: 610901 -f500ms
+- time: '+50ms' #10.8s timestamp (bumpbump off)
+  lights:
+    starpost: off -f1000ms  
+ 
+## 11.0 SECONDS
+
+## 12.0 SECONDS
+ 
+## 13.0 SECONDS
+
+## 14.0 SECONDS
+
+- time: '+3400ms' #14.2s timestamp (bumpbump)
+  lights:
+    gi: red  
+- time: '+50ms' #14.25s timestamp (bumpbump)
+  lights:
+    starpost: red
+    gi: 610901 -f500ms
+- time: '+50ms' #14.30s timestamp (bumpbump off)
+  lights:
+    starpost: off -f1000ms  
+
+## 15.0 SECONDS
+
+## 16.0 SECONDS
+
+- time: '+2550ms' #16.85s timestamp (boom fading)
+  shows:     
+    inserts_pops_red_circle_fade:
+      speed: 30 
+
+## 17.0 SECONDS
+
+- time: '+850ms' #17.7s timestamp (bumpbump)
+  lights:
+    gi: red  
+- time: '+50ms' #17.75s timestamp (bumpbump)
+  lights:
+    starpost: red
+    gi: 610901 -f500ms
+- time: '+50ms' #17.80s timestamp (bumpbump off)
+  lights:
+    starpost: off -f1000ms
+- time: '+100ms' #17.9s timestamp (boom fading stop)   
+  shows:     
+    inserts_pops_red_circle_fade: stop 
+
+## 18.0 SECONDS
+
+## 19.0 SECONDS
+
+## 20.0 SECONDS
+
+## 21.0 SECONDS
+
+- time: '+3400ms' #21.2s timestamp (bumpbump)
+  lights:
+    gi: red   
+- time: '+50ms' #21.25s timestamp (bumpbump)
+  lights:
+    starpost: red
+    gi: 610901 -f500ms
+- time: '+50ms' #21.30s timestamp (bumpbump off)
+  lights:
+    starpost: off -f1000ms
+
+## 22.0 SECONDS
+
+## 23.0 SECONDS
+
+## 24.0 SECONDS
+
+- time: '+2550ms' #23.85s timestamp (boom fading)
+  shows:     
+    inserts_pops_red_circle_fade:
+      speed: 30 
+
+- time: '+900ms' #24.75s timestamp (drumbeat 6 part start. 3.5s repeat)
+  shows:     
+    shithole_drumbeat_6part:
+      speed: 1 
+
+- time: '+150ms' #24.9s timestamp (boom fading stop)   
+  shows:     
+    inserts_pops_red_circle_fade: stop 
+
+- time: '+100ms' #25.0s timestamp (saw ding,ding,ding stop)
+  shows:     
+    saw_ding_ding_ding: stop 
+  
+- time: '+5850ms' #30.85s timestamp (boom fading)
+  shows:     
+    inserts_pops_red_circle_fade:
+      speed: 30   
+- time: '+1050ms' #31.9s timestamp (boom fading stop)   
+  shows:     
+    inserts_pops_red_circle_fade: stop  
+- time: '+5950ms' #37.85s timestamp (boom fading)
+  shows:     
+    inserts_pops_red_circle_fade:
+      speed: 30   
+- time: '+1050ms' #38.9s timestamp (boom fading stop)   
+  shows:     
+    inserts_pops_red_circle_fade: stop  
+- time: '+5950ms' #44.85s timestamp (boom fading)
+  shows:     
+    inserts_pops_red_circle_fade:
+      speed: 30   
+- time: '+1050ms' #45.9s timestamp (boom fading stop)   
+  shows:     
+    inserts_pops_red_circle_fade: stop 
+
+- time: '+20100ms' #66.0s timestamp (boom fading stop)   
+  shows:     
+    shithole_drumbeat_6part: stop  
+
+#Long pause to check timing stays on track
+- time: '+7500ms' #73.5s timestamp 
+  shows:     
+    discs_colorwash_explode:
+      speed: 20  
+- time: '+500ms' #74.0s timestamp (glitter stop)
+  shows:     
+    gi_glitter_scratch: stop 
+
+
+# #CHASE LIGHTS - COLOR 1 BEARTRAP
+- time: '+500ms' #74.5s timestamp (glitter stop)
+  shows:     
+    starpost_cycle:
+      show_tokens:
+        color1: beartrap 
+      speed: 20   
+
+    speaker_left_cylon:
+      speed: 20    
+      show_tokens:
+        color1: beartrap    
+
+    speaker_right_cylon:
+      speed: 20
+      show_tokens:
+        color1: beartrap  
+
+    cabinet_left_cylon:
+      speed: 20
+      show_tokens:
+        color1: beartrap  
+
+    cabinet_right_cylon:
+      speed: 20
+      show_tokens:
+        color1: beartrap  
+
+    skillshot_chase:
+      speed: 8
+      show_tokens:
+        color1: beartrap
+
+    top_drop_chase:
+      speed: 8
+      show_tokens:
+        color1: beartrap
+
+    mode_chase:
+      speed: 6
+      show_tokens:
+        color1: beartrap  
+
+    jw_chase:
+      speed: 8
+      show_tokens:
+        color1: beartrap
+
+    right_ramp_chase:
+      speed: 8
+      show_tokens:
+        color1: beartrap
+
+    left_ramp_chase:
+      speed: 8
+      show_tokens:
+        color1: beartrap
+
+    hmb_chase:
+      speed: 8
+      show_tokens:
+        color1: beartrap
+
+    disc_left_chase:
+      speed: 10
+      show_tokens:
+        color1: beartrap
+
+    disc_middle_chase:
+      speed: 13
+      show_tokens:
+        color1: beartrap
+
+    disc_right_chase:
+      speed: 10
+      show_tokens:
+        color1: beartrap
+
+    flasher_beartrap_chase:
+      speed: 7
+      show_tokens:
+        color1: beartrap
+
+    flasher_drill_chase:
+      speed: 7
+      show_tokens:
+        color1: beartrap
+
+    flasher_razorwire_chase:
+      speed: 7
+      show_tokens:
+        color1: beartrap
+
+    flasher_shotgun_chase:
+      speed: 7
+      show_tokens:
+        color1: beartrap
+
+    flasher_zep_chase:
+      speed: 7
+      show_tokens:
+        color1: beartrap
+
+    outlane_alternate:
+      speed: 4
+      show_tokens:
+        color1: beartrap
+     
+    jet_bumpers_color_chase_2:
+      loops: 1
+      speed: 10
+      show_tokens:
+        color1: beartrap
+        color2: drillchair
+        color3: beartrap           
+
+    topper_chase:
+      speed: 16
+      show_tokens:
+        color1: beartrap  
+
+
+
+- time: '+34000ms' #108.0s timestamp (song end)
+
+
+
