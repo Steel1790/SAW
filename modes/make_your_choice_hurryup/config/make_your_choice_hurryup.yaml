@@ -200,6 +200,8 @@ shots:
         state: 0
       - events: make_your_choice_value_locked
         state: 1
+      - events: logicblock_acc_make_your_choice_qualify_hit{step==1}
+        state: 0
   shot_inner_loop_hurryup:
     advance_events: logicblock_acc_make_your_choice_qualify_hit{step==3}
     switches: s_inner_loop
@@ -211,6 +213,8 @@ shots:
         state: 0
       - events: make_your_choice_value_locked
         state: 1
+      - events: logicblock_acc_make_your_choice_qualify_hit{step==3}
+        state: 0
   shot_right_loop_hurryp:
     advance_events: logicblock_acc_make_your_choice_qualify_hit{step==2}    
     switches: s_right_loop_bottom, s_right_loop_top
@@ -222,6 +226,8 @@ shots:
         state: 0
       - events: make_your_choice_value_locked
         state: 1
+      - events: logicblock_acc_make_your_choice_qualify_hit{step==2}
+        state: 0
 
 shot_profiles:
   sp_make_your_choice_qualify:
@@ -233,6 +239,8 @@ shot_profiles:
         show: "sh_hurryup_ready"        # a default show to turn of the led. change if you want to do something on unlit shots
       - name: collected
         show: "sh_hurryup_collected"    # a default show to turn of the led. change if you want to do something on unlit shots
+      - name: collected_hit
+        show: "sh_hurryup_collected_hit"
 
 event_player:
   mode_make_your_choice_hurryup_started: e_gi_dim|0.55s
@@ -246,16 +254,19 @@ shows:
             color1: beartrap
             led: (leds)
           speed: 15
-  sh_hurryup_collected:
-    - duration: 1
+  sh_hurryup_collected_hit:
+    - duration: 1s
       shows:
         flash_token:
           show_tokens:
             color1: razorwire
             led: (leds)
           speed: 5
-          loops: 0
+          loops: 2
           priority: 170
+  sh_hurryup_collected:
+    - duration: 1s
+      shows:
         flash_token_2:
           show_tokens:
             color1: beartrap
@@ -291,17 +302,26 @@ show_player:
         show_tokens:
           leds: orbit
   logicblock_acc_make_your_choice_qualify_hit{step==1}:
-      sh_hurryup_collected:
+      sh_hurryup_collected_hit:
         show_tokens:
           leds: l_left_loop_arrow
-  logicblock_acc_make_your_choice_qualify_hit{step==2}:
+        loops: 0
       sh_hurryup_collected:
+        loops: 0
+  logicblock_acc_make_your_choice_qualify_hit{step==2}:
+      sh_hurryup_collected_hit:
         show_tokens:
           leds: l_right_loop_arrow
-  logicblock_acc_make_your_choice_qualify_hit{step==3}:
+        loops: 0
       sh_hurryup_collected:
+        loops: 0
+  logicblock_acc_make_your_choice_qualify_hit{step==3}:
+      sh_hurryup_collected_hit:
         show_tokens:
           leds: l_inner_loop_arrow
+        loops: 0
+      sh_hurryup_collected:
+        loops: 0
 
 sound_player:
   mode_make_your_choice_hurryup_started:

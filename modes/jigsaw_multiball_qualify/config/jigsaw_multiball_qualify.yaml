@@ -32,6 +32,19 @@ counters:
         action: add
         value: 1
 
+  cnt_jigsaw_mb_qualify_lights:
+    starting_count: 0
+    count_complete_value: 6
+    start_enabled: true
+    persist_state: true
+    reset_on_complete: true
+    count_events: e_jigsaw_mb_qualify_hit_one, e_jigsaw_mb_qualify_hit_two 
+    reset_events: logicblock_jigsaw_multiball_qualify_complete
+    control_events:
+      - event: e_mystery_mb_lock
+        action: add
+        value: 2
+
   cnt_jigsaw_mb_lock1:
     starting_count: 0
     count_complete_value: 1
@@ -90,17 +103,17 @@ shows:
         (leds): off
 
 show_player:
-  e_jigsaw_mb_qualify_hit_one{device.counters.cnt_jigsaw_mb_qualify.value == 0}:
+  logicblock_cnt_jigsaw_mb_qualify_lights_updated{device.counters.cnt_jigsaw_mb_qualify_lights.value == 1}:
     jigsaw_mb_qualify_ready:
       speed: 4
       priority: 183
-  e_jigsaw_mb_qualify_hit_two{device.counters.cnt_jigsaw_mb_qualify.value == 0}:
+  logicblock_cnt_jigsaw_mb_qualify_lights_updated{device.counters.cnt_jigsaw_mb_qualify_lights.value == 2}:
     jigsaw_mb_qualify_ready: stop
     sh_jigsaw_mb_qualify_hit_qualified:
       show_tokens:
         leds: l_left_ramp_triangle3
       priority: 184
-  e_jigsaw_mb_qualify_hit_one{device.counters.cnt_jigsaw_mb_qualify.value == 1}:
+  logicblock_cnt_jigsaw_mb_qualify_lights_updated{device.counters.cnt_jigsaw_mb_qualify_lights.value == 3}:
     jigsaw_mb_qualify_ready:
       speed: 4
       priority: 183
@@ -108,13 +121,13 @@ show_player:
       show_tokens:
         leds: l_left_ramp_triangle3
       priority: 184
-  e_jigsaw_mb_qualify_hit_two{device.counters.cnt_jigsaw_mb_qualify.value == 1}:
+  logicblock_cnt_jigsaw_mb_qualify_lights_updated{device.counters.cnt_jigsaw_mb_qualify_lights.value == 4}:
     jigsaw_mb_qualify_ready: stop
     sh_jigsaw_mb_qualify_hit_qualified:
       show_tokens:
         leds: l_left_ramp_triangle3, l_left_ramp_triangle2
       priority: 184
-  e_jigsaw_mb_qualify_hit_one{device.counters.cnt_jigsaw_mb_qualify.value == 2}:
+  logicblock_cnt_jigsaw_mb_qualify_lights_updated{device.counters.cnt_jigsaw_mb_qualify_lights.value == 5}:
     jigsaw_mb_qualify_ready:
       speed: 4
       priority: 183
@@ -122,7 +135,7 @@ show_player:
       show_tokens:
         leds: l_left_ramp_triangle3, l_left_ramp_triangle2
       priority: 184
-  e_jigsaw_mb_qualify_hit_two{device.counters.cnt_jigsaw_mb_qualify.value == 2}:
+  logicblock_cnt_jigsaw_mb_qualify_lights_updated{device.counters.cnt_jigsaw_mb_qualify_lights.value == 6}:
     jigsaw_mb_qualify_ready: stop
     sh_jigsaw_mb_qualify_hit_qualified:
       show_tokens:
