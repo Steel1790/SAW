@@ -1,0 +1,125 @@
+#show_version=6
+- time: 0
+  lights:
+    l_rightspeaker_1: '000000'
+    l_rightspeaker_10: '000000'
+    l_rightspeaker_11: '000000'
+    l_rightspeaker_12: '000000'
+    l_rightspeaker_13: '000000'
+    l_rightspeaker_14: '000000'
+    l_rightspeaker_15: '000000'
+    l_rightspeaker_16: '000000'
+    l_rightspeaker_17: '000000'
+    l_rightspeaker_18: '000000'
+    l_rightspeaker_19: '000000'
+    l_rightspeaker_2: '000000'
+    l_rightspeaker_20: '000000'
+    l_rightspeaker_21: '000000'
+    l_rightspeaker_22: '000000'
+    l_rightspeaker_23: '000000'
+    l_rightspeaker_24: '000000'
+    l_rightspeaker_3: '000000'
+    l_rightspeaker_4: '000000'
+    l_rightspeaker_5: '000000'
+    l_rightspeaker_6: '000000'
+    l_rightspeaker_7: '000000'
+    l_rightspeaker_8: '000000'
+    l_rightspeaker_9: '000000'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+- time: '+1'
+  lights:
+    l_rightspeaker_14: '9F9E9E'
+    l_rightspeaker_15: '444343'
+    l_rightspeaker_2: 'FFFFFF'
+    l_rightspeaker_23: '090909'
+    l_rightspeaker_24: '494949'
+    l_rightspeaker_3: '1F1E1F'
+    
+- time: '+1'
+  lights:
+    l_rightspeaker_1: 'FFFCFD'
+    l_rightspeaker_10: 'FFFFFF'
+    l_rightspeaker_11: 'FFFFFF'
+    l_rightspeaker_12: 'FFFCFD'
+    l_rightspeaker_13: 'FFFCFD'
+    l_rightspeaker_14: 'FFFCFD'
+    l_rightspeaker_15: 'FFFCFD'
+    l_rightspeaker_16: 'FFFFFF'
+    l_rightspeaker_17: 'FFFFFF'
+    l_rightspeaker_18: 'FFFFFF'
+    l_rightspeaker_19: 'FFFFFF'
+    l_rightspeaker_2: 'FFFCFD'
+    l_rightspeaker_20: 'FFFFFF'
+    l_rightspeaker_21: 'FFFFFF'
+    l_rightspeaker_22: 'FFFFFF'
+    l_rightspeaker_23: 'FFFCFD'
+    l_rightspeaker_24: 'FFFCFD'
+    l_rightspeaker_3: 'FFFCFD'
+    l_rightspeaker_4: 'FFFDFE'
+    l_rightspeaker_5: 'FFFFFF'
+    l_rightspeaker_6: '727071'
+    l_rightspeaker_7: 'FDFAFB'
+    l_rightspeaker_8: '252424'
+    l_rightspeaker_9: 'FFFFFF'
+    
+- time: '+1'
+  lights:
+    l_rightspeaker_10: 'FFFCFD'
+    l_rightspeaker_11: 'FFFCFD'
+    l_rightspeaker_16: 'FFFCFD'
+    l_rightspeaker_17: 'FFFCFD'
+    l_rightspeaker_18: 'FFFCFD'
+    l_rightspeaker_19: 'FFFCFD'
+    l_rightspeaker_20: 'FFFCFD'
+    l_rightspeaker_21: 'FFFCFD'
+    l_rightspeaker_22: 'FFFCFD'
+    l_rightspeaker_4: 'FFFCFD'
+    l_rightspeaker_5: 'FFFCFD'
+    l_rightspeaker_6: 'FFFCFD'
+    l_rightspeaker_7: 'FFFCFD'
+    l_rightspeaker_8: 'FFFCFD'
+    l_rightspeaker_9: 'FFFCFD'
+    
+- time: '+1'
+  lights:
+    l_rightspeaker_1: '000000'
+    l_rightspeaker_10: '000000'
+    l_rightspeaker_11: '000000'
+    l_rightspeaker_12: '000000'
+    l_rightspeaker_13: '000000'
+    l_rightspeaker_14: '000000'
+    l_rightspeaker_15: '000000'
+    l_rightspeaker_16: '000000'
+    l_rightspeaker_17: '000000'
+    l_rightspeaker_18: '000000'
+    l_rightspeaker_19: '000000'
+    l_rightspeaker_2: '000000'
+    l_rightspeaker_20: '000000'
+    l_rightspeaker_21: '000000'
+    l_rightspeaker_22: '000000'
+    l_rightspeaker_23: '000000'
+    l_rightspeaker_24: '000000'
+    l_rightspeaker_3: '000000'
+    l_rightspeaker_4: '000000'
+    l_rightspeaker_5: '000000'
+    l_rightspeaker_6: '000000'
+    l_rightspeaker_7: '000000'
+    l_rightspeaker_8: '000000'
+    l_rightspeaker_9: '000000'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    

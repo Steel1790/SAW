@@ -1701,8 +1701,8 @@ switch:
   s_upper_bottom_jet_bumper:
     shape: CIRCLE
     size: 0.06
-    x: 0.23172295973470225
-    y: 0.31670822942643395
+    x: 0.2297770137524558
+    y: 0.31630648330058936
   s_upper_right_flipper:
     rotation: 20
     shape: RECTANGLE

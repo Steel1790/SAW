@@ -1,0 +1,354 @@
+#show_version=6
+- time: 0
+  lights:
+    l_rightspeaker_13: '011C02'
+    
+- time: '+1'
+  lights:
+    l_rightspeaker_1: '000000'
+    l_rightspeaker_13: '000000'
+    l_rightspeaker_14: '08A50D'
+    
+- time: '+1'
+  lights:
+    l_rightspeaker_14: '09C00F'
+    l_rightspeaker_2: '07920B'
+    
+- time: '+1'
+  lights:
+    l_rightspeaker_14: '022903'
+    l_rightspeaker_2: '09C00F'
+    
+- time: '+1'
+  lights:
+    l_rightspeaker_14: '000000'
+    l_rightspeaker_15: '033C05'
+    l_rightspeaker_2: '034505'
+    
+- time: '+1'
+  lights:
+    l_rightspeaker_15: '09C00F'
+    l_rightspeaker_2: '000000'
+    l_rightspeaker_3: '033F05'
+    
+- time: '+1'
+  lights:
+    l_rightspeaker_15: '078E0B'
+    l_rightspeaker_3: '09C00F'
+    
+- time: '+1'
+  lights:
+    l_rightspeaker_15: '000000'
+    l_rightspeaker_16: '056908'
+    l_rightspeaker_3: '06850A'
+    
+- time: '+1'
+  lights:
+    l_rightspeaker_16: '09C00F'
+    l_rightspeaker_3: '000000'
+    l_rightspeaker_4: '068A0B'
+    
+- time: '+1'
+  lights:
+    l_rightspeaker_16: '034305'
+    l_rightspeaker_4: '09C00F'
+    
+- time: '+1'
+  lights:
+    l_rightspeaker_16: '000000'
+    l_rightspeaker_17: '09C00F'
+    l_rightspeaker_4: '022303'
+    l_rightspeaker_5: '000400'
+    
+- time: '+1'
+  lights:
+    l_rightspeaker_4: '000000'
+    l_rightspeaker_5: '09C00F'
+    
+- time: '+1'
+  lights:
+    l_rightspeaker_17: '000000'
+    l_rightspeaker_18: '08A50D'
+    l_rightspeaker_5: '067D0A'
+    
+- time: '+1'
+  lights:
+    l_rightspeaker_18: '09C00F'
+    l_rightspeaker_5: '000000'
+    l_rightspeaker_6: '09C00F'
+    
+- time: '+1'
+  lights:
+    l_rightspeaker_18: '000000'
+    l_rightspeaker_19: '034305'
+    l_rightspeaker_6: '07940C'
+    
+- time: '+1'
+  lights:
+    l_rightspeaker_19: '09C00F'
+    l_rightspeaker_6: '000000'
+    l_rightspeaker_7: '09C00F'
+    
+- time: '+1'
+  lights:
+    l_rightspeaker_19: '044B06'
+    l_rightspeaker_20: '011C02'
+    l_rightspeaker_7: '09B90E'
+    
+- time: '+1'
+  lights:
+    l_rightspeaker_19: '000000'
+    l_rightspeaker_20: '09C00F'
+    l_rightspeaker_7: '000000'
+    l_rightspeaker_8: '08AF0E'
+    
+- time: '+1'
+  lights:
+    l_rightspeaker_20: '06860A'
+    l_rightspeaker_21: '011101'
+    l_rightspeaker_8: '09C00F'
+    
+- time: '+1'
+  lights:
+    l_rightspeaker_20: '000000'
+    l_rightspeaker_21: '09C00F'
+    l_rightspeaker_8: '000000'
+    l_rightspeaker_9: '06810A'
+    
+- time: '+1'
+  lights:
+    l_rightspeaker_21: '08A00D'
+    l_rightspeaker_9: '09C00F'
+    
+- time: '+1'
+  lights:
+    l_rightspeaker_10: '000400'
+    l_rightspeaker_21: '000000'
+    l_rightspeaker_22: '08A40D'
+    l_rightspeaker_9: '000000'
+    
+- time: '+1'
+  lights:
+    l_rightspeaker_10: '09C00F'
+    l_rightspeaker_22: '09C00F'
+    
+- time: '+1'
+  lights:
+    l_rightspeaker_10: '067B0A'
+    l_rightspeaker_22: '011201'
+    l_rightspeaker_23: '000200'
+    
+- time: '+1'
+  lights:
+    l_rightspeaker_10: '000000'
+    l_rightspeaker_11: '06860A'
+    l_rightspeaker_22: '000000'
+    l_rightspeaker_23: '09C00F'
+    
+- time: '+1'
+  lights:
+    l_rightspeaker_11: '09C00F'
+    
+- time: '+1'
+  lights:
+    l_rightspeaker_11: '011201'
+    l_rightspeaker_23: '000000'
+    l_rightspeaker_24: '06820A'
+    
+- time: '+1'
+  lights:
+    l_rightspeaker_11: '000000'
+    l_rightspeaker_12: '09C00F'
+    l_rightspeaker_24: '09C00F'
+    
+- time: '+1'
+  lights:
+    l_rightspeaker_12: '09BC0F'
+    l_rightspeaker_24: '034505'
+    
+- time: '+1'
+  lights:
+    l_rightspeaker_1: '067609'
+    l_rightspeaker_12: '000000'
+    l_rightspeaker_13: '011A02'
+    l_rightspeaker_24: '000000'
+    
+- time: '+1'
+  lights:
+    l_rightspeaker_1: '09C00F'
+    l_rightspeaker_13: '09C00F'
+    
+- time: '+1'
+  lights:
+    l_rightspeaker_1: '034605'
+    l_rightspeaker_13: '033F05'
+    
+- time: '+1'
+  lights:
+    l_rightspeaker_1: '000000'
+    l_rightspeaker_12: '079E0C'
+    l_rightspeaker_13: '000000'
+    l_rightspeaker_24: '056808'
+    
+- time: '+1'
+  lights:
+    l_rightspeaker_12: '09C00F'
+    l_rightspeaker_24: '09C00F'
+    
+- time: '+1'
+  lights:
+    l_rightspeaker_11: '010C01'
+    l_rightspeaker_12: '000000'
+    l_rightspeaker_24: '067A0A'
+    
+- time: '+1'
+  lights:
+    l_rightspeaker_11: '09C00F'
+    l_rightspeaker_23: '09BE0F'
+    l_rightspeaker_24: '000000'
+    
+- time: '+1'
+  lights:
+    l_rightspeaker_11: '057009'
+    l_rightspeaker_23: '09C00F'
+    
+- time: '+1'
+  lights:
+    l_rightspeaker_10: '07940C'
+    l_rightspeaker_11: '000000'
+    l_rightspeaker_23: '011702'
+    
+- time: '+1'
+  lights:
+    l_rightspeaker_10: '09C00F'
+    l_rightspeaker_22: '09C00F'
+    l_rightspeaker_23: '000000'
+    
+- time: '+1'
+  lights:
+    l_rightspeaker_10: '000000'
+    l_rightspeaker_9: '022103'
+    
+- time: '+1'
+  lights:
+    l_rightspeaker_21: '045F07'
+    l_rightspeaker_22: '000000'
+    l_rightspeaker_9: '09C00F'
+    
+- time: '+1'
+  lights:
+    l_rightspeaker_21: '09C00F'
+    l_rightspeaker_9: '022A03'
+    
+- time: '+1'
+  lights:
+    l_rightspeaker_20: '022903'
+    l_rightspeaker_21: '045707'
+    l_rightspeaker_8: '09C00F'
+    l_rightspeaker_9: '000000'
+    
+- time: '+1'
+  lights:
+    l_rightspeaker_20: '09C00F'
+    l_rightspeaker_21: '000000'
+    l_rightspeaker_8: '045407'
+    
+- time: '+1'
+  lights:
+    l_rightspeaker_20: '067809'
+    l_rightspeaker_7: '09C00F'
+    l_rightspeaker_8: '000000'
+    
+- time: '+1'
+  lights:
+    l_rightspeaker_19: '09C00F'
+    l_rightspeaker_20: '000000'
+    l_rightspeaker_7: '056D09'
+    
+- time: '+1'
+  lights:
+    l_rightspeaker_19: '08B10E'
+    l_rightspeaker_6: '09C00F'
+    l_rightspeaker_7: '000000'
+    
+- time: '+1'
+  lights:
+    l_rightspeaker_18: '07930C'
+    l_rightspeaker_19: '000000'
+    l_rightspeaker_6: '078F0B'
+    
+- time: '+1'
+  lights:
+    l_rightspeaker_18: '09C00F'
+    l_rightspeaker_5: '09C00F'
+    l_rightspeaker_6: '000000'
+    
+- time: '+1'
+  lights:
+    l_rightspeaker_17: '067809'
+    l_rightspeaker_18: '010B01'
+    l_rightspeaker_5: '08A80D'
+    
+- time: '+1'
+  lights:
+    l_rightspeaker_17: '09C00F'
+    l_rightspeaker_18: '000000'
+    l_rightspeaker_4: '079C0C'
+    l_rightspeaker_5: '000000'
+    
+- time: '+1'
+  lights:
+    l_rightspeaker_17: '022B03'
+    l_rightspeaker_4: '09C00F'
+    
+- time: '+1'
+  lights:
+    l_rightspeaker_16: '09C00F'
+    l_rightspeaker_17: '000000'
+    l_rightspeaker_4: '010E01'
+    
+- time: '+1'
+  lights:
+    l_rightspeaker_3: '09C00F'
+    l_rightspeaker_4: '000000'
+    
+- time: '+1'
+  lights:
+    l_rightspeaker_15: '011802'
+    l_rightspeaker_16: '000000'
+    
+- time: '+1'
+  lights:
+    l_rightspeaker_15: '09C00F'
+    l_rightspeaker_3: '000000'
+    
+- time: '+1'
+  lights:
+    l_rightspeaker_15: '08A30D'
+    l_rightspeaker_2: '08AA0D'
+    
+- time: '+1'
+  lights:
+    l_rightspeaker_15: '000000'
+    l_rightspeaker_2: '09C00F'
+    
+- time: '+1'
+  lights:
+    l_rightspeaker_14: '09C00F'
+    l_rightspeaker_2: '023304'
+    
+- time: '+1'
+  lights:
+    l_rightspeaker_1: '022E04'
+    l_rightspeaker_2: '000000'
+    
+- time: '+1'
+  lights:
+    l_rightspeaker_1: '09C00F'
+    l_rightspeaker_14: '000000'
+    
+- time: '+1'
+  lights:
+    l_rightspeaker_1: '08A60D'
+    l_rightspeaker_13: '09C00F'
+    

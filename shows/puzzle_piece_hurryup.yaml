@@ -4,41 +4,50 @@
 - time: 0
   lights:
     gi: 4a4a4a -f10ms
-    starpost: 4a4a4a -f10ms    
+    starpost: 4a4a4a -f10ms  
+    speaker: 4a4a4a -f10ms    
 - time: '+1ms'
   lights:
     gi: white -f3000ms
     starpost: white -f3000ms
+    speaker: white -f3000ms
 - time: '+2900ms'
   lights:
     gi: off -f0ms
     starpost: off -f0ms
+    speaker: off -f0ms
 #GI White Fade 2
 - time: '+1ms'
   lights:
     gi: 4a4a4a -f10ms
-    starpost: 4a4a4a -f10ms  
+    starpost: 4a4a4a -f10ms
+    speaker: 4a4a4a -f10ms    
 - time: '+1ms'
   lights:
     gi: white -f3000ms
     starpost: white -f3000ms
+    speaker: white -f3000ms
 - time: '+2900ms'
   lights:
     gi: off -f0ms
     starpost: off -f0ms
+    speaker: off -f0ms    
 #GI White Fade 3
 - time: '+1ms'
   lights:
     gi: 4a4a4a -f10ms
-    starpost: 4a4a4a -f10ms 
+    starpost: 4a4a4a -f10ms
+    speaker: 4a4a4a -f10ms
 - time: '+1ms'
   lights:
     gi: white -f3000ms
     starpost: white -f3000ms
+    speaker: white -f3000ms 
 - time: '+3000ms' #8.7s timestamp
   lights:
     gi: off
     starpost: red
+    speaker: red
 
 #Pause 1
 - time: '+600ms' 
@@ -49,6 +58,8 @@
       speed: 30
     jet_bumpers_sparkle_right_bottom:
       speed: 30
+    speaker_sparkle_left:
+      speed: 30
 - time: '+1000ms' #10.4s timestamp
   shows:     
     starpost_sparkle_b:
@@ -56,6 +67,8 @@
     starpost_sparkle_k:
       speed: 30
     jet_bumpers_sparkle_left_bottom:
+      speed: 30
+    speaker_sparkle_right:
       speed: 30
   lights:
     gi: white -f200ms 
@@ -125,7 +138,9 @@
     jet_bumpers_sparkle_top_bottom: stop   
     jet_bumpers_sparkle_left_top: stop
     jet_bumpers_sparkle_right_top: stop
-    jet_bumpers_sparkle_lower_top: stop            
+    jet_bumpers_sparkle_lower_top: stop   
+    speaker_sparkle_left: stop  
+    speaker_sparkle_right: stop            
 
 #Flash 3 times
 - time: '+2000ms'  #17.3s timestamp
@@ -133,33 +148,38 @@
     gi: white -f150ms
     starpost: red -f150ms
     jet_bumper: red -f150ms
+    speaker: white -f150ms
 - time: '+150ms'
   lights:
     gi: off 
     starpost: off
     jet_bumper: off
+    speaker: off
 
 - time: '+250ms' #17.7s timestamp
   lights:
     gi: white -f150ms
     starpost: red -f150ms
     jet_bumper: red -f150ms
+    speaker: white -f150ms
 - time: '+150ms'
   lights:
     gi: off
     starpost: off 
     jet_bumper: off
+    speaker: off
 
 - time: '+250ms' #18.1s timestamp
   lights:
     gi: white -f150ms
     starpost: red -f150ms
     jet_bumper: red -f150ms
+    speaker: white -f150ms
 - time: '+150ms'
   lights:
     gi: off
     starpost: off
     jet_bumper: off
-
+    speaker: off
 
  
