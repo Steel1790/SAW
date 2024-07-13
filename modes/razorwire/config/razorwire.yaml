@@ -680,6 +680,9 @@ show_player:
         speed: 10
         show_tokens:
           color1: razorwire
+      speaker_white_sweeps:
+        loops: 2
+        speed: 20
   #    flash_token:
   #      loops: 5
   #      speed: 20
@@ -692,6 +695,9 @@ show_player:
         speed: 10
         show_tokens:
           color1: ffffff
+      speaker_white_sweeps:
+        loops: 2
+        speed: 20
 #      flash_token:
 #        loops: 5
 #        speed: 20
@@ -702,6 +708,9 @@ show_player:
       rw_white_sweeps:
         loops: 0
         speed: 10
+      speaker_white_sweeps:
+        loops: 2
+        speed: 20
 #      flash_token:
 #        loops: 5
 #        speed: 20
@@ -727,6 +736,9 @@ show_player:
         speed: 10
         show_tokens:
           color1: ffffff
+      speaker_white_sweeps:
+        loops: 2
+        speed: 20
       top_drop_chase: stop
 
   razorwire_add_a_ball_complete:
@@ -734,8 +746,12 @@ show_player:
     disc_middle_add_a_ball:
       loops: 3
       speed: 10
-      # show_tokens:
-      #   color1: razorwire
+    speaker_extra_ball_left:
+      loops: 3
+      speed: 10
+    speaker_extra_ball_right:
+      loops: 3
+      speed: 10
 
   logicblock_razorwire_pops_counter_updated{value<12}:
     flash_token:

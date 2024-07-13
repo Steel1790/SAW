@@ -3,8 +3,8 @@
 #GI White Fade 1
 - time: 0
   lights:
-    gi: 610901 -f2000ms
-    trough: 610901 -f2000ms
+    gi: white -f2000ms
+    trough: white -f2000ms
 
 - time: '+240ms' #.24s timestamp (SAW ding,ding,ding start. .96s repeat)
   shows: 
@@ -31,7 +31,7 @@
 - time: '+50ms' #7.25s timestamp (bumpbump)
   lights:
     starpost: red
-    gi: 610901 -f500ms
+    gi: white -f500ms
 - time: '+50ms' #7.30s timestamp (bumpbump off)
   lights:
     starpost: off -f1000ms
@@ -53,7 +53,7 @@
 - time: '+50ms' #10.75s timestamp (bumpbump)
   lights:
     starpost: red
-    gi: 610901 -f500ms
+    gi: white -f500ms
 - time: '+50ms' #10.8s timestamp (bumpbump off)
   lights:
     starpost: off -f1000ms  
@@ -72,7 +72,7 @@
 - time: '+50ms' #14.25s timestamp (bumpbump)
   lights:
     starpost: red
-    gi: 610901 -f500ms
+    gi: white -f500ms
 - time: '+50ms' #14.30s timestamp (bumpbump off)
   lights:
     starpost: off -f1000ms  
@@ -94,7 +94,7 @@
 - time: '+50ms' #17.75s timestamp (bumpbump)
   lights:
     starpost: red
-    gi: 610901 -f500ms
+    gi: white -f500ms
 - time: '+50ms' #17.80s timestamp (bumpbump off)
   lights:
     starpost: off -f1000ms
@@ -116,7 +116,7 @@
 - time: '+50ms' #21.25s timestamp (bumpbump)
   lights:
     starpost: red
-    gi: 610901 -f500ms
+    gi: white -f500ms
 - time: '+50ms' #21.30s timestamp (bumpbump off)
   lights:
     starpost: off -f1000ms

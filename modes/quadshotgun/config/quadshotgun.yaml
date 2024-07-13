@@ -755,6 +755,12 @@ show_player:
       show_tokens:
         color1: shotgun
       priority: 170  #not sure if this is needed or the correct value
+    speaker_shotgun_blast_left:
+      loops: 1
+      speed: 20
+    speaker_shotgun_blast_right:
+      loops: 1
+      speed: 20
 
   shot_quadshotgun_left_standup_right_ramp_hit:
     starpost_cycle:
@@ -763,6 +769,12 @@ show_player:
       show_tokens:
         color1: shotgun
       priority: 170  #not sure if this is needed or the correct value
+    speaker_shotgun_blast_left:
+      loops: 1
+      speed: 20
+    speaker_shotgun_blast_right:
+      loops: 1
+      speed: 20
 
   shot_quadshotgun_right_standup_right_ramp_hit:
     starpost_cycle:
@@ -771,7 +783,13 @@ show_player:
       show_tokens:
         color1: shotgun
       priority: 170  #not sure if this is needed or the correct value
-      
+    speaker_shotgun_blast_left:
+      loops: 1
+      speed: 20
+    speaker_shotgun_blast_right:
+      loops: 1
+      speed: 20
+    
   shot_quadshotgun_right_standup_hit:
     starpost_cycle:
       loops: 1
@@ -779,7 +797,13 @@ show_player:
       show_tokens:
         color1: shotgun
       priority: 170  #not sure if this is needed or the correct value
-
+    speaker_shotgun_blast_left:
+      loops: 1
+      speed: 20
+    speaker_shotgun_blast_right:
+      loops: 1
+      speed: 20
+      
   # logicblock_acc_quadshotgun_phase1_complete:
   #   flash_token:
   #     loops: -1

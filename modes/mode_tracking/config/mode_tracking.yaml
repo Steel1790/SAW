@@ -665,6 +665,9 @@ show_player:
       speed: 25    
       show_tokens:
         color1: razorwire
+    speaker_mode_complete:
+      loops: 3
+      speed: 30 
   mode_base_started{current_player.drillchair_mode_complete==1}: 
     mode_drillchair_show_complete:
       show_tokens:
@@ -682,6 +685,9 @@ show_player:
       speed: 25    
       show_tokens:
         color1: drillchair
+    speaker_mode_complete:
+      loops: 3
+      speed: 30 
   mode_base_started{current_player.quadshotgun_mode_complete==1}: 
     mode_quadshotgun_show_complete:
       show_tokens:
@@ -699,6 +705,9 @@ show_player:
       speed: 25    
       show_tokens:
         color1: shotgun
+    speaker_mode_complete:
+      loops: 3
+      speed: 30 
   mode_base_started{current_player.reversebeartrap_mode_complete==1}: 
     mode_reversebeartrap_show_complete:
       show_tokens:
@@ -716,6 +725,9 @@ show_player:
       speed: 25    
       show_tokens:
         color1: beartrap
+    speaker_mode_complete:
+      loops: 3
+      speed: 30 
   mode_base_started{current_player.zeptest_mode_complete==1}: 
     mode_zeptest_show_complete:
       show_tokens:
@@ -733,6 +745,9 @@ show_player:
       speed: 25    
       show_tokens:
         color1: zeptest
+    speaker_mode_complete:
+      loops: 3
+      speed: 30 
   mode_base_started{current_player.flammablejelly_mode_complete==1}: 
     mode_flammablejelly_show_complete:
       show_tokens:
@@ -750,6 +765,9 @@ show_player:
       speed: 25    
       show_tokens:
         color1: jelly
+    speaker_mode_complete:
+      loops: 3
+      speed: 30 
 # mode attempted
   mode_razorwire_stopping:
     mode_razorwire_show_started:

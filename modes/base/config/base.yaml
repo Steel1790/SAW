@@ -1090,7 +1090,13 @@ show_player:
       speed: 20
       show_tokens:
         color1: beartrap
-      priority: 170  
+      priority: 170 
+    speaker_letter_collect_left:
+      loops: 2
+      speed: 30
+    speaker_letter_collect_right:
+      loops: 2
+      speed: 30
   saw_pops_s:
     pops_on:
       loops: -1
@@ -1117,7 +1123,13 @@ show_player:
       speed: 20
       show_tokens:
         color1: beartrap
-      priority: 170        
+      priority: 170  
+    speaker_letter_collect_left:
+      loops: 2
+      speed: 30
+    speaker_letter_collect_right:
+      loops: 2
+      speed: 30      
   saw_pops_sa:
     pops_on:
       loops: -1
@@ -1139,6 +1151,12 @@ show_player:
       loops: 0
       speed: 30
       priority: 170
+    speaker_letter_collect_left:
+      loops: 2
+      speed: 30
+    speaker_letter_collect_right:
+      loops: 2
+      speed: 30
   saw_pops_saw:
     jet_bumpers_pulse:
       speed: 1.25
@@ -1157,25 +1175,43 @@ show_player:
       mode_fail:
         loops: 0
         speed: 20
+      speaker_mode_fail:
+        loops: 3
+        speed: 20
   player_flammablejelly_60s_flammablejelly_timer_tick{value < 1}:
       mode_fail:
         loops: 0
+        speed: 20
+      speaker_mode_fail:
+        loops: 3
         speed: 20
   player_quadshotgun_quadshotgun_60s_timer_tick{value < 1}:
       mode_fail:
         loops: 0
         speed: 20
+      speaker_mode_fail:
+        loops: 3
+        speed: 20
   player_razorwire_60s_timer_tick{value < 1}:
       mode_fail:
         loops: 0
         speed: 20
+      speaker_mode_fail:
+        loops: 3
+        speed: 20
   player_reversebeartrap_120s_reversebeartrap_timer_tick{value < 1}:
       mode_fail:
         loops: 0
-        speed: 20  
+        speed: 20 
+      speaker_mode_fail:
+        loops: 3
+        speed: 20
   player_zeptest_60s_zeptest_timer_tick{value < 1}:
       mode_fail:
         loops: 0
+        speed: 20
+      speaker_mode_fail:
+        loops: 3
         speed: 20
          
 #  mode_base_started.1:       
@@ -1207,6 +1243,9 @@ show_player:
     starpost_breaking_glass:
       loops: 0
       speed: 40
+    speaker_falling_glass:
+      loops: 3
+      speed: 20
 
 # end of ball 3
   #ball_will_end{current_player.ball==3}:
@@ -1238,6 +1277,12 @@ show_player:
       speed: 10
       show_tokens:
         color1: beartrap
+    speaker_hot_saw_left:
+      loops: -1
+      speed: 10
+    speaker_hot_saw_right:
+      loops: -1
+      speed: 10
     negative_S:
       loops: 1
       speed: 30
@@ -1266,11 +1311,15 @@ show_player:
       disc_left_chase: stop
       disc_middle_chase: stop
       disc_right_chase: stop
+      speaker_hot_saw_left: stop
+      speaker_letter_collect_right: stop
 
   mode_hostage_will_start:
       disc_left_chase: stop
       disc_middle_chase: stop
       disc_right_chase: stop
+      speaker_hot_saw_left: stop
+      speaker_letter_collect_right: stop
   #shot_left_outlane_hit{state=="ball_save_not_ready"}:
   #    billy_laugh:
   #      loops: 4

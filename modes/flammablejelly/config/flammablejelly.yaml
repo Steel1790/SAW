@@ -531,6 +531,9 @@ show_player:
         loops: 1
         speed: 20
         priority: 170
+      speaker_flammable_jelly:
+        loops: 1
+        speed: 20
       flammablejelly_progress_p1:
         loops: -1
         show_tokens:
@@ -546,6 +549,9 @@ show_player:
         loops: 1
         speed: 20
         priority: 170
+      speaker_flammable_jelly:
+        loops: 1
+        speed: 20
       flammablejelly_progress_p2:
         loops: -1
         show_tokens:
@@ -580,7 +586,21 @@ show_player:
         speed: 14
         show_tokens:
           color1: jelly
-
+      fire_starposts:
+        loops: 1
+        speed: 20
+        priority: 170
+      speaker_flammable_jelly:
+        loops: 1
+        speed: 20
+      fire_top_pops:
+        loops: -1
+        speed: 30
+      flammablejelly_progress_p1:
+        loops: -1
+        show_tokens:
+          leds: l_left_standup_arrow
+          color1: off
   #logicblock_flammablejelly_hit{step==4}:
   #    fire_starposts:
   #      loops: 1
