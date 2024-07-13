@@ -1093,10 +1093,10 @@ show_player:
       priority: 170 
     speaker_letter_collect_left:
       loops: 2
-      speed: 30
+      speed: 40
     speaker_letter_collect_right:
       loops: 2
-      speed: 30
+      speed: 40
   saw_pops_s:
     pops_on:
       loops: -1
@@ -1127,9 +1127,11 @@ show_player:
     speaker_letter_collect_left:
       loops: 2
       speed: 30
+      priority: 170  
     speaker_letter_collect_right:
       loops: 2
-      speed: 30      
+      speed: 30
+      priority: 170     
   saw_pops_sa:
     pops_on:
       loops: -1
@@ -1154,9 +1156,11 @@ show_player:
     speaker_letter_collect_left:
       loops: 2
       speed: 30
+      priority: 170  
     speaker_letter_collect_right:
       loops: 2
       speed: 30
+      priority: 170  
   saw_pops_saw:
     jet_bumpers_pulse:
       speed: 1.25
@@ -1244,8 +1248,8 @@ show_player:
       loops: 0
       speed: 40
     speaker_falling_glass:
-      loops: 3
-      speed: 20
+      loops: 1
+      speed: 30
 
 # end of ball 3
   #ball_will_end{current_player.ball==3}:

@@ -289,6 +289,9 @@ show_player:
       gi_die_hurryup_intro:
         loops: 0
         speed: 45
+      mode_fail:
+        loops: 0
+        speed: 30
   e_gi_dim:
       gi_on:
         show_tokens:
@@ -298,6 +301,9 @@ show_player:
         loops: -1
         show_tokens:
           color1: off
+      die_hurryup_explode:
+        loops: 0
+        speed: 30
       sh_hurryup_ready:
         show_tokens:
           leds: orbit

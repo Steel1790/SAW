@@ -2,11 +2,11 @@
 
 - time: 0 #0.0s timestamp (da-dum 1)
   lights:
-    l_top_drop1: ff0080
+    l_top_drop1: a605e6
     drill_flasher: ff8000
     gi_left: ff8000
     l_drillchair_mode: ff8000
-    l_left_loop_arrow: ff0080
+    l_left_loop_arrow: a605e6
 - time: '+50ms' 
   lights:
     drill_flasher: off -f1000ms
@@ -15,11 +15,11 @@
 
 - time: '+150ms' #(da-dum 2)
   lights:
-    l_top_drop2: ff0080  
+    l_top_drop2: a605e6  
     zep_flasher: ff8000
     gi_right: ff8000
     l_beartrap_mode: ff8000
-    l_left_standup_arrow: ff0080
+    l_left_standup_arrow: a605e6
 - time: '+50ms' 
   lights:
     zep_flasher: off -f1000ms
@@ -28,11 +28,11 @@
 
 - time: '+500ms' #(da-dum 3)
   lights:
-    l_top_drop3: ff0080  
+    l_top_drop3: a605e6  
     bear_flasher: ff8000
     gi_top: ff8000 
     l_zeptest_mode: ff8000
-    l_left_standup_right_ramp_arrow: ff0080
+    l_left_standup_right_ramp_arrow: a605e6
 - time: '+50ms' 
   lights:
     bear_flasher: off -f1000ms
@@ -41,11 +41,11 @@
 
 - time: '+650ms' #2(da-dum 4)
   lights:
-    l_top_drop4: ff0080
+    l_top_drop4: a605e6
     shotgun_flasher: ff8000
     gi_lower: ff8000
     l_jelly_mode: ff8000
-    l_right_standup_right_ramp_arrow: ff0080
+    l_right_standup_right_ramp_arrow: a605e6
 - time: '+50ms' 
   lights:
     shotgun_flasher: off -f1000ms
@@ -54,11 +54,11 @@
 
 - time: '+350ms' #(da-dum 5)
   lights:
-    l_top_drop5: ff0080
+    l_top_drop5: a605e6
     razorwire_flasher: ff8000
     gi_middle: ff8000
     l_quadshotgun_mode: ff8000 
-    l_right_loop_arrow: ff0080     
+    l_right_loop_arrow: a605e6     
 - time: '+50ms' 
   lights:
     razorwire_flasher: off -f1000ms 
@@ -67,12 +67,12 @@
 
 - time: '+250ms' #(da-dum 6)
   lights:
-    l_top_drop_triangle: ff0080  
+    l_top_drop_triangle: a605e6  
     discs: ff8000  
-    starpost: ff0080
+    starpost: a605e6
     gi: ff8000
     l_razorwire_mode: ff8000
-    l_right_standup_arrow: ff0080
+    l_right_standup_arrow: a605e6
 - time: '+50ms' 
   lights:
     discs: off -f1000ms 
