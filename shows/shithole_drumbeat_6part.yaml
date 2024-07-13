@@ -6,6 +6,7 @@
     drill_flasher: ff8000
     gi_left: ff8000
     l_drillchair_mode: ff8000
+    l_left_loop_arrow: ff0080
 - time: '+50ms' 
   lights:
     drill_flasher: off -f1000ms
@@ -18,6 +19,7 @@
     zep_flasher: ff8000
     gi_right: ff8000
     l_beartrap_mode: ff8000
+    l_left_standup_arrow: ff0080
 - time: '+50ms' 
   lights:
     zep_flasher: off -f1000ms
@@ -30,6 +32,7 @@
     bear_flasher: ff8000
     gi_top: ff8000 
     l_zeptest_mode: ff8000
+    l_left_standup_right_ramp_arrow: ff0080
 - time: '+50ms' 
   lights:
     bear_flasher: off -f1000ms
@@ -41,7 +44,8 @@
     l_top_drop4: ff0080
     shotgun_flasher: ff8000
     gi_lower: ff8000
-    l_jelly_mode: ff8000 
+    l_jelly_mode: ff8000
+    l_right_standup_right_ramp_arrow: ff0080
 - time: '+50ms' 
   lights:
     shotgun_flasher: off -f1000ms
@@ -53,7 +57,8 @@
     l_top_drop5: ff0080
     razorwire_flasher: ff8000
     gi_middle: ff8000
-    l_quadshotgun_mode: ff8000      
+    l_quadshotgun_mode: ff8000 
+    l_right_loop_arrow: ff0080     
 - time: '+50ms' 
   lights:
     razorwire_flasher: off -f1000ms 
@@ -67,6 +72,7 @@
     starpost: ff0080
     gi: ff8000
     l_razorwire_mode: ff8000
+    l_right_standup_arrow: ff0080
 - time: '+50ms' 
   lights:
     discs: off -f1000ms 
@@ -79,5 +85,11 @@
     l_top_drop4: off -f500ms
     l_top_drop5: off -f500ms
     l_top_drop_triangle: off -f500ms
+    l_left_loop_arrow: off -f500ms
+    l_left_standup_arrow: off -f500ms
+    l_left_standup_right_ramp_arrow: off -f500ms
+    l_right_standup_right_ramp_arrow: off -f500ms
+    l_right_loop_arrow: off -f500ms
+    l_right_standup_arrow: off -f500ms
 
 - time: '+1300ms' #(pause)

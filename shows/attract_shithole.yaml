@@ -303,8 +303,53 @@
         color1: beartrap  
 
 
+- time: '+23000ms' #98.0s timestamp (glitter stop)
+  shows:    
+    colorwash_opposite_glitter:
+      speed: 20
 
-- time: '+34000ms' #108.0s timestamp (song end)
+- time: '+1000ms' #99.0s timestamp (glitter stop)
+  shows:     
+    starpost_sparkle_a:
+      speed: 30
+    starpost_sparkle_b:
+      speed: 30
+    starpost_sparkle_c:
+      speed: 30    
+    starpost_sparkle_d:
+      speed: 30
+    starpost_sparkle_e:
+      speed: 30
+    starpost_sparkle_f:
+      speed: 30
+    starpost_sparkle_g:
+      speed: 30
+    starpost_sparkle_h:
+      speed: 30
+    starpost_sparkle_i:
+      speed: 30
+    starpost_sparkle_j:
+      speed: 30
+    starpost_sparkle_k:
+      speed: 30
+    starpost_sparkle_l:
+      speed: 30
+    speaker_sparkle_left:
+      speed: 30
+    speaker_sparkle_right:
+      speed: 30
+    jet_bumpers_sparkle_left_bottom:
+      speed: 30
+    jet_bumpers_sparkle_left_top:
+      speed: 30
+    jet_bumpers_sparkle_lower_top:
+      speed: 30
+    jet_bumpers_sparkle_right_bottom:
+      speed: 30
+    jet_bumpers_sparkle_right_top:
+      speed: 30     
+    jet_bumpers_sparkle_top_bottom:
+      speed: 30
 
-
+- time: '+11000ms' #108.0s timestamp (song end)
 

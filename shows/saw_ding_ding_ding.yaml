@@ -1,19 +1,22 @@
 #show_version=6
 
 - time: 0 
-#SAW ding, ding, ding 1 
+#SAW ding, ding, ding 1 # .24s timestamp 
   lights:
     left_disc: red
-    left_bottom_bumper: red   
-- time: '+120ms' 
+    left_bottom_bumper: red
+    leftspeaker: red 
+- time: '+120ms' # .36s timestamp 
   lights:
     middle_disc: red  
     right_bottom_bumper: red 
-- time: '+120ms' 
+    rightspeaker: red 
+- time: '+120ms' # .48s timestamp 
   lights:
     right_disc: red
     top_bottom_bumper: red
-- time: '+250ms' 
+    topper: red
+- time: '+240ms' # 1.44s timestamp 
   lights:
     left_disc: off -f500ms
     middle_disc: off -f500ms
@@ -21,21 +24,27 @@
     left_bottom_bumper: off -f500ms
     right_bottom_bumper: off -f500ms
     top_bottom_bumper: off -f500ms
+    leftspeaker: off -f500ms
+    rightspeaker: off -f500ms
+    topper: off -f500ms
 
-#SAW ding, ding, ding 2
-- time: '+710ms' #(pause) 
+#SAW ding, ding, ding 2 
+- time: '+720ms' #(pause) # 1.44s timestamp 
   lights:
     left_disc: white
-    left_top_bumper: white   
-- time: '+120ms' 
+    left_top_bumper: white  
+    leftspeaker: white 
+- time: '+120ms' # 1.56s timestamp
   lights:
     middle_disc: white 
-    right_top_bumper: white 
-- time: '+120ms' 
+    right_top_bumper: white
+    rightspeaker: white
+- time: '+120ms' # 1.68s timestamp
   lights:
     right_disc: white
     lower_top_bumper: white
-- time: '+250ms' 
+    topper: white
+- time: '+240ms' # 1.92s timestamp
   lights:
     left_disc: off -f500ms
     middle_disc: off -f500ms
@@ -43,8 +52,39 @@
     left_top_bumper: off -f500ms
     right_top_bumper: off -f500ms
     lower_top_bumper: off -f500ms
-- time: '+710ms' #(pause)   
+    leftspeaker: off -f500ms
+    rightspeaker: off -f500ms
+    topper: off -f500ms
 
+- time: '+720ms' #(pause)   # 2.42s timestamp
 
+#SAW ding, ding, ding 3 # 2.88s timestamp 
+  lights:
+    left_disc: red
+    left_bottom_bumper: red 
+    leftspeaker: red 
+- time: '+120ms' # 2.76s timestamp 
+  lights:
+    middle_disc: red  
+    right_bottom_bumper: red
+    rightspeaker: red  
+- time: '+120ms' # 2.88s timestamp 
+  lights:
+    right_disc: red
+    top_bottom_bumper: red
+    topper: red
+- time: '+240ms' # 3.12s timestamp 
+  lights:
+    left_disc: off -f500ms
+    middle_disc: off -f500ms
+    right_disc: off -f500ms
+    left_bottom_bumper: off -f500ms
+    right_bottom_bumper: off -f500ms
+    top_bottom_bumper: off -f500ms
+    leftspeaker: off -f500ms
+    rightspeaker: off -f500ms
+    topper: off -f500ms
+
+- time: '+600ms' #(pause) 
 
 
