@@ -1,0 +1,472 @@
+#show_version=6
+- time: 0
+  lights:
+    l_rightspeaker_10: '000000'
+    l_rightspeaker_11: 'A59C9D'
+    l_rightspeaker_12: 'A59C9D'
+    l_rightspeaker_13: 'A59C9D'
+    l_rightspeaker_14: 'A59C9D'
+    l_rightspeaker_15: 'A59C9D'
+    l_rightspeaker_16: '918889'
+    
+- time: '+1'
+  lights:
+    l_rightspeaker_11: '000000'
+    l_rightspeaker_12: 'A89798'
+    l_rightspeaker_13: 'A89798'
+    l_rightspeaker_14: 'A89798'
+    l_rightspeaker_15: 'A89798'
+    l_rightspeaker_16: 'A89798'
+    
+- time: '+1'
+  lights:
+    l_rightspeaker_12: '4F4344'
+    l_rightspeaker_13: 'AB9293'
+    l_rightspeaker_14: 'AB9293'
+    l_rightspeaker_15: 'AB9293'
+    l_rightspeaker_16: 'AB9293'
+    l_rightspeaker_17: 'AB9293'
+    
+- time: '+1'
+  lights:
+    l_rightspeaker_12: '000000'
+    l_rightspeaker_13: 'AE8C8D'
+    l_rightspeaker_14: 'AE8C8D'
+    l_rightspeaker_15: 'AE8C8D'
+    l_rightspeaker_16: 'AE8C8D'
+    l_rightspeaker_17: 'AE8C8D'
+    l_rightspeaker_18: 'AE8C8D'
+    
+- time: '+1'
+  lights:
+    l_rightspeaker_13: '000000'
+    l_rightspeaker_14: 'B18788'
+    l_rightspeaker_15: 'B18788'
+    l_rightspeaker_16: 'B18788'
+    l_rightspeaker_17: 'B18788'
+    l_rightspeaker_18: 'B18788'
+    l_rightspeaker_19: 'B18788'
+    l_rightspeaker_20: '010000'
+    
+- time: '+1'
+  lights:
+    l_rightspeaker_14: '946B6C'
+    l_rightspeaker_15: 'B48283'
+    l_rightspeaker_16: 'B48283'
+    l_rightspeaker_17: 'B48283'
+    l_rightspeaker_18: 'B48283'
+    l_rightspeaker_19: 'B48283'
+    l_rightspeaker_20: 'B48283'
+    
+- time: '+1'
+  lights:
+    l_rightspeaker_14: '000000'
+    l_rightspeaker_15: 'B77D7D'
+    l_rightspeaker_16: 'B77D7D'
+    l_rightspeaker_17: 'B77D7D'
+    l_rightspeaker_18: 'B77D7D'
+    l_rightspeaker_19: 'B77D7D'
+    l_rightspeaker_20: 'B77D7D'
+    l_rightspeaker_21: 'B77D7D'
+    
+- time: '+1'
+  lights:
+    l_rightspeaker_15: '000000'
+    l_rightspeaker_16: 'BA7778'
+    l_rightspeaker_17: 'BA7778'
+    l_rightspeaker_18: 'BA7778'
+    l_rightspeaker_19: 'BA7778'
+    l_rightspeaker_20: 'BA7778'
+    l_rightspeaker_21: 'BA7778'
+    l_rightspeaker_22: 'BA7778'
+    
+- time: '+1'
+  lights:
+    l_rightspeaker_16: '000000'
+    l_rightspeaker_17: 'BD7273'
+    l_rightspeaker_18: 'BD7273'
+    l_rightspeaker_19: 'BD7273'
+    l_rightspeaker_20: 'BD7273'
+    l_rightspeaker_21: 'BD7273'
+    l_rightspeaker_22: 'BD7273'
+    l_rightspeaker_23: 'BD7273'
+    
+- time: '+1'
+  lights:
+    l_rightspeaker_17: '0D0708'
+    l_rightspeaker_18: 'C06D6E'
+    l_rightspeaker_19: 'C06D6E'
+    l_rightspeaker_20: 'C06D6E'
+    l_rightspeaker_21: 'C06D6E'
+    l_rightspeaker_22: 'C06D6E'
+    l_rightspeaker_23: 'C06D6E'
+    l_rightspeaker_24: '7E4748'
+    
+- time: '+1'
+  lights:
+    l_rightspeaker_17: '000000'
+    l_rightspeaker_18: 'A95A5A'
+    l_rightspeaker_19: 'C36868'
+    l_rightspeaker_20: 'C36868'
+    l_rightspeaker_21: 'C36868'
+    l_rightspeaker_22: 'C36868'
+    l_rightspeaker_23: 'C36868'
+    l_rightspeaker_24: 'C36868'
+    
+- time: '+1'
+  lights:
+    l_rightspeaker_1: 'C66263'
+    l_rightspeaker_18: '000000'
+    l_rightspeaker_19: '733939'
+    l_rightspeaker_20: 'C66263'
+    l_rightspeaker_21: 'C66263'
+    l_rightspeaker_22: 'C66263'
+    l_rightspeaker_23: 'C66263'
+    l_rightspeaker_24: 'C66263'
+    
+- time: '+1'
+  lights:
+    l_rightspeaker_1: 'C95D5E'
+    l_rightspeaker_19: '000000'
+    l_rightspeaker_20: '0A0505'
+    l_rightspeaker_21: 'C95D5E'
+    l_rightspeaker_22: 'C95D5E'
+    l_rightspeaker_23: 'C95D5E'
+    l_rightspeaker_24: 'C95D5E'
+    
+- time: '+1'
+  lights:
+    l_rightspeaker_1: 'CC5858'
+    l_rightspeaker_2: 'CC5858'
+    l_rightspeaker_20: '000000'
+    l_rightspeaker_21: '642B2B'
+    l_rightspeaker_22: 'CC5858'
+    l_rightspeaker_23: 'CC5858'
+    l_rightspeaker_24: 'CC5858'
+    
+- time: '+1'
+  lights:
+    l_rightspeaker_1: 'CF5353'
+    l_rightspeaker_2: 'CF5353'
+    l_rightspeaker_21: '000000'
+    l_rightspeaker_22: 'CF5353'
+    l_rightspeaker_23: 'CF5353'
+    l_rightspeaker_24: 'CF5353'
+    l_rightspeaker_3: 'CF5353'
+    
+- time: '+1'
+  lights:
+    l_rightspeaker_1: 'D24D4E'
+    l_rightspeaker_2: 'D24D4E'
+    l_rightspeaker_22: '000000'
+    l_rightspeaker_23: 'D24D4E'
+    l_rightspeaker_24: 'D24D4E'
+    l_rightspeaker_3: 'D24D4E'
+    l_rightspeaker_4: '010000'
+    
+- time: '+1'
+  lights:
+    l_rightspeaker_1: 'D54849'
+    l_rightspeaker_2: 'D54849'
+    l_rightspeaker_23: '000000'
+    l_rightspeaker_24: 'D54849'
+    l_rightspeaker_3: 'D54849'
+    l_rightspeaker_4: 'D54849'
+    
+- time: '+1'
+  lights:
+    l_rightspeaker_1: 'D84343'
+    l_rightspeaker_2: 'D84343'
+    l_rightspeaker_24: '000000'
+    l_rightspeaker_3: 'D84343'
+    l_rightspeaker_4: 'D84343'
+    l_rightspeaker_5: 'D84343'
+    
+- time: '+1'
+  lights:
+    l_rightspeaker_1: 'DB3F3F'
+    l_rightspeaker_2: 'DB3F3F'
+    l_rightspeaker_3: 'DB3F3F'
+    l_rightspeaker_4: 'DB3F3F'
+    l_rightspeaker_5: 'DB3F3F'
+    l_rightspeaker_6: 'DB3F3F'
+    
+- time: '+1'
+  lights:
+    l_rightspeaker_1: '000000'
+    l_rightspeaker_2: 'DE393A'
+    l_rightspeaker_3: 'DE393A'
+    l_rightspeaker_4: 'DE393A'
+    l_rightspeaker_5: 'DE393A'
+    l_rightspeaker_6: 'DE393A'
+    l_rightspeaker_7: 'DE393A'
+    
+- time: '+1'
+  lights:
+    l_rightspeaker_2: '090202'
+    l_rightspeaker_3: 'E13434'
+    l_rightspeaker_4: 'E13434'
+    l_rightspeaker_5: 'E13434'
+    l_rightspeaker_6: 'E13434'
+    l_rightspeaker_7: 'E13434'
+    l_rightspeaker_8: 'E13434'
+    
+- time: '+1'
+  lights:
+    l_rightspeaker_2: '000000'
+    l_rightspeaker_3: 'E42F2F'
+    l_rightspeaker_4: 'E42F2F'
+    l_rightspeaker_5: 'E42F2F'
+    l_rightspeaker_6: 'E42F2F'
+    l_rightspeaker_7: 'E42F2F'
+    l_rightspeaker_8: 'E42F2F'
+    l_rightspeaker_9: 'D22B2B'
+    
+- time: '+1'
+  lights:
+    l_rightspeaker_3: '000000'
+    l_rightspeaker_4: 'E72A2A'
+    l_rightspeaker_5: 'E72A2A'
+    l_rightspeaker_6: 'E72A2A'
+    l_rightspeaker_7: 'E72A2A'
+    l_rightspeaker_8: 'E62A2A'
+    l_rightspeaker_9: 'E72A2A'
+    
+- time: '+1'
+  lights:
+    l_rightspeaker_10: 'EA2425'
+    l_rightspeaker_4: '0F0202'
+    l_rightspeaker_5: 'EA2425'
+    l_rightspeaker_6: 'EA2425'
+    l_rightspeaker_7: 'EA2425'
+    l_rightspeaker_8: 'E92425'
+    l_rightspeaker_9: 'EA2425'
+    
+- time: '+1'
+  lights:
+    l_rightspeaker_10: 'ED1F1F'
+    l_rightspeaker_11: 'EC1F1F'
+    l_rightspeaker_4: '000000'
+    l_rightspeaker_5: 'ED1F1F'
+    l_rightspeaker_6: 'ED1F1F'
+    l_rightspeaker_7: 'ED1F1F'
+    l_rightspeaker_8: 'ED1F1F'
+    l_rightspeaker_9: 'ED1F1F'
+    
+- time: '+1'
+  lights:
+    l_rightspeaker_10: 'F01A1A'
+    l_rightspeaker_11: 'F01A1A'
+    l_rightspeaker_5: '000000'
+    l_rightspeaker_6: 'F01A1A'
+    l_rightspeaker_7: 'F01A1A'
+    l_rightspeaker_8: 'F01A1A'
+    l_rightspeaker_9: 'F01A1A'
+    
+- time: '+1'
+  lights:
+    l_rightspeaker_10: 'F31515'
+    l_rightspeaker_11: 'F31515'
+    l_rightspeaker_12: 'F31515'
+    l_rightspeaker_6: '000000'
+    l_rightspeaker_7: 'F31515'
+    l_rightspeaker_8: 'F31515'
+    l_rightspeaker_9: 'F31515'
+    
+- time: '+1'
+  lights:
+    l_rightspeaker_10: 'F60F0F'
+    l_rightspeaker_11: 'F60F0F'
+    l_rightspeaker_12: 'F60F0F'
+    l_rightspeaker_13: 'F40F0F'
+    l_rightspeaker_7: '000000'
+    l_rightspeaker_8: 'F60F0F'
+    l_rightspeaker_9: 'F60F0F'
+    
+- time: '+1'
+  lights:
+    l_rightspeaker_10: 'F90A0A'
+    l_rightspeaker_11: 'F90A0A'
+    l_rightspeaker_12: 'F90A0A'
+    l_rightspeaker_13: 'F90A0A'
+    l_rightspeaker_8: '000000'
+    l_rightspeaker_9: 'F90A0A'
+    
+- time: '+1'
+  lights:
+    l_rightspeaker_10: 'FC0505'
+    l_rightspeaker_11: 'FC0505'
+    l_rightspeaker_12: 'FC0505'
+    l_rightspeaker_13: 'FC0505'
+    l_rightspeaker_14: 'FC0505'
+    l_rightspeaker_9: '000000'
+    
+- time: '+1'
+  lights:
+    l_rightspeaker_10: '450000'
+    l_rightspeaker_11: 'FF0000'
+    l_rightspeaker_12: 'FF0000'
+    l_rightspeaker_13: 'FF0000'
+    l_rightspeaker_14: 'FF0000'
+    l_rightspeaker_15: 'FF0000'
+    
+- time: '+1'
+  lights:
+    l_rightspeaker_10: '000000'
+    l_rightspeaker_11: 'FE0000'
+    l_rightspeaker_12: 'FE0000'
+    l_rightspeaker_13: 'FE0000'
+    l_rightspeaker_14: 'FE0000'
+    l_rightspeaker_15: 'FE0000'
+    l_rightspeaker_16: 'FE0000'
+    
+- time: '+1'
+  lights:
+    l_rightspeaker_11: '000000'
+    l_rightspeaker_17: '300000'
+    
+- time: '+1'
+  lights:
+    l_rightspeaker_12: '000000'
+    l_rightspeaker_17: 'FE0000'
+    
+- time: '+1'
+  lights:
+    l_rightspeaker_18: 'FE0000'
+    
+- time: '+1'
+  lights:
+    l_rightspeaker_13: '000000'
+    l_rightspeaker_19: 'FE0000'
+    l_rightspeaker_20: '010000'
+    
+- time: '+1'
+  lights:
+    l_rightspeaker_14: '000000'
+    l_rightspeaker_20: 'FE0000'
+    
+- time: '+1'
+  lights:
+    l_rightspeaker_21: 'FE0000'
+    
+- time: '+1'
+  lights:
+    l_rightspeaker_15: '000000'
+    l_rightspeaker_22: 'FE0000'
+    
+- time: '+1'
+  lights:
+    l_rightspeaker_16: '000000'
+    l_rightspeaker_23: 'FE0000'
+    
+- time: '+1'
+  lights:
+    l_rightspeaker_17: '000000'
+    l_rightspeaker_24: '010000'
+    
+- time: '+1'
+  lights:
+    l_rightspeaker_18: '0F0000'
+    l_rightspeaker_24: 'FE0000'
+    
+- time: '+1'
+  lights:
+    l_rightspeaker_1: 'FE0000'
+    l_rightspeaker_18: '000000'
+    l_rightspeaker_19: '120000'
+    
+- time: '+1'
+  lights:
+    l_rightspeaker_19: '000000'
+    l_rightspeaker_20: '000000'
+    
+- time: '+1'
+  lights:
+    l_rightspeaker_2: 'FE0000'
+    l_rightspeaker_21: '2D0000'
+    
+- time: '+1'
+  lights:
+    l_rightspeaker_21: '000000'
+    l_rightspeaker_3: 'E50000'
+    
+- time: '+1'
+  lights:
+    l_rightspeaker_22: '000000'
+    l_rightspeaker_3: 'FE0000'
+    
+- time: '+1'
+  lights:
+    l_rightspeaker_23: '000000'
+    l_rightspeaker_4: 'FE0000'
+    
+- time: '+1'
+  lights:
+    l_rightspeaker_24: '000000'
+    l_rightspeaker_5: 'FE0000'
+    
+- time: '+1'
+  lights:
+    l_rightspeaker_6: 'FE0000'
+    
+- time: '+1'
+  lights:
+    l_rightspeaker_1: '000000'
+    l_rightspeaker_7: 'FE0000'
+    
+- time: '+1'
+  lights:
+    l_rightspeaker_2: '220000'
+    l_rightspeaker_8: 'E00000'
+    
+- time: '+1'
+  lights:
+    l_rightspeaker_2: '000000'
+    l_rightspeaker_8: 'FE0000'
+    l_rightspeaker_9: '610000'
+    
+- time: '+1'
+  lights:
+    l_rightspeaker_3: '000000'
+    l_rightspeaker_9: 'FE0000'
+    
+- time: '+1'
+  lights:
+    l_rightspeaker_10: 'FE0000'
+    l_rightspeaker_4: '7A0000'
+    
+- time: '+1'
+  lights:
+    l_rightspeaker_11: 'FD0000'
+    l_rightspeaker_4: '000000'
+    
+- time: '+1'
+  lights:
+    l_rightspeaker_11: 'FE0000'
+    l_rightspeaker_5: '000000'
+    
+- time: '+1'
+  lights:
+    l_rightspeaker_12: 'FE0000'
+    l_rightspeaker_6: '000000'
+    
+- time: '+1'
+  lights:
+    l_rightspeaker_13: 'FC0000'
+    l_rightspeaker_7: '000000'
+    
+- time: '+1'
+  lights:
+    l_rightspeaker_13: 'FE0000'
+    l_rightspeaker_8: '000000'
+    
+- time: '+1'
+  lights:
+    l_rightspeaker_14: 'FE0000'
+    l_rightspeaker_9: '000000'
+    
+- time: '+1'
+  lights:
+    l_rightspeaker_10: 'F40000'
+    l_rightspeaker_15: 'FE0000'
+    
