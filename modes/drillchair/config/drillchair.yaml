@@ -399,7 +399,7 @@ slide_player:
   slide_drillchairvideo_removed: 
     mode_drillchair01:
       priority: 400
-      expire: 66.5s
+      expire: 126.5s
   ball_save_bs_drillchair_saving_ball:
     ballsavevideo:
       action: play
