@@ -474,7 +474,10 @@ playfields:
     tags: default
     default_source_device: bd_plunger
     enable_ball_search: True
-    ball_search_timeout: 20s
+    ball_search_phase_1_searches: 0
+    ball_search_phase_2_searches: 0
+    ball_search_phase_3_searches: 3
+    ball_search_timeout: 15s
     ball_search_wait_after_iteration: 10s
     ball_search_interval: 250ms
 
