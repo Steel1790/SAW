@@ -18,18 +18,18 @@ variable_player:
   #multiball_mb_jigsaw_started:
   #  score: 3000000
   shot_jigsaw_left_loop_sp_jigsaw_mb_lit_hit:
-    score: 750000 + (device.counters.cnt_jigsaw_jackpot_value.value * 75000)
+    score: (750000 + (device.counters.cnt_jigsaw_jackpot_value.value * 75000)) * (current_player.pf_multiplier)
   shot_jigsaw_inner_loop_sp_jigsaw_mb_lit_hit:
-    score: 750000 + (device.counters.cnt_jigsaw_jackpot_value.value * 75000)
+    score: (750000 + (device.counters.cnt_jigsaw_jackpot_value.value * 75000)) * (current_player.pf_multiplier)
   shot_jigsaw_left_standup_rightramp_sp_jigsaw_mb_lit_hit:
-    score: 750000 + (device.counters.cnt_jigsaw_jackpot_value.value * 75000)
+    score: (750000 + (device.counters.cnt_jigsaw_jackpot_value.value * 75000)) * (current_player.pf_multiplier)
   shot_jigsaw_right_standup_rightramp_sp_jigsaw_mb_lit_hit:
-    score: 750000 + (device.counters.cnt_jigsaw_jackpot_value.value * 75000)
+    score: (750000 + (device.counters.cnt_jigsaw_jackpot_value.value * 75000)) * (current_player.pf_multiplier)
   shot_jigsaw_right_loop_sp_jigsaw_mb_lit_hit:
-    score: 750000 + (device.counters.cnt_jigsaw_jackpot_value.value * 75000)
+    score: (750000 + (device.counters.cnt_jigsaw_jackpot_value.value * 75000)) * (current_player.pf_multiplier)
 
   shot_jigsaw_superjackpot1_sp_jigsaw_mb_lit_hit:
-    score: 750000  + (device.counters.cnt_jigsaw_jackpot_value.value * 75000 * 3)
+    score: (750000  + (device.counters.cnt_jigsaw_jackpot_value.value * 75000 * 3)) * (current_player.pf_multiplier)
 
   start_jigsaw_multiball:
     jigsaw_value:

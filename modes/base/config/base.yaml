@@ -38,7 +38,7 @@ event_player:
   single_player_ball_started: mode_qualified_sidestep|0.6s
   ball_will_end{current_player.ball==3}: e_topper_trigger|3s
   mode_hostage_complete: e_mystery_workshop
-
+  mode_puzzle_hurryup_stopped: e_saw_qualify_reset|0.3s
   # ball_starting{is_extra_ball==True}: e_shoot_again
 
 # saw collect light progress
@@ -83,6 +83,10 @@ event_player:
     - e_zeptest_puzzle|8.3s
     #- e_puzzle_start|5.3s
     #- e_zeptest_puzzle|5.5s
+  mode_reversebeartrap_stopping:
+    - e_reversebeartrap_puzzle|8.3s
+  mode_reversebeartrap_complete:
+    - e_reversebeartrap_puzzle|8.3s
   mode_reversebeartrap_stopping{current_player.reversebeartrap_mode_attempted>=1}:
     - e_que_basemusic|0.5s
   mode_survival_instinct_stopping:
@@ -144,12 +148,14 @@ event_player:
 
 timers:
   t_playfield_multiplier_timer:
-    start_value: 30
+    start_value: 60
     end_value: 0
     direction: down
     control_events:
       - action: start
         event: slide_MysteryPlayfieldMultiplier_removed
+      - action: start
+        event: saw_combo_collected
 
 random_event_player:
   e_mystery_workshop:
@@ -340,7 +346,7 @@ slide_player:
       
 variable_player:
   logicblock_cnt_saw_qualify_complete:
-    score: 100000
+    score: 100000 * (current_player.pf_multiplier)
   sw_pops:
     score: 50000 * (current_player.pf_multiplier)
     pops:
@@ -383,6 +389,9 @@ variable_player:
     combo_progress:
       int: 1
       action: add
+    pf_multiplier:
+      int: 1
+      action: add    
 
 # jigsaw workshop tracking
 
@@ -533,10 +542,10 @@ variable_player:
       int: 10
       action: set
     visual_slings_counter:
-      int: 40 
+      int: 60
       action: set
     visual_inlanes_counter:
-      int: 6
+      int: 9
       action: set
     visual_spinners_counter:
       int: 40
@@ -602,7 +611,7 @@ counters:
     count_events: sw_standup  
     
   minimode_slings_counter:
-    starting_count: 40
+    starting_count: 60
     count_complete_value: 0
     direction: down
     start_enabled: true
@@ -613,7 +622,7 @@ counters:
     count_events: sw_slingshot
 
   minimode_inlanes_counter:
-    starting_count: 6
+    starting_count: 9
     count_complete_value: 0
     direction: down
     start_enabled: true
@@ -2588,22 +2597,22 @@ widgets:
       font_size: 50
       font_name: digitalclockfont
       color: red
-      x: 63.5%
-      y: 83.2%
+      x: 32%
+      y: 79.2%
       z: 7
     - type: rectangle
       width: 210
       height: 65
-      x: 63.5%
-      y: 84.5%
+      x: 32%
+      y: 80.5%
       z: 7
       corner_radius: 20
       corner_segments: 20
       color: black        
     - type: text
       text: 2X Playfield
-      x: 63.5%
-      y: 78.5%
+      x: 32%
+      y: 74.5%
       z: 7
       font_size: 25
       font_name: Mustkill     
@@ -3827,6 +3836,10 @@ widget_player:
       slide: base_slide_main
       action: remove
   slide_MysteryPlayfieldMultiplier_removed:
+    w_playfield_multiplier:
+      slide: base_slide_main
+      action: add
+  saw_combo_collected:
     w_playfield_multiplier:
       slide: base_slide_main
       action: add

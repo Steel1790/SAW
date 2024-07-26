@@ -34,7 +34,8 @@ fast:
       ledneuron:
         model: FP-EXP-2000
         address: 48
-    debug: true
+    debug: false
+    ignore_led_errors: true
 mpf: 
   rgbw_white_behavior: duck_rgb
 

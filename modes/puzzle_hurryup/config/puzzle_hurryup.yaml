@@ -19,7 +19,7 @@ variable_player:
       int: device.timers.t_puzzle_timer.ticks
       action: set
   mode_puzzle_hurryup_complete:
-    score: 3000000
+    score: 3000000 * (current_player.pf_multiplier)
 
 
 counters:
@@ -53,6 +53,12 @@ counters:
     enable_events: e_zeptest_puzzle
     events_when_complete: mode_puzzle_hurryup_complete, zeptest_puzzle_complete 
     count_events: sw_lower_drop_target
+  cnt_puzzle_reversebeartrap_hurryup:
+    starting_count: 0
+    count_complete_value: 1
+    enable_events: e_reversebeartrap_puzzle
+    events_when_complete: mode_puzzle_hurryup_complete, reversebeartrap_puzzle_complete 
+    count_events: sw_lower_drop_target, sw_middle_standup, sw_spinner, sw_bottom_pops, sw_top_pops
 
 widgets:
   w_puzzle_UI:
@@ -62,13 +68,13 @@ widgets:
       font_name: digitalclockfont
       color: red
       x: 50%
-      y: 83.2%
+      y: 79.2%
       z: 7
     - type: rectangle
       width: 210
       height: 65
       x: 50%
-      y: 84.5%
+      y: 80.5%
       z: 7
       corner_radius: 20
       corner_segments: 20
@@ -76,7 +82,7 @@ widgets:
     - type: text
       text: Collect the Puzzle Piece!
       x: 50%
-      y: 73.2%
+      y: 70.2%
       z: 7
       font_size: 60
       font_name: Mustkill    
@@ -179,6 +185,16 @@ show_player:
     sh_zeptest_hurryup:
       show_tokens:
         leds: zep_flasher
+      loops: 120
+      speed: 4
+    puzzle_piece_hurryup:
+      loops: 0
+      speed: 1 
+
+  e_reversebeartrap_puzzle:
+    sh_zeptest_hurryup:
+      show_tokens:
+        leds: razorwire_flasher, bear_flasher, shotgun_flasher, drill_flasher, zep_flasher
       loops: 120
       speed: 4
     puzzle_piece_hurryup:

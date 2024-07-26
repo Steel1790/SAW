@@ -45,11 +45,11 @@ variable_player:
       int: (count)*240
       # 5 puzzle pieces to finish off zep
   logicblock_thekeytofreedom_hit{step==1}:
-    score: 7500000
+    score: 7500000 * (current_player.pf_multiplier)
   logicblock_thekeytofreedom_hit{step==2}:
-    score: 8500000
+    score: 8500000 * (current_player.pf_multiplier)
   logicblock_thekeytofreedom_hit{step==3}:
-    score: 9500000
+    score: 9500000 * (current_player.pf_multiplier)
 
 slides:
   mode_thekeytofreedom01:
