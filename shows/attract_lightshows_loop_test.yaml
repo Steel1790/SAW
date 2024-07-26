@@ -3,6 +3,25 @@
 # EK Notes: If loops are not defined, it will repeat for the duration time. If loops = 0, then it will play once. 1 loop = 2 plays.
 
 
+
+# - duration: .5s
+#   shows: 
+#       backbox_on:
+#         loops: -1
+#         speed: 1
+#       topper_on:
+#         loops: -1
+#         speed: 1
+#       cabinet_on:
+#         loops: -1
+#         speed: 1
+#       flash_token:
+#         loops: -1
+#         speed: 2
+#        show_tokens:
+#         led: l_start_button
+#         color1: on
+
 # - duration: 5s
 #   shows: 
 #       gi_flicker:
@@ -21,6 +40,7 @@
 - duration: 109s
   shows: 
       gi_on: stop
+      gi_flicker: stop
 
       # shithole_dadum_5part:
       #   # loops: 3

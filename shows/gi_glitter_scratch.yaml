@@ -3,7 +3,7 @@
 - time: 0 #0.0s timestamp (glitter)
   shows:     
     white_sweeps:
-      speed: 40
+      speed: 50
     gi_flicker_one_time:       
       show_tokens:
         color1: white

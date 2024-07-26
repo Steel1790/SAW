@@ -1,0 +1,791 @@
+#show_version=6
+- time: 0
+  lights:
+    l_left_disc_11: 'A10000'
+    l_left_disc_3: '2B0000'
+    l_left_disc_6: 'F90000'
+    l_left_disc_8: '070000'
+    l_left_disc_9: '010000'
+    
+- time: '+1'
+  lights:
+    l_left_disc_11: '010000'
+    l_left_disc_3: '000000'
+    l_left_disc_6: '830000'
+    l_left_disc_8: '000000'
+    l_left_disc_9: 'D30000'
+    
+- time: '+1'
+  lights:
+    l_left_disc_11: '450000'
+    l_left_disc_4: '010000'
+    l_left_disc_6: '000000'
+    l_left_disc_7: '010000'
+    l_left_disc_9: 'DB0000'
+    
+- time: '+1'
+  lights:
+    l_left_disc_1: '600000'
+    l_left_disc_11: 'F30000'
+    l_left_disc_4: 'AC0000'
+    l_left_disc_7: 'A00000'
+    l_left_disc_9: '010000'
+    
+- time: '+1'
+  lights:
+    l_left_disc_1: 'FC0000'
+    l_left_disc_11: '8D0000'
+    l_left_disc_4: 'C80000'
+    l_left_disc_7: 'F30000'
+    l_left_disc_9: '000000'
+    
+- time: '+1'
+  lights:
+    l_left_disc_1: 'BF0000'
+    l_left_disc_11: '050000'
+    l_left_disc_12: '090000'
+    l_left_disc_2: '3D0000'
+    l_left_disc_4: 'AD0000'
+    l_left_disc_7: '2A0000'
+    l_left_disc_9: '860000'
+    
+- time: '+1'
+  lights:
+    l_left_disc_1: '250000'
+    l_left_disc_11: '000000'
+    l_left_disc_12: '640000'
+    l_left_disc_2: 'E40000'
+    l_left_disc_4: 'D80000'
+    l_left_disc_7: '000000'
+    l_left_disc_9: 'EB0000'
+    
+- time: '+1'
+  lights:
+    l_left_disc_1: '000000'
+    l_left_disc_10: '390000'
+    l_left_disc_12: 'FF0000'
+    l_left_disc_2: '970000'
+    l_left_disc_4: '130000'
+    l_left_disc_7: '2D0000'
+    l_left_disc_9: '160000'
+    
+- time: '+1'
+  lights:
+    l_left_disc_10: 'EC0000'
+    l_left_disc_12: '910000'
+    l_left_disc_2: '000000'
+    l_left_disc_4: '000000'
+    l_left_disc_5: '0C0000'
+    l_left_disc_7: 'FB0000'
+    l_left_disc_9: '000000'
+    
+- time: '+1'
+  lights:
+    l_left_disc_10: '840000'
+    l_left_disc_12: '010000'
+    l_left_disc_5: 'DA0000'
+    l_left_disc_7: '610000'
+    
+- time: '+1'
+  lights:
+    l_left_disc_10: '000000'
+    l_left_disc_12: '000000'
+    l_left_disc_2: '5F0000'
+    l_left_disc_5: '780000'
+    l_left_disc_7: '000000'
+    
+- time: '+1'
+  lights:
+    l_left_disc_12: '010000'
+    l_left_disc_2: 'FA0000'
+    l_left_disc_5: 'FE0000'
+    l_left_disc_8: '660000'
+    
+- time: '+1'
+  lights:
+    l_left_disc_10: '710000'
+    l_left_disc_12: '4D0000'
+    l_left_disc_2: '550000'
+    l_left_disc_5: '370000'
+    l_left_disc_8: 'FC0000'
+    
+- time: '+1'
+  lights:
+    l_left_disc_10: 'F00000'
+    l_left_disc_12: 'E80000'
+    l_left_disc_2: '000000'
+    l_left_disc_3: '940000'
+    l_left_disc_5: '000000'
+    l_left_disc_8: '640000'
+    
+- time: '+1'
+  lights:
+    l_left_disc_10: '380000'
+    l_left_disc_11: '060000'
+    l_left_disc_12: 'D20000'
+    l_left_disc_3: 'EF0000'
+    l_left_disc_6: '060000'
+    l_left_disc_8: '000000'
+    
+- time: '+1'
+  lights:
+    l_left_disc_1: '190000'
+    l_left_disc_10: '000000'
+    l_left_disc_11: '960000'
+    l_left_disc_12: '260000'
+    l_left_disc_3: '120000'
+    l_left_disc_6: 'DB0000'
+    l_left_disc_8: '130000'
+    
+- time: '+1'
+  lights:
+    l_left_disc_1: '910000'
+    l_left_disc_11: 'ED0000'
+    l_left_disc_12: '000000'
+    l_left_disc_3: '010000'
+    l_left_disc_6: 'AA0000'
+    l_left_disc_8: 'E20000'
+    
+- time: '+1'
+  lights:
+    l_left_disc_1: 'FE0000'
+    l_left_disc_11: '130000'
+    l_left_disc_3: 'D90000'
+    l_left_disc_6: '520000'
+    l_left_disc_8: '900000'
+    
+- time: '+1'
+  lights:
+    l_left_disc_1: '660000'
+    l_left_disc_11: '000000'
+    l_left_disc_3: 'B50000'
+    l_left_disc_6: 'FD0000'
+    l_left_disc_8: '050000'
+    
+- time: '+1'
+  lights:
+    l_left_disc_1: '010000'
+    l_left_disc_11: '040000'
+    l_left_disc_3: '010000'
+    l_left_disc_6: '300000'
+    l_left_disc_8: '000000'
+    l_left_disc_9: '920000'
+    
+- time: '+1'
+  lights:
+    l_left_disc_1: '000000'
+    l_left_disc_11: 'B70000'
+    l_left_disc_3: '000000'
+    l_left_disc_6: '000000'
+    l_left_disc_9: 'F50000'
+    
+- time: '+1'
+  lights:
+    l_left_disc_11: 'DB0000'
+    l_left_disc_12: '010000'
+    l_left_disc_4: '680000'
+    l_left_disc_7: '010000'
+    l_left_disc_9: '300000'
+    
+- time: '+1'
+  lights:
+    l_left_disc_1: '2A0000'
+    l_left_disc_11: '100000'
+    l_left_disc_12: '420000'
+    l_left_disc_4: 'E80000'
+    l_left_disc_7: 'C70000'
+    l_left_disc_9: '010000'
+    
+- time: '+1'
+  lights:
+    l_left_disc_1: 'CA0000'
+    l_left_disc_11: '000000'
+    l_left_disc_12: 'EE0000'
+    l_left_disc_4: '0E0000'
+    l_left_disc_7: 'C50000'
+    l_left_disc_9: '930000'
+    
+- time: '+1'
+  lights:
+    l_left_disc_1: 'F20000'
+    l_left_disc_12: 'AC0000'
+    l_left_disc_2: '240000'
+    l_left_disc_4: 'E60000'
+    l_left_disc_7: '080000'
+    l_left_disc_9: 'E30000'
+    
+- time: '+1'
+  lights:
+    l_left_disc_1: '610000'
+    l_left_disc_10: '0E0000'
+    l_left_disc_12: '180000'
+    l_left_disc_2: 'D00000'
+    l_left_disc_4: '7C0000'
+    l_left_disc_7: 'B70000'
+    l_left_disc_9: '1B0000'
+    
+- time: '+1'
+  lights:
+    l_left_disc_1: '010000'
+    l_left_disc_10: 'D00000'
+    l_left_disc_12: '000000'
+    l_left_disc_2: 'F90000'
+    l_left_disc_4: '010000'
+    l_left_disc_7: 'E80000'
+    l_left_disc_9: '000000'
+    
+- time: '+1'
+  lights:
+    l_left_disc_1: '000000'
+    l_left_disc_10: 'D10000'
+    l_left_disc_2: '000000'
+    l_left_disc_4: '000000'
+    l_left_disc_5: '870000'
+    l_left_disc_7: '220000'
+    
+- time: '+1'
+  lights:
+    l_left_disc_10: '070000'
+    l_left_disc_5: 'EB0000'
+    l_left_disc_7: '000000'
+    
+- time: '+1'
+  lights:
+    l_left_disc_10: '000000'
+    l_left_disc_12: '150000'
+    l_left_disc_2: '210000'
+    l_left_disc_5: 'BC0000'
+    
+- time: '+1'
+  lights:
+    l_left_disc_10: '690000'
+    l_left_disc_12: 'BE0000'
+    l_left_disc_2: 'F10000'
+    l_left_disc_5: 'BE0000'
+    l_left_disc_8: '9C0000'
+    
+- time: '+1'
+  lights:
+    l_left_disc_10: 'E40000'
+    l_left_disc_12: 'E50000'
+    l_left_disc_2: 'B90000'
+    l_left_disc_5: '000000'
+    l_left_disc_8: 'E60000'
+    
+- time: '+1'
+  lights:
+    l_left_disc_1: '8E0000'
+    l_left_disc_10: '370000'
+    l_left_disc_11: '020000'
+    l_left_disc_12: '430000'
+    l_left_disc_2: '090000'
+    l_left_disc_3: '670000'
+    l_left_disc_6: '010000'
+    l_left_disc_8: '130000'
+    
+- time: '+1'
+  lights:
+    l_left_disc_1: 'FA0000'
+    l_left_disc_10: '000000'
+    l_left_disc_11: '7B0000'
+    l_left_disc_12: '000000'
+    l_left_disc_2: '000000'
+    l_left_disc_3: 'FE0000'
+    l_left_disc_6: '940000'
+    l_left_disc_8: '650000'
+    
+- time: '+1'
+  lights:
+    l_left_disc_1: '9E0000'
+    l_left_disc_11: 'F80000'
+    l_left_disc_3: '120000'
+    l_left_disc_6: 'D90000'
+    l_left_disc_8: 'FE0000'
+    
+- time: '+1'
+  lights:
+    l_left_disc_1: '0C0000'
+    l_left_disc_11: '580000'
+    l_left_disc_3: '050000'
+    l_left_disc_6: '0E0000'
+    l_left_disc_8: '350000'
+    
+- time: '+1'
+  lights:
+    l_left_disc_1: '000000'
+    l_left_disc_11: '000000'
+    l_left_disc_3: 'B10000'
+    l_left_disc_6: 'BA0000'
+    l_left_disc_8: '000000'
+    
+- time: '+1'
+  lights:
+    l_left_disc_11: '0B0000'
+    l_left_disc_3: 'EA0000'
+    l_left_disc_6: 'D60000'
+    l_left_disc_9: '0A0000'
+    
+- time: '+1'
+  lights:
+    l_left_disc_11: 'AC0000'
+    l_left_disc_3: '360000'
+    l_left_disc_6: '070000'
+    l_left_disc_9: 'C10000'
+    
+- time: '+1'
+  lights:
+    l_left_disc_11: 'C10000'
+    l_left_disc_12: '010000'
+    l_left_disc_3: '000000'
+    l_left_disc_6: '000000'
+    l_left_disc_9: 'C70000'
+    
+- time: '+1'
+  lights:
+    l_left_disc_1: '830000'
+    l_left_disc_11: '170000'
+    l_left_disc_12: '570000'
+    l_left_disc_4: '3B0000'
+    l_left_disc_7: '6E0000'
+    l_left_disc_9: '070000'
+    
+- time: '+1'
+  lights:
+    l_left_disc_1: 'FA0000'
+    l_left_disc_11: '000000'
+    l_left_disc_12: 'FC0000'
+    l_left_disc_2: '970000'
+    l_left_disc_4: 'FD0000'
+    l_left_disc_7: 'FC0000'
+    l_left_disc_9: 'FD0000'
+    
+- time: '+1'
+  lights:
+    l_left_disc_1: '960000'
+    l_left_disc_12: 'D70000'
+    l_left_disc_2: 'F20000'
+    l_left_disc_4: '060000'
+    l_left_disc_7: '220000'
+    l_left_disc_9: '850000'
+    
+- time: '+1'
+  lights:
+    l_left_disc_1: '0F0000'
+    l_left_disc_12: '210000'
+    l_left_disc_2: '560000'
+    l_left_disc_4: 'D20000'
+    l_left_disc_7: '0C0000'
+    l_left_disc_9: '010000'
+    
+- time: '+1'
+  lights:
+    l_left_disc_1: '000000'
+    l_left_disc_10: '260000'
+    l_left_disc_12: '000000'
+    l_left_disc_2: '000000'
+    l_left_disc_4: 'C50000'
+    l_left_disc_7: 'EE0000'
+    l_left_disc_9: '000000'
+    
+- time: '+1'
+  lights:
+    l_left_disc_10: 'E90000'
+    l_left_disc_4: '040000'
+    l_left_disc_7: '980000'
+    
+- time: '+1'
+  lights:
+    l_left_disc_10: '8D0000'
+    l_left_disc_2: '080000'
+    l_left_disc_4: '000000'
+    l_left_disc_5: '760000'
+    l_left_disc_7: '010000'
+    
+- time: '+1'
+  lights:
+    l_left_disc_10: '040000'
+    l_left_disc_12: '1C0000'
+    l_left_disc_2: 'B10000'
+    l_left_disc_5: 'FC0000'
+    l_left_disc_7: '000000'
+    
+- time: '+1'
+  lights:
+    l_left_disc_10: 'FD0000'
+    l_left_disc_12: 'B20000'
+    l_left_disc_2: 'ED0000'
+    l_left_disc_3: '290000'
+    l_left_disc_5: '7B0000'
+    l_left_disc_8: '2D0000'
+    
+- time: '+1'
+  lights:
+    l_left_disc_1: '090000'
+    l_left_disc_10: 'A80000'
+    l_left_disc_12: 'D70000'
+    l_left_disc_2: '330000'
+    l_left_disc_3: 'D80000'
+    l_left_disc_5: 'F10000'
+    l_left_disc_8: 'FD0000'
+    
+- time: '+1'
+  lights:
+    l_left_disc_1: '850000'
+    l_left_disc_10: '0D0000'
+    l_left_disc_12: '260000'
+    l_left_disc_2: '000000'
+    l_left_disc_3: '990000'
+    l_left_disc_5: '1D0000'
+    l_left_disc_8: '430000'
+    
+- time: '+1'
+  lights:
+    l_left_disc_1: 'F70000'
+    l_left_disc_10: '000000'
+    l_left_disc_11: '070000'
+    l_left_disc_12: '010000'
+    l_left_disc_3: '040000'
+    l_left_disc_5: '000000'
+    l_left_disc_8: '070000'
+    
+- time: '+1'
+  lights:
+    l_left_disc_1: 'D20000'
+    l_left_disc_11: '9C0000'
+    l_left_disc_12: '000000'
+    l_left_disc_3: '000000'
+    l_left_disc_6: '540000'
+    l_left_disc_8: 'D50000'
+    
+- time: '+1'
+  lights:
+    l_left_disc_1: '160000'
+    l_left_disc_11: 'E70000'
+    l_left_disc_3: '2D0000'
+    l_left_disc_6: 'FF0000'
+    l_left_disc_8: 'C60000'
+    
+- time: '+1'
+  lights:
+    l_left_disc_1: '000000'
+    l_left_disc_11: '250000'
+    l_left_disc_3: 'F90000'
+    l_left_disc_6: '030000'
+    l_left_disc_8: '120000'
+    
+- time: '+1'
+  lights:
+    l_left_disc_11: '120000'
+    l_left_disc_3: '840000'
+    l_left_disc_6: '9B0000'
+    l_left_disc_8: '000000'
+    
+- time: '+1'
+  lights:
+    l_left_disc_11: 'FE0000'
+    l_left_disc_3: '020000'
+    l_left_disc_4: '070000'
+    l_left_disc_6: 'ED0000'
+    l_left_disc_9: '6D0000'
+    
+- time: '+1'
+  lights:
+    l_left_disc_1: '0E0000'
+    l_left_disc_11: '670000'
+    l_left_disc_3: '000000'
+    l_left_disc_4: 'A80000'
+    l_left_disc_6: '250000'
+    l_left_disc_9: 'FD0000'
+    
+- time: '+1'
+  lights:
+    l_left_disc_1: '990000'
+    l_left_disc_11: '000000'
+    l_left_disc_2: '070000'
+    l_left_disc_4: 'B70000'
+    l_left_disc_6: '000000'
+    l_left_disc_9: '330000'
+    
+- time: '+1'
+  lights:
+    l_left_disc_1: 'FA0000'
+    l_left_disc_12: '470000'
+    l_left_disc_2: '7E0000'
+    l_left_disc_4: '040000'
+    l_left_disc_7: '410000'
+    l_left_disc_9: '4E0000'
+    
+- time: '+1'
+  lights:
+    l_left_disc_1: '640000'
+    l_left_disc_12: 'EA0000'
+    l_left_disc_2: 'FD0000'
+    l_left_disc_4: '1F0000'
+    l_left_disc_7: 'FF0000'
+    l_left_disc_9: 'FA0000'
+    
+- time: '+1'
+  lights:
+    l_left_disc_1: '010000'
+    l_left_disc_12: 'B50000'
+    l_left_disc_2: '820000'
+    l_left_disc_4: 'F60000'
+    l_left_disc_7: '380000'
+    l_left_disc_9: '350000'
+    
+- time: '+1'
+  lights:
+    l_left_disc_1: '000000'
+    l_left_disc_10: '0E0000'
+    l_left_disc_12: '0F0000'
+    l_left_disc_2: '000000'
+    l_left_disc_4: '3F0000'
+    l_left_disc_5: '0E0000'
+    l_left_disc_7: '0C0000'
+    l_left_disc_9: '000000'
+    
+- time: '+1'
+  lights:
+    l_left_disc_10: 'B80000'
+    l_left_disc_12: '000000'
+    l_left_disc_4: '000000'
+    l_left_disc_5: 'E40000'
+    l_left_disc_7: 'BE0000'
+    
+- time: '+1'
+  lights:
+    l_left_disc_10: 'DB0000'
+    l_left_disc_12: '010000'
+    l_left_disc_2: '010000'
+    l_left_disc_5: '820000'
+    l_left_disc_7: 'E70000'
+    
+- time: '+1'
+  lights:
+    l_left_disc_10: '110000'
+    l_left_disc_12: '7D0000'
+    l_left_disc_2: 'BE0000'
+    l_left_disc_5: '010000'
+    l_left_disc_7: '260000'
+    
+- time: '+1'
+  lights:
+    l_left_disc_10: '2C0000'
+    l_left_disc_12: 'FD0000'
+    l_left_disc_2: 'F50000'
+    l_left_disc_3: '160000'
+    l_left_disc_5: 'E40000'
+    l_left_disc_7: '000000'
+    
+- time: '+1'
+  lights:
+    l_left_disc_10: 'F60000'
+    l_left_disc_12: '730000'
+    l_left_disc_2: '2A0000'
+    l_left_disc_3: 'CF0000'
+    l_left_disc_5: '8C0000'
+    l_left_disc_8: '2A0000'
+    
+- time: '+1'
+  lights:
+    l_left_disc_1: '010000'
+    l_left_disc_10: '6D0000'
+    l_left_disc_12: '0E0000'
+    l_left_disc_2: '000000'
+    l_left_disc_3: 'DF0000'
+    l_left_disc_5: '000000'
+    l_left_disc_6: '010000'
+    l_left_disc_8: 'FE0000'
+    
+- time: '+1'
+  lights:
+    l_left_disc_1: '810000'
+    l_left_disc_10: '000000'
+    l_left_disc_11: '010000'
+    l_left_disc_12: '000000'
+    l_left_disc_3: '120000'
+    l_left_disc_6: 'D20000'
+    l_left_disc_8: '930000'
+    
+- time: '+1'
+  lights:
+    l_left_disc_1: 'F70000'
+    l_left_disc_11: '440000'
+    l_left_disc_3: '010000'
+    l_left_disc_6: 'B10000'
+    l_left_disc_8: '010000'
+    
+- time: '+1'
+  lights:
+    l_left_disc_1: '8E0000'
+    l_left_disc_11: 'F80000'
+    l_left_disc_3: '350000'
+    l_left_disc_6: '010000'
+    l_left_disc_8: '850000'
+    
+- time: '+1'
+  lights:
+    l_left_disc_1: '0A0000'
+    l_left_disc_11: '530000'
+    l_left_disc_3: 'EC0000'
+    l_left_disc_6: '150000'
+    l_left_disc_8: 'FD0000'
+    
+- time: '+1'
+  lights:
+    l_left_disc_1: '000000'
+    l_left_disc_11: '000000'
+    l_left_disc_3: '6C0000'
+    l_left_disc_6: 'EC0000'
+    l_left_disc_8: '480000'
+    
+- time: '+1'
+  lights:
+    l_left_disc_11: '8B0000'
+    l_left_disc_3: '020000'
+    l_left_disc_6: '840000'
+    l_left_disc_8: '000000'
+    
+- time: '+1'
+  lights:
+    l_left_disc_1: '450000'
+    l_left_disc_11: 'F10000'
+    l_left_disc_3: '000000'
+    l_left_disc_4: '6A0000'
+    l_left_disc_6: '000000'
+    l_left_disc_7: '170000'
+    l_left_disc_9: '3C0000'
+    
+- time: '+1'
+  lights:
+    l_left_disc_1: 'FF0000'
+    l_left_disc_11: '460000'
+    l_left_disc_4: 'FC0000'
+    l_left_disc_7: 'D00000'
+    l_left_disc_9: 'FF0000'
+    
+- time: '+1'
+  lights:
+    l_left_disc_1: 'A70000'
+    l_left_disc_11: '000000'
+    l_left_disc_12: '240000'
+    l_left_disc_2: '090000'
+    l_left_disc_4: '340000'
+    l_left_disc_7: 'C80000'
+    l_left_disc_9: '2D0000'
+    
+- time: '+1'
+  lights:
+    l_left_disc_1: '210000'
+    l_left_disc_12: 'AB0000'
+    l_left_disc_2: '940000'
+    l_left_disc_4: '4E0000'
+    l_left_disc_7: '030000'
+    l_left_disc_9: '340000'
+    
+- time: '+1'
+  lights:
+    l_left_disc_1: '000000'
+    l_left_disc_12: 'EC0000'
+    l_left_disc_2: 'F40000'
+    l_left_disc_4: 'F80000'
+    l_left_disc_7: '000000'
+    l_left_disc_9: 'F20000'
+    
+- time: '+1'
+  lights:
+    l_left_disc_12: '210000'
+    l_left_disc_2: '4E0000'
+    l_left_disc_4: '140000'
+    l_left_disc_7: '3D0000'
+    l_left_disc_9: '900000'
+    
+- time: '+1'
+  lights:
+    l_left_disc_10: '010000'
+    l_left_disc_12: '000000'
+    l_left_disc_2: '000000'
+    l_left_disc_4: '000000'
+    l_left_disc_5: 'A50000'
+    l_left_disc_7: 'FC0000'
+    l_left_disc_9: '030000'
+    
+- time: '+1'
+  lights:
+    l_left_disc_10: '820000'
+    l_left_disc_2: '230000'
+    l_left_disc_5: 'DB0000'
+    l_left_disc_7: '760000'
+    l_left_disc_9: '000000'
+    
+- time: '+1'
+  lights:
+    l_left_disc_10: 'FF0000'
+    l_left_disc_2: 'FF0000'
+    l_left_disc_5: '0D0000'
+    l_left_disc_7: '020000'
+    l_left_disc_8: '020000'
+    
+- time: '+1'
+  lights:
+    l_left_disc_10: '000000'
+    l_left_disc_12: '950000'
+    l_left_disc_2: '810000'
+    l_left_disc_5: 'C70000'
+    l_left_disc_7: '000000'
+    l_left_disc_8: 'A40000'
+    
+- time: '+1'
+  lights:
+    l_left_disc_10: '250000'
+    l_left_disc_12: 'F50000'
+    l_left_disc_2: '090000'
+    l_left_disc_3: '170000'
+    l_left_disc_5: '790000'
+    l_left_disc_8: 'FD0000'
+    
+- time: '+1'
+  lights:
+    l_left_disc_10: 'F40000'
+    l_left_disc_12: '870000'
+    l_left_disc_2: '000000'
+    l_left_disc_3: 'DC0000'
+    l_left_disc_5: '000000'
+    l_left_disc_6: '020000'
+    l_left_disc_8: '0A0000'
+    
+- time: '+1'
+  lights:
+    l_left_disc_1: '470000'
+    l_left_disc_10: 'B20000'
+    l_left_disc_12: '0D0000'
+    l_left_disc_3: '990000'
+    l_left_disc_6: 'A20000'
+    l_left_disc_8: '000000'
+    
+- time: '+1'
+  lights:
+    l_left_disc_1: 'CC0000'
+    l_left_disc_10: '010000'
+    l_left_disc_12: '000000'
+    l_left_disc_3: '020000'
+    l_left_disc_6: 'E80000'
+    l_left_disc_8: '1B0000'
+    
+- time: '+1'
+  lights:
+    l_left_disc_1: 'D60000'
+    l_left_disc_10: '000000'
+    l_left_disc_11: '2B0000'
+    l_left_disc_3: 'A10000'
+    l_left_disc_6: '160000'
+    l_left_disc_8: 'DE0000'
+    
+- time: '+1'
+  lights:
+    l_left_disc_1: '000000'
+    l_left_disc_11: 'FF0000'
+    l_left_disc_3: 'FF0000'
+    l_left_disc_6: '000000'
+    l_left_disc_8: 'BE0000'
+    

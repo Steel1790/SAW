@@ -84,7 +84,7 @@
 - time: '+2550ms' #16.85s timestamp (boom fading)
   shows:     
     inserts_pops_red_circle_fade:
-      speed: 30 
+      speed: 20 
 
 ## 17.0 SECONDS
 
@@ -130,7 +130,7 @@
 - time: '+2550ms' #23.85s timestamp (boom fading)
   shows:     
     inserts_pops_red_circle_fade:
-      speed: 30 
+      speed: 20 
 
 - time: '+900ms' #24.75s timestamp (drumbeat 6 part start. 3.5s repeat)
   shows:     
@@ -148,21 +148,21 @@
 - time: '+5850ms' #30.85s timestamp (boom fading)
   shows:     
     inserts_pops_red_circle_fade:
-      speed: 30   
+      speed: 20
 - time: '+1050ms' #31.9s timestamp (boom fading stop)   
   shows:     
     inserts_pops_red_circle_fade: stop  
 - time: '+5950ms' #37.85s timestamp (boom fading)
   shows:     
     inserts_pops_red_circle_fade:
-      speed: 30   
+      speed: 20  
 - time: '+1050ms' #38.9s timestamp (boom fading stop)   
   shows:     
     inserts_pops_red_circle_fade: stop  
 - time: '+5950ms' #44.85s timestamp (boom fading)
   shows:     
     inserts_pops_red_circle_fade:
-      speed: 30   
+      speed: 20   
 - time: '+1050ms' #45.9s timestamp (boom fading stop)   
   shows:     
     inserts_pops_red_circle_fade: stop 
@@ -350,6 +350,12 @@
       speed: 30     
     jet_bumpers_sparkle_top_bottom:
       speed: 30
+    disc_middle_sparkle:
+      speed: 30
+    disc_left_sparkle_red:
+      speed: 30
+    disc_right_sparkle_red:
+      speed: 30 
 
 - time: '+11000ms' #108.0s timestamp (song end)
 

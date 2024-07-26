@@ -5,17 +5,36 @@
   lights:
     left_disc: red
     left_bottom_bumper: red
+    left_top_bumper: red  
     leftspeaker: red 
+    l_drillchair_mode: red
+    l_beartrap_mode: red    
+    post_a: white
+    l_skill_shot1: red
+    l_left_ramp_triangle1: red
 - time: '+120ms' # .36s timestamp 
   lights:
     middle_disc: red  
-    right_bottom_bumper: red 
-    rightspeaker: red 
+    right_bottom_bumper: red
+    right_top_bumper: red
+    rightspeaker: red
+    l_zeptest_mode: red
+    l_jelly_mode: red
+    post_b: white
+    l_skill_shot2: red
+    l_left_ramp_triangle2: red
 - time: '+120ms' # .48s timestamp 
   lights:
     right_disc: red
     top_bottom_bumper: red
+    lower_top_bumper: red   
+    l_quadshotgun_mode: red
+    l_razorwire_mode: red
     topper: red
+    groundeffects: red
+    post_c: white
+    l_skill_shot3: red
+    l_left_ramp_triangle3: red
 - time: '+240ms' # 1.44s timestamp 
   lights:
     left_disc: off -f500ms
@@ -24,55 +43,131 @@
     left_bottom_bumper: off -f500ms
     right_bottom_bumper: off -f500ms
     top_bottom_bumper: off -f500ms
-    leftspeaker: off -f500ms
-    rightspeaker: off -f500ms
-    topper: off -f500ms
-
-#SAW ding, ding, ding 2 
-- time: '+720ms' #(pause) # 1.44s timestamp 
-  lights:
-    left_disc: white
-    left_top_bumper: white  
-    leftspeaker: white 
-- time: '+120ms' # 1.56s timestamp
-  lights:
-    middle_disc: white 
-    right_top_bumper: white
-    rightspeaker: white
-- time: '+120ms' # 1.68s timestamp
-  lights:
-    right_disc: white
-    lower_top_bumper: white
-    topper: white
-- time: '+240ms' # 1.92s timestamp
-  lights:
-    left_disc: off -f500ms
-    middle_disc: off -f500ms
-    right_disc: off -f500ms
-    left_top_bumper: off -f500ms
+    left_top_bumper: off -f500ms 
     right_top_bumper: off -f500ms
     lower_top_bumper: off -f500ms
     leftspeaker: off -f500ms
     rightspeaker: off -f500ms
     topper: off -f500ms
+    l_drillchair_mode: off -f500ms
+    l_zeptest_mode: off -f500ms
+    l_quadshotgun_mode: off -f500ms
+    l_beartrap_mode: off -f500ms
+    l_jelly_mode: off -f500ms
+    l_razorwire_mode: off -f500ms
+    groundeffects: off -f500ms 
+    post_a: off -f500ms 
+    post_b: off -f500ms 
+    post_c: off -f500ms 
+    l_skill_shot1: off -f500ms
+    l_skill_shot2: off -f500ms 
+    l_skill_shot3: off -f500ms
+    l_left_ramp_triangle1: off -f500ms
+    l_left_ramp_triangle2: off -f500ms
+    l_left_ramp_triangle3: off -f500ms
+
+#SAW ding, ding, ding 2 
+- time: '+720ms' #(pause) # 1.44s timestamp 
+  lights:
+    left_disc: white
+    left_bottom_bumper: white
+    left_top_bumper: white
+    leftspeaker: white 
+    post_l: white
+    l_skill_shot1: white
+    l_left_ramp_triangle1: white
+    l_quadshotgun_mode: white
+    l_razorwire_mode: white
+- time: '+120ms' # 1.56s timestamp
+  lights:
+    middle_disc: white
+    right_bottom_bumper: white
+    right_top_bumper: white
+    rightspeaker: white
+    post_k: white
+    l_skill_shot2: white
+    l_left_ramp_triangle2: white
+    l_zeptest_mode: white
+    l_jelly_mode: white
+- time: '+120ms' # 1.68s timestamp
+  lights:
+    right_disc: white
+    top_bottom_bumper: white
+    lower_top_bumper: white
+    topper: white
+    post_j: white
+    l_skill_shot3: white
+    l_left_ramp_triangle3: white
+    l_drillchair_mode: white
+    l_beartrap_mode: white
+- time: '+240ms' # 1.92s timestamp
+  lights:
+    left_disc: off -f500ms
+    middle_disc: off -f500ms
+    right_disc: off -f500ms
+    left_bottom_bumper: off -f500ms
+    right_bottom_bumper: off -f500ms
+    top_bottom_bumper: off -f500ms
+    left_top_bumper: off -f500ms 
+    right_top_bumper: off -f500ms
+    lower_top_bumper: off -f500ms
+    leftspeaker: off -f500ms
+    rightspeaker: off -f500ms
+    topper: off -f500ms
+    post_l: off -f500ms
+    post_k: off -f500ms
+    post_j: off -f500ms
+    l_skill_shot1: off -f500ms
+    l_skill_shot2: off -f500ms 
+    l_skill_shot3: off -f500ms
+    l_left_ramp_triangle1: off -f500ms
+    l_left_ramp_triangle2: off -f500ms
+    l_left_ramp_triangle3: off -f500ms
+    l_drillchair_mode: off -f500ms
+    l_zeptest_mode: off -f500ms
+    l_quadshotgun_mode: off -f500ms
+    l_beartrap_mode: off -f500ms
+    l_jelly_mode: off -f500ms
+    l_razorwire_mode: off -f500ms
 
 - time: '+720ms' #(pause)   # 2.42s timestamp
 
 #SAW ding, ding, ding 3 # 2.88s timestamp 
   lights:
     left_disc: red
-    left_bottom_bumper: red 
-    leftspeaker: red 
+    left_bottom_bumper: red
+    left_top_bumper: red      
+    leftspeaker: red
+    post_a: red
+    post_l: red
+    l_skill_shot1: red
+    l_left_ramp_triangle1: red  
+    l_zeptest_mode: red
+    l_jelly_mode: red
 - time: '+120ms' # 2.76s timestamp 
   lights:
     middle_disc: red  
     right_bottom_bumper: red
+    right_top_bumper: red 
     rightspeaker: red  
+    post_b: red
+    post_k: red
+    l_skill_shot2: red
+    l_left_ramp_triangle2: red
+    l_beartrap_mode: red
+    l_quadshotgun_mode: red
 - time: '+120ms' # 2.88s timestamp 
   lights:
     right_disc: red
     top_bottom_bumper: red
+    lower_top_bumper: red  
     topper: red
+    post_c: red
+    post_j: red
+    l_skill_shot3: red
+    l_left_ramp_triangle3: red
+    l_drillchair_mode: red
+    l_razorwire_mode: red
 - time: '+240ms' # 3.12s timestamp 
   lights:
     left_disc: off -f500ms
@@ -81,9 +176,30 @@
     left_bottom_bumper: off -f500ms
     right_bottom_bumper: off -f500ms
     top_bottom_bumper: off -f500ms
+    left_top_bumper: off -f500ms 
+    right_top_bumper: off -f500ms
+    lower_top_bumper: off -f500ms
     leftspeaker: off -f500ms
     rightspeaker: off -f500ms
     topper: off -f500ms
+    post_a: off -f500ms 
+    post_b: off -f500ms 
+    post_c: off -f500ms 
+    post_l: off -f500ms
+    post_k: off -f500ms
+    post_j: off -f500ms
+    l_skill_shot1: off -f500ms
+    l_skill_shot2: off -f500ms 
+    l_skill_shot3: off -f500ms
+    l_left_ramp_triangle1: off -f500ms
+    l_left_ramp_triangle2: off -f500ms
+    l_left_ramp_triangle3: off -f500ms
+    l_drillchair_mode: off -f500ms
+    l_zeptest_mode: off -f500ms
+    l_quadshotgun_mode: off -f500ms
+    l_beartrap_mode: off -f500ms
+    l_jelly_mode: off -f500ms
+    l_razorwire_mode: off -f500ms
 
 - time: '+600ms' #(pause) 
 
