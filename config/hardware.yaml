@@ -25,17 +25,20 @@ fast:
       led256:
         model: FP-EXP-0081
         address: 84
+        ignore_led_errors: true
       led128:
         model: FP-EXP-0081
         address: 85
+        ignore_led_errors: true
       led256bb:
         model: FP-EXP-0081
         address: 86
+        ignore_led_errors: true
       ledneuron:
         model: FP-EXP-2000
         address: 48
+        ignore_led_errors: true
     debug: false
-    ignore_led_errors: true
 mpf: 
   rgbw_white_behavior: duck_rgb
 
