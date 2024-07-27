@@ -16,7 +16,7 @@ sound_player:
   mode_attract_started:
     Shithole:
       action: play
-      loops: -1
+      loops: 0
     #HelloZeppPt1:
     #  action: play
     #  loops: 3
