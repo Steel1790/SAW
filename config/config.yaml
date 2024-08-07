@@ -51,7 +51,7 @@ window:
   height: 768
   title: Mission Pinball Framework - SAW
   resizable: true
-  fullscreen: true
+  fullscreen: false
 #  fullscreen: false
   borderless: true
   exit_on_escape: true
@@ -430,6 +430,65 @@ sounds:
     volume: 0.2
   ShootTheLeftRamp:
     file: ShootTheLeftRamp.wav
+    volume: 0.2
+#drillchair mode balance
+  DC1:
+    file: DC1.wav
+    volume: 0.2
+  DC2:
+    file: DC2.wav
+    volume: 0.2
+  DC4:
+    file: DC4.wav
+    volume: 0.2
+  DC7:
+    file: DC7.wav
+    volume: 0.2
+  DC9:
+    file: DC9.wav
+    volume: 0.2
+  MoleDrillGears8:
+    file: MoleDrillGears8.wav
+    volume: 0.2
+  MoleDrillGears30:
+    file: MoleDrillGears30.wav
+    volume: 0.2
+  MoleDrillGears36:
+    file: MoleDrillGears36.wav
+    volume: 0.2
+#reverse bear trap mode balance
+  RBT1:
+    file: RBT1.wav
+    volume: 0.2
+  RBT2:
+    file: RBT2.wav
+    volume: 0.2
+  RBT4:
+    file: RBT4.wav
+    volume: 0.2
+  RBT7:
+    file: RBT7.wav
+    volume: 0.2
+  RBT8:
+    file: RBT8.wav
+    volume: 0.2
+  RBT9:
+    file: RBT9.wav
+    volume: 0.2
+  RBT10:
+    file: RBT10.wav
+    volume: 0.2
+  RBT11:
+    file: RBT11.wav
+    volume: 0.2
+  RBT12:
+    file: RBT12.wav
+    volume: 0.2
+  RBT13:
+    file: RBT13.wav
+    volume: 0.2
+  RBT14:
+    file: RBT14.wav
     volume: 0.2
 
 #spinner sound

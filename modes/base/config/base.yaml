@@ -464,6 +464,10 @@ variable_player:
   multiplier_progress_counter_complete:
     bonus_multiplier:
       int: 1
+  player_bonus_multiplier{value==5}:
+    bonus_multiplier:
+      int: 4
+      action: set
   mode_base_started:
     bonus_multiplier:
       int: 1

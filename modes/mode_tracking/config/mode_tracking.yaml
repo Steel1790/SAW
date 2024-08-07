@@ -138,6 +138,12 @@ shots:
         state: 1
       - events: shot_add_a_ball_button_sp_add_a_ball_button_lit_hit
         state: 0
+      - events: mode_jigsaw_multiball_stopped
+        state: 0
+      - events: mode_hacksaw_multiball_stopped
+        state: 0
+      - events: mode_shackle_multiball_stopped
+        state: 0
 
 shot_profiles:
   sp_drillchair:
