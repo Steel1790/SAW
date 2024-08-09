@@ -271,10 +271,11 @@ coils:
   c_trough_eject:
     number: 3208-1
     default_pulse_ms: 20
-    default_pulse_power: 0.9
+    default_pulse_power: 0.75
   c_auto_plunger:
     number: 3208-0
     default_pulse_ms: 20
+    default_pulse_power: 0.8
   c_diverter:
     number: 1616_1-14
     default_pulse_ms: 20
@@ -310,6 +311,7 @@ coils:
   c_left_lock_kickback:
     number: 1616_1-12
     default_pulse_ms: 20
+    default_pulse_power: 0.8
   c_left_top_jet_bumper:
     number: 1616_1-2
     default_pulse_ms: 20
@@ -472,6 +474,8 @@ ball_devices:
     ball_switches: s_left_lock_1, s_left_lock_2, s_left_lock_3
     eject_coil: c_left_lock_kickback
     eject_timeouts: 5s
+    exit_count_delay: 50ms
+    idle_missing_ball_timeout: 3s
 
 playfields:
   playfield:
