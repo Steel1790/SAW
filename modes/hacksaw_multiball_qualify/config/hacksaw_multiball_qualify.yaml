@@ -23,8 +23,7 @@ multiball_locks:
   mbl_hacksaw:
     #debug: true
     balls_to_lock: 3
-# temp changing balls_to_replace from 2 to 3 for testing.
-    balls_to_replace: 3
+    balls_to_replace: 2
     lock_devices: bd_hacksaw
     enable_events: logicblock_acc_hacksaw_mb_qualify_complete
     disable_events: multiball_lock_mbl_hacksaw_locked_ball

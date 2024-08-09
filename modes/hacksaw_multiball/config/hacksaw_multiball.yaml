@@ -482,7 +482,7 @@ widget_player:
       action: add
 
 event_player:
-  mode_hacksaw_multiball_started: start_hacksaw_multiball|0.3s
+  mode_hacksaw_multiball_started: start_hacksaw_multiball|1.5s
   sw_pops: e_hacksaw_jackpot_value_decrease|0.2s
   sw_lower_drop_target: e_hacksaw_jackpot_value_increase|0.2s
   sg_hacksaw_p1_lit_hit: e_jackpot_show_off|1s
