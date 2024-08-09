@@ -39,7 +39,7 @@ counters:
     enable_events: 
     disable_events: 
     start_enabled: true
-#    persist_state: true
+    persist_state: true
     reset_on_complete: true
     disable_on_complete: false   
     count_events: multiball_lock_mbl_hacksaw_locked_ball
