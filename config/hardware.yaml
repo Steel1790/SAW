@@ -471,10 +471,10 @@ ball_devices:
     eject_timeouts: 1.5s
 
   bd_hacksaw:
-    ball_switches: s_left_lock_1, s_left_lock_2, s_left_lock_3
+    ball_switches: s_left_lock_3, s_left_lock_2, s_left_lock_1
     eject_coil: c_left_lock_kickback
     idle_missing_ball_timeout: 3s 
-    eject_timeouts: 7s
+    eject_timeouts: 5s
     exit_count_delay: 500ms
 
 playfields:
