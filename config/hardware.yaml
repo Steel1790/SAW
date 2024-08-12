@@ -38,7 +38,6 @@ fast:
         model: FP-EXP-2000
         address: 48
         ignore_led_errors: true
-    debug: false
 mpf: 
   rgbw_white_behavior: duck_rgb
 
@@ -444,7 +443,6 @@ ball_devices:
     jam_switch: s_trough_jam
     eject_coil_jam_pulse: 15ms
     eject_targets: bd_plunger
-    debug: false
     eject_timeouts: 3s
 
   bd_plunger:
@@ -488,6 +486,7 @@ playfields:
     ball_search_timeout: 15s
     ball_search_wait_after_iteration: 10s
     ball_search_interval: 250ms
+    debug: true
 
 flippers:
   left_flipper:
