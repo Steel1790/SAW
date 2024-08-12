@@ -486,7 +486,7 @@ playfields:
     ball_search_timeout: 15s
     ball_search_wait_after_iteration: 10s
     ball_search_interval: 250ms
-    debug: true
+    debug: true 
 
 flippers:
   left_flipper:
