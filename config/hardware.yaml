@@ -469,11 +469,18 @@ ball_devices:
     eject_timeouts: 1.5s
 
   bd_hacksaw:
-    ball_switches: s_left_lock_3, s_left_lock_2, s_left_lock_1
+    ball_switches: s_left_lock_1
     eject_coil: c_left_lock_kickback
     idle_missing_ball_timeout: 3s 
     eject_timeouts: 5s
     exit_count_delay: 500ms
+#physical mb commented out until later mpf fix 
+  # bd_hacksaw:
+  #   ball_switches: s_left_lock_3, s_left_lock_2, s_left_lock_1
+  #   eject_coil: c_left_lock_kickback
+  #   idle_missing_ball_timeout: 3s 
+  #   eject_timeouts: 5s
+  #   exit_count_delay: 500ms
 
 playfields:
   playfield:
@@ -486,7 +493,7 @@ playfields:
     ball_search_timeout: 15s
     ball_search_wait_after_iteration: 10s
     ball_search_interval: 250ms
-    debug: true 
+    #debug: true 
 
 flippers:
   left_flipper:
