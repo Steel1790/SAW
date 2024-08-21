@@ -18,6 +18,8 @@ modes:
   - base
   - skillshot
   - super_skillshot
+  - lil_billy_qualify
+  - lil_billy
   - music_player
   - trap_select
   - selection_mode

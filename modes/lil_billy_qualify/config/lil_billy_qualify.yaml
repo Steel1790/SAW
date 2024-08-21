@@ -1,0 +1,72 @@
+#config_version=6
+mode:
+  start_events: e_lil_billy_shot_lit
+  stop_events: stop_mode_super_skillshot, droptargets_skill_hit, mode_super_skillshot_complete, e_lil_billy_progress
+  priority: 190
+
+variable_player:
+  sh_left_standup_sp_lil_billy_qualify_lit_hit:
+    score: 5000000
+    super_skillshot_value:
+      int: 5000000
+      action: set
+  sh_left_standup_right_ramp_sp_lil_billy_qualify_lit_hit:
+    score: 5000000
+    super_skillshot_value:
+      int: 5000000
+      action: set
+  sh_right_standup_right_ramp_sp_lil_billy_qualify_lit_hit:
+    score: 5000000
+    super_skillshot_value:
+      int: 5000000
+      action: set
+  sh_right_standup_sp_lil_billy_qualify_lit_hit:
+    score: 5000000
+    super_skillshot_value:
+      int: 5000000
+      action: set
+
+shots:
+  sh_left_standup:
+    advance_events: sh_left_standup_sp_lil_billy_qualify_lit_hit
+    switch: s_left_standup
+    profile: sp_lil_billy_qualify
+    show_tokens:
+      leds: l_left_standup_arrow
+  sh_left_standup_right_ramp:
+    advance_events: sh_left_standup_right_ramp_sp_lil_billy_qualify_lit_hit
+    switch: s_left_standup_right_ramp
+    profile: sp_lil_billy_qualify
+    show_tokens:
+      leds: l_left_standup_right_ramp_arrow
+  sh_right_standup_right_ramp:
+    advance_events: sh_right_standup_right_ramp_sp_lil_billy_qualify_lit_hit
+    switch: s_right_standup_right_ramp
+    profile: sp_lil_billy_qualify
+    show_tokens:
+      leds: l_right_standup_right_ramp_arrow
+  sh_right_standup:
+    advance_events: sh_right_standup_sp_lil_billy_qualify_lit_hit
+    switch: s_right_standup
+    profile: sp_lil_billy_qualify
+    show_tokens:
+      leds: l_right_standup_arrow
+
+shot_profiles:
+  sp_lil_billy_qualify:
+    advance_on_hit: false
+    states:
+      - name: lit
+        show: "sh_lil_billy_qualify_on"
+      - name: lil_billy_not_ready
+        show: "sh_lil_billy_not_ready"
+
+shows:
+  sh_lil_billy_qualify_on:
+    - duration: -1
+      lights:
+        (leds): zeptest
+  sh_lil_billy_not_ready:
+    - duration: 0.3s
+      lights:
+        (leds): off    

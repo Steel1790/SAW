@@ -1,0 +1,5 @@
+#config_version=6
+mode:
+  start_events: selection_mode_lilbilly_selected
+  stop_events: mode_lil_billy_stopped, ball_ended, ball_will_end
+  priority: 191

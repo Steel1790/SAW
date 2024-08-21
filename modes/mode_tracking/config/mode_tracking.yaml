@@ -467,6 +467,14 @@ variable_player:
     the_key_to_freedom_mode_complete:
       int: 1
       action: set
+  e_lil_billy_qualify_complete:
+    lil_billy_qualified:
+      int: 1
+      action: set
+  mode_lil_billy_started:
+    lil_billy_qualified:
+      int: 0
+      action: set    
 
 # puzzle pieces collected
   mode_puzzle_hurryup_complete:
@@ -603,6 +611,62 @@ counters:
     reset_on_complete: true
     events_when_complete: random_switch_complete
     count_events: sw_pops, sw_standup, sw_inlane, sw_spinner, sw_ramp, sw_loop, sw_drop_target
+
+#skillshot count tracking
+  cnt_skillshot_hit:
+    starting_count: 0
+    start_enabled: true
+    persist_state: true
+    count_events: droptargets_skill_hit
+#little billy mode progress
+  cnt_lil_billy_left_standup_counter:
+    starting_count: 0
+    count_complete_value: 1
+    start_enabled: true
+    persist_state: true
+    reset_on_complete: false
+    enable_events: mode_super_skillshot_started
+    disable_events: stop_mode_super_skillshot, droptargets_skill_hit, mode_super_skillshot_complete
+    count_events: sh_left_standup_sp_lil_billy_qualify_lit_hit
+    events_when_complete: e_lil_billy_progress
+  cnt_lil_billy_left_standup_right_ramp_counter:
+    starting_count: 0
+    count_complete_value: 1
+    start_enabled: true
+    persist_state: true
+    reset_on_complete: false
+    enable_events: mode_super_skillshot_started
+    disable_events: stop_mode_super_skillshot, droptargets_skill_hit, mode_super_skillshot_complete
+    count_events: sh_left_standup_right_ramp_sp_lil_billy_qualify_lit_hit
+    events_when_complete: e_lil_billy_progress
+  cnt_lil_billy_right_standup_right_ramp_counter:
+    starting_count: 0
+    count_complete_value: 1
+    start_enabled: true
+    persist_state: true
+    reset_on_complete: false
+    enable_events: mode_super_skillshot_started
+    disable_events: stop_mode_super_skillshot, droptargets_skill_hit, mode_super_skillshot_complete
+    count_events: sh_right_standup_right_ramp_sp_lil_billy_qualify_lit_hit
+    events_when_complete: e_lil_billy_progress
+  cnt_lil_billy_right_standup_counter:
+    starting_count: 0
+    count_complete_value: 1
+    start_enabled: true
+    persist_state: true
+    reset_on_complete: false
+    enable_events: mode_super_skillshot_started
+    disable_events: stop_mode_super_skillshot, droptargets_skill_hit, mode_super_skillshot_complete
+    count_events: sh_right_standup_sp_lil_billy_qualify_lit_hit
+    events_when_complete: e_lil_billy_progress
+  cnt_lil_billy_qualify_counter:
+    starting_count: 0
+    count_complete_value: 3
+    start_enabled: true
+    persist_state: true
+    reset_on_complete: false
+    count_events: e_lil_billy_progress
+    events_when_complete: e_lil_billy_qualify_complete
 
 show_player:
   shot_drillchair_button_sp_drillchair_lit_hit:

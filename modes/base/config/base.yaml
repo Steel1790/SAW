@@ -299,6 +299,27 @@ slide_player:
     superskillshot:
       priority: 500
       expire: 4s  
+  sh_left_outlane_hit:
+    superskillshot:
+      priority: 500
+      expire: 4s  
+  #lil billy skillshots
+  sh_left_standup_sp_lil_billy_qualify_lit_hit:
+    superskillshot:
+      priority: 500
+      expire: 4s  
+  sh_left_standup_right_ramp_sp_lil_billy_qualify_lit_hit:
+    superskillshot:
+      priority: 500
+      expire: 4s  
+  sh_right_standup_right_ramp_sp_lil_billy_qualify_lit_hit:
+    superskillshot:
+      priority: 500
+      expire: 4s  
+  sh_right_standup_sp_lil_billy_qualify_lit_hit:
+    superskillshot:
+      priority: 500
+      expire: 4s  
 
   ball_save_default_saving_ball:
     HeHelpedMeVideo:
@@ -2996,6 +3017,12 @@ widget_player:
     w_puzzle_progress:
       slide: base_slide_main
       action: add
+    w_super_skillshot_value:
+      slide: superskillshot
+      action: remove
+    w_skillshot_value:
+      slide: skillshotvideo
+      action: remove
 
   player_1_ball_started: 
     Player1Active:
@@ -3055,6 +3082,12 @@ widget_player:
     w_puzzle_progress:
       slide: base_slide_main
       action: add
+    w_super_skillshot_value:
+      slide: superskillshot
+      action: remove
+    w_skillshot_value:
+      slide: skillshotvideo
+      action: remove
 
   player_2_ball_started: 
     1PlayerGame:
@@ -3111,6 +3144,12 @@ widget_player:
     w_puzzle_progress:
       slide: base_slide_main
       action: add
+    w_super_skillshot_value:
+      slide: superskillshot
+      action: remove
+    w_skillshot_value:
+      slide: skillshotvideo
+      action: remove
 
   player_3_ball_started: 
     1PlayerGame:
@@ -3176,6 +3215,12 @@ widget_player:
     w_puzzle_progress:
       slide: base_slide_main
       action: add
+    w_super_skillshot_value:
+      slide: superskillshot
+      action: remove
+    w_skillshot_value:
+      slide: skillshotvideo
+      action: remove
 
   player_4_ball_started: 
     1PlayerGame:
@@ -3241,6 +3286,12 @@ widget_player:
     w_puzzle_progress:
       slide: base_slide_main
       action: add
+    w_super_skillshot_value:
+      slide: superskillshot
+      action: remove
+    w_skillshot_value:
+      slide: skillshotvideo
+      action: remove
 
 #multiball widgets
   multiball_mb_jigsaw_started:
@@ -3851,7 +3902,46 @@ widget_player:
     w_playfield_multiplier:
       slide: base_slide_main
       action: remove
-    
+  
+# skillshot value widgets
+  ssh_skillshot_leftorbit_innerorbit_hit:
+    w_super_skillshot_value:
+      slide: superskillshot
+      action: add
+  ssh_skillshot_innerorbit_leftramp_hit:
+    w_super_skillshot_value:
+      slide: superskillshot
+      action: add
+  sh_left_outlane_hit:
+    w_super_skillshot_value:
+      slide: superskillshot
+      action: add
+  sh_skillshot_x_hit:
+    w_super_skillshot_value:
+      slide: superskillshot
+      action: add
+  droptargets_skill_hit:
+    w_skillshot_value:
+      slide: skillshotvideo
+      action: add
+# lil billy skillshot value widgets
+  sh_left_standup_sp_lil_billy_qualify_lit_hit:
+    w_super_skillshot_value:
+      slide: superskillshot
+      action: add
+  sh_left_standup_right_ramp_sp_lil_billy_qualify_lit_hit:
+    w_super_skillshot_value:
+      slide: superskillshot
+      action: add
+  sh_right_standup_right_ramp_sp_lil_billy_qualify_lit_hit:
+    w_super_skillshot_value:
+      slide: superskillshot
+      action: add
+  sh_right_standup_sp_lil_billy_qualify_lit_hit:
+    w_super_skillshot_value:
+      slide: superskillshot
+      action: add
+      
   # slide_HeHelpedMeVideo_created:
   #   w_HeHelpedMe_BallSave:
   #     slide: HeHelpedMeVideo

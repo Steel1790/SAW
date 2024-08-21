@@ -1,7 +1,7 @@
 #config_version=6
 mode:
   start_events: ball_starting, start_mode_super_skillshot
-  stop_events: stop_mode_super_skillshot, droptargets_skill_hit
+  stop_events: stop_mode_super_skillshot, droptargets_skill_hit, mode_super_skillshot_complete, e_lil_billy_progress
   priority: 100
 
 timers:
@@ -18,17 +18,48 @@ timers:
 variable_player:
   ssh_skillshot_leftorbit_innerorbit_hit:
     score: 8000000
+    super_skillshot_value:
+      int: 8000000
+      action: set
   ssh_skillshot_innerorbit_leftramp_hit:
     score: 5000000
+    super_skillshot_value:
+      int: 5000000
+      action: set
+  sh_left_outlane_hit:
+    score: 7500000
+    super_skillshot_value:
+      int: 7500000
+      action: set
+  sh_skillshot_x_hit:
+    score: 4000000
+    super_skillshot_value:
+      int: 4000000
+      action: set
 
 
 event_player:
   ssh_skillshot_leftorbit_innerorbit_hit: mode_super_skillshot_complete
   ssh_skillshot_innerorbit_leftramp_hit: mode_super_skillshot_complete
+  sh_left_outlane_hit: mode_super_skillshot_complete
+  sh_skillshot_x_hit: mode_super_skillshot_complete
   playfield_active: stop_mode_super_skillshot|6.5s
   balldevice_bd_plunger_ball_eject_success: stop_mode_super_skillshot|8s
  
-  
+combo_switches:
+  secret_billy_hold:
+    switches_1: s_left_flipper_button
+    switches_2: s_action_button
+    hold_time: 1s
+    max_offset_time: 1s
+    events_when_switches_1: e_lil_billy_shot_lit
+
+shots:
+  sh_skillshot_x:
+    switch: s_upper_bank_drop_target_opto 
+  sh_left_outlane:
+    switch: s_left_outlane
+
 sequence_shots:
   ssh_skillshot_leftorbit_innerorbit:
     switch_sequence: s_left_loop_bottom, s_left_loop_top, s_inner_loop
@@ -44,6 +75,19 @@ slides:
       video: superskillshot
       width: 1366
       height: 768   
+
+widgets:
+  w_super_skillshot_value:
+    - type: text
+      text: (player|super_skillshot_value)
+      number_grouping: true 
+      x: 50%
+      y: 28%
+      z: 7
+      font_size: 90
+      font_name: Mustkill     
+      outline_color: black
+      outline_width: 7
 
 #slide_player:
 #  ssh_skillshot_leftorbit_innerorbit_hit: 
