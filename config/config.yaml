@@ -53,8 +53,7 @@ window:
   height: 768
   title: Mission Pinball Framework - SAW
   resizable: true
-  fullscreen: false
-#  fullscreen: false
+  fullscreen: true
   borderless: true
   exit_on_escape: true
   source_display: lcd
@@ -65,6 +64,15 @@ displays:
 
 mpf:
     report_crashes: never
+
+bcp:
+  connections:
+    local_display:
+      host: localhost
+      port: 5050
+      type: mpf.core.bcp.bcp_socket_client.BCPClientSocket
+      required: true
+      exit_on_close: true
 
 sound_system:
     tracks:

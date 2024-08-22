@@ -305,21 +305,21 @@ slide_player:
       expire: 4s  
   #lil billy skillshots
   sh_left_standup_sp_lil_billy_qualify_lit_hit:
-    superskillshot:
+    lilbillyqualify1:
       priority: 500
       expire: 4s  
   sh_left_standup_right_ramp_sp_lil_billy_qualify_lit_hit:
-    superskillshot:
+    lilbillyqualify3:
       priority: 500
       expire: 4s  
   sh_right_standup_right_ramp_sp_lil_billy_qualify_lit_hit:
-    superskillshot:
+    lilbillyqualify2:
       priority: 500
       expire: 4s  
   sh_right_standup_sp_lil_billy_qualify_lit_hit:
-    superskillshot:
+    lilbillyqualify1:
       priority: 500
-      expire: 4s  
+      expire: 4s
 
   ball_save_default_saving_ball:
     HeHelpedMeVideo:
@@ -3926,20 +3926,20 @@ widget_player:
       action: add
 # lil billy skillshot value widgets
   sh_left_standup_sp_lil_billy_qualify_lit_hit:
-    w_super_skillshot_value:
-      slide: superskillshot
+    lil_billy_skillshot_value:
+      slide: lilbillyqualify1
       action: add
   sh_left_standup_right_ramp_sp_lil_billy_qualify_lit_hit:
-    w_super_skillshot_value:
-      slide: superskillshot
+    lil_billy_skillshot_value:
+      slide: lilbillyqualify3
       action: add
   sh_right_standup_right_ramp_sp_lil_billy_qualify_lit_hit:
-    w_super_skillshot_value:
-      slide: superskillshot
+    lil_billy_skillshot_value:
+      slide: lilbillyqualify2
       action: add
   sh_right_standup_sp_lil_billy_qualify_lit_hit:
-    w_super_skillshot_value:
-      slide: superskillshot
+    lil_billy_skillshot_value:
+      slide: lilbillyqualify1
       action: add
       
   # slide_HeHelpedMeVideo_created:
@@ -4086,6 +4086,25 @@ slides:
     widgets:
     - type: video
       video: CameraFlash4
+      width: 1366
+      height: 768
+
+  lilbillyqualify1:
+    widgets:
+    - type: video
+      video: lilbillyqualify1
+      width: 1366
+      height: 768
+  lilbillyqualify2:
+    widgets:
+    - type: video
+      video: lilbillyqualify2
+      width: 1366
+      height: 768
+  lilbillyqualify3:
+    widgets:
+    - type: video
+      video: lilbillyqualify3
       width: 1366
       height: 768
   # ShootAgain:

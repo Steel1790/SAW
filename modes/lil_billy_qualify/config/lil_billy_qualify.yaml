@@ -7,22 +7,22 @@ mode:
 variable_player:
   sh_left_standup_sp_lil_billy_qualify_lit_hit:
     score: 5000000
-    super_skillshot_value:
+    lil_billy_skillshot_value:
       int: 5000000
       action: set
   sh_left_standup_right_ramp_sp_lil_billy_qualify_lit_hit:
     score: 5000000
-    super_skillshot_value:
+    lil_billy_skillshot_value:
       int: 5000000
       action: set
   sh_right_standup_right_ramp_sp_lil_billy_qualify_lit_hit:
     score: 5000000
-    super_skillshot_value:
+    lil_billy_skillshot_value:
       int: 5000000
       action: set
   sh_right_standup_sp_lil_billy_qualify_lit_hit:
     score: 5000000
-    super_skillshot_value:
+    lil_billy_skillshot_value:
       int: 5000000
       action: set
 
@@ -69,4 +69,17 @@ shows:
   sh_lil_billy_not_ready:
     - duration: 0.3s
       lights:
-        (leds): off    
+        (leds): off  
+        
+widgets:
+  lil_billy_skillshot_value:
+    - type: text
+      text: (player|lil_billy_skillshot_value)
+      number_grouping: true 
+      x: 50%
+      y: 28%
+      z: 7
+      font_size: 90
+      font_name: Mustkill     
+      outline_color: black
+      outline_width: 7

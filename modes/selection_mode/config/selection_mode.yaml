@@ -7,7 +7,7 @@ mode:
   code: mpf.modes.carousel.code.carousel.Carousel
 mode_settings:
   selectable_items: 
-    - lilbilly{current_player.lil_billy_qualified==1}
+#    - lilbilly{current_player.lil_billy_qualified==1}
     - thekeytofreedom{current_player.modes_completed>=4 and current_player.the_key_to_freedom_mode_complete==0}
     - survivalinstinct{current_player.puzzle_pieces>=2 and current_player.survival_instinct_mode_complete==0}
     - drillchair{current_player.drillchair_mode_complete==0}
@@ -70,18 +70,18 @@ variable_player:
 slides:
   lilbilly:
     widgets:
-#    - type: video
-#      video: lilbillypuzzle
+    - type: video
+      video: lilbillypuzzle
     - type: text
-      text: '<                      >'
+      text: '<                >'
       font_size: 120
       x: center
-      y: center +200
+      y: center +210
       z: 1
       color: C2E3E0 
     - type: text
       x: center
-      y: center -210
+      y: center -190
       z: 1
       font_size: 45
       color: C2E3E0
@@ -327,7 +327,9 @@ slides:
           repeat: true      
 
 slide_player:
-#placeholder for lilbilly
+  selection_mode_lilbilly_highlighted: 
+    lilbilly:
+      priority: 400
   selection_mode_thekeytofreedom_highlighted: 
     thekeytofreedom:
       priority: 400
