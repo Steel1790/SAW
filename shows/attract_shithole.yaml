@@ -5,6 +5,13 @@
   lights:
     gi: white -f2000ms
     trough: white -f2000ms
+  shows: 
+    flash_token:
+      loops: -1
+      speed: 2       
+      show_tokens:
+        led: l_start_button
+        color1: on
 
 - time: '+240ms' #.24s timestamp (SAW ding,ding,ding start. .96s repeat)
   shows: 

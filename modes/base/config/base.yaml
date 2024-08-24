@@ -1316,6 +1316,7 @@ show_player:
       disc_middle_chase: stop
       disc_right_chase: stop
       speaker_hot_saw_left: stop
+      speaker_hot_saw_right: stop
       speaker_letter_collect_right: stop
 
   mode_hostage_will_start:
@@ -1323,6 +1324,7 @@ show_player:
       disc_middle_chase: stop
       disc_right_chase: stop
       speaker_hot_saw_left: stop
+      speaker_hot_saw_right: stop      
       speaker_letter_collect_right: stop
   #shot_left_outlane_hit{state=="ball_save_not_ready"}:
   #    billy_laugh:

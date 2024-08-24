@@ -425,24 +425,48 @@ show_player:
      speed: 8
      show_tokens:
        color1: beartrap
+   flash_token:
+     loops: 0
+     speed: 8
+     show_tokens:
+       led: gi_left
+       color1: white
   display_syringes{current_player.ball<3}:
    jw_bonus_syringe:
      loops: 0
      speed: 8
      show_tokens:
        color1: beartrap
+   flash_token:
+     loops: 0
+     speed: 8
+     show_tokens:
+       led: gi_right
+       color1: red
   display_bathtubs{current_player.ball<3}:
    jw_bonus_bathtub:
      loops: 0
      speed: 8
      show_tokens:
        color1: beartrap
+   flash_token:
+     loops: 0
+     speed: 8
+     show_tokens:
+       led: gi_top
+       color1: white
   display_taperecorders{current_player.ball<3}:
    jw_bonus_taperecorder:
      loops: 0
      speed: 8
      show_tokens:
-       color1: beartrap    
+       color1: beartrap 
+   flash_token:
+     loops: 0
+     speed: 8
+     show_tokens:
+       led: gi_lower
+       color1: red  
   display_candles{current_player.ball<3}:
    jw_bonus_candle: 
      loops: 0
