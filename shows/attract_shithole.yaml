@@ -364,5 +364,5 @@
     disc_right_sparkle_red:
       speed: 30 
 
-- time: '+11000ms' #108.0s timestamp (song end)
+- time: '+8000ms' #108.0s timestamp (song end)
 
