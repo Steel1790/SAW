@@ -7,7 +7,7 @@ mode:
   stop_events: multiball_mb_shackle_started, multiball_mb_hacksaw_started, multiball_mb_jigsaw_started, mode_bonus_started
   # mode_selection_mode_started, mode_make_your_choice_hurryup_started, multiball_mb_jigsaw_started, multiball_mb_hacksaw_started, multiball_mb_shackle_started, mode_razorwire_started, mode_drillchair_started, mode_flammablejelly_started, mode_quadshotgun_started, mode_reversebeartrap_started, mode_zeptest_started, mode_survival_instinct_started
 
-  priority: 183
+  priority: 183 
 
 accruals:
   acc_hacksaw_mb_qualify:
@@ -21,16 +21,10 @@ accruals:
 
 multiball_locks:
   mbl_hacksaw:
-    #debug: true
     balls_to_lock: 3
-    balls_to_replace: 2
     lock_devices: bd_hacksaw
     enable_events: logicblock_acc_hacksaw_mb_qualify_complete
-    disable_events: multiball_lock_mbl_hacksaw_locked_ball
-    locked_ball_counting_strategy: physical_only
-    #reset_all_counts_events: multiball_lock_mbl_hacksaw_full 
-      #disable_events: sg_lockshot_complete{state=="unlit"}
-    #reset_count_for_current_player_events: multiball_lock_mbl_hacksaw_full
+    disable_events: multiball_lock_mbl_hacksaw_locked_ball 
 
 counters:
   cnt_hacksaw_mb_counter:
@@ -39,10 +33,44 @@ counters:
     enable_events: 
     disable_events: 
     start_enabled: true
-#    persist_state: true
+    persist_state: true
     reset_on_complete: true
     disable_on_complete: false   
     count_events: multiball_lock_mbl_hacksaw_locked_ball
+    events_when_complete: logicblock_hacksaw_multiball_qualify_complete
+
+#commented out physical ball lock section until future mpf fix.
+# multiball_locks:
+#   mbl_hacksaw:
+#     debug: true
+#     balls_to_lock: 3
+#     balls_to_replace: 2
+#     lock_devices: bd_hacksaw
+#     enable_events: logicblock_acc_hacksaw_mb_qualify_complete
+#     disable_events: multiball_lock_mbl_hacksaw_locked_ball
+#     locked_ball_counting_strategy: physical_only 
+
+# multiball_locks:
+#   mbl_hacksaw:
+#     debug: true
+#     balls_to_lock: 3
+#     balls_to_replace: 2
+#     lock_devices: bd_hacksaw
+#     enable_events: logicblock_acc_hacksaw_mb_qualify_complete
+#     disable_events: multiball_lock_mbl_hacksaw_locked_ball
+#     locked_ball_counting_strategy: physical_only 
+
+# counters:
+#   cnt_hacksaw_mb_counter:
+#     starting_count: 0
+#     count_complete_value: 3
+#     enable_events: 
+#     disable_events: 
+#     start_enabled: true
+#     persist_state: true
+#     reset_on_complete: true
+#     disable_on_complete: false   
+#     count_events: multiball_lock_mbl_hacksaw_locked_ball
 
 variable_player:
   logicblock_cnt_hacksaw_mb_counter_hit:

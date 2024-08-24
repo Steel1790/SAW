@@ -2,23 +2,12 @@
 ##! mode: hacksaw_multiball
 
 mode:
-  #start_events: startmode_hacksaw_multiball
-  start_events: multiball_lock_mbl_hacksaw_full
+  start_events: logicblock_hacksaw_multiball_qualify_complete
+#commented out for physical mb until mpf fix
+  # start_events: multiball_lock_mbl_hacksaw_full
   stop_events: stop_mode_hacksaw_multiball, mode_hacksaw_multiball_complete, multiball_mb_hacksaw_ended
   priority: 183
 
-#multiball_locks:
-#  mbl_hacksaw:
-#    #debug: true
-#    balls_to_lock: 3
-#    balls_to_replace: 2
-#    lock_devices: bd_hacksaw
-#    enable_events: logicblock_acc_hacksaw_mb_qualify_complete
-#    disable_events: multiball_lock_mbl_hacksaw_locked_ball
-#    locked_ball_counting_strategy: physical_only
-#    reset_all_counts_events: multiball_lock_mbl_hacksaw_full 
-#      #disable_events: sg_lockshot_complete{state=="unlit"}
-#      #reset_count_for_current_player_events: multiball_lock_sword_multiball_lock_full
 
 multiballs:
   mb_hacksaw:
@@ -29,26 +18,37 @@ multiballs:
     add_a_ball_events: shot_add_a_ball_button_sp_add_a_ball_button_lit_hit
     replace_balls_in_play: false
 
+# commented out for physical mb until mpf fix arrives
+# multiballs:
+#   mb_hacksaw:
+#     ball_count: 3
+#     ball_locks: bd_hacksaw
+#     shoot_again: 10s
+#     start_events: start_hacksaw_multiball
+#     add_a_ball_events: shot_add_a_ball_button_sp_add_a_ball_button_lit_hit
+#     replace_balls_in_play: true
+#     #debug: true
+
 variable_player:
   #multiball_mb_hacksaw_started:
     #score: 3000000
   shot_hacksaw_left_loop_sp_hacksaw_mb_lit_hit:
-    score: 600000 + (device.counters.cnt_hacksaw_jackpot_value.value * 50000) + (device.counters.cnt_hacksaw_jackpot_value_decrease.value * -5000)
+    score: (600000 + (device.counters.cnt_hacksaw_jackpot_value.value * 50000) + (device.counters.cnt_hacksaw_jackpot_value_decrease.value * -5000)) * (current_player.pf_multiplier)
   shot_hacksaw_inner_loop_sp_hacksaw_mb_lit_hit:
-    score: 600000 + (device.counters.cnt_hacksaw_jackpot_value.value * 50000) + (device.counters.cnt_hacksaw_jackpot_value_decrease.value * -5000)
+    score: (600000 + (device.counters.cnt_hacksaw_jackpot_value.value * 50000) + (device.counters.cnt_hacksaw_jackpot_value_decrease.value * -5000)) * (current_player.pf_multiplier)
   shot_hacksaw_left_standup_rightramp_sp_hacksaw_mb_lit_hit:
-    score: 600000 + (device.counters.cnt_hacksaw_jackpot_value.value * 50000) + (device.counters.cnt_hacksaw_jackpot_value_decrease.value * -5000)
+    score: (600000 + (device.counters.cnt_hacksaw_jackpot_value.value * 50000) + (device.counters.cnt_hacksaw_jackpot_value_decrease.value * -5000)) * (current_player.pf_multiplier)
   shot_hacksaw_right_standup_rightramp_sp_hacksaw_mb_lit_hit:
-    score: 600000 + (device.counters.cnt_hacksaw_jackpot_value.value * 50000) + (device.counters.cnt_hacksaw_jackpot_value_decrease.value * -5000)
+    score: (600000 + (device.counters.cnt_hacksaw_jackpot_value.value * 50000) + (device.counters.cnt_hacksaw_jackpot_value_decrease.value * -5000)) * (current_player.pf_multiplier)
   shot_hacksaw_right_loop_sp_hacksaw_mb_lit_hit:
-    score: 600000 + (device.counters.cnt_hacksaw_jackpot_value.value * 50000) + (device.counters.cnt_hacksaw_jackpot_value_decrease.value * -5000)
+    score: (600000 + (device.counters.cnt_hacksaw_jackpot_value.value * 50000) + (device.counters.cnt_hacksaw_jackpot_value_decrease.value * -5000)) * (current_player.pf_multiplier)
   shot_hacksaw_left_standup_sp_hacksaw_mb_lit_hit:
-    score: 600000 + (device.counters.cnt_hacksaw_jackpot_value.value * 50000) + (device.counters.cnt_hacksaw_jackpot_value_decrease.value * -5000)
+    score: (600000 + (device.counters.cnt_hacksaw_jackpot_value.value * 50000) + (device.counters.cnt_hacksaw_jackpot_value_decrease.value * -5000)) * (current_player.pf_multiplier)
   shot_hacksaw_right_standup_sp_hacksaw_mb_lit_hit:
-    score: 600000 + (device.counters.cnt_hacksaw_jackpot_value.value * 50000) + (device.counters.cnt_hacksaw_jackpot_value_decrease.value * -5000)
+    score: (600000 + (device.counters.cnt_hacksaw_jackpot_value.value * 50000) + (device.counters.cnt_hacksaw_jackpot_value_decrease.value * -5000)) * (current_player.pf_multiplier)
 
   shot_hacksaw_superjackpot1_sp_hacksaw_mb_lit_hit:
-    score: 600000 + (device.counters.cnt_hacksaw_jackpot_value.value * 50000) + (device.counters.cnt_hacksaw_jackpot_value_decrease.value * -5000)
+    score: (600000 + (device.counters.cnt_hacksaw_jackpot_value.value * 50000) + (device.counters.cnt_hacksaw_jackpot_value_decrease.value * -5000)) * (current_player.pf_multiplier)
 
   start_hacksaw_multiball:
     hacksaw_value:
@@ -482,7 +482,7 @@ widget_player:
       action: add
 
 event_player:
-  mode_hacksaw_multiball_started: start_hacksaw_multiball|0.3s
+  mode_hacksaw_multiball_started: start_hacksaw_multiball|1.5s
   sw_pops: e_hacksaw_jackpot_value_decrease|0.2s
   sw_lower_drop_target: e_hacksaw_jackpot_value_increase|0.2s
   sg_hacksaw_p1_lit_hit: e_jackpot_show_off|1s

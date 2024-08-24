@@ -120,9 +120,9 @@ variable_player:
   #logicblock_drillchair_hit{step==3}:
   #  score: 1000000 + (current_player.handguns_used * 1250000)
   mode_drillchair_complete:
-    score: 6500000 + (current_player.handguns_used * 1000000)
+    score: (6500000 + (current_player.handguns_used * 1000000)) * (current_player.pf_multiplier)
   counter_drillchair_pops_counter_hit:
-    score: 175000 + (current_player.handguns_used * 100000)
+    score: (175000 + (current_player.handguns_used * 100000)) * (current_player.pf_multiplier)
     drillchair_pops_counter:
       action: set
       int: (count)*60
@@ -130,7 +130,7 @@ variable_player:
       action: set
       int: (count)
   counter_drillchair_pops2_counter_hit:    
-    score: 175000 + (current_player.handguns_used * 100000)
+    score: (175000 + (current_player.handguns_used * 100000)) * (current_player.pf_multiplier)
     drillchair_pops2_counter:
       action: set
       int: (count)*60

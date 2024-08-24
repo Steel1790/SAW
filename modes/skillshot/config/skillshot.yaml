@@ -1,7 +1,7 @@
 #config_version=6
 mode:
   start_events: ball_starting, start_mode_skillshot
-  stop_events: stop_mode_skillshot, droptargets_skill_hit, mode_skillshot_complete
+  stop_events: stop_mode_skillshot, droptargets_skill_hit, mode_skillshot_complete, mode_super_skillshot_complete, e_lil_billy_progress
   priority: 100
 
 #sound_player:
@@ -77,15 +77,15 @@ shot_groups:
 
 variable_player:
   droptargets_skill_hit:
-    score: 1000000
-  sh_skillshot_x_hit:
-    score: 4000000
+    score: 1000000 + (device.counters.cnt_skillshot_hit.value * 1000000)
+    skillshot_value:
+      int: 1000000 + (device.counters.cnt_skillshot_hit.value * 1000000)
+      action: set
 
 event_player:
   dt_drop2_hit: mode_skillshot_complete
   dt_drop3_hit: mode_skillshot_complete
   dt_drop4_hit: mode_skillshot_complete
-  drop_target_dt_upper_drop1_down: mode_skillshot_complete
   e_ballsave: stop_mode_skillshot|3s
   balldevice_bd_plunger_ball_eject_success: stop_mode_skillshot|5s
  
@@ -107,8 +107,6 @@ shots:
     profile: skill
 #    show_tokens:
 #      light: l_3_bank_drop_target_opto_lower
-  sh_skillshot_x:
-    switch: s_upper_bank_drop_target_opto
       
 show_player: 
   mode_skillshot_started{current_player.ball == 1 and player==1 and is_extra_ball==False}:
@@ -127,6 +125,19 @@ show_player:
       speed: 3
       show_tokens:
         color1: blue
+
+widgets:
+  w_skillshot_value:
+    - type: text
+      text: (player|skillshot_value)
+      number_grouping: true 
+      x: 50%
+      y: 28%
+      z: 7
+      font_size: 90
+      font_name: Mustkill     
+      outline_color: black
+      outline_width: 7
 
       
 #slide_player:

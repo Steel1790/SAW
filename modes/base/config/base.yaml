@@ -38,7 +38,7 @@ event_player:
   single_player_ball_started: mode_qualified_sidestep|0.6s
   ball_will_end{current_player.ball==3}: e_topper_trigger|3s
   mode_hostage_complete: e_mystery_workshop
-
+  mode_puzzle_hurryup_stopped: e_saw_qualify_reset|0.3s
   # ball_starting{is_extra_ball==True}: e_shoot_again
 
 # saw collect light progress
@@ -83,6 +83,10 @@ event_player:
     - e_zeptest_puzzle|8.3s
     #- e_puzzle_start|5.3s
     #- e_zeptest_puzzle|5.5s
+  mode_reversebeartrap_stopping:
+    - e_reversebeartrap_puzzle|8.3s
+  mode_reversebeartrap_complete:
+    - e_reversebeartrap_puzzle|8.3s
   mode_reversebeartrap_stopping{current_player.reversebeartrap_mode_attempted>=1}:
     - e_que_basemusic|0.5s
   mode_survival_instinct_stopping:
@@ -144,12 +148,14 @@ event_player:
 
 timers:
   t_playfield_multiplier_timer:
-    start_value: 30
+    start_value: 60
     end_value: 0
     direction: down
     control_events:
       - action: start
         event: slide_MysteryPlayfieldMultiplier_removed
+      - action: start
+        event: saw_combo_collected
 
 random_event_player:
   e_mystery_workshop:
@@ -293,6 +299,27 @@ slide_player:
     superskillshot:
       priority: 500
       expire: 4s  
+  sh_left_outlane_hit:
+    superskillshot:
+      priority: 500
+      expire: 4s  
+  #lil billy skillshots
+  sh_left_standup_sp_lil_billy_qualify_lit_hit:
+    lilbillyqualify1:
+      priority: 500
+      expire: 4s  
+  sh_left_standup_right_ramp_sp_lil_billy_qualify_lit_hit:
+    lilbillyqualify3:
+      priority: 500
+      expire: 4s  
+  sh_right_standup_right_ramp_sp_lil_billy_qualify_lit_hit:
+    lilbillyqualify2:
+      priority: 500
+      expire: 4s  
+  sh_right_standup_sp_lil_billy_qualify_lit_hit:
+    lilbillyqualify1:
+      priority: 500
+      expire: 4s
 
   ball_save_default_saving_ball:
     HeHelpedMeVideo:
@@ -340,7 +367,7 @@ slide_player:
       
 variable_player:
   logicblock_cnt_saw_qualify_complete:
-    score: 100000
+    score: 100000 * (current_player.pf_multiplier)
   sw_pops:
     score: 50000 * (current_player.pf_multiplier)
     pops:
@@ -383,6 +410,9 @@ variable_player:
     combo_progress:
       int: 1
       action: add
+    pf_multiplier:
+      int: 1
+      action: add    
 
 # jigsaw workshop tracking
 
@@ -455,6 +485,10 @@ variable_player:
   multiplier_progress_counter_complete:
     bonus_multiplier:
       int: 1
+  player_bonus_multiplier{value==5}:
+    bonus_multiplier:
+      int: 4
+      action: set
   mode_base_started:
     bonus_multiplier:
       int: 1
@@ -533,10 +567,10 @@ variable_player:
       int: 10
       action: set
     visual_slings_counter:
-      int: 40 
+      int: 60
       action: set
     visual_inlanes_counter:
-      int: 6
+      int: 9
       action: set
     visual_spinners_counter:
       int: 40
@@ -602,7 +636,7 @@ counters:
     count_events: sw_standup  
     
   minimode_slings_counter:
-    starting_count: 40
+    starting_count: 60
     count_complete_value: 0
     direction: down
     start_enabled: true
@@ -613,7 +647,7 @@ counters:
     count_events: sw_slingshot
 
   minimode_inlanes_counter:
-    starting_count: 6
+    starting_count: 9
     count_complete_value: 0
     direction: down
     start_enabled: true
@@ -2590,22 +2624,22 @@ widgets:
       font_size: 50
       font_name: digitalclockfont
       color: red
-      x: 63.5%
-      y: 83.2%
+      x: 32%
+      y: 79.2%
       z: 7
     - type: rectangle
       width: 210
       height: 65
-      x: 63.5%
-      y: 84.5%
+      x: 32%
+      y: 80.5%
       z: 7
       corner_radius: 20
       corner_segments: 20
       color: black        
     - type: text
       text: 2X Playfield
-      x: 63.5%
-      y: 78.5%
+      x: 32%
+      y: 74.5%
       z: 7
       font_size: 25
       font_name: Mustkill     
@@ -2985,6 +3019,12 @@ widget_player:
     w_puzzle_progress:
       slide: base_slide_main
       action: add
+    w_super_skillshot_value:
+      slide: superskillshot
+      action: remove
+    w_skillshot_value:
+      slide: skillshotvideo
+      action: remove
 
   player_1_ball_started: 
     Player1Active:
@@ -3044,6 +3084,12 @@ widget_player:
     w_puzzle_progress:
       slide: base_slide_main
       action: add
+    w_super_skillshot_value:
+      slide: superskillshot
+      action: remove
+    w_skillshot_value:
+      slide: skillshotvideo
+      action: remove
 
   player_2_ball_started: 
     1PlayerGame:
@@ -3100,6 +3146,12 @@ widget_player:
     w_puzzle_progress:
       slide: base_slide_main
       action: add
+    w_super_skillshot_value:
+      slide: superskillshot
+      action: remove
+    w_skillshot_value:
+      slide: skillshotvideo
+      action: remove
 
   player_3_ball_started: 
     1PlayerGame:
@@ -3165,6 +3217,12 @@ widget_player:
     w_puzzle_progress:
       slide: base_slide_main
       action: add
+    w_super_skillshot_value:
+      slide: superskillshot
+      action: remove
+    w_skillshot_value:
+      slide: skillshotvideo
+      action: remove
 
   player_4_ball_started: 
     1PlayerGame:
@@ -3230,6 +3288,12 @@ widget_player:
     w_puzzle_progress:
       slide: base_slide_main
       action: add
+    w_super_skillshot_value:
+      slide: superskillshot
+      action: remove
+    w_skillshot_value:
+      slide: skillshotvideo
+      action: remove
 
 #multiball widgets
   multiball_mb_jigsaw_started:
@@ -3832,11 +3896,54 @@ widget_player:
     w_playfield_multiplier:
       slide: base_slide_main
       action: add
+  saw_combo_collected:
+    w_playfield_multiplier:
+      slide: base_slide_main
+      action: add
   player_base_t_playfield_multiplier_timer_tick{value < 1}:
     w_playfield_multiplier:
       slide: base_slide_main
       action: remove
-    
+  
+# skillshot value widgets
+  ssh_skillshot_leftorbit_innerorbit_hit:
+    w_super_skillshot_value:
+      slide: superskillshot
+      action: add
+  ssh_skillshot_innerorbit_leftramp_hit:
+    w_super_skillshot_value:
+      slide: superskillshot
+      action: add
+  sh_left_outlane_hit:
+    w_super_skillshot_value:
+      slide: superskillshot
+      action: add
+  sh_skillshot_x_hit:
+    w_super_skillshot_value:
+      slide: superskillshot
+      action: add
+  droptargets_skill_hit:
+    w_skillshot_value:
+      slide: skillshotvideo
+      action: add
+# lil billy skillshot value widgets
+  sh_left_standup_sp_lil_billy_qualify_lit_hit:
+    lil_billy_skillshot_value:
+      slide: lilbillyqualify1
+      action: add
+  sh_left_standup_right_ramp_sp_lil_billy_qualify_lit_hit:
+    lil_billy_skillshot_value:
+      slide: lilbillyqualify3
+      action: add
+  sh_right_standup_right_ramp_sp_lil_billy_qualify_lit_hit:
+    lil_billy_skillshot_value:
+      slide: lilbillyqualify2
+      action: add
+  sh_right_standup_sp_lil_billy_qualify_lit_hit:
+    lil_billy_skillshot_value:
+      slide: lilbillyqualify1
+      action: add
+      
   # slide_HeHelpedMeVideo_created:
   #   w_HeHelpedMe_BallSave:
   #     slide: HeHelpedMeVideo
@@ -3939,6 +4046,12 @@ slides:
       video: tiltwarning
       width: 1366
       height: 768
+  tiltwarningtwovideo:
+    widgets:
+    - type: video
+      video: tiltwarningtwo
+      width: 1366
+      height: 768
   mysteryawardvideo:
     widgets:
     - type: video
@@ -3975,6 +4088,25 @@ slides:
     widgets:
     - type: video
       video: CameraFlash4
+      width: 1366
+      height: 768
+
+  lilbillyqualify1:
+    widgets:
+    - type: video
+      video: lilbillyqualify1
+      width: 1366
+      height: 768
+  lilbillyqualify2:
+    widgets:
+    - type: video
+      video: lilbillyqualify2
+      width: 1366
+      height: 768
+  lilbillyqualify3:
+    widgets:
+    - type: video
+      video: lilbillyqualify3
       width: 1366
       height: 768
   # ShootAgain:

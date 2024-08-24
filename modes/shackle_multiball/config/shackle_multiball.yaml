@@ -39,22 +39,22 @@ variable_player:
   #multiball_mb_shackle_started:
     #score: 3000000
   shot_shackle_left_loop_sp_shackle_mb_lit_hit:
-    score: 1000000 + (device.timers.t_shackle_value_timer.ticks * 5331)
+    score: (1000000 + (device.timers.t_shackle_value_timer.ticks * 5331)) * (current_player.pf_multiplier)
   shot_shackle_left_standup_sp_shackle_mb_lit_hit:
-    score: 1000000 + (device.timers.t_shackle_value_timer.ticks * 5331)
+    score: (1000000 + (device.timers.t_shackle_value_timer.ticks * 5331)) * (current_player.pf_multiplier)
   shot_shackle_left_standup_rightramp_sp_shackle_mb_lit_hit:
-    score: 1000000 + (device.timers.t_shackle_value_timer.ticks * 5331)
+    score: (1000000 + (device.timers.t_shackle_value_timer.ticks * 5331)) * (current_player.pf_multiplier)
   shot_shackle_right_standup_rightramp_sp_shackle_mb_lit_hit:
-    score: 1000000 + (device.timers.t_shackle_value_timer.ticks * 5331)
+    score: (1000000 + (device.timers.t_shackle_value_timer.ticks * 5331)) * (current_player.pf_multiplier)
   shot_shackle_right_loop_sp_shackle_mb_lit_hit:
-    score: 1000000 + (device.timers.t_shackle_value_timer.ticks * 5331)
+    score: (1000000 + (device.timers.t_shackle_value_timer.ticks * 5331)) * (current_player.pf_multiplier)
   shot_shackle_right_standup_sp_shackle_mb_lit_hit:
-    score: 1000000 + (device.timers.t_shackle_value_timer.ticks * 5331)
+    score: (1000000 + (device.timers.t_shackle_value_timer.ticks * 5331)) * (current_player.pf_multiplier)
 
   shot_shackle_superjackpot1_sp_shackle_mb_lit_hit:
-    score: 1000000 + (device.timers.t_shackle_value_timer.ticks * 5331 * 3) 
+    score: (1000000 + (device.timers.t_shackle_value_timer.ticks * 5331 * 3)) * (current_player.pf_multiplier) 
   shot_shackle_superjackpot2_sp_shackle_mb_lit_hit:
-    score: 1000000 + (device.timers.t_shackle_value_timer.ticks * 5331 * 3) 
+    score: (1000000 + (device.timers.t_shackle_value_timer.ticks * 5331 * 3)) * (current_player.pf_multiplier) 
 
   player_shackle_multiball_t_shackle_value_timer_tick:
     shackle_value_countdown:

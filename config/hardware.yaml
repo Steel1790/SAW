@@ -25,16 +25,19 @@ fast:
       led256:
         model: FP-EXP-0081
         address: 84
+        ignore_led_errors: true
       led128:
         model: FP-EXP-0081
         address: 85
+        ignore_led_errors: true
       led256bb:
         model: FP-EXP-0081
         address: 86
+        ignore_led_errors: true
       ledneuron:
         model: FP-EXP-2000
         address: 48
-    debug: true
+        ignore_led_errors: true
 mpf: 
   rgbw_white_behavior: duck_rgb
 
@@ -267,10 +270,11 @@ coils:
   c_trough_eject:
     number: 3208-1
     default_pulse_ms: 20
-    default_pulse_power: 0.9
+    default_pulse_power: 0.85
   c_auto_plunger:
     number: 3208-0
     default_pulse_ms: 20
+    default_pulse_power: 0.8
   c_diverter:
     number: 1616_1-14
     default_pulse_ms: 20
@@ -306,6 +310,7 @@ coils:
   c_left_lock_kickback:
     number: 1616_1-12
     default_pulse_ms: 20
+    default_pulse_power: 0.8
   c_left_top_jet_bumper:
     number: 1616_1-2
     default_pulse_ms: 20
@@ -438,7 +443,6 @@ ball_devices:
     jam_switch: s_trough_jam
     eject_coil_jam_pulse: 15ms
     eject_targets: bd_plunger
-    debug: false
     eject_timeouts: 3s
 
   bd_plunger:
@@ -465,9 +469,18 @@ ball_devices:
     eject_timeouts: 1.5s
 
   bd_hacksaw:
-    ball_switches: s_left_lock_1, s_left_lock_2, s_left_lock_3
+    ball_switches: s_left_lock_1
     eject_coil: c_left_lock_kickback
+    idle_missing_ball_timeout: 3s 
     eject_timeouts: 5s
+    exit_count_delay: 500ms
+#physical mb commented out until later mpf fix 
+  # bd_hacksaw:
+  #   ball_switches: s_left_lock_3, s_left_lock_2, s_left_lock_1
+  #   eject_coil: c_left_lock_kickback
+  #   idle_missing_ball_timeout: 3s 
+  #   eject_timeouts: 5s
+  #   exit_count_delay: 500ms
 
 playfields:
   playfield:
@@ -480,12 +493,15 @@ playfields:
     ball_search_timeout: 15s
     ball_search_wait_after_iteration: 10s
     ball_search_interval: 250ms
+    #debug: true 
 
 flippers:
   left_flipper:
     main_coil: c_flipper_left_main
     hold_coil: c_flipper_left_hold
     activation_switch: s_left_flipper_button
+    disable_events: ball_will_end, flippers_off
+    enable_events: ball_started, flippers_on
     #eos_switch: s_left_flipper_eos
     #use_eos: true
     #repulse_on_eos_open: true
@@ -494,6 +510,8 @@ flippers:
     main_coil: c_flipper_right_main
     hold_coil: c_flipper_right_hold
     activation_switch: s_right_flipper_button
+    disable_events: ball_will_end, flippers_off
+    enable_events: ball_started, flippers_on
 #    eos_switch: s_right_flipper_eos
     #use_eos: true
     #repulse_on_eos_open: true
@@ -502,6 +520,8 @@ flippers:
     main_coil: c_flipper_upper_right_main
     hold_coil: c_flipper_upper_right_hold
     activation_switch: s_upper_right_flipper_button
+    disable_events: ball_will_end, flippers_off
+    enable_events: ball_started, flippers_on
 
 autofire_coils:
   left_slingshot:

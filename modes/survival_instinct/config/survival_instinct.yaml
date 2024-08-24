@@ -33,7 +33,7 @@ multiballs:
 variable_player:
   mode_survival_instinct_started:
     survival_instinct_value:
-      int: 1000000
+      int: 1000000 * (current_player.pf_multiplier)
       action: set
     puzzle_pieces:
       int: 10
@@ -47,12 +47,12 @@ variable_player:
       action: add
   counter_cnt_survival_instinct_jackpot_hit:
     survival_instinct_value:
-      int: 450000
+      int: 450000 * (current_player.pf_multiplier)
       action: add
   shot_survival_instinct_superjackpot_sp_survival_instinct_jackpot_hit:
     score: (current_player.survival_instinct_value)
     survival_instinct_value:
-      int: 1000000
+      int: 1000000 * (current_player.pf_multiplier)
       action: set
   
 counters:

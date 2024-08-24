@@ -50,9 +50,9 @@
         # loops: 3
         speed: 1 
 
-- duration: 10s
-  shows: 
-      attract_shithole: stop
+# - duration: 0s
+#   shows: 
+#       attract_shithole: stop
 
       # test_led_port_check:
       #   loops: 3

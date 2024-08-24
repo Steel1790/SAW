@@ -14,7 +14,7 @@ slides:
   tilt_warning_2:
     widgets:
       - type: video
-        video: tiltwarning
+        video: tiltwarningtwo
     expire: 3s
   tilt:
     widgets:

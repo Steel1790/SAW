@@ -146,3 +146,6 @@ sound_player:
       action: stop
     initials:
       action: stop
+  mode_high_score_will_stop:
+    initials:
+      action: stop

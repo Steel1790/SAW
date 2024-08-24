@@ -1,0 +1,26 @@
+#config_version=6
+mode:
+  start_events: selection_mode_lilbilly_selected
+  stop_events: mode_lil_billy_stopped, ball_ended, ball_will_end
+  priority: 191
+
+#45sec unlimited plunges for drop target skill shots. 
+#flippers disabled
+random_event_player:
+  mode_lil_billy_started:
+    events:
+      e_lilbilly_tricycle: 100
+#      e_lilbilly_cubicle: 0
+#uncomment out when multiple lil billy options available
+#    force_all: true
+
+event_player:
+  e_lilbilly_tricycle: flippers_off
+  mode_lil_billy_stopped: flippers_on
+
+ball_saves:
+  ball_save_lil_billy_tricycle:
+    enable_events: e_lilbilly_tricycle
+    disable_events: mode_lil_billy_stopped
+    auto_launch: false
+    balls_to_save: -1
