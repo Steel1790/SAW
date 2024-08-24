@@ -130,6 +130,7 @@
     l_beartrap_mode: off -f500ms
     l_jelly_mode: off -f500ms
     l_razorwire_mode: off -f500ms
+    groundeffects: off -f500ms 
 
 - time: '+720ms' #(pause)   # 2.42s timestamp
 
@@ -201,6 +202,7 @@
     l_beartrap_mode: off -f500ms
     l_jelly_mode: off -f500ms
     l_razorwire_mode: off -f500ms
+    groundeffects: off -f500ms 
 
 - time: '+600ms' #(pause) 
 
