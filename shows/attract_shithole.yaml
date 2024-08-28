@@ -303,7 +303,7 @@
       show_tokens:
         color1: beartrap
    
-    standup_obit_flash:
+    standup_orbit_flash:
       speed: 4
       show_tokens:
         color1: beartrap
