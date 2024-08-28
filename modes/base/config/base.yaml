@@ -1350,6 +1350,7 @@ show_player:
       disc_middle_chase: stop
       disc_right_chase: stop
       speaker_hot_saw_left: stop
+      speaker_hot_saw_right: stop
       speaker_letter_collect_right: stop
 
   mode_hostage_will_start:
@@ -1357,7 +1358,26 @@ show_player:
       disc_middle_chase: stop
       disc_right_chase: stop
       speaker_hot_saw_left: stop
+      speaker_hot_saw_right: stop      
       speaker_letter_collect_right: stop
+
+   
+  logicblock_multiplier_progress_counter_hit{count==5}:
+      flash_token:
+        loops: -1
+        speed: 10     
+        show_tokens:
+          led: l_top_drop_triangle, post_g, post_h
+          color1: white
+
+  logicblock_multiplier_progress_counter_hit{count==0}:
+      flash_token:
+        loops: -1
+        speed: 10     
+        show_tokens:
+          led: l_top_drop_triangle
+          color1: off
+
   #shot_left_outlane_hit{state=="ball_save_not_ready"}:
   #    billy_laugh:
   #      loops: 4

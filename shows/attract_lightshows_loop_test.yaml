@@ -18,9 +18,9 @@
 #       flash_token:
 #         loops: -1
 #         speed: 2
-#        show_tokens:
-#         led: l_start_button
-#         color1: on
+#         show_tokens:
+#           led: l_start_button
+#           color1: on
 
 # - duration: 5s
 #   shows: 

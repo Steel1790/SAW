@@ -11,6 +11,10 @@
     left_bottom_bumper: a605e6
     post_a: ff8000
     post_l: ff8000
+    groundeffects: ff8000
+    topper: a605e6
+    leftspeaker: ff8000
+    rightspeaker: a605e6
 - time: '+50ms' 
   lights:
     drill_flasher: off -f1000ms
@@ -18,7 +22,10 @@
     l_drillchair_mode: off -f1000ms
     post_a: off -f1000ms
     post_l: off -f1000ms
-
+    groundeffects: off -f1000ms
+    topper: off -f1000ms
+    leftspeaker: off -f1000ms
+    rightspeaker: off -f1000ms
 - time: '+150ms' #(da-dum 2)
   lights:
     l_top_drop2: a605e6  
@@ -29,6 +36,10 @@
     right_bottom_bumper: a605e6
     post_b: ff8000
     post_k: ff8000
+    groundeffects: a605e6
+    topper: ff8000
+    leftspeaker: a605e6
+    rightspeaker: ff8000
 - time: '+50ms' 
   lights:
     zep_flasher: off -f1000ms
@@ -36,6 +47,10 @@
     l_beartrap_mode: off -f1000ms
     post_b: off -f1000ms
     post_k: off -f1000ms
+    groundeffects: off -f1000ms
+    topper: off -f1000ms
+    leftspeaker: off -f1000ms
+    rightspeaker: off -f1000ms
 
 - time: '+500ms' #(da-dum 3)
   lights:
@@ -47,6 +62,10 @@
     top_bottom_bumper: a605e6
     post_c: ff8000
     post_j: ff8000
+    groundeffects: ff8000
+    topper: a605e6
+    leftspeaker: ff8000
+    rightspeaker: a605e6
 - time: '+50ms' 
   lights:
     bear_flasher: off -f1000ms
@@ -54,6 +73,10 @@
     l_zeptest_mode: off -f1000ms
     post_c: off -f1000ms
     post_j: off -f1000ms
+    groundeffects: off -f1000ms
+    topper: off -f1000ms
+    leftspeaker: off -f1000ms
+    rightspeaker: off -f1000ms
 
 - time: '+650ms' #2(da-dum 4)
   lights:
@@ -65,6 +88,10 @@
     lower_top_bumper: a605e6
     post_d: ff8000
     post_i: ff8000
+    groundeffects: a605e6
+    topper: ff8000
+    leftspeaker: a605e6
+    rightspeaker: ff8000
 - time: '+50ms' 
   lights:
     shotgun_flasher: off -f1000ms
@@ -72,6 +99,10 @@
     l_jelly_mode: off -f1000ms  
     post_d: off -f1000ms
     post_i: off -f1000ms
+    groundeffects: off -f1000ms
+    topper: off -f1000ms
+    leftspeaker: off -f1000ms
+    rightspeaker: off -f1000ms
 
 - time: '+350ms' #(da-dum 5)
   lights:
@@ -83,7 +114,10 @@
     left_top_bumper: a605e6   
     post_e: ff8000
     post_f: ff8000
-
+    groundeffects: ff8000
+    topper: a605e6
+    leftspeaker: ff8000
+    rightspeaker: a605e6
 - time: '+50ms' 
   lights:
     razorwire_flasher: off -f1000ms 
@@ -91,6 +125,10 @@
     l_quadshotgun_mode: off -f1000ms
     post_e: off -f1000ms
     post_f: off -f1000ms
+    groundeffects: off -f1000ms
+    topper: off -f1000ms
+    leftspeaker: off -f1000ms
+    rightspeaker: off -f1000ms
 
 - time: '+250ms' #(da-dum 6)
   lights:
@@ -103,6 +141,10 @@
     right_top_bumper: a605e6
     post_g: ff8000
     post_h: ff8000
+    groundeffects: a605e6
+    topper: ff8000
+    leftspeaker: a605e6
+    rightspeaker: ff8000
 
 - time: '+50ms' 
   lights:
@@ -130,6 +172,9 @@
     lower_top_bumper: off -f500ms
     post_g: off -f1000ms
     post_h: off -f1000ms  
-
+    groundeffects: off -f1000ms
+    topper: off -f1000ms
+    leftspeaker: off -f1000ms
+    rightspeaker: off -f1000ms
 
 - time: '+1300ms' #(pause)

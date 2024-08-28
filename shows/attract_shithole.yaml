@@ -5,6 +5,13 @@
   lights:
     gi: white -f2000ms
     trough: white -f2000ms
+  shows: 
+    flash_token:
+      loops: -1
+      speed: 2       
+      show_tokens:
+        led: l_start_button
+        color1: on
 
 - time: '+240ms' #.24s timestamp (SAW ding,ding,ding start. .96s repeat)
   shows: 
@@ -357,5 +364,5 @@
     disc_right_sparkle_red:
       speed: 30 
 
-- time: '+11000ms' #108.0s timestamp (song end)
+- time: '+8000ms' #108.0s timestamp (song end)
 
