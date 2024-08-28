@@ -7,9 +7,12 @@
     gi_flicker_one_time:       
       show_tokens:
         color1: white
-      speed: 30    
+      speed: 30
+    speaker_white_sweeps:
+      speed: 50  
 - time: '+500ms' #.5s timestamp (glitter stop)
   shows:     
     white_sweeps: stop
+    speaker_white_sweeps: stop
     gi_flicker_one_time: stop 
 - time: '+3000ms' #3.5s timestamp (glitter pause)   

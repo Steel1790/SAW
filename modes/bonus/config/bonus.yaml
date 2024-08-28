@@ -431,6 +431,16 @@ show_player:
      show_tokens:
        led: gi_left
        color1: white
+   speaker_left_chase:
+     loops: 0
+     speed: 8
+     show_tokens:
+       color1: white
+   speaker_right_chase:
+     loops: 0
+     speed: 8
+     show_tokens:
+       color1: white
   display_syringes{current_player.ball<3}:
    jw_bonus_syringe:
      loops: 0
@@ -442,7 +452,17 @@ show_player:
      speed: 8
      show_tokens:
        led: gi_right
-       color1: red
+       color1: beartrap
+   speaker_left_chase:
+     loops: 0
+     speed: 8
+     show_tokens:
+       color1: beartrap
+   speaker_right_chase:
+     loops: 0
+     speed: 8
+     show_tokens:
+       color1: beartrap
   display_bathtubs{current_player.ball<3}:
    jw_bonus_bathtub:
      loops: 0
@@ -453,28 +473,80 @@ show_player:
      loops: 0
      speed: 8
      show_tokens:
-       led: gi_top
+       led: gi_lower
+       color1: white
+   speaker_left_chase:
+     loops: 0
+     speed: 8
+     show_tokens:
+       color1: white
+   speaker_right_chase:
+     loops: 0
+     speed: 8
+     show_tokens:
        color1: white
   display_taperecorders{current_player.ball<3}:
    jw_bonus_taperecorder:
      loops: 0
      speed: 8
      show_tokens:
-       color1: beartrap 
+       color1: beartrap
    flash_token:
      loops: 0
      speed: 8
      show_tokens:
-       led: gi_lower
-       color1: red  
+       led: gi_middle
+       color1: beartrap
+   speaker_left_chase:
+     loops: 0
+     speed: 8
+     show_tokens:
+       color1: beartrap
+   speaker_right_chase:
+     loops: 0
+     speed: 8
+     show_tokens:
+       color1: beartrap
   display_candles{current_player.ball<3}:
    jw_bonus_candle: 
      loops: 0
      speed: 8
      show_tokens:
-       color1: beartrap    
+       color1: beartrap
+   flash_token:
+     loops: 0
+     speed: 8
+     show_tokens:
+       led: gi_top
+       color1: white
+   speaker_left_chase:
+     loops: 0
+     speed: 8
+     show_tokens:
+       color1: white
+   speaker_right_chase:
+     loops: 0
+     speed: 8
+     show_tokens:
+       color1: white  
   display_hacksaws{current_player.ball<3}:
    jw_bonus_hacksaw:
+     loops: 0
+     speed: 8
+     show_tokens:
+       color1: beartrap
+   flash_token:
+     loops: 0
+     speed: 8
+     show_tokens:
+       led: gi_middle
+       color1: beartrap
+   speaker_left_chase:
+     loops: 0
+     speed: 8
+     show_tokens:
+       color1: beartrap
+   speaker_right_chase:
      loops: 0
      speed: 8
      show_tokens:
@@ -484,10 +556,44 @@ show_player:
      loops: 0
      speed: 8
      show_tokens:
-       color1: beartrap     
+       color1: beartrap 
+   flash_token:
+     loops: 0
+     speed: 8
+     show_tokens:
+       led: gi_left, gi_right
+       color1: white  
+   speaker_left_chase:
+     loops: 0
+     speed: 8
+     show_tokens:
+       color1: white
+   speaker_right_chase:
+     loops: 0
+     speed: 8
+     show_tokens:
+       color1: white   
   display_keys{current_player.ball<3}:
    jw_bonus_key:
      loops: 0
      speed: 8
      show_tokens:
        color1: beartrap
+   flash_token:
+     loops: 0
+     speed: 8
+     show_tokens:
+       led: gi_middle, gi_top, gi_lower
+       color1: beartrap
+   speaker_left_chase:
+     loops: 0
+     speed: 8
+     show_tokens:
+       color1: beartrap
+   speaker_right_chase:
+     loops: 0
+     speed: 8
+     show_tokens:
+       color1: beartrap
+
+

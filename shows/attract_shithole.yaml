@@ -5,6 +5,7 @@
   lights:
     gi: white -f2000ms
     trough: white -f2000ms
+    cabinet: beartrap -f2000ms
   shows: 
     flash_token:
       loops: -1
@@ -12,6 +13,12 @@
       show_tokens:
         led: l_start_button
         color1: on
+    # flash_token_2:
+    #   loops: -1
+    #   speed: 2       
+    #   show_tokens:
+    #     led: l_action_button, l_blade_1, l_blade_2, l_left_flipper, l_right_flipper
+    #     color1: beartrap
 
 - time: '+240ms' #.24s timestamp (SAW ding,ding,ding start. .96s repeat)
   shows: 
@@ -295,13 +302,18 @@
       speed: 4
       show_tokens:
         color1: beartrap
-     
+   
+    standup_obit_flash:
+      speed: 4
+      show_tokens:
+        color1: beartrap
+
     jet_bumpers_color_chase_2:
-      loops: 1
+      loops: -1
       speed: 10
       show_tokens:
         color1: beartrap
-        color2: drillchair
+        color2: beartrap
         color3: beartrap           
 
     topper_chase:

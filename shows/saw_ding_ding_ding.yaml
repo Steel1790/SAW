@@ -164,6 +164,7 @@
     top_bottom_bumper: red
     lower_top_bumper: red  
     topper: red
+    groundeffects: red
     post_c: red
     post_j: red
     l_skill_shot3: red
