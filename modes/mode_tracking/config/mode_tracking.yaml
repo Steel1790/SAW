@@ -596,8 +596,8 @@ counters:
     reset_on_complete: true
     disable_on_complete: false
     events_when_complete: start_mystery_mode
-    enable_events: mode_base_started, mode_drillchair_stopped, mode_flammablejelly_stopped, mode_quadshotgun_stopped, mode_razorwire_stopped, mode_reversebeartrap_stopped, mode_zeptest_stopped, mode_survival_instinct_stopped, mode_puzzle_hurryup_stopped, mode_make_your_choice_hurryup_stopped, mode_hacksaw_multiball_stopped, mode_jigsaw_multiball_stopped, mode_shackle_multiball_stopped
-    disable_events: multiball_active, mode_selection_mode_started, mode_hacksaw_multiball_started, mode_jigsaw_multiball_started, mode_shackle_multiball_started
+    enable_events: mode_base_started, mode_drillchair_stopped, mode_flammablejelly_stopped, mode_quadshotgun_stopped, mode_razorwire_stopped, mode_reversebeartrap_stopped, mode_zeptest_stopped, mode_survival_instinct_stopped, mode_puzzle_hurryup_stopped, mode_make_your_choice_hurryup_stopped, mode_hacksaw_multiball_stopped, mode_jigsaw_multiball_stopped, mode_shackle_multiball_stopped, mode_hostage_stopped
+    disable_events: multiball_active, mode_selection_mode_started, mode_hacksaw_multiball_started, mode_jigsaw_multiball_started, mode_shackle_multiball_started, mode_hostage_started
     reset_events: sh_select_mode_hit
     count_events: sw_lower_drop_target
 
