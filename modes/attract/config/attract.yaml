@@ -14,13 +14,13 @@ show_player:
 
 sound_player:
   mode_attract_started:
+    BaseMusic:
+      action: stop  
+    initials:
+      action: stop    
     Shithole:
       action: play
       loops: 0
     #HelloZeppPt1:
     #  action: play
-    #  loops: 3
-    BaseMusic:
-      action: stop  
-    initials:
-      action: stop      
+    #  loops: 3  

@@ -661,7 +661,7 @@ counters:
     events_when_complete: e_lil_billy_progress
   cnt_lil_billy_qualify_counter:
     starting_count: 0
-    count_complete_value: 3
+    count_complete_value: 2
     start_enabled: true
     persist_state: true
     reset_on_complete: false

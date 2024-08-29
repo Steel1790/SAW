@@ -305,7 +305,7 @@ slide_player:
       expire: 4s  
   #lil billy skillshots
   sh_left_standup_sp_lil_billy_qualify_lit_hit:
-    lilbillyqualify1:
+    lilbillyqualify2:
       priority: 500
       expire: 4s  
   sh_left_standup_right_ramp_sp_lil_billy_qualify_lit_hit:
@@ -313,11 +313,11 @@ slide_player:
       priority: 500
       expire: 4s  
   sh_right_standup_right_ramp_sp_lil_billy_qualify_lit_hit:
-    lilbillyqualify2:
+    lilbillyqualify1:
       priority: 500
       expire: 4s  
   sh_right_standup_sp_lil_billy_qualify_lit_hit:
-    lilbillyqualify1:
+    lilbillyqualify2:
       priority: 500
       expire: 4s
 
@@ -3377,7 +3377,14 @@ widget_player:
     saw_letters:
       slide: base_slide_main
       action: add  
-
+  mode_lil_billy_stopped:
+    saw_letters:
+      slide: base_slide_main
+      action: add  
+  mode_lil_billy_complete:
+    saw_letters:
+      slide: base_slide_main
+      action: add  
 #change instructions during 2 ball play from razorwire in base mode
   mode_razorwire_stopped{current_player.e_multiball_in_playfield==1}:
     saw_letters:

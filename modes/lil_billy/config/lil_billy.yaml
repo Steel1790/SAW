@@ -1,7 +1,7 @@
 #config_version=6
 mode:
   start_events: selection_mode_lilbilly_selected
-  stop_events: mode_lil_billy_stopped, ball_ended, ball_will_end
+  stop_events: mode_lil_billy_stopped, ball_ended, ball_will_end, player_lil_billy_lil_billy_60s_timer_tick{value < 1}
   priority: 191
 
 #45sec unlimited plunges for drop target skill shots. 
@@ -10,6 +10,10 @@ random_event_player:
   mode_lil_billy_started:
     events:
       e_lilbilly_tricycle: 100
+  lil_billy_drops_hit:
+    events:
+      e_lil_billy_drops_hit1: 50
+      e_lil_billy_drops_hit2: 50
 #      e_lilbilly_cubicle: 0
 #uncomment out when multiple lil billy options available
 #    force_all: true
@@ -17,6 +21,9 @@ random_event_player:
 event_player:
   e_lilbilly_tricycle: flippers_off
   mode_lil_billy_stopped: flippers_on
+  slide_LilBillyModeIntro1_removed: e_primary_mode_active
+  e_lil_billy_drops_hit2: e_drop_hit2_delay|2.3s
+  slide_LilBillyModeIntro1_created: e_prep_lil_billy_drops_UI|12s
 
 ball_saves:
   ball_save_lil_billy_tricycle:
@@ -24,3 +31,210 @@ ball_saves:
     disable_events: mode_lil_billy_stopped
     auto_launch: false
     balls_to_save: -1
+
+shot_groups:
+  lil_billy_drops:
+    shots: lil_billy_drop1, lil_billy_drop2, lil_billy_drop3
+
+variable_player:
+  lil_billy_drops_hit:
+    score: 2500000 + (device.counters.cnt_lil_billy_drops_hit.value * 1250000)
+    lil_billy_drops_value:
+      int: 2500000 + (device.counters.cnt_lil_billy_drops_hit.value * 1250000)
+      action: set
+  counter_cnt_lil_billy_drops_hit_hit:
+    lil_billy_drops_visual:
+      action: set
+      int: (count)*7
+  
+shots:
+  lil_billy_drop3:
+    switch: s_lower_bank_drop_target_opto_upper
+  lil_billy_drop2:
+    switch: s_lower_bank_drop_target_opto_middle
+  lil_billy_drop1:
+    switch: s_lower_bank_drop_target_opto_lower
+
+show_player:
+  mode_lil_billy_started:
+    skillshot_chase:
+      loops: -1
+      speed: 8
+      show_tokens:
+        color1: red
+  mode_lil_billy_stopped:
+    skillshot_chase:
+      loops: -1
+      show_tokens:
+        color1: off
+
+slides:
+  LilBillyModeIntro1:
+    widgets:
+    - type: video
+      video: LilBillyModeIntro1
+  LilBillyModeSkillshot1:
+    widgets:
+    - type: video
+      video: LilBillyModeSkillshot1
+      width: 1366
+      height: 768       
+  LilBillyModeSkillshot2:
+    widgets:
+    - type: video
+      video: LilBillyModeSkillshot2
+      width: 1366
+      height: 768   
+  mode_lil_billy_UI_01:
+    widgets:
+    - type: video
+      video: mode_lil_billy_UI_01
+      width: 1366
+      height: 768
+      
+slide_player:
+  mode_lil_billy_started: 
+    LilBillyModeIntro1:
+      priority: 500
+      expire: 12.3s
+  e_prep_lil_billy_drops_UI:
+    mode_lil_billy_UI_01:
+      priority: 400
+      expire: 60.7s
+  e_lil_billy_drops_hit1:
+    LilBillyModeSkillshot1:
+      priority: 500
+      expire: 3.4s
+  e_lil_billy_drops_hit2:
+    LilBillyModeSkillshot2:
+      priority: 500
+      expire: 4.5s
+
+counters:
+  cnt_lil_billy_drops_hit:
+    starting_count: 0
+    start_enabled: true
+    persist_state: false
+    count_events: lil_billy_drops_hit
+
+widgets:
+  w_lil_billy_drops_value:
+    - type: text
+      text: (player|lil_billy_drops_value)
+      number_grouping: true 
+      x: 80%
+      y: 40%
+      z: 7
+      font_size: 90
+      font_name: Mustkill     
+      outline_color: black
+      outline_width: 7
+  mode_lil_billy_drops_UI:
+    - type: image
+      image: hacksawUI
+      opacity: 0.5
+      y: 1
+      x: 1
+      z: 8
+      anchor_x: left
+      anchor_y: bottom
+    - type: text
+      text: (score)
+      number_grouping: true
+      y: 16
+      x: 25
+      z: 8
+      font_size: 36
+      anchor_x: left
+      anchor_y: bottom
+      font_name: AeroMaticsDisplaRegular
+      color: black
+    - type: text
+      text: (score)
+      number_grouping: true
+      y: 15
+      x: 26
+      z: 8
+      font_size: 36
+      anchor_x: left
+      anchor_y: bottom
+      font_name: AeroMaticsDisplaRegular
+      outline_color: f0cfab
+      outline_width: 2
+    - type: Text
+      text: 00:(player|lil_billy_lil_billy_60s_timer_tick)
+      font_size: 100
+      font_name: digitalclockfont
+      color: red
+      x: 50%
+      y: 90.2%
+      z: 8
+    - type: rectangle
+      width: 420
+      height: 130
+      x: 50%
+      y: 91.5%
+      z: 8
+      corner_radius: 20
+      corner_segments: 20
+      color: black     
+#visual bar of drop targets
+  w_visual_drops_bar:
+    - type: rectangle
+      width: 0
+      height: 45
+      x: 55.4%
+      y: 31%
+      z: 8
+      anchor_x: left
+      corner_radius: 10
+      corner_segments: 10
+      color: beartrap
+      animations:
+        player_lil_billy_drops_visual:
+         - property: width
+           value: (value)           
+    - type: rectangle
+      width: 400
+      height: 46
+      x: 70%
+      y: 31%
+      z: 8
+      color: black
+      corner_radius: 10
+      corner_segments: 10
+
+widget_player:
+ e_lil_billy_drops_hit1:
+   w_lil_billy_drops_value:
+     slide: LilBillyModeSkillshot1
+     action: add    
+ e_drop_hit2_delay:
+   w_lil_billy_drops_value:
+     slide: LilBillyModeSkillshot2
+     action: add   
+ slide_LilBillyModeIntro1_removed:
+   mode_lil_billy_drops_UI:
+     slide: mode_lil_billy_UI_01
+     action: add
+   w_visual_drops_bar:
+     slide: mode_lil_billy_UI_01
+     action: add     
+
+sound_player:
+  slide_LilBillyModeIntro1_removed:
+    LilBillyModeSongSkillshot:
+      action: play
+      loops: 0  
+  lil_billy_drops_hit:
+    LilBillyModeSkillshotDrop:
+      action: play  
+
+timers:
+  lil_billy_60s_timer:
+    start_value: 60
+    end_value: 0
+    direction: down
+    control_events:
+      - action: start
+        event: slide_LilBillyModeIntro1_removed

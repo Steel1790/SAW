@@ -6,7 +6,7 @@ mode:
  
 ball_saves:
   bs_reversebeartrap:
-    active_time: 5s
+    active_time: 11s
     hurry_up_time: 2s
 #    grace_period: 2s
 #    enable_events: mode_base_started
@@ -559,7 +559,7 @@ show_player:
     sh_reversebeartrap_ballsave:
       show_tokens:
         leds: l_live_again
-      loops: 4
+      loops: 9
   ball_save_bs_reversebeartrap_disabled:
     sh_reversebeartrap_ballsave_end:
       show_tokens:

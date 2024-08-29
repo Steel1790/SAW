@@ -6,7 +6,7 @@ mode:
  
 ball_saves:
   bs_razorwire:
-    active_time: 5s
+    active_time: 11s
     hurry_up_time: 2s
 #    grace_period: 2s
 #    enable_events: mode_base_started
@@ -637,7 +637,7 @@ show_player:
     sh_razorwire_ballsave:
       show_tokens:
         leds: l_live_again
-      loops: 4
+      loops: 9
     top_drop_chase:
       loops: -1
       speed: 14

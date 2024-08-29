@@ -274,7 +274,7 @@ coils:
   c_auto_plunger:
     number: 3208-0
     default_pulse_ms: 20
-    default_pulse_power: 0.8
+    default_pulse_power: 1.0
   c_diverter:
     number: 1616_1-14
     default_pulse_ms: 20

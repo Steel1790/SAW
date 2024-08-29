@@ -6,7 +6,7 @@ mode:
  
 ball_saves:
   bs_zeptest:
-    active_time: 5s
+    active_time: 11s
     hurry_up_time: 2s
 #    grace_period: 2s
 #    enable_events: mode_base_started
@@ -455,7 +455,7 @@ show_player:
     sh_zeptest_ballsave:
       show_tokens:
         leds: l_live_again
-      loops: 4
+      loops: 9
   ball_save_bs_zeptest_disabled:
     sh_zeptest_ballsave_end:
       show_tokens:

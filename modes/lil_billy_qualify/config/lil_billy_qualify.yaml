@@ -83,3 +83,9 @@ widgets:
       font_name: Mustkill     
       outline_color: black
       outline_width: 7
+
+sound_player:
+  sw_standup:
+    standupaudio:
+      action: stop
+      block: true
