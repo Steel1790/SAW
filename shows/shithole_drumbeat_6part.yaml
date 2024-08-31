@@ -23,10 +23,10 @@
     l_drillchair_mode: off -f1000ms
     post_a: off -f1000ms
     post_l: off -f1000ms
-    groundeffects: off -f1000ms
+    groundeffects: off -f500ms
     topper: off -f1000ms
-    leftspeaker: off -f1000ms
-    rightspeaker: off -f1000ms
+    leftspeaker: off -f500ms
+    rightspeaker: off -f500ms
     left_disc: off -f1000ms
 
 - time: '+150ms' #(da-dum 2)
@@ -51,10 +51,10 @@
     l_beartrap_mode: off -f1000ms
     post_b: off -f1000ms
     post_k: off -f1000ms
-    groundeffects: off -f1000ms
+    groundeffects: off -f500ms
     topper: off -f1000ms
-    leftspeaker: off -f1000ms
-    rightspeaker: off -f1000ms
+    leftspeaker: off -f500ms
+    rightspeaker: off -f500ms
     right_disc: off -f1000ms
 
 - time: '+500ms' #(da-dum 3)
@@ -79,10 +79,10 @@
     l_zeptest_mode: off -f1000ms
     post_c: off -f1000ms
     post_j: off -f1000ms
-    groundeffects: off -f1000ms
+    groundeffects: off -f500ms
     topper: off -f1000ms
-    leftspeaker: off -f1000ms
-    rightspeaker: off -f1000ms
+    leftspeaker: off -f500ms
+    rightspeaker: off -f500ms
     middle_disc: off -f1000ms
 
 - time: '+650ms' #2(da-dum 4)
@@ -107,10 +107,10 @@
     l_jelly_mode: off -f1000ms  
     post_d: off -f1000ms
     post_i: off -f1000ms
-    groundeffects: off -f1000ms
+    groundeffects: off -f500ms
     topper: off -f1000ms
-    leftspeaker: off -f1000ms
-    rightspeaker: off -f1000ms
+    leftspeaker: off -f500ms
+    rightspeaker: off -f500ms
     left_disc: off -f1000ms
 
 - time: '+350ms' #(da-dum 5)
@@ -135,10 +135,10 @@
     l_quadshotgun_mode: off -f1000ms
     post_e: off -f1000ms
     post_f: off -f1000ms
-    groundeffects: off -f1000ms
+    groundeffects: off -f500ms
     topper: off -f1000ms
-    leftspeaker: off -f1000ms
-    rightspeaker: off -f1000ms
+    leftspeaker: off -f500ms
+    rightspeaker: off -f500ms
     right_disc: off -f1000ms
 
 - time: '+250ms' #(da-dum 6)
@@ -184,10 +184,10 @@
     lower_top_bumper: off -f500ms
     post_g: off -f1000ms
     post_h: off -f1000ms  
-    groundeffects: off -f1000ms
+    groundeffects: off -f500ms
     topper: off -f1000ms
-    leftspeaker: off -f1000ms
-    rightspeaker: off -f1000ms
+    leftspeaker: off -f500ms
+    rightspeaker: off -f500ms
     middle_disc: off -f1000ms
 
 - time: '+1300ms' #(pause)
