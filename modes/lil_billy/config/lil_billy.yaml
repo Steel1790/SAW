@@ -3,9 +3,10 @@ mode:
   start_events: selection_mode_lilbilly_selected
   stop_events: mode_lil_billy_stopped, ball_ended, ball_will_end, player_lil_billy_lil_billy_60s_timer_tick{value < 1}
   priority: 191
-
-#45sec unlimited plunges for drop target skill shots. 
-#flippers disabled
+## cubicle MB. only 2 of 5 buttons in game will work to activate the flippers. wrong guesses trigger sound fx (random screams). 
+## every 10 sec callout + video changes the buttons what controls each flipper.
+## all major shots are jackpots and doubles each shot. Mode ends after 1min. 
+## use same mode song music
 random_event_player:
   mode_lil_billy_started:
     events:

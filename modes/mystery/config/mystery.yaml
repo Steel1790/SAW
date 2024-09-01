@@ -21,11 +21,17 @@ event_player:
   e_mystery_minus1million: e_slide_minus1million|8s
   e_mystery_extraballlit: e_slide_extraballlit|8s
   e_mystery_outlane: e_slide_outlane|8s
-  e_mystery_workshop: e_slide_workshop|8s
+  e_mystery_workshop_item: 
+    - e_mystery_workshop|11s
+    - e_slide_workshop|8s
   e_mystery_bonus: e_slide_bonus|8s
   e_mystery_playfield: e_slide_playfield|8s
-  e_mystery_letter: e_slide_letter|8s
-  e_mystery_mb_lock: e_slide_mb_lock|8s
+  e_mystery_letter_item: 
+    - e_mystery_letter|11s
+    - e_slide_letter|8s
+  e_mystery_mb_lock_item: 
+    - e_mystery_mb_lock|11s
+    - e_slide_mb_lock|8s
 
 #ball_holds:
 #  mystery_scoop:
@@ -78,15 +84,13 @@ random_event_player:
       e_mystery_minus1million: 5
       e_mystery_extraballlit: 6
       e_mystery_outlane: 14
-      e_mystery_workshop: 25
+      e_mystery_workshop_item: 25
       e_mystery_bonus: 7
       e_mystery_playfield: 7
-      e_mystery_letter{device.counters.cnt_saw_qualify.value<3}: 15
-      e_mystery_mb_lock{device.counters.cnt_jigsaw_mb_qualify.value<3}: 9
-#      mystery_award_3_event: 20
-#      mystery_award_4_event: 30
+      e_mystery_letter_item{device.counters.cnt_saw_qualify.value<3}: 15
+      e_mystery_mb_lock_item{device.counters.cnt_jigsaw_mb_qualify.value<3}: 9
     force_all: true
-  e_mystery_workshop:
+  e_mystery_workshop_item:
     events:
       minimode_pops_complete: 12.5
       minimode_standups_complete: 12.5 
