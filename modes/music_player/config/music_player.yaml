@@ -504,16 +504,21 @@ sound_player:
     rightrampexitaudio:
       action: play
       block: true
-  shot_left_outlane_hit{state=="ball_save_not_ready" and current_player.ball <= 2 }:
-    #TortureScream:
-    # refined_billy_laugh:
+  # shot_left_outlane_hit{state=="ball_save_not_ready" and current_player.ball <= 2 }:
+  #   #TortureScream:
+  #   # refined_billy_laugh:
+  #   YouCantDoThisToMe:
+  #     action: play
+  #     block: true
+  # shot_right_outlane_hit{state=="ball_save_not_ready" and current_player.ball <= 2 }:
+  #   YouCantDoThisToMe:
+  #     action: play
+  #     block: true
+  ball_drain{current_player.ball <= 2 }:
     YouCantDoThisToMe:
       action: play
       block: true
-  shot_right_outlane_hit{state=="ball_save_not_ready" and current_player.ball <= 2 }:
-    YouCantDoThisToMe:
-      action: play
-      block: true
+
   shot_left_outlane_hit{state=="lit"}:
     StillAlive:
       action: play
