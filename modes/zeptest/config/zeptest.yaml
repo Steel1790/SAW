@@ -40,20 +40,49 @@ timers:
         event: mode_zeptest_started
         
 variable_player:
+  logicblock_zeptest_hit{step==1}:
+    score: (4000000 + (current_player.syringes_used * 1000000)) * (current_player.pf_multiplier)
+  logicblock_zeptest_hit{step==2}:
+    score: (4000000 + (current_player.syringes_used * 1000000)) * (current_player.pf_multiplier)
   logicblock_zeptest_hit{step==3}:
-    score: (2000000 + (current_player.syringes_used * 1000000)) * (current_player.pf_multiplier)
+    score: (4000000 + (current_player.syringes_used * 1000000)) * (current_player.pf_multiplier)
   logicblock_zeptest_hit{step==4}:
-    score: (1000000 + (current_player.syringes_used * 1000000)) * (current_player.pf_multiplier)
+    score: (3000000 + (current_player.syringes_used * 1000000)) * (current_player.pf_multiplier)
   logicblock_zeptest_hit{step==5}:
-    score: (1000000 + (current_player.syringes_used * 1000000)) * (current_player.pf_multiplier)
+    score: (4000000 + (current_player.syringes_used * 1000000)) * (current_player.pf_multiplier)
   #logicblock_zeptest_hit{step==6}:
   #  score: 1000000    
   mode_zeptest_complete:
-    score: (5000000 + (current_player.syringes_used * 1500000)) * (current_player.pf_multiplier)
+    score: (5000000 + (current_player.zeptest_timer_bonus) + (current_player.syringes_used * 1500000)) * (current_player.pf_multiplier)
   timer_your_timer_tick:
     60s_zeptest_timer:
       int: device.timers.your_timer.ticks_remaining
       action: set        
+#time bonus reward
+  player_zeptest_60s_zeptest_timer_tick{value==60}:
+    zeptest_timer_bonus:
+      int: 15000000
+      action: set
+  player_zeptest_60s_zeptest_timer_tick{value==50}:
+    zeptest_timer_bonus:
+      int: 1000000
+      action: set
+  player_zeptest_60s_zeptest_timer_tick{value==40}:
+    zeptest_timer_bonus:
+      int: 6000000
+      action: set
+  player_zeptest_60s_zeptest_timer_tick{value==30}:
+    zeptest_timer_bonus:
+      int: 4500000
+      action: set
+  player_zeptest_60s_zeptest_timer_tick{value==20}:
+    zeptest_timer_bonus:
+      int: 3000000
+      action: set
+  player_zeptest_60s_zeptest_timer_tick{value==10}:
+    zeptest_timer_bonus:
+      int: 0
+      action: set
     
 slides:
   zeptestvideo:

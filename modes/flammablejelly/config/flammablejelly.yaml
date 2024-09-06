@@ -16,13 +16,20 @@ ball_saves:
     auto_launch: true
     balls_to_save: 1
 
+random_event_player:
+  mode_flammablejelly_started:
+    events:
+      e_jelly_hit1: 16.7
+      e_jelly_hit2: 16.7
+      e_jelly_hit3: 16.7
+      e_jelly_hit4: 16.7
+      e_jelly_hit5: 16.7
+      e_jelly_hit6: 16.7
+
 sequences:
   flammablejelly:
     events:
-      - s_right_standup_active
-      - sw_loop
-      - s_left_standup_active
-      #- sw_loop
+      - flammablejelly_p1_complete
       - drop_target_dt_upper_drop1_down    
     reset_on_complete: false
     persist_state: true
@@ -43,10 +50,12 @@ timers:
       - event: e_stop_candle
         action: set_tick_interval
         value: 1
+      - event: player_flammablejelly_mode_complete
+        action: stop
       #- action: add
       #  value: 30
       #  event: shot_flammablejelly_button_sp_flammablejelly_lit_hit
-  flammablejelly_3x_timer:
+  flammablejelly_2x_timer:
     start_value: 30
     end_value: 0
     direction: down
@@ -56,32 +65,115 @@ timers:
         
 variable_player:
   logicblock_flammablejelly_hit{step==1}:
-    score: (500000 * current_player.candle_multiplier) * (current_player.pf_multiplier)
-  logicblock_flammablejelly_hit{step==2}:
-    score: (1000000 * current_player.candle_multiplier) * (current_player.pf_multiplier)
-  logicblock_flammablejelly_hit{step==3}:
-    score: (1000000 * current_player.candle_multiplier) * (current_player.pf_multiplier)
+    score: (8000000 * current_player.candle_multiplier) * (current_player.pf_multiplier)
+  sg_flammablejelly_jelly_lit_hit:
+    score: (2000000 * current_player.candle_multiplier) * (current_player.pf_multiplier)
+  # logicblock_flammablejelly_hit{step==2}:
+  #   score: (1000000 * current_player.candle_multiplier) * (current_player.pf_multiplier)
+  # logicblock_flammablejelly_hit{step==3}:
+  #   score: (1000000 * current_player.candle_multiplier) * (current_player.pf_multiplier)
   #logicblock_flammablejelly_hit{step==4}:
   #  score: 1000000    
   mode_flammablejelly_complete:
-    score: (5000000 + (current_player.candles_used * 3000000)) * (current_player.pf_multiplier)   
+    score: (5000000 + (current_player.key_combination_bonus) + (current_player.candles_used * 3000000)) * (current_player.pf_multiplier)   
   timer_your_timer_tick:
     60s_flammablejelly_timer:
       int: device.timers.your_timer.ticks_remaining
       action: set      
-    flammablejelly_3x_timer:
+    flammablejelly_2x_timer:
       int: device.timers.your_timer.ticks_remaining
       action: set    
 # candle action button
   shot_flammablejelly_button_sp_flammablejelly_lit_hit:
     candle_multiplier:
-      int: 3
+      int: 2
       action: set  
-  timer_flammablejelly_3x_timer_stopped:
+  timer_flammablejelly_2x_timer_stopped:
     candle_multiplier:
       int: 1
       action: set
-    
+#time bonus reward
+  player_flammablejelly_60s_flammablejelly_timer_tick{value==60}:
+    key_combination_bonus:
+      int: 15000000
+      action: set
+  player_flammablejelly_60s_flammablejelly_timer_tick{value==50}:
+    key_combination_bonus:
+      int: 1000000
+      action: set
+  player_flammablejelly_60s_flammablejelly_timer_tick{value==40}:
+    key_combination_bonus:
+      int: 6000000
+      action: set
+  player_flammablejelly_60s_flammablejelly_timer_tick{value==30}:
+    key_combination_bonus:
+      int: 4500000
+      action: set
+  player_flammablejelly_60s_flammablejelly_timer_tick{value==20}:
+    key_combination_bonus:
+      int: 3000000
+      action: set
+  player_flammablejelly_60s_flammablejelly_timer_tick{value==10}:
+    key_combination_bonus:
+      int: 0
+      action: set
+
+
+counters:
+  flammablejelly_left_loop_counter:
+    starting_count: 0
+    count_complete_value: 1
+    enable_events: e_jelly_hit1 
+#    start_enabled: true
+    persist_state: true
+    reset_on_complete: false
+    events_when_complete: flammablejelly_p1_complete
+    count_events: shot_flammablejelly_left_loop_sp_jelly_jelly_lit_hit
+  flammablejelly_left_standup_counter:
+    starting_count: 0
+    count_complete_value: 1
+    enable_events: e_jelly_hit2
+#    start_enabled: true
+    persist_state: true
+    reset_on_complete: false
+    events_when_complete: flammablejelly_p1_complete
+    count_events: shot_flammablejelly_left_standup_sp_jelly_jelly_lit_hit
+  flammablejelly_left_standup_right_ramp_counter:
+    starting_count: 0
+    count_complete_value: 1
+    enable_events: e_jelly_hit3 
+#    start_enabled: true
+    persist_state: true
+    reset_on_complete: false
+    events_when_complete: flammablejelly_p1_complete
+    count_events: shot_flammablejelly_left_standup_rightramp_sp_jelly_jelly_lit_hit
+  flammablejelly_right_standup_right_ramp_counter:
+    starting_count: 0
+    count_complete_value: 1
+    enable_events: e_jelly_hit4
+#    start_enabled: true
+    persist_state: true
+    reset_on_complete: false
+    events_when_complete: flammablejelly_p1_complete
+    count_events: shot_flammablejelly_right_standup_rightramp_sp_jelly_jelly_lit_hit
+  flammablejelly_right_loop_counter:
+    starting_count: 0
+    count_complete_value: 1
+    enable_events: e_jelly_hit5
+#    start_enabled: true
+    persist_state: true
+    reset_on_complete: false
+    events_when_complete: flammablejelly_p1_complete
+    count_events: shot_flammablejelly_right_loop_sp_jelly_jelly_lit_hit
+  flammablejelly_right_standup_counter:
+    starting_count: 0
+    count_complete_value: 1
+    enable_events: e_jelly_hit6
+#    start_enabled: true
+    persist_state: true
+    reset_on_complete: false
+    events_when_complete: flammablejelly_p1_complete
+    count_events: shot_flammablejelly_right_standup_sp_jelly_jelly_lit_hit
 slides:
   flammablejellyvideo:
     widgets:
@@ -338,7 +430,7 @@ widgets:
       y: 20%
       z: 2     
     - type: Text
-      text: (player|flammablejelly_flammablejelly_3x_timer_tick)
+      text: (player|flammablejelly_flammablejelly_2x_timer_tick)
       font_size: 30
       font_name: Mustkill
       outline_color: black
@@ -348,7 +440,7 @@ widgets:
       y: 8%   
       z: 2
     - type: Text
-      text: 3X
+      text: 2X
       font_size: 45
       font_name: Mustkill
       outline_color: black
@@ -402,19 +494,19 @@ widget_player:
    w_candle_button:
      slide: sl_mode_flammablejelly04
      action: add
- timer_flammablejelly_3x_timer_stopped:
+ timer_flammablejelly_2x_timer_stopped:
   w_candle_button:
     slide: sl_mode_flammablejelly01
     action: remove
- e_jelly_3x_slide02_off:
+ e_jelly_2x_slide02_off:
   w_candle_button:
     slide: sl_mode_flammablejelly02
     action: remove
- e_jelly_3x_slide03_off:
+ e_jelly_2x_slide03_off:
   w_candle_button:
     slide: sl_mode_flammablejelly03
     action: remove
- e_jelly_3x_slide04_off:
+ e_jelly_2x_slide04_off:
   w_candle_button:
     slide: sl_mode_flammablejelly04
     action: remove
@@ -430,23 +522,7 @@ slide_player:
       expire: 60.5s
   logicblock_flammablejelly_updated{value==1}:
     sl_mode_flammablejelly01:
-     action: remove
-    sl_mode_flammablejelly02:
-      priority: 400
-      expire: 60.5s
-  logicblock_flammablejelly_updated{value==2}:
-    sl_mode_flammablejelly02:
-     action: remove
-    sl_mode_flammablejelly03:
-      priority: 400
-      expire: 60.5s
-  #logicblock_flammablejelly_hit{step==4}:
-  logicblock_flammablejelly_updated{value==3}:
-    sl_mode_flammablejelly03:
-     action: remove
-    XMarksTheSpotVideo:
-      priority: 406
-      expire: 2.1s    
+     action: remove   
     sl_mode_flammablejelly04:
       priority: 400
       expire: 60.5s
@@ -455,16 +531,14 @@ slide_player:
       action: play
       priority: 400
       expire: 5s
-  logicblock_flammablejelly_hit{step==1}:
+  sg_flammablejelly_jelly_lit_hit:
     FlammableJellyModeShot1:
       action: play
       priority: 401
       expire: 2.4s
-  logicblock_flammablejelly_hit{step==2}:
-    FlammableJellyModeShot1:
-      action: play
-      priority: 401
-      expire: 2.4s
+    # XMarksTheSpotVideo:
+    #   priority: 406
+    #   expire: 2.1s 
 
 shows:
   sh_flammablejelly_ballsave:
@@ -499,6 +573,17 @@ shows:
     - duration: 0.15s
       lights:
         (leds): off
+  sh_jelly_on:
+    - duration: 0.3s
+      lights:
+        (leds): jelly
+    - duration: 0.3s
+      lights:
+        (leds): off
+  sh_jelly_not_ready:
+    - duration: 0.3s
+      lights:
+        (leds): off
 
 show_player:
   player_flammablejelly_60s_flammablejelly_timer_tick{value==62}:
@@ -520,51 +605,51 @@ show_player:
         leds: l_live_again
       loops: -1
 #mode progress lights
-  logicblock_flammablejelly_updated{value==0}:
-      flammablejelly_progress_p1:
-        loops: -1
-        show_tokens:
-          leds: l_right_standup_arrow
-          color1: jelly
-  logicblock_flammablejelly_updated{value==1}:
-      fire_starposts:
-        loops: 1
-        speed: 20
-        priority: 170
-      speaker_flammable_jelly:
-        loops: 1
-        speed: 20
-      flammablejelly_progress_p1:
-        loops: -1
-        show_tokens:
-          leds: l_right_standup_arrow
-          color1: off
-      flammablejelly_progress_p2:
-        loops: -1
-        show_tokens:
-          leds: orbit
-          color1: jelly
-  logicblock_flammablejelly_updated{value==2}:
-      fire_starposts:
-        loops: 1
-        speed: 20
-        priority: 170
-      speaker_flammable_jelly:
-        loops: 1
-        speed: 20
-      flammablejelly_progress_p2:
-        loops: -1
-        show_tokens:
-          leds: orbit
-          color1: off
-      fire_top_pops:
-        loops: -1
-        speed: 30
-      flammablejelly_progress_p1:
-        loops: -1
-        show_tokens:
-          leds: l_left_standup_arrow
-          color1: jelly
+  # logicblock_flammablejelly_updated{value==0}:
+  #     flammablejelly_progress_p1:
+  #       loops: -1
+  #       show_tokens:
+  #         leds: l_right_standup_arrow
+  #         color1: jelly
+  # logicblock_flammablejelly_updated{value==1}:
+  #     fire_starposts:
+  #       loops: 1
+  #       speed: 20
+  #       priority: 170
+  #     speaker_flammable_jelly:
+  #       loops: 1
+  #       speed: 20
+      # flammablejelly_progress_p1:
+      #   loops: -1
+      #   show_tokens:
+      #     leds: l_right_standup_arrow
+      #     color1: off
+      # flammablejelly_progress_p2:
+      #   loops: -1
+      #   show_tokens:
+      #     leds: orbit
+      #     color1: jelly
+  # logicblock_flammablejelly_updated{value==2}:
+  #     fire_starposts:
+  #       loops: 1
+  #       speed: 20
+  #       priority: 170
+  #     speaker_flammable_jelly:
+  #       loops: 1
+  #       speed: 20
+  #     flammablejelly_progress_p2:
+  #       loops: -1
+  #       show_tokens:
+  #         leds: orbit
+  #         color1: off
+  #     fire_top_pops:
+  #       loops: -1
+  #       speed: 30
+  #     flammablejelly_progress_p1:
+  #       loops: -1
+  #       show_tokens:
+  #         leds: l_left_standup_arrow
+  #         color1: jelly
   #logicblock_flammablejelly_hit{step==3}:
       #fire_starposts:
       #  loops: 1
@@ -580,7 +665,12 @@ show_player:
       #  show_tokens:
       #    leds: orbit
       #    color1: jelly
-  logicblock_flammablejelly_updated{value==3}:
+  sg_flammablejelly_jelly_lit_hit: 
+      fire_starposts:
+       loops: 1
+       speed: 20
+       priority: 170
+  logicblock_flammablejelly_updated{value==1}:
       top_drop_chase:
         loops: -1
         speed: 14
@@ -596,11 +686,11 @@ show_player:
       fire_top_pops:
         loops: -1
         speed: 30
-      flammablejelly_progress_p1:
-        loops: -1
-        show_tokens:
-          leds: l_left_standup_arrow
-          color1: off
+      # flammablejelly_progress_p1:
+      #   loops: -1
+      #   show_tokens:
+      #     leds: l_left_standup_arrow
+      #     color1: off
   #logicblock_flammablejelly_hit{step==4}:
   #    fire_starposts:
   #      loops: 1
@@ -739,13 +829,94 @@ sound_player:
       action: play
       block: true
 
+shots:
+  shot_flammablejelly_left_loop:
+    reset_events: mode_flammablejelly_stopped, player_turn_stopped, player_turn_ended
+    switches: s_left_loop_bottom, s_left_loop_top
+    profile: sp_jelly
+    show_tokens:
+      leds: l_left_loop_arrow
+    control_events:
+      - events: mode_flammablejelly_started
+        state: 1
+      - events: shot_flammablejelly_left_loop_sp_jelly_jelly_lit_hit
+        state: 0
+  shot_flammablejelly_left_standup_rightramp:
+    reset_events: mode_flammablejelly_stopped, player_turn_stopped, player_turn_ended
+    switches: s_left_standup_right_ramp
+    profile: sp_jelly
+    show_tokens:
+      leds: l_left_standup_right_ramp_arrow
+    control_events:
+      - events: mode_flammablejelly_started
+        state: 1
+      - events: shot_flammablejelly_left_standup_rightramp_sp_jelly_jelly_lit_hit
+        state: 0
+  shot_flammablejelly_right_standup_rightramp:
+    reset_events: mode_flammablejelly_stopped, player_turn_stopped, player_turn_ended
+    switches: s_right_standup_right_ramp
+    profile: sp_jelly
+    show_tokens:
+      leds: l_right_standup_right_ramp_arrow
+    control_events:
+      - events: mode_flammablejelly_started
+        state: 1
+      - events: shot_flammablejelly_right_standup_rightramp_sp_jelly_jelly_lit_hit
+        state: 0
+  shot_flammablejelly_right_loop:
+    reset_events: mode_flammablejelly_stopped, player_turn_stopped, player_turn_ended
+    switches: s_right_loop_bottom, s_right_loop_top
+    profile: sp_jelly
+    show_tokens:
+      leds: l_right_loop_arrow
+    control_events:
+      - events: mode_flammablejelly_started
+        state: 1
+      - events: shot_flammablejelly_right_loop_sp_jelly_jelly_lit_hit
+        state: 0
+  shot_flammablejelly_right_standup:
+    reset_events: mode_flammablejelly_stopped, player_turn_stopped, player_turn_ended
+    switches: s_right_standup
+    profile: sp_jelly
+    show_tokens:
+      leds: l_right_standup_arrow
+    control_events:
+      - events: mode_flammablejelly_started
+        state: 1
+      - events: shot_flammablejelly_right_standup_sp_jelly_jelly_lit_hit
+        state: 0
+  shot_flammablejelly_left_standup:
+    reset_events: mode_flammablejelly_stopped, player_turn_stopped, player_turn_ended
+    switches: s_left_standup
+    profile: sp_jelly
+    show_tokens:
+      leds: l_left_standup_arrow
+    control_events:
+      - events: mode_flammablejelly_started
+        state: 1
+      - events: shot_flammablejelly_left_standup_sp_jelly_jelly_lit_hit             
+        state: 0
+
+shot_profiles:
+  sp_jelly:
+    advance_on_hit: false
+    states:
+      - name: jelly_not_ready
+        show: "sh_jelly_not_ready"
+      - name: jelly_lit
+        show: "sh_jelly_on"
+
+shot_groups:
+  sg_flammablejelly:
+    shots: shot_flammablejelly_left_loop, shot_flammablejelly_left_standup_rightramp, shot_flammablejelly_right_standup_rightramp, shot_flammablejelly_right_loop, shot_flammablejelly_right_standup, shot_flammablejelly_left_standup
+
 event_player: 
   slide_sl_mode_flammablejelly01_active: e_primary_mode_active
   mode_flammablejelly_stopping{mode.shackle_multiball.active==True}: e_mode_qualify_disabled|0.5s
   mode_flammablejelly_stopping{mode.jigsaw_multiball.active==True}: e_mode_qualify_disabled|0.5s
   mode_flammablejelly_stopping{mode.hacksaw_multiball.active==True}: e_mode_qualify_disabled|0.5s
   shot_flammablejelly_button_sp_flammablejelly_lit_hit: e_stop_candle|20s, e_start_candle_multiplier|10s
-  timer_flammablejelly_3x_timer_stopped:
-    - e_jelly_3x_slide02_off|0.3s
-    - e_jelly_3x_slide03_off|0.6s
-    - e_jelly_3x_slide04_off|0.9s
+  timer_flammablejelly_2x_timer_stopped:
+    - e_jelly_2x_slide02_off|0.3s
+    - e_jelly_2x_slide03_off|0.6s
+    - e_jelly_2x_slide04_off|0.9s

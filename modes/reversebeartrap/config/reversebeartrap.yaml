@@ -64,17 +64,17 @@ timers:
 
 variable_player:
   logicblock_reversebeartrap_hit{step==1}:
-    score: (1000000 + (current_player.keys_used * 500000) + (current_player.spinner_value * 42500)) * (current_player.pf_multiplier)
+    score: (3000000 + (current_player.keys_used * 500000) + (current_player.spinner_value * 42500)) * (current_player.pf_multiplier)
   logicblock_reversebeartrap_hit{step==2}:
-    score: (1000000 + (current_player.keys_used * 500000) + (current_player.spinner_value * 42500)) * (current_player.pf_multiplier)
+    score: (3000000 + (current_player.keys_used * 500000) + (current_player.spinner_value * 42500)) * (current_player.pf_multiplier)
   logicblock_reversebeartrap_hit{step==3}:
-    score: (1500000 + (current_player.keys_used * 750000) + (current_player.spinner_value * 42500)) * (current_player.pf_multiplier)
+    score: (4500000 + (current_player.keys_used * 750000) + (current_player.spinner_value * 42500)) * (current_player.pf_multiplier)
   logicblock_reversebeartrap_hit{step==4}:
-    score: (1000000 + (current_player.keys_used * 500000) + (current_player.spinner_value * 42500)) * (current_player.pf_multiplier)
+    score: (3000000 + (current_player.keys_used * 500000) + (current_player.spinner_value * 42500)) * (current_player.pf_multiplier)
   logicblock_reversebeartrap_hit{step==5}:
-    score: (1500000 + (current_player.keys_used * 750000) + (current_player.spinner_value * 42500)) * (current_player.pf_multiplier)
+    score: (4500000 + (current_player.keys_used * 750000) + (current_player.spinner_value * 42500)) * (current_player.pf_multiplier)
   mode_reversebeartrap_complete:
-    score: (6000000 + (current_player.keys_used * 1000000) + (current_player.spinner_value * 42500)) * (current_player.pf_multiplier)
+    score: (6000000 + (current_player.beartrap_timer_bonus) + (current_player.keys_used * 1000000) + (current_player.spinner_value * 145750)) * (current_player.pf_multiplier)
        
   timer_your_timer_tick:
     120s_reversebeartrap_timer:
@@ -93,7 +93,32 @@ variable_player:
       int: (count)
     spinner_value_display:
       action: set
-      int: (count) * 45000
+      int: (count) * 145750
+#time bonus reward
+  player_reversebeartrap_120s_reversebeartrap_timer_tick{value==120}:
+    beartrap_timer_bonus:
+      int: 15000000
+      action: set
+  player_reversebeartrap_120s_reversebeartrap_timer_tick{value==100}:
+    beartrap_timer_bonus:
+      int: 1000000
+      action: set
+  player_reversebeartrap_120s_reversebeartrap_timer_tick{value==80}:
+    beartrap_timer_bonus:
+      int: 6000000
+      action: set
+  player_reversebeartrap_120s_reversebeartrap_timer_tick{value==60}:
+    beartrap_timer_bonus:
+      int: 4500000
+      action: set
+  player_reversebeartrap_120s_reversebeartrap_timer_tick{value==40}:
+    beartrap_timer_bonus:
+      int: 3000000
+      action: set
+  player_reversebeartrap_120s_reversebeartrap_timer_tick{value==20}:
+    beartrap_timer_bonus:
+      int: 0
+      action: set
 
 counters:
   cnt_reversebeartrap_spinner:

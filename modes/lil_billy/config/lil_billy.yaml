@@ -22,7 +22,7 @@ random_event_player:
 event_player:
   e_lilbilly_tricycle: flippers_off
   mode_lil_billy_stopped: flippers_on
-  slide_LilBillyModeIntro1_removed: e_primary_mode_active
+  slide_mode_lil_billy_UI_01_active: e_primary_mode_active
   e_lil_billy_drops_hit2: e_drop_hit2_delay|2.3s
   slide_LilBillyModeIntro1_created: e_prep_lil_billy_drops_UI|12s
 

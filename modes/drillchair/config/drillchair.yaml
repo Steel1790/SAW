@@ -55,7 +55,7 @@ timers:
 counters:
   drillchair_pops_counter:
     starting_count: 0
-    count_complete_value: 10
+    count_complete_value: 6
     start_enabled: true
     persist_state: true
     reset_on_complete: false
@@ -64,7 +64,7 @@ counters:
     count_events: sw_bottom_pops
   drillchair_pops2_counter:
     starting_count: 0
-    count_complete_value: 10
+    count_complete_value: 6
     #enable_events: logicblock_drillchair_updated{value==2}
     disable_events: drillchair_pops2_complete
     start_enabled: true
@@ -120,20 +120,20 @@ variable_player:
   #logicblock_drillchair_hit{step==3}:
   #  score: 1000000 + (current_player.handguns_used * 1250000)
   mode_drillchair_complete:
-    score: (6500000 + (current_player.handguns_used * 1000000)) * (current_player.pf_multiplier)
+    score: (6500000 + (current_player.drillchair_timer_bonus) + (current_player.handguns_used * 1000000)) * (current_player.pf_multiplier)
   counter_drillchair_pops_counter_hit:
-    score: (175000 + (current_player.handguns_used * 100000)) * (current_player.pf_multiplier)
+    score: (1500000 + (current_player.handguns_used * 100000)) * (current_player.pf_multiplier)
     drillchair_pops_counter:
       action: set
-      int: (count)*60
+      int: (count)*100
     drillchair_visual_pops_counter:
       action: set
       int: (count)
   counter_drillchair_pops2_counter_hit:    
-    score: (175000 + (current_player.handguns_used * 100000)) * (current_player.pf_multiplier)
+    score: (1500000 + (current_player.handguns_used * 100000)) * (current_player.pf_multiplier)
     drillchair_pops2_counter:
       action: set
-      int: (count)*60
+      int: (count)*100
     drillchair_visual_pops2_counter:
       action: set
       int: (count)      
@@ -141,6 +141,31 @@ variable_player:
   timer_your_timer_tick:
     drillchair_60s_timer:
       int: device.timers.your_timer.ticks_remaining
+      action: set
+#time bonus reward
+  player_drillchair_drillchair_60s_timer_tick{value==60}:
+    drillchair_timer_bonus:
+      int: 15000000
+      action: set
+  player_drillchair_drillchair_60s_timer_tick{value==50}:
+    drillchair_timer_bonus:
+      int: 1000000
+      action: set
+  player_drillchair_drillchair_60s_timer_tick{value==40}:
+    drillchair_timer_bonus:
+      int: 6000000
+      action: set
+  player_drillchair_drillchair_60s_timer_tick{value==30}:
+    drillchair_timer_bonus:
+      int: 4500000
+      action: set
+  player_drillchair_drillchair_60s_timer_tick{value==20}:
+    drillchair_timer_bonus:
+      int: 3000000
+      action: set
+  player_drillchair_drillchair_60s_timer_tick{value==10}:
+    drillchair_timer_bonus:
+      int: 0
       action: set
 
 ## action button
@@ -307,7 +332,7 @@ slides:
 #      x: 825
 #      y: 85%
     - type: Text
-      text: (player|drillchair_visual_pops_counter) / 10 lower pops
+      text: (player|drillchair_visual_pops_counter) / 6 lower pops
       font_size: 50
       font_name: TrajanProRegular
       outline_color: black
@@ -316,7 +341,7 @@ slides:
       x: 25%
       y: 35%
     - type: Text
-      text: (player|drillchair_visual_pops2_counter) / 10 upper pops
+      text: (player|drillchair_visual_pops2_counter) / 6 upper pops
       font_size: 50
       font_name: TrajanProRegular
       outline_color: black
@@ -406,11 +431,11 @@ slide_player:
       priority: 400
       expire: 5s
 
-  logicblock_drillchair_pops_counter_hit{hits==4}:
+  logicblock_drillchair_pops_counter_hit{hits==1}:
     mode_drillchair_shot02:
       priority: 401
       expire: 3.1s
-  logicblock_drillchair_pops2_counter_hit{hits==4}: 
+  logicblock_drillchair_pops2_counter_hit{hits==1}: 
     mode_drillchair_shot01:
       priority: 401
       expire: 3.6s
@@ -849,20 +874,20 @@ show_player:
           leds: l_left_bottom_bumper_1, l_right_bottom_bumper_1, l_top_bottom_bumper_1, l_left_bottom_bumper_2, l_right_bottom_bumper_2, l_top_bottom_bumper_2, l_left_bottom_bumper_16, l_right_bottom_bumper_16
           color1: drillchair
         priority: 181
+  # logicblock_drillchair_pops_counter_updated{value==2}:
+  #     drillchair_pops_progress:
+  #       loops: -1
+  #       show_tokens:
+  #         leds: l_left_bottom_bumper_1, l_right_bottom_bumper_1, l_top_bottom_bumper_1, l_left_bottom_bumper_2, l_right_bottom_bumper_2, l_top_bottom_bumper_2, l_left_bottom_bumper_16, l_right_bottom_bumper_16, l_left_bottom_bumper_3, l_right_bottom_bumper_3, l_top_bottom_bumper_3, l_left_bottom_bumper_15, l_right_bottom_bumper_15
+  #         color1: drillchair
+  #       priority: 181
+  #     starpost_cycle:
+  #       loops: 1
+  #       speed: 20
+  #       show_tokens:
+  #         color1: drillchair
+  #       priority: 170 
   logicblock_drillchair_pops_counter_updated{value==2}:
-      drillchair_pops_progress:
-        loops: -1
-        show_tokens:
-          leds: l_left_bottom_bumper_1, l_right_bottom_bumper_1, l_top_bottom_bumper_1, l_left_bottom_bumper_2, l_right_bottom_bumper_2, l_top_bottom_bumper_2, l_left_bottom_bumper_16, l_right_bottom_bumper_16, l_left_bottom_bumper_3, l_right_bottom_bumper_3, l_top_bottom_bumper_3, l_left_bottom_bumper_15, l_right_bottom_bumper_15
-          color1: drillchair
-        priority: 181
-      starpost_cycle:
-        loops: 1
-        speed: 20
-        show_tokens:
-          color1: drillchair
-        priority: 170 
-  logicblock_drillchair_pops_counter_updated{value==3}:
       drillchair_pops_progress:
         loops: -1
         show_tokens:
@@ -875,7 +900,7 @@ show_player:
         show_tokens:
           color1: drillchair
         priority: 170 
-  logicblock_drillchair_pops_counter_updated{value==5}:
+  logicblock_drillchair_pops_counter_updated{value==3}:
       drillchair_pops_progress:
         loops: -1
         show_tokens:
@@ -888,7 +913,7 @@ show_player:
         show_tokens:
           color1: drillchair
         priority: 170 
-  logicblock_drillchair_pops_counter_updated{value==7}:
+  logicblock_drillchair_pops_counter_updated{value==4}:
       drillchair_pops_progress:
         loops: -1
         show_tokens:
@@ -901,7 +926,7 @@ show_player:
         show_tokens:
           color1: drillchair
         priority: 170 
-  logicblock_drillchair_pops_counter_updated{value==8}:
+  logicblock_drillchair_pops_counter_updated{value==5}:
       drillchair_pops_progress:
         loops: -1
         show_tokens:
@@ -914,14 +939,14 @@ show_player:
         show_tokens:
           color1: drillchair
         priority: 170 
-  logicblock_drillchair_pops_counter_updated{value==9}:
-      drillchair_pops_progress:
-        loops: -1
-        show_tokens:
-          leds: l_left_bottom_bumper_1, l_right_bottom_bumper_1, l_top_bottom_bumper_1, l_left_bottom_bumper_2, l_right_bottom_bumper_2, l_top_bottom_bumper_2, l_left_bottom_bumper_16, l_right_bottom_bumper_16, l_left_bottom_bumper_3, l_right_bottom_bumper_3, l_top_bottom_bumper_3, l_left_bottom_bumper_15, l_right_bottom_bumper_15, l_left_bottom_bumper_4, l_right_bottom_bumper_4, l_top_bottom_bumper_4, l_left_bottom_bumper_14, l_right_bottom_bumper_14, l_left_bottom_bumper_5, l_right_bottom_bumper_5, l_top_bottom_bumper_5, l_left_bottom_bumper_13, l_right_bottom_bumper_13, l_left_bottom_bumper_6, l_right_bottom_bumper_6, l_top_bottom_bumper_6, l_left_bottom_bumper_12, l_right_bottom_bumper_12, l_top_bottom_bumper_12, l_left_bottom_bumper_7, l_right_bottom_bumper_7, l_top_bottom_bumper_7, l_left_bottom_bumper_11, l_right_bottom_bumper_11, l_top_bottom_bumper_11, l_left_bottom_bumper_8, l_right_bottom_bumper_8, l_top_bottom_bumper_8, l_left_bottom_bumper_10, l_right_bottom_bumper_10, l_top_bottom_bumper_10
-          color1: drillchair
-        priority: 181
-  logicblock_drillchair_pops_counter_updated{value==10}:
+  # logicblock_drillchair_pops_counter_updated{value==9}:
+  #     drillchair_pops_progress:
+  #       loops: -1
+  #       show_tokens:
+  #         leds: l_left_bottom_bumper_1, l_right_bottom_bumper_1, l_top_bottom_bumper_1, l_left_bottom_bumper_2, l_right_bottom_bumper_2, l_top_bottom_bumper_2, l_left_bottom_bumper_16, l_right_bottom_bumper_16, l_left_bottom_bumper_3, l_right_bottom_bumper_3, l_top_bottom_bumper_3, l_left_bottom_bumper_15, l_right_bottom_bumper_15, l_left_bottom_bumper_4, l_right_bottom_bumper_4, l_top_bottom_bumper_4, l_left_bottom_bumper_14, l_right_bottom_bumper_14, l_left_bottom_bumper_5, l_right_bottom_bumper_5, l_top_bottom_bumper_5, l_left_bottom_bumper_13, l_right_bottom_bumper_13, l_left_bottom_bumper_6, l_right_bottom_bumper_6, l_top_bottom_bumper_6, l_left_bottom_bumper_12, l_right_bottom_bumper_12, l_top_bottom_bumper_12, l_left_bottom_bumper_7, l_right_bottom_bumper_7, l_top_bottom_bumper_7, l_left_bottom_bumper_11, l_right_bottom_bumper_11, l_top_bottom_bumper_11, l_left_bottom_bumper_8, l_right_bottom_bumper_8, l_top_bottom_bumper_8, l_left_bottom_bumper_10, l_right_bottom_bumper_10, l_top_bottom_bumper_10
+  #         color1: drillchair
+  #       priority: 181
+  logicblock_drillchair_pops_counter_updated{value==6}:
       drillchair_pops_progress:
         loops: -1
         show_tokens:
@@ -935,15 +960,15 @@ show_player:
           color1: drillchair
         priority: 170 
 
-  logicblock_drillchair_pops_counter_updated{value<10}:
+  logicblock_drillchair_pops_counter_updated{value<6}:
     flash_token:
       loops: -1
       show_tokens:
         led: bottom_bumper
         color1: drillchair
       priority: 180
-  logicblock_drillchair_pops2_counter_updated{value<10}:
-    flash_token:
+  logicblock_drillchair_pops2_counter_updated{value<6}:
+    flash_token_2:
       loops: -1
       show_tokens:
         led: top_bumper
@@ -1011,20 +1036,20 @@ show_player:
           leds: l_left_top_bumper_1, l_right_top_bumper_1, l_lower_top_bumper_1, l_left_top_bumper_2, l_right_top_bumper_2, l_lower_top_bumper_2, l_left_top_bumper_16, l_right_top_bumper_16
           color1: drillchair
         priority: 183
+  # logicblock_drillchair_pops2_counter_updated{value==2}:
+  #     drillchair_pops_progress:
+  #       loops: -1
+  #       show_tokens:
+  #         leds: l_left_top_bumper_1, l_right_top_bumper_1, l_lower_top_bumper_1, l_left_top_bumper_2, l_right_top_bumper_2, l_lower_top_bumper_2, l_left_top_bumper_16, l_right_top_bumper_16, l_left_top_bumper_3, l_right_top_bumper_3, l_lower_top_bumper_3, l_left_top_bumper_15, l_right_top_bumper_15
+  #         color1: drillchair
+  #       priority: 183
+  #     starpost_cycle:
+  #       loops: 1
+  #       speed: 20
+  #       show_tokens:
+  #         color1: drillchair
+  #       priority: 170 
   logicblock_drillchair_pops2_counter_updated{value==2}:
-      drillchair_pops_progress:
-        loops: -1
-        show_tokens:
-          leds: l_left_top_bumper_1, l_right_top_bumper_1, l_lower_top_bumper_1, l_left_top_bumper_2, l_right_top_bumper_2, l_lower_top_bumper_2, l_left_top_bumper_16, l_right_top_bumper_16, l_left_top_bumper_3, l_right_top_bumper_3, l_lower_top_bumper_3, l_left_top_bumper_15, l_right_top_bumper_15
-          color1: drillchair
-        priority: 183
-      starpost_cycle:
-        loops: 1
-        speed: 20
-        show_tokens:
-          color1: drillchair
-        priority: 170 
-  logicblock_drillchair_pops2_counter_updated{value==3}:
       drillchair_pops_progress:
         loops: -1
         show_tokens:
@@ -1037,7 +1062,7 @@ show_player:
         show_tokens:
           color1: drillchair
         priority: 170 
-  logicblock_drillchair_pops2_counter_updated{value==5}:
+  logicblock_drillchair_pops2_counter_updated{value==3}:
       drillchair_pops_progress:
         loops: -1
         show_tokens:
@@ -1050,7 +1075,7 @@ show_player:
         show_tokens:
           color1: drillchair
         priority: 170 
-  logicblock_drillchair_pops2_counter_updated{value==7}:
+  logicblock_drillchair_pops2_counter_updated{value==4}:
       drillchair_pops_progress:
         loops: -1
         show_tokens:
@@ -1063,7 +1088,7 @@ show_player:
         show_tokens:
           color1: drillchair
         priority: 170 
-  logicblock_drillchair_pops2_counter_updated{value==8}:
+  logicblock_drillchair_pops2_counter_updated{value==5}:
       drillchair_pops_progress:
         loops: -1
         show_tokens:
@@ -1076,14 +1101,14 @@ show_player:
         show_tokens:
           color1: drillchair
         priority: 170 
-  logicblock_drillchair_pops2_counter_updated{value==9}:
-      drillchair_pops_progress:
-        loops: -1
-        show_tokens:
-          leds: l_left_top_bumper_1, l_right_top_bumper_1, l_lower_top_bumper_1, l_left_top_bumper_2, l_right_top_bumper_2, l_lower_top_bumper_2, l_left_top_bumper_16, l_right_top_bumper_16, l_left_top_bumper_3, l_right_top_bumper_3, l_lower_top_bumper_3, l_left_top_bumper_15, l_right_top_bumper_15, l_left_top_bumper_4, l_right_top_bumper_4, l_lower_top_bumper_4, l_left_top_bumper_14, l_right_top_bumper_14, l_left_top_bumper_5, l_right_top_bumper_5, l_lower_top_bumper_5, l_left_top_bumper_13, l_right_top_bumper_13, l_left_top_bumper_6, l_right_top_bumper_6, l_lower_top_bumper_6, l_left_top_bumper_12, l_right_top_bumper_12, l_lower_top_bumper_12, l_left_top_bumper_7, l_right_top_bumper_7, l_lower_top_bumper_7, l_left_top_bumper_11, l_right_top_bumper_11, l_lower_top_bumper_11, l_left_top_bumper_8, l_right_top_bumper_8, l_lower_top_bumper_8, l_left_top_bumper_10, l_right_top_bumper_10, l_lower_top_bumper_10
-          color1: drillchair
-        priority: 183
-  logicblock_drillchair_pops2_counter_updated{value==10}:
+  # logicblock_drillchair_pops2_counter_updated{value==9}:
+  #     drillchair_pops_progress:
+  #       loops: -1
+  #       show_tokens:
+  #         leds: l_left_top_bumper_1, l_right_top_bumper_1, l_lower_top_bumper_1, l_left_top_bumper_2, l_right_top_bumper_2, l_lower_top_bumper_2, l_left_top_bumper_16, l_right_top_bumper_16, l_left_top_bumper_3, l_right_top_bumper_3, l_lower_top_bumper_3, l_left_top_bumper_15, l_right_top_bumper_15, l_left_top_bumper_4, l_right_top_bumper_4, l_lower_top_bumper_4, l_left_top_bumper_14, l_right_top_bumper_14, l_left_top_bumper_5, l_right_top_bumper_5, l_lower_top_bumper_5, l_left_top_bumper_13, l_right_top_bumper_13, l_left_top_bumper_6, l_right_top_bumper_6, l_lower_top_bumper_6, l_left_top_bumper_12, l_right_top_bumper_12, l_lower_top_bumper_12, l_left_top_bumper_7, l_right_top_bumper_7, l_lower_top_bumper_7, l_left_top_bumper_11, l_right_top_bumper_11, l_lower_top_bumper_11, l_left_top_bumper_8, l_right_top_bumper_8, l_lower_top_bumper_8, l_left_top_bumper_10, l_right_top_bumper_10, l_lower_top_bumper_10
+  #         color1: drillchair
+  #       priority: 183
+  logicblock_drillchair_pops2_counter_updated{value==6}:
       drillchair_pops2_progress:
         loops: -1
         show_tokens:
@@ -1166,29 +1191,28 @@ event_player:
     - sw_top_pops|0.25s
   shot_drillchair_button_sp_drillchair_lit_hit{device.counters.drillchair_pops_counter.value==5}:
     - sw_bottom_pops|0.1s
-    - sw_bottom_pops|0.15s
     - sw_top_pops|0.2s
     - sw_top_pops|0.25s
-  shot_drillchair_button_sp_drillchair_lit_hit{device.counters.drillchair_pops_counter.value==6}:
-    - sw_bottom_pops|0.1s
-    - sw_bottom_pops|0.15s
-    - sw_top_pops|0.25s
-  shot_drillchair_button_sp_drillchair_lit_hit{device.counters.drillchair_pops_counter.value==7}:
-    - sw_bottom_pops|0.1s
-    - sw_top_pops|0.2s
-    - sw_top_pops|0.25s
-  shot_drillchair_button_sp_drillchair_lit_hit{device.counters.drillchair_pops_counter.value==8}:
-    - sw_bottom_pops|0.1s
-    - sw_bottom_pops|0.15s
-    - sw_top_pops|0.2s
-    - sw_top_pops|0.25s
-  shot_drillchair_button_sp_drillchair_lit_hit{device.counters.drillchair_pops_counter.value==9}:
-    - sw_bottom_pops|0.1s
-    - sw_top_pops|0.15s
-    - sw_top_pops|0.2s
-    - sw_top_pops|0.25s
-  shot_drillchair_button_sp_drillchair_lit_hit{device.counters.drillchair_pops2_counter.value==10}:
-    - sw_top_pops|0.1s
-    - sw_top_pops|0.15s
-    - sw_top_pops|0.2s
-    - sw_top_pops|0.25s
+  # shot_drillchair_button_sp_drillchair_lit_hit{device.counters.drillchair_pops_counter.value==6}:
+  #   - sw_bottom_pops|0.1s
+  #   - sw_bottom_pops|0.15s
+  #   - sw_top_pops|0.25s
+  # shot_drillchair_button_sp_drillchair_lit_hit{device.counters.drillchair_pops_counter.value==7}:
+  #   - sw_bottom_pops|0.1s
+  #   - sw_top_pops|0.2s
+  #   - sw_top_pops|0.25s
+  # shot_drillchair_button_sp_drillchair_lit_hit{device.counters.drillchair_pops_counter.value==8}:
+  #   - sw_bottom_pops|0.1s
+  #   - sw_bottom_pops|0.15s
+  #   - sw_top_pops|0.2s
+  #   - sw_top_pops|0.25s
+  # shot_drillchair_button_sp_drillchair_lit_hit{device.counters.drillchair_pops_counter.value==9}:
+  #   - sw_bottom_pops|0.1s
+  #   - sw_top_pops|0.15s
+  #   - sw_top_pops|0.2s
+  #   - sw_top_pops|0.25s
+  # shot_drillchair_button_sp_drillchair_lit_hit{device.counters.drillchair_pops2_counter.value==10}:
+  #   - sw_top_pops|0.1s
+  #   - sw_top_pops|0.15s
+  #   - sw_top_pops|0.2s
+  #   - sw_top_pops|0.25s
