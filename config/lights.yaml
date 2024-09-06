@@ -358,13 +358,13 @@ lights:
     tags: insert, led128p2, ramp, right_ramp
   l_left_ramp_triangle1:
     number: led128-3-16
-    tags: insert, led128p3, ramp
+    tags: insert, led128p3, ramp, left_ramp
   l_left_ramp_triangle2:
     number: led128-3-17
-    tags: insert, led128p3, ramp
+    tags: insert, led128p3, ramp, left_ramp
   l_left_ramp_triangle3:
     number: led128-3-18
-    tags: insert, led128p3, ramp
+    tags: insert, led128p3, ramp, left_ramp
 
 # skillshot lights
   l_skill_shot1:

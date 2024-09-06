@@ -16,19 +16,549 @@ ball_saves:
     auto_launch: true
     balls_to_save: 1
 
-sequences:
-  zeptest:
-    events:
-      - sw_lower_drop_target
-      - sw_lower_drop_target
-      - sw_lower_drop_target
-      - drop_target_dt_upper_drop1_down
-      #- ssh_left_ramp_hit
-      - machine_var_audits_switches_s_right_ramp_score_top
-      - drop_target_dt_upper_drop1_down   
-    reset_on_complete: false
+# sequences:
+#   zeptest:
+#     events:
+#       - sw_lower_drop_target
+#       - sw_lower_drop_target
+#       - sw_lower_drop_target
+#       - drop_target_dt_upper_drop1_down
+#       #- ssh_left_ramp_hit
+#       - machine_var_audits_switches_s_right_ramp_score_top
+#       - drop_target_dt_upper_drop1_down   
+#     reset_on_complete: false
+#     persist_state: true
+#     events_when_complete: mode_zeptest_complete, stop_mode_zeptest
+
+counters:
+  cnt_zeptest_collected:
+    starting_count: 0
+    count_complete_value: 3
     persist_state: true
+    reset_on_complete: false
     events_when_complete: mode_zeptest_complete, stop_mode_zeptest
+    count_events: sg_zeptest_zeptest_collected_hit
+
+
+shots:
+  shot_zeptest_left_loop:
+    reset_events: mode_zeptest_stopped, player_turn_stopped, player_turn_ended
+    disable_events: shot_zeptest_left_loop_sp_zep_zeptest_collected_hit
+    switches: s_left_loop_top
+    profile: sp_zep
+    show_tokens:
+      leds: l_left_loop_arrow
+    control_events:
+      - events: mode_zeptest_started
+        state: 1
+      - events: shot_zeptest_left_loop_sp_zep_zeptest_lit_hit
+        state: 2
+      - events: shot_zeptest_left_loop_sp_zep_zeptest_collected_hit
+        state: 0
+      - events: shot_zeptest_left_standup_rightramp_sp_zep_zeptest_lit_hit
+        state: 0
+      - events: shot_zeptest_left_standup_rightramp_sp_zep_zeptest_collected_hit
+        state: 1
+      - events: shot_zeptest_right_standup_rightramp_sp_zep_zeptest_lit_hit
+        state: 0
+      - events: shot_zeptest_right_standup_rightramp_sp_zep_zeptest_collected_hit
+        state: 1
+      - events: shot_zeptest_right_loop_sp_zep_zeptest_lit_hit
+        state: 0
+      - events: shot_zeptest_right_loop_sp_zep_zeptest_collected_hit
+        state: 1
+      - events: shot_zeptest_right_standup_sp_zep_zeptest_lit_hit
+        state: 0
+      - events: shot_zeptest_right_standup_sp_zep_zeptest_collected_hit             
+        state: 1
+      - events: shot_zeptest_left_standup_sp_zep_zeptest_lit_hit
+        state: 0
+      - events: shot_zeptest_left_standup_sp_zep_zeptest_collected_hit             
+        state: 1
+      - events: shot_zeptest_middle_standup_sp_zep_zeptest_lit_hit             
+        state: 0
+      - events: shot_zeptest_middle_standup_sp_zep_zeptest_collected_hit             
+        state: 1
+      - events: shot_zeptest_inner_loop_sp_zep_zeptest_lit_hit             
+        state: 0
+      - events: shot_zeptest_inner_loop_sp_zep_zeptest_collected_hit             
+        state: 1
+      - events: shot_zeptest_left_ramp_sp_zep_zeptest_lit_hit             
+        state: 0
+      - events: shot_zeptest_left_ramp_sp_zep_zeptest_collected_hit             
+        state: 1
+      - events: shot_zeptest_right_ramp_sp_zep_zeptest_lit_hit             
+        state: 0
+      - events: shot_zeptest_right_ramp_sp_zep_zeptest_collected_hit             
+        state: 1
+  shot_zeptest_left_standup_rightramp:
+    reset_events: mode_zeptest_stopped, player_turn_stopped, player_turn_ended
+    disable_events: shot_zeptest_left_standup_rightramp_sp_zep_zeptest_collected_hit
+    switches: s_left_standup_right_ramp
+    profile: sp_zep
+    show_tokens:
+      leds: l_left_standup_right_ramp_arrow
+    control_events:
+      - events: mode_zeptest_started
+        state: 1
+      - events: shot_zeptest_left_standup_rightramp_sp_zep_zeptest_lit_hit
+        state: 2
+      - events: shot_zeptest_left_standup_rightramp_sp_zep_zeptest_collected_hit
+        state: 0
+      - events: shot_zeptest_left_loop_sp_zep_zeptest_lit_hit
+        state: 0
+      - events: shot_zeptest_left_loop_sp_zep_zeptest_collected_hit
+        state: 1
+      - events: shot_zeptest_right_standup_rightramp_sp_zep_zeptest_lit_hit
+        state: 0
+      - events: shot_zeptest_right_standup_rightramp_sp_zep_zeptest_collected_hit
+        state: 1
+      - events: shot_zeptest_right_loop_sp_zep_zeptest_lit_hit
+        state: 0
+      - events: shot_zeptest_right_loop_sp_zep_zeptest_collected_hit
+        state: 1
+      - events: shot_zeptest_right_standup_sp_zep_zeptest_lit_hit
+        state: 0
+      - events: shot_zeptest_right_standup_sp_zep_zeptest_collected_hit             
+        state: 1
+      - events: shot_zeptest_left_standup_sp_zep_zeptest_lit_hit
+        state: 0
+      - events: shot_zeptest_left_standup_sp_zep_zeptest_collected_hit             
+        state: 1
+      - events: shot_zeptest_middle_standup_sp_zep_zeptest_lit_hit             
+        state: 0
+      - events: shot_zeptest_middle_standup_sp_zep_zeptest_collected_hit             
+        state: 1
+      - events: shot_zeptest_inner_loop_sp_zep_zeptest_lit_hit             
+        state: 0
+      - events: shot_zeptest_inner_loop_sp_zep_zeptest_collected_hit             
+        state: 1
+      - events: shot_zeptest_left_ramp_sp_zep_zeptest_lit_hit             
+        state: 0
+      - events: shot_zeptest_left_ramp_sp_zep_zeptest_collected_hit             
+        state: 1
+      - events: shot_zeptest_right_ramp_sp_zep_zeptest_lit_hit             
+        state: 0
+      - events: shot_zeptest_right_ramp_sp_zep_zeptest_collected_hit             
+        state: 1
+  shot_zeptest_right_standup_rightramp:
+    reset_events: mode_zeptest_stopped, player_turn_stopped, player_turn_ended
+    disable_events: shot_zeptest_right_standup_rightramp_sp_zep_zeptest_collected_hit
+    switches: s_right_standup_right_ramp
+    profile: sp_zep
+    show_tokens:
+      leds: l_right_standup_right_ramp_arrow
+    control_events:
+      - events: mode_zeptest_started
+        state: 1
+      - events: shot_zeptest_right_standup_rightramp_sp_zep_zeptest_lit_hit
+        state: 2
+      - events: shot_zeptest_right_standup_rightramp_sp_zep_zeptest_collected_hit
+        state: 0
+      - events: shot_zeptest_left_standup_rightramp_sp_zep_zeptest_lit_hit
+        state: 0
+      - events: shot_zeptest_left_standup_rightramp_sp_zep_zeptest_collected_hit
+        state: 1
+      - events: shot_zeptest_left_loop_sp_zep_zeptest_lit_hit
+        state: 0
+      - events: shot_zeptest_left_loop_sp_zep_zeptest_collected_hit
+        state: 1
+      - events: shot_zeptest_right_loop_sp_zep_zeptest_lit_hit
+        state: 0
+      - events: shot_zeptest_right_loop_sp_zep_zeptest_collected_hit
+        state: 1
+      - events: shot_zeptest_right_standup_sp_zep_zeptest_lit_hit
+        state: 0
+      - events: shot_zeptest_right_standup_sp_zep_zeptest_collected_hit             
+        state: 1
+      - events: shot_zeptest_left_standup_sp_zep_zeptest_lit_hit
+        state: 0
+      - events: shot_zeptest_left_standup_sp_zep_zeptest_collected_hit             
+        state: 1
+      - events: shot_zeptest_middle_standup_sp_zep_zeptest_lit_hit             
+        state: 0
+      - events: shot_zeptest_middle_standup_sp_zep_zeptest_collected_hit             
+        state: 1
+      - events: shot_zeptest_inner_loop_sp_zep_zeptest_lit_hit             
+        state: 0
+      - events: shot_zeptest_inner_loop_sp_zep_zeptest_collected_hit             
+        state: 1
+      - events: shot_zeptest_left_ramp_sp_zep_zeptest_lit_hit             
+        state: 0
+      - events: shot_zeptest_left_ramp_sp_zep_zeptest_collected_hit             
+        state: 1
+      - events: shot_zeptest_right_ramp_sp_zep_zeptest_lit_hit             
+        state: 0
+      - events: shot_zeptest_right_ramp_sp_zep_zeptest_collected_hit             
+        state: 1
+  shot_zeptest_right_loop:
+    reset_events: mode_zeptest_stopped, player_turn_stopped, player_turn_ended
+    disable_events: shot_zeptest_right_loop_sp_zep_zeptest_collected_hit
+    switches: s_right_loop_bottom, s_right_loop_top
+    profile: sp_zep
+    show_tokens:
+      leds: l_right_loop_arrow
+    control_events:
+      - events: mode_zeptest_started
+        state: 1
+      - events: shot_zeptest_right_loop_sp_zep_zeptest_lit_hit
+        state: 2
+      - events: shot_zeptest_right_loop_sp_zep_zeptest_collected_hit
+        state: 0
+      - events: shot_zeptest_left_standup_rightramp_sp_zep_zeptest_lit_hit
+        state: 0
+      - events: shot_zeptest_left_standup_rightramp_sp_zep_zeptest_collected_hit
+        state: 1
+      - events: shot_zeptest_right_standup_rightramp_sp_zep_zeptest_lit_hit
+        state: 0
+      - events: shot_zeptest_right_standup_rightramp_sp_zep_zeptest_collected_hit
+        state: 1
+      - events: shot_zeptest_left_loop_sp_zep_zeptest_lit_hit
+        state: 0
+      - events: shot_zeptest_left_loop_sp_zep_zeptest_collected_hit
+        state: 1
+      - events: shot_zeptest_right_standup_sp_zep_zeptest_lit_hit
+        state: 0
+      - events: shot_zeptest_right_standup_sp_zep_zeptest_collected_hit             
+        state: 1
+      - events: shot_zeptest_left_standup_sp_zep_zeptest_lit_hit
+        state: 0
+      - events: shot_zeptest_left_standup_sp_zep_zeptest_collected_hit             
+        state: 1
+      - events: shot_zeptest_middle_standup_sp_zep_zeptest_lit_hit             
+        state: 0
+      - events: shot_zeptest_middle_standup_sp_zep_zeptest_collected_hit             
+        state: 1
+      - events: shot_zeptest_inner_loop_sp_zep_zeptest_lit_hit             
+        state: 0
+      - events: shot_zeptest_inner_loop_sp_zep_zeptest_collected_hit             
+        state: 1
+      - events: shot_zeptest_left_ramp_sp_zep_zeptest_lit_hit             
+        state: 0
+      - events: shot_zeptest_left_ramp_sp_zep_zeptest_collected_hit             
+        state: 1
+      - events: shot_zeptest_right_ramp_sp_zep_zeptest_lit_hit             
+        state: 0
+      - events: shot_zeptest_right_ramp_sp_zep_zeptest_collected_hit             
+        state: 1
+  shot_zeptest_right_standup:
+    reset_events: mode_zeptest_stopped, player_turn_stopped, player_turn_ended
+    disable_events: shot_zeptest_right_standup_sp_zep_zeptest_collected_hit 
+    switches: s_right_standup
+    profile: sp_zep
+    show_tokens:
+      leds: l_right_standup_arrow
+    control_events:
+      - events: mode_zeptest_started
+        state: 1
+      - events: shot_zeptest_right_standup_sp_zep_zeptest_lit_hit
+        state: 2
+      - events: shot_zeptest_right_standup_sp_zep_zeptest_collected_hit             
+        state: 0
+      - events: shot_zeptest_left_standup_rightramp_sp_zep_zeptest_lit_hit
+        state: 0
+      - events: shot_zeptest_left_standup_rightramp_sp_zep_zeptest_collected_hit
+        state: 1
+      - events: shot_zeptest_right_standup_rightramp_sp_zep_zeptest_lit_hit
+        state: 0
+      - events: shot_zeptest_right_standup_rightramp_sp_zep_zeptest_collected_hit
+        state: 1
+      - events: shot_zeptest_right_loop_sp_zep_zeptest_lit_hit
+        state: 0
+      - events: shot_zeptest_right_loop_sp_zep_zeptest_collected_hit
+        state: 1
+      - events: shot_zeptest_left_loop_sp_zep_zeptest_lit_hit
+        state: 0
+      - events: shot_zeptest_left_loop_sp_zep_zeptest_collected_hit             
+        state: 1
+      - events: shot_zeptest_left_standup_sp_zep_zeptest_lit_hit
+        state: 0
+      - events: shot_zeptest_left_standup_sp_zep_zeptest_collected_hit             
+        state: 1
+      - events: shot_zeptest_middle_standup_sp_zep_zeptest_lit_hit             
+        state: 0
+      - events: shot_zeptest_middle_standup_sp_zep_zeptest_collected_hit             
+        state: 1
+      - events: shot_zeptest_inner_loop_sp_zep_zeptest_lit_hit             
+        state: 0
+      - events: shot_zeptest_inner_loop_sp_zep_zeptest_collected_hit             
+        state: 1
+      - events: shot_zeptest_left_ramp_sp_zep_zeptest_lit_hit             
+        state: 0
+      - events: shot_zeptest_left_ramp_sp_zep_zeptest_collected_hit             
+        state: 1
+      - events: shot_zeptest_right_ramp_sp_zep_zeptest_lit_hit             
+        state: 0
+      - events: shot_zeptest_right_ramp_sp_zep_zeptest_collected_hit             
+        state: 1
+  shot_zeptest_left_standup:
+    reset_events: mode_zeptest_stopped, player_turn_stopped, player_turn_ended
+    disable_events: shot_zeptest_left_standup_sp_zep_zeptest_collected_hit
+    switches: s_left_standup
+    profile: sp_zep
+    show_tokens:
+      leds: l_left_standup_arrow
+    control_events:
+      - events: mode_zeptest_started
+        state: 1
+      - events: shot_zeptest_left_standup_sp_zep_zeptest_lit_hit
+        state: 2
+      - events: shot_zeptest_left_standup_sp_zep_zeptest_collected_hit             
+        state: 0
+      - events: shot_zeptest_left_standup_rightramp_sp_zep_zeptest_lit_hit
+        state: 0
+      - events: shot_zeptest_left_standup_rightramp_sp_zep_zeptest_collected_hit
+        state: 1
+      - events: shot_zeptest_right_standup_rightramp_sp_zep_zeptest_lit_hit
+        state: 0
+      - events: shot_zeptest_right_standup_rightramp_sp_zep_zeptest_collected_hit
+        state: 1
+      - events: shot_zeptest_right_loop_sp_zep_zeptest_lit_hit
+        state: 0
+      - events: shot_zeptest_right_loop_sp_zep_zeptest_collected_hit
+        state: 1
+      - events: shot_zeptest_right_standup_sp_zep_zeptest_lit_hit
+        state: 0
+      - events: shot_zeptest_right_standup_sp_zep_zeptest_collected_hit             
+        state: 1
+      - events: shot_zeptest_left_loop_sp_zep_zeptest_lit_hit
+        state: 0
+      - events: shot_zeptest_left_loop_sp_zep_zeptest_collected_hit             
+        state: 1
+      - events: shot_zeptest_middle_standup_sp_zep_zeptest_lit_hit             
+        state: 0
+      - events: shot_zeptest_middle_standup_sp_zep_zeptest_collected_hit             
+        state: 1
+      - events: shot_zeptest_inner_loop_sp_zep_zeptest_lit_hit             
+        state: 0
+      - events: shot_zeptest_inner_loop_sp_zep_zeptest_collected_hit             
+        state: 1
+      - events: shot_zeptest_left_ramp_sp_zep_zeptest_lit_hit             
+        state: 0
+      - events: shot_zeptest_left_ramp_sp_zep_zeptest_collected_hit             
+        state: 1
+      - events: shot_zeptest_right_ramp_sp_zep_zeptest_lit_hit             
+        state: 0
+      - events: shot_zeptest_right_ramp_sp_zep_zeptest_collected_hit             
+        state: 1
+  shot_zeptest_middle_standup:
+    reset_events: mode_zeptest_stopped, player_turn_stopped, player_turn_ended
+    disable_events: shot_zeptest_middle_standup_sp_zep_zeptest_collected_hit
+    switches: s_middle_standup
+    profile: sp_zep
+    show_tokens:
+      leds: bear_flasher
+    control_events:
+      - events: mode_zeptest_started
+        state: 1
+      - events: shot_zeptest_middle_standup_sp_zep_zeptest_lit_hit             
+        state: 2
+      - events: shot_zeptest_middle_standup_sp_zep_zeptest_collected_hit             
+        state: 0
+      - events: shot_zeptest_left_standup_rightramp_sp_zep_zeptest_lit_hit
+        state: 0
+      - events: shot_zeptest_left_standup_rightramp_sp_zep_zeptest_collected_hit
+        state: 1
+      - events: shot_zeptest_right_standup_rightramp_sp_zep_zeptest_lit_hit
+        state: 0
+      - events: shot_zeptest_right_standup_rightramp_sp_zep_zeptest_collected_hit
+        state: 1
+      - events: shot_zeptest_right_loop_sp_zep_zeptest_lit_hit
+        state: 0
+      - events: shot_zeptest_right_loop_sp_zep_zeptest_collected_hit
+        state: 1
+      - events: shot_zeptest_right_standup_sp_zep_zeptest_lit_hit
+        state: 0
+      - events: shot_zeptest_right_standup_sp_zep_zeptest_collected_hit             
+        state: 1
+      - events: shot_zeptest_left_standup_sp_zep_zeptest_lit_hit
+        state: 0
+      - events: shot_zeptest_left_standup_sp_zep_zeptest_collected_hit             
+        state: 1
+      - events: shot_zeptest_left_loop_sp_zep_zeptest_lit_hit             
+        state: 0
+      - events: shot_zeptest_left_loop_sp_zep_zeptest_collected_hit             
+        state: 1
+      - events: shot_zeptest_inner_loop_sp_zep_zeptest_lit_hit             
+        state: 0
+      - events: shot_zeptest_inner_loop_sp_zep_zeptest_collected_hit             
+        state: 1
+      - events: shot_zeptest_left_ramp_sp_zep_zeptest_lit_hit             
+        state: 0
+      - events: shot_zeptest_left_ramp_sp_zep_zeptest_collected_hit             
+        state: 1
+      - events: shot_zeptest_right_ramp_sp_zep_zeptest_lit_hit             
+        state: 0
+      - events: shot_zeptest_right_ramp_sp_zep_zeptest_collected_hit             
+        state: 1
+  shot_zeptest_inner_loop:
+    reset_events: mode_zeptest_stopped, player_turn_stopped, player_turn_ended
+    disable_events: shot_zeptest_inner_loop_sp_zep_zeptest_collected_hit
+    switches: s_inner_loop
+    profile: sp_zep
+    show_tokens:
+      leds: l_inner_loop_arrow
+    control_events:
+      - events: mode_zeptest_started
+        state: 1
+      - events: shot_zeptest_inner_loop_sp_zep_zeptest_lit_hit             
+        state: 2
+      - events: shot_zeptest_inner_loop_sp_zep_zeptest_collected_hit             
+        state: 0
+      - events: shot_zeptest_left_standup_rightramp_sp_zep_zeptest_lit_hit
+        state: 0
+      - events: shot_zeptest_left_standup_rightramp_sp_zep_zeptest_collected_hit
+        state: 1
+      - events: shot_zeptest_right_standup_rightramp_sp_zep_zeptest_lit_hit
+        state: 0
+      - events: shot_zeptest_right_standup_rightramp_sp_zep_zeptest_collected_hit
+        state: 1
+      - events: shot_zeptest_right_loop_sp_zep_zeptest_lit_hit
+        state: 0
+      - events: shot_zeptest_right_loop_sp_zep_zeptest_collected_hit
+        state: 1
+      - events: shot_zeptest_right_standup_sp_zep_zeptest_lit_hit
+        state: 0
+      - events: shot_zeptest_right_standup_sp_zep_zeptest_collected_hit             
+        state: 1
+      - events: shot_zeptest_left_standup_sp_zep_zeptest_lit_hit
+        state: 0
+      - events: shot_zeptest_left_standup_sp_zep_zeptest_collected_hit             
+        state: 1
+      - events: shot_zeptest_middle_standup_sp_zep_zeptest_lit_hit             
+        state: 0
+      - events: shot_zeptest_middle_standup_sp_zep_zeptest_collected_hit             
+        state: 1
+      - events: shot_zeptest_left_loop_sp_zep_zeptest_lit_hit             
+        state: 0
+      - events: shot_zeptest_left_loop_sp_zep_zeptest_collected_hit             
+        state: 1
+      - events: shot_zeptest_left_ramp_sp_zep_zeptest_lit_hit             
+        state: 0
+      - events: shot_zeptest_left_ramp_sp_zep_zeptest_collected_hit             
+        state: 1
+      - events: shot_zeptest_right_ramp_sp_zep_zeptest_lit_hit             
+        state: 0
+      - events: shot_zeptest_right_ramp_sp_zep_zeptest_collected_hit             
+        state: 1
+  shot_zeptest_left_ramp:
+    reset_events: mode_zeptest_stopped, player_turn_stopped, player_turn_ended
+    disable_events: shot_zeptest_left_ramp_sp_zep_zeptest_collected_hit
+    switches: s_left_ramp_score_top
+    profile: sp_zep
+    show_tokens:
+      leds: left_ramp
+    control_events:
+      - events: mode_zeptest_started
+        state: 1
+      - events: shot_zeptest_left_ramp_sp_zep_zeptest_lit_hit             
+        state: 2
+      - events: shot_zeptest_left_ramp_sp_zep_zeptest_collected_hit             
+        state: 0
+      - events: shot_zeptest_left_standup_rightramp_sp_zep_zeptest_lit_hit
+        state: 0
+      - events: shot_zeptest_left_standup_rightramp_sp_zep_zeptest_collected_hit
+        state: 1
+      - events: shot_zeptest_right_standup_rightramp_sp_zep_zeptest_lit_hit
+        state: 0
+      - events: shot_zeptest_right_standup_rightramp_sp_zep_zeptest_collected_hit
+        state: 1
+      - events: shot_zeptest_right_loop_sp_zep_zeptest_lit_hit
+        state: 0
+      - events: shot_zeptest_right_loop_sp_zep_zeptest_collected_hit
+        state: 1
+      - events: shot_zeptest_right_standup_sp_zep_zeptest_lit_hit
+        state: 0
+      - events: shot_zeptest_right_standup_sp_zep_zeptest_collected_hit             
+        state: 1
+      - events: shot_zeptest_left_standup_sp_zep_zeptest_lit_hit
+        state: 0
+      - events: shot_zeptest_left_standup_sp_zep_zeptest_collected_hit             
+        state: 1
+      - events: shot_zeptest_middle_standup_sp_zep_zeptest_lit_hit             
+        state: 0
+      - events: shot_zeptest_middle_standup_sp_zep_zeptest_collected_hit             
+        state: 1
+      - events: shot_zeptest_inner_loop_sp_zep_zeptest_lit_hit             
+        state: 0
+      - events: shot_zeptest_inner_loop_sp_zep_zeptest_collected_hit             
+        state: 1
+      - events: shot_zeptest_left_loop_sp_zep_zeptest_lit_hit             
+        state: 0
+      - events: shot_zeptest_left_loop_sp_zep_zeptest_collected_hit             
+        state: 1
+      - events: shot_zeptest_right_ramp_sp_zep_zeptest_lit_hit             
+        state: 0
+      - events: shot_zeptest_right_ramp_sp_zep_zeptest_collected_hit             
+        state: 1
+  shot_zeptest_right_ramp:
+    reset_events: mode_zeptest_stopped, player_turn_stopped, player_turn_ended
+    disable_events: shot_zeptest_right_ramp_sp_zep_zeptest_collected_hit
+    switches: s_right_ramp_score_top
+    profile: sp_zep
+    show_tokens:
+      leds: right_ramp
+    control_events:
+      - events: mode_zeptest_started
+        state: 1
+      - events: shot_zeptest_right_ramp_sp_zep_zeptest_lit_hit             
+        state: 2
+      - events: shot_zeptest_right_ramp_sp_zep_zeptest_collected_hit             
+        state: 0
+      - events: shot_zeptest_left_standup_rightramp_sp_zep_zeptest_lit_hit
+        state: 0
+      - events: shot_zeptest_left_standup_rightramp_sp_zep_zeptest_collected_hit
+        state: 1
+      - events: shot_zeptest_right_standup_rightramp_sp_zep_zeptest_lit_hit
+        state: 0
+      - events: shot_zeptest_right_standup_rightramp_sp_zep_zeptest_collected_hit
+        state: 1
+      - events: shot_zeptest_right_loop_sp_zep_zeptest_lit_hit
+        state: 0
+      - events: shot_zeptest_right_loop_sp_zep_zeptest_collected_hit
+        state: 1
+      - events: shot_zeptest_right_standup_sp_zep_zeptest_lit_hit
+        state: 0
+      - events: shot_zeptest_right_standup_sp_zep_zeptest_collected_hit             
+        state: 1
+      - events: shot_zeptest_left_standup_sp_zep_zeptest_lit_hit
+        state: 0
+      - events: shot_zeptest_left_standup_sp_zep_zeptest_collected_hit             
+        state: 1
+      - events: shot_zeptest_middle_standup_sp_zep_zeptest_lit_hit             
+        state: 0
+      - events: shot_zeptest_middle_standup_sp_zep_zeptest_collected_hit             
+        state: 1
+      - events: shot_zeptest_inner_loop_sp_zep_zeptest_lit_hit             
+        state: 0
+      - events: shot_zeptest_inner_loop_sp_zep_zeptest_collected_hit             
+        state: 1
+      - events: shot_zeptest_left_ramp_sp_zep_zeptest_lit_hit             
+        state: 0
+      - events: shot_zeptest_left_ramp_sp_zep_zeptest_collected_hit             
+        state: 1
+      - events: shot_zeptest_left_loop_sp_zep_zeptest_lit_hit             
+        state: 0
+      - events: shot_zeptest_left_loop_sp_zep_zeptest_collected_hit             
+        state: 1
+
+
+shot_profiles:
+  sp_zep:
+    advance_on_hit: false
+    states:
+      - name: zeptest_not_ready
+        show: "sh_zeptest_not_ready"
+      - name: zeptest_lit
+        show: "sh_zeptest_on"
+      - name: zeptest_collected
+        show: "sh_zeptest_enabled"
+      - name: zeptest_test4
+        show: "sh_zeptest_on"
+
+shot_groups:
+  sg_zeptest:
+    shots: shot_zeptest_left_loop, shot_zeptest_left_standup_rightramp, shot_zeptest_right_standup_rightramp, shot_zeptest_right_loop, shot_zeptest_right_standup, shot_zeptest_left_standup, shot_zeptest_middle_standup, shot_zeptest_inner_loop, shot_zeptest_left_ramp, shot_zeptest_right_ramp
 
 timers:
   60s_zeptest_timer:
@@ -40,16 +570,33 @@ timers:
         event: mode_zeptest_started
         
 variable_player:
-  logicblock_zeptest_hit{step==1}:
-    score: (4000000 + (current_player.syringes_used * 1000000)) * (current_player.pf_multiplier)
-  logicblock_zeptest_hit{step==2}:
-    score: (4000000 + (current_player.syringes_used * 1000000)) * (current_player.pf_multiplier)
-  logicblock_zeptest_hit{step==3}:
-    score: (4000000 + (current_player.syringes_used * 1000000)) * (current_player.pf_multiplier)
-  logicblock_zeptest_hit{step==4}:
+  sg_zeptest_zeptest_lit_hit:
+    score: (500000 + (current_player.syringes_used * 1000000)) * (current_player.pf_multiplier)
+  logicblock_cnt_zeptest_collected_hit{count==1}:
     score: (3000000 + (current_player.syringes_used * 1000000)) * (current_player.pf_multiplier)
-  logicblock_zeptest_hit{step==5}:
+    cnt_zeptest_collected_1:
+      action: set
+      int: (count)*250
+  logicblock_cnt_zeptest_collected_hit{count==2}:
     score: (4000000 + (current_player.syringes_used * 1000000)) * (current_player.pf_multiplier)
+    cnt_zeptest_collected_2:
+      action: set
+      int: (count)*250
+  logicblock_cnt_zeptest_collected_hit{count==3}:
+    score: (5000000 + (current_player.syringes_used * 1000000)) * (current_player.pf_multiplier)
+    cnt_zeptest_collected_3:
+      action: set
+      int: (count)*250
+  # logicblock_zeptest_hit{step==1}:
+  #   score: (4000000 + (current_player.syringes_used * 1000000)) * (current_player.pf_multiplier)
+  # logicblock_zeptest_hit{step==2}:
+  #   score: (4000000 + (current_player.syringes_used * 1000000)) * (current_player.pf_multiplier)
+  # logicblock_zeptest_hit{step==3}:
+  #   score: (4000000 + (current_player.syringes_used * 1000000)) * (current_player.pf_multiplier)
+  # logicblock_zeptest_hit{step==4}:
+  #   score: (3000000 + (current_player.syringes_used * 1000000)) * (current_player.pf_multiplier)
+  # logicblock_zeptest_hit{step==5}:
+  #   score: (4000000 + (current_player.syringes_used * 1000000)) * (current_player.pf_multiplier)
   #logicblock_zeptest_hit{step==6}:
   #  score: 1000000    
   mode_zeptest_complete:
@@ -247,99 +794,172 @@ widgets:
       corner_radius: 20
       corner_segments: 20
       color: black
+#visual / collected shot # 1
+    - type: rectangle
+      width: 0
+      height: 45
+      x: 15.7%
+      y: 29%
+      z: 3
+      anchor_x: left
+      corner_radius: 10
+      corner_segments: 10
+      color: zeptest
+      animations:
+        player_cnt_zeptest_collected_1:
+         - property: width
+           value: (value)           
+#visual / collected shot # 2
+    - type: rectangle
+      width: 0
+      height: 45
+      x: 43.7%
+      y: 29%
+      z: 3
+      anchor_x: left
+      corner_radius: 10
+      corner_segments: 10
+      color: zeptest
+      animations:
+        player_cnt_zeptest_collected_2:
+         - property: width
+           value: (value)           
+# visual / shot collected # 3
+    - type: rectangle
+      width: 0
+      height: 45
+      x: 70.7%
+      y: 29%
+      z: 3
+      anchor_x: left
+      corner_radius: 10
+      corner_segments: 10
+      color: zeptest
+      animations:
+        player_cnt_zeptest_collected_3:
+         - property: width
+           value: (value)    
+#boxes for visuals of shots 1,2,3
+    - type: rectangle
+      width: 250
+      height: 46
+      x: 25%
+      y: 29%
+      z: 2
+      color: black
+      corner_radius: 10
+      corner_segments: 10
+    - type: rectangle
+      width: 250
+      height: 46
+      x: 53%
+      y: 29%
+      z: 2
+      color: black
+      corner_radius: 10
+      corner_segments: 10
+    - type: rectangle
+      width: 250
+      height: 46
+      x: 80%
+      y: 29%
+      z: 2
+      color: black
+      corner_radius: 10
+      corner_segments: 10  
 
 
-   zep_shot_update1:
-    - type: Text
-      text: " Hit All 3 Drop Targets"
-      font_size: 60
-      font_name: TrajanProRegular
-      outline_color: black
-      outline_width: 7
-      color: BDD5E7
-      x: 50%
-      y: 48%
-      z: 1
-      animations:
-        add_to_slide:
-          - property: opacity
-            value: 0
-          - property: opacity
-            value: 1
-            duration: 1000ms
-            timing: after_previous
-   zep_shot_update2:
-    - type: Text
-      text: " Hit X Marks the Spot"
-      font_size: 60
-      font_name: TrajanProRegular
-      outline_color: black
-      outline_width: 7
-      color: BDD5E7
-      x: 50%
-      y: 48%   
-      z: 1
-      animations:
-        add_to_slide:
-          - property: opacity
-            value: 0
-          - property: opacity
-            value: 1
-            duration: 1000ms
-            timing: after_previous
-   #zep_shot_update3:
-   # - type: Text
-   #   text: " Hit the Left Ramp"
-   #   font_size: 60
-   #   font_name: TrajanProRegular
-   #   color: BDD5E7
-   #   x: 58%
-   #   y: 48%   
-   #   z: 1
-   #   animations:
-   #     add_to_slide:
-   #       - property: opacity
-   #         value: 0
-   #       - property: opacity
-   #         value: 1
-   #         duration: 1000ms
-   #         timing: after_previous
-   zep_shot_update4:
-    - type: Text
-      text: " Hit the Right Ramp"
-      font_size: 60
-      font_name: TrajanProRegular
-      color: BDD5E7
-      x: 50%
-      y: 48%        
-      z: 1
-      animations:
-        add_to_slide:
-          - property: opacity
-            value: 0
-          - property: opacity
-            value: 1
-            duration: 1000ms
-            timing: after_previous
-   zep_shot_update5:
-    - type: Text
-      text: " X marks the Spot to Collect the Antidote"
-      font_size: 50
-      font_name: TrajanProRegular
-      outline_color: black
-      outline_width: 7
-      color: BDD5E7
-      x: 50%
-      y: 48%      
-      z: 1
-      animations:
-        add_to_slide:
-          - property: opacity
-            value: 0
-          - property: opacity
-            value: 1
-            duration: 1000ms
-            timing: after_previous
+   # zep_shot_update1:
+   #  - type: Text
+   #    text: " Hit All 3 Drop Targets"
+   #    font_size: 60
+   #    font_name: TrajanProRegular
+   #    outline_color: black
+   #    outline_width: 7
+   #    color: BDD5E7
+   #    x: 50%
+   #    y: 48%
+   #    z: 1
+   #    animations:
+   #      add_to_slide:
+   #        - property: opacity
+   #          value: 0
+   #        - property: opacity
+   #          value: 1
+   #          duration: 1000ms
+   #          timing: after_previous
+   # zep_shot_update2:
+   #  - type: Text
+   #    text: " Hit X Marks the Spot"
+   #    font_size: 60
+   #    font_name: TrajanProRegular
+   #    outline_color: black
+   #    outline_width: 7
+   #    color: BDD5E7
+   #    x: 50%
+   #    y: 48%   
+   #    z: 1
+   #    animations:
+   #      add_to_slide:
+   #        - property: opacity
+   #          value: 0
+   #        - property: opacity
+   #          value: 1
+   #          duration: 1000ms
+   #          timing: after_previous
+   # #zep_shot_update3:
+   # # - type: Text
+   # #   text: " Hit the Left Ramp"
+   # #   font_size: 60
+   # #   font_name: TrajanProRegular
+   # #   color: BDD5E7
+   # #   x: 58%
+   # #   y: 48%   
+   # #   z: 1
+   # #   animations:
+   # #     add_to_slide:
+   # #       - property: opacity
+   # #         value: 0
+   # #       - property: opacity
+   # #         value: 1
+   # #         duration: 1000ms
+   # #         timing: after_previous
+   # zep_shot_update4:
+   #  - type: Text
+   #    text: " Hit the Right Ramp"
+   #    font_size: 60
+   #    font_name: TrajanProRegular
+   #    color: BDD5E7
+   #    x: 50%
+   #    y: 48%        
+   #    z: 1
+   #    animations:
+   #      add_to_slide:
+   #        - property: opacity
+   #          value: 0
+   #        - property: opacity
+   #          value: 1
+   #          duration: 1000ms
+   #          timing: after_previous
+   # zep_shot_update5:
+   #  - type: Text
+   #    text: " X marks the Spot to Collect the Antidote"
+   #    font_size: 50
+   #    font_name: TrajanProRegular
+   #    outline_color: black
+   #    outline_width: 7
+   #    color: BDD5E7
+   #    x: 50%
+   #    y: 48%      
+   #    z: 1
+   #    animations:
+   #      add_to_slide:
+   #        - property: opacity
+   #          value: 0
+   #        - property: opacity
+   #          value: 1
+   #          duration: 1000ms
+   #          timing: after_previous
    w_syringe_button:
     - type: image
       image: SyringeButtonImg
@@ -365,7 +985,7 @@ widgets:
       color: BDD5E7
       x: 87%
       y: 3%   
-      z: 2
+      z: 2              
 
     
  
@@ -374,18 +994,19 @@ widget_player:
    w_zeptestUI:
      slide: sl_mode_zeptest01
      action: add
- logicblock_zeptest_updated{value==3}: 
-   w_zeptestUI:
-     slide: sl_mode_zeptest02
-     action: add
- logicblock_zeptest_updated{value==4}: 
-   w_zeptestUI:
-     slide: sl_mode_zeptest03
-     action: add
- logicblock_zeptest_updated{value==5}:
-   w_zeptestUI:
-     slide: sl_mode_zeptest04
-     action: add
+
+ # logicblock_zeptest_updated{value==3}: 
+ #   w_zeptestUI:
+ #     slide: sl_mode_zeptest02
+ #     action: add
+ # logicblock_zeptest_updated{value==4}: 
+ #   w_zeptestUI:
+ #     slide: sl_mode_zeptest03
+ #     action: add
+ # logicblock_zeptest_updated{value==5}:
+ #   w_zeptestUI:
+ #     slide: sl_mode_zeptest04
+ #     action: add
  shot_zeptest_button_sp_zeptest_lit_hit:
   w_syringe_button:
     slide: sl_mode_zeptest01
@@ -418,37 +1039,37 @@ slide_player:
       priority: 400
       expire: 5s
 
-  logicblock_zeptest_updated{value==3}: 
-    sl_mode_zeptest01:
-      action: remove  
-    sl_mode_zeptest02:
-      priority: 400
-      expire: 60s
-  logicblock_zeptest_updated{value==4}: 
-    sl_mode_zeptest02:
-      action: remove 
-    sl_mode_zeptest03:
-      priority: 400
-      expire: 60s
-  logicblock_zeptest_updated{value==5}:
-    sl_mode_zeptest03:
-      action: remove 
-    sl_mode_zeptest04:
-      priority: 400
-      expire: 60s
+  # logicblock_zeptest_updated{value==3}: 
+  #   sl_mode_zeptest01:
+  #     action: remove  
+  #   sl_mode_zeptest02:
+  #     priority: 400
+  #     expire: 60s
+  # logicblock_zeptest_updated{value==4}: 
+  #   sl_mode_zeptest02:
+  #     action: remove 
+  #   sl_mode_zeptest03:
+  #     priority: 400
+  #     expire: 60s
+  # logicblock_zeptest_updated{value==5}:
+  #   sl_mode_zeptest03:
+  #     action: remove 
+  #   sl_mode_zeptest04:
+  #     priority: 400
+  #     expire: 60s
 
-  logicblock_zeptest_hit{step==3}:
-    mode_zeptest_shot01:
-      priority: 401
-      expire: 3s
-  logicblock_zeptest_hit{step==4}:
-    mode_zeptest_shot02:
-      priority: 401
-      expire: 3s
-  logicblock_zeptest_hit{step==5}:
-    mode_zeptest_shot03:
-      priority: 401
-      expire: 3s   
+  # logicblock_zeptest_hit{step==3}:
+  #   mode_zeptest_shot01:
+  #     priority: 401
+  #     expire: 3s
+  # logicblock_zeptest_hit{step==4}:
+  #   mode_zeptest_shot02:
+  #     priority: 401
+  #     expire: 3s
+  # logicblock_zeptest_hit{step==5}:
+  #   mode_zeptest_shot03:
+  #     priority: 401
+  #     expire: 3s   
 shows:
   sh_zeptest_ballsave:
     - duration: 0.5s
@@ -472,6 +1093,24 @@ shows:
     - duration: 0.15s
       lights:
         (leds): off
+  sh_zeptest_on:
+    - duration: 0.3s
+      lights:
+        (leds): zeptest
+    - duration: 0.3s
+      lights:
+        (leds): off
+  sh_zeptest_enabled:
+    - duration: 0.1s
+      lights:
+        (leds): zeptest
+    - duration: 0.1s
+      lights:
+        (leds): off
+  sh_zeptest_not_ready:
+    - duration: 0.3s
+      lights:
+        (leds): off
 show_player:
   player_zeptest_60s_zeptest_timer_tick{value==62}:
     mystery_flash:
@@ -490,71 +1129,71 @@ show_player:
       show_tokens:
         leds: l_live_again
       loops: -1
-  logicblock_zeptest_updated{value==0}:
-      skillshot_chase:
-        loops: -1
-        speed: 5
-        show_tokens:
-          color1: zepstest
-  logicblock_zeptest_updated{value==1}:
-      skillshot_chase:
-        loops: -1
-        speed: 5
-        show_tokens:
-          color1: zepstest
-        priority: 181
-      zeptest_dropbank:
-        loops: -1
-        show_tokens:
-          color1: zepstest
-          leds: l_skill_shot3
-        priority: 182
-      starpost_cycle:
-        loops: 1
-        speed: 20
-        show_tokens:
-          color1: zepstest
-        priority: 170
-  logicblock_zeptest_updated{value==2}:
-      skillshot_chase:
-        loops: -1
-        speed: 5
-        show_tokens:
-          color1: zepstest
-        priority: 181
-      zeptest_dropbank:
-        loops: -1
-        show_tokens:
-          color1: zepstest
-          leds: l_skill_shot2,l_skill_shot3
-        priority: 182
-      starpost_cycle:
-        loops: 1
-        speed: 20
-        show_tokens:
-          color1: zepstest
-        priority: 170
-  logicblock_zeptest_updated{value==3}:
-      top_drop_chase:
-        loops: -1
-        speed: 14
-        show_tokens:
-          color1: zepstest
-      zeptest_dropbank: 
-        loops: -1
-        show_tokens:
-          leds: l_skill_shot2, l_skill_shot3
-          color1: off
-      skillshot_chase:
-        loops: -1
-        show_tokens:
-          color1: off
-      starpost_cycle:
-        loops: 1
-        speed: 20
-        show_tokens:
-          color1: zepstest
-        priority: 170
+  # logicblock_zeptest_updated{value==0}:
+  #     skillshot_chase:
+  #       loops: -1
+  #       speed: 5
+  #       show_tokens:
+  #         color1: zepstest
+  # logicblock_zeptest_updated{value==1}:
+  #     skillshot_chase:
+  #       loops: -1
+  #       speed: 5
+  #       show_tokens:
+  #         color1: zepstest
+  #       priority: 181
+  #     zeptest_dropbank:
+  #       loops: -1
+  #       show_tokens:
+  #         color1: zepstest
+  #         leds: l_skill_shot3
+  #       priority: 182
+  #     starpost_cycle:
+  #       loops: 1
+  #       speed: 20
+  #       show_tokens:
+  #         color1: zepstest
+  #       priority: 170
+  # logicblock_zeptest_updated{value==2}:
+  #     skillshot_chase:
+  #       loops: -1
+  #       speed: 5
+  #       show_tokens:
+  #         color1: zepstest
+  #       priority: 181
+  #     zeptest_dropbank:
+  #       loops: -1
+  #       show_tokens:
+  #         color1: zepstest
+  #         leds: l_skill_shot2,l_skill_shot3
+  #       priority: 182
+  #     starpost_cycle:
+  #       loops: 1
+  #       speed: 20
+  #       show_tokens:
+  #         color1: zepstest
+  #       priority: 170
+  # logicblock_zeptest_updated{value==3}:
+  #     top_drop_chase:
+  #       loops: -1
+  #       speed: 14
+  #       show_tokens:
+  #         color1: zepstest
+  #     zeptest_dropbank: 
+  #       loops: -1
+  #       show_tokens:
+  #         leds: l_skill_shot2, l_skill_shot3
+  #         color1: off
+  #     skillshot_chase:
+  #       loops: -1
+  #       show_tokens:
+  #         color1: off
+  #     starpost_cycle:
+  #       loops: 1
+  #       speed: 20
+  #       show_tokens:
+  #         color1: zepstest
+  #       priority: 170
   #logicblock_zeptest_hit{step==4}:
   #    left_ramp_chase:
   #      loops: -1
@@ -571,42 +1210,42 @@ show_player:
   #      show_tokens:
   #        color1: zepstest
   #      priority: 170
-  logicblock_zeptest_updated{value==4}:
-      right_ramp_chase:
-        loops: -1
-        speed: 5
-        show_tokens:
-          color1: zepstest
-      left_ramp_chase:
-        loops: -1
-        show_tokens:
-          color1: off
-      starpost_cycle:
-        loops: 1
-        speed: 20
-        show_tokens:
-          color1: zepstest
-        priority: 170
-      top_drop_chase:
-        loops: -1
-        show_tokens:
-          color1: off
-  logicblock_zeptest_updated{value==5}:
-      top_drop_chase:
-        loops: -1
-        speed: 14
-        show_tokens:
-          color1: zepstest
-      right_ramp_chase:
-        loops: -1
-        show_tokens:
-          color1: off
-      starpost_cycle:
-        loops: 1
-        speed: 20
-        show_tokens:
-          color1: zepstest
-        priority: 170
+  # logicblock_zeptest_updated{value==4}:
+  #     right_ramp_chase:
+  #       loops: -1
+  #       speed: 5
+  #       show_tokens:
+  #         color1: zepstest
+  #     left_ramp_chase:
+  #       loops: -1
+  #       show_tokens:
+  #         color1: off
+  #     starpost_cycle:
+  #       loops: 1
+  #       speed: 20
+  #       show_tokens:
+  #         color1: zepstest
+  #       priority: 170
+  #     top_drop_chase:
+  #       loops: -1
+  #       show_tokens:
+  #         color1: off
+  # logicblock_zeptest_updated{value==5}:
+  #     top_drop_chase:
+  #       loops: -1
+  #       speed: 14
+  #       show_tokens:
+  #         color1: zepstest
+  #     right_ramp_chase:
+  #       loops: -1
+  #       show_tokens:
+  #         color1: off
+  #     starpost_cycle:
+  #       loops: 1
+  #       speed: 20
+  #       show_tokens:
+  #         color1: zepstest
+  #       priority: 170
 
   mode_zeptest_started:     
     gi_on:

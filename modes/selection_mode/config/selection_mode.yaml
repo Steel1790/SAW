@@ -415,83 +415,265 @@ shows:
 
 show_player:
   selection_mode_lilbilly_highlighted:
-    ActionOff:
-      show_tokens:
-        leds: l_razorwire_mode, l_beartrap_mode, l_jelly_mode, l_drillchair_mode, l_quadshotgun_mode, l_zeptest_mode, bottom_bumper, l_right_standup_arrow, shotgun_flasher, skillshot, standup
-      loops: -1
     reversebeartrap:
       show_tokens:
+        leds: l_action_button, l_beartrap_mode, standup, gi
+      action: stop
+    flammablejelly:
+      show_tokens:
+        leds: l_action_button, l_jelly_mode, standup, orbit, gi
+      action: stop
+    drillchair:
+      show_tokens:
+        leds: l_action_button, l_drillchair_mode, jet_bumper, gi
+      action: stop
+    quadshotgun:
+      show_tokens:
+        leds: l_action_button, l_quadshotgun_mode, standup, shotgun_flasher, gi
+      action: stop
+    zeptest:
+      show_tokens:
+        leds: l_action_button , l_zeptest_mode, standup, bear_flasher, orbit, ramp, gi
+      action: stop
+    razorwire:
+      show_tokens:
+        leds: l_action_button, l_razorwire_mode, top_bumper, gi
+      action: stop   
+    survival_instinct:
+      show_tokens:
         leds: l_action_button 
+      loops: -1    
   selection_mode_thekeytofreedom_highlighted:
-    ActionOff:
-      show_tokens:
-        leds: l_razorwire_mode, l_beartrap_mode, l_jelly_mode, l_drillchair_mode, l_quadshotgun_mode, l_zeptest_mode, bottom_bumper, l_right_standup_arrow, shotgun_flasher, skillshot, standup
-      loops: -1
     reversebeartrap:
+      show_tokens:
+        leds: l_action_button, l_beartrap_mode, standup, gi
+      action: stop
+    flammablejelly:
+      show_tokens:
+        leds: l_action_button, l_jelly_mode, standup, orbit, gi
+      action: stop
+    drillchair:
+      show_tokens:
+        leds: l_action_button, l_drillchair_mode, jet_bumper, gi
+      action: stop
+    quadshotgun:
+      show_tokens:
+        leds: l_action_button, l_quadshotgun_mode, standup, shotgun_flasher, gi
+      action: stop
+    zeptest:
+      show_tokens:
+        leds: l_action_button , l_zeptest_mode, standup, bear_flasher, orbit, ramp, gi
+      action: stop
+    razorwire:
+      show_tokens:
+        leds: l_action_button, l_razorwire_mode, top_bumper, gi
+      action: stop   
+    survival_instinct:
       show_tokens:
         leds: l_action_button 
+      loops: -1     
   selection_mode_survivalinstinct_highlighted:
-    ActionOff:
-      show_tokens:
-        leds: l_razorwire_mode, l_beartrap_mode, l_jelly_mode, l_drillchair_mode, l_quadshotgun_mode, l_zeptest_mode, bottom_bumper, l_right_standup_arrow, shotgun_flasher, skillshot, standup
-      loops: -1
     reversebeartrap:
       show_tokens:
-        leds: l_action_button      
-  selection_mode_razorwire_highlighted:
-    ActionOff:
+        leds: l_action_button, l_beartrap_mode, standup, gi
+      action: stop
+    flammablejelly:
       show_tokens:
-        leds: l_beartrap_mode, l_jelly_mode, l_drillchair_mode, l_quadshotgun_mode, l_zeptest_mode, bottom_bumper, l_right_standup_arrow, shotgun_flasher, skillshot, standup
-      loops: -1
+        leds: l_action_button, l_jelly_mode, standup, orbit, gi
+      action: stop
+    drillchair:
+      show_tokens:
+        leds: l_action_button, l_drillchair_mode, jet_bumper, gi
+      action: stop
+    quadshotgun:
+      show_tokens:
+        leds: l_action_button, l_quadshotgun_mode, standup, shotgun_flasher, gi
+      action: stop
+    zeptest:
+      show_tokens:
+        leds: l_action_button , l_zeptest_mode, standup, bear_flasher, orbit, ramp, gi
+      action: stop
+    razorwire:
+      show_tokens:
+        leds: l_action_button, l_razorwire_mode, top_bumper, gi
+      action: stop   
+    survival_instinct:
+      show_tokens:
+        leds: l_action_button 
+      loops: -1    
+  selection_mode_razorwire_highlighted:
+    reversebeartrap:
+      show_tokens:
+        leds: l_action_button, l_beartrap_mode, standup, gi
+      action: stop
+    flammablejelly:
+      show_tokens:
+        leds: l_action_button, l_jelly_mode, standup, orbit, gi
+      action: stop
+    drillchair:
+      show_tokens:
+        leds: l_action_button, l_drillchair_mode, jet_bumper, gi
+      action: stop
+    quadshotgun:
+      show_tokens:
+        leds: l_action_button, l_quadshotgun_mode, standup, shotgun_flasher, gi
+      action: stop
+    zeptest:
+      show_tokens:
+        leds: l_action_button , l_zeptest_mode, standup, bear_flasher, orbit, ramp, gi
+      action: stop
+    survival_instinct:
+      show_tokens:
+        leds: l_action_button 
+      action: stop
     razorwire:
       show_tokens:
         leds: l_action_button, l_razorwire_mode, top_bumper, gi
       loops: -1
   selection_mode_reversebeartrap_highlighted:
-    ActionOff:
+    razorwire:
       show_tokens:
-        leds: l_razorwire_mode, l_jelly_mode, l_drillchair_mode, l_quadshotgun_mode, l_zeptest_mode, jet_bumper, l_right_standup_arrow, shotgun_flasher, skillshot
-      loops: -1
+        leds: l_action_button, l_razorwire_mode, top_bumper, gi
+      action: stop
+    flammablejelly:
+      show_tokens:
+        leds: l_action_button, l_jelly_mode, standup, orbit, gi
+      action: stop
+    drillchair:
+      show_tokens:
+        leds: l_action_button, l_drillchair_mode, jet_bumper, gi
+      action: stop
+    quadshotgun:
+      show_tokens:
+        leds: l_action_button, l_quadshotgun_mode, standup, shotgun_flasher, gi
+      action: stop
+    zeptest:
+      show_tokens:
+        leds: l_action_button , l_zeptest_mode, standup, bear_flasher, orbit, ramp, gi
+      action: stop
+    survival_instinct:
+      show_tokens:
+        leds: l_action_button 
+      action: stop
     reversebeartrap:
       show_tokens:
         leds: l_action_button, l_beartrap_mode, standup, gi
       loops: -1
   selection_mode_flammablejelly_highlighted:
-    ActionOff:
+    reversebeartrap:
       show_tokens:
-        leds: l_razorwire_mode, l_beartrap_mode, l_drillchair_mode, l_quadshotgun_mode, l_zeptest_mode, jet_bumper, shotgun_flasher, skillshot, l_left_standup_arrow, l_left_standup_right_ramp_arrow, l_right_standup_right_ramp_arrow
-      loops: -1
+        leds: l_action_button, l_beartrap_mode, standup, gi
+      action: stop
+    razorwire:
+      show_tokens:
+        leds: l_action_button, l_razorwire_mode, top_bumper, gi
+      action: stop
+    drillchair:
+      show_tokens:
+        leds: l_action_button, l_drillchair_mode, jet_bumper, gi
+      action: stop
+    quadshotgun:
+      show_tokens:
+        leds: l_action_button, l_quadshotgun_mode, standup, shotgun_flasher, gi
+      action: stop
+    zeptest:
+      show_tokens:
+        leds: l_action_button , l_zeptest_mode, standup, bear_flasher, orbit, ramp, gi
+      action: stop
+    survival_instinct:
+      show_tokens:
+        leds: l_action_button 
+      action: stop
     flammablejelly:
       show_tokens:
         leds: l_action_button, l_jelly_mode, standup, orbit, gi
       loops: -1
   selection_mode_drillchair_highlighted:
-    ActionOff:
+    reversebeartrap:
       show_tokens:
-        leds: l_razorwire_mode, l_beartrap_mode, l_jelly_mode, l_quadshotgun_mode, l_zeptest_mode, top_bumper, l_right_standup_arrow, shotgun_flasher, skillshot, standup
-      loops: -1
+        leds: l_action_button, l_beartrap_mode, standup, gi
+      action: stop
+    flammablejelly:
+      show_tokens:
+        leds: l_action_button, l_jelly_mode, standup, orbit, gi
+      action: stop
+    razorwire:
+      show_tokens:
+        leds: l_action_button, l_razorwire_mode, top_bumper, gi
+      action: stop
+    quadshotgun:
+      show_tokens:
+        leds: l_action_button, l_quadshotgun_mode, standup, shotgun_flasher, gi
+      action: stop
+    zeptest:
+      show_tokens:
+        leds: l_action_button , l_zeptest_mode, standup, bear_flasher, orbit, ramp, gi
+      action: stop
+    survival_instinct:
+      show_tokens:
+        leds: l_action_button 
+      action: stop
     drillchair:
       show_tokens:
         leds: l_action_button, l_drillchair_mode, jet_bumper, gi
       loops: -1
   selection_mode_quadshotgun_highlighted:
-    ActionOff:
+    reversebeartrap:
       show_tokens:
-        leds: l_razorwire_mode, l_beartrap_mode, l_jelly_mode, l_drillchair_mode, l_zeptest_mode, jet_bumper, orbit, skillshot, standup
-      loops: -1
-    quadshotgun:
+        leds: l_action_button, l_beartrap_mode, standup, gi
+      action: stop
+    flammablejelly:
       show_tokens:
-        leds: l_action_button, l_quadshotgun_mode, shotgun_flasher, gi
-      loops: -1
-  selection_mode_zeptest_highlighted:
-    ActionOff:
+        leds: l_action_button, l_jelly_mode, standup, orbit, gi
+      action: stop
+    drillchair:
       show_tokens:
-        leds: l_razorwire_mode, l_beartrap_mode, l_jelly_mode, l_drillchair_mode, l_quadshotgun_mode, jet_bumper, l_right_standup_arrow, shotgun_flasher, orbit, standup
-      loops: -1
+        leds: l_action_button, l_drillchair_mode, jet_bumper, gi
+      action: stop
+    razorwire:
+      show_tokens:
+        leds: l_action_button, l_razorwire_mode, top_bumper, gi
+      action: stop
     zeptest:
       show_tokens:
-        leds: l_action_button , l_zeptest_mode, skillshot, gi
+        leds: l_action_button , l_zeptest_mode, standup, bear_flasher, orbit, ramp, gi
+      action: stop
+    survival_instinct:
+      show_tokens:
+        leds: l_action_button 
+      action: stop
+    quadshotgun:
+      show_tokens:
+        leds: l_action_button, l_quadshotgun_mode, standup, shotgun_flasher, gi
       loops: -1
+  selection_mode_zeptest_highlighted:
+    reversebeartrap:
+      show_tokens:
+        leds: l_action_button, l_beartrap_mode, standup, gi
+      action: stop
+    flammablejelly:
+      show_tokens:
+        leds: l_action_button, l_jelly_mode, standup, orbit, gi
+      action: stop
+    drillchair:
+      show_tokens:
+        leds: l_action_button, l_drillchair_mode, jet_bumper, gi
+      action: stop
+    quadshotgun:
+      show_tokens:
+        leds: l_action_button, l_quadshotgun_mode, standup, shotgun_flasher, gi
+      action: stop
+    razorwire:
+      show_tokens:
+        leds: l_action_button, l_razorwire_mode, top_bumper, gi
+      action: stop
+    survival_instinct:
+      show_tokens:
+        leds: l_action_button 
+      action: stop
+    zeptest:
+      show_tokens:
+        leds: l_action_button , l_zeptest_mode, standup, bear_flasher, orbit, ramp, gi
   selection_mode_razorwire_selected:
     ActionOff:
       show_tokens:

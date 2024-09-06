@@ -309,6 +309,17 @@ widgets:
       corner_radius: 20
       corner_segments: 20
       color: black
+   w_flammable_digits_collected:
+    - type: text
+      text: COMBINATION COLLECTED
+      number_grouping: true 
+      x: 50%
+      y: 60%
+      z: 7
+      font_size: 100
+      font_name: Mustkill     
+      outline_color: black
+      outline_width: 7
 
    flammablejelly_shot_update1:            
     - type: Text
@@ -455,6 +466,10 @@ widget_player:
  player_flammablejelly_60s_flammablejelly_timer_tick{value==60}: 
   w_flammablejellyUI:
     slide: sl_mode_flammablejelly01
+    action: add
+ flammablejelly_p1_complete:
+  w_flammable_digits_collected:
+    slide: FlammableJellyModeShot1
     action: add
  logicblock_flammablejelly_updated{value==1}:
   w_flammablejellyUI:
