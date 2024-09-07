@@ -162,7 +162,7 @@ variable_player:
   mode_quadshotgun_complete:
     score: (6000000 + (current_player.shotgun_timer_bonus) + (current_player.gears_used * 1500000)) * (current_player.pf_multiplier)
   counter_quadshotgun_spinner_counter_hit:
-    score: 500000 * (current_player.pf_multiplier)
+    score: (500000 + (current_player.gears_used * 500000)) * (current_player.pf_multiplier)
     quadshotgun_spinner_counter:
       action: set
       int: (count)*46
@@ -258,180 +258,180 @@ slides:
       width: 1366
       height: 768
       
-  quadshotgun_spinner:
-    widgets:
-    - type: Text
-      text: Rip the Spinner!
-      font_name: TrajanProRegular
-      font_size: 75
-      outline_color: black
-      outline_width: 7
-      color: d8d8d8
-      animations:
-        add_to_slide:
-          - property: opacity
-            value: 0
-          - property: opacity
-            value: 1
-            duration: 1000ms
-            timing: after_previous
+#   quadshotgun_spinner:
+#     widgets:
+#     - type: Text
+#       text: Rip the Spinner!
+#       font_name: TrajanProRegular
+#       font_size: 75
+#       outline_color: black
+#       outline_width: 7
+#       color: d8d8d8
+#       animations:
+#         add_to_slide:
+#           - property: opacity
+#             value: 0
+#           - property: opacity
+#             value: 1
+#             duration: 1000ms
+#             timing: after_previous
       
-    - type: image
-      image: hacksawUI
-      opacity: 1.0
-      y: 1
-      x: 1
-      anchor_x: left
-      anchor_y: bottom
-    - type: text
-      text: (score)
-      number_grouping: true
-      y: 16
-      x: 25
-      font_size: 36
-      anchor_x: left
-      anchor_y: bottom
-      font_name: TrajanProRegular
-      color: "006ee6"
+#     - type: image
+#       image: hacksawUI
+#       opacity: 1.0
+#       y: 1
+#       x: 1
+#       anchor_x: left
+#       anchor_y: bottom
+#     - type: text
+#       text: (score)
+#       number_grouping: true
+#       y: 16
+#       x: 25
+#       font_size: 36
+#       anchor_x: left
+#       anchor_y: bottom
+#       font_name: TrajanProRegular
+#       color: "006ee6"
       
-    - type: Text
-      text: 00:(player|quadshotgun_quadshotgun_60s_timer_tick)
-      font_size: 100
-      font_name: digitalclockfont
-      color: red
-      x: 50%
-      y: 83.2%
-    - type: rectangle
-      width: 420
-      height: 130
-      x: 50%
-      y: 84.5%
-      corner_radius: 20
-      corner_segments: 20
-      color: black      
-    - type: rectangle
-      width: 250
-      height: 46
-      x: 25%
-      y: 130
-      color: black
-      corner_radius: 10
-      corner_segments: 10
+#     - type: Text
+#       text: 00:(player|quadshotgun_quadshotgun_60s_timer_tick)
+#       font_size: 100
+#       font_name: digitalclockfont
+#       color: red
+#       x: 50%
+#       y: 83.2%
+#     - type: rectangle
+#       width: 420
+#       height: 130
+#       x: 50%
+#       y: 84.5%
+#       corner_radius: 20
+#       corner_segments: 20
+#       color: black      
+#     - type: rectangle
+#       width: 250
+#       height: 46
+#       x: 25%
+#       y: 130
+#       color: black
+#       corner_radius: 10
+#       corner_segments: 10
       
-#    - type: Text
-#      text: Seconds Left
-#      font_size: 50
-#      font_name: TrajanProRegular
-#      color: 65fe08
-#      x: 825
-#      y: 85%
-    - type: Text
-      text: (player|quadshotgun_visual_spinner_counter) / 30 spins
-      font_size: 50
-      font_name: TrajanProRegular
-      outline_color: black
-      outline_width: 7
-      color: d8d8d8
-      y: 35%
-    - type: Text
-      text: You Have 60 Seconds To Hit 30 Spins!
-      color: "006ee6"
-      font_name: TrajanProRegular
-      font_size: 35
-      y: 17%
-      animations:
-       pre_show_slide:
-        - property: opacity
-          value: 0
-          duration: 1s
-        - property: opacity
-          value: 1
-          duration: 1s
-          repeat: true
-    - type: image
-      image: quadshotgunimg
-      opacity: 0.65
-    transition:
-     type: fade
-     duration: 0.2s
+# #    - type: Text
+# #      text: Seconds Left
+# #      font_size: 50
+# #      font_name: TrajanProRegular
+# #      color: 65fe08
+# #      x: 825
+# #      y: 85%
+#     - type: Text
+#       text: (player|quadshotgun_visual_spinner_counter) / 30 spins
+#       font_size: 50
+#       font_name: TrajanProRegular
+#       outline_color: black
+#       outline_width: 7
+#       color: d8d8d8
+#       y: 35%
+#     - type: Text
+#       text: You Have 60 Seconds To Hit 30 Spins!
+#       color: "006ee6"
+#       font_name: TrajanProRegular
+#       font_size: 35
+#       y: 17%
+#       animations:
+#        pre_show_slide:
+#         - property: opacity
+#           value: 0
+#           duration: 1s
+#         - property: opacity
+#           value: 1
+#           duration: 1s
+#           repeat: true
+#     - type: image
+#       image: quadshotgunimg
+#       opacity: 0.65
+#     transition:
+#      type: fade
+#      duration: 0.2s
  
-  quadshotgun_phase2:
-    widgets:     
-    - type: Text
-      text: " Hit The Left Orbit To Escape"
-      font_size: 80
-      font_name: TrajanProRegular
-      outline_color: black
-      outline_width: 7
-      color: d8d8d8 
-      x: 50%
-      y: 62%
-      animations:
-        add_to_slide:
-          - property: opacity
-            value: 0
-          - property: opacity
-            value: 1
-            duration: 1000ms
-            timing: after_previous
-    - type: Text
-      text: " & Complete The Trap"
-      font_size: 80
-      font_name: TrajanProRegular
-      outline_color: black
-      outline_width: 7
-      color: d8d8d8
-      x: 50%
-      y: 48%
-      animations:
-        add_to_slide:
-          - property: opacity
-            value: 0
-          - property: opacity
-            value: 1
-            duration: 1000ms
-            timing: after_previous
+#   quadshotgun_phase2:
+#     widgets:     
+#     - type: Text
+#       text: " Hit The Left Orbit To Escape"
+#       font_size: 80
+#       font_name: TrajanProRegular
+#       outline_color: black
+#       outline_width: 7
+#       color: d8d8d8 
+#       x: 50%
+#       y: 62%
+#       animations:
+#         add_to_slide:
+#           - property: opacity
+#             value: 0
+#           - property: opacity
+#             value: 1
+#             duration: 1000ms
+#             timing: after_previous
+#     - type: Text
+#       text: " & Complete The Trap"
+#       font_size: 80
+#       font_name: TrajanProRegular
+#       outline_color: black
+#       outline_width: 7
+#       color: d8d8d8
+#       x: 50%
+#       y: 48%
+#       animations:
+#         add_to_slide:
+#           - property: opacity
+#             value: 0
+#           - property: opacity
+#             value: 1
+#             duration: 1000ms
+#             timing: after_previous
       
-    - type: image
-      image: hacksawUI
-      opacity: 0.5
-      y: 1
-      x: 1
-      anchor_x: left
-      anchor_y: bottom
-    - type: text
-      text: (score)
-      number_grouping: true
-      y: 16
-      x: 25
-      font_size: 36
-      anchor_x: left
-      anchor_y: bottom
-      font_name: TrajanProRegular
-      color: "006ee6"
+#     - type: image
+#       image: hacksawUI
+#       opacity: 0.5
+#       y: 1
+#       x: 1
+#       anchor_x: left
+#       anchor_y: bottom
+#     - type: text
+#       text: (score)
+#       number_grouping: true
+#       y: 16
+#       x: 25
+#       font_size: 36
+#       anchor_x: left
+#       anchor_y: bottom
+#       font_name: TrajanProRegular
+#       color: "006ee6"
       
-    - type: Text
-      text: 00:(player|quadshotgun_quadshotgun_60s_timer_tick)
-      font_size: 100
-      font_name: digitalclockfont
-      color: red
-      x: 50%
-      y: 83.2%
-    - type: rectangle
-      width: 420
-      height: 130
-      x: 50%
-      y: 84.5%
-      corner_radius: 20
-      corner_segments: 20
-      color: black
+#     - type: Text
+#       text: 00:(player|quadshotgun_quadshotgun_60s_timer_tick)
+#       font_size: 100
+#       font_name: digitalclockfont
+#       color: red
+#       x: 50%
+#       y: 83.2%
+#     - type: rectangle
+#       width: 420
+#       height: 130
+#       x: 50%
+#       y: 84.5%
+#       corner_radius: 20
+#       corner_segments: 20
+#       color: black
                 
-    - type: image
-      image: quadshotgunimg
-      opacity: 0.4
-    transition:
-     type: fade
-     duration: 0.2s
+#     - type: image
+#       image: quadshotgunimg
+#       opacity: 0.4
+#     transition:
+#      type: fade
+#      duration: 0.2s
 
 
       
@@ -650,9 +650,9 @@ widgets:
       image: GearsButtonImg
       x: 90%
       y: 16%
-      z: 2      
+      z: 3    
     - type: Text
-      text: Spinner + 175k
+      text: 2x Spinner
       font_size: 40
       font_name: Mustkill
       outline_color: black
@@ -660,7 +660,7 @@ widgets:
       color: shotgun
       x: 89%
       y: 4%   
-      z: 2
+      z: 3
  
 widget_player:
  player_quadshotgun_quadshotgun_60s_timer_tick{value==59}:  
@@ -677,7 +677,11 @@ widget_player:
   w_quadshotgun_phase2:
     slide: sl_mode_quadshotgun02
     action: add
- shot_quadshotgun_button_sp_quadshotgun_lit_hit:
+ e_quadshotgun_action_button_1:
+  w_gears_button:
+    slide: sl_mode_quadshotgun01
+    action: add
+ e_quadshotgun_action_button_2:
   w_gears_button:
     slide: sl_mode_quadshotgun02
     action: add
@@ -1015,3 +1019,6 @@ event_player:
   mode_quadshotgun_stopping{mode.shackle_multiball.active==True}: e_mode_qualify_disabled|0.5s
   mode_quadshotgun_stopping{mode.jigsaw_multiball.active==True}: e_mode_qualify_disabled|0.5s
   mode_quadshotgun_stopping{mode.hacksaw_multiball.active==True}: e_mode_qualify_disabled|0.5s
+  player_shot_shot_quadshotgun_button_enabled{change==1}: 
+    - e_quadshotgun_action_button_1|8s
+    - e_quadshotgun_action_button_2|9s 

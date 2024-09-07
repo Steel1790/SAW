@@ -106,7 +106,7 @@ variable_player:
     razorwire_pops_counter:
       action: set
       int: (count)*42
-    score: 1025000 * (current_player.pf_multiplier)
+    score: (1025000 + (current_player.hacksaws_used * 1025000)) * (current_player.pf_multiplier)
     razorwire_visual_pops_counter:
       action: set
       int: (count)
@@ -602,7 +602,7 @@ widget_player:
   w_razorwireUI_phase2:
     slide: mode_razorwire02
     action: add
- shot_razorwire_button_sp_razorwire_lit_hit:
+ e_razorwire_action_button:
   w_hacksaw_button:
     slide: mode_razorwire01
     action: add
@@ -990,3 +990,4 @@ event_player:
   mode_razorwire_stopping{mode.jigsaw_multiball.active==True}: e_mode_qualify_disabled|0.5s
   mode_razorwire_stopping{mode.hacksaw_multiball.active==True}: e_mode_qualify_disabled|0.5s
   shot_razorwire_button_sp_razorwire_lit_hit: e_stop_hacksaw|30s
+  player_shot_shot_razorwire_button_enabled{change==1}: e_razorwire_action_button|1s

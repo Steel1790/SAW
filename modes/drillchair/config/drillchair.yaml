@@ -692,7 +692,7 @@ widget_player:
  #  dc_shot_update4:
  #    slide: drillchair_phase2
  #    action: add
- shot_drillchair_button_sp_drillchair_lit_hit:
+ e_drillchair_action_button:
   w_handgun_button:
     slide: mode_drillchair01
     action: add
@@ -1166,6 +1166,7 @@ event_player:
   mode_drillchair_stopping{mode.shackle_multiball.active==True}: e_mode_qualify_disabled|0.5s
   mode_drillchair_stopping{mode.jigsaw_multiball.active==True}: e_mode_qualify_disabled|0.5s
   mode_drillchair_stopping{mode.hacksaw_multiball.active==True}: e_mode_qualify_disabled|0.5s
+  player_shot_shot_drillchair_button_enabled{change==1}: e_drillchair_action_button|1s
   shot_drillchair_button_sp_drillchair_lit_hit{device.counters.drillchair_pops_counter.value<1}:
     - sw_bottom_pops|0.1s
     - sw_bottom_pops|0.15s

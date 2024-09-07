@@ -581,12 +581,12 @@ variable_player:
     score: (4000000 + (current_player.syringes_used * 1000000)) * (current_player.pf_multiplier)
     cnt_zeptest_collected_2:
       action: set
-      int: (count)*250
+      int: (count)*125
   logicblock_cnt_zeptest_collected_hit{count==3}:
     score: (5000000 + (current_player.syringes_used * 1000000)) * (current_player.pf_multiplier)
     cnt_zeptest_collected_3:
       action: set
-      int: (count)*250
+      int: (count)*125
   # logicblock_zeptest_hit{step==1}:
   #   score: (4000000 + (current_player.syringes_used * 1000000)) * (current_player.pf_multiplier)
   # logicblock_zeptest_hit{step==2}:
@@ -681,75 +681,75 @@ slides:
       width: 1366
       height: 768
       
-  zeptestUI:
-   widgets:
-    - type: image
-      image: hacksawUI
-      opacity: 0.5
-      y: 1
-      x: 1
-      anchor_x: left
-      anchor_y: bottom
-    - type: text
-      text: (score)
-      number_grouping: true
-      y: 16
-      x: 25
-      font_size: 36
-      anchor_x: left
-      anchor_y: bottom
-      font_name: TrajanProRegular
-      color: B17BE3
-    - type: Text
-      text: (player|zeptest_60s_zeptest_timer_tick) Seconds Left
-      font_size: 55
-      font_name: TrajanProRegular
-      color: CC8899
-      y: 90%
+  # zeptestUI:
+  #  widgets:
+  #   - type: image
+  #     image: hacksawUI
+  #     opacity: 0.5
+  #     y: 1
+  #     x: 1
+  #     anchor_x: left
+  #     anchor_y: bottom
+  #   - type: text
+  #     text: (score)
+  #     number_grouping: true
+  #     y: 16
+  #     x: 25
+  #     font_size: 36
+  #     anchor_x: left
+  #     anchor_y: bottom
+  #     font_name: TrajanProRegular
+  #     color: B17BE3
+  #   - type: Text
+  #     text: (player|zeptest_60s_zeptest_timer_tick) Seconds Left
+  #     font_size: 55
+  #     font_name: TrajanProRegular
+  #     color: CC8899
+  #     y: 90%
       
-    - type: Text
-      text: "To find the Poison Antidote:"
-      font_size: 50
-      font_name: TrajanProRegular
-      outline_color: black
-      outline_width: 7
-      color: AECCE4
-      x: 50%
-      y: 62%    
-      z: 1      
-    - type: Text
-      text: "You Have 60 Seconds To Enable The Cameras"
-      color: CC8899
-      font_name: TrajanProRegular
-      font_size: 35
-      y: 145
-      animations:
-       pre_show_slide:
-        - property: opacity
-          value: 0
-          duration: 1s
-        - property: opacity
-          value: 1
-          duration: 1s
-          repeat: true
-    - type: Text
-      text: "and Collect the Antidote"
-      color: CC8899
-      font_name: TrajanProRegular
-      font_size: 35
-      y: 110
-      animations:
-       pre_show_slide:
-        - property: opacity
-          value: 0
-          duration: 1s
-        - property: opacity
-          value: 1
-          duration: 1s
-          repeat: true          
-    - type: image
-      image: zeptest
-      opacity: 0.45
+  #   - type: Text
+  #     text: "To find the Poison Antidote:"
+  #     font_size: 50
+  #     font_name: TrajanProRegular
+  #     outline_color: black
+  #     outline_width: 7
+  #     color: AECCE4
+  #     x: 50%
+  #     y: 62%    
+  #     z: 1      
+  #   - type: Text
+  #     text: "You Have 60 Seconds To Enable The Cameras"
+  #     color: CC8899
+  #     font_name: TrajanProRegular
+  #     font_size: 35
+  #     y: 145
+  #     animations:
+  #      pre_show_slide:
+  #       - property: opacity
+  #         value: 0
+  #         duration: 1s
+  #       - property: opacity
+  #         value: 1
+  #         duration: 1s
+  #         repeat: true
+  #   - type: Text
+  #     text: "and Collect the Antidote"
+  #     color: CC8899
+  #     font_name: TrajanProRegular
+  #     font_size: 35
+  #     y: 110
+  #     animations:
+  #      pre_show_slide:
+  #       - property: opacity
+  #         value: 0
+  #         duration: 1s
+  #       - property: opacity
+  #         value: 1
+  #         duration: 1s
+  #         repeat: true          
+  #   - type: image
+  #     image: zeptest
+  #     opacity: 0.45
 #      width: 1366
 #      height: 768 
 #    transition:
@@ -977,7 +977,7 @@ widgets:
       y: 8%   
       z: 2
     - type: Text
-      text: Shots Worth +250k
+      text: Shots Worth + 1M
       font_size: 45
       font_name: Mustkill
       outline_color: black
@@ -1007,22 +1007,22 @@ widget_player:
  #   w_zeptestUI:
  #     slide: sl_mode_zeptest04
  #     action: add
- shot_zeptest_button_sp_zeptest_lit_hit:
+ e_zeptest_action_button:
   w_syringe_button:
     slide: sl_mode_zeptest01
     action: add
- slide_sl_mode_zeptest02_active{current_player.syringes_used==1}:
-   w_syringe_button:
-     slide: sl_mode_zeptest02
-     action: add
- slide_sl_mode_zeptest03_active{current_player.syringes_used==1}:
-   w_syringe_button:
-     slide: sl_mode_zeptest03
-     action: add 
- slide_sl_mode_zeptest04_active{current_player.syringes_used==1}:
-   w_syringe_button:
-     slide: sl_mode_zeptest04
-     action: add 
+ # slide_sl_mode_zeptest02_active{current_player.syringes_used==1}:
+ #   w_syringe_button:
+ #     slide: sl_mode_zeptest02
+ #     action: add
+ # slide_sl_mode_zeptest03_active{current_player.syringes_used==1}:
+ #   w_syringe_button:
+ #     slide: sl_mode_zeptest03
+ #     action: add 
+ # slide_sl_mode_zeptest04_active{current_player.syringes_used==1}:
+ #   w_syringe_button:
+ #     slide: sl_mode_zeptest04
+ #     action: add 
 
 slide_player:
   mode_zeptest_started: 
@@ -1318,16 +1318,15 @@ sound_player:
 
 event_player: 
   slide_sl_mode_zeptest01_active: e_primary_mode_active
-  shot_zeptest_button_sp_zeptest_lit_hit{device.sequences.zeptest.value == 0}: 
-    - sw_lower_drop_target|0.1s
-    - sw_lower_drop_target|0.2s
-    - sw_lower_drop_target|0.3s
-  shot_zeptest_button_sp_zeptest_lit_hit{device.sequences.zeptest.value == 3}:
-    - drop_target_dt_upper_drop1_down
-  shot_zeptest_button_sp_zeptest_lit_hit{device.sequences.zeptest.value == 4}:
-    - machine_var_audits_switches_s_right_ramp_score_top
-  shot_zeptest_button_sp_zeptest_lit_hit{device.sequences.zeptest.value == 5}:
-    - drop_target_dt_upper_drop1_down
+  shot_zeptest_button_sp_zeptest_lit_hit{device.counters.cnt_zeptest_collected.value == 0}: 
+    - sg_zeptest_zeptest_lit_hit|0.1s
+    - sg_zeptest_zeptest_collected_hit|0.2s
+  shot_zeptest_button_sp_zeptest_lit_hit{device.counters.cnt_zeptest_collected.value == 1}:
+    - sg_zeptest_zeptest_lit_hit|0.1s
+    - sg_zeptest_zeptest_collected_hit|0.2s
+  shot_zeptest_button_sp_zeptest_lit_hit{device.counters.cnt_zeptest_collected.value == 2}:
+    - sg_zeptest_zeptest_lit_hit|0.1s
+    - sg_zeptest_zeptest_collected_hit|0.2s
   mode_zeptest_stopping{mode.shackle_multiball.active==True}: e_mode_qualify_disabled|0.5s
   mode_zeptest_stopping{mode.jigsaw_multiball.active==True}: e_mode_qualify_disabled|0.5s
   mode_zeptest_stopping{mode.hacksaw_multiball.active==True}: e_mode_qualify_disabled|0.5s

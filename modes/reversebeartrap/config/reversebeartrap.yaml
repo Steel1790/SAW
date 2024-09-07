@@ -64,15 +64,15 @@ timers:
 
 variable_player:
   logicblock_reversebeartrap_hit{step==1}:
-    score: (3000000 + (current_player.keys_used * 500000) + (current_player.spinner_value * 42500)) * (current_player.pf_multiplier)
+    score: (3000000 + (current_player.keys_used * 4500000) + (current_player.spinner_value * 42500)) * (current_player.pf_multiplier)
   logicblock_reversebeartrap_hit{step==2}:
-    score: (3000000 + (current_player.keys_used * 500000) + (current_player.spinner_value * 42500)) * (current_player.pf_multiplier)
+    score: (3000000 + (current_player.keys_used * 3000000) + (current_player.spinner_value * 42500)) * (current_player.pf_multiplier)
   logicblock_reversebeartrap_hit{step==3}:
-    score: (4500000 + (current_player.keys_used * 750000) + (current_player.spinner_value * 42500)) * (current_player.pf_multiplier)
+    score: (4500000 + (current_player.keys_used * 4500000) + (current_player.spinner_value * 42500)) * (current_player.pf_multiplier)
   logicblock_reversebeartrap_hit{step==4}:
-    score: (3000000 + (current_player.keys_used * 500000) + (current_player.spinner_value * 42500)) * (current_player.pf_multiplier)
+    score: (3000000 + (current_player.keys_used * 3000000) + (current_player.spinner_value * 42500)) * (current_player.pf_multiplier)
   logicblock_reversebeartrap_hit{step==5}:
-    score: (4500000 + (current_player.keys_used * 750000) + (current_player.spinner_value * 42500)) * (current_player.pf_multiplier)
+    score: (4500000 + (current_player.keys_used * 4500000) + (current_player.spinner_value * 42500)) * (current_player.pf_multiplier)
   mode_reversebeartrap_complete:
     score: (6000000 + (current_player.beartrap_timer_bonus) + (current_player.keys_used * 1000000) + (current_player.spinner_value * 145750)) * (current_player.pf_multiplier)
        
@@ -191,82 +191,82 @@ slides:
       width: 1366
       height: 768        
       
-  reversebeartrapUI:
-   widgets:
-#    - type: Text
-#      text: Shoot The Spinners!
-#      font_name: TrajanProRegular
-#      font_size: 75
-#      color: 65fe08
-    - type: image
-      image: hacksawUI
-      opacity: 1.0
-      y: 1
-      x: 1
-      anchor_x: left
-      anchor_y: bottom
-    - type: text
-      text: (score)
-      number_grouping: true
-      y: 16
-      x: 25
-      font_size: 36
-      anchor_x: left
-      anchor_y: bottom
-      font_name: TrajanProRegular
-      color: F5FBFF
-    - type: Text
-      text: (player|reversebeartrap_120s_reversebeartrap_timer_tick) Seconds Left
-      font_size: 55
-      font_name: TrajanProRegular
-      color: E5F3FD
-      y: 90%
+#   reversebeartrapUI:
+#    widgets:
+# #    - type: Text
+# #      text: Shoot The Spinners!
+# #      font_name: TrajanProRegular
+# #      font_size: 75
+# #      color: 65fe08
+#     - type: image
+#       image: hacksawUI
+#       opacity: 1.0
+#       y: 1
+#       x: 1
+#       anchor_x: left
+#       anchor_y: bottom
+#     - type: text
+#       text: (score)
+#       number_grouping: true
+#       y: 16
+#       x: 25
+#       font_size: 36
+#       anchor_x: left
+#       anchor_y: bottom
+#       font_name: TrajanProRegular
+#       color: F5FBFF
+#     - type: Text
+#       text: (player|reversebeartrap_120s_reversebeartrap_timer_tick) Seconds Left
+#       font_size: 55
+#       font_name: TrajanProRegular
+#       color: E5F3FD
+#       y: 90%
 
-#    - type: Text
-#      text: 00:(player|reversebeartrap_120s_reversebeartrap_timer_tick)
-#      font_size: 100
-#      font_name: digitalclockfont
-#      color: red
-#      x: 50%
-#      y: 83.2%
-#    - type: rectangle
-#      width: 420
-#      height: 130
-#      x: 50%
-#      y: 84.5%
-#      corner_radius: 20
-#      corner_segments: 20
-#      color: black
+# #    - type: Text
+# #      text: 00:(player|reversebeartrap_120s_reversebeartrap_timer_tick)
+# #      font_size: 100
+# #      font_name: digitalclockfont
+# #      color: red
+# #      x: 50%
+# #      y: 83.2%
+# #    - type: rectangle
+# #      width: 420
+# #      height: 130
+# #      x: 50%
+# #      y: 84.5%
+# #      corner_radius: 20
+# #      corner_segments: 20
+# #      color: black
       
-    - type: Text
-# work on displaying the count of spins
-      text: "To Find the Key:"
-      font_size: 60
-      font_name: TrajanProRegular
-      outline_color: black
-      outline_width: 7
-      color: AECCE4
-      x: 50%
-      y: 62%      
-      z: 1
-    - type: Text
-      text: "You Have 120 Seconds To Find The Key & Earn Your Salvation"
-      color: D1E5F4
-      font_name: TrajanProRegular
-      font_size: 33
-      y: 90
-      animations:
-       pre_show_slide:
-        - property: opacity
-          value: 0
-          duration: 1s
-        - property: opacity
-          value: 1
-          duration: 1s
-          repeat: true
-    - type: image
-      image: reversebeartrap
-      opacity: 0.45
+#     - type: Text
+# # work on displaying the count of spins
+#       text: "To Find the Key:"
+#       font_size: 60
+#       font_name: TrajanProRegular
+#       outline_color: black
+#       outline_width: 7
+#       color: AECCE4
+#       x: 50%
+#       y: 62%      
+#       z: 1
+#     - type: Text
+#       text: "You Have 120 Seconds To Find The Key & Earn Your Salvation"
+#       color: D1E5F4
+#       font_name: TrajanProRegular
+#       font_size: 33
+#       y: 90
+#       animations:
+#        pre_show_slide:
+#         - property: opacity
+#           value: 0
+#           duration: 1s
+#         - property: opacity
+#           value: 1
+#           duration: 1s
+#           repeat: true
+#     - type: image
+#       image: reversebeartrap
+#       opacity: 0.45
 #      width: 1366
 #      height: 768 
 #    transition:
@@ -387,8 +387,22 @@ widget_player:
    w_reversebeartrapUI:
      slide: mode_rbt04
      action: add
- shot_reversebeartrap_button_sp_reversebeartrap_lit_hit:
+#key widget
+ e_reversebeartrap_action_button_1:
    w_key_button:
+     slide: mode_rbt01
+     action: add
+ e_reversebeartrap_action_button_2:
+   w_key_button:
+     slide: mode_rbt01
+     action: add
+ e_reversebeartrap_action_button_3:
+   w_key_button:
+     slide: mode_rbt01
+     action: add
+ e_reversebeartrap_action_button_4:
+   w_key_button:
+     slide: mode_rbt01
      action: add
  slide_mode_rbt02_active{current_player.keys_used==1}:
    w_key_button:
@@ -809,3 +823,8 @@ event_player:
   mode_reversebeartrap_stopping{mode.shackle_multiball.active==True}: e_mode_qualify_disabled|0.5s
   mode_reversebeartrap_stopping{mode.jigsaw_multiball.active==True}: e_mode_qualify_disabled|0.5s
   mode_reversebeartrap_stopping{mode.hacksaw_multiball.active==True}: e_mode_qualify_disabled|0.5s
+  player_shot_shot_reversebeartrap_button_enabled{change==1}: 
+    - e_reversebeartrap_action_button_1|1s
+    - e_reversebeartrap_action_button_2|1s
+    - e_reversebeartrap_action_button_3|1s
+    - e_reversebeartrap_action_button_4|1s 
