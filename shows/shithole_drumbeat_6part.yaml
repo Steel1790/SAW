@@ -16,18 +16,18 @@
     leftspeaker: ff8000
     rightspeaker: a605e6
     left_disc: ff8000
-- time: '+50ms' 
+- time: '+200ms' 
   lights:
-    drill_flasher: off -f1000ms
-    gi_left: off -f1000ms
-    l_drillchair_mode: off -f1000ms
-    post_a: off -f1000ms
-    post_l: off -f1000ms
+    drill_flasher: off -f500ms
+    gi_left: off -f500ms
+    l_drillchair_mode: off -f500ms
+    post_a: off -f500ms
+    post_l: off -f500ms
     groundeffects: off -f500ms
-    topper: off -f1000ms
+    topper: off -f500ms
     leftspeaker: off -f500ms
     rightspeaker: off -f500ms
-    left_disc: off -f1000ms
+    left_disc: off -f500ms
 
 - time: '+150ms' #(da-dum 2)
   lights:
@@ -44,18 +44,18 @@
     leftspeaker: a605e6
     rightspeaker: ff8000
     right_disc: a605e6
-- time: '+50ms' 
+- time: '+200ms' 
   lights:
-    zep_flasher: off -f1000ms
-    gi_right: off -f1000ms
-    l_beartrap_mode: off -f1000ms
-    post_b: off -f1000ms
-    post_k: off -f1000ms
+    zep_flasher: off -f500ms
+    gi_right: off -f500ms
+    l_beartrap_mode: off -f500ms
+    post_b: off -f500ms
+    post_k: off -f500ms
     groundeffects: off -f500ms
-    topper: off -f1000ms
+    topper: off -f500ms
     leftspeaker: off -f500ms
     rightspeaker: off -f500ms
-    right_disc: off -f1000ms
+    right_disc: off -f500ms
 
 - time: '+500ms' #(da-dum 3)
   lights:
@@ -72,18 +72,18 @@
     leftspeaker: ff8000
     rightspeaker: a605e6
     middle_disc: a605e6    
-- time: '+50ms' 
+- time: '+200ms' 
   lights:
-    bear_flasher: off -f1000ms
-    gi_top: off -f1000ms
-    l_zeptest_mode: off -f1000ms
-    post_c: off -f1000ms
-    post_j: off -f1000ms
+    bear_flasher: off -f500ms
+    gi_top: off -f500ms
+    l_zeptest_mode: off -f500ms
+    post_c: off -f500ms
+    post_j: off -f500ms
     groundeffects: off -f500ms
-    topper: off -f1000ms
+    topper: off -f500ms
     leftspeaker: off -f500ms
     rightspeaker: off -f500ms
-    middle_disc: off -f1000ms
+    middle_disc: off -f500ms
 
 - time: '+650ms' #2(da-dum 4)
   lights:
@@ -100,18 +100,18 @@
     leftspeaker: a605e6
     rightspeaker: ff8000
     left_disc: ff8000
-- time: '+50ms' 
+- time: '+200ms' 
   lights:
-    shotgun_flasher: off -f1000ms
-    gi_lower: off -f1000ms
-    l_jelly_mode: off -f1000ms  
-    post_d: off -f1000ms
-    post_i: off -f1000ms
+    shotgun_flasher: off -f500ms
+    gi_lower: off -f500ms
+    l_jelly_mode: off -f500ms  
+    post_d: off -f500ms
+    post_i: off -f500ms
     groundeffects: off -f500ms
-    topper: off -f1000ms
+    topper: off -f500ms
     leftspeaker: off -f500ms
     rightspeaker: off -f500ms
-    left_disc: off -f1000ms
+    left_disc: off -f500ms
 
 - time: '+350ms' #(da-dum 5)
   lights:
@@ -128,18 +128,18 @@
     leftspeaker: ff8000
     rightspeaker: a605e6
     right_disc: a605e6
-- time: '+50ms' 
+- time: '+200ms' 
   lights:
-    razorwire_flasher: off -f1000ms 
-    gi_middle: off -f1000ms
-    l_quadshotgun_mode: off -f1000ms
-    post_e: off -f1000ms
-    post_f: off -f1000ms
+    razorwire_flasher: off -f500ms 
+    gi_middle: off -f500ms
+    l_quadshotgun_mode: off -f500ms
+    post_e: off -f500ms
+    post_f: off -f500ms
     groundeffects: off -f500ms
-    topper: off -f1000ms
+    topper: off -f500ms
     leftspeaker: off -f500ms
     rightspeaker: off -f500ms
-    right_disc: off -f1000ms
+    right_disc: off -f500ms
 
 - time: '+250ms' #(da-dum 6)
   lights:
@@ -158,10 +158,10 @@
     rightspeaker: ff8000
     middle_disc: a605e6  
 
-- time: '+50ms' 
+- time: '+200ms' 
   lights:
-    discs: off -f1000ms 
-    gi: off -f1000ms
+    discs: off -f500ms 
+    gi: off -f500ms
     starpost: off -f1200ms
     l_razorwire_mode: off -f1200ms
     l_top_drop1: off -f500ms
@@ -182,12 +182,12 @@
     left_top_bumper: off -f500ms 
     right_top_bumper: off -f500ms
     lower_top_bumper: off -f500ms
-    post_g: off -f1000ms
-    post_h: off -f1000ms  
+    post_g: off -f500ms
+    post_h: off -f500ms  
     groundeffects: off -f500ms
-    topper: off -f1000ms
+    topper: off -f500ms
     leftspeaker: off -f500ms
     rightspeaker: off -f500ms
-    middle_disc: off -f1000ms
+    middle_disc: off -f500ms
 
 - time: '+1300ms' #(pause)

@@ -433,12 +433,12 @@ show_player:
        color1: white
    speaker_left_chase:
      loops: 0
-     speed: 8
+     speed: 30
      show_tokens:
        color1: white
    speaker_right_chase:
      loops: 0
-     speed: 8
+     speed: 30
      show_tokens:
        color1: white
   display_syringes{current_player.ball<3}:
@@ -455,12 +455,12 @@ show_player:
        color1: beartrap
    speaker_left_chase:
      loops: 0
-     speed: 8
+     speed: 30
      show_tokens:
        color1: beartrap
    speaker_right_chase:
      loops: 0
-     speed: 8
+     speed: 30
      show_tokens:
        color1: beartrap
   display_bathtubs{current_player.ball<3}:
@@ -477,12 +477,12 @@ show_player:
        color1: white
    speaker_left_chase:
      loops: 0
-     speed: 8
+     speed: 30
      show_tokens:
        color1: white
    speaker_right_chase:
      loops: 0
-     speed: 8
+     speed: 30
      show_tokens:
        color1: white
   display_taperecorders{current_player.ball<3}:
@@ -499,12 +499,12 @@ show_player:
        color1: beartrap
    speaker_left_chase:
      loops: 0
-     speed: 8
+     speed: 30
      show_tokens:
        color1: beartrap
    speaker_right_chase:
      loops: 0
-     speed: 8
+     speed: 30
      show_tokens:
        color1: beartrap
   display_candles{current_player.ball<3}:
@@ -521,12 +521,12 @@ show_player:
        color1: white
    speaker_left_chase:
      loops: 0
-     speed: 8
+     speed: 30
      show_tokens:
        color1: white
    speaker_right_chase:
      loops: 0
-     speed: 8
+     speed: 30
      show_tokens:
        color1: white  
   display_hacksaws{current_player.ball<3}:
@@ -543,12 +543,12 @@ show_player:
        color1: beartrap
    speaker_left_chase:
      loops: 0
-     speed: 8
+     speed: 30
      show_tokens:
        color1: beartrap
    speaker_right_chase:
      loops: 0
-     speed: 8
+     speed: 30
      show_tokens:
        color1: beartrap     
   display_handguns{current_player.ball<3}:
@@ -565,12 +565,12 @@ show_player:
        color1: white  
    speaker_left_chase:
      loops: 0
-     speed: 8
+     speed: 30
      show_tokens:
        color1: white
    speaker_right_chase:
      loops: 0
-     speed: 8
+     speed: 30
      show_tokens:
        color1: white   
   display_keys{current_player.ball<3}:
@@ -587,12 +587,12 @@ show_player:
        color1: beartrap
    speaker_left_chase:
      loops: 0
-     speed: 8
+     speed: 30
      show_tokens:
        color1: beartrap
    speaker_right_chase:
      loops: 0
-     speed: 8
+     speed: 30
      show_tokens:
        color1: beartrap
 
