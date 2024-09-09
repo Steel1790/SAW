@@ -37,7 +37,6 @@ counters:
     persist_state: true
     reset_on_complete: 
     events_when_complete: que_zeptest_complete
-    events_when_complete: mode_zeptest_complete, stop_mode_zeptest
     count_events: sg_zeptest_zeptest_collected_hit
 
 
