@@ -1127,10 +1127,12 @@ show_player:
       priority: 170 
     speaker_letter_collect_left:
       loops: 2
-      speed: 40
+      speed: 50
+      priority: 170
     speaker_letter_collect_right:
       loops: 2
-      speed: 40
+      speed: 50
+      priority: 170
   saw_pops_s:
     pops_on:
       loops: -1
@@ -1352,6 +1354,7 @@ show_player:
       speaker_hot_saw_left: stop
       speaker_hot_saw_right: stop
       speaker_letter_collect_right: stop
+      speaker_letter_collect_left: stop
 
   mode_hostage_will_start:
       disc_left_chase: stop
@@ -1360,7 +1363,7 @@ show_player:
       speaker_hot_saw_left: stop
       speaker_hot_saw_right: stop      
       speaker_letter_collect_right: stop
-
+      speaker_letter_collect_left: stop
    
   logicblock_multiplier_progress_counter_hit{count==5}:
       flash_token:

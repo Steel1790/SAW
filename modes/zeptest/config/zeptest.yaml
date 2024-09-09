@@ -35,7 +35,8 @@ counters:
     starting_count: 0
     count_complete_value: 3
     persist_state: true
-    reset_on_complete: false
+    reset_on_complete: 
+    events_when_complete: que_zeptest_complete
     events_when_complete: mode_zeptest_complete, stop_mode_zeptest
     count_events: sg_zeptest_zeptest_collected_hit
 
@@ -1133,30 +1134,35 @@ show_player:
   sg_zeptest_zeptest_lit_hit:
       starpost_cycle:
         loops: 1
-        speed: 20
+        speed: 10
         show_tokens:
-          color1: razorwire
+          color1: 00EDB2
+        priority: 182
 
   sg_zeptest_zeptest_collected_hit:
       starpost_cycle:
         loops: -1
         show_tokens:
-          color1: razorwire
+          color1: 00EDB2
+        priority: 183
       attract_flash_all:
         loops: 1
         speed: 10
         show_tokens:
-          color1: FC7CDC
+          color1: 00EDB2
+        priority: 183
       jw_chase:
         loops: 2
         speed: 10
         show_tokens:
-          color1: FC7CDC
+          color1: 00EDB2
+        priority: 183
       disc_middle_cylon:
         loops: 1
         speed: 20
         show_tokens:
-          color1: FC7CDC
+          color1: 00EDB2
+        priority: 183
 
 
   # logicblock_zeptest_updated{value==0}:
@@ -1286,7 +1292,7 @@ show_player:
         leds: l_zeptest_mode
     starpost_on:
       show_tokens:
-        color1: DC7CFC   
+        color1: 00EDB2  
       priority: 169
     speaker_heartbeat:
       show_tokens:
@@ -1361,3 +1367,6 @@ event_player:
   mode_zeptest_stopping{mode.jigsaw_multiball.active==True}: e_mode_qualify_disabled|0.5s
   mode_zeptest_stopping{mode.hacksaw_multiball.active==True}: e_mode_qualify_disabled|0.5s
   player_shot_shot_zeptest_button_enabled{change==1}: e_zeptest_action_button|1s
+  que_zeptest_complete:
+    - mode_zeptest_complete|2s
+    - stop_mode_zeptest|2s
