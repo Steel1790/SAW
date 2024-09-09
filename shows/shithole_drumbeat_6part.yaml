@@ -16,7 +16,7 @@
     leftspeaker: ff8000
     rightspeaker: a605e6
     left_disc: ff8000
-- time: '+200ms' 
+- time: '+100ms' 
   lights:
     drill_flasher: off -f500ms
     gi_left: off -f500ms
@@ -29,7 +29,7 @@
     rightspeaker: off -f500ms
     left_disc: off -f500ms
 
-- time: '+150ms' #(da-dum 2)
+- time: '+100ms' #(da-dum 2)
   lights:
     l_top_drop2: a605e6  
     zep_flasher: ff8000
@@ -44,7 +44,7 @@
     leftspeaker: a605e6
     rightspeaker: ff8000
     right_disc: a605e6
-- time: '+200ms' 
+- time: '+100ms' 
   lights:
     zep_flasher: off -f500ms
     gi_right: off -f500ms
@@ -57,7 +57,7 @@
     rightspeaker: off -f500ms
     right_disc: off -f500ms
 
-- time: '+500ms' #(da-dum 3)
+- time: '+450ms' #(da-dum 3)
   lights:
     l_top_drop3: a605e6  
     bear_flasher: ff8000
@@ -72,7 +72,7 @@
     leftspeaker: ff8000
     rightspeaker: a605e6
     middle_disc: a605e6    
-- time: '+200ms' 
+- time: '+100ms' 
   lights:
     bear_flasher: off -f500ms
     gi_top: off -f500ms
@@ -85,7 +85,7 @@
     rightspeaker: off -f500ms
     middle_disc: off -f500ms
 
-- time: '+650ms' #2(da-dum 4)
+- time: '+600ms' #2(da-dum 4)
   lights:
     l_top_drop4: a605e6
     shotgun_flasher: ff8000
@@ -100,7 +100,7 @@
     leftspeaker: a605e6
     rightspeaker: ff8000
     left_disc: ff8000
-- time: '+200ms' 
+- time: '+100ms' 
   lights:
     shotgun_flasher: off -f500ms
     gi_lower: off -f500ms
@@ -113,7 +113,7 @@
     rightspeaker: off -f500ms
     left_disc: off -f500ms
 
-- time: '+350ms' #(da-dum 5)
+- time: '+300ms' #(da-dum 5)
   lights:
     l_top_drop5: a605e6
     razorwire_flasher: ff8000
@@ -128,7 +128,7 @@
     leftspeaker: ff8000
     rightspeaker: a605e6
     right_disc: a605e6
-- time: '+200ms' 
+- time: '+100ms' 
   lights:
     razorwire_flasher: off -f500ms 
     gi_middle: off -f500ms
@@ -141,7 +141,7 @@
     rightspeaker: off -f500ms
     right_disc: off -f500ms
 
-- time: '+250ms' #(da-dum 6)
+- time: '+200ms' #(da-dum 6)
   lights:
     l_top_drop_triangle: a605e6  
     discs: ff8000  
@@ -158,7 +158,7 @@
     rightspeaker: ff8000
     middle_disc: a605e6  
 
-- time: '+200ms' 
+- time: '+100ms' 
   lights:
     discs: off -f500ms 
     gi: off -f500ms
@@ -190,4 +190,4 @@
     rightspeaker: off -f500ms
     middle_disc: off -f500ms
 
-- time: '+1300ms' #(pause)
+- time: '+1250ms' #(pause)
