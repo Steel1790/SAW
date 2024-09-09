@@ -1,0 +1,157 @@
+#show_version=6
+- time: 0
+  lights:
+    l_gi_1: (color1)
+    l_gi_3: (color1)
+    
+- time: '+1'
+  lights:
+    l_gi_2: (color1)
+    
+- time: '+1'
+  lights:
+    l_gi_1: '000000'
+    
+- time: '+1'
+  lights:
+    l_gi_2: '000000'
+    l_gi_3: '000000'
+    
+- time: '+1'
+  lights:
+    l_gi_4: (color1)
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+- time: '+1'
+  lights:
+    l_gi_4: (color1)
+    
+- time: '+1'
+  lights:
+    l_gi_4: '000000'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+- time: '+1'
+  lights:
+    l_gi_5: (color1)
+    l_gi_6: (color1)
+    
+- time: '+1'
+  lights:
+    l_gi_5: (color1)
+    l_gi_6: (color1)
+    l_gi_7: (color1)
+    l_gi_8: (color1)
+    
+- time: '+1'
+  lights:
+    l_gi_10: (color1)
+    l_gi_11: (color1)
+    l_gi_9: (color1)
+    
+- time: '+1'
+  lights:
+    l_gi_10: '000000'
+    l_gi_11: '000000'
+    l_gi_5: '000000'
+    l_gi_6: '000000'
+    l_gi_7: '000000'
+    l_gi_8: '000000'
+    
+- time: '+1'
+  lights:
+    l_gi_9: '000000'
+    
+- time: '+1'
+  lights:
+    l_gi_15: (color1)
+    l_gi_16: (color1)
+    
+- time: '+1'
+  lights:
+    l_gi_12: (color1)
+    
+- time: '+1'
+  lights:
+    l_gi_12: (color1)
+    l_gi_13: (color1)
+    l_gi_14: (color1)
+    l_gi_15: (color1)
+    
+- time: '+1'
+  lights:
+    l_gi_12: '000000'
+    l_gi_13: '000000'
+    l_gi_14: (color1)
+    l_gi_15: '000000'
+    l_gi_16: '000000'
+    
+- time: '+1'
+  lights:
+    l_gi_14: '000000'
+    l_gi_17: (color1)
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+- time: '+1'
+  lights:
+    l_gi_17: '000000'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+- time: '+1'
+  lights:
+    l_gi_18: (color1)
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+- time: '+1'
+  lights:
+    l_gi_19: (color1)
+    
+- time: '+1'
+  lights:
+    l_gi_18: '000000'
+    
+- time: '+1'
+  lights:
+    l_gi_19: '000000'
+    
+- time: '+1'
+  lights:
+    l_gi_20: (color1)
+    l_gi_21: (color1)
+    
+- time: '+1'
+  lights:
+    l_gi_22: (color1)
+    
+- time: '+1'
+  lights:
+    l_gi_20: '000000'
+    
+- time: '+1'
+  lights:
+    l_gi_21: '000000'
+    l_gi_22: '000000'
+    

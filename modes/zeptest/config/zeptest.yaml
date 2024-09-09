@@ -1137,6 +1137,24 @@ show_player:
         show_tokens:
           color1: 00C190
         priority: 182
+      gi_flicker_one_time:
+        loops: 1
+        speed: 10
+        show_tokens:
+          color1: zeptest
+        priority: 182
+      speaker_left_cylon:
+        loops: 1
+        speed: 40
+        show_tokens:
+          color1: 00C190
+        priority: 182
+      speaker_right_cylon:
+        loops: 1
+        speed: 40
+        show_tokens:
+          color1: 00C190
+        priority: 182
 
   sg_zeptest_zeptest_collected_hit:
       starpost_cycle:
@@ -1291,7 +1309,7 @@ show_player:
         leds: l_zeptest_mode
     starpost_on:
       show_tokens:
-        color1: 00C190  
+        color1: 007E5E
       priority: 169
     speaker_heartbeat:
       show_tokens:
