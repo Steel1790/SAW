@@ -38,6 +38,7 @@ modes:
   - mystery
   - saw_qualify
   - mode_tracking
+  - item_tracking
   - jigsaw_multiball
   - jigsaw_multiball_qualify
   - hacksaw_multiball
@@ -53,7 +54,7 @@ window:
   height: 768
   title: Mission Pinball Framework - SAW
   resizable: true
-  fullscreen: false
+  fullscreen: true
   borderless: true
   exit_on_escape: true
   source_display: lcd

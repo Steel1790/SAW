@@ -13,7 +13,7 @@ shots:
     enable_events: logicblock_cnt_saw_qualify_complete
 
   shot_drillchair_button:
-    advance_events: minimode_spinners_complete
+    advance_events: minimode_spinners_complete, slide_mode_drillchair01_active{current_player.handguns_enabled==1}
     switches: s_action_button
     profile: sp_drillchair
     disable_events: mode_drillchair_stopped, mode_drillchair_complete, ball_ended, ball_will_end, shot_drillchair_button_sp_drillchair_lit_hit
@@ -30,7 +30,7 @@ shots:
       - events: mode_drillchair_complete
         state: 0
   shot_razorwire_button:
-    advance_events: minimode_loops_complete
+    advance_events: minimode_loops_complete, slide_mode_razorwire01_active{current_player.hacksaws_enabled==1}
     switches: s_action_button
     profile: sp_razorwire
     disable_events: mode_razorwire_stopped, mode_razorwire_complete, ball_ended, ball_will_end, shot_razorwire_button_sp_razorwire_lit_hit
@@ -47,7 +47,7 @@ shots:
       - events: mode_razorwire_complete
         state: 0
   shot_reversebeartrap_button:
-    advance_events: minimode_ramps_complete
+    advance_events: minimode_ramps_complete, slide_mode_rbt01_active{current_player.keys_enabled==1}
     switches: s_action_button
     profile: sp_reversebeartrap
     disable_events: mode_reversebeartrap_stopped, mode_reversebeartrap_complete, ball_ended, ball_will_end, shot_reversebeartrap_button_sp_reversebeartrap_lit_hit
@@ -64,7 +64,7 @@ shots:
       - events: mode_reversebeartrap_complete
         state: 0
   shot_quadshotgun_button:
-    advance_events: minimode_pops_complete
+    advance_events: minimode_pops_complete, slide_sl_mode_quadshotgun01_active{current_player.gears_enabled==1}
     switches: s_action_button
     profile: sp_quadshotgun
     disable_events: mode_quadshotgun_stopped, mode_quadshotgun_complete, ball_ended, ball_will_end, shot_quadshotgun_button_sp_quadshotgun_lit_hit
@@ -81,7 +81,7 @@ shots:
       - events: mode_quadshotgun_complete
         state: 0
   shot_flammablejelly_button:
-    advance_events: minimode_standups_complete
+    advance_events: minimode_standups_complete, slide_sl_mode_flammablejelly01_active{current_player.candles_enabled==1}
     switches: s_action_button
     profile: sp_flammablejelly
     disable_events: mode_flammablejelly_stopped, mode_flammablejelly_complete, ball_ended, ball_will_end, shot_flammablejelly_button_sp_flammablejelly_lit_hit
@@ -98,7 +98,7 @@ shots:
       - events: mode_flammablejelly_complete
         state: 0
   shot_zeptest_button:
-    advance_events: minimode_drops_complete
+    advance_events: minimode_drops_complete, slide_sl_mode_zeptest01_active{current_player.syringes_enabled==1}
     switches: s_action_button
     profile: sp_zeptest
     disable_events: mode_zeptest_stopped, mode_zeptest_complete, ball_ended, ball_will_end, shot_zeptest_button_sp_zeptest_lit_hit
@@ -346,8 +346,15 @@ shows:
         (leds): (color1)           
 
 variable_player:
-#drillchair mode item used
+#drillchair mode item
+  minimode_spinners_complete:
+    handguns_enabled:
+      int: 1
+      action: set
   shot_drillchair_button_sp_drillchair_lit_hit:
+    handguns_enabled:
+      int: 0
+      action: set
 #    score: 123456    
     bonus_handguns:
       int: 0
@@ -355,15 +362,26 @@ variable_player:
     handguns_used:
       int: 1
       action: set
-#razorwire mode item used
+#razorwire mode item
+  minimode_loops_complete:
+    hacksaws_enabled:
+      int: 1
+      action: set
   shot_razorwire_button_sp_razorwire_lit_hit:
     bonus_hacksaws:
       int: 0
       action: set 
+    hacksaws_enabled:
+      int: 0
+      action: set
     hacksaws_used:
       int: 1
       action: set
-#reversebeartrap mode item used
+#reversebeartrap mode item 
+  minimode_ramps_complete:
+    keys_enabled:
+      int: 1
+      action: set
   shot_reversebeartrap_button_sp_reversebeartrap_lit_hit:
     bonus_keys:
       int: 0
@@ -371,16 +389,33 @@ variable_player:
     keys_used:
       int: 1
       action: set
-#quadshotgun mode item used
+    keys_enabled:
+      int: 0
+      action: set
+#quadshotgun mode item
+  minimode_pops_complete:
+    gears_enabled:
+      int: 1
+      action: set
   shot_quadshotgun_button_sp_quadshotgun_lit_hit:
+    gears_enabled:
+      int: 0
+      action: set
     bonus_gears:
       int: 0
       action: set  
     gears_used:
       int: 1
       action: set
-#flammablejelly mode item used
+#flammablejelly mode item
+  minimode_standups_complete:
+    candles_enabled:
+      int: 1
+      action: set
   shot_flammablejelly_button_sp_flammablejelly_lit_hit:
+    candles_enabled:
+      int: 0
+      action: set
     bonus_candles:
       int: 0
       action: set 
@@ -390,8 +425,15 @@ variable_player:
     candle_multiplier:
       int: 3
       action: set
-#zeptest mode item used
+#zeptest mode item
+  minimode_drops_complete:
+    syringes_enabled:
+      int: 1
+      action: set
   shot_zeptest_button_sp_zeptest_lit_hit:
+    syringes_enabled:
+      int: 0
+      action: set
     bonus_syringes:
       int: 0
       action: set  

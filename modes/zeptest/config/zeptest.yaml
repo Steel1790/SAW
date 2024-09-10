@@ -35,10 +35,31 @@ counters:
     starting_count: 0
     count_complete_value: 3
     persist_state: true
-    reset_on_complete: 
     events_when_complete: que_zeptest_complete
     count_events: sg_zeptest_zeptest_collected_hit
-
+  cnt_zeptest_lit_hit:
+    persist_state: true
+    starting_count: 0
+    count_complete_value: 3
+    count_events: sg_zeptest_zeptest_lit_hit
+  cnt_zeptest_collected_01:
+    persist_state: true
+    starting_count: 0
+    reset_on_complete: false
+    count_complete_value: 1
+    count_events: logicblock_cnt_zeptest_collected_updated{value==1}
+  cnt_zeptest_collected_02:
+    persist_state: true
+    starting_count: 0
+    reset_on_complete: false
+    count_complete_value: 1
+    count_events: logicblock_cnt_zeptest_collected_updated{value==2}
+  cnt_zeptest_collected_03:
+    persist_state: true
+    starting_count: 0
+    reset_on_complete: false
+    count_complete_value: 1
+    count_events: logicblock_cnt_zeptest_collected_updated{value==3}
 
 shots:
   shot_zeptest_left_loop:
@@ -572,21 +593,21 @@ timers:
 variable_player:
   sg_zeptest_zeptest_lit_hit:
     score: (500000 + (current_player.syringes_used * 1000000)) * (current_player.pf_multiplier)
-  logicblock_cnt_zeptest_collected_hit{count==1}:
+  counter_cnt_zeptest_collected_01_hit:
     score: (3000000 + (current_player.syringes_used * 1000000)) * (current_player.pf_multiplier)
     cnt_zeptest_collected_1:
       action: set
       int: (count)*250
-  logicblock_cnt_zeptest_collected_hit{count==2}:
+  counter_cnt_zeptest_collected_02_hit:
     score: (4000000 + (current_player.syringes_used * 1000000)) * (current_player.pf_multiplier)
     cnt_zeptest_collected_2:
       action: set
-      int: (count)*125
-  logicblock_cnt_zeptest_collected_hit{count==3}:
+      int: (count)*250
+  counter_cnt_zeptest_collected_03_hit:
     score: (5000000 + (current_player.syringes_used * 1000000)) * (current_player.pf_multiplier)
     cnt_zeptest_collected_3:
       action: set
-      int: (count)*125
+      int: (count)*250
   # logicblock_zeptest_hit{step==1}:
   #   score: (4000000 + (current_player.syringes_used * 1000000)) * (current_player.pf_multiplier)
   # logicblock_zeptest_hit{step==2}:
@@ -628,6 +649,10 @@ variable_player:
       action: set
   player_zeptest_60s_zeptest_timer_tick{value==10}:
     zeptest_timer_bonus:
+      int: 0
+      action: set
+  mode_zeptest_started:
+    syringes_used:
       int: 0
       action: set
     
@@ -759,24 +784,126 @@ slides:
 widgets:
    w_zeptestUI:
     - type: image
-      image: hacksawUI
-      opacity: 1.0
-      y: 1
-      x: 1
+      image: BottomFrame
+      y: 85
+      # x: 1
       z: 2
-      anchor_x: left
-      anchor_y: bottom
+#player 1 widget
     - type: text
-      text: (score)
-      number_grouping: true
-      y: 16
-      x: 25
-      z: 2
+      text: (player1|score)
+      number_grouping: true  
+   #   y: 36
+      y: 37
+      x: 252
+      z: 8
       font_size: 36
-      anchor_x: left
+      anchor_x: right
       anchor_y: bottom
-      font_name: TrajanProRegular
-      color: B17BE3
+      font_name: AeroMaticsDisplaRegular
+      color: black
+    - type: text
+      text: (player1|score)
+      number_grouping: true  
+      y: 36
+      x: 253
+      z: 8
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      font_name: AeroMaticsDisplaRegular
+      outline_color: f0cfab
+      outline_width: 2
+#player 2 widget     
+    - type: text
+      text: (player2|score)
+      number_grouping: true
+      y: 37
+      x: left+579
+      z: 8
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      font_name: AeroMaticsDisplaRegular
+      color: black
+    - type: text
+      text: (player2|score)
+      number_grouping: true
+      y: 36
+      x: left+580
+      z: 7
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      font_name: AeroMaticsDisplaRegular
+      outline_color: f0cfab
+      outline_width: 2
+#player 3 widget
+    - type: Text
+      text: (player3|score)
+      number_grouping: true   
+      font_name: AeroMaticsDisplaRegular
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      y: 37
+      x: left+908
+      z: 8
+      color: black
+    - type: Text
+      text: (player3|score)
+      number_grouping: true   
+      font_name: AeroMaticsDisplaRegular
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      y: 36
+      x: left+909
+      z: 7
+      outline_color: f0cfab
+      outline_width: 2
+#player 4 widget
+    - type: Text
+      text: (player4|score)
+      number_grouping: true       
+      font_name: AeroMaticsDisplaRegular
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      y: 37
+      x: left+1239
+      z: 8
+      color: black
+    - type: Text
+      text: (player4|score)
+      number_grouping: true       
+      font_name: AeroMaticsDisplaRegular
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      y: 36
+      x: left+1240
+      z: 7
+      outline_color: f0cfab
+      outline_width: 2
+    # - type: image
+    #   image: hacksawUI
+    #   opacity: 1.0
+    #   y: 1
+    #   x: 1
+    #   z: 2
+    #   anchor_x: left
+    #   anchor_y: bottom
+    # - type: text
+    #   text: (score)
+    #   number_grouping: true
+    #   y: 16
+    #   x: 25
+    #   z: 2
+    #   font_size: 36
+    #   anchor_x: left
+    #   anchor_y: bottom
+    #   font_name: TrajanProRegular
+    #   color: B17BE3
     - type: Text
       text: 00:(player|zeptest_60s_zeptest_timer_tick)
       font_size: 100
@@ -963,30 +1090,85 @@ widgets:
    w_syringe_button:
     - type: image
       image: SyringeButtonImg
-      x: 89%
-      y: 22%
+      x: 8%
+      y: 92%
       z: 2      
     - type: Text
-      text: Press To Spot Next Shot
-      font_size: 45
+      text: Press Action button
+      font_size: 40
       font_name: Mustkill
       outline_color: black
       outline_width: 7
-      color: BDD5E7
-      x: 83.8%
-      y: 8%   
+      color: beartrap
+      x: 14%
+      y: 83%   
       z: 2
     - type: Text
-      text: Shots Worth + 1M
-      font_size: 45
+      text: To Collect A Shot
+      font_size: 40
       font_name: Mustkill
       outline_color: black
       outline_width: 7
       color: BDD5E7
-      x: 87%
-      y: 3%   
-      z: 2              
-
+      x: 13%
+      y: 79%   
+      z: 2    
+   w_syringe_button_pressed:      
+    - type: image
+      image: SyringeButtonImg
+      x: 8%
+      y: 92%
+      z: 2  
+    - type: Text
+      text: Lit Shots Worth + 1M
+      font_size: 40
+      font_name: Mustkill
+      outline_color: black
+      outline_width: 7
+      color: BDD5E7
+      x: 13%
+      y: 83%   
+      z: 2   
+    - type: Text
+      text: ACTIVE
+      font_size: 40
+      font_name: Mustkill
+      outline_color: black
+      outline_width: 7
+      color: razorwire
+      x: 13%
+      y: 79%   
+      z: 2        
+   w_lit_hit_border01:
+    - type: rectangle
+      width: 256
+      height: 50
+      x: 25%
+      y: 29%
+      z: 1
+      color: silver
+      corner_radius: 10
+      corner_segments: 10
+   w_lit_hit_border02:
+    - type: rectangle
+      width: 256
+      height: 50
+      x: 53%
+      y: 29%
+      z: 1
+      color: silver
+      corner_radius: 10
+      corner_segments: 10
+   w_lit_hit_border03:
+    - type: rectangle
+      width: 256
+      height: 50
+      x: 80%
+      y: 29%
+      z: 1
+      color: silver
+      corner_radius: 10
+      corner_segments: 10  
     
  
 widget_player:
@@ -1007,10 +1189,31 @@ widget_player:
  #   w_zeptestUI:
  #     slide: sl_mode_zeptest04
  #     action: add
- e_zeptest_action_button:
+ slide_sl_mode_zeptest01_active{current_player.syringes_enabled==1}:
+   w_syringe_button:
+     slide: sl_mode_zeptest01
+     action: add
+ shot_zeptest_button_sp_zeptest_lit_hit:
   w_syringe_button:
+     slide: sl_mode_zeptest01
+     action: remove
+  w_syringe_button_pressed:
     slide: sl_mode_zeptest01
     action: add
+
+ logicblock_cnt_zeptest_lit_hit_updated{value==1}:
+  w_lit_hit_border01:
+    slide: sl_mode_zeptest01
+    action: add  
+ logicblock_cnt_zeptest_lit_hit_updated{value==2}:
+  w_lit_hit_border02:
+    slide: sl_mode_zeptest01
+    action: add
+ logicblock_cnt_zeptest_lit_hit_updated{value==3}:
+  w_lit_hit_border03:
+    slide: sl_mode_zeptest01
+    action: add
+
  # slide_sl_mode_zeptest02_active{current_player.syringes_used==1}:
  #   w_syringe_button:
  #     slide: sl_mode_zeptest02
@@ -1383,7 +1586,7 @@ event_player:
   mode_zeptest_stopping{mode.shackle_multiball.active==True}: e_mode_qualify_disabled|0.5s
   mode_zeptest_stopping{mode.jigsaw_multiball.active==True}: e_mode_qualify_disabled|0.5s
   mode_zeptest_stopping{mode.hacksaw_multiball.active==True}: e_mode_qualify_disabled|0.5s
-  player_shot_shot_zeptest_button_enabled{change==1}: e_zeptest_action_button|1s
+  slide_sl_mode_zeptest01_active{current_player.syringes_enabled==1}: e_zeptest_action_button|1s
   que_zeptest_complete:
     - mode_zeptest_complete|2s
     - stop_mode_zeptest|2s
