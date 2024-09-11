@@ -40,7 +40,7 @@ event_player:
   mode_hostage_complete: e_mystery_workshop
   mode_puzzle_hurryup_stopped: e_saw_qualify_reset|0.3s
   # ball_starting{is_extra_ball==True}: e_shoot_again
-
+  mode_lil_billy_stopped: flippers_on
 # saw collect light progress
   logicblock_cnt_saw_qualify_updated{value==1}: saw_pops_s|0.3s
   logicblock_cnt_saw_qualify_updated{value==2}: saw_pops_sa|0.3s

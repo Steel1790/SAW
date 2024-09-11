@@ -46,7 +46,7 @@ timers:
       - action: start
         event: mode_drillchair_started
       - action: add
-        value: 2
+        value: 2.5
         event: sw_standup
       - action: add
         value: 1
@@ -801,7 +801,12 @@ shows:
       lights:
         (leds): off
   drillchair_standups:
-    - duration: -1
+    - duration: 0.5s
+      lights:
+        (leds): drillchair -f500ms
+    - duration: 0.5s
+      lights:
+        (leds): off -f500ms
       lights:
         (leds): shotgun
 

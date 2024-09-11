@@ -595,5 +595,21 @@ show_player:
      speed: 30
      show_tokens:
        color1: beartrap
-
+  display_multiplierbonus{current_player.ball<3}:
+   flash_token:
+     loops: 0
+     speed: 8
+     show_tokens:
+       led: gi_middle, gi_top, gi_lower
+       color1: beartrap
+   speaker_left_chase:
+     loops: 0
+     speed: 30
+     show_tokens:
+       color1: beartrap
+   speaker_right_chase:
+     loops: 0
+     speed: 30
+     show_tokens:
+       color1: beartrap
 
