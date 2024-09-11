@@ -35,7 +35,7 @@ accruals:
     reset_on_complete: false
     persist_state: true
     disable_on_complete: false
-    events_when_complete: mode_drillchair_complete, stop_mode_drillchair
+    events_when_complete: que_drillchair_complete
  
 timers:
   drillchair_60s_timer:
@@ -165,6 +165,10 @@ variable_player:
       action: set
   player_drillchair_drillchair_60s_timer_tick{value==10}:
     drillchair_timer_bonus:
+      int: 0
+      action: set
+  mode_drillchair_started:
+    handguns_used:
       int: 0
       action: set
 
@@ -447,24 +451,107 @@ slide_player:
 widgets:
    w_drillchairUI:
     - type: image
-      image: hacksawUI
-      opacity: 1.0
-      y: 1
-      x: 1
+      image: BottomFrame
+      y: 85
+      # x: 1
       z: 2
-      anchor_x: left
-      anchor_y: bottom
+#player 1 widget
     - type: text
-      text: (score)
-      number_grouping: true
-      y: 16
-      x: 25
-      z: 2
+      text: (player1|score)
+      number_grouping: true  
+   #   y: 36
+      y: 37
+      x: 252
+      z: 8
       font_size: 36
-      anchor_x: left
+      anchor_x: right
       anchor_y: bottom
-      font_name: TrajanProRegular
-      color: ff6700     
+      font_name: AeroMaticsDisplaRegular
+      color: black
+    - type: text
+      text: (player1|score)
+      number_grouping: true  
+      y: 36
+      x: 253
+      z: 8
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      font_name: AeroMaticsDisplaRegular
+      outline_color: f0cfab
+      outline_width: 2
+#player 2 widget     
+    - type: text
+      text: (player2|score)
+      number_grouping: true
+      y: 37
+      x: left+579
+      z: 8
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      font_name: AeroMaticsDisplaRegular
+      color: black
+    - type: text
+      text: (player2|score)
+      number_grouping: true
+      y: 36
+      x: left+580
+      z: 7
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      font_name: AeroMaticsDisplaRegular
+      outline_color: f0cfab
+      outline_width: 2
+#player 3 widget
+    - type: Text
+      text: (player3|score)
+      number_grouping: true   
+      font_name: AeroMaticsDisplaRegular
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      y: 37
+      x: left+908
+      z: 8
+      color: black
+    - type: Text
+      text: (player3|score)
+      number_grouping: true   
+      font_name: AeroMaticsDisplaRegular
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      y: 36
+      x: left+909
+      z: 7
+      outline_color: f0cfab
+      outline_width: 2
+#player 4 widget
+    - type: Text
+      text: (player4|score)
+      number_grouping: true       
+      font_name: AeroMaticsDisplaRegular
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      y: 37
+      x: left+1239
+      z: 8
+      color: black
+    - type: Text
+      text: (player4|score)
+      number_grouping: true       
+      font_name: AeroMaticsDisplaRegular
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      y: 36
+      x: left+1240
+      z: 7
+      outline_color: f0cfab
+      outline_width: 2   
     - type: Text
       text: 00:(player|drillchair_drillchair_60s_timer_tick)
       font_size: 100
@@ -549,25 +636,25 @@ widgets:
       y: 35%
       z: 2
 
-   dc_shot_update2: 
-    - type: Text
-      text: " Hit The Left Orbit"
-      font_size: 52
-      font_name: TrajanProRegular
-      outline_color: black
-      outline_width: 7
-      color: d8d8d8 
-      x: 50%
-      y: 62%    
-      z: 1
-      animations:
-        add_to_slide:
-          - property: opacity
-            value: 0
-          - property: opacity
-            value: 1
-            duration: 1000ms
-            timing: after_previous
+   # dc_shot_update2: 
+   #  - type: Text
+   #    text: " Hit The Left Orbit"
+   #    font_size: 52
+   #    font_name: TrajanProRegular
+   #    outline_color: black
+   #    outline_width: 7
+   #    color: d8d8d8 
+   #    x: 50%
+   #    y: 62%    
+   #    z: 1
+   #    animations:
+   #      add_to_slide:
+   #        - property: opacity
+   #          value: 0
+   #        - property: opacity
+   #          value: 1
+   #          duration: 1000ms
+   #          timing: after_previous
    #dc_shot_update3:
    # - type: Text
    #   text: " (player|drillchair_visual_pops2_counter) /5 lower pops"
@@ -605,68 +692,94 @@ widgets:
    #         value: 1
    #         duration: 1000ms
    #         timing: after_previous
-   dc_shot_update4:
-    - type: Text
-      text: " Hit The Left Orbit To Escape"
-      font_size: 80
-      font_name: TrajanProRegular
-      outline_color: black
-      outline_width: 7
-      color: d8d8d8 
-      x: 50%
-      y: 62%
-      z: 1
-      animations:
-        add_to_slide:
-          - property: opacity
-            value: 0
-          - property: opacity
-            value: 1
-            duration: 1000ms
-            timing: after_previous
-    - type: Text
-      text: " & Complete The Trap"
-      font_size: 80
-      font_name: TrajanProRegular
-      outline_color: black
-      outline_width: 7
-      color: d8d8d8 
-      x: 50%
-      y: 48%  
-      z: 1
-      animations:
-        add_to_slide:
-          - property: opacity
-            value: 0
-          - property: opacity
-            value: 1
-            duration: 1000ms
-            timing: after_previous
+   # dc_shot_update4:
+   #  - type: Text
+   #    text: " Hit The Left Orbit To Escape"
+   #    font_size: 80
+   #    font_name: TrajanProRegular
+   #    outline_color: black
+   #    outline_width: 7
+   #    color: d8d8d8 
+   #    x: 50%
+   #    y: 62%
+   #    z: 1
+   #    animations:
+   #      add_to_slide:
+   #        - property: opacity
+   #          value: 0
+   #        - property: opacity
+   #          value: 1
+   #          duration: 1000ms
+   #          timing: after_previous
+   #  - type: Text
+   #    text: " & Complete The Trap"
+   #    font_size: 80
+   #    font_name: TrajanProRegular
+   #    outline_color: black
+   #    outline_width: 7
+   #    color: d8d8d8 
+   #    x: 50%
+   #    y: 48%  
+   #    z: 1
+   #    animations:
+   #      add_to_slide:
+   #        - property: opacity
+   #          value: 0
+   #        - property: opacity
+   #          value: 1
+   #          duration: 1000ms
+   #          timing: after_previous
    w_handgun_button:
     - type: image
       image: HandgunButtonImg
-      x: 92%
-      y: 16%
+      x: 9%
+      y: 91%
       z: 2      
     - type: Text
-      text: Press To Spot 1-4 Drill Hits
+      text: Press Action Button
       font_size: 40
       font_name: Mustkill
       outline_color: black
       outline_width: 7
-      color: BDD5E7
-      x: 83.8%
-      y: 3%   
+      color: beartrap
+      x: 12.5%
+      y: 80.5% 
       z: 1
     - type: Text
-      text: BLUE ARROWS +1s
+      text: To Spot 1-4 Drill Hits
       font_size: 40
       font_name: Mustkill
       outline_color: black
       outline_width: 7
       color: shotgun
-      x: 87%
-      y: 8%   
+      x: 13.5%
+      y: 75.5%   
+      z: 1
+   w_handgun_button_pressed:
+    - type: image
+      image: HandgunButtonImg
+      x: 9%
+      y: 91%
+      z: 2      
+    - type: Text
+      text: Action Button
+      font_size: 40
+      font_name: Mustkill
+      outline_color: black
+      outline_width: 7
+      color: BDD5E7
+      x: 8%
+      y: 80.5%
+      z: 1
+    - type: Text
+      text: Disabled
+      font_size: 40
+      font_name: Mustkill
+      outline_color: black
+      outline_width: 7
+      color: beartrap
+      x: 8%
+      y: 75.5%
       z: 1
  
 widget_player:
@@ -694,6 +807,13 @@ widget_player:
  #    action: add
  e_drillchair_action_button:
   w_handgun_button:
+    slide: mode_drillchair01
+    action: add
+ shot_drillchair_button_sp_drillchair_lit_hit:
+  w_handgun_button:
+    slide: mode_drillchair01
+    action: remove
+  w_handgun_button_pressed:
     slide: mode_drillchair01
     action: add
 
@@ -1171,7 +1291,7 @@ event_player:
   mode_drillchair_stopping{mode.shackle_multiball.active==True}: e_mode_qualify_disabled|0.5s
   mode_drillchair_stopping{mode.jigsaw_multiball.active==True}: e_mode_qualify_disabled|0.5s
   mode_drillchair_stopping{mode.hacksaw_multiball.active==True}: e_mode_qualify_disabled|0.5s
-  player_shot_shot_drillchair_button_enabled{change==1}: e_drillchair_action_button|1s
+  slide_mode_drillchair01_active{current_player.handguns_enabled==1}: e_drillchair_action_button|1s
   shot_drillchair_button_sp_drillchair_lit_hit{device.counters.drillchair_pops_counter.value<1}:
     - sw_bottom_pops|0.1s
     - sw_bottom_pops|0.15s
@@ -1199,6 +1319,9 @@ event_player:
     - sw_bottom_pops|0.1s
     - sw_top_pops|0.2s
     - sw_top_pops|0.25s
+  que_drillchair_complete:
+    - mode_drillchair_complete|2s
+    - stop_mode_drillchair|2s
   # shot_drillchair_button_sp_drillchair_lit_hit{device.counters.drillchair_pops_counter.value==6}:
   #   - sw_bottom_pops|0.1s
   #   - sw_bottom_pops|0.15s

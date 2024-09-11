@@ -7,6 +7,13 @@ mode:
 ## every 10 sec callout + video changes the buttons what controls each flipper.
 ## all major shots are jackpots and doubles each shot. Mode ends after 1min. 
 ## use same mode song music
+multiballs:
+  mb_lil_billy_drops:
+    ball_count: 2
+    ball_count_type: add
+    shoot_again: 59s
+    start_events: slide_mode_lil_billy_UI_01_active
+
 random_event_player:
   mode_lil_billy_started:
     events:

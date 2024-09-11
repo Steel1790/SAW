@@ -34,7 +34,7 @@ sequences:
     reset_on_complete: false
     persist_state: true
     disable_events: mode_flammablejelly_complete
-    events_when_complete: mode_flammablejelly_complete, stop_mode_flammablejelly
+    events_when_complete: que_flammablejelly_complete
 
 timers:
   60s_flammablejelly_timer:
@@ -115,6 +115,10 @@ variable_player:
       action: set
   player_flammablejelly_60s_flammablejelly_timer_tick{value==10}:
     key_combination_bonus:
+      int: 0
+      action: set
+  mode_flammablejelly_started:
+    candles_used:
       int: 0
       action: set
 
@@ -274,24 +278,107 @@ slides:
 widgets:
    w_flammablejellyUI:
     - type: image
-      image: hacksawUI
-      opacity: 1.0
-      y: 1
-      x: 1
+      image: BottomFrame
+      y: 85
+      # x: 1
       z: 2
-      anchor_x: left
-      anchor_y: bottom
+#player 1 widget
     - type: text
-      text: (score)
-      number_grouping: true
-      y: 16
-      x: 25
-      z: 2
+      text: (player1|score)
+      number_grouping: true  
+   #   y: 36
+      y: 37
+      x: 252
+      z: 8
       font_size: 36
-      anchor_x: left
+      anchor_x: right
       anchor_y: bottom
-      font_name: TrajanProRegular
-      color: FFA500
+      font_name: AeroMaticsDisplaRegular
+      color: black
+    - type: text
+      text: (player1|score)
+      number_grouping: true  
+      y: 36
+      x: 253
+      z: 8
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      font_name: AeroMaticsDisplaRegular
+      outline_color: f0cfab
+      outline_width: 2
+#player 2 widget     
+    - type: text
+      text: (player2|score)
+      number_grouping: true
+      y: 37
+      x: left+579
+      z: 8
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      font_name: AeroMaticsDisplaRegular
+      color: black
+    - type: text
+      text: (player2|score)
+      number_grouping: true
+      y: 36
+      x: left+580
+      z: 7
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      font_name: AeroMaticsDisplaRegular
+      outline_color: f0cfab
+      outline_width: 2
+#player 3 widget
+    - type: Text
+      text: (player3|score)
+      number_grouping: true   
+      font_name: AeroMaticsDisplaRegular
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      y: 37
+      x: left+908
+      z: 8
+      color: black
+    - type: Text
+      text: (player3|score)
+      number_grouping: true   
+      font_name: AeroMaticsDisplaRegular
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      y: 36
+      x: left+909
+      z: 7
+      outline_color: f0cfab
+      outline_width: 2
+#player 4 widget
+    - type: Text
+      text: (player4|score)
+      number_grouping: true       
+      font_name: AeroMaticsDisplaRegular
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      y: 37
+      x: left+1239
+      z: 8
+      color: black
+    - type: Text
+      text: (player4|score)
+      number_grouping: true       
+      font_name: AeroMaticsDisplaRegular
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      y: 36
+      x: left+1240
+      z: 7
+      outline_color: f0cfab
+      outline_width: 2
     - type: Text
       text: 00:(player|flammablejelly_60s_flammablejelly_timer_tick)
       font_size: 100
@@ -437,28 +524,90 @@ widgets:
    w_candle_button:
     - type: image
       image: CandleButtonImg
-      x: 95%
-      y: 20%
+      x: 9%
+      y: 91%
+      z: 3     
+    - type: Text
+      text: Press Action Button
+      font_size: 40
+      font_name: Mustkill
+      outline_color: black
+      outline_width: 7
+      color: beartrap
+      x: 12.5%
+      y: 79%       
+      z: 3
+    - type: Text
+      text: For 2X Lit Shots
+      font_size: 40
+      font_name: Mustkill
+      outline_color: black
+      outline_width: 7
+      color: FFBF00
+      x: 12%
+      y: 74%     
+      z: 3
+   w_candle_button_pressed:
+    - type: image
+      image: CandleButtonImg
+      x: 9%
+      y: 91%
       z: 3     
     - type: Text
       text: (player|flammablejelly_flammablejelly_2x_timer_tick)
-      font_size: 30
+      font_size: 35
       font_name: Mustkill
       outline_color: black
       outline_width: 7
       color: FFBF00
-      x: 88%
-      y: 8%   
+      x: 6%
+      y: 83%    
       z: 3
     - type: Text
       text: 2X
-      font_size: 45
+      font_size: 40
       font_name: Mustkill
       outline_color: black
       outline_width: 7
       color: FFBF00
-      x: 88%
-      y: 3%      
+      x: 8%
+      y: 79%    
+      z: 3
+    - type: Text
+      text: ACTIVE
+      font_size: 40
+      font_name: Mustkill
+      outline_color: black
+      outline_width: 7
+      color: razorwire
+      x: 8%
+      y: 74%      
+      z: 3
+   w_candle_button_disabled:
+    - type: image
+      image: CandleButtonImg
+      x: 9%
+      y: 91%
+      z: 3     
+    - type: Text
+      text: 2X
+      font_size: 40
+      font_name: Mustkill
+      outline_color: black
+      outline_width: 7
+      color: FFBF00
+      x: 8%
+      y: 79%       
+      z: 3
+    - type: Text
+      text: DISABLED
+      font_size: 40
+      font_name: Mustkill
+      outline_color: black
+      outline_width: 7
+      color: beartrap
+      x: 8%
+      y: 74%     
       z: 3
     
  
@@ -493,42 +642,46 @@ widget_player:
   # flammablejelly_shot_update5:
   #   slide: flammablejellyUI      
   #   action: add
- e_flammablejelly_action_button_01:
-  w_candle_button:
-    slide: sl_mode_flammablejelly01
-    action: add
- e_flammablejelly_action_button_04:
-  w_candle_button:
-    slide: sl_mode_flammablejelly04
-    action: add
- slide_sl_mode_flammablejelly02_active{current_player.candles_used==1}:
+
+# candle action button enabled
+ slide_sl_mode_flammablejelly01_active{current_player.candles_enabled==1}:
    w_candle_button:
-     slide: sl_mode_flammablejelly02
+     slide: sl_mode_flammablejelly01
      action: add
- slide_sl_mode_flammablejelly03_active{current_player.candles_used==1}:
+ slide_sl_mode_flammablejelly04_active{current_player.candles_enabled==1}:
    w_candle_button:
-     slide: sl_mode_flammablejelly03
+     slide: sl_mode_flammablejelly04
+     action: add
+#candle action button pressed
+ shot_flammablejelly_button_sp_flammablejelly_lit_hit:
+   w_candle_button:
+     slide: sl_mode_flammablejelly01
+     action: remove
+   w_candle_button_pressed:
+     slide: sl_mode_flammablejelly01
      action: add
  slide_sl_mode_flammablejelly04_active{current_player.candles_used==1}:
    w_candle_button:
      slide: sl_mode_flammablejelly04
+     action: remove
+   w_candle_button_pressed:
+     slide: sl_mode_flammablejelly04
      action: add
+#2x timer expired
  timer_flammablejelly_2x_timer_stopped:
-  w_candle_button:
+  w_candle_button_pressed:
     slide: sl_mode_flammablejelly01
     action: remove
- e_jelly_2x_slide02_off:
-  w_candle_button:
-    slide: sl_mode_flammablejelly02
-    action: remove
- e_jelly_2x_slide03_off:
-  w_candle_button:
-    slide: sl_mode_flammablejelly03
-    action: remove
+  w_candle_button_disabled:
+    slide: sl_mode_flammablejelly01
+    action: add
  e_jelly_2x_slide04_off:
-  w_candle_button:
+  w_candle_button_pressed:
     slide: sl_mode_flammablejelly04
     action: remove
+  w_candle_button_disabled:
+    slide: sl_mode_flammablejelly04
+    action: add
 
 slide_player:
   mode_flammablejelly_started: 
@@ -937,10 +1090,13 @@ event_player:
   shot_flammablejelly_button_sp_flammablejelly_lit_hit: 
     - e_stop_candle|20s
     - e_start_candle_multiplier|10s
-  player_shot_shot_flammablejelly_button_enabled{change==1}: 
-    - e_flammablejelly_action_button_01|9.5s
-    - e_flammablejelly_action_button_04|11s 
+  # player_shot_shot_flammablejelly_button_enabled{change==1}: 
+  #   - e_flammablejelly_action_button_01|1s
+  #   - e_flammablejelly_action_button_04|1s 
   timer_flammablejelly_2x_timer_stopped:
     - e_jelly_2x_slide02_off|0.3s
     - e_jelly_2x_slide03_off|0.6s
     - e_jelly_2x_slide04_off|0.9s
+  que_flammablejelly_complete:
+    - mode_flammablejelly_complete|2s
+    - stop_mode_flammablejelly|2s

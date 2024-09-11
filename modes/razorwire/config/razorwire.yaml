@@ -32,7 +32,7 @@ sequences:
     persist_state: true
     enable_events: razorwire_pops_complete
     disable_events: mode_razorwire_complete
-    events_when_complete: mode_razorwire_complete, stop_mode_razorwire
+    events_when_complete: que_razorwire_complete
  
 timers:
   60s_timer:
@@ -135,8 +135,10 @@ variable_player:
     razorwire_time_bonus:
       int: 0
       action: set
-    
-       
+  mode_razorwire_started:
+    hacksaws_used:
+      int: 0
+      action: set   
   timer_your_timer_tick:
     60s_timer:
       int: device.timers.your_timer.ticks_remaining
@@ -393,24 +395,127 @@ widgets:
       y: 36%
       z: 3
     - type: image
-      image: hacksawUI
-      opacity: 1.0
-      y: 1
-      x: 1
+      image: BottomFrame
+      y: 85
+      # x: 1
       z: 2
-      anchor_x: left
-      anchor_y: bottom
+#player 1 widget
     - type: text
-      text: (score)
-      number_grouping: true
-      y: 16
-      x: 25
-      z: 2
+      text: (player1|score)
+      number_grouping: true  
+   #   y: 36
+      y: 37
+      x: 252
+      z: 8
       font_size: 36
-      anchor_x: left
+      anchor_x: right
       anchor_y: bottom
-      font_name: TrajanProRegular
-      color: 65fe08
+      font_name: AeroMaticsDisplaRegular
+      color: black
+    - type: text
+      text: (player1|score)
+      number_grouping: true  
+      y: 36
+      x: 253
+      z: 8
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      font_name: AeroMaticsDisplaRegular
+      outline_color: f0cfab
+      outline_width: 2
+#player 2 widget     
+    - type: text
+      text: (player2|score)
+      number_grouping: true
+      y: 37
+      x: left+579
+      z: 8
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      font_name: AeroMaticsDisplaRegular
+      color: black
+    - type: text
+      text: (player2|score)
+      number_grouping: true
+      y: 36
+      x: left+580
+      z: 7
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      font_name: AeroMaticsDisplaRegular
+      outline_color: f0cfab
+      outline_width: 2
+#player 3 widget
+    - type: Text
+      text: (player3|score)
+      number_grouping: true   
+      font_name: AeroMaticsDisplaRegular
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      y: 37
+      x: left+908
+      z: 8
+      color: black
+    - type: Text
+      text: (player3|score)
+      number_grouping: true   
+      font_name: AeroMaticsDisplaRegular
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      y: 36
+      x: left+909
+      z: 7
+      outline_color: f0cfab
+      outline_width: 2
+#player 4 widget
+    - type: Text
+      text: (player4|score)
+      number_grouping: true       
+      font_name: AeroMaticsDisplaRegular
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      y: 37
+      x: left+1239
+      z: 8
+      color: black
+    - type: Text
+      text: (player4|score)
+      number_grouping: true       
+      font_name: AeroMaticsDisplaRegular
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      y: 36
+      x: left+1240
+      z: 7
+      outline_color: f0cfab
+      outline_width: 2
+    # - type: image
+    #   image: hacksawUI
+    #   opacity: 1.0
+    #   y: 1
+    #   x: 1
+    #   z: 2
+    #   anchor_x: left
+    #   anchor_y: bottom
+    # - type: text
+    #   text: (score)
+    #   number_grouping: true
+    #   y: 16
+    #   x: 25
+    #   z: 2
+    #   font_size: 36
+    #   anchor_x: left
+    #   anchor_y: bottom
+    #   font_name: TrajanProRegular
+    #   color: 65fe08
+
     - type: Text
       text: 00:(player|razorwire_60s_timer_tick)
       font_size: 100
@@ -453,24 +558,107 @@ widgets:
       corner_segments: 10
    w_razorwireUI_phase2:
     - type: image
-      image: hacksawUI
-      opacity: 1.0
-      y: 1
-      x: 1
+      image: BottomFrame
+      y: 85
+      # x: 1
       z: 2
-      anchor_x: left
-      anchor_y: bottom
+#player 1 widget
     - type: text
-      text: (score)
-      number_grouping: true
-      y: 16
-      x: 25
-      z: 2
+      text: (player1|score)
+      number_grouping: true  
+   #   y: 36
+      y: 37
+      x: 252
+      z: 8
       font_size: 36
-      anchor_x: left
+      anchor_x: right
       anchor_y: bottom
-      font_name: TrajanProRegular
-      color: 65fe08
+      font_name: AeroMaticsDisplaRegular
+      color: black
+    - type: text
+      text: (player1|score)
+      number_grouping: true  
+      y: 36
+      x: 253
+      z: 8
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      font_name: AeroMaticsDisplaRegular
+      outline_color: f0cfab
+      outline_width: 2
+#player 2 widget     
+    - type: text
+      text: (player2|score)
+      number_grouping: true
+      y: 37
+      x: left+579
+      z: 8
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      font_name: AeroMaticsDisplaRegular
+      color: black
+    - type: text
+      text: (player2|score)
+      number_grouping: true
+      y: 36
+      x: left+580
+      z: 7
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      font_name: AeroMaticsDisplaRegular
+      outline_color: f0cfab
+      outline_width: 2
+#player 3 widget
+    - type: Text
+      text: (player3|score)
+      number_grouping: true   
+      font_name: AeroMaticsDisplaRegular
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      y: 37
+      x: left+908
+      z: 8
+      color: black
+    - type: Text
+      text: (player3|score)
+      number_grouping: true   
+      font_name: AeroMaticsDisplaRegular
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      y: 36
+      x: left+909
+      z: 7
+      outline_color: f0cfab
+      outline_width: 2
+#player 4 widget
+    - type: Text
+      text: (player4|score)
+      number_grouping: true       
+      font_name: AeroMaticsDisplaRegular
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      y: 37
+      x: left+1239
+      z: 8
+      color: black
+    - type: Text
+      text: (player4|score)
+      number_grouping: true       
+      font_name: AeroMaticsDisplaRegular
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      y: 36
+      x: left+1240
+      z: 7
+      outline_color: f0cfab
+      outline_width: 2
     - type: Text
       text: 00:(player|razorwire_60s_timer_tick)
       font_size: 100
@@ -490,60 +678,122 @@ widgets:
       color: black     
 
 
-   rw_shot_update2:
-    #- type: Text
-    #  text: X
-    #  color: ad1400
-    #  x: 5.5%
-    #  y: 62%
-    #  font_size: 70
-    #  font_name: TrajanProRegular
-    - type: Text
-      text: " X Marks The Spot ..."
-      font_name: TrajanProRegular
-      font_size: 80
-      outline_color: black
-      outline_width: 7
-      x: 50%
-      y: 62%
-      z: 1
-      color: 65fe08       
-      animations:
-        add_to_slide:
-          - property: y
-            value: 62%
-            duration: 2.1s
-          - property: opacity
-            value: 0
-          - property: opacity
-            value: 1
-            duration: 1000ms
-            timing: after_previous
+   # rw_shot_update2:
+   #  #- type: Text
+   #  #  text: X
+   #  #  color: ad1400
+   #  #  x: 5.5%
+   #  #  y: 62%
+   #  #  font_size: 70
+   #  #  font_name: TrajanProRegular
+   #  - type: Text
+   #    text: " X Marks The Spot ..."
+   #    font_name: TrajanProRegular
+   #    font_size: 80
+   #    outline_color: black
+   #    outline_width: 7
+   #    x: 50%
+   #    y: 62%
+   #    z: 1
+   #    color: 65fe08       
+   #    animations:
+   #      add_to_slide:
+   #        - property: y
+   #          value: 62%
+   #          duration: 2.1s
+   #        - property: opacity
+   #          value: 0
+   #        - property: opacity
+   #          value: 1
+   #          duration: 1000ms
+   #          timing: after_previous
    w_hacksaw_button:
     - type: image
       image: HacksawButtonImg
-      x: 91%
-      y: 14%
-      z: 1        
+      x: 9%
+      y: 91%
+      z: 1   
     - type: Text
-      text: 2x Pops
-      font_size: 45
+      text: Press Action Button
+      font_size: 40
+      font_name: Mustkill
+      outline_color: black
+      outline_width: 7
+      color: beartrap
+      x: 12.5%
+      y: 83%   
+      z: 1         
+    - type: Text
+      text: For 2x Pops
+      font_size: 40
       font_name: Mustkill
       outline_color: black
       outline_width: 7
       color: 65fe08
-      x: 88%
-      y: 3%   
+      x: 13%
+      y: 78%   
+      z: 1
+   w_hacksaw_button_pressed:  
+    - type: image
+      image: HacksawButtonImg
+      x: 9%
+      y: 91%
+      z: 1 
+    - type: Text
+      text: 2x Pops
+      font_size: 40
+      font_name: Mustkill
+      outline_color: black
+      outline_width: 7
+      color: 65fe08
+      x: 8%
+      y: 83%   
+      z: 1      
+    - type: Text
+      text: ACTIVE
+      font_size: 40
+      font_name: Mustkill
+      outline_color: black
+      outline_width: 7
+      color: razorwire
+      x: 8%
+      y: 78%   
       z: 1
     - type: Text
       text: (player|razorwire_razorwire_2x_timer_tick)
-      font_size: 30
+      font_size: 35
       font_name: Mustkill
       outline_color: black
       outline_width: 7
       color: 65fe08
-      x: 88%
-      y: 8%      
+      x: 7%
+      y: 73%      
+      z: 1
+   w_hacksaw_button_expired:  
+    - type: image
+      image: HacksawButtonImg
+      x: 9%
+      y: 91%
+      z: 1 
+    - type: Text
+      text: 2x Pops
+      font_size: 40
+      font_name: Mustkill
+      outline_color: black
+      outline_width: 7
+      color: 65fe08
+      x: 8%
+      y: 83%   
+      z: 1      
+    - type: Text
+      text: DISABLED
+      font_size: 40
+      font_name: Mustkill
+      outline_color: black
+      outline_width: 7
+      color: beartrap
+      x: 8%
+      y: 78%   
       z: 1
 
    #rw_shot_update3:
@@ -602,14 +852,33 @@ widget_player:
   w_razorwireUI_phase2:
     slide: mode_razorwire02
     action: add
- e_razorwire_action_button:
+ slide_mode_razorwire01_active{current_player.hacksaws_enabled==1}:
   w_hacksaw_button:
     slide: mode_razorwire01
     action: add
- timer_razorwire_2x_timer_stopped:
+ shot_razorwire_button_sp_razorwire_lit_hit:
   w_hacksaw_button:
     slide: mode_razorwire01
     action: remove
+  w_hacksaw_button_pressed:
+    slide: mode_razorwire01
+    action: add
+ # slide_mode_razorwire02_active{current_player.hacksaws_used==1}:
+ #   w_hacksaw_button:
+ #     slide: mode_razorwire02
+ #     action: remove
+ #   w_hacksaw_button_pressed:
+ #     slide: mode_razorwire02
+ #     action: add
+
+
+ timer_razorwire_2x_timer_stopped:
+  w_hacksaw_button_pressed:
+    slide: mode_razorwire01
+    action: remove
+  w_hacksaw_button_expired:
+    slide: mode_razorwire01
+    action: add
  #logicblock_razorwire_hit{step==2}: 
  # rw_shot_update2:
  #   slide: razorwire_phase2
@@ -990,4 +1259,7 @@ event_player:
   mode_razorwire_stopping{mode.jigsaw_multiball.active==True}: e_mode_qualify_disabled|0.5s
   mode_razorwire_stopping{mode.hacksaw_multiball.active==True}: e_mode_qualify_disabled|0.5s
   shot_razorwire_button_sp_razorwire_lit_hit: e_stop_hacksaw|30s
-  player_shot_shot_razorwire_button_enabled{change==1}: e_razorwire_action_button|1s
+  slide_mode_razorwire01_active{current_player.hacksaws_enabled==1}: e_razorwire_action_button|1s
+  que_razorwire_complete:
+    - mode_razorwire_complete|2s
+    - stop_mode_razorwire|2s

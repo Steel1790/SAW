@@ -39,7 +39,7 @@ sequences:
     persist_state: true
     enable_events:  logicblock_acc_quadshotgun_phase1_complete
     disable_events: mode_quadshotgun_complete
-    events_when_complete: mode_quadshotgun_complete, stop_mode_quadshotgun
+    events_when_complete: que_quadshotgun_complete
  
 timers:
   quadshotgun_60s_timer:
@@ -59,7 +59,7 @@ counters:
 #    start_enabled: true
     persist_state: true
     reset_on_complete: false
-    events_when_complete: quadshotgun_spinner_complete 
+    events_when_complete: que_shotgun_complete
     count_events: spinner_spinner_hit
   quadshotgun_action_button_counter:
     starting_count: 0
@@ -217,6 +217,10 @@ variable_player:
       action: set
   player_quadshotgun_quadshotgun_60s_timer_tick{value==10}:
     shotgun_timer_bonus:
+      int: 0
+      action: set
+  mode_quadshotgun_started:
+    gears_used:
       int: 0
       action: set
  
@@ -476,25 +480,107 @@ slide_player:
 widgets:
    w_quadshotgunUI:
     - type: image
-      image: hacksawUI
-      opacity: 1.0
-      y: 1
-      x: 1
+      image: BottomFrame
+      y: 85
+      # x: 1
       z: 2
-      anchor_x: left
-      anchor_y: bottom
+#player 1 widget
     - type: text
-      text: (score)
-      number_grouping: true
-      y: 16
-      x: 25
-      z: 3
+      text: (player1|score)
+      number_grouping: true  
+   #   y: 36
+      y: 37
+      x: 252
+      z: 8
       font_size: 36
-      anchor_x: left
+      anchor_x: right
       anchor_y: bottom
-      font_name: TrajanProRegular
-      color: "006ee6"
-      
+      font_name: AeroMaticsDisplaRegular
+      color: black
+    - type: text
+      text: (player1|score)
+      number_grouping: true  
+      y: 36
+      x: 253
+      z: 8
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      font_name: AeroMaticsDisplaRegular
+      outline_color: f0cfab
+      outline_width: 2
+#player 2 widget     
+    - type: text
+      text: (player2|score)
+      number_grouping: true
+      y: 37
+      x: left+579
+      z: 8
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      font_name: AeroMaticsDisplaRegular
+      color: black
+    - type: text
+      text: (player2|score)
+      number_grouping: true
+      y: 36
+      x: left+580
+      z: 7
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      font_name: AeroMaticsDisplaRegular
+      outline_color: f0cfab
+      outline_width: 2
+#player 3 widget
+    - type: Text
+      text: (player3|score)
+      number_grouping: true   
+      font_name: AeroMaticsDisplaRegular
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      y: 37
+      x: left+908
+      z: 8
+      color: black
+    - type: Text
+      text: (player3|score)
+      number_grouping: true   
+      font_name: AeroMaticsDisplaRegular
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      y: 36
+      x: left+909
+      z: 7
+      outline_color: f0cfab
+      outline_width: 2
+#player 4 widget
+    - type: Text
+      text: (player4|score)
+      number_grouping: true       
+      font_name: AeroMaticsDisplaRegular
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      y: 37
+      x: left+1239
+      z: 8
+      color: black
+    - type: Text
+      text: (player4|score)
+      number_grouping: true       
+      font_name: AeroMaticsDisplaRegular
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      y: 36
+      x: left+1240
+      z: 7
+      outline_color: f0cfab
+      outline_width: 2
     - type: Text
       text: 00:(player|quadshotgun_quadshotgun_60s_timer_tick)
       font_size: 100
@@ -519,7 +605,7 @@ widgets:
       width: 0
       height: 45
       x: 25.7%
-      y: 33%
+      y: 37%
       z: 3
       anchor_x: left
       corner_radius: 10
@@ -533,7 +619,7 @@ widgets:
       width: 250
       height: 46
       x: 35%
-      y: 33%
+      y: 37%
       z: 2
       color: black
       corner_radius: 10
@@ -543,7 +629,7 @@ widgets:
       width: 0
       height: 45
       x: 60.7%
-      y: 33%
+      y: 37%
       z: 3
       anchor_x: left
       corner_radius: 10
@@ -557,7 +643,7 @@ widgets:
       width: 250
       height: 46
       x: 70%
-      y: 33%
+      y: 37%
       z: 2
       color: black
       corner_radius: 10
@@ -567,7 +653,7 @@ widgets:
       width: 0
       height: 45
       x: 25.7%
-      y: 11%
+      y: 21.5%
       z: 3
       anchor_x: left
       corner_radius: 10
@@ -581,7 +667,7 @@ widgets:
       width: 250
       height: 46
       x: 35%
-      y: 11%
+      y: 21.5%
       z: 2
       color: black
       corner_radius: 10
@@ -591,7 +677,7 @@ widgets:
       width: 0
       height: 45
       x: 60.7%
-      y: 11%
+      y: 21.5%
       z: 3
       anchor_x: left
       corner_radius: 10
@@ -605,7 +691,7 @@ widgets:
       width: 250
       height: 46
       x: 70%
-      y: 11%
+      y: 21.5%
       z: 2
       color: black
       corner_radius: 10
@@ -648,8 +734,34 @@ widgets:
    w_gears_button:
     - type: image
       image: GearsButtonImg
-      x: 90%
-      y: 16%
+      x: 9%
+      y: 91%
+      z: 3    
+    - type: Text
+      text: Press Action Button
+      font_size: 40
+      font_name: Mustkill
+      outline_color: black
+      outline_width: 7
+      color: beartrap
+      x: 12.5%
+      y: 80.5%  
+      z: 3
+    - type: Text
+      text: For 2x Spinner
+      font_size: 40
+      font_name: Mustkill
+      outline_color: black
+      outline_width: 7
+      color: shotgun
+      x: 13%
+      y: 75.5%   
+      z: 3
+   w_gears_button_pressed:
+    - type: image
+      image: GearsButtonImg
+      x: 9%
+      y: 91%
       z: 3    
     - type: Text
       text: 2x Spinner
@@ -658,8 +770,18 @@ widgets:
       outline_color: black
       outline_width: 7
       color: shotgun
-      x: 89%
-      y: 4%   
+      x: 11%
+      y: 80.5%   
+      z: 3
+    - type: Text
+      text: ACTIVE
+      font_size: 40
+      font_name: Mustkill
+      outline_color: black
+      outline_width: 7
+      color: razorwire
+      x: 11%
+      y: 75.5%   
       z: 3
  
 widget_player:
@@ -670,6 +792,7 @@ widget_player:
   w_quadshotgun_phase1:
     slide: sl_mode_quadshotgun01
     action: add
+
  logicblock_acc_quadshotgun_phase1_complete: 
   w_quadshotgunUI:
     slide: sl_mode_quadshotgun02
@@ -677,14 +800,29 @@ widget_player:
   w_quadshotgun_phase2:
     slide: sl_mode_quadshotgun02
     action: add
- e_quadshotgun_action_button_1:
-  w_gears_button:
-    slide: sl_mode_quadshotgun01
-    action: add
- e_quadshotgun_action_button_2:
-  w_gears_button:
-    slide: sl_mode_quadshotgun02
-    action: add
+#gears action button
+ slide_sl_mode_quadshotgun01_active{current_player.gears_enabled==1}:
+   w_gears_button:
+     slide: sl_mode_quadshotgun01
+     action: add
+ slide_sl_mode_quadshotgun02_active{current_player.gears_enabled==1}:
+   w_gears_button:
+     slide: sl_mode_quadshotgun02
+     action: add
+ shot_quadshotgun_button_sp_quadshotgun_lit_hit:
+   w_gears_button:
+     slide: sl_mode_quadshotgun01
+     action: remove
+   w_gears_button_pressed:
+     slide: sl_mode_quadshotgun01
+     action: add
+ slide_sl_mode_quadshotgun02_active{current_player.gears_used==1}:
+   w_gears_button:
+     slide: sl_mode_quadshotgun02
+     action: remove
+   w_gears_button_pressed:
+     slide: sl_mode_quadshotgun02
+     action: add
 # logicblock_quadshotgun_hit{step==2}: 
 #  quadshotgun_shot_update2:
 #    slide: quadshotgun_phase2
@@ -1019,6 +1157,9 @@ event_player:
   mode_quadshotgun_stopping{mode.shackle_multiball.active==True}: e_mode_qualify_disabled|0.5s
   mode_quadshotgun_stopping{mode.jigsaw_multiball.active==True}: e_mode_qualify_disabled|0.5s
   mode_quadshotgun_stopping{mode.hacksaw_multiball.active==True}: e_mode_qualify_disabled|0.5s
-  player_shot_shot_quadshotgun_button_enabled{change==1}: 
+  slide_sl_mode_quadshotgun01_active{current_player.gears_enabled==1}: 
     - e_quadshotgun_action_button_1|8s
     - e_quadshotgun_action_button_2|9s 
+  que_shotgun_complete:
+    - mode_quadshotgun_complete|2s
+    - stop_mode_quadshotgun|2s

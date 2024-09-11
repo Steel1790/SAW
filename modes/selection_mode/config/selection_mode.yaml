@@ -408,6 +408,13 @@ shows:
     - duration: 0.3s
       lights:
         (leds): off
+  survival_instinct:
+    - duration: 0.3s
+      lights:
+        (leds): beartrap
+    - duration: 0.3s
+      lights:
+        (leds): off
   ActionOff:
     - duration: 2s
       lights:

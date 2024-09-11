@@ -36,7 +36,7 @@ sequences:
     reset_on_complete: false
     persist_state: true
     disable_events: mode_reversebeartrap_complete
-    events_when_complete: mode_reversebeartrap_complete, stop_mode_reversebeartrap
+    events_when_complete: que_reversebeartrap_complete
 
 timers:
   120s_reversebeartrap_timer:
@@ -64,15 +64,15 @@ timers:
 
 variable_player:
   logicblock_reversebeartrap_hit{step==1}:
-    score: (3000000 + (current_player.keys_used * 4500000) + (current_player.spinner_value * 42500)) * (current_player.pf_multiplier)
+    score: (3000000 + (current_player.keys_used * 4500000) + (current_player.spinner_value * 145750)) * (current_player.pf_multiplier)
   logicblock_reversebeartrap_hit{step==2}:
-    score: (3000000 + (current_player.keys_used * 3000000) + (current_player.spinner_value * 42500)) * (current_player.pf_multiplier)
+    score: (3000000 + (current_player.keys_used * 3000000) + (current_player.spinner_value * 145750)) * (current_player.pf_multiplier)
   logicblock_reversebeartrap_hit{step==3}:
-    score: (4500000 + (current_player.keys_used * 4500000) + (current_player.spinner_value * 42500)) * (current_player.pf_multiplier)
+    score: (4500000 + (current_player.keys_used * 4500000) + (current_player.spinner_value * 145750)) * (current_player.pf_multiplier)
   logicblock_reversebeartrap_hit{step==4}:
-    score: (3000000 + (current_player.keys_used * 3000000) + (current_player.spinner_value * 42500)) * (current_player.pf_multiplier)
+    score: (3000000 + (current_player.keys_used * 3000000) + (current_player.spinner_value * 145750)) * (current_player.pf_multiplier)
   logicblock_reversebeartrap_hit{step==5}:
-    score: (4500000 + (current_player.keys_used * 4500000) + (current_player.spinner_value * 42500)) * (current_player.pf_multiplier)
+    score: (4500000 + (current_player.keys_used * 4500000) + (current_player.spinner_value * 145750)) * (current_player.pf_multiplier)
   mode_reversebeartrap_complete:
     score: (6000000 + (current_player.beartrap_timer_bonus) + (current_player.keys_used * 1000000) + (current_player.spinner_value * 145750)) * (current_player.pf_multiplier)
        
@@ -87,6 +87,10 @@ variable_player:
     spinner_value_display:
       action: set
       int: 0
+    keys_used:
+      int: 0
+      action: set
+
   counter_cnt_reversebeartrap_spinner_hit:
     spinner_value:
       action: set
@@ -277,8 +281,8 @@ widgets:
    w_key_button:
     - type: image
       image: KeyButtonImg
-      x: 95%
-      y: 20%
+      x: 11%
+      y: 92%
       z: 2      
     # - type: Text
     #   text: +30 Seconds
@@ -291,35 +295,183 @@ widgets:
     #   y: 8%   
     #   z: 1
     - type: Text
-      text: 1.5X
-      font_size: 45
+      text: Press Action Button
+      font_size: 40
+      font_name: Mustkill
+      outline_color: black
+      outline_width: 7
+      color: beartrap
+      x: 12.5%
+      y: 81%      
+      z: 2
+    - type: Text
+      text: to ACTIVATE for
+      font_size: 40
       font_name: Mustkill
       outline_color: black
       outline_width: 7
       color: FFBF00
-      x: 88%
-      y: 3%      
+      x: 12%
+      y: 76%      
+      z: 2
+    - type: Text
+      text: 1.5X Shots
+      font_size: 40
+      font_name: Mustkill
+      outline_color: black
+      outline_width: 7
+      color: FFBF00
+      x: 12%
+      y: 71%      
+      z: 2
+   w_key_button_pressed:
+    - type: image
+      image: KeyButtonImg
+      x: 6%
+      y: 92%
+      z: 2      
+    - type: Text
+      text: 1.5x Shots
+      font_size: 40
+      font_name: Mustkill
+      outline_color: black
+      outline_width: 7
+      color: FFBF00
+      x: 7%
+      y: 81%      
+      z: 2
+    - type: Text
+      text: ACTIVE
+      font_size: 40
+      font_name: Mustkill
+      outline_color: black
+      outline_width: 7
+      color: razorwire
+      x: 6%
+      y: 75%      
       z: 2
    w_reversebeartrapUI:
+    # - type: image
+    #   image: hacksawUI
+    #   opacity: 1.0
+    #   y: 1
+    #   x: 1
+    #   z: 2
+    #   anchor_x: left
+    #   anchor_y: bottom
+    # - type: text
+    #   text: (score)
+    #   number_grouping: true
+    #   y: 16
+    #   x: 25
+    #   z: 2
+    #   font_size: 36
+    #   anchor_x: left
+    #   anchor_y: bottom
+    #   font_name: TrajanProRegular
+    #   color: F5FBFF
     - type: image
-      image: hacksawUI
-      opacity: 1.0
-      y: 1
-      x: 1
+      image: BottomFrame
+      y: 85
+      # x: 1
       z: 2
-      anchor_x: left
-      anchor_y: bottom
+#player 1 widget
     - type: text
-      text: (score)
-      number_grouping: true
-      y: 16
-      x: 25
-      z: 2
+      text: (player1|score)
+      number_grouping: true  
+   #   y: 36
+      y: 37
+      x: 252
+      z: 8
       font_size: 36
-      anchor_x: left
+      anchor_x: right
       anchor_y: bottom
-      font_name: TrajanProRegular
-      color: F5FBFF
+      font_name: AeroMaticsDisplaRegular
+      color: black
+    - type: text
+      text: (player1|score)
+      number_grouping: true  
+      y: 36
+      x: 253
+      z: 8
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      font_name: AeroMaticsDisplaRegular
+      outline_color: f0cfab
+      outline_width: 2
+#player 2 widget     
+    - type: text
+      text: (player2|score)
+      number_grouping: true
+      y: 37
+      x: left+579
+      z: 8
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      font_name: AeroMaticsDisplaRegular
+      color: black
+    - type: text
+      text: (player2|score)
+      number_grouping: true
+      y: 36
+      x: left+580
+      z: 7
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      font_name: AeroMaticsDisplaRegular
+      outline_color: f0cfab
+      outline_width: 2
+#player 3 widget
+    - type: Text
+      text: (player3|score)
+      number_grouping: true   
+      font_name: AeroMaticsDisplaRegular
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      y: 37
+      x: left+908
+      z: 8
+      color: black
+    - type: Text
+      text: (player3|score)
+      number_grouping: true   
+      font_name: AeroMaticsDisplaRegular
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      y: 36
+      x: left+909
+      z: 7
+      outline_color: f0cfab
+      outline_width: 2
+#player 4 widget
+    - type: Text
+      text: (player4|score)
+      number_grouping: true       
+      font_name: AeroMaticsDisplaRegular
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      y: 37
+      x: left+1239
+      z: 8
+      color: black
+    - type: Text
+      text: (player4|score)
+      number_grouping: true       
+      font_name: AeroMaticsDisplaRegular
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      y: 36
+      x: left+1240
+      z: 7
+      outline_color: f0cfab
+      outline_width: 2
    w_reversebeartrap_timer:
     - type: Text
       text: (player|reversebeartrap_120s_reversebeartrap_timer_tick)
@@ -336,8 +488,8 @@ widgets:
       font_size: 80
       font_name: badaboom_bb
       color: ffffff
-      y: 33.5%
-      x: 33%
+      y: 44.5%
+      x: 30%
       z: 2
  
 widget_player:
@@ -388,32 +540,95 @@ widget_player:
      slide: mode_rbt04
      action: add
 #key widget
- e_reversebeartrap_action_button_1:
+#  e_reversebeartrap_action_button_ready:
+#    w_key_button:
+#      slide: mode_rbt01
+#      action: add
+#  # player_reversebeartrap_action_button_slide_2{value==1}:
+#  #   w_key_button:
+#  #     slide: mode_rbt02
+#  #     action: add
+#  # player_reversebeartrap_action_button_slide_3{value==1}:
+#  #   w_key_button:
+#  #     slide: mode_rbt03
+#  #     action: add
+#  # player_reversebeartrap_action_button_slide_4{value==1}:
+#  #   w_key_button:
+#  #     slide: mode_rbt04
+#  #     action: add
+# #key action button pressed
+#  player_reversebeartrap_action_button_used_slide_1{value==1}:
+#    w_key_button:
+#      slide: mode_rbt01
+#      action: remove
+#    w_key_button_pressed:
+#      slide: mode_rbt01
+#      action: add
+#  player_reversebeartrap_action_button_used_slide_2{value==1}:
+#    # w_key_button:
+#    #   slide: mode_rbt02
+#    #   action: remove
+#    w_key_button_pressed:
+#      slide: mode_rbt02
+#      action: add
+#  player_reversebeartrap_action_button_used_slide_3{value==1}:
+#    # w_key_button:
+#    #   slide: mode_rbt03
+#    #   action: remove
+#    w_key_button_pressed:
+#      slide: mode_rbt03
+#      action: add
+#  player_reversebeartrap_action_button_used_slide_4{value==1}:
+#    # w_key_button:
+#    #   slide: mode_rbt04
+#    #   action: remove
+#    w_key_button_pressed:
+#      slide: mode_rbt04
+#      action: add
+
+ slide_mode_rbt01_active{current_player.keys_enabled==1}:
    w_key_button:
      slide: mode_rbt01
      action: add
- e_reversebeartrap_action_button_2:
+ slide_mode_rbt02_active{current_player.keys_enabled==1}:
+   w_key_button:
+     slide: mode_rbt02
+     action: add
+ slide_mode_rbt03_active{current_player.keys_enabled==1}:
+   w_key_button:
+     slide: mode_rbt03
+     action: add
+ slide_mode_rbt04_active{current_player.keys_enabled==1}:
+   w_key_button:
+     slide: mode_rbt04
+     action: add
+ # slide_mode_rbt01_active{current_player.keys_used==1}:
+ shot_reversebeartrap_button_sp_reversebeartrap_lit_hit:
    w_key_button:
      slide: mode_rbt01
-     action: add
- e_reversebeartrap_action_button_3:
-   w_key_button:
-     slide: mode_rbt01
-     action: add
- e_reversebeartrap_action_button_4:
-   w_key_button:
+     action: remove
+   w_key_button_pressed:
      slide: mode_rbt01
      action: add
  slide_mode_rbt02_active{current_player.keys_used==1}:
    w_key_button:
      slide: mode_rbt02
+     action: remove
+   w_key_button_pressed:
+     slide: mode_rbt02
      action: add
  slide_mode_rbt03_active{current_player.keys_used==1}:
-   w_key_button:
+    w_key_button:
+     slide: mode_rbt03
+     action: remove
+    w_key_button_pressed:
      slide: mode_rbt03
      action: add
  slide_mode_rbt04_active{current_player.keys_used==1}:
    w_key_button:
+     slide: mode_rbt04
+     action: remove
+   w_key_button_pressed:
      slide: mode_rbt04
      action: add
    
@@ -823,8 +1038,7 @@ event_player:
   mode_reversebeartrap_stopping{mode.shackle_multiball.active==True}: e_mode_qualify_disabled|0.5s
   mode_reversebeartrap_stopping{mode.jigsaw_multiball.active==True}: e_mode_qualify_disabled|0.5s
   mode_reversebeartrap_stopping{mode.hacksaw_multiball.active==True}: e_mode_qualify_disabled|0.5s
-  player_shot_shot_reversebeartrap_button_enabled{change==1}: 
-    - e_reversebeartrap_action_button_1|1s
-    - e_reversebeartrap_action_button_2|1s
-    - e_reversebeartrap_action_button_3|1s
-    - e_reversebeartrap_action_button_4|1s 
+  que_reversebeartrap_complete:
+    - mode_reversebeartrap_complete|2s
+    - stop_mode_reversebeartrap|2s
+  # player_shot_shot_reversebeartrap_button_enabled{change==1}: e_reversebeartrap_action_button_ready|1s
