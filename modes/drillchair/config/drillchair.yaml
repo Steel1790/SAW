@@ -923,12 +923,10 @@ shows:
   drillchair_standups:
     - duration: 0.5s
       lights:
-        (leds): drillchair #-f500ms
+        (leds): drillchair -f500ms
     - duration: 0.5s
       lights:
-        (leds): off #-f500ms
-      lights:
-        (leds): shotgun
+        (leds): off -f500ms
 
 show_player:
   mode_drillchair_started:     
