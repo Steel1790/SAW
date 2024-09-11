@@ -9,10 +9,10 @@ mode:
 ## use same mode song music
 multiballs:
   mb_lil_billy_drops:
-    ball_count: 2
+    ball_count: 3
     ball_count_type: add
     shoot_again: 59s
-    start_events: slide_mode_lil_billy_UI_01_active
+    start_events: e_delay_tricycle_plunge
 
 random_event_player:
   mode_lil_billy_started:
@@ -27,7 +27,9 @@ random_event_player:
 #    force_all: true
 
 event_player:
-  e_lilbilly_tricycle: flippers_off
+  e_lilbilly_tricycle: 
+    - flippers_off
+    - e_delay_tricycle_plunge|5s
 #  mode_lil_billy_stopped: flippers_on
   slide_mode_lil_billy_UI_01_active: e_primary_mode_active
   e_lil_billy_drops_hit2: e_drop_hit2_delay|2.3s
@@ -70,6 +72,10 @@ show_player:
       speed: 8
       show_tokens:
         color1: red
+  lil_billy_drops_hit:
+    lil_billy_rainbow:
+      loops: 1
+      speed: 10
   mode_lil_billy_stopped:
     skillshot_chase:
       loops: -1
