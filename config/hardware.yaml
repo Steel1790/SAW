@@ -424,6 +424,7 @@ drop_target_banks:
       ball_started.3: 2s
       machine_reset_phase_3: 0 
       mode_zeptest_started: 0
+      lil_billy_drops_hit: 0
   upper_dropbank:
     drop_targets:
       - dt_upper_drop1
@@ -435,7 +436,6 @@ drop_target_banks:
       ball_started.3: 2s
       machine_reset_phase_3: 0 
       mode_make_your_choice_hurryup_started: 0
-      lil_billy_drops_hit: 0
 
 ball_devices:
   bd_trough:

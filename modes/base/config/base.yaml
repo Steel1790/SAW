@@ -2904,7 +2904,265 @@ widgets:
        y: 1
        x: left+1210
        z: 4
-       anchor_y: bottom          
+       anchor_y: bottom         
+#flammable jelly total mode points + completion points displayed       
+  w_flammablejelly_points:
+    - type: text
+      text: Flammable Jelly Total 
+      number_grouping: true 
+      x: 30%
+      y: 19%
+      z: 7
+      font_size: 90
+      font_name: Mustkill     
+      outline_color: black
+      outline_width: 7
+    - type: text
+      text: (player|flammablejelly_points)
+      number_grouping: true 
+      x: 80%
+      y: 19%
+      z: 7
+      font_size: 90
+      font_name: Mustkill     
+      outline_color: black
+      outline_width: 7
+  w_flammablejelly_complete_points:  
+    - type: text
+      text: Completion Timed Bonus
+      number_grouping: true 
+      x: 31.8%
+      y: 28%
+      z: 7
+      font_size: 90
+      font_name: Mustkill     
+      outline_color: black
+      outline_width: 7
+    - type: text
+      text: (player|flammablejelly_complete_points)
+      number_grouping: true 
+      x: 80%
+      y: 28%
+      z: 7
+      font_size: 90
+      font_name: Mustkill     
+      outline_color: black
+      outline_width: 7
+#drillchair total mode points + completion points displayed    
+  w_drillchair_points:
+    - type: text
+      text: Drill Chair Total 
+      number_grouping: true 
+      x: 24.2%
+      y: 19%
+      z: 7
+      font_size: 90
+      font_name: Mustkill     
+      outline_color: black
+      outline_width: 7
+    - type: text
+      text: (player|drillchair_points)
+      number_grouping: true 
+      x: 80%
+      y: 19%
+      z: 7
+      font_size: 90
+      font_name: Mustkill     
+      outline_color: black
+      outline_width: 7
+  w_drillchair_complete_points:  
+    - type: text
+      text: Completion Timed Bonus
+      number_grouping: true 
+      x: 31.8%
+      y: 28%
+      z: 7
+      font_size: 90
+      font_name: Mustkill     
+      outline_color: black
+      outline_width: 7
+    - type: text
+      text: (player|drillchair_complete_points)
+      number_grouping: true 
+      x: 80%
+      y: 28%
+      z: 7
+      font_size: 90
+      font_name: Mustkill     
+      outline_color: black
+      outline_width: 7
+#quadshotgun total mode points + completion points displayed    
+  w_quadshotgun_points:
+    - type: text
+      text: Quad Shotgun Total 
+      number_grouping: true 
+      x: 26.5%
+      y: 19%
+      z: 7
+      font_size: 90
+      font_name: Mustkill     
+      outline_color: black
+      outline_width: 7
+    - type: text
+      text: (player|quadshotgun_points)
+      number_grouping: true 
+      x: 80%
+      y: 19%
+      z: 7
+      font_size: 90
+      font_name: Mustkill     
+      outline_color: black
+      outline_width: 7
+  w_quadshotgun_complete_points:  
+    - type: text
+      text: Completion Timed Bonus
+      number_grouping: true 
+      x: 31.8%
+      y: 28%
+      z: 7
+      font_size: 90
+      font_name: Mustkill     
+      outline_color: black
+      outline_width: 7
+    - type: text
+      text: (player|quadshotgun_complete_points)
+      number_grouping: true 
+      x: 80%
+      y: 28%
+      z: 7
+      font_size: 90
+      font_name: Mustkill     
+      outline_color: black
+      outline_width: 7
+#razorwire total mode points + completion points displayed    
+  w_razorwire_points:
+    - type: text
+      text: Razorwire Total 
+      number_grouping: true 
+      x: 23%
+      y: 19%
+      z: 7
+      font_size: 90
+      font_name: Mustkill     
+      outline_color: black
+      outline_width: 7
+    - type: text
+      text: (player|razorwire_points)
+      number_grouping: true 
+      x: 80%
+      y: 19%
+      z: 7
+      font_size: 90
+      font_name: Mustkill     
+      outline_color: black
+      outline_width: 7
+  w_razorwire_complete_points:  
+    - type: text
+      text: Completion Timed Bonus
+      number_grouping: true 
+      x: 31.8%
+      y: 28%
+      z: 7
+      font_size: 90
+      font_name: Mustkill     
+      outline_color: black
+      outline_width: 7
+    - type: text
+      text: (player|razorwire_complete_points)
+      number_grouping: true 
+      x: 80%
+      y: 28%
+      z: 7
+      font_size: 90
+      font_name: Mustkill     
+      outline_color: black
+      outline_width: 7
+#reversebeartrap total mode points + completion points displayed    
+  w_reversebeartrap_points:
+    - type: text
+      text: Reverse Beartrap Total 
+      number_grouping: true 
+      x: 32%
+      y: 19%
+      z: 7
+      font_size: 90
+      font_name: Mustkill     
+      outline_color: black
+      outline_width: 7
+    - type: text
+      text: (player|reversebeartrap_points)
+      number_grouping: true 
+      x: 80%
+      y: 19%
+      z: 7
+      font_size: 90
+      font_name: Mustkill     
+      outline_color: black
+      outline_width: 7
+  w_reversebeartrap_complete_points:  
+    - type: text
+      text: Completion Timed Bonus
+      number_grouping: true 
+      x: 31.8%
+      y: 28%
+      z: 7
+      font_size: 90
+      font_name: Mustkill     
+      outline_color: black
+      outline_width: 7
+    - type: text
+      text: (player|reversebeartrap_complete_points)
+      number_grouping: true 
+      x: 80%
+      y: 28%
+      z: 7
+      font_size: 90
+      font_name: Mustkill     
+      outline_color: black
+      outline_width: 7
+#zeptest total mode points + completion points displayed    
+  w_zeptest_points:
+    - type: text
+      text: Zep's Test Total 
+      number_grouping: true 
+      x: 21.2%
+      y: 19%
+      z: 7
+      font_size: 90
+      font_name: Mustkill     
+      outline_color: black
+      outline_width: 7
+    - type: text
+      text: (player|zeptest_points)
+      number_grouping: true 
+      x: 80%
+      y: 19%
+      z: 7
+      font_size: 90
+      font_name: Mustkill     
+      outline_color: black
+      outline_width: 7
+  w_zeptest_complete_points:  
+    - type: text
+      text: Completion Timed Bonus
+      number_grouping: true 
+      x: 31.8%
+      y: 28%
+      z: 7
+      font_size: 90
+      font_name: Mustkill     
+      outline_color: black
+      outline_width: 7
+    - type: text
+      text: (player|zeptest_complete_points)
+      number_grouping: true 
+      x: 80%
+      y: 28%
+      z: 7
+      font_size: 90
+      font_name: Mustkill     
+      outline_color: black
+      outline_width: 7
 
 widget_player:
   single_player_ball_started:
@@ -3887,7 +4145,94 @@ widget_player:
     lil_billy_skillshot_value:
       slide: lilbillyqualify1
       action: add
-      
+#trap points displayed in trap completion screen
+#flammablejelly
+  mode_flammablejelly_complete:
+    w_flammablejelly_points:
+      slide: trapcomplete
+      action: add
+    w_flammablejelly_complete_points:
+      slide: trapcomplete
+      action: add  
+#drillchair
+  mode_drillchair_complete:
+    w_drillchair_points:
+      slide: trapcomplete
+      action: add
+    w_drillchair_complete_points:
+      slide: trapcomplete
+      action: add  
+#quadshotgun
+  mode_quadshotgun_complete:
+    w_quadshotgun_points:
+      slide: trapcomplete
+      action: add
+    w_quadshotgun_complete_points:
+      slide: trapcomplete
+      action: add  
+#razorwire
+  mode_razorwire_complete:
+    w_razorwire_points:
+      slide: trapcomplete
+      action: add
+    w_razorwire_complete_points:
+      slide: trapcomplete
+      action: add  
+#reversebeartrap
+  mode_reversebeartrap_complete:
+    w_reversebeartrap_points:
+      slide: trapcomplete
+      action: add
+    w_reversebeartrap_complete_points:
+      slide: trapcomplete
+      action: add  
+#zeptest
+  mode_zeptest_complete:
+    w_zeptest_points:
+      slide: trapcomplete
+      action: add
+    w_zeptest_complete_points:
+      slide: trapcomplete
+      action: add  
+#clear after displaying mode totals
+  slide_trapcomplete_removed:
+    w_flammablejelly_points:
+      slide: trapcomplete
+      action: remove
+    w_flammablejelly_complete_points:
+      slide: trapcomplete
+      action: remove
+    w_drillchair_points:
+      slide: trapcomplete
+      action: remove
+    w_drillchair_complete_points:
+      slide: trapcomplete
+      action: remove
+    w_quadshotgun_points:
+      slide: trapcomplete
+      action: remove
+    w_quadshotgun_complete_points:
+      slide: trapcomplete
+      action: remove
+    w_razorwire_points:
+      slide: trapcomplete
+      action: remove
+    w_razorwire_complete_points:
+      slide: trapcomplete
+      action: remove
+    w_reversebeartrap_points:
+      slide: trapcomplete
+      action: remove
+    w_reversebeartrap_complete_points:
+      slide: trapcomplete
+      action: remove
+    w_zeptest_points:
+      slide: trapcomplete
+      action: remove
+    w_zeptest_complete_points:
+      slide: trapcomplete
+      action: remove
+
   # slide_HeHelpedMeVideo_created:
   #   w_HeHelpedMe_BallSave:
   #     slide: HeHelpedMeVideo

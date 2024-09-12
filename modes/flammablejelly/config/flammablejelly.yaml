@@ -66,8 +66,14 @@ timers:
 variable_player:
   logicblock_flammablejelly_hit{step==1}:
     score: (8000000 * current_player.candle_multiplier) * (current_player.pf_multiplier)
+    flammablejelly_points:
+      int: (8000000 * current_player.candle_multiplier) * (current_player.pf_multiplier)
+      action: add
   sg_flammablejelly_jelly_lit_hit:
     score: (2000000 * current_player.candle_multiplier) * (current_player.pf_multiplier)
+    flammablejelly_points:
+      int: (2000000 * current_player.candle_multiplier) * (current_player.pf_multiplier)
+      action: add
   # logicblock_flammablejelly_hit{step==2}:
   #   score: (1000000 * current_player.candle_multiplier) * (current_player.pf_multiplier)
   # logicblock_flammablejelly_hit{step==3}:
@@ -75,7 +81,13 @@ variable_player:
   #logicblock_flammablejelly_hit{step==4}:
   #  score: 1000000    
   mode_flammablejelly_complete:
-    score: (5000000 + (current_player.key_combination_bonus) + (current_player.candles_used * 3000000)) * (current_player.pf_multiplier)   
+    score: (current_player.key_combination_bonus + (current_player.candles_used * 3000000)) * (current_player.pf_multiplier)   
+    flammablejelly_points:
+      int: (current_player.key_combination_bonus + (current_player.candles_used * 3000000)) * (current_player.pf_multiplier)   
+      action: add
+    flammablejelly_complete_points:
+      int: (current_player.key_combination_bonus + (current_player.candles_used * 3000000)) * (current_player.pf_multiplier)   
+      action: add
   timer_your_timer_tick:
     60s_flammablejelly_timer:
       int: device.timers.your_timer.ticks_remaining
@@ -99,7 +111,7 @@ variable_player:
       action: set
   player_flammablejelly_60s_flammablejelly_timer_tick{value==50}:
     key_combination_bonus:
-      int: 1000000
+      int: 10000000
       action: set
   player_flammablejelly_60s_flammablejelly_timer_tick{value==40}:
     key_combination_bonus:

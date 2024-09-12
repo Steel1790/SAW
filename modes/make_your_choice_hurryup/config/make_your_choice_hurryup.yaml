@@ -44,20 +44,20 @@ variable_player:
       action: set
   player_make_your_choice_hurryup_t_make_your_choice_value_timer_tick:
     hurryup_value_countdown:
-      int: 25123 * device.timers.t_make_your_choice_value_timer.ticks
+      int: 75123 * device.timers.t_make_your_choice_value_timer.ticks
       action: set
   logicblock_acc_make_your_choice_qualify_hit{step==1}:
-    score: (25123 * device.timers.t_make_your_choice_value_timer.ticks) * (current_player.pf_multiplier)
+    score: (75123 * device.timers.t_make_your_choice_value_timer.ticks) * (current_player.pf_multiplier)
   logicblock_acc_make_your_choice_qualify_hit{step==2}:
-    score: (25123 * device.timers.t_make_your_choice_value_timer.ticks) * (current_player.pf_multiplier)
+    score: (75123 * device.timers.t_make_your_choice_value_timer.ticks) * (current_player.pf_multiplier)
   logicblock_acc_make_your_choice_qualify_hit{step==3}:
-    score: (25123 * device.timers.t_make_your_choice_value_timer.ticks) * (current_player.pf_multiplier)
+    score: (75123 * device.timers.t_make_your_choice_value_timer.ticks) * (current_player.pf_multiplier)
   make_your_choice_value_locked:
     hurryup_value:
-      int: 25123 * device.timers.t_make_your_choice_value_timer.ticks
+      int: 75123 * device.timers.t_make_your_choice_value_timer.ticks
       action: set
   logicblock_acc_make_your_choice_qualify_complete:
-    score: (50000 * device.timers.t_make_your_choice_value_timer.ticks) * (current_player.pf_multiplier)
+    score: (100000 * device.timers.t_make_your_choice_value_timer.ticks) * (current_player.pf_multiplier)
 
 counters:
   cnt_hurryup:

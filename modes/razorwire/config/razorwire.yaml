@@ -101,23 +101,32 @@ variable_player:
   #razorwire_pops_complete:
   #  score: 1000000 + (current_player.hacksaws_used * 1500000)
   mode_razorwire_complete:
-    score: (6500000 + (current_player.razorwire_time_bonus) + (current_player.hacksaws_used * 1500000)) * (current_player.pf_multiplier)
+    score: (current_player.razorwire_time_bonus + (current_player.hacksaws_used * 1500000)) * (current_player.pf_multiplier)
+    razorwire_points:
+      int: (current_player.razorwire_time_bonus + (current_player.hacksaws_used * 1500000)) * (current_player.pf_multiplier)
+      action: add
+    razorwire_complete_points:
+      int: (current_player.razorwire_time_bonus + (current_player.hacksaws_used * 1500000)) * (current_player.pf_multiplier)
+      action: add
   counter_razorwire_pops_counter_hit:
     razorwire_pops_counter:
       action: set
       int: (count)*42
     score: (1025000 + (current_player.hacksaws_used * 1025000)) * (current_player.pf_multiplier)
+    razorwire_points:
+      int: (1025000 + (current_player.hacksaws_used * 1025000)) * (current_player.pf_multiplier)
+      action: add
     razorwire_visual_pops_counter:
       action: set
       int: (count)
 #time bonus reward
   player_razorwire_60s_timer_tick{value==60}:
     razorwire_time_bonus:
-      int: 1500000
+      int: 15000000
       action: set
   player_razorwire_60s_timer_tick{value==50}:
     razorwire_time_bonus:
-      int: 1000000
+      int: 10000000
       action: set
   player_razorwire_60s_timer_tick{value==40}:
     razorwire_time_bonus:

@@ -362,9 +362,10 @@ sound_player:
       action: play
   ball_will_end{current_player.ball==3}:
     PuzzlePieceHurryUp:
-      action: stop   
-    GameOver:
-      action: play 
+      action: stop 
+  # slide_bonus_start_slide_removed{current_player.ball==3 and is_extra_ball==False}:
+  #   GameOver:
+  #     action: play 
 
   mode_base_started{current_player.ball == 1 and player==1 and is_extra_ball==False}:
     1playerGame:

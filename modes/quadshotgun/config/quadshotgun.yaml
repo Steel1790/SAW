@@ -160,9 +160,18 @@ variable_player:
   #quadshotgun_spinner_complete:
   #  score: 2500000 + (current_player.gears_used * 2500000)
   mode_quadshotgun_complete:
-    score: (6000000 + (current_player.shotgun_timer_bonus) + (current_player.gears_used * 1500000)) * (current_player.pf_multiplier)
+    score: (current_player.shotgun_timer_bonus + (current_player.gears_used * 1500000)) * (current_player.pf_multiplier)
+    quadshotgun_points:
+      int: (current_player.shotgun_timer_bonus + (current_player.gears_used * 1500000)) * (current_player.pf_multiplier)
+      action: add
+    quadshotgun_complete_points:
+      int: (current_player.shotgun_timer_bonus + (current_player.gears_used * 1500000)) * (current_player.pf_multiplier)
+      action: add
   counter_quadshotgun_spinner_counter_hit:
     score: (500000 + (current_player.gears_used * 500000)) * (current_player.pf_multiplier)
+    quadshotgun_points:
+      int: (500000 + (current_player.gears_used * 500000)) * (current_player.pf_multiplier)
+      action: add
     quadshotgun_spinner_counter:
       action: set
       int: (count)*46
@@ -174,21 +183,33 @@ variable_player:
       action: set
       int: (count)*250
     score: 2500000 * (current_player.pf_multiplier)
+    quadshotgun_points:
+      int: 2500000 * (current_player.pf_multiplier)
+      action: add
   counter_quadshotgun_right_standup_counter_hit:
     quadshotgun_right_standup_counter:
       action: set
       int: (count)*250
     score: 2500000 * (current_player.pf_multiplier)
+    quadshotgun_points:
+      int: 2500000 * (current_player.pf_multiplier)
+      action: add
   counter_quadshotgun_left_standup_right_ramp_counter_hit:
     quadshotgun_left_standup_right_ramp_counter:
       action: set
       int: (count)*250
     score: 2500000 * (current_player.pf_multiplier)
+    quadshotgun_points:
+      int: 2500000 * (current_player.pf_multiplier)
+      action: add
   counter_quadshotgun_right_standup_right_ramp_counter_hit:
     quadshotgun_right_standup_right_ramp_counter:
       action: set
       int: (count)*250
     score: 2500000 * (current_player.pf_multiplier)
+    quadshotgun_points:
+      int: 2500000 * (current_player.pf_multiplier)
+      action: add
        
   timer_your_timer_tick:
     quadshotgun_60s_timer:
@@ -201,7 +222,7 @@ variable_player:
       action: set
   player_quadshotgun_quadshotgun_60s_timer_tick{value==50}:
     shotgun_timer_bonus:
-      int: 1000000
+      int: 10000000
       action: set
   player_quadshotgun_quadshotgun_60s_timer_tick{value==40}:
     shotgun_timer_bonus:
@@ -483,7 +504,7 @@ widgets:
       image: BottomFrame
       y: 85
       # x: 1
-      z: 2
+      z: 3
 #player 1 widget
     - type: text
       text: (player1|score)

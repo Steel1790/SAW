@@ -70,25 +70,25 @@ shows:
 
 variable_player:
   sw_pops:
-    score: (50000 * (current_player.pf_multiplier)) * (current_player.pf_multiplier)
+    score: 250000 * (current_player.pf_multiplier)
   sw_slingshot:
-    score: (50000 * (current_player.pf_multiplier)) * (current_player.pf_multiplier)
+    score: 250000 * (current_player.pf_multiplier)
   sw_inlane:
-    score: (50000 * (current_player.pf_multiplier)) * (current_player.pf_multiplier)
+    score: 250000 * (current_player.pf_multiplier)
   sw_outlane:
-    score: (50000 * (current_player.pf_multiplier)) * (current_player.pf_multiplier)
+    score: 250000 * (current_player.pf_multiplier)
   sw_standup:
-    score: (50000 * (current_player.pf_multiplier)) * (current_player.pf_multiplier)
+    score: 250000 * (current_player.pf_multiplier)
   sw_ramp:
-    score: (50000 * (current_player.pf_multiplier)) * (current_player.pf_multiplier)
+    score: 250000 * (current_player.pf_multiplier)
   spinner_spinner_hit:
-    score: (50000 * (current_player.pf_multiplier)) * (current_player.pf_multiplier)
+    score: 250000 * (current_player.pf_multiplier)
   sw_drop_target:
-    score: (50000 * (current_player.pf_multiplier)) * (current_player.pf_multiplier)
+    score: 250000 * (current_player.pf_multiplier)
   sw_loop:
-    score: (50000 * (current_player.pf_multiplier)) * (current_player.pf_multiplier)
+    score: 250000 * (current_player.pf_multiplier)
   sw_110:
-    score: (50000 * (current_player.pf_multiplier)) * (current_player.pf_multiplier)
+    score: 250000 * (current_player.pf_multiplier)
   counter_cnt_hostage_right_ramp_1_hit:
     cnt_hostage_right_ramp_1:
       action: set
