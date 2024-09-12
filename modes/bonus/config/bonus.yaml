@@ -4,31 +4,31 @@ mode_settings:
   hurry_up_delay_ms: 0
   bonus_entries:
     - event: bonus_gears
-      score: 450000 * (current_player.bonus_gears + 0)
+      score: 1450000 * (current_player.bonus_gears + 0)
     - event: bonus_syringes
-      score: 450000 * (current_player.bonus_syringes + 0)
+      score: 1450000 * (current_player.bonus_syringes + 0)
     - event: bonus_bathtubs
-      score: 450000 * (current_player.bonus_bathtubs + 0)
+      score: 1450000 * (current_player.bonus_bathtubs + 0)
     - event: bonus_taperecorders
-      score: 450000 * (current_player.bonus_taperecorders + 0)
+      score: 1450000 * (current_player.bonus_taperecorders + 0)
     - event: bonus_candles
-      score: 450000 * (current_player.bonus_candles + 0)
+      score: 1450000 * (current_player.bonus_candles + 0)
     - event: bonus_hacksaws
-      score: 450000 * (current_player.bonus_hacksaws + 0)
+      score: 1450000 * (current_player.bonus_hacksaws + 0)
     - event: bonus_handguns
-      score: 450000 * (current_player.bonus_handguns + 0)
+      score: 1450000 * (current_player.bonus_handguns + 0)
     - event: bonus_keys
-      score: 450000 * (current_player.bonus_keys + 0)      
+      score: 1450000 * (current_player.bonus_keys + 0)      
 variable_player: 
   mode_bonus_started:   
-    gears_score_total: 450000 * (current_player.bonus_gears + 0)       
-    syringes_score_total: 450000 * (current_player.bonus_syringes + 0) 
-    bathtubs_score_total: 450000 * (current_player.bonus_bathtubs + 0)
-    taperecorders_score_total: 450000 * (current_player.bonus_taperecorders + 0)
-    candles_score_total: 450000 * (current_player.bonus_candles + 0)
-    hacksaws_score_total: 450000 * (current_player.bonus_hacksaws+ 0)
-    handguns_score_total: 450000 * (current_player.bonus_handguns + 0)
-    keys_score_total: 450000 * (current_player.bonus_keys + 0)  
+    gears_score_total: 1450000 * (current_player.bonus_gears + 0)       
+    syringes_score_total: 1450000 * (current_player.bonus_syringes + 0) 
+    bathtubs_score_total: 1450000 * (current_player.bonus_bathtubs + 0)
+    taperecorders_score_total: 1450000 * (current_player.bonus_taperecorders + 0)
+    candles_score_total: 1450000 * (current_player.bonus_candles + 0)
+    hacksaws_score_total: 1450000 * (current_player.bonus_hacksaws+ 0)
+    handguns_score_total: 1450000 * (current_player.bonus_handguns + 0)
+    keys_score_total: 1450000 * (current_player.bonus_keys + 0)  
     bonus_x: 
       int: current_player.bonus_multiplier 
       action: set
