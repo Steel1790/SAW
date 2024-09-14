@@ -70,25 +70,25 @@ shows:
 
 variable_player:
   sw_pops:
-    score: (50000 * (current_player.pf_multiplier)) * (current_player.pf_multiplier)
+    score: 250000 * (current_player.pf_multiplier)
   sw_slingshot:
-    score: (50000 * (current_player.pf_multiplier)) * (current_player.pf_multiplier)
+    score: 250000 * (current_player.pf_multiplier)
   sw_inlane:
-    score: (50000 * (current_player.pf_multiplier)) * (current_player.pf_multiplier)
+    score: 250000 * (current_player.pf_multiplier)
   sw_outlane:
-    score: (50000 * (current_player.pf_multiplier)) * (current_player.pf_multiplier)
+    score: 250000 * (current_player.pf_multiplier)
   sw_standup:
-    score: (50000 * (current_player.pf_multiplier)) * (current_player.pf_multiplier)
+    score: 250000 * (current_player.pf_multiplier)
   sw_ramp:
-    score: (50000 * (current_player.pf_multiplier)) * (current_player.pf_multiplier)
+    score: 250000 * (current_player.pf_multiplier)
   spinner_spinner_hit:
-    score: (50000 * (current_player.pf_multiplier)) * (current_player.pf_multiplier)
+    score: 250000 * (current_player.pf_multiplier)
   sw_drop_target:
-    score: (50000 * (current_player.pf_multiplier)) * (current_player.pf_multiplier)
+    score: 250000 * (current_player.pf_multiplier)
   sw_loop:
-    score: (50000 * (current_player.pf_multiplier)) * (current_player.pf_multiplier)
+    score: 250000 * (current_player.pf_multiplier)
   sw_110:
-    score: (50000 * (current_player.pf_multiplier)) * (current_player.pf_multiplier)
+    score: 250000 * (current_player.pf_multiplier)
   counter_cnt_hostage_right_ramp_1_hit:
     cnt_hostage_right_ramp_1:
       action: set
@@ -245,24 +245,107 @@ slide_player:
 widgets:
    w_hostageUI:
     - type: image
-      image: hacksawUI
-      opacity: 1.0
-      y: 1
-      x: 1
+      image: BottomFrame
+      y: 85
+      # x: 1
       z: 2
-      anchor_x: left
-      anchor_y: bottom
+#player 1 widget
     - type: text
-      text: (score)
-      number_grouping: true
-      y: 16
-      x: 25
-      z: 2
+      text: (player1|score)
+      number_grouping: true  
+   #   y: 36
+      y: 37
+      x: 252
+      z: 8
       font_size: 36
-      anchor_x: left
+      anchor_x: right
       anchor_y: bottom
-      font_name: TrajanProRegular
-      color: beartrap
+      font_name: AeroMaticsDisplaRegular
+      color: black
+    - type: text
+      text: (player1|score)
+      number_grouping: true  
+      y: 36
+      x: 253
+      z: 8
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      font_name: AeroMaticsDisplaRegular
+      outline_color: f0cfab
+      outline_width: 2
+#player 2 widget     
+    - type: text
+      text: (player2|score)
+      number_grouping: true
+      y: 37
+      x: left+579
+      z: 8
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      font_name: AeroMaticsDisplaRegular
+      color: black
+    - type: text
+      text: (player2|score)
+      number_grouping: true
+      y: 36
+      x: left+580
+      z: 7
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      font_name: AeroMaticsDisplaRegular
+      outline_color: f0cfab
+      outline_width: 2
+#player 3 widget
+    - type: Text
+      text: (player3|score)
+      number_grouping: true   
+      font_name: AeroMaticsDisplaRegular
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      y: 37
+      x: left+908
+      z: 8
+      color: black
+    - type: Text
+      text: (player3|score)
+      number_grouping: true   
+      font_name: AeroMaticsDisplaRegular
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      y: 36
+      x: left+909
+      z: 7
+      outline_color: f0cfab
+      outline_width: 2
+#player 4 widget
+    - type: Text
+      text: (player4|score)
+      number_grouping: true       
+      font_name: AeroMaticsDisplaRegular
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      y: 37
+      x: left+1239
+      z: 8
+      color: black
+    - type: Text
+      text: (player4|score)
+      number_grouping: true       
+      font_name: AeroMaticsDisplaRegular
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      y: 36
+      x: left+1240
+      z: 7
+      outline_color: f0cfab
+      outline_width: 2   
       
     - type: Text
       text: 00:(player|hostage_hostage_75s_timer_tick)

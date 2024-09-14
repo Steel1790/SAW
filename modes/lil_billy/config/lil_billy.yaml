@@ -1,7 +1,7 @@
 #config_version=6
 mode:
   start_events: selection_mode_lilbilly_selected
-  stop_events: mode_lil_billy_stopped, ball_ended, ball_will_end, player_lil_billy_lil_billy_60s_timer_tick{value < 1}
+  stop_events: mode_lil_billy_stopped, ball_ended, ball_will_end, player_lil_billy_lil_billy_60s_timer_tick{value < 1}, player_lil_billy_lil_billy_60s_cubicle_timer_tick{value < 1}
   priority: 191
 ## cubicle MB. only 2 of 5 buttons in game will work to activate the flippers. wrong guesses trigger sound fx (random screams). 
 ## every 10 sec callout + video changes the buttons what controls each flipper.
@@ -17,45 +17,82 @@ multiballs:
 random_event_player:
   mode_lil_billy_started:
     events:
-      e_lilbilly_tricycle: 100
-  lil_billy_drops_hit:
+      e_lilbilly_tricycle: 50
+      e_lilbilly_cubicle: 50
+  counter_cnt_lil_billy_drops_hit_hit:
     events:
       e_lil_billy_drops_hit1: 50
       e_lil_billy_drops_hit2: 50
-#      e_lilbilly_cubicle: 0
-#uncomment out when multiple lil billy options available
-#    force_all: true
+    force_all: true
 
 event_player:
   e_lilbilly_tricycle: 
     - flippers_off
-    - e_delay_tricycle_plunge|5s
+    - e_delay_tricycle_plunge|2s
+  e_lilbilly_cubicle:
+    - flippers_off
+    - e_lilbilly_flippers|0.5s
 #  mode_lil_billy_stopped: flippers_on
   slide_mode_lil_billy_UI_01_active: e_primary_mode_active
+  slide_mode_lil_billy_UI_02_active: e_primary_mode_active
   e_lil_billy_drops_hit2: e_drop_hit2_delay|2.3s
   slide_LilBillyModeIntro1_created: e_prep_lil_billy_drops_UI|12s
+  slide_LilBillyModeIntro2_created: e_prep_lil_billy_flippers_UI|12s
 
 ball_saves:
   ball_save_lil_billy_tricycle:
-    enable_events: e_lilbilly_tricycle
+    enable_events: e_lilbilly_tricycle, e_lilbilly_cubicle
     disable_events: mode_lil_billy_stopped
     auto_launch: false
     balls_to_save: -1
 
-shot_groups:
-  lil_billy_drops:
-    shots: lil_billy_drop1, lil_billy_drop2, lil_billy_drop3
-
 variable_player:
-  lil_billy_drops_hit:
+  counter_cnt_lil_billy_drops_hit_hit:
     score: 2500000 + (device.counters.cnt_lil_billy_drops_hit.value * 1250000)
     lil_billy_drops_value:
       int: 2500000 + (device.counters.cnt_lil_billy_drops_hit.value * 1250000)
       action: set
-  counter_cnt_lil_billy_drops_hit_hit:
     lil_billy_drops_visual:
       action: set
-      int: (count)*7
+      int: (count)*15
+  e_lilbilly_cubicle:
+    lil_billy_flippers_value:
+      int: 1000000
+      action: set
+  lil_billy_flippers_flippers_lit_hit:
+    score: 1000000 + (device.counters.cnt_lil_billy_flippers_value.value * 1000000)
+    lil_billy_flippers_value:
+      int: 2000000 + (device.counters.cnt_lil_billy_flippers_value.value * 1000000)
+      action: set
+
+
+shot_groups:
+  lil_billy_drops:
+    shots: lil_billy_drop1, lil_billy_drop2, lil_billy_drop3
+  lil_billy_flippers:
+    shots: shot_lil_billy_flippers_left_loop, shot_lil_billy_flippers_left_standup_rightramp, shot_lil_billy_flippers_right_standup_rightramp, shot_lil_billy_flippers_right_loop, shot_lil_billy_flippers_right_standup, shot_lil_billy_flippers_left_standup
+
+shot_profiles:
+  sp_flippers:
+    advance_on_hit: false
+    states:
+      - name: flippers_not_ready
+        show: "sh_flippers_not_ready"
+      - name: flippers_lit
+        show: "sh_flippers_on"
+
+shows:
+  sh_flippers_on:    
+    - duration: 0.3s
+      lights:
+        (leds): ff314d
+    - duration: 0.3s
+      lights:
+        (leds): off
+  sh_flippers_not_ready:   
+    - duration: 0.3s
+      lights:
+        (leds): off
   
 shots:
   lil_billy_drop3:
@@ -64,29 +101,129 @@ shots:
     switch: s_lower_bank_drop_target_opto_middle
   lil_billy_drop1:
     switch: s_lower_bank_drop_target_opto_lower
+  shot_lil_billy_flippers_left_loop:
+    reset_events: mode_lil_billy_stopped, player_turn_stopped, player_turn_ended
+    switches: s_left_loop_bottom
+    profile: sp_flippers
+    show_tokens:
+      leds: l_left_loop_arrow
+    control_events:
+      - events: e_lilbilly_cubicle
+        state: 1
+      - events: shot_lil_billy_flippers_left_loop_sp_flippers_flippers_lit_hit
+        state: 0
+      - events: e_lil_billy_flippers_complete
+        state: 1
+  shot_lil_billy_flippers_left_standup_rightramp:
+    reset_events: mode_lil_billy_stopped, player_turn_stopped, player_turn_ended
+    switches: s_left_standup_right_ramp
+    profile: sp_flippers
+    show_tokens:
+      leds: l_left_standup_right_ramp_arrow
+    control_events:
+      - events: e_lilbilly_cubicle
+        state: 1
+      - events: shot_lil_billy_flippers_left_standup_rightramp_sp_flippers_flippers_lit_hit
+        state: 0
+      - events: e_lil_billy_flippers_complete
+        state: 1
+  shot_lil_billy_flippers_right_standup_rightramp:
+    reset_events: mode_lil_billy_stopped, player_turn_stopped, player_turn_ended
+    switches: s_right_standup_right_ramp
+    profile: sp_flippers
+    show_tokens:
+      leds: l_right_standup_right_ramp_arrow
+    control_events:
+      - events: e_lilbilly_cubicle
+        state: 1
+      - events: shot_lil_billy_flippers_right_standup_rightramp_sp_flippers_flippers_lit_hit
+        state: 0
+      - events: e_lil_billy_flippers_complete
+        state: 1
+  shot_lil_billy_flippers_right_loop:
+    reset_events: mode_lil_billy_stopped, player_turn_stopped, player_turn_ended
+    switches: s_right_loop_bottom
+    profile: sp_flippers
+    show_tokens:
+      leds: l_right_loop_arrow
+    control_events:
+      - events: e_lilbilly_cubicle
+        state: 1
+      - events: shot_lil_billy_flippers_right_loop_sp_flippers_flippers_lit_hit
+        state: 0
+      - events: e_lil_billy_flippers_complete
+        state: 1
+  shot_lil_billy_flippers_right_standup:
+    reset_events: mode_lil_billy_stopped, player_turn_stopped, player_turn_ended
+    switches: s_right_standup
+    profile: sp_flippers
+    show_tokens:
+      leds: l_right_standup_arrow
+    control_events:
+      - events: e_lilbilly_cubicle
+        state: 1
+      - events: shot_lil_billy_flippers_right_standup_sp_flippers_flippers_lit_hit
+        state: 0
+      - events: e_lil_billy_flippers_complete
+        state: 1
+  shot_lil_billy_flippers_left_standup:
+    reset_events: mode_lil_billy_stopped, player_turn_stopped, player_turn_ended
+    switches: s_left_standup
+    profile: sp_flippers
+    show_tokens:
+      leds: l_left_standup_arrow
+    control_events:
+      - events: e_lilbilly_cubicle
+        state: 1
+      - events: shot_lil_billy_flippers_left_standup_sp_flippers_flippers_lit_hit             
+        state: 0
+      - events: e_lil_billy_flippers_complete
+        state: 1
 
 show_player:
-  mode_lil_billy_started:
+  e_lilbilly_tricycle:
     skillshot_chase:
       loops: -1
       speed: 8
       show_tokens:
         color1: red
-  lil_billy_drops_hit:
+    ballsave:
+      show_tokens:
+        leds: l_live_again
+      loops: 74
+  counter_cnt_lil_billy_drops_hit_hit:
     lil_billy_rainbow:
       loops: 1
-      speed: 10
+      speed: 20
+  lil_billy_flippers_flippers_lit_hit:
+    lil_billy_rainbow:
+      loops: 1
+      speed: 40
   mode_lil_billy_stopped:
     skillshot_chase:
       loops: -1
       show_tokens:
         color1: off
+    ballsave_end:
+      show_tokens:
+        leds: l_live_again
+      loops: -1
+  e_lilbilly_cubicle:
+    ballsave:
+      show_tokens:
+        leds: l_live_again
+      loops: 82
 
 slides:
   LilBillyModeIntro1:
     widgets:
     - type: video
       video: LilBillyModeIntro1
+#adjust when we have intro for flipper option mode
+  LilBillyModeIntro2:
+    widgets:
+    - type: video
+      video: LilBillyModeIntro2
   LilBillyModeSkillshot1:
     widgets:
     - type: video
@@ -105,9 +242,39 @@ slides:
       video: mode_lil_billy_UI_01
       width: 1366
       height: 768
+  mode_lil_billy_UI_02:
+    widgets:
+    - type: video
+      video: mode_lil_billy_UI_02
+      width: 1366
+      height: 768
+  ButtonChange1:
+    widgets:
+    - type: video
+      video: ButtonChange1
+      width: 1366
+      height: 768
+  ButtonChange2:
+    widgets:
+    - type: video
+      video: ButtonChange2
+      width: 1366
+      height: 768
+  ButtonChange3:
+    widgets:
+    - type: video
+      video: ButtonChange3
+      width: 1366
+      height: 768
+  ButtonChange4:
+    widgets:
+    - type: video
+      video: ButtonChange4
+      width: 1366
+      height: 768
       
 slide_player:
-  mode_lil_billy_started: 
+  e_lilbilly_tricycle: 
     LilBillyModeIntro1:
       priority: 500
       expire: 12.3s
@@ -123,13 +290,60 @@ slide_player:
     LilBillyModeSkillshot2:
       priority: 500
       expire: 4.5s
+# cubicle / flippers mode
+  e_lilbilly_cubicle:
+    LilBillyModeIntro2:
+      priority: 500
+      expire: 23s
+  e_prep_lil_billy_flippers_UI:
+    mode_lil_billy_UI_02:
+      priority: 400
+      expire: 71.1s
+  player_lil_billy_lil_billy_60s_cubicle_timer_tick{value==50}:
+    ButtonChange1:
+      priority: 400
+      expire: 2.5s
+  player_lil_billy_lil_billy_60s_cubicle_timer_tick{value==40}:
+    ButtonChange2:
+      priority: 400
+      expire: 2.5s
+  player_lil_billy_lil_billy_60s_cubicle_timer_tick{value==30}:
+    ButtonChange3:
+      priority: 400
+      expire: 2.5s
+  player_lil_billy_lil_billy_60s_cubicle_timer_tick{value==20}:
+    ButtonChange2:
+      priority: 400
+      expire: 2.5s
+  player_lil_billy_lil_billy_60s_cubicle_timer_tick{value==10}:
+    ButtonChange4:
+      priority: 400
+      expire: 2.5s
 
 counters:
   cnt_lil_billy_drops_hit:
     starting_count: 0
-    start_enabled: true
+#    start_enabled: true
     persist_state: false
     count_events: lil_billy_drops_hit
+    enable_events: e_lilbilly_tricycle
+    disable_events: mode_lil_billy_stopped
+  cnt_lil_billy_flippers_value:
+    starting_count: 0
+#    start_enabled: true
+    persist_state: false
+    count_events: lil_billy_flippers_flippers_lit_hit
+    enable_events: e_lilbilly_cubicle
+    disable_events: mode_lil_billy_stopped
+  cnt_lil_billy_flippers_hit:
+    starting_count: 0
+    count_complete_value: 6
+    events_when_complete: e_lil_billy_flippers_complete
+#    start_enabled: true
+    persist_state: false
+    count_events: lil_billy_flippers_flippers_lit_hit
+    enable_events: e_lilbilly_cubicle
+    disable_events: mode_lil_billy_stopped
 
 widgets:
   w_lil_billy_drops_value:
@@ -145,36 +359,107 @@ widgets:
       outline_width: 7
   mode_lil_billy_drops_UI:
     - type: image
-      image: hacksawUI
-      opacity: 0.5
-      y: 1
-      x: 1
-      z: 8
-      anchor_x: left
-      anchor_y: bottom
+      image: BottomFrame
+      y: 85
+      # x: 1
+      z: 2
+#player 1 widget
     - type: text
-      text: (score)
-      number_grouping: true
-      y: 16
-      x: 25
+      text: (player1|score)
+      number_grouping: true  
+   #   y: 36
+      y: 37
+      x: 252
       z: 8
       font_size: 36
-      anchor_x: left
+      anchor_x: right
       anchor_y: bottom
       font_name: AeroMaticsDisplaRegular
       color: black
     - type: text
-      text: (score)
-      number_grouping: true
-      y: 15
-      x: 26
+      text: (player1|score)
+      number_grouping: true  
+      y: 36
+      x: 253
       z: 8
       font_size: 36
-      anchor_x: left
+      anchor_x: right
       anchor_y: bottom
       font_name: AeroMaticsDisplaRegular
       outline_color: f0cfab
       outline_width: 2
+#player 2 widget     
+    - type: text
+      text: (player2|score)
+      number_grouping: true
+      y: 37
+      x: left+579
+      z: 8
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      font_name: AeroMaticsDisplaRegular
+      color: black
+    - type: text
+      text: (player2|score)
+      number_grouping: true
+      y: 36
+      x: left+580
+      z: 7
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      font_name: AeroMaticsDisplaRegular
+      outline_color: f0cfab
+      outline_width: 2
+#player 3 widget
+    - type: Text
+      text: (player3|score)
+      number_grouping: true   
+      font_name: AeroMaticsDisplaRegular
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      y: 37
+      x: left+908
+      z: 8
+      color: black
+    - type: Text
+      text: (player3|score)
+      number_grouping: true   
+      font_name: AeroMaticsDisplaRegular
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      y: 36
+      x: left+909
+      z: 7
+      outline_color: f0cfab
+      outline_width: 2
+#player 4 widget
+    - type: Text
+      text: (player4|score)
+      number_grouping: true       
+      font_name: AeroMaticsDisplaRegular
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      y: 37
+      x: left+1239
+      z: 8
+      color: black
+    - type: Text
+      text: (player4|score)
+      number_grouping: true       
+      font_name: AeroMaticsDisplaRegular
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      y: 36
+      x: left+1240
+      z: 7
+      outline_color: f0cfab
+      outline_width: 2   
     - type: Text
       text: 00:(player|lil_billy_lil_billy_60s_timer_tick)
       font_size: 100
@@ -217,6 +502,139 @@ widgets:
       color: black
       corner_radius: 10
       corner_segments: 10
+#flippers mode lit shot value
+  w_lil_billy_flippers_value:
+    - type: text
+      text: (player|lil_billy_flippers_value)
+      number_grouping: true 
+      x: 75%
+      y: 37%
+      z: 7
+      font_size: 90
+      font_name: Mustkill     
+      outline_color: black
+      outline_width: 7
+#flippers mode UI
+  mode_lil_billy_flippers_UI:
+    - type: image
+      image: BottomFrame
+      y: 85
+      # x: 1
+      z: 2
+#player 1 widget
+    - type: text
+      text: (player1|score)
+      number_grouping: true  
+   #   y: 36
+      y: 37
+      x: 252
+      z: 8
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      font_name: AeroMaticsDisplaRegular
+      color: black
+    - type: text
+      text: (player1|score)
+      number_grouping: true  
+      y: 36
+      x: 253
+      z: 8
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      font_name: AeroMaticsDisplaRegular
+      outline_color: f0cfab
+      outline_width: 2
+#player 2 widget     
+    - type: text
+      text: (player2|score)
+      number_grouping: true
+      y: 37
+      x: left+579
+      z: 8
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      font_name: AeroMaticsDisplaRegular
+      color: black
+    - type: text
+      text: (player2|score)
+      number_grouping: true
+      y: 36
+      x: left+580
+      z: 7
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      font_name: AeroMaticsDisplaRegular
+      outline_color: f0cfab
+      outline_width: 2
+#player 3 widget
+    - type: Text
+      text: (player3|score)
+      number_grouping: true   
+      font_name: AeroMaticsDisplaRegular
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      y: 37
+      x: left+908
+      z: 8
+      color: black
+    - type: Text
+      text: (player3|score)
+      number_grouping: true   
+      font_name: AeroMaticsDisplaRegular
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      y: 36
+      x: left+909
+      z: 7
+      outline_color: f0cfab
+      outline_width: 2
+#player 4 widget
+    - type: Text
+      text: (player4|score)
+      number_grouping: true       
+      font_name: AeroMaticsDisplaRegular
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      y: 37
+      x: left+1239
+      z: 8
+      color: black
+    - type: Text
+      text: (player4|score)
+      number_grouping: true       
+      font_name: AeroMaticsDisplaRegular
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      y: 36
+      x: left+1240
+      z: 7
+      outline_color: f0cfab
+      outline_width: 2   
+    - type: Text
+      text: 00:(player|lil_billy_lil_billy_60s_cubicle_timer_tick)
+      font_size: 100
+      font_name: digitalclockfont
+      color: red
+      x: 50%
+      y: 90.2%
+      z: 8
+    - type: rectangle
+      width: 420
+      height: 130
+      x: 50%
+      y: 91.5%
+      z: 8
+      corner_radius: 20
+      corner_segments: 20
+      color: black     
 
 widget_player:
  e_lil_billy_drops_hit1:
@@ -233,16 +651,33 @@ widget_player:
      action: add
    w_visual_drops_bar:
      slide: mode_lil_billy_UI_01
-     action: add     
+     action: add    
+#flipper mode
+ slide_LilBillyModeIntro2_removed:
+   mode_lil_billy_flippers_UI:
+     slide: mode_lil_billy_UI_02
+     action: add
+   w_lil_billy_flippers_value:
+     slide: mode_lil_billy_UI_02
+     action: add   
 
 sound_player:
   slide_LilBillyModeIntro1_removed:
     LilBillyModeSongSkillshot:
       action: play
       loops: 0  
-  lil_billy_drops_hit:
+  slide_LilBillyModeIntro2_removed:
+    LilBillyModeSongSkillshot:
+      action: play
+      loops: 0  
+  counter_cnt_lil_billy_drops_hit_hit:
     LilBillyModeSkillshotDrop:
       action: play  
+      block: true
+  lil_billy_flippers_flippers_lit_hit:
+    LilBillyModeSkillshotDrop:
+      action: play  
+      block: true
 
 timers:
   lil_billy_60s_timer:
@@ -252,3 +687,10 @@ timers:
     control_events:
       - action: start
         event: slide_LilBillyModeIntro1_removed
+  lil_billy_60s_cubicle_timer:
+    start_value: 60
+    end_value: 0
+    direction: down
+    control_events:
+      - action: start
+        event: slide_LilBillyModeIntro2_removed    

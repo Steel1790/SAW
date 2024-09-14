@@ -33,22 +33,22 @@ variable_player:
   #multiball_mb_hacksaw_started:
     #score: 3000000
   shot_hacksaw_left_loop_sp_hacksaw_mb_lit_hit:
-    score: (600000 + (device.counters.cnt_hacksaw_jackpot_value.value * 50000) + (device.counters.cnt_hacksaw_jackpot_value_decrease.value * -5000)) * (current_player.pf_multiplier)
+    score: (2250000 + (device.counters.cnt_hacksaw_jackpot_value.value * 250000) + (device.counters.cnt_hacksaw_jackpot_value_decrease.value * -5000)) * (current_player.pf_multiplier)
   shot_hacksaw_inner_loop_sp_hacksaw_mb_lit_hit:
-    score: (600000 + (device.counters.cnt_hacksaw_jackpot_value.value * 50000) + (device.counters.cnt_hacksaw_jackpot_value_decrease.value * -5000)) * (current_player.pf_multiplier)
+    score: (2250000 + (device.counters.cnt_hacksaw_jackpot_value.value * 250000) + (device.counters.cnt_hacksaw_jackpot_value_decrease.value * -5000)) * (current_player.pf_multiplier)
   shot_hacksaw_left_standup_rightramp_sp_hacksaw_mb_lit_hit:
-    score: (600000 + (device.counters.cnt_hacksaw_jackpot_value.value * 50000) + (device.counters.cnt_hacksaw_jackpot_value_decrease.value * -5000)) * (current_player.pf_multiplier)
+    score: (2250000 + (device.counters.cnt_hacksaw_jackpot_value.value * 250000) + (device.counters.cnt_hacksaw_jackpot_value_decrease.value * -5000)) * (current_player.pf_multiplier)
   shot_hacksaw_right_standup_rightramp_sp_hacksaw_mb_lit_hit:
-    score: (600000 + (device.counters.cnt_hacksaw_jackpot_value.value * 50000) + (device.counters.cnt_hacksaw_jackpot_value_decrease.value * -5000)) * (current_player.pf_multiplier)
+    score: (2250000 + (device.counters.cnt_hacksaw_jackpot_value.value * 250000) + (device.counters.cnt_hacksaw_jackpot_value_decrease.value * -5000)) * (current_player.pf_multiplier)
   shot_hacksaw_right_loop_sp_hacksaw_mb_lit_hit:
-    score: (600000 + (device.counters.cnt_hacksaw_jackpot_value.value * 50000) + (device.counters.cnt_hacksaw_jackpot_value_decrease.value * -5000)) * (current_player.pf_multiplier)
+    score: (2250000 + (device.counters.cnt_hacksaw_jackpot_value.value * 250000) + (device.counters.cnt_hacksaw_jackpot_value_decrease.value * -5000)) * (current_player.pf_multiplier)
   shot_hacksaw_left_standup_sp_hacksaw_mb_lit_hit:
-    score: (600000 + (device.counters.cnt_hacksaw_jackpot_value.value * 50000) + (device.counters.cnt_hacksaw_jackpot_value_decrease.value * -5000)) * (current_player.pf_multiplier)
+    score: (2250000 + (device.counters.cnt_hacksaw_jackpot_value.value * 250000) + (device.counters.cnt_hacksaw_jackpot_value_decrease.value * -5000)) * (current_player.pf_multiplier)
   shot_hacksaw_right_standup_sp_hacksaw_mb_lit_hit:
-    score: (600000 + (device.counters.cnt_hacksaw_jackpot_value.value * 50000) + (device.counters.cnt_hacksaw_jackpot_value_decrease.value * -5000)) * (current_player.pf_multiplier)
+    score: (2250000 + (device.counters.cnt_hacksaw_jackpot_value.value * 250000) + (device.counters.cnt_hacksaw_jackpot_value_decrease.value * -5000)) * (current_player.pf_multiplier)
 
   shot_hacksaw_superjackpot1_sp_hacksaw_mb_lit_hit:
-    score: (600000 + (device.counters.cnt_hacksaw_jackpot_value.value * 50000) + (device.counters.cnt_hacksaw_jackpot_value_decrease.value * -5000)) * (current_player.pf_multiplier)
+    score: (2250000 + (device.counters.cnt_hacksaw_jackpot_value.value * 250000) + (device.counters.cnt_hacksaw_jackpot_value_decrease.value * -5000)) * (current_player.pf_multiplier)
 
   start_hacksaw_multiball:
     hacksaw_value:
@@ -59,17 +59,17 @@ variable_player:
       action: set
   e_hacksaw_jackpot_value_increase:
     hacksaw_value:
-      int: 600000 + (device.counters.cnt_hacksaw_jackpot_value.value * 50000) + (device.counters.cnt_hacksaw_jackpot_value_decrease.value * -5000)
+      int: 2250000 + (device.counters.cnt_hacksaw_jackpot_value.value * 250000) + (device.counters.cnt_hacksaw_jackpot_value_decrease.value * -5000)
       action: set
     hacksaw_super_value:
-      int: 600000 + (device.counters.cnt_hacksaw_jackpot_value.value * 50000 * 3) + (device.counters.cnt_hacksaw_jackpot_value_decrease.value * -5000)
+      int: 2250000 + (device.counters.cnt_hacksaw_jackpot_value.value * 250000 * 3) + (device.counters.cnt_hacksaw_jackpot_value_decrease.value * -5000)
       action: set
   e_hacksaw_jackpot_value_decrease:
     hacksaw_value:
-      int: 600000 + (device.counters.cnt_hacksaw_jackpot_value.value * 50000) + (device.counters.cnt_hacksaw_jackpot_value_decrease.value * -5000)
+      int: 2250000 + (device.counters.cnt_hacksaw_jackpot_value.value * 250000) + (device.counters.cnt_hacksaw_jackpot_value_decrease.value * -5000)
       action: set
     hacksaw_super_value:
-      int: 600000 + (device.counters.cnt_hacksaw_jackpot_value.value * 50000 * 3) + (device.counters.cnt_hacksaw_jackpot_value_decrease.value * -5000)
+      int: 2250000 + (device.counters.cnt_hacksaw_jackpot_value.value * 250000 * 3) + (device.counters.cnt_hacksaw_jackpot_value_decrease.value * -5000)
       action: set
   
 counters:

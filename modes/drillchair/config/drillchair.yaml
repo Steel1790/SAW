@@ -120,9 +120,18 @@ variable_player:
   #logicblock_drillchair_hit{step==3}:
   #  score: 1000000 + (current_player.handguns_used * 1250000)
   mode_drillchair_complete:
-    score: (6500000 + (current_player.drillchair_timer_bonus) + (current_player.handguns_used * 1000000)) * (current_player.pf_multiplier)
+    score: (current_player.drillchair_timer_bonus + (current_player.handguns_used * 1000000)) * (current_player.pf_multiplier)
+    drillchair_points:
+      int: (current_player.drillchair_timer_bonus + (current_player.handguns_used * 1000000)) * (current_player.pf_multiplier)  
+      action: add
+    drillchair_complete_points:
+      int: (current_player.drillchair_timer_bonus + (current_player.handguns_used * 1000000)) * (current_player.pf_multiplier)   
+      action: add
   counter_drillchair_pops_counter_hit:
     score: (1500000 + (current_player.handguns_used * 100000)) * (current_player.pf_multiplier)
+    drillchair_points:
+      int: (1500000 + (current_player.handguns_used * 100000)) * (current_player.pf_multiplier)
+      action: add
     drillchair_pops_counter:
       action: set
       int: (count)*100
@@ -131,6 +140,9 @@ variable_player:
       int: (count)
   counter_drillchair_pops2_counter_hit:    
     score: (1500000 + (current_player.handguns_used * 100000)) * (current_player.pf_multiplier)
+    drillchair_points:
+      int: (1500000 + (current_player.handguns_used * 100000)) * (current_player.pf_multiplier)
+      action: add
     drillchair_pops2_counter:
       action: set
       int: (count)*100
@@ -149,7 +161,7 @@ variable_player:
       action: set
   player_drillchair_drillchair_60s_timer_tick{value==50}:
     drillchair_timer_bonus:
-      int: 1000000
+      int: 10000000
       action: set
   player_drillchair_drillchair_60s_timer_tick{value==40}:
     drillchair_timer_bonus:

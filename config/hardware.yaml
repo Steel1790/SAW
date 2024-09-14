@@ -424,6 +424,8 @@ drop_target_banks:
       ball_started.3: 2s
       machine_reset_phase_3: 0 
       mode_zeptest_started: 0
+      mode_lil_billy_started: 0
+      lil_billy_drops_hit: 0
   upper_dropbank:
     drop_targets:
       - dt_upper_drop1
@@ -435,7 +437,6 @@ drop_target_banks:
       ball_started.3: 2s
       machine_reset_phase_3: 0 
       mode_make_your_choice_hurryup_started: 0
-      lil_billy_drops_hit: 0
 
 ball_devices:
   bd_trough:
@@ -524,6 +525,121 @@ flippers:
     activation_switch: s_upper_right_flipper_button
     disable_events: ball_will_end, flippers_off
     enable_events: ball_started, flippers_on
+#lil_billy cubicle flipper variants
+  left_flipper_lil_billy01:
+    main_coil: c_flipper_right_main
+    hold_coil: c_flipper_right_hold
+    activation_switch: s_left_flipper_button
+    disable_events: mode_lil_billy_stopped, player_lil_billy_lil_billy_60s_cubicle_timer_tick{value==50}
+    enable_events: e_lilbilly_flippers
+  right_flipper_lil_billy01:
+    main_coil: c_flipper_left_main
+    hold_coil: c_flipper_left_hold
+    activation_switch: s_right_flipper_button
+    disable_events: mode_lil_billy_stopped, player_lil_billy_lil_billy_60s_cubicle_timer_tick{value==50}
+    enable_events: e_lilbilly_flippers
+  upper_right_flipper_lil_billy01:
+    main_coil: c_flipper_upper_right_main
+    hold_coil: c_flipper_upper_right_hold
+    activation_switch: s_left_flipper_button
+    disable_events: mode_lil_billy_stopped, player_lil_billy_lil_billy_60s_cubicle_timer_tick{value==50}
+    enable_events: e_lilbilly_flippers
+#lil_billy cubicle flipper variant02
+  left_flipper_lil_billy02:
+    main_coil: c_flipper_right_main
+    hold_coil: c_flipper_right_hold
+    activation_switch: s_action_button
+    disable_events: mode_lil_billy_stopped, player_lil_billy_lil_billy_60s_cubicle_timer_tick{value==40}
+    enable_events: player_lil_billy_lil_billy_60s_cubicle_timer_tick{value==50}
+  right_flipper_lil_billy02:
+    main_coil: c_flipper_left_main
+    hold_coil: c_flipper_left_hold
+    activation_switch: s_right_flipper_button
+    disable_events: mode_lil_billy_stopped, player_lil_billy_lil_billy_60s_cubicle_timer_tick{value==40}
+    enable_events: player_lil_billy_lil_billy_60s_cubicle_timer_tick{value==50}
+  upper_right_flipper_lil_billy02:
+    main_coil: c_flipper_upper_right_main
+    hold_coil: c_flipper_upper_right_hold
+    activation_switch: s_right_flipper_button
+    disable_events: mode_lil_billy_stopped, player_lil_billy_lil_billy_60s_cubicle_timer_tick{value==40}
+    enable_events: player_lil_billy_lil_billy_60s_cubicle_timer_tick{value==50}
+#lil_billy cubicle flipper variant03
+  left_flipper_lil_billy03:
+    main_coil: c_flipper_right_main
+    hold_coil: c_flipper_right_hold
+    activation_switch: s_left_flipper_button
+    disable_events: mode_lil_billy_stopped, player_lil_billy_lil_billy_60s_cubicle_timer_tick{value==30}
+    enable_events: player_lil_billy_lil_billy_60s_cubicle_timer_tick{value==40}
+  right_flipper_lil_billy03:
+    main_coil: c_flipper_left_main
+    hold_coil: c_flipper_left_hold
+    activation_switch: s_action_button
+    disable_events: mode_lil_billy_stopped, player_lil_billy_lil_billy_60s_cubicle_timer_tick{value==30}
+    enable_events: player_lil_billy_lil_billy_60s_cubicle_timer_tick{value==40}
+  upper_right_flipper_lil_billy03:
+    main_coil: c_flipper_upper_right_main
+    hold_coil: c_flipper_upper_right_hold
+    activation_switch: s_right_flipper_button
+    disable_events: mode_lil_billy_stopped, player_lil_billy_lil_billy_60s_cubicle_timer_tick{value==30}
+    enable_events: player_lil_billy_lil_billy_60s_cubicle_timer_tick{value==40}
+#lil_billy cubicle flipper variant04
+  left_flipper_lil_billy04:
+    main_coil: c_flipper_right_main
+    hold_coil: c_flipper_right_hold
+    activation_switch: s_action_button
+    disable_events: mode_lil_billy_stopped, player_lil_billy_lil_billy_60s_cubicle_timer_tick{value==20}
+    enable_events: player_lil_billy_lil_billy_60s_cubicle_timer_tick{value==30}
+  right_flipper_lil_billy04:
+    main_coil: c_flipper_left_main
+    hold_coil: c_flipper_left_hold
+    activation_switch: s_right_flipper_button
+    disable_events: mode_lil_billy_stopped, player_lil_billy_lil_billy_60s_cubicle_timer_tick{value==20}
+    enable_events: player_lil_billy_lil_billy_60s_cubicle_timer_tick{value==30}
+  upper_right_flipper_lil_billy04:
+    main_coil: c_flipper_upper_right_main
+    hold_coil: c_flipper_upper_right_hold
+    activation_switch: s_right_flipper_button
+    disable_events: mode_lil_billy_stopped, player_lil_billy_lil_billy_60s_cubicle_timer_tick{value==20}
+    enable_events: player_lil_billy_lil_billy_60s_cubicle_timer_tick{value==30}
+#lil_billy cubicle flipper variant05
+  left_flipper_lil_billy05:
+    main_coil: c_flipper_right_main
+    hold_coil: c_flipper_right_hold
+    activation_switch: s_start
+    disable_events: mode_lil_billy_stopped, player_lil_billy_lil_billy_60s_cubicle_timer_tick{value==10}
+    enable_events: player_lil_billy_lil_billy_60s_cubicle_timer_tick{value==20}
+  right_flipper_lil_billy05:
+    main_coil: c_flipper_left_main
+    hold_coil: c_flipper_left_hold
+    activation_switch: s_left_flipper_button
+    disable_events: mode_lil_billy_stopped, player_lil_billy_lil_billy_60s_cubicle_timer_tick{value==10}
+    enable_events: player_lil_billy_lil_billy_60s_cubicle_timer_tick{value==20}
+  upper_right_flipper_lil_billy05:
+    main_coil: c_flipper_upper_right_main
+    hold_coil: c_flipper_upper_right_hold
+    activation_switch: s_left_flipper_button
+    disable_events: mode_lil_billy_stopped, player_lil_billy_lil_billy_60s_cubicle_timer_tick{value==10}
+    enable_events: player_lil_billy_lil_billy_60s_cubicle_timer_tick{value==20}
+#lil_billy cubicle flipper variant06
+  left_flipper_lil_billy06:
+    main_coil: c_flipper_right_main
+    hold_coil: c_flipper_right_hold
+    activation_switch: s_action_button
+    disable_events: mode_lil_billy_stopped, player_lil_billy_lil_billy_60s_cubicle_timer_tick{value<1}
+    enable_events: player_lil_billy_lil_billy_60s_cubicle_timer_tick{value==10}
+  right_flipper_lil_billy06:
+    main_coil: c_flipper_left_main
+    hold_coil: c_flipper_left_hold
+    activation_switch: s_right_flipper_button
+    disable_events: mode_lil_billy_stopped, player_lil_billy_lil_billy_60s_cubicle_timer_tick{value<1}
+    enable_events: player_lil_billy_lil_billy_60s_cubicle_timer_tick{value==10}
+  upper_right_flipper_lil_billy06:
+    main_coil: c_flipper_upper_right_main
+    hold_coil: c_flipper_upper_right_hold
+    activation_switch: s_right_flipper_button
+    disable_events: mode_lil_billy_stopped, player_lil_billy_lil_billy_60s_cubicle_timer_tick{value<1}
+    enable_events: player_lil_billy_lil_billy_60s_cubicle_timer_tick{value==10}
+
 
 autofire_coils:
   left_slingshot:

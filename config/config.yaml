@@ -544,7 +544,8 @@ slides:
       width: 1366
       height: 768
 slide_player:
-  ball_will_end{current_player.ball==3 and is_extra_ball==False}:
+  # ball_will_end{current_player.ball==3 and is_extra_ball==False}:
+  e_end_of_game:
     gameovervideo:
       action: play
       priority: 600
@@ -572,7 +573,8 @@ slide_player:
   
 show_player:
 # end of ball 3
-  ball_will_end{current_player.ball==3}:
+  # ball_will_end{current_player.ball==3}:
+  e_end_of_game:
     game_over:
       loops: 0
       speed: 8
@@ -609,3 +611,15 @@ show_player:
           color1: drillchair
 event_player:
   ball_starting{is_extra_ball==True}: e_shoot_again    
+  game_ending{current_player.ball==3 and is_extra_ball==False}: 
+    - e_end_of_game
+    - e_end_of_game_stopped|2.6s
+
+queue_relay_player:
+  game_ending:
+    post: e_end_of_game
+    wait_for: slide_gameovervideo_removed
+sound_player:
+  e_end_of_game:
+    GameOverGlenn:
+      action: play     

@@ -65,17 +65,38 @@ timers:
 variable_player:
   logicblock_reversebeartrap_hit{step==1}:
     score: (3000000 + (current_player.keys_used * 4500000) + (current_player.spinner_value * 145750)) * (current_player.pf_multiplier)
+    reversebeartrap_points:
+      int: (3000000 + (current_player.keys_used * 4500000) + (current_player.spinner_value * 145750)) * (current_player.pf_multiplier)
+      action: add
   logicblock_reversebeartrap_hit{step==2}:
     score: (3000000 + (current_player.keys_used * 3000000) + (current_player.spinner_value * 145750)) * (current_player.pf_multiplier)
+    reversebeartrap_points:
+      int: (3000000 + (current_player.keys_used * 4500000) + (current_player.spinner_value * 145750)) * (current_player.pf_multiplier)
+      action: add
   logicblock_reversebeartrap_hit{step==3}:
     score: (4500000 + (current_player.keys_used * 4500000) + (current_player.spinner_value * 145750)) * (current_player.pf_multiplier)
+    reversebeartrap_points:
+      int: (4500000 + (current_player.keys_used * 4500000) + (current_player.spinner_value * 145750)) * (current_player.pf_multiplier)
+      action: add
   logicblock_reversebeartrap_hit{step==4}:
     score: (3000000 + (current_player.keys_used * 3000000) + (current_player.spinner_value * 145750)) * (current_player.pf_multiplier)
+    reversebeartrap_points:
+      int: (3000000 + (current_player.keys_used * 4500000) + (current_player.spinner_value * 145750)) * (current_player.pf_multiplier)
+      action: add
   logicblock_reversebeartrap_hit{step==5}:
     score: (4500000 + (current_player.keys_used * 4500000) + (current_player.spinner_value * 145750)) * (current_player.pf_multiplier)
+    reversebeartrap_points:
+      int: (4500000 + (current_player.keys_used * 4500000) + (current_player.spinner_value * 145750)) * (current_player.pf_multiplier)
+      action: add
   mode_reversebeartrap_complete:
-    score: (6000000 + (current_player.beartrap_timer_bonus) + (current_player.keys_used * 1000000) + (current_player.spinner_value * 145750)) * (current_player.pf_multiplier)
-       
+    score: (current_player.beartrap_timer_bonus + (current_player.keys_used * 1000000) + (current_player.spinner_value * 145750)) * (current_player.pf_multiplier)
+    reversebeartrap_points:
+      int: (current_player.beartrap_timer_bonus + (current_player.keys_used * 1000000) + (current_player.spinner_value * 145750)) * (current_player.pf_multiplier)
+      action: add
+    reversebeartrap_complete_points:
+      int: (current_player.beartrap_timer_bonus + (current_player.keys_used * 1000000) + (current_player.spinner_value * 145750)) * (current_player.pf_multiplier)
+      action: add      
+    
   timer_your_timer_tick:
     120s_reversebeartrap_timer:
       int: device.timers.your_timer.ticks_remaining
@@ -105,7 +126,7 @@ variable_player:
       action: set
   player_reversebeartrap_120s_reversebeartrap_timer_tick{value==100}:
     beartrap_timer_bonus:
-      int: 1000000
+      int: 10000000
       action: set
   player_reversebeartrap_120s_reversebeartrap_timer_tick{value==80}:
     beartrap_timer_bonus:

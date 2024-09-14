@@ -593,18 +593,30 @@ timers:
 variable_player:
   sg_zeptest_zeptest_lit_hit:
     score: (500000 + (current_player.syringes_used * 1000000)) * (current_player.pf_multiplier)
+    zeptest_points:
+      int: (500000 + (current_player.syringes_used * 1000000)) * (current_player.pf_multiplier)
+      action: add
   counter_cnt_zeptest_collected_01_hit:
     score: (3000000 + (current_player.syringes_used * 1000000)) * (current_player.pf_multiplier)
+    zeptest_points:
+      int: (3000000 + (current_player.syringes_used * 1000000)) * (current_player.pf_multiplier)
+      action: add
     cnt_zeptest_collected_1:
       action: set
       int: (count)*250
   counter_cnt_zeptest_collected_02_hit:
     score: (4000000 + (current_player.syringes_used * 1000000)) * (current_player.pf_multiplier)
+    zeptest_points:
+      int: (4000000 + (current_player.syringes_used * 1000000)) * (current_player.pf_multiplier)
+      action: add
     cnt_zeptest_collected_2:
       action: set
       int: (count)*250
   counter_cnt_zeptest_collected_03_hit:
     score: (5000000 + (current_player.syringes_used * 1000000)) * (current_player.pf_multiplier)
+    zeptest_points:
+      int: (5000000 + (current_player.syringes_used * 1000000)) * (current_player.pf_multiplier)
+      action: add
     cnt_zeptest_collected_3:
       action: set
       int: (count)*250
@@ -621,7 +633,13 @@ variable_player:
   #logicblock_zeptest_hit{step==6}:
   #  score: 1000000    
   mode_zeptest_complete:
-    score: (5000000 + (current_player.zeptest_timer_bonus) + (current_player.syringes_used * 1500000)) * (current_player.pf_multiplier)
+    score: (current_player.zeptest_timer_bonus + (current_player.syringes_used * 1500000)) * (current_player.pf_multiplier)
+    zeptest_points:
+      int: (current_player.zeptest_timer_bonus + (current_player.syringes_used * 1500000)) * (current_player.pf_multiplier)
+      action: add
+    zeptest_complete_points:
+      int: (current_player.zeptest_timer_bonus + (current_player.syringes_used * 1500000)) * (current_player.pf_multiplier)
+      action: add
   timer_your_timer_tick:
     60s_zeptest_timer:
       int: device.timers.your_timer.ticks_remaining
@@ -633,7 +651,7 @@ variable_player:
       action: set
   player_zeptest_60s_zeptest_timer_tick{value==50}:
     zeptest_timer_bonus:
-      int: 1000000
+      int: 10000000
       action: set
   player_zeptest_60s_zeptest_timer_tick{value==40}:
     zeptest_timer_bonus:
@@ -1141,32 +1159,32 @@ widgets:
       z: 2        
    w_lit_hit_border01:
     - type: rectangle
-      width: 256
-      height: 50
+      width: 265
+      height: 54
       x: 25%
       y: 29%
       z: 1
-      color: silver
+      color: 00C190
       corner_radius: 10
       corner_segments: 10
    w_lit_hit_border02:
     - type: rectangle
-      width: 256
-      height: 50
+      width: 265
+      height: 54
       x: 53%
       y: 29%
       z: 1
-      color: silver
+      color: 00C190
       corner_radius: 10
       corner_segments: 10
    w_lit_hit_border03:
     - type: rectangle
-      width: 256
-      height: 50
+      width: 265
+      height: 54
       x: 80%
       y: 29%
       z: 1
-      color: silver
+      color: 00C190
       corner_radius: 10
       corner_segments: 10  
     
