@@ -734,6 +734,9 @@ sound_player:
       action: stop
     SurvivalInstinctPreview:
       action: stop
+    LilBillyPreview:
+      action: play
+      loops: 0
   selection_mode_thekeytofreedom_highlighted:
     ModeQualifiedShootScoop:
       action: stop
@@ -751,6 +754,8 @@ sound_player:
       action: stop
     SurvivalInstinctPreview:
       action: stop
+    LilBillyPreview:
+      action: stop
   selection_mode_survivalinstinct_highlighted:
     ModeQualifiedShootScoop:
       action: stop
@@ -765,6 +770,8 @@ sound_player:
     ReverseBearTrapPreview:
       action: stop
     RazorWirePreview:
+      action: stop
+    LilBillyPreview:
       action: stop
     SurvivalInstinctPreview:
       action: play
@@ -784,6 +791,8 @@ sound_player:
       action: stop
     SurvivalInstinctPreview:
       action: stop
+    LilBillyPreview:
+      action: stop
     RazorWirePreview:
       action: play
       loops: -1
@@ -801,6 +810,8 @@ sound_player:
     ReverseBearTrapPreview:
       action: stop
     SurvivalInstinctPreview:
+      action: stop
+    LilBillyPreview:
       action: stop
     FlammableJellyPreview:
       action: play
@@ -820,6 +831,8 @@ sound_player:
       action: stop
     SurvivalInstinctPreview:
       action: stop
+    LilBillyPreview:
+      action: stop
     QuadShotgunPreview:
       action: play
       loops: -1
@@ -837,6 +850,8 @@ sound_player:
     ReverseBearTrapPreview:
       action: stop
     SurvivalInstinctPreview:
+      action: stop
+    LilBillyPreview:
       action: stop
     ZepsTestPreview:
       action: play
@@ -856,6 +871,8 @@ sound_player:
       action: stop
     SurvivalInstinctPreview:
       action: stop
+    LilBillyPreview:
+      action: stop
     DrillChairPreview:
       action: play
       loops: -1
@@ -874,6 +891,8 @@ sound_player:
       action: stop
     SurvivalInstinctPreview:
       action: stop
+    LilBillyPreview:
+      action: stop
     ReverseBearTrapPreview:
       action: play
       loops: -1
@@ -891,6 +910,10 @@ sound_player:
       action: stop
     ReverseBearTrapPreview:
       action: stop
+    LilBillyPreview:
+      action: stop
+    SurvivalInstinctPreview:
+      action: stop
   selection_mode_razorwire_selected:
     FlammableJellyPreview:
       action: stop
@@ -903,6 +926,10 @@ sound_player:
     DrillChairPreview:
       action: stop
     ReverseBearTrapPreview:
+      action: stop
+    LilBillyPreview:
+      action: stop
+    SurvivalInstinctPreview:
       action: stop
   selection_mode_flammablejelly_selected:
     FlammableJellyPreview:
@@ -917,6 +944,10 @@ sound_player:
       action: stop
     ReverseBearTrapPreview:
       action: stop
+    LilBillyPreview:
+      action: stop
+    SurvivalInstinctPreview:
+      action: stop
   selection_mode_quadshotgun_selected:
     FlammableJellyPreview:
       action: stop
@@ -929,6 +960,10 @@ sound_player:
     DrillChairPreview:
       action: stop
     ReverseBearTrapPreview:
+      action: stop
+    LilBillyPreview:
+      action: stop
+    SurvivalInstinctPreview:
       action: stop
   selection_mode_zeptest_selected:
     FlammableJellyPreview:
@@ -943,6 +978,10 @@ sound_player:
       action: stop
     ReverseBearTrapPreview:
       action: stop
+    LilBillyPreview:
+      action: stop
+    SurvivalInstinctPreview:
+      action: stop
   selection_mode_drillchair_selected:
     FlammableJellyPreview:
       action: stop
@@ -956,6 +995,10 @@ sound_player:
       action: stop
     ReverseBearTrapPreview:
       action: stop
+    LilBillyPreview:
+      action: stop
+    SurvivalInstinctPreview:
+      action: stop
   selection_mode_reversebeartrap_selected:
     FlammableJellyPreview:
       action: stop
@@ -968,4 +1011,8 @@ sound_player:
     DrillChairPreview:
       action: stop
     ReverseBearTrapPreview:
+      action: stop
+    LilBillyPreview:
+      action: stop
+    SurvivalInstinctPreview:
       action: stop

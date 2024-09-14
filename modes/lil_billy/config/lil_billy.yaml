@@ -17,8 +17,8 @@ multiballs:
 random_event_player:
   mode_lil_billy_started:
     events:
-      e_lilbilly_tricycle: 50
-      e_lilbilly_cubicle: 50
+      e_lilbilly_tricycle: 0
+      e_lilbilly_cubicle: 100
   counter_cnt_lil_billy_drops_hit_hit:
     events:
       e_lil_billy_drops_hit1: 50
@@ -210,7 +210,7 @@ slides:
   LilBillyModeIntro2:
     widgets:
     - type: video
-      video: LilBillyModeIntro1
+      video: LilBillyModeIntro2
   LilBillyModeSkillshot1:
     widgets:
     - type: video
@@ -281,11 +281,11 @@ slide_player:
   e_lilbilly_cubicle:
     LilBillyModeIntro2:
       priority: 500
-      expire: 12.3s
+      expire: 23s
   e_prep_lil_billy_flippers_UI:
     mode_lil_billy_UI_02:
       priority: 400
-      expire: 60.7s
+      expire: 71.1s
   player_lil_billy_lil_billy_60s_cubicle_timer_tick{value==50}:
     ButtonChange1:
       priority: 400
