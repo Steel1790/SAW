@@ -1093,12 +1093,14 @@ show_player:
   logicblock_drillchair_pops_counter_updated{value<=6}:
     pops_white_360_sweep:
       loops: 1
+      speed: 20
       show_tokens:
         color1: c228c7
       priority: 181
   logicblock_drillchair_pops2_counter_updated{value<=6}:
     starpost_white_360_sweep:
       loops: 1
+      speed: 20
       show_tokens:
         color1: c228c7
       priority: 181
