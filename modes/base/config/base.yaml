@@ -640,11 +640,20 @@ counters:
     reset_on_complete: true
     disable_on_complete: false
 #    events_when_complete: 
-    count_events: shot_left_return_lane_hit
+    count_events: shot_left_return_lane_hit, shot_left_return_lane_a1_hit, shot_right_standup_a1_hit, shot_left_return_lane_a2_hit, shot_right_standup_a2_hit, shot_left_standup_rightramp_a2_hit, shot_left_return_lane_a3_hit, shot_right_standup_a3_hit, shot_left_standup_rightramp_a3_hit, shot_inner_loop_a3_hit
     control_events:
       - event: sg_saw_qualify_lit_hit
         action: subtract
         value: 1
+      - event: sg_saw_reset_a1_lit_hit
+        action: subtract
+        value: 1  
+      - event: sg_saw_reset_a2_lit_hit
+        action: subtract
+        value: 1  
+      - event: sg_saw_reset_a3_lit_hit
+        action: subtract
+        value: 1 
 
 # combo track progress
   cnt_leftloop_leftramp_combo_counter:
@@ -3591,9 +3600,63 @@ widget_player:
   sg_saw_qualify_subtract_hit{device.counters.cnt_saw_qualify.value==1}:
     saw_s_letters:
       action: remove    
+  shot_left_return_lane_a1_hit{device.counters.cnt_saw_qualify.value==1}:
+    saw_s_letters:
+      action: remove
+  shot_right_standup_a1_hit{device.counters.cnt_saw_qualify.value==1}:
+    saw_s_letters:
+      action: remove
+  shot_left_return_lane_a2_hit{device.counters.cnt_saw_qualify.value==1}:
+    saw_s_letters:
+      action: remove
+  shot_right_standup_a2_hit{device.counters.cnt_saw_qualify.value==1}:
+    saw_s_letters:
+      action: remove
+  shot_left_standup_rightramp_a2_hit{device.counters.cnt_saw_qualify.value==1}:
+    saw_s_letters:
+      action: remove
+  shot_left_return_lane_a3_hit{device.counters.cnt_saw_qualify.value==1}:
+    saw_s_letters:
+      action: remove
+  shot_right_standup_a3_hit{device.counters.cnt_saw_qualify.value==1}:
+    saw_s_letters:
+      action: remove
+  shot_left_standup_rightramp_a3_hit{device.counters.cnt_saw_qualify.value==1}:
+    saw_s_letters:
+      action: remove
+  shot_inner_loop_a3_hit{device.counters.cnt_saw_qualify.value==1}:
+    saw_s_letters:
+      action: remove  
   sg_saw_qualify_subtract_hit{device.counters.cnt_saw_qualify.value==2}:
     saw_sa_letters:
       action: remove    
+  shot_left_return_lane_a1_hit{device.counters.cnt_saw_qualify.value==2}:
+    saw_sa_letters:
+      action: remove   
+  shot_right_standup_a1_hit{device.counters.cnt_saw_qualify.value==2}:
+    saw_sa_letters:
+      action: remove   
+  shot_left_return_lane_a2_hit{device.counters.cnt_saw_qualify.value==2}:
+    saw_sa_letters:
+      action: remove   
+  shot_right_standup_a2_hit{device.counters.cnt_saw_qualify.value==2}:
+    saw_sa_letters:
+      action: remove   
+  shot_left_standup_rightramp_a2_hit{device.counters.cnt_saw_qualify.value==2}:
+    saw_sa_letters:
+      action: remove   
+  shot_left_return_lane_a3_hit{device.counters.cnt_saw_qualify.value==2}:
+    saw_sa_letters:
+      action: remove   
+  shot_right_standup_a3_hit{device.counters.cnt_saw_qualify.value==2}:
+    saw_sa_letters:
+      action: remove   
+  shot_left_standup_rightramp_a3_hit{device.counters.cnt_saw_qualify.value==2}:
+    saw_sa_letters:
+      action: remove   
+  shot_inner_loop_a3_hit{device.counters.cnt_saw_qualify.value==2}:
+    saw_sa_letters:
+      action: remove      
   logicblock_trap_select_qualify_counter_updated{enabled==True}:
     w_trap_select_start:
       slide: base_slide_main
@@ -3657,6 +3720,11 @@ widget_player:
       slide: base_slide_main
       action: add
 
+#key to freedom mode ending
+  mode_the_key_to_freedom_stopped:
+    saw_letters:
+      slide: base_slide_main
+      action: add
 #puzzle piece
   mode_puzzle_hurryup_stopped:
     saw_letters:

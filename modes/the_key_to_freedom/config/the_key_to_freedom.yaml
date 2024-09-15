@@ -10,7 +10,6 @@ sequences:
       - key_to_freedom_p1_complete
       - key_to_freedom_p2_complete
       - key_to_freedom_p3_complete
-      - key_to_freedom_p4_complete
     reset_on_complete: false
 #    persist_state: true
     disable_events: mode_the_key_to_freedom_complete
@@ -22,34 +21,79 @@ counters:
     count_complete_value: 10
     enable_events: mode_the_key_to_freedom_started
     disable_events: key_to_freedom_p1_complete
-    start_enabled: true
 #    persist_state: true
 #    reset_on_complete: false
     events_when_complete: key_to_freedom_p1_complete  
     count_events: sw_standup
+  cnt_key_to_freedom_p2_counter:
+    starting_count: 0
+    count_complete_value: 50
+    enable_events: key_to_freedom_p1_complete
+    disable_events: key_to_freedom_p2_complete
+#    persist_state: true
+#    reset_on_complete: false
+    events_when_complete: key_to_freedom_p2_complete  
+    count_events: sw_switch_hit
+  cnt_key_to_freedom_p3_counter:
+    starting_count: 0
+    count_complete_value: 5
+    enable_events: key_to_freedom_p2_complete 
+    disable_events: key_to_freedom_p3_complete
+#    persist_state: true
+#    reset_on_complete: false
+    events_when_complete: key_to_freedom_p3_complete  
+    count_events: puzzle_wiz_complete
+#puzzle piece counters
+  cnt_puzzle_razorwire_wiz:
+    starting_count: 0
+    count_complete_value: 1
+    enable_events: key_to_freedom_p2_complete 
+    events_when_complete: razorwire_puzzle_wiz_complete, puzzle_wiz_complete
+    count_events: sw_top_pops
+  cnt_puzzle_drillchair_wiz:
+    starting_count: 0
+    count_complete_value: 1
+    enable_events: key_to_freedom_p2_complete 
+    events_when_complete: drillchair_puzzle_wiz_complete, puzzle_wiz_complete
+    count_events: sw_bottom_pops
+  cnt_puzzle_quadshotgun_wiz:
+    starting_count: 0
+    count_complete_value: 1
+    enable_events: key_to_freedom_p2_complete 
+    events_when_complete: quadshotgun_puzzle_wiz_complete, puzzle_wiz_complete
+    count_events: sw_spinner
+  cnt_puzzle_flammablejelly_wiz:
+    starting_count: 0
+    count_complete_value: 1
+    enable_events: key_to_freedom_p2_complete 
+    events_when_complete: flammablejelly_puzzle_wiz_complete, puzzle_wiz_complete
+    count_events: sw_middle_standup
+  cnt_puzzle_zeptest_wiz:
+    starting_count: 0
+    count_complete_value: 1
+    enable_events: key_to_freedom_p2_complete 
+    events_when_complete: zeptest_puzzle_wiz_complete, puzzle_wiz_complete
+    count_events: sw_lower_drop_target
 
 variable_player:
   counter_cnt_key_to_freedom_p1_counter_hit:
+    score: 3500000 * (current_player.pf_multiplier)
     key_to_freedom_p1_counter:
       action: set
       int: (count)*69
       # 10 hits to break off toilet lid
   counter_cnt_key_to_freedom_p2_counter_hit:
+    score: 1000000 * (current_player.pf_multiplier)
     key_to_freedom_p2_counter:
       action: set
-      int: (count)*12
+      int: (count)*14
       # 50 switch hits to attack zep
   counter_cnt_key_to_freedom_p3_counter_hit:
+    score: 6000000 * (current_player.pf_multiplier)
     key_to_freedom_p3_counter:
       action: set
-      int: (count)*240
+      int: (count)*138
       # 5 puzzle pieces to finish off zep
-  logicblock_thekeytofreedom_hit{step==1}:
-    score: 7500000 * (current_player.pf_multiplier)
-  logicblock_thekeytofreedom_hit{step==2}:
-    score: 8500000 * (current_player.pf_multiplier)
-  logicblock_thekeytofreedom_hit{step==3}:
-    score: 9500000 * (current_player.pf_multiplier)
 
 slides:
   mode_thekeytofreedom01:
@@ -74,24 +118,107 @@ slides:
 widgets:
    w_thekeytofreedomUI:
     - type: image
-      image: hacksawUI
-      opacity: 1.0
-      y: 1
-      x: 1
+      image: BottomFrame
+      y: 85
+      # x: 1
       z: 2
-      anchor_x: left
-      anchor_y: bottom
+#player 1 widget
     - type: text
-      text: (score)
-      number_grouping: true
-      y: 16
-      x: 25
-      z: 2
+      text: (player1|score)
+      number_grouping: true  
+   #   y: 36
+      y: 37
+      x: 252
+      z: 8
       font_size: 36
-      anchor_x: left
+      anchor_x: right
       anchor_y: bottom
-      font_name: TrajanProRegular
-      color: beartrap
+      font_name: AeroMaticsDisplaRegular
+      color: black
+    - type: text
+      text: (player1|score)
+      number_grouping: true  
+      y: 36
+      x: 253
+      z: 8
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      font_name: AeroMaticsDisplaRegular
+      outline_color: f0cfab
+      outline_width: 2
+#player 2 widget     
+    - type: text
+      text: (player2|score)
+      number_grouping: true
+      y: 37
+      x: left+579
+      z: 8
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      font_name: AeroMaticsDisplaRegular
+      color: black
+    - type: text
+      text: (player2|score)
+      number_grouping: true
+      y: 36
+      x: left+580
+      z: 7
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      font_name: AeroMaticsDisplaRegular
+      outline_color: f0cfab
+      outline_width: 2
+#player 3 widget
+    - type: Text
+      text: (player3|score)
+      number_grouping: true   
+      font_name: AeroMaticsDisplaRegular
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      y: 37
+      x: left+908
+      z: 8
+      color: black
+    - type: Text
+      text: (player3|score)
+      number_grouping: true   
+      font_name: AeroMaticsDisplaRegular
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      y: 36
+      x: left+909
+      z: 7
+      outline_color: f0cfab
+      outline_width: 2
+#player 4 widget
+    - type: Text
+      text: (player4|score)
+      number_grouping: true       
+      font_name: AeroMaticsDisplaRegular
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      y: 37
+      x: left+1239
+      z: 8
+      color: black
+    - type: Text
+      text: (player4|score)
+      number_grouping: true       
+      font_name: AeroMaticsDisplaRegular
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      y: 36
+      x: left+1240
+      z: 7
+      outline_color: f0cfab
+      outline_width: 2   
     - type: rectangle
       width: 0
       height: 45
@@ -115,6 +242,258 @@ widgets:
       color: black
       corner_radius: 10
       corner_segments: 10
+   w_thekeytofreedomUI_p2:
+    - type: image
+      image: BottomFrame
+      y: 85
+      # x: 1
+      z: 2
+#player 1 widget
+    - type: text
+      text: (player1|score)
+      number_grouping: true  
+   #   y: 36
+      y: 37
+      x: 252
+      z: 8
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      font_name: AeroMaticsDisplaRegular
+      color: black
+    - type: text
+      text: (player1|score)
+      number_grouping: true  
+      y: 36
+      x: 253
+      z: 8
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      font_name: AeroMaticsDisplaRegular
+      outline_color: f0cfab
+      outline_width: 2
+#player 2 widget     
+    - type: text
+      text: (player2|score)
+      number_grouping: true
+      y: 37
+      x: left+579
+      z: 8
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      font_name: AeroMaticsDisplaRegular
+      color: black
+    - type: text
+      text: (player2|score)
+      number_grouping: true
+      y: 36
+      x: left+580
+      z: 7
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      font_name: AeroMaticsDisplaRegular
+      outline_color: f0cfab
+      outline_width: 2
+#player 3 widget
+    - type: Text
+      text: (player3|score)
+      number_grouping: true   
+      font_name: AeroMaticsDisplaRegular
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      y: 37
+      x: left+908
+      z: 8
+      color: black
+    - type: Text
+      text: (player3|score)
+      number_grouping: true   
+      font_name: AeroMaticsDisplaRegular
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      y: 36
+      x: left+909
+      z: 7
+      outline_color: f0cfab
+      outline_width: 2
+#player 4 widget
+    - type: Text
+      text: (player4|score)
+      number_grouping: true       
+      font_name: AeroMaticsDisplaRegular
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      y: 37
+      x: left+1239
+      z: 8
+      color: black
+    - type: Text
+      text: (player4|score)
+      number_grouping: true       
+      font_name: AeroMaticsDisplaRegular
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      y: 36
+      x: left+1240
+      z: 7
+      outline_color: f0cfab
+      outline_width: 2   
+    - type: rectangle
+      width: 0
+      height: 45
+      x: 25%
+      y: 180
+      z: 3
+      anchor_x: left
+      corner_radius: 10
+      corner_segments: 10
+      color: beartrap
+      animations:
+        player_key_to_freedom_p2_counter:
+         - property: width
+           value: (value)           
+    - type: rectangle
+      width: 685
+      height: 46
+      x: 50%
+      y: 180
+      z: 2
+      color: black
+      corner_radius: 10
+      corner_segments: 10
+   w_thekeytofreedomUI_p3:
+    - type: image
+      image: BottomFrame
+      y: 85
+      # x: 1
+      z: 2
+#player 1 widget
+    - type: text
+      text: (player1|score)
+      number_grouping: true  
+   #   y: 36
+      y: 37
+      x: 252
+      z: 8
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      font_name: AeroMaticsDisplaRegular
+      color: black
+    - type: text
+      text: (player1|score)
+      number_grouping: true  
+      y: 36
+      x: 253
+      z: 8
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      font_name: AeroMaticsDisplaRegular
+      outline_color: f0cfab
+      outline_width: 2
+#player 2 widget     
+    - type: text
+      text: (player2|score)
+      number_grouping: true
+      y: 37
+      x: left+579
+      z: 8
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      font_name: AeroMaticsDisplaRegular
+      color: black
+    - type: text
+      text: (player2|score)
+      number_grouping: true
+      y: 36
+      x: left+580
+      z: 7
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      font_name: AeroMaticsDisplaRegular
+      outline_color: f0cfab
+      outline_width: 2
+#player 3 widget
+    - type: Text
+      text: (player3|score)
+      number_grouping: true   
+      font_name: AeroMaticsDisplaRegular
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      y: 37
+      x: left+908
+      z: 8
+      color: black
+    - type: Text
+      text: (player3|score)
+      number_grouping: true   
+      font_name: AeroMaticsDisplaRegular
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      y: 36
+      x: left+909
+      z: 7
+      outline_color: f0cfab
+      outline_width: 2
+#player 4 widget
+    - type: Text
+      text: (player4|score)
+      number_grouping: true       
+      font_name: AeroMaticsDisplaRegular
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      y: 37
+      x: left+1239
+      z: 8
+      color: black
+    - type: Text
+      text: (player4|score)
+      number_grouping: true       
+      font_name: AeroMaticsDisplaRegular
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      y: 36
+      x: left+1240
+      z: 7
+      outline_color: f0cfab
+      outline_width: 2   
+    - type: rectangle
+      width: 0
+      height: 45
+      x: 25%
+      y: 180
+      z: 3
+      anchor_x: left
+      corner_radius: 10
+      corner_segments: 10
+      color: beartrap
+      animations:
+        player_key_to_freedom_p3_counter:
+         - property: width
+           value: (value)           
+    - type: rectangle
+      width: 685
+      height: 46
+      x: 50%
+      y: 180
+      z: 2
+      color: black
+      corner_radius: 10
+      corner_segments: 10
 
 widget_player:
  logicblock_thekeytofreedom_updated{value==0}: 
@@ -122,11 +501,11 @@ widget_player:
      slide: mode_thekeytofreedom01
      action: add    
  logicblock_thekeytofreedom_updated{value==1}: 
-   w_thekeytofreedomUI:
+   w_thekeytofreedomUI_p2:
      slide: mode_thekeytofreedom02
      action: add    
  logicblock_thekeytofreedom_updated{value==2}: 
-   w_thekeytofreedomUI:
+   w_thekeytofreedomUI_p3:
      slide: mode_thekeytofreedom03
      action: add    
 
@@ -147,3 +526,276 @@ slide_player:
 #      expire: 120s
     mode_thekeytofreedom02:
      action: remove
+
+shows:
+  sh_key_on:
+    - duration: 0.3s
+      lights:
+        (leds): beartrap
+    - duration: 0.3s
+      lights:
+        (leds): off
+  sh_key_not_ready:
+    - duration: 0.3s
+      lights:
+        (leds): off
+
+shot_profiles:
+  sp_key:
+    advance_on_hit: false
+    states:
+      - name: key_not_ready
+        show: "sh_key_not_ready"
+      - name: key_lit
+        show: "sh_key_on"
+
+shot_groups:
+  sg_key_p1:
+    shots: shot_key_p1_left_standup_right_ramp, shot_key_p1_right_standup_right_ramp, shot_key_p1_right_standup, shot_key_p1_left_standup, shot_key_p1_middle_standup
+
+shots:
+  shot_key_p1_left_standup_right_ramp:
+    reset_events: mode_the_key_to_freedom_stopped, player_turn_stopped, player_turn_ended
+    disable_events: key_to_freedom_p1_complete
+    switches: s_left_standup_right_ramp
+    profile: sp_key
+    show_tokens:
+      leds: l_left_standup_right_ramp_arrow
+    control_events:
+      - events: mode_the_key_to_freedom_started
+        state: 1
+      - events: shot_key_p1_left_standup_right_ramp_sp_key_p1_the_key_to_freedom_lit_hit
+        state: 0
+      - events: sg_key_p1_complete
+        state: 1  
+  shot_key_p1_right_standup_right_ramp:
+    reset_events: mode_the_key_to_freedom_stopped, player_turn_stopped, player_turn_ended
+    disable_events: key_to_freedom_p1_complete
+    switches: s_right_standup_right_ramp
+    profile: sp_key
+    show_tokens:
+      leds: l_right_standup_right_ramp_arrow
+    control_events:
+      - events: mode_the_key_to_freedom_started
+        state: 1
+      - events: shot_key_p1_right_standup_right_ramp_sp_key_p1_the_key_to_freedom_lit_hit
+        state: 0
+      - events: sg_key_p1_complete
+        state: 1  
+  shot_key_p1_right_standup:
+    reset_events: mode_the_key_to_freedom_stopped, player_turn_stopped, player_turn_ended
+    disable_events: key_to_freedom_p1_complete
+    switches: s_right_standup
+    profile: sp_key
+    show_tokens:
+      leds: l_right_standup_arrow
+    control_events:
+      - events: mode_the_key_to_freedom_started
+        state: 1
+      - events: shot_key_p1_right_standup_sp_key_p1_the_key_to_freedom_lit_hit
+        state: 0
+      - events: sg_key_p1_complete
+        state: 1  
+  shot_key_p1_left_standup:
+    reset_events: mode_the_key_to_freedom_stopped, player_turn_stopped, player_turn_ended
+    disable_events: key_to_freedom_p1_complete
+    switches: s_left_standup
+    profile: sp_key
+    show_tokens:
+      leds: l_left_standup_arrow
+    control_events:
+      - events: mode_the_key_to_freedom_started
+        state: 1
+      - events: shot_key_p1_left_standup_sp_key_p1_the_key_to_freedom_lit_hit
+        state: 0
+      - events: sg_key_p1_complete
+        state: 1  
+  shot_key_p1_middle_standup:
+    reset_events: mode_the_key_to_freedom_stopped, player_turn_stopped, player_turn_ended
+    disable_events: key_to_freedom_p1_complete
+    switches: s_middle_standup
+    profile: sp_key
+    show_tokens:
+      leds: bear_flasher
+    control_events:
+      - events: mode_the_key_to_freedom_started
+        state: 1
+      - events: shot_key_p1_middle_standup_sp_key_p1_the_key_to_freedom_lit_hit
+        state: 0
+      - events: sg_key_p1_complete 
+        state: 1   
+
+#p3 shots
+  shot_key_p3_razorwire:
+    reset_events: mode_the_key_to_freedom_stopped, player_turn_stopped, player_turn_ended
+    disable_events: key_to_freedom_p3_complete
+    switches: s_lower_top_jet_bumper, s_right_top_jet_bumper, s_left_top_jet_bumper
+    profile: sp_key
+    show_tokens:
+      leds: razorwire_flasher
+    control_events:
+      - events: key_to_freedom_p2_complete
+        state: 1
+      - events: razorwire_puzzle_wiz_complete
+        state: 0
+  shot_key_p3_flammablejelly:
+    reset_events: mode_the_key_to_freedom_stopped, player_turn_stopped, player_turn_ended
+    disable_events: key_to_freedom_p3_complete
+    switches: s_middle_standup
+    profile: sp_key
+    show_tokens:
+      leds: bear_flasher
+    control_events:
+      - events: key_to_freedom_p2_complete
+        state: 1
+      - events: flammablejelly_puzzle_wiz_complete
+        state: 0
+  shot_key_p3_quadshotgun:
+    reset_events: mode_the_key_to_freedom_stopped, player_turn_stopped, player_turn_ended
+    disable_events: key_to_freedom_p3_complete
+    switches: s_spinner
+    profile: sp_key
+    show_tokens:
+      leds: shotgun_flasher
+    control_events:
+      - events: key_to_freedom_p2_complete
+        state: 1
+      - events: quadshotgun_puzzle_wiz_complete
+        state: 0
+  shot_key_p3_drillchair:
+    reset_events: mode_the_key_to_freedom_stopped, player_turn_stopped, player_turn_ended
+    disable_events: key_to_freedom_p3_complete
+    switches: s_upper_bottom_jet_bumper, s_right_bottom_jet_bumper, s_left_bottom_jet_bumper
+    profile: sp_key
+    show_tokens:
+      leds: drill_flasher
+    control_events:
+      - events: key_to_freedom_p2_complete
+        state: 1
+      - events: drillchair_puzzle_wiz_complete
+        state: 0
+  shot_key_p3_zeptest:
+    reset_events: mode_the_key_to_freedom_stopped, player_turn_stopped, player_turn_ended
+    disable_events: key_to_freedom_p3_complete
+    switches: s_lower_bank_drop_target_opto_upper, s_lower_bank_drop_target_opto_middle, s_lower_bank_drop_target_opto_lower
+    profile: sp_key
+    show_tokens:
+      leds: zep_flasher
+    control_events:
+      - events: key_to_freedom_p2_complete
+        state: 1
+      - events: zeptest_puzzle_wiz_complete
+        state: 0
+
+show_player:
+  mode_the_key_to_freedom_started:     
+    gi_on:
+      show_tokens:
+        color1: zepstest
+    starpost_on:
+      show_tokens:
+        color1: 007E5E
+      priority: 169
+    speaker_heartbeat:
+      show_tokens:
+        color1: zepstest
+    trough_on:
+      show_tokens:
+        color1: zepstest
+    flipper_on:
+      show_tokens:
+        color1: zepstest
+    cabinet_heartbeat:
+      show_tokens:
+        color1: zepstest
+    topper_heartbeat:
+      show_tokens:
+        color1: zepstest
+#phase 1,2,3 filler light shots when lit shots hit
+  counter_cnt_key_to_freedom_p1_counter_hit:
+      starpost_cycle:
+        loops: 1
+        speed: 10
+        show_tokens:
+          color1: 00C190
+        priority: 182
+      gi_flicker_one_time:
+        loops: 1
+        speed: 10
+        show_tokens:
+          color1: zeptest
+        priority: 182
+      speaker_left_cylon:
+        loops: 1
+        speed: 40
+        show_tokens:
+          color1: 00C190
+        priority: 182
+      speaker_right_cylon:
+        loops: 1
+        speed: 40
+        show_tokens:
+          color1: 00C190
+        priority: 182
+  counter_cnt_key_to_freedom_p2_counter_hit:
+      starpost_cycle:
+        loops: 1
+        speed: 10
+        show_tokens:
+          color1: 00C190
+        priority: 182
+      gi_flicker_one_time:
+        loops: 1
+        speed: 10
+        show_tokens:
+          color1: zeptest
+        priority: 182
+      speaker_left_cylon:
+        loops: 1
+        speed: 40
+        show_tokens:
+          color1: 00C190
+        priority: 182
+      speaker_right_cylon:
+        loops: 1
+        speed: 40
+        show_tokens:
+          color1: 00C190
+        priority: 182
+  counter_cnt_key_to_freedom_p3_counter_hit:
+      starpost_cycle:
+        loops: 1
+        speed: 10
+        show_tokens:
+          color1: 00C190
+        priority: 182
+      gi_flicker_one_time:
+        loops: 1
+        speed: 10
+        show_tokens:
+          color1: zeptest
+        priority: 182
+      speaker_left_cylon:
+        loops: 1
+        speed: 40
+        show_tokens:
+          color1: 00C190
+        priority: 182
+      speaker_right_cylon:
+        loops: 1
+        speed: 40
+        show_tokens:
+          color1: 00C190
+        priority: 182
+#phase 2 playfield lights on for all switch hits
+  key_to_freedom_p1_complete:
+    sh_key_on:
+      show_tokens:
+        leds: billy, jet_bumper, skillshot, arrow, ramp
+  key_to_freedom_p2_complete:
+    sh_key_not_ready:
+      show_tokens:
+        leds: billy, jet_bumper, skillshot, arrow, ramp
+
+event_player:
+  slide_mode_thekeytofreedom01_active: e_primary_mode_active    

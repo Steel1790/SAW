@@ -305,7 +305,7 @@ slides:
       anchor_x: left
       corner_radius: 10
       corner_segments: 10
-      color: ff6700
+      color: c228c7
       animations:
         player_drillchair_pops_counter:
          - property: width
@@ -326,7 +326,7 @@ slides:
       anchor_x: left
       corner_radius: 10
       corner_segments: 10
-      color: ff6700
+      color: c228c7
       animations:
         player_drillchair_pops2_counter:
          - property: width
