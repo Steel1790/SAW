@@ -1,15 +1,15 @@
 #config_version=6                   
 mode:
   start_events: logicblock_trap_select_qualify_counter_complete
-  stop_events: carousel_item_selected, ball_ended, mode_survival_instinct_started, mode_razorwire_started, mode_reversebeartrap_started, mode_drillchair_started, mode_quadshotgun_started, mode_zeptest_started, mode_flammablejelly_started, mode_jigsaw_multiball_started, mode_hacksaw_multiball_started, mode_shackle_multiball_started, mode_the_key_to_freedom_started, mode_lil_billy_started
+  stop_events: carousel_item_selected, ball_ended, mode_survival_instinct_started, mode_razorwire_started, mode_reversebeartrap_started, mode_drillchair_started, mode_quadshotgun_started, mode_zeptest_started, mode_flammablejelly_started, mode_jigsaw_multiball_started, mode_hacksaw_multiball_started, mode_shackle_multiball_started, mode_the_key_to_freedom_started, mode_lil_billy_started, mode_hostage_started
   restart_on_next_ball: true
   priority: 184
   code: mpf.modes.carousel.code.carousel.Carousel
 mode_settings:
   selectable_items: 
     - lilbilly{current_player.lil_billy_qualified==1}
-    - thekeytofreedom{current_player.modes_completed>=4 and current_player.the_key_to_freedom_mode_complete==0}
-    - survivalinstinct{current_player.puzzle_pieces>=2 and current_player.survival_instinct_mode_complete==0}
+    - thekeytofreedom{current_player.modes_completed>=4 and current_player.the_key_to_freedom_mode_attempted==0}
+    - survivalinstinct{current_player.puzzle_pieces>=2 and current_player.survival_instinct_mode_attempted==0}
     - drillchair{current_player.drillchair_mode_complete==0}
     - razorwire{current_player.razorwire_mode_complete==0}
     - quadshotgun{current_player.quadshotgun_mode_complete==0}

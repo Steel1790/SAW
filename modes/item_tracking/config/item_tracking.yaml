@@ -75,7 +75,7 @@ counters:
     reset_on_complete: true
     disable_on_complete: false    
     events_when_complete: minimode_loops_complete 
-    count_events: ssh_leftloop_hit, ssh_rightloop_hit  
+    count_events: ssh_leftloop_hit, ssh_rightloop_hit, s_inner_loop_active
 
   minimode_drops_counter:
     starting_count: 8

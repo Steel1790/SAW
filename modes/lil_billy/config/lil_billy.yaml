@@ -41,9 +41,14 @@ event_player:
 
 ball_saves:
   ball_save_lil_billy_tricycle:
-    enable_events: e_lilbilly_tricycle, e_lilbilly_cubicle
+    enable_events: e_lilbilly_tricycle
     disable_events: mode_lil_billy_stopped
     auto_launch: false
+    balls_to_save: -1
+  ball_save_lil_billy_cubicle:
+    enable_events: e_lilbilly_cubicle
+    disable_events: mode_lil_billy_stopped
+    auto_launch: true
     balls_to_save: -1
 
 variable_player:

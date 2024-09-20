@@ -11,4 +11,5 @@ combo_switches:
     switches_1: s_left_flipper_button
     switches_2: s_start
     hold_time: 5s
+    max_offset_time: 2s
     events_when_both: end_game

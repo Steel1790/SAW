@@ -1502,11 +1502,11 @@ switch:
     x: 0.40255495518141915
     y: 0.4471544715447154
   s_left_standup_right_ramp:
-    rotation: 290
+    rotation: 110
     shape: RECTANGLE
     size: 0.04
-    x: 0.6855826206739086
-    y: 0.28768577494692144
+    x: 0.6845740498034076
+    y: 0.2883355176933159
   s_left_top_jet_bumper:
     shape: CIRCLE
     size: 0.06

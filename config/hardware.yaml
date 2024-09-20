@@ -503,8 +503,8 @@ flippers:
     main_coil: c_flipper_left_main
     hold_coil: c_flipper_left_hold
     activation_switch: s_left_flipper_button
-    disable_events: ball_will_end, flippers_off
-    enable_events: ball_started, flippers_on
+    disable_events: ball_will_end, flippers_off, mode_selection_mode_started
+    enable_events: ball_started, flippers_on, mode_selection_mode_stopped
     #eos_switch: s_left_flipper_eos
     #use_eos: true
     #repulse_on_eos_open: true
@@ -513,8 +513,8 @@ flippers:
     main_coil: c_flipper_right_main
     hold_coil: c_flipper_right_hold
     activation_switch: s_right_flipper_button
-    disable_events: ball_will_end, flippers_off
-    enable_events: ball_started, flippers_on
+    disable_events: ball_will_end, flippers_off, mode_selection_mode_started
+    enable_events: ball_started, flippers_on, mode_selection_mode_stopped
 #    eos_switch: s_right_flipper_eos
     #use_eos: true
     #repulse_on_eos_open: true

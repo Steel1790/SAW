@@ -46,9 +46,15 @@ event_player:
   # ball_starting{is_extra_ball==True}: e_shoot_again
   mode_lil_billy_stopped: flippers_on
 # saw collect light progress
-  logicblock_cnt_saw_qualify_updated{value==1}: saw_pops_s|0.3s
-  logicblock_cnt_saw_qualify_updated{value==2}: saw_pops_sa|0.3s
-  logicblock_cnt_saw_qualify_complete: saw_pops_saw|0.3s
+  logicblock_cnt_saw_qualify_updated{value==1}: 
+    - e_saw_disc1|1s
+    - saw_pops_s|0.3s
+  logicblock_cnt_saw_qualify_updated{value==2}: 
+    - e_saw_disc2|1s
+    - saw_pops_sa|0.3s
+  logicblock_cnt_saw_qualify_complete: 
+    - e_saw_disc3|1s
+    - saw_pops_saw|0.3s
 
 # temporarily commented out mode stopping to trigger puzzle hurry up. As the delay was occuring the time to trigger into the next ball if it was drained
 # during a mode.
@@ -172,6 +178,30 @@ random_event_player:
       minimode_ramps_complete: 12.5   
       minimode_loops_complete: 12.5
       minimode_drops_complete: 12.5
+    force_all: true
+  sh_left_standup_sp_lil_billy_qualify_lit_hit:
+    events:
+      lilbillyqualify1: 25
+      lilbillyqualify2: 50
+      lilbillyqualify3: 25
+    force_all: true
+  sh_left_standup_right_ramp_sp_lil_billy_qualify_lit_hit:
+    events:
+      lilbillyqualify1: 25
+      lilbillyqualify2: 50
+      lilbillyqualify3: 25
+    force_all: true
+  sh_right_standup_right_ramp_sp_lil_billy_qualify_lit_hit:
+    events:
+      lilbillyqualify1: 25
+      lilbillyqualify2: 50
+      lilbillyqualify3: 25 
+    force_all: true
+  sh_right_standup_sp_lil_billy_qualify_lit_hit:  
+    events:
+      lilbillyqualify1: 25
+      lilbillyqualify2: 50
+      lilbillyqualify3: 25
     force_all: true
 #videos:
 #    cameraflashvideo:
@@ -308,22 +338,18 @@ slide_player:
       priority: 500
       expire: 4s  
   #lil billy skillshots
-  sh_left_standup_sp_lil_billy_qualify_lit_hit:
-    lilbillyqualify2:
-      priority: 500
-      expire: 4s  
-  sh_left_standup_right_ramp_sp_lil_billy_qualify_lit_hit:
-    lilbillyqualify3:
-      priority: 500
-      expire: 4s  
-  sh_right_standup_right_ramp_sp_lil_billy_qualify_lit_hit:
+  lilbillyqualify1:
     lilbillyqualify1:
       priority: 500
       expire: 4s  
-  sh_right_standup_sp_lil_billy_qualify_lit_hit:
+  lilbillyqualify2:
     lilbillyqualify2:
       priority: 500
-      expire: 4s
+      expire: 4s  
+  lilbillyqualify3:
+    lilbillyqualify3:
+      priority: 500
+      expire: 4s  
 
   ball_save_default_saving_ball:
     HeHelpedMeVideo:
@@ -632,8 +658,8 @@ counters:
   cnt_negative_shot_counter:
     starting_count: 0
     count_complete_value: 4
-    enable_events: 
-    disable_events: 
+    enable_events: mode_drillchair_stopped, mode_flammablejelly_stopped, mode_quadshotgun_stopped, mode_razorwire_stopped, mode_reversebeartrap_stopped, mode_zeptest_stopped
+    disable_events: e_primary_mode_active
     start_enabled: true
     reset_events: logicblock_cnt_negative_shot_counter_updated{value==-1}
 #    persist_state: true
@@ -716,35 +742,35 @@ shows:
   minimode_pops_show_complete:    
     - duration: -1      
       lights:    
-        (leds): red
+        (leds): shotgun
   minimode_standups_show_complete:    
     - duration: -1      
       lights:    
-        (leds): red   
+        (leds): jelly 
   minimode_slings_show_complete:    
     - duration: -1      
       lights:    
-        (leds): red  
+        (leds): 00C190
   minimode_inlanes_show_complete:    
     - duration: -1      
       lights:    
-        (leds): red  
+        (leds): 900C3F
   minimode_spinners_show_complete:    
     - duration: -1      
       lights:    
-        (leds): red  
+        (leds): drillchair
   minimode_ramps_show_complete:    
     - duration: -1      
       lights:    
-        (leds): red  
+        (leds): beartrap
   minimode_loops_show_complete:    
     - duration: -1      
       lights:    
-        (leds): red   
+        (leds): razorwire
   minimode_drops_show_complete:    
     - duration: -1      
       lights:    
-        (leds): red
+        (leds): zepstest
  #ballsave   
   ballsave:
     - duration: 0.5s
@@ -947,7 +973,7 @@ show_player:
       speed: 8
       priority: 120
       show_tokens:
-        color1: beartrap
+        color1: shotgun
     minimode_pops_show_complete:
       show_tokens:
         leds: l_jw_gears
@@ -959,7 +985,7 @@ show_player:
       speed: 8
       priority: 120
       show_tokens:
-        color1: beartrap
+        color1: zepstest
     minimode_drops_show_complete:
       show_tokens:
         leds: l_jw_syringe
@@ -971,7 +997,7 @@ show_player:
       speed: 8
       priority: 120
       show_tokens:
-        color1: beartrap
+        color1: 00C190
     minimode_slings_show_complete:
       show_tokens:
         leds: l_jw_bathtub
@@ -983,7 +1009,7 @@ show_player:
       speed: 8
       priority: 120
       show_tokens:
-        color1: beartrap
+        color1: 900C3F
     minimode_inlanes_show_complete:
       show_tokens:
         leds: l_jw_taperecorder
@@ -995,7 +1021,7 @@ show_player:
       speed: 8
       priority: 120
       show_tokens:
-        color1: beartrap
+        color1: jelly
     minimode_standups_show_complete:
       show_tokens:
         leds: l_jw_candle
@@ -1007,7 +1033,7 @@ show_player:
       speed: 8
       priority: 120
       show_tokens:
-        color1: beartrap
+        color1: razorwire
     minimode_loops_show_complete:
       show_tokens:
         leds: l_jw_hacksaw
@@ -1019,7 +1045,7 @@ show_player:
       speed: 8
       priority: 120
       show_tokens:
-        color1: beartrap
+        color1: drillchair
     minimode_spinners_show_complete:
       show_tokens:
         leds: l_jw_gun
@@ -1058,6 +1084,9 @@ show_player:
       loops: 2
       speed: 50
       priority: 170
+    disc_left_sparkle_red:
+      loops: 0
+      speed: 70
   saw_pops_s:
     pops_on:
       loops: -1
@@ -1092,7 +1121,13 @@ show_player:
     speaker_letter_collect_right:
       loops: 2
       speed: 30
-      priority: 170     
+      priority: 170
+    disc_left_sparkle_red:
+      loops: 0
+      speed: 70
+    disc_right_sparkle_red:
+      loops: 0
+      speed: 70    
   saw_pops_sa:
     pops_on:
       loops: -1
@@ -1121,7 +1156,16 @@ show_player:
     speaker_letter_collect_right:
       loops: 2
       speed: 30
-      priority: 170  
+      priority: 170
+    disc_left_sparkle_red:
+      loops: 0
+      speed: 70
+    disc_right_sparkle_red:
+      loops: 0
+      speed: 70
+    disc_middle_sparkle:
+      loops: 0
+      speed: 70      
   saw_pops_saw:
     jet_bumpers_pulse:
       speed: 1.25
@@ -4197,21 +4241,17 @@ widget_player:
       slide: skillshotvideo
       action: add
 # lil billy skillshot value widgets
-  sh_left_standup_sp_lil_billy_qualify_lit_hit:
+  lilbillyqualify1:
     lil_billy_skillshot_value:
       slide: lilbillyqualify1
       action: add
-  sh_left_standup_right_ramp_sp_lil_billy_qualify_lit_hit:
-    lil_billy_skillshot_value:
-      slide: lilbillyqualify3
-      action: add
-  sh_right_standup_right_ramp_sp_lil_billy_qualify_lit_hit:
+  lilbillyqualify2:
     lil_billy_skillshot_value:
       slide: lilbillyqualify2
       action: add
-  sh_right_standup_sp_lil_billy_qualify_lit_hit:
+  lilbillyqualify3:
     lil_billy_skillshot_value:
-      slide: lilbillyqualify1
+      slide: lilbillyqualify3
       action: add
 #trap points displayed in trap completion screen
 #flammablejelly
@@ -4522,6 +4562,50 @@ coil_player:
     c_right_spin_disc:
       action: enable
       hold_power: 1.0
+#saw letters collected
+  logicblock_cnt_saw_qualify_updated{value==1}:
+    c_left_spin_disc:
+      action: enable
+      hold_power: 0.5
+  e_saw_disc1:
+    c_right_spin_disc:
+      action: off
+    c_middle_spin_disc:
+      action: off
+    c_left_spin_disc:
+      action: off
+  logicblock_cnt_saw_qualify_updated{value==2}:
+    c_left_spin_disc:
+      action: enable
+      hold_power: 0.75
+    c_right_spin_disc:
+      action: enable
+      hold_power: 0.75
+  e_saw_disc2:
+    c_right_spin_disc:
+      action: off
+    c_middle_spin_disc:
+      action: off
+    c_left_spin_disc:
+      action: off
+  logicblock_cnt_saw_qualify_complete:
+    c_left_spin_disc:
+      action: enable
+      hold_power: 1.0
+    c_middle_spin_disc:
+      action: enable
+      hold_power: 1.0
+    c_right_spin_disc:
+      action: enable
+      hold_power: 1.0
+  e_saw_disc3:
+    c_right_spin_disc:
+      action: off
+    c_middle_spin_disc:
+      action: off
+    c_left_spin_disc:
+      action: off
+#mode selection started - disable negative discs
   mode_selection_mode_started:
     c_right_spin_disc:
       action: off

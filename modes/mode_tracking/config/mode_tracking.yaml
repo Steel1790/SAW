@@ -257,14 +257,14 @@ shows:
   sh_outlane_button_ready:
     - duration: 0.3s
       lights:
-        (leds): drillchair
+        (leds): 900C3F
     - duration: 0.3s
       lights:
         (leds): off
   sh_add_a_ball_button_ready:
     - duration: 0.3s
       lights:
-        (leds): razorwire
+        (leds): 00C190
     - duration: 0.3s
       lights:
         (leds): off
@@ -495,18 +495,12 @@ variable_player:
     zeptest_mode_complete:
       int: 1
       action: set
-  multiball_mb_survival_instinct_ended:
-    modes_completed:
-      int: 1
-      action: add
-    survival_instinct_mode_complete:
+  mode_survival_instinct_started:
+    survival_instinct_mode_attempted:
       int: 1
       action: set
-  mode_the_key_to_freedom_complete:
-    modes_completed:
-      int: 1
-      action: add
-    the_key_to_freedom_mode_complete:
+  mode_the_key_to_freedom_started:
+    the_key_to_freedom_mode_attempted:
       int: 1
       action: set
   e_lil_billy_qualify_complete:

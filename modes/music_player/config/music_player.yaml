@@ -93,13 +93,13 @@ sound_pools:
     type: random
     track: sfx
     sounds:
-      - GunFire1
+#      - GunFire1
       - GunFire2
-      - GunFire2sec
-      - GunFire3
-      - GunFire4
-      - GunFire5
-      - GunFire6
+#      - GunFire2sec
+#      - GunFire3
+#      - GunFire4
+#      - GunFire5
+#      - GunFire6
   rightrampentryaudio:
     load: preload
     type: random
@@ -343,6 +343,25 @@ sound_pools:
       - AB13
       - AB14
       - AB15
+#lil billy qualified 
+  LilBillyQualified:
+    load: preload
+    type: random_force_next
+    track: sfx
+    sounds:
+      - LilBillySkillshot1
+      - LilBillySkillshot2
+      - LilBillySkillshot3
+      - LilBillySkillshot4
+      - LilBillySkillshot5
+      - LilBillySkillshot6
+      - LilBillySkillshot7
+      - LilBillySkillshot8
+      - LilBillySkillshot9
+      - LilBillySkillshot10
+      - LilBillySkillshot11
+      - LilBillySkillshot12
+      - LilBillySkillshot13
 
 sound_player:
   mode_music_player_started:
@@ -537,7 +556,30 @@ sound_player:
     lowerdropsaudio:
       action: play
       block: true
-    
+#lil billy skillshot
+  slide_lilbillyqualify1_active:
+    LilBillyQualified:
+      delay: 0.4s
+      block: true
+      action: play
+  slide_lilbillyqualify3_active:
+    LilBillyQualified:
+      delay: 0.4s
+      block: true
+      action: play   
+#hostage mode shots
+  logicblock_cnt_hostage_updated{value==1}:
+    HostageModeShot1:
+      block: true
+      action: play  
+  logicblock_cnt_hostage_updated{value==2}:
+    HostageModeShot2:
+      block: true
+      action: play
+  logicblock_cnt_hostage_updated{value==3}:
+    HostageModeShot3:
+      block: true
+      action: play      
   logicblock_random_switch_hit{hits==75}:  
     randomswitch:
       action: play   

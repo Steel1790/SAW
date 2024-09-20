@@ -79,7 +79,7 @@ sound_system:
     tracks:
        music:
           simultaneous_sounds: 1
-          volume: 0.8
+          volume: 1.0
        voice:
           simultaneous_sounds: 1
           volume: 1.0
@@ -87,6 +87,10 @@ sound_system:
           simultaneous_sounds: 10
           volume: 1.0
 sounds:
+  #music adjusted from 0.8 to 1.0 except Quad Shotgun Mode Music
+  QuadShotgunModeStart:
+    file: QuadShotgunModeStart.wav
+    volume: 0.8
   OrbitWoosh6:
     file: OrbitWoosh6.wav
     volume: 0.1

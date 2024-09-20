@@ -261,7 +261,7 @@ shows:
           show_tokens:
             color1: razorwire
             led: (leds)
-          speed: 5
+          speed: 3
           loops: 2
           priority: 170
   sh_hurryup_collected:
@@ -335,6 +335,22 @@ sound_player:
       action: stop    
     LiveOrDieHurryup:
       priority: 202
+      block: true
+      action: play
+  logicblock_acc_make_your_choice_qualify_hit{step==1}:
+    MakeYourChoice1:
+      priority: 200
+      block: true
+      action: play
+  logicblock_acc_make_your_choice_qualify_hit{step==2}:
+    MakeYourChoice2:
+      priority: 200
+      block: true
+      action: play
+  logicblock_acc_make_your_choice_qualify_hit{step==3}:
+    MakeYourChoice3:
+      priority: 200
+      block: true
       action: play
   mode_make_your_choice_hurryup_stopping:
     LiveOrDieHurryup:

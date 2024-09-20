@@ -462,6 +462,10 @@ sound_player:
   mode_hostage_stopping:
     HostageModeSong:
       action: stop
+  s_right_ramp_score_bottom_active:
+    rightrampentryaudio:
+      block: true
+      action: stop
 
 event_player: 
   slide_sl_mode_hostage01_active: e_primary_mode_active

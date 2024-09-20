@@ -385,34 +385,35 @@ widget_player:
 #      action: stop
 sound_player:
   display_gears:
-    FleshCrushSquelch4:
+    # FleshCrushSquelch4:
+    BonusCountdown:  
       action: play
   display_syringes:
-    FleshCrushSquelch4:
+    BonusCountdown: 
       action: play
   display_bathtubs:
-    FleshCrushSquelch4:
+    BonusCountdown: 
       action: play
   display_taperecorders:
-    FleshCrushSquelch4:
+    BonusCountdown: 
       action: play
   display_candles:
-    FleshCrushSquelch4:
+    BonusCountdown: 
       action: play
   display_hacksaws:
-    FleshCrushSquelch4:
+    BonusCountdown: 
       action: play
   display_handguns:
-    FleshCrushSquelch4:
+    BonusCountdown: 
       action: play
   display_keys:
-    FleshCrushSquelch4:
+    BonusCountdown: 
       action: play
   display_multiplierbonus:
-    FleshCrushSquelch4:
+    BonusCountdown: 
       action: play
   display_totalscore:
-    SwordSlashA:
+    BonusCountdown: 
       action: play
   mode_bonus_started:
     BaseMusic:

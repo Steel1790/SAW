@@ -50,7 +50,7 @@ combo_switches:
   secret_billy_hold:
     switches_1: s_left_flipper_button
     switches_2: s_action_button
-    hold_time: 1s
+    hold_time: 0.1s
     max_offset_time: 1s
     events_when_switches_1: e_lil_billy_shot_lit
 

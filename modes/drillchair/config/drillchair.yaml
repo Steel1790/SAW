@@ -871,9 +871,9 @@ sound_player:
       action: play
       block: true    
   sw_standup:
-    drillchair_gears_sound_pool:
-      action: play
+    JamDrill1:
       block: true
+      action: play
   sw_right_return_lane:
     drillchair_mode_sound_pool:
       action: play

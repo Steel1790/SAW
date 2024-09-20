@@ -130,6 +130,14 @@ show_player:
     topper_heartbeat:
       show_tokens:
         color1: beartrap
+    left_ramp_chase:
+      speed: 5
+      show_tokens:
+        color1: shotgun
+    right_ramp_chase:
+      speed: 5
+      show_tokens:
+        color1: shotgun
     mb_ballsave:
       loops: 9
 # coil_player:
@@ -266,10 +274,10 @@ shots:
         state: 1
   shot_survival_instinct_superjackpot:
     reset_events: mode_survival_instinct_stopped, player_turn_stopped, player_turn_ended
-    switches: s_left_ramp_score_top
+    switches: s_left_ramp_score_top, s_right_ramp_score_top
     profile: sp_survival_instinct
-    show_tokens:
-      leds: l_left_ramp_triangle1, l_left_ramp_triangle2, l_left_ramp_triangle3
+#    show_tokens:
+#      leds: l_left_ramp_triangle1, l_left_ramp_triangle2, l_left_ramp_triangle3, l_right_ramp_triangle1, l_right_ramp_triangle2
     control_events:
       - events: ball_starting
         state: 0
@@ -354,26 +362,107 @@ widgets:
       outline_width: 9
       color: beartrap
     - type: image
-      image: currentplayer
-      opacity: 1.0
-      y: 1
-      x: 1
-      z: 3
-      anchor_x: left
-      anchor_y: bottom
+      image: BottomFrame
+      y: 85
+      # x: 1
+      z: 2
+#player 1 widget
     - type: text
-      text: (score)
-      number_grouping: true
-      y: 16
-      x: 25
-      z: 3
+      text: (player1|score)
+      number_grouping: true  
+   #   y: 36
+      y: 37
+      x: 252
+      z: 8
       font_size: 36
-      anchor_x: left
+      anchor_x: right
       anchor_y: bottom
-      font_name: TrajanProRegular
-      outline_color: black
-      outline_width: 7
-      color: beartrap
+      font_name: AeroMaticsDisplaRegular
+      color: black
+    - type: text
+      text: (player1|score)
+      number_grouping: true  
+      y: 36
+      x: 253
+      z: 8
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      font_name: AeroMaticsDisplaRegular
+      outline_color: f0cfab
+      outline_width: 2
+#player 2 widget     
+    - type: text
+      text: (player2|score)
+      number_grouping: true
+      y: 37
+      x: left+579
+      z: 8
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      font_name: AeroMaticsDisplaRegular
+      color: black
+    - type: text
+      text: (player2|score)
+      number_grouping: true
+      y: 36
+      x: left+580
+      z: 7
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      font_name: AeroMaticsDisplaRegular
+      outline_color: f0cfab
+      outline_width: 2
+#player 3 widget
+    - type: Text
+      text: (player3|score)
+      number_grouping: true   
+      font_name: AeroMaticsDisplaRegular
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      y: 37
+      x: left+908
+      z: 8
+      color: black
+    - type: Text
+      text: (player3|score)
+      number_grouping: true   
+      font_name: AeroMaticsDisplaRegular
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      y: 36
+      x: left+909
+      z: 7
+      outline_color: f0cfab
+      outline_width: 2
+#player 4 widget
+    - type: Text
+      text: (player4|score)
+      number_grouping: true       
+      font_name: AeroMaticsDisplaRegular
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      y: 37
+      x: left+1239
+      z: 8
+      color: black
+    - type: Text
+      text: (player4|score)
+      number_grouping: true       
+      font_name: AeroMaticsDisplaRegular
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      y: 36
+      x: left+1240
+      z: 7
+      outline_color: f0cfab
+      outline_width: 2
 
 widget_player:
   mode_survival_instinct_started:
