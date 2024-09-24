@@ -581,7 +581,7 @@ show_player:
   e_end_of_game:
     game_over:
       loops: 0
-      speed: 8
+      speed: 10
       priority: 205
     speaker_game_over:
       loops: 0

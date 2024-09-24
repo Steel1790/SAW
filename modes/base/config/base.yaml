@@ -838,8 +838,8 @@ shows:
 show_player:
   mode_skillshot_complete:
     skillshot_color_wash:
-      loops: 0
-      speed: 10
+      loops: 1
+      speed: 8
       # show_tokens:
       #   color1: white
 
@@ -1177,6 +1177,11 @@ show_player:
       show_tokens:
         color1: beartrap
       priority: 170    
+    discs_pulse:
+      speed: 1.25
+      show_tokens:
+        color1: beartrap
+      priority: 170  
 
 
 # trap mode fail
@@ -1273,6 +1278,7 @@ show_player:
     pops_on2: stop
     jet_bumpers_pulse: stop
     starpost_pulse: stop
+    discs_pulse: stop
    
   logicblock_trap_select_qualify_counter_complete:
     trough_on: stop

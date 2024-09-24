@@ -1,0 +1,9 @@
+#show_version=6
+
+#SLOW PULSE ON OFF
+- time: 0
+  lights:
+    discs: (color1) -f2000ms     
+- time: '+3'
+  lights:
+    discs: 2b0400 -f1000ms    

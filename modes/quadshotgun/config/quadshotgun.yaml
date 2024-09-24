@@ -915,7 +915,7 @@ show_player:
         leds: l_quadshotgun_mode
     starpost_on:
       show_tokens:
-        color1: 6E6E6E   
+        color1: shotgun_alt   
       priority: 169
     speaker_heartbeat:
       show_tokens:
@@ -939,7 +939,7 @@ show_player:
       loops: 1
       speed: 20
       show_tokens:
-        color1: shotgun
+        color1: shotgun_alt
       priority: 170  #not sure if this is needed or the correct value
     speaker_shotgun_blast_left:
       loops: 1
@@ -953,7 +953,7 @@ show_player:
       loops: 1
       speed: 20
       show_tokens:
-        color1: shotgun
+        color1: shotgun_alt
       priority: 170  #not sure if this is needed or the correct value
     speaker_shotgun_blast_left:
       loops: 1
@@ -967,7 +967,7 @@ show_player:
       loops: 1
       speed: 20
       show_tokens:
-        color1: shotgun
+        color1: shotgun_alt
       priority: 170  #not sure if this is needed or the correct value
     speaker_shotgun_blast_left:
       loops: 1
@@ -981,7 +981,7 @@ show_player:
       loops: 1
       speed: 20
       show_tokens:
-        color1: shotgun
+        color1: shotgun_alt
       priority: 170  #not sure if this is needed or the correct value
     speaker_shotgun_blast_left:
       loops: 1
@@ -1050,7 +1050,7 @@ show_player:
       speed: 8
       show_tokens:
         led: l_shotgun_flasher_4
-        color1: shotgun
+        color1: shotgun_alt
 
   quadshotgun_spinner_complete:
       flash_token:
@@ -1078,7 +1078,7 @@ show_player:
         loops: 1
         speed: 20
         show_tokens:
-          color1: shotgun
+          color1: shotgun_alt
         priority: 170  
       shotgun_blast_top_pops:
         loops: 0
@@ -1088,7 +1088,7 @@ show_player:
         loops: 1
         speed: 20
         show_tokens:
-          color1: shotgun
+          color1: shotgun_alt
         priority: 170  
       shotgun_blast_top_pops:
         loops: 0
@@ -1098,7 +1098,7 @@ show_player:
         loops: 1
         speed: 20
         show_tokens:
-          color1: shotgun
+          color1: shotgun_alt
         priority: 170  
       shotgun_blast_top_pops:
         loops: 0
@@ -1108,7 +1108,7 @@ show_player:
         loops: 1
         speed: 20
         show_tokens:
-          color1: shotgun
+          color1: shotgun_alt
         priority: 170  
       shotgun_blast_top_pops:
         loops: 0

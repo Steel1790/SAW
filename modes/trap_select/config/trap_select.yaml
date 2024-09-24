@@ -47,10 +47,10 @@ sound_player:
 
 shows:
   mode_lit:
-    - duration: 1.5s
+    - duration: .5s
       lights:
         (leds): razorwire
-    - duration: 1.5s
+    - duration: .5s
       lights:
         (leds): off
 

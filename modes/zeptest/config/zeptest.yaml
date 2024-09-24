@@ -1353,51 +1353,52 @@ show_player:
 
   sg_zeptest_zeptest_lit_hit:
       starpost_cycle:
-        loops: 1
-        speed: 10
+        loops: 0
+        speed: 20
         show_tokens:
           color1: 00C190
         priority: 182
       gi_flicker_one_time:
         loops: 1
-        speed: 10
+        speed: 20
         show_tokens:
           color1: zeptest
         priority: 182
       speaker_left_cylon:
         loops: 1
-        speed: 40
+        speed: 50
         show_tokens:
           color1: 00C190
         priority: 182
       speaker_right_cylon:
         loops: 1
-        speed: 40
+        speed: 50
         show_tokens:
           color1: 00C190
         priority: 182
 
   sg_zeptest_zeptest_collected_hit:
       starpost_cycle:
-        loops: -1
+        loops: 1
+        speed: 20
         show_tokens:
           color1: 00C190
         priority: 183
       attract_flash_all:
         loops: 1
-        speed: 10
+        speed: 20
         show_tokens:
           color1: 00C190
         priority: 183
       jw_chase:
         loops: 2
-        speed: 10
+        speed: 20
         show_tokens:
           color1: 00C190
         priority: 183
       disc_middle_cylon:
         loops: 1
-        speed: 20
+        speed: 50
         show_tokens:
           color1: 00C190
         priority: 183

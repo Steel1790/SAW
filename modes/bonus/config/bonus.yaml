@@ -430,16 +430,22 @@ show_player:
      loops: 0
      speed: 8
      show_tokens:
-       led: gi_left
+       led: gi
        color1: white
+   flash_token_2:
+     loops: 0
+     speed: 8
+     show_tokens:
+       led: starpost
+       color1: beartrap
    speaker_left_chase:
      loops: 0
-     speed: 30
+     speed: 40
      show_tokens:
        color1: white
    speaker_right_chase:
      loops: 0
-     speed: 30
+     speed: 40
      show_tokens:
        color1: white
   display_syringes{current_player.ball<3}:
@@ -452,16 +458,22 @@ show_player:
      loops: 0
      speed: 8
      show_tokens:
-       led: gi_right
+       led: gi
        color1: beartrap
+   flash_token_2:
+     loops: 0
+     speed: 8
+     show_tokens:
+       led: starpost
+       color1: white
    speaker_left_chase:
      loops: 0
-     speed: 30
+     speed: 40
      show_tokens:
        color1: beartrap
    speaker_right_chase:
      loops: 0
-     speed: 30
+     speed: 40
      show_tokens:
        color1: beartrap
   display_bathtubs{current_player.ball<3}:
@@ -474,16 +486,22 @@ show_player:
      loops: 0
      speed: 8
      show_tokens:
-       led: gi_lower
+       led: gi
        color1: white
+   flash_token_2:
+     loops: 0
+     speed: 8
+     show_tokens:
+       led: starpost
+       color1: beartrap
    speaker_left_chase:
      loops: 0
-     speed: 30
+     speed: 40
      show_tokens:
        color1: white
    speaker_right_chase:
      loops: 0
-     speed: 30
+     speed: 40
      show_tokens:
        color1: white
   display_taperecorders{current_player.ball<3}:
@@ -498,14 +516,20 @@ show_player:
      show_tokens:
        led: gi_middle
        color1: beartrap
+   flash_token_2:
+     loops: 0
+     speed: 8
+     show_tokens:
+       led: starpost
+       color1: white
    speaker_left_chase:
      loops: 0
-     speed: 30
+     speed: 40
      show_tokens:
        color1: beartrap
    speaker_right_chase:
      loops: 0
-     speed: 30
+     speed: 40
      show_tokens:
        color1: beartrap
   display_candles{current_player.ball<3}:
@@ -518,16 +542,22 @@ show_player:
      loops: 0
      speed: 8
      show_tokens:
-       led: gi_top
+       led: gi
        color1: white
+   flash_token_2:
+     loops: 0
+     speed: 8
+     show_tokens:
+       led: starpost
+       color1: beartrap
    speaker_left_chase:
      loops: 0
-     speed: 30
+     speed: 40
      show_tokens:
        color1: white
    speaker_right_chase:
      loops: 0
-     speed: 30
+     speed: 40
      show_tokens:
        color1: white  
   display_hacksaws{current_player.ball<3}:
@@ -540,16 +570,22 @@ show_player:
      loops: 0
      speed: 8
      show_tokens:
-       led: gi_middle
+       led: gi
        color1: beartrap
+   flash_token_2:
+     loops: 0
+     speed: 8
+     show_tokens:
+       led: starpost
+       color1: white
    speaker_left_chase:
      loops: 0
-     speed: 30
+     speed: 40
      show_tokens:
        color1: beartrap
    speaker_right_chase:
      loops: 0
-     speed: 30
+     speed: 40
      show_tokens:
        color1: beartrap     
   display_handguns{current_player.ball<3}:
@@ -562,16 +598,22 @@ show_player:
      loops: 0
      speed: 8
      show_tokens:
-       led: gi_left, gi_right
-       color1: white  
+       led: gi
+       color1: white
+   flash_token_2:
+     loops: 0
+     speed: 8
+     show_tokens:
+       led: starpost
+       color1: beartrap
    speaker_left_chase:
      loops: 0
-     speed: 30
+     speed: 40
      show_tokens:
        color1: white
    speaker_right_chase:
      loops: 0
-     speed: 30
+     speed: 40
      show_tokens:
        color1: white   
   display_keys{current_player.ball<3}:
@@ -584,16 +626,22 @@ show_player:
      loops: 0
      speed: 8
      show_tokens:
-       led: gi_middle, gi_top, gi_lower
+       led: gi
        color1: beartrap
+   flash_token_2:
+     loops: 0
+     speed: 8
+     show_tokens:
+       led: starpost
+       color1: white
    speaker_left_chase:
      loops: 0
-     speed: 30
+     speed: 40
      show_tokens:
        color1: beartrap
    speaker_right_chase:
      loops: 0
-     speed: 30
+     speed: 40
      show_tokens:
        color1: beartrap
   display_multiplierbonus{current_player.ball<3}:
@@ -601,16 +649,22 @@ show_player:
      loops: 0
      speed: 8
      show_tokens:
-       led: gi_middle, gi_top, gi_lower
+       led: gi
+       color1: white
+   flash_token_2:
+     loops: 0
+     speed: 8
+     show_tokens:
+       led: starpost
        color1: beartrap
    speaker_left_chase:
      loops: 0
-     speed: 30
+     speed: 40
      show_tokens:
        color1: beartrap
    speaker_right_chase:
      loops: 0
-     speed: 30
+     speed: 40
      show_tokens:
        color1: beartrap
 

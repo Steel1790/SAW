@@ -6,10 +6,12 @@ light_settings:
 named_colors:
   razorwire: 41A317
   drillchair: fd6500
+  drillchair_alt: 006eb8
   zepstest: B200ED
   zeptest: B200ED
   beartrap: ff0900
   shotgun: 174BE8
+  shotgun_alt: e8b417
   jelly: fccd05
   color_jigsaw_mb: FFA500
   color_hacksaw_mb: 2db83d

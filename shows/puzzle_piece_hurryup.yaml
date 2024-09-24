@@ -5,49 +5,58 @@
   lights:
     gi: 4a4a4a -f10ms
     starpost: 4a4a4a -f10ms  
-    speaker: 4a4a4a -f10ms    
+    speaker: 4a4a4a -f10ms
+    discs: 4a4a4a -f10ms   
 - time: '+1ms'
   lights:
     gi: white -f3000ms
     starpost: white -f3000ms
     speaker: white -f3000ms
+    discs: white -f3000ms
 - time: '+2900ms'
   lights:
     gi: off -f0ms
     starpost: off -f0ms
     speaker: off -f0ms
+    discs: off -f0ms
 #GI White Fade 2
 - time: '+1ms'
   lights:
     gi: 4a4a4a -f10ms
     starpost: 4a4a4a -f10ms
-    speaker: 4a4a4a -f10ms    
+    speaker: 4a4a4a -f10ms
+    discs: 4a4a4a -f10ms       
 - time: '+1ms'
   lights:
     gi: white -f3000ms
     starpost: white -f3000ms
     speaker: white -f3000ms
+    discs: white -f3000ms  
 - time: '+2900ms'
   lights:
     gi: off -f0ms
     starpost: off -f0ms
-    speaker: off -f0ms    
+    speaker: off -f0ms
+    discs: off -f0ms
 #GI White Fade 3
 - time: '+1ms'
   lights:
     gi: 4a4a4a -f10ms
     starpost: 4a4a4a -f10ms
     speaker: 4a4a4a -f10ms
+    discs: 4a4a4a -f10ms 
 - time: '+1ms'
   lights:
     gi: white -f3000ms
     starpost: white -f3000ms
-    speaker: white -f3000ms 
+    speaker: white -f3000ms
+    discs: white -f3000ms  
 - time: '+3000ms' #8.7s timestamp
   lights:
     gi: off
     starpost: red
     speaker: red
+    discs: off
 
 #Pause 1
 - time: '+600ms' 
@@ -60,6 +69,8 @@
       speed: 30
     speaker_sparkle_left:
       speed: 30
+    disc_left_sparkle_red:
+      speed: 30
 - time: '+1000ms' #10.4s timestamp
   shows:     
     starpost_sparkle_b:
@@ -69,6 +80,8 @@
     jet_bumpers_sparkle_left_bottom:
       speed: 30
     speaker_sparkle_right:
+      speed: 30
+    disc_right_sparkle_red:
       speed: 30
   lights:
     gi: white -f200ms 
@@ -82,6 +95,8 @@
     starpost_sparkle_j:
       speed: 30
     jet_bumpers_sparkle_top_bottom:
+      speed: 30
+    disc_middle_sparkle:
       speed: 30
 #Pause 2
 - time: '+900ms'  #12.3s timestamp
@@ -140,7 +155,10 @@
     jet_bumpers_sparkle_right_top: stop
     jet_bumpers_sparkle_lower_top: stop   
     speaker_sparkle_left: stop  
-    speaker_sparkle_right: stop            
+    speaker_sparkle_right: stop   
+    disc_middle_sparkle: stop
+    disc_left_sparkle_red: stop
+    disc_right_sparkle_red: stop         
 
 #Flash 3 times
 - time: '+2000ms'  #17.3s timestamp
@@ -149,12 +167,14 @@
     starpost: red -f150ms
     jet_bumper: red -f150ms
     speaker: white -f150ms
+    discs: white -f150ms
 - time: '+150ms'
   lights:
     gi: off 
     starpost: off
     jet_bumper: off
     speaker: off
+    discs: off
 
 - time: '+250ms' #17.7s timestamp
   lights:
@@ -162,12 +182,14 @@
     starpost: red -f150ms
     jet_bumper: red -f150ms
     speaker: white -f150ms
+    discs: white -f150ms
 - time: '+150ms'
   lights:
     gi: off
     starpost: off 
     jet_bumper: off
     speaker: off
+    discs: off
 
 - time: '+250ms' #18.1s timestamp
   lights:
@@ -175,11 +197,12 @@
     starpost: red -f150ms
     jet_bumper: red -f150ms
     speaker: white -f150ms
+    discs: white -f150ms
 - time: '+150ms'
   lights:
     gi: off
     starpost: off
     jet_bumper: off
     speaker: off
-
+    discs: off
  
