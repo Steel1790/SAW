@@ -1,0 +1,221 @@
+#show_version=6
+
+#CHOOSE ONE OF THE TWO OPTIONS. COMMENT OUT THE OTHER.
+
+#OPTION 1 - CLOCKWISE CIRCLE REPEAT WITH FADE OUT
+# - time: 0
+#   lights:
+#     l_dome_1_1: (color1)
+# - time: '+1'
+#   lights:
+#     l_dome_1_2: (color1)
+# - time: '+1'
+#   lights:
+#     l_dome_1_3: (color1)
+# - time: '+1'
+#   lights:
+#     l_dome_1_4: (color1)
+# - time: '+1'
+#   lights:
+#     l_dome_1_5: (color1)
+# - time: '+1'
+#   lights:
+#     l_dome_1_6: (color1)
+# - time: '+1'
+#   lights:
+#     l_dome_1_7: (color1)
+# - time: '+1'
+#   lights:
+#     l_dome_1_8: (color1)
+# - time: '+1'
+#   lights:
+#     l_dome_1_1: off -f200ms
+#     l_dome_1_2: off -f200ms
+#     l_dome_1_3: off -f200ms
+#     l_dome_1_4: off -f200ms
+#     l_dome_1_5: off -f200ms
+#     l_dome_1_6: off -f200ms
+#     l_dome_1_7: off -f200ms
+#     l_dome_1_8: off -f200ms
+
+#OPTION 2 - OVERLAPS BETWEEN INSERTS CLOCKWISE AND THEN COUNTERCLOCKWISE CYLON STYLE
+- time: 0
+  lights:
+    l_dome_1_1: (color1)
+    l_dome_2_1: (color1)
+    l_dome_3_1: (color1)    
+    l_dome_4_1: (color1)       
+- time: '+1'
+  lights:
+    l_dome_1_2: (color1)
+    l_dome_2_2: (color1)
+    l_dome_3_2: (color1)    
+    l_dome_4_2: (color1)  
+- time: '+1'
+  lights:
+    l_dome_1_3: (color1)
+    l_dome_2_3: (color1)
+    l_dome_3_3: (color1)    
+    l_dome_4_3: (color1) 
+- time: '+1'
+  lights:
+    l_dome_1_4: (color1)
+    l_dome_2_4: (color1)
+    l_dome_3_4: (color1)    
+    l_dome_4_4: (color1)  
+    l_dome_1_1: off
+    l_dome_2_1: off
+    l_dome_3_1: off   
+    l_dome_4_1: off    
+- time: '+1'
+  lights:
+    l_dome_1_5: (color1)
+    l_dome_2_5: (color1)
+    l_dome_3_5: (color1)    
+    l_dome_4_5: (color1)  
+    l_dome_1_2: off
+    l_dome_2_2: off
+    l_dome_3_2: off   
+    l_dome_4_2: off  
+- time: '+1'
+  lights:
+    l_dome_1_6: (color1)
+    l_dome_2_6: (color1)
+    l_dome_3_6: (color1)    
+    l_dome_4_6: (color1)
+    l_dome_1_3: off
+    l_dome_2_3: off
+    l_dome_3_3: off   
+    l_dome_4_3: off 
+- time: '+1'
+  lights:
+    l_dome_1_7: (color1)
+    l_dome_2_7: (color1)
+    l_dome_3_7: (color1)    
+    l_dome_4_7: (color1)    
+    l_dome_1_4: off
+    l_dome_2_4: off
+    l_dome_3_4: off   
+    l_dome_4_4: off   
+- time: '+1'
+  lights:
+    l_dome_1_8: (color1)
+    l_dome_2_8: (color1)
+    l_dome_3_8: (color1)    
+    l_dome_4_8: (color1)   
+    l_dome_1_5: off
+    l_dome_2_5: off
+    l_dome_3_5: off   
+    l_dome_4_5: off          
+- time: '+1'
+  lights:
+    l_dome_1_6: off
+    l_dome_2_6: off
+    l_dome_3_6: off   
+    l_dome_4_6: off     
+- time: '+1'
+  lights:
+    l_dome_1_7: off
+    l_dome_2_7: off
+    l_dome_3_7: off   
+    l_dome_4_7: off      
+- time: '+1'
+  lights:
+    l_dome_1_8: off
+    l_dome_2_8: off
+    l_dome_3_8: off   
+    l_dome_4_8: off       
+- time: '+1'
+  lights:
+    l_dome_1_8: (color1)
+    l_dome_2_8: (color1)
+    l_dome_3_8: (color1)
+    l_dome_4_8: (color1)    
+- time: '+1'
+  lights:
+    l_dome_1_7: (color1)
+    l_dome_2_7: (color1)
+    l_dome_3_7: (color1)
+    l_dome_4_7: (color1)  
+- time: '+1'
+  lights:
+    l_dome_1_6: (color1)
+    l_dome_2_6: (color1)
+    l_dome_3_6: (color1)
+    l_dome_4_6: (color1)  
+- time: '+1'
+  lights:
+    l_dome_1_5: (color1)
+    l_dome_2_5: (color1)
+    l_dome_3_5: (color1)    
+    l_dome_4_5: (color1) 
+    l_dome_1_8: off
+    l_dome_2_8: off
+    l_dome_3_8: off   
+    l_dome_4_8: off    
+- time: '+1'
+  lights:
+    l_dome_1_4: (color1)
+    l_dome_2_4: (color1)
+    l_dome_3_4: (color1)    
+    l_dome_4_4: (color1)
+    l_dome_1_7: off
+    l_dome_2_7: off
+    l_dome_3_7: off   
+    l_dome_4_7: off   
+- time: '+1'
+  lights:
+    l_dome_1_3: (color1)
+    l_dome_2_3: (color1)
+    l_dome_3_3: (color1)    
+    l_dome_4_3: (color1)
+    l_dome_1_6: off
+    l_dome_2_6: off
+    l_dome_3_6: off   
+    l_dome_4_6: off     
+- time: '+1'
+  lights:
+    l_dome_1_2: (color1)
+    l_dome_2_2: (color1)
+    l_dome_3_2: (color1)    
+    l_dome_4_2: (color1)
+    l_dome_1_5: off
+    l_dome_2_5: off
+    l_dome_3_5: off   
+    l_dome_4_5: off      
+- time: '+1'
+  lights:
+    l_dome_1_1: (color1)
+    l_dome_2_1: (color1)
+    l_dome_3_1: (color1)    
+    l_dome_4_1: (color1)    
+    l_dome_1_4: off
+    l_dome_2_4: off
+    l_dome_3_4: off   
+    l_dome_4_4: off  
+- time: '+1'
+  lights:
+    l_dome_1_3: off
+    l_dome_2_3: off
+    l_dome_3_3: off   
+    l_dome_4_3: off     
+- time: '+1'
+  lights:
+    l_dome_1_2: off
+    l_dome_2_2: off
+    l_dome_3_2: off   
+    l_dome_4_2: off    
+- time: '+1'
+  lights:
+    l_dome_1_1: off
+    l_dome_2_1: off
+    l_dome_3_1: off   
+    l_dome_4_1: off
+      
+
+
+
+
+
+
+

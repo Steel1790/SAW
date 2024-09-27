@@ -3457,6 +3457,107 @@ lights:
         number: led256bb-5-32-2
     tags: cabinet_left, groundeffects, led256bb-5
 
+# dome lights
+  l_dome_1_1:
+    number: led128-5-1
+    tags: dome, dome_1
+  l_dome_1_2:
+    number: led128-5-2
+    tags: dome, dome_1
+  l_dome_1_3:
+    number: led128-5-3
+    tags: dome, dome_1
+  l_dome_1_4:
+    number: led128-5-4
+    tags: dome, dome_1
+  l_dome_1_5:
+    number: led128-5-5
+    tags: dome, dome_1
+  l_dome_1_6:
+    number: led128-5-6
+    tags: dome, dome_1
+  l_dome_1_7:
+    number: led128-5-7
+    tags: dome, dome_1
+  l_dome_1_8:
+    number: led128-5-8
+    tags: dome, dome_1
+
+  l_dome_2_1:
+    number: led128-5-1
+    tags: dome, dome_2
+  l_dome_2_2:
+    number: led128-5-2
+    tags: dome, dome_2
+  l_dome_2_3:
+    number: led128-5-3
+    tags: dome, dome_2
+  l_dome_2_4:
+    number: led128-5-4
+    tags: dome, dome_2
+  l_dome_2_5:
+    number: led128-5-5
+    tags: dome, dome_2
+  l_dome_2_6:
+    number: led128-5-6
+    tags: dome, dome_2
+  l_dome_2_7:
+    number: led128-5-7
+    tags: dome, dome_2
+  l_dome_2_8:
+    number: led128-5-8
+    tags: dome, dome_2
+
+  l_dome_3_1:
+    number: led128-5-1
+    tags: dome, dome_3
+  l_dome_3_2:
+    number: led128-5-2
+    tags: dome, dome_3
+  l_dome_3_3:
+    number: led128-5-3
+    tags: dome, dome_3
+  l_dome_3_4:
+    number: led128-5-4
+    tags: dome, dome_3
+  l_dome_3_5:
+    number: led128-5-5
+    tags: dome, dome_3
+  l_dome_3_6:
+    number: led128-5-6
+    tags: dome, dome_3
+  l_dome_3_7:
+    number: led128-5-7
+    tags: dome, dome_3
+  l_dome_3_8:
+    number: led128-5-8
+    tags: dome, dome_3
+
+  l_dome_3_1:
+    number: led128-5-1
+    tags: dome, dome_4
+  l_dome_4_2:
+    number: led128-5-2
+    tags: dome, dome_4
+  l_dome_4_3:
+    number: led128-5-3
+    tags: dome, dome_4
+  l_dome_4_4:
+    number: led128-5-4
+    tags: dome, dome_4
+  l_dome_4_5:
+    number: led128-5-5
+    tags: dome, dome_4
+  l_dome_4_6:
+    number: led128-5-6
+    tags: dome, dome_4
+  l_dome_4_7:
+    number: led128-5-7
+    tags: dome, dome_4
+  l_dome_4_8:
+    number: led128-5-8
+    tags: dome, dome_4
+
 show_player:
     init_phase_1:
       backbox_on:
