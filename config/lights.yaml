@@ -3459,103 +3459,103 @@ lights:
 
 # dome lights
   l_dome_1_1:
-    number: led128-5-1
+    number: led128-8-1
     tags: dome, dome_1
   l_dome_1_2:
-    number: led128-5-2
+    number: led128-8-2
     tags: dome, dome_1
   l_dome_1_3:
-    number: led128-5-3
+    number: led128-8-3
     tags: dome, dome_1
   l_dome_1_4:
-    number: led128-5-4
+    number: led128-8-4
     tags: dome, dome_1
   l_dome_1_5:
-    number: led128-5-5
+    number: led128-8-5
     tags: dome, dome_1
   l_dome_1_6:
-    number: led128-5-6
+    number: led128-8-6
     tags: dome, dome_1
   l_dome_1_7:
-    number: led128-5-7
+    number: led128-8-7
     tags: dome, dome_1
   l_dome_1_8:
-    number: led128-5-8
+    number: led128-8-8
     tags: dome, dome_1
 
   l_dome_2_1:
-    number: led128-5-1
+    number: led128-8-9
     tags: dome, dome_2
   l_dome_2_2:
-    number: led128-5-2
+    number: led128-8-10
     tags: dome, dome_2
   l_dome_2_3:
-    number: led128-5-3
+    number: led128-8-11
     tags: dome, dome_2
   l_dome_2_4:
-    number: led128-5-4
+    number: led128-8-12
     tags: dome, dome_2
   l_dome_2_5:
-    number: led128-5-5
+    number: led128-8-13
     tags: dome, dome_2
   l_dome_2_6:
-    number: led128-5-6
+    number: led128-8-14
     tags: dome, dome_2
   l_dome_2_7:
-    number: led128-5-7
+    number: led128-8-15
     tags: dome, dome_2
   l_dome_2_8:
-    number: led128-5-8
+    number: led128-8-16
     tags: dome, dome_2
 
   l_dome_3_1:
-    number: led128-5-1
+    number: led128-8-17
     tags: dome, dome_3
   l_dome_3_2:
-    number: led128-5-2
+    number: led128-8-18
     tags: dome, dome_3
   l_dome_3_3:
-    number: led128-5-3
+    number: led128-8-19
     tags: dome, dome_3
   l_dome_3_4:
-    number: led128-5-4
+    number: led128-8-20
     tags: dome, dome_3
   l_dome_3_5:
-    number: led128-5-5
+    number: led128-8-21
     tags: dome, dome_3
   l_dome_3_6:
-    number: led128-5-6
+    number: led128-8-22
     tags: dome, dome_3
   l_dome_3_7:
-    number: led128-5-7
+    number: led128-8-23
     tags: dome, dome_3
   l_dome_3_8:
-    number: led128-5-8
+    number: led128-8-24
     tags: dome, dome_3
 
-  l_dome_3_1:
-    number: led128-5-1
+  l_dome_4_1:
+    number: led128-8-25
     tags: dome, dome_4
   l_dome_4_2:
-    number: led128-5-2
+    number: led128-8-26
     tags: dome, dome_4
   l_dome_4_3:
-    number: led128-5-3
+    number: led128-8-27
     tags: dome, dome_4
   l_dome_4_4:
-    number: led128-5-4
+    number: led128-8-28
     tags: dome, dome_4
   l_dome_4_5:
-    number: led128-5-5
+    number: led128-8-29
     tags: dome, dome_4
   l_dome_4_6:
-    number: led128-5-6
+    number: led128-8-30
     tags: dome, dome_4
   l_dome_4_7:
-    number: led128-5-7
+    number: led128-8-31
     tags: dome, dome_4
   l_dome_4_8:
-    number: led128-5-8
+    number: led128-8-32
     tags: dome, dome_4
 
 show_player:
