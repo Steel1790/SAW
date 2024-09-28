@@ -113,6 +113,9 @@ show_player:
       show_tokens:
         leds: l_left_ramp_triangle3
       priority: 184
+    shackle_mb_lock:
+      loops: 0
+      speed: 30  
   logicblock_cnt_jigsaw_mb_qualify_lights_updated{device.counters.cnt_jigsaw_mb_qualify_lights.value == 3}:
     jigsaw_mb_qualify_ready:
       speed: 4
@@ -127,6 +130,9 @@ show_player:
       show_tokens:
         leds: l_left_ramp_triangle3, l_left_ramp_triangle2
       priority: 184
+    shackle_mb_lock:
+      loops: 0
+      speed: 30
   logicblock_cnt_jigsaw_mb_qualify_lights_updated{device.counters.cnt_jigsaw_mb_qualify_lights.value == 5}:
     jigsaw_mb_qualify_ready:
       speed: 4
@@ -152,6 +158,9 @@ show_player:
         leds: bear_flasher
       speed: 4
       loops: 5
+    shackle_mb_lock:
+      loops: 0
+      speed: 30
 
   logicblock_cnt_jigsaw_mb_qualify_updated{value==1}:
     sh_jigsaw_mb_qualify_hit_qualified:
