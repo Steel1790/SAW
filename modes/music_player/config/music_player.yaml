@@ -951,14 +951,14 @@ sound_player:
       action: stop
 # lil billy music stop end of mode. start back base music
   player_lil_billy_lil_billy_60s_timer_tick{value < 1}:
-    LilBillyModeSongSkillshot: 
+    PolkaBilly: 
       action: stop
     BaseMusic:
       delay: 1s
       action: play
       loops: -1   
   player_lil_billy_lil_billy_60s_cubicle_timer_tick{value < 1}:
-    LilBillyModeSongSkillshot: 
+    PolkaBilly: 
       action: stop
     BaseMusic:
       delay: 1s

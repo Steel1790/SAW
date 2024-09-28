@@ -668,11 +668,11 @@ widget_player:
 
 sound_player:
   slide_LilBillyModeIntro1_removed:
-    LilBillyModeSongSkillshot:
+    PolkaBilly:
       action: play
       loops: 0  
   slide_LilBillyModeIntro2_removed:
-    LilBillyModeSongSkillshot:
+    PolkaBilly:
       action: play
       loops: 0  
   counter_cnt_lil_billy_drops_hit_hit:
