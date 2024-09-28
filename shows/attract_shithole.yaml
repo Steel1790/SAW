@@ -308,6 +308,11 @@
       show_tokens:
         color1: beartrap
 
+    domes_cylon:
+      speed: 4
+      show_tokens:
+        color1: beartrap
+
     jet_bumpers_color_chase_2:
       loops: -1
       speed: 10
@@ -374,6 +379,14 @@
     disc_left_sparkle_red:
       speed: 30
     disc_right_sparkle_red:
+      speed: 30 
+    dome_sparkle_1:
+      speed: 30 
+    dome_sparkle_2:
+      speed: 30
+    dome_sparkle_3:
+      speed: 30
+    dome_sparkle_4:
       speed: 30 
 
 - time: '+8000ms' #108.0s timestamp (song end)
