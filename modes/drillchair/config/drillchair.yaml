@@ -971,6 +971,14 @@ show_player:
       show_tokens:
         leds: standup
 
+  sw_standup: #placeholder for now
+    flash_token:
+      loops: 1
+      speed: 10
+      show_tokens:
+        led: gi 
+        color1: drillchair
+
   player_drillchair_drillchair_60s_timer_tick{value==62}:
     mystery_flash:
       loops: 0

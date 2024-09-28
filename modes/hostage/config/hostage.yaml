@@ -67,6 +67,10 @@ shows:
     - duration: 0.2s
       lights:
         (leds): off
+  sh_hostage_off:
+    - duration: 0.2s
+      lights:
+        (leds): off
 
 variable_player:
   sw_pops:
@@ -133,7 +137,20 @@ show_player:
     sh_hostage_ramp_on:
       show_tokens:
         leds: right_ramp
+  logicblock_cnt_hostage_updated{value==1}:
+    sh_hostage_off:
+      show_tokens:
+        leds: billy, jw_insert, jet_bumper
 
+  logicblock_cnt_hostage_updated{value==2}:
+    sh_hostage_off:
+      show_tokens:
+        leds: skillshot, arrow, trap, flasher
+
+  logicblock_cnt_hostage_updated{value==3}:
+    sh_hostage_off:
+      show_tokens:
+        leds: trough, discs, hmb_locks, spotlights, cabinet
 
     disc_right_chase:
       loops: -1

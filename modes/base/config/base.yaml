@@ -843,6 +843,21 @@ show_player:
       # show_tokens:
       #   color1: white
 
+  logicblock_cnt_saw_qualify_complete:
+    skillshot_color_wash:
+      loops: 1
+      speed: 8
+
+  s_left_ramp_score_bottom_active:
+    gi_glitter_scratch: #placeholder. need to create new show
+      loops: 0
+      speed: 15
+
+  s_left_ramp_score_top_active:
+    shotgun_blast_playfield:
+      loops: 0
+      speed: 15
+
   mode_base_started:  
     backbox_on:
       loops: -1
