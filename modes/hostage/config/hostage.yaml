@@ -137,21 +137,6 @@ show_player:
     sh_hostage_ramp_on:
       show_tokens:
         leds: right_ramp
-  logicblock_cnt_hostage_updated{value==1}:
-    sh_hostage_off:
-      show_tokens:
-        leds: billy, jw_insert, jet_bumper
-
-  logicblock_cnt_hostage_updated{value==2}:
-    sh_hostage_off:
-      show_tokens:
-        leds: skillshot, arrow, trap, flasher
-
-  logicblock_cnt_hostage_updated{value==3}:
-    sh_hostage_off:
-      show_tokens:
-        leds: trough, discs, hmb_locks, spotlights, cabinet
-
     disc_right_chase:
       loops: -1
       speed: 10
@@ -172,6 +157,9 @@ show_player:
     negative_W:
       loops: 1
       speed: 30
+    sh_hostage_off:
+      show_tokens:
+        leds: billy, jw_insert, jet_bumper
     disc_right_chase:
       loops: -1
       speed: 10
@@ -193,6 +181,9 @@ show_player:
       speed: 10
       show_tokens:
         color1: beartrap
+    sh_hostage_off:
+      show_tokens:
+        leds: skillshot, arrow, trap, flasher
   mode_hostage_complete:
       disc_left_chase: stop
       disc_middle_chase: stop
@@ -201,6 +192,11 @@ show_player:
       disc_left_chase: stop
       disc_middle_chase: stop
       disc_right_chase: stop
+
+  logicblock_cnt_hostage_updated{value==3}:
+    sh_hostage_off:
+      show_tokens:
+        leds: trough, discs, hmb_locks, spotlights, cabinet
 
 coil_player:
   mode_hostage_started:

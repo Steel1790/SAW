@@ -843,11 +843,6 @@ show_player:
       # show_tokens:
       #   color1: white
 
-  logicblock_cnt_saw_qualify_complete:
-    skillshot_color_wash:
-      loops: 1
-      speed: 8
-
   s_left_ramp_score_bottom_active:
     gi_glitter_scratch: #placeholder. need to create new show
       loops: 0
@@ -1180,7 +1175,10 @@ show_player:
       speed: 70
     disc_middle_sparkle:
       loops: 0
-      speed: 70      
+      speed: 70   
+    skillshot_color_wash:
+      loops: 1
+      speed: 8   
   saw_pops_saw:
     jet_bumpers_pulse:
       speed: 1.25
