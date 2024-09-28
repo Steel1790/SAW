@@ -1235,6 +1235,9 @@ sound_player:
   player_razorwire_60s_timer_tick{value==60}:
     RWModeStart:
       action: play 
+  player_razorwire_60s_timer_tick{value==57}:
+    GetToTheUpperPops:
+      action: play
   player_razorwire_60s_timer_tick{value < 1}:
     RWModeStart:
       action: stop

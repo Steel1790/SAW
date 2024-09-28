@@ -1143,6 +1143,12 @@ sound_player:
   player_quadshotgun_quadshotgun_60s_timer_tick{value==60}:
     QuadShotgunModeStart:
       action: play
+  player_quadshotgun_quadshotgun_60s_timer_tick{value==57}:
+    ShootAllTheStandupTargets:
+      action: play
+  e_spinner_callout_delay:
+    RipTheSpinner:
+      action: play
   player_quadshotgun_quadshotgun_60s_timer_tick{value < 1}:
     QuadShotgunModeStart:
       action: stop
@@ -1184,3 +1190,4 @@ event_player:
   que_shotgun_complete:
     - mode_quadshotgun_complete|2s
     - stop_mode_quadshotgun|2s
+  logicblock_acc_quadshotgun_phase1_complete: e_spinner_callout_delay|3s
