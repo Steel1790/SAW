@@ -1143,7 +1143,7 @@ sound_player:
   player_quadshotgun_quadshotgun_60s_timer_tick{value==60}:
     QuadShotgunModeStart:
       action: play
-  player_quadshotgun_quadshotgun_60s_timer_tick{value==57}:
+  timer_quadshotgun_60s_timer_tick{ticks==57}:
     ShootAllTheStandupTargets:
       action: play
   e_spinner_callout_delay:

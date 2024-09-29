@@ -1361,7 +1361,7 @@ show_player:
           led: l_top_drop_triangle, post_g, post_h
           color1: white
 
-  logicblock_multiplier_progress_counter_hit{count==0}:
+  logicblock_multiplier_progress_counter_hit{count==6}:
       flash_token:
         loops: -1
         speed: 10     

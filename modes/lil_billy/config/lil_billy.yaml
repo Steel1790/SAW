@@ -13,12 +13,13 @@ multiballs:
     ball_count_type: add
     shoot_again: 59s
     start_events: e_delay_tricycle_plunge
+    stop_events: player_lil_billy_lil_billy_60s_timer_tick{value==6}   #added stop event to let the additional balls drain and not reload after mode ends.
 
 random_event_player:
   mode_lil_billy_started:
     events:
-      e_lilbilly_tricycle: 50
-      e_lilbilly_cubicle: 50
+      e_lilbilly_tricycle: 99
+      e_lilbilly_cubicle: 1
   counter_cnt_lil_billy_drops_hit_hit:
     events:
       e_lil_billy_drops_hit1: 50

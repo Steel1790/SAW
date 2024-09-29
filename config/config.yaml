@@ -376,76 +376,76 @@ sounds:
     volume: 0.2
   GetToTheBathroom:
     file: GetToTheBathroom.wav
-    volume: 0.2
+    volume: 0.9
   GetToTheBathroom2:
     file: GetToTheBathroom2.wav
-    volume: 0.2
+    volume: 0.9
   ShootTheRightScoopToStartATrap2:
     file: ShootTheRightScoopToStartATrap2.wav
-    volume: 0.2
+    volume: 0.9
   ShootTheRightScoopToStartATrap:
     file: ShootTheRightScoopToStartATrap.wav
-    volume: 0.2
+    volume: 0.9
   ShootWhiteArrows:
     file: ShootWhiteArrows.wav
-    volume: 0.2
+    volume: 0.9
   ShootWhiteArrows1:
     file: ShootWhiteArrows1.wav
-    volume: 0.2
+    volume: 0.9
   ToStartATrapShootTheRightScoop:
     file: ToStartATrapShootTheRightScoop.wav
-    volume: 0.2
+    volume: 0.9
   FirstDrillDestroyed:
     file: FirstDrillDestroyed.wav
-    volume: 0.2
+    volume: 0.9
   ShootLeftOrbit:
     file: ShootLeftOrbit.wav
-    volume: 0.2
+    volume: 0.9
   YouNeedTheLowerPops:
     file: YouNeedTheLowerPops.wav
-    volume: 0.2
+    volume: 0.9
   HitTheDropTargetNOW:
     file: HitTheDropTargetNOW.wav
-    volume: 0.2
+    volume: 0.9
   NiceShotNowTheOrbit:
     file: NiceShotNowTheOrbit.wav
-    volume: 0.2
+    volume: 0.9
   RipTheSpinner:
     file: RipTheSpinner.wav
-    volume: 0.2
+    volume: 0.9
   YouJustNeedTheLeftOrbit:
     file: YouJustNeedTheLeftOrbit.wav
-    volume: 0.2
+    volume: 0.9
   GetToTheUpperPops:
     file: GetToTheUpperPops.wav
-    volume: 0.2
+    volume: 0.9
   ShootTheLeftRampToLive:
     file: ShootTheLeftRampToLive.wav
-    volume: 0.2
+    volume: 0.9
   ShootAllTheStandupTargets:
     file: ShootAllTheStandupTargets.wav
-    volume: 0.2
+    volume: 0.9
   ShootTheCombos:
     file: ShootTheCombos.wav
-    volume: 0.2
+    volume: 0.9
   ShootTheCombos2:
     file: ShootTheCombos2.wav
-    volume: 0.2
+    volume: 0.9
   ShootTheDropTargetToEscape:
     file: ShootTheDropTargetToEscape.wav
-    volume: 0.2
+    volume: 0.9
   CompleteTheLowerDrops:
     file: CompleteTheLowerDrops.wav
-    volume: 0.2
+    volume: 0.9
   HitTheRightRamp:
     file: HitTheRightRamp.wav
-    volume: 0.2
+    volume: 0.9
   QuicklyShotTheDropTarget:
     file: QuicklyShotTheDropTarget.wav
-    volume: 0.2
+    volume: 0.9
   ShootTheLeftRamp:
     file: ShootTheLeftRamp.wav
-    volume: 0.2
+    volume: 0.9
 #drillchair mode balance
   DC1:
     file: DC1.wav
@@ -553,7 +553,7 @@ slide_player:
     gameovervideo:
       action: play
       priority: 600
-      expire: 2.5s
+      expire: 3.5s
   e_shoot_again:
     ShootAgain:
       priority: 400
@@ -586,6 +586,7 @@ show_player:
     speaker_game_over:
       loops: 0
       speed: 8
+      priority: 205
   e_topper_trigger:
     topper_trigger_on:
       loops: 0
@@ -617,7 +618,7 @@ event_player:
   ball_starting{is_extra_ball==True}: e_shoot_again    
   game_ending{current_player.ball==3 and is_extra_ball==False}: 
     - e_end_of_game
-    - e_end_of_game_stopped|2.6s
+    - e_end_of_game_stopped|3.6s
 
 queue_relay_player:
   game_ending:
@@ -627,3 +628,7 @@ sound_player:
   e_end_of_game:
     GameOverGlenn:
       action: play     
+track_player:
+  mode_high_score_stopped:
+    music:
+      action: stop_all_sounds

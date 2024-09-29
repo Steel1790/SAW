@@ -226,7 +226,7 @@ coil_player:
     c_left_spin_disc:
       action: enable
       hold_power: 1.0
-  mode_hostage_complete:
+  logicblock_cnt_hostage_updated{value==3}:
     c_right_spin_disc:
       action: off
     c_middle_spin_disc:

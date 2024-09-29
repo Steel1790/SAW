@@ -761,6 +761,9 @@ sound_player:
     ReverseBearTrapModeStart:
       action: play
       loops: 2
+  timer_120s_reversebeartrap_timer_tick{ticks==118}:
+    ShootAllTheStandupTargets:
+      action: play
   player_reversebeartrap_120s_reversebeartrap_timer_tick{value < 1}:
     ReverseBearTrapModeStart:
       action: stop
@@ -773,7 +776,7 @@ sound_player:
     reversebeartrap_gears_sound_pool:
       action: play
       block: true
-  sw_slingshot:
+  s_left_slingshot_active:
     reversebeartrap_mode_sound_pool:
       action: play
       block: true    

@@ -12,7 +12,18 @@ mode:
 #     score: 300000
     
 event_player:   
-  mode_trap_select_started: mode_qualified_sidestep2|0.5s
+  mode_trap_select_started: 
+    - mode_qualified_sidestep2|0.5s
+    - e_start_scoop_music|0.1s
+
+timers:
+  scoop_lit_timer:
+    start_value: 0
+    end_value: 50
+    direction: up
+    control_events:
+      - action: start
+        event: mode_trap_select_started
 
 counters:
   trap_select_qualify_counter:
@@ -23,27 +34,41 @@ counters:
     disable_events: e_primary_mode_active, start_jigsaw_multiball, start_hacksaw_multiball, start_shackle_multiball
     enable_events: logicblock_cnt_saw_qualify_complete, mode_qualified_sidestep, mode_qualified_sidestep2
 
-
+track_player:
+  mode_trap_select_started:
+    music:
+      action: stop_all_sounds
 sound_player:
-    mode_trap_select_started:
-      BaseMusic:
-        action: stop
-      DrillAndTapp:
-        action: stop
-      OutOfTime:
-        action: stop
-      Jonas:
-        action: stop
-      TheRules:
-        action: stop
-      FuckThisShit:
-        action: stop
+    e_start_scoop_music:
       ModeQualifiedShootScoop:
         action: play   
         loops: -1
+        priority: 210
+    timer_scoop_lit_timer_tick{ticks==6}:
+      GetToTheBathroom:
+        action: play
+    timer_scoop_lit_timer_tick{ticks==21}:
+      GetToTheBathroom2:
+        action: play
     ball_ending:
       ModeQualifiedShootScoop:
         action: stop
+    # mode_trap_select_started:
+    #   BaseMusic:
+    #     action: stop
+    #   DrillAndTapp:
+    #     action: stop
+    #   OutOfTime:
+    #     action: stop
+    #   Jonas:
+    #     action: stop
+    #   TheRules:
+    #     action: stop
+    #   FuckThisShit:
+    #     action: stop
+    #   ModeQualifiedShootScoop:
+    #     action: play   
+    #     loops: -1
 
 shows:
   mode_lit:

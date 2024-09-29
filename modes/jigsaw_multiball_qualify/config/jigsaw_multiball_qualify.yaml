@@ -158,9 +158,6 @@ show_player:
         leds: bear_flasher
       speed: 4
       loops: 5
-    shackle_mb_lock:
-      loops: 0
-      speed: 30
 
   logicblock_cnt_jigsaw_mb_qualify_updated{value==1}:
     sh_jigsaw_mb_qualify_hit_qualified:

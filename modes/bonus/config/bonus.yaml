@@ -420,7 +420,7 @@ sound_player:
       action: stop
 
 show_player:
-  display_gears{current_player.ball<3}:   
+  display_gears:   
    jw_bonus_gears:
      loops: 0
      speed: 8
@@ -448,7 +448,7 @@ show_player:
      speed: 40
      show_tokens:
        color1: white
-  display_syringes{current_player.ball<3}:
+  display_syringes:
    jw_bonus_syringe:
      loops: 0
      speed: 8
@@ -476,7 +476,7 @@ show_player:
      speed: 40
      show_tokens:
        color1: beartrap
-  display_bathtubs{current_player.ball<3}:
+  display_bathtubs:
    jw_bonus_bathtub:
      loops: 0
      speed: 8
@@ -504,7 +504,7 @@ show_player:
      speed: 40
      show_tokens:
        color1: white
-  display_taperecorders{current_player.ball<3}:
+  display_taperecorders:
    jw_bonus_taperecorder:
      loops: 0
      speed: 8
@@ -532,7 +532,7 @@ show_player:
      speed: 40
      show_tokens:
        color1: beartrap
-  display_candles{current_player.ball<3}:
+  display_candles:
    jw_bonus_candle: 
      loops: 0
      speed: 8
@@ -560,7 +560,7 @@ show_player:
      speed: 40
      show_tokens:
        color1: white  
-  display_hacksaws{current_player.ball<3}:
+  display_hacksaws:
    jw_bonus_hacksaw:
      loops: 0
      speed: 8
@@ -588,7 +588,7 @@ show_player:
      speed: 40
      show_tokens:
        color1: beartrap     
-  display_handguns{current_player.ball<3}:
+  display_handguns:
    jw_bonus_gun:
      loops: 0
      speed: 8
@@ -616,7 +616,7 @@ show_player:
      speed: 40
      show_tokens:
        color1: white   
-  display_keys{current_player.ball<3}:
+  display_keys:
    jw_bonus_key:
      loops: 0
      speed: 8
@@ -644,7 +644,7 @@ show_player:
      speed: 40
      show_tokens:
        color1: beartrap
-  display_multiplierbonus{current_player.ball<3}:
+  display_multiplierbonus:
    flash_token:
      loops: 0
      speed: 8
