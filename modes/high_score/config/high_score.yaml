@@ -18,11 +18,11 @@ high_score:
     puzzle_pieces:
       - PUZZLE PIECE CHAMPION
     modes_completed:
-      - ESCAPE GAME CHAMPION
+      - TRAP COMPLETION CHAMPION
     modes_attempted:
-      - ESCAPE ATTEMPT CHAMPION
+      - TRAP ATTEMPT CHAMPION
     choice_hurryup_hits:
-      - DECISION MAKER CHAMPION
+      - MAKE YOUR CHOICE CHAMPION
   defaults:
     score:
       - JWF: 1000000
@@ -63,7 +63,7 @@ slides:
     - type: text
       font_size: 65
       font_name: Skilt Gothic W04 Thin
-      text: PLAYER  (number)
+      text: PLAYER  (player_num)
       color: C2E3E0 
       x: center
       y: center + 320

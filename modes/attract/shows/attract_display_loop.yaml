@@ -386,7 +386,7 @@
         x: 75%
         y: 26%   
       - type: text
-        text: (machine|choice_hurryup_hits1_value) HurryUps Collected
+        text: (machine|choice_hurryup_hits1_value) DIE Hurry Ups Collected
         number_grouping: true
         min_digits: 2
         font_size: 35
