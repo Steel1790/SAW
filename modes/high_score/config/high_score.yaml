@@ -23,6 +23,20 @@ high_score:
       - TRAP ATTEMPT CHAMPION
     choice_hurryup_hits:
       - MAKE YOUR CHOICE CHAMPION
+    items_collected:
+      - ITEM HOARDING CHAMPION
+    drillchair_points:
+      - DRILL CHAIR CHAMPION
+    flammablejelly_points:
+      - FLAMMABLE JELLY CHAMPION
+    quadshotgun_points:
+      - QUAD SHOTGUN CHAMPION
+    razorwire_points:
+      - RAZORWIRE CHAMPION
+    reversebeartrap_points:
+      - REVERSE BEAR TRAP CHAMPION
+    zeptest_points:
+      - ZEP'S TEST CHAMPION
   defaults:
     score:
       - JWF: 1000000
@@ -39,6 +53,20 @@ high_score:
       - TST: 0
     choice_hurryup_hits:
       - TST: 0
+    items_collected:
+      - TST: 0
+    drillchair_points:
+      - TST: 0
+    flammablejelly_points:
+      - TST: 0
+    quadshotgun_points:
+      - TST: 0
+    razorwire_points:
+      - TST: 0
+    reversebeartrap_points:
+      - TST: 0
+    zeptest_points:
+      - TST: 0
   vars:
     puzzle_pieces:
       - player: puzzle_pieces
@@ -48,6 +76,20 @@ high_score:
       - player: modes_attempted
     choice_hurryup_hits:
       - player: choice_hurryup_hits
+    items_collected:
+      - player: items_collected
+    drillchair_points:
+      - player: drillchair_points
+    flammablejelly_points:
+      - player: flammablejelly_points
+    quadshotgun_points:
+      - player: quadshotgun_points
+    razorwire_points:
+      - player: razorwire_points
+    reversebeartrap_points:
+      - player: reversebeartrap_points
+    zeptest_points:
+      - player: zeptest_points
  #   tilt_bonus:
  #     - TST: 250000
 # optional: change the slides (you can omit all the following)

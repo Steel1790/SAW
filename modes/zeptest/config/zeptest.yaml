@@ -112,6 +112,14 @@ shots:
         state: 0
       - events: shot_zeptest_right_ramp_sp_zep_zeptest_collected_hit             
         state: 1
+      - events: shot_zeptest_drop_bank_sp_zep_zeptest_lit_hit             
+        state: 0
+      - events: shot_zeptest_drop_bank_sp_zep_zeptest_collected_hit             
+        state: 1  
+      - events: shot_zeptest_top_drop_sp_zep_zeptest_lit_hit             
+        state: 0
+      - events: shot_zeptest_top_drop_sp_zep_zeptest_collected_hit             
+        state: 1  
   shot_zeptest_left_standup_rightramp:
     reset_events: mode_zeptest_stopped, player_turn_stopped, player_turn_ended
     disable_events: shot_zeptest_left_standup_rightramp_sp_zep_zeptest_collected_hit
@@ -162,6 +170,14 @@ shots:
         state: 0
       - events: shot_zeptest_right_ramp_sp_zep_zeptest_collected_hit             
         state: 1
+      - events: shot_zeptest_drop_bank_sp_zep_zeptest_lit_hit             
+        state: 0
+      - events: shot_zeptest_drop_bank_sp_zep_zeptest_collected_hit             
+        state: 1  
+      - events: shot_zeptest_top_drop_sp_zep_zeptest_lit_hit             
+        state: 0
+      - events: shot_zeptest_top_drop_sp_zep_zeptest_collected_hit             
+        state: 1  
   shot_zeptest_right_standup_rightramp:
     reset_events: mode_zeptest_stopped, player_turn_stopped, player_turn_ended
     disable_events: shot_zeptest_right_standup_rightramp_sp_zep_zeptest_collected_hit
@@ -212,6 +228,14 @@ shots:
         state: 0
       - events: shot_zeptest_right_ramp_sp_zep_zeptest_collected_hit             
         state: 1
+      - events: shot_zeptest_drop_bank_sp_zep_zeptest_lit_hit             
+        state: 0
+      - events: shot_zeptest_drop_bank_sp_zep_zeptest_collected_hit             
+        state: 1  
+      - events: shot_zeptest_top_drop_sp_zep_zeptest_lit_hit             
+        state: 0
+      - events: shot_zeptest_top_drop_sp_zep_zeptest_collected_hit             
+        state: 1  
   shot_zeptest_right_loop:
     reset_events: mode_zeptest_stopped, player_turn_stopped, player_turn_ended
     disable_events: shot_zeptest_right_loop_sp_zep_zeptest_collected_hit
@@ -262,6 +286,14 @@ shots:
         state: 0
       - events: shot_zeptest_right_ramp_sp_zep_zeptest_collected_hit             
         state: 1
+      - events: shot_zeptest_drop_bank_sp_zep_zeptest_lit_hit             
+        state: 0
+      - events: shot_zeptest_drop_bank_sp_zep_zeptest_collected_hit             
+        state: 1  
+      - events: shot_zeptest_top_drop_sp_zep_zeptest_lit_hit             
+        state: 0
+      - events: shot_zeptest_top_drop_sp_zep_zeptest_collected_hit             
+        state: 1  
   shot_zeptest_right_standup:
     reset_events: mode_zeptest_stopped, player_turn_stopped, player_turn_ended
     disable_events: shot_zeptest_right_standup_sp_zep_zeptest_collected_hit 
@@ -312,6 +344,14 @@ shots:
         state: 0
       - events: shot_zeptest_right_ramp_sp_zep_zeptest_collected_hit             
         state: 1
+      - events: shot_zeptest_drop_bank_sp_zep_zeptest_lit_hit             
+        state: 0
+      - events: shot_zeptest_drop_bank_sp_zep_zeptest_collected_hit             
+        state: 1  
+      - events: shot_zeptest_top_drop_sp_zep_zeptest_lit_hit             
+        state: 0
+      - events: shot_zeptest_top_drop_sp_zep_zeptest_collected_hit             
+        state: 1  
   shot_zeptest_left_standup:
     reset_events: mode_zeptest_stopped, player_turn_stopped, player_turn_ended
     disable_events: shot_zeptest_left_standup_sp_zep_zeptest_collected_hit
@@ -362,6 +402,14 @@ shots:
         state: 0
       - events: shot_zeptest_right_ramp_sp_zep_zeptest_collected_hit             
         state: 1
+      - events: shot_zeptest_drop_bank_sp_zep_zeptest_lit_hit             
+        state: 0
+      - events: shot_zeptest_drop_bank_sp_zep_zeptest_collected_hit             
+        state: 1  
+      - events: shot_zeptest_top_drop_sp_zep_zeptest_lit_hit             
+        state: 0
+      - events: shot_zeptest_top_drop_sp_zep_zeptest_collected_hit             
+        state: 1  
   shot_zeptest_middle_standup:
     reset_events: mode_zeptest_stopped, player_turn_stopped, player_turn_ended
     disable_events: shot_zeptest_middle_standup_sp_zep_zeptest_collected_hit
@@ -412,6 +460,14 @@ shots:
         state: 0
       - events: shot_zeptest_right_ramp_sp_zep_zeptest_collected_hit             
         state: 1
+      - events: shot_zeptest_drop_bank_sp_zep_zeptest_lit_hit             
+        state: 0
+      - events: shot_zeptest_drop_bank_sp_zep_zeptest_collected_hit             
+        state: 1  
+      - events: shot_zeptest_top_drop_sp_zep_zeptest_lit_hit             
+        state: 0
+      - events: shot_zeptest_top_drop_sp_zep_zeptest_collected_hit             
+        state: 1  
   shot_zeptest_inner_loop:
     reset_events: mode_zeptest_stopped, player_turn_stopped, player_turn_ended
     disable_events: shot_zeptest_inner_loop_sp_zep_zeptest_collected_hit
@@ -462,6 +518,14 @@ shots:
         state: 0
       - events: shot_zeptest_right_ramp_sp_zep_zeptest_collected_hit             
         state: 1
+      - events: shot_zeptest_drop_bank_sp_zep_zeptest_lit_hit             
+        state: 0
+      - events: shot_zeptest_drop_bank_sp_zep_zeptest_collected_hit             
+        state: 1  
+      - events: shot_zeptest_top_drop_sp_zep_zeptest_lit_hit             
+        state: 0
+      - events: shot_zeptest_top_drop_sp_zep_zeptest_collected_hit             
+        state: 1  
   shot_zeptest_left_ramp:
     reset_events: mode_zeptest_stopped, player_turn_stopped, player_turn_ended
     disable_events: shot_zeptest_left_ramp_sp_zep_zeptest_collected_hit
@@ -512,6 +576,14 @@ shots:
         state: 0
       - events: shot_zeptest_right_ramp_sp_zep_zeptest_collected_hit             
         state: 1
+      - events: shot_zeptest_drop_bank_sp_zep_zeptest_lit_hit             
+        state: 0
+      - events: shot_zeptest_drop_bank_sp_zep_zeptest_collected_hit             
+        state: 1  
+      - events: shot_zeptest_top_drop_sp_zep_zeptest_lit_hit             
+        state: 0
+      - events: shot_zeptest_top_drop_sp_zep_zeptest_collected_hit             
+        state: 1  
   shot_zeptest_right_ramp:
     reset_events: mode_zeptest_stopped, player_turn_stopped, player_turn_ended
     disable_events: shot_zeptest_right_ramp_sp_zep_zeptest_collected_hit
@@ -562,7 +634,130 @@ shots:
         state: 0
       - events: shot_zeptest_left_loop_sp_zep_zeptest_collected_hit             
         state: 1
-
+      - events: shot_zeptest_drop_bank_sp_zep_zeptest_lit_hit             
+        state: 0
+      - events: shot_zeptest_drop_bank_sp_zep_zeptest_collected_hit             
+        state: 1  
+      - events: shot_zeptest_top_drop_sp_zep_zeptest_lit_hit             
+        state: 0
+      - events: shot_zeptest_top_drop_sp_zep_zeptest_collected_hit             
+        state: 1  
+  shot_zeptest_drop_bank:
+    reset_events: mode_zeptest_stopped, player_turn_stopped, player_turn_ended
+    disable_events: shot_zeptest_drop_bank_sp_zep_zeptest_collected_hit
+    switches: s_lower_bank_drop_target_opto_upper, s_lower_bank_drop_target_opto_middle, s_lower_bank_drop_target_opto_lower
+    profile: sp_zep
+    show_tokens:
+      leds: skillshot
+    control_events:
+      - events: mode_zeptest_started
+        state: 1
+      - events: shot_zeptest_drop_bank_sp_zep_zeptest_lit_hit             
+        state: 2
+      - events: shot_zeptest_drop_bank_sp_zep_zeptest_collected_hit             
+        state: 0 
+      - events: shot_zeptest_right_ramp_sp_zep_zeptest_lit_hit             
+        state: 0
+      - events: shot_zeptest_right_ramp_sp_zep_zeptest_collected_hit             
+        state: 1
+      - events: shot_zeptest_left_standup_rightramp_sp_zep_zeptest_lit_hit
+        state: 0
+      - events: shot_zeptest_left_standup_rightramp_sp_zep_zeptest_collected_hit
+        state: 1
+      - events: shot_zeptest_right_standup_rightramp_sp_zep_zeptest_lit_hit
+        state: 0
+      - events: shot_zeptest_right_standup_rightramp_sp_zep_zeptest_collected_hit
+        state: 1
+      - events: shot_zeptest_right_loop_sp_zep_zeptest_lit_hit
+        state: 0
+      - events: shot_zeptest_right_loop_sp_zep_zeptest_collected_hit
+        state: 1
+      - events: shot_zeptest_right_standup_sp_zep_zeptest_lit_hit
+        state: 0
+      - events: shot_zeptest_right_standup_sp_zep_zeptest_collected_hit             
+        state: 1
+      - events: shot_zeptest_left_standup_sp_zep_zeptest_lit_hit
+        state: 0
+      - events: shot_zeptest_left_standup_sp_zep_zeptest_collected_hit             
+        state: 1
+      - events: shot_zeptest_middle_standup_sp_zep_zeptest_lit_hit             
+        state: 0
+      - events: shot_zeptest_middle_standup_sp_zep_zeptest_collected_hit             
+        state: 1
+      - events: shot_zeptest_inner_loop_sp_zep_zeptest_lit_hit             
+        state: 0
+      - events: shot_zeptest_inner_loop_sp_zep_zeptest_collected_hit             
+        state: 1
+      - events: shot_zeptest_left_ramp_sp_zep_zeptest_lit_hit             
+        state: 0
+      - events: shot_zeptest_left_ramp_sp_zep_zeptest_collected_hit             
+        state: 1
+      - events: shot_zeptest_left_loop_sp_zep_zeptest_lit_hit             
+        state: 0
+      - events: shot_zeptest_left_loop_sp_zep_zeptest_collected_hit             
+        state: 1   
+      - events: shot_zeptest_top_drop_sp_zep_zeptest_lit_hit             
+        state: 0
+      - events: shot_zeptest_top_drop_sp_zep_zeptest_collected_hit             
+        state: 1   
+  shot_zeptest_top_drop:
+    reset_events: mode_zeptest_stopped, player_turn_stopped, player_turn_ended
+    disable_events: shot_zeptest_top_drop_sp_zep_zeptest_collected_hit
+    switches: s_upper_bank_drop_target_opto
+    profile: sp_zep
+    show_tokens:
+      leds: billy
+    control_events:
+      - events: mode_zeptest_started
+        state: 1
+      - events: shot_zeptest_top_drop_sp_zep_zeptest_lit_hit             
+        state: 2
+      - events: shot_zeptest_top_drop_sp_zep_zeptest_collected_hit             
+        state: 0  
+      - events: shot_zeptest_right_ramp_sp_zep_zeptest_lit_hit             
+        state: 0
+      - events: shot_zeptest_right_ramp_sp_zep_zeptest_collected_hit             
+        state: 1
+      - events: shot_zeptest_left_standup_rightramp_sp_zep_zeptest_lit_hit
+        state: 0
+      - events: shot_zeptest_left_standup_rightramp_sp_zep_zeptest_collected_hit
+        state: 1
+      - events: shot_zeptest_right_standup_rightramp_sp_zep_zeptest_lit_hit
+        state: 0
+      - events: shot_zeptest_right_standup_rightramp_sp_zep_zeptest_collected_hit
+        state: 1
+      - events: shot_zeptest_right_loop_sp_zep_zeptest_lit_hit
+        state: 0
+      - events: shot_zeptest_right_loop_sp_zep_zeptest_collected_hit
+        state: 1
+      - events: shot_zeptest_right_standup_sp_zep_zeptest_lit_hit
+        state: 0
+      - events: shot_zeptest_right_standup_sp_zep_zeptest_collected_hit             
+        state: 1
+      - events: shot_zeptest_left_standup_sp_zep_zeptest_lit_hit
+        state: 0
+      - events: shot_zeptest_left_standup_sp_zep_zeptest_collected_hit             
+        state: 1
+      - events: shot_zeptest_middle_standup_sp_zep_zeptest_lit_hit             
+        state: 0
+      - events: shot_zeptest_middle_standup_sp_zep_zeptest_collected_hit             
+        state: 1
+      - events: shot_zeptest_inner_loop_sp_zep_zeptest_lit_hit             
+        state: 0
+      - events: shot_zeptest_inner_loop_sp_zep_zeptest_collected_hit             
+        state: 1
+      - events: shot_zeptest_left_ramp_sp_zep_zeptest_lit_hit             
+        state: 0
+      - events: shot_zeptest_left_ramp_sp_zep_zeptest_collected_hit             
+        state: 1
+      - events: shot_zeptest_left_loop_sp_zep_zeptest_lit_hit             
+        state: 0
+      - events: shot_zeptest_left_loop_sp_zep_zeptest_collected_hit             
+        state: 1  
+      - events: shot_zeptest_drop_bank_sp_zep_zeptest_lit_hit             
+        state: 0
+      - events: shot_zeptest_drop_bank_sp_zep_zeptest_collected_hit             
+        state: 1  
 
 shot_profiles:
   sp_zep:
@@ -579,7 +774,7 @@ shot_profiles:
 
 shot_groups:
   sg_zeptest:
-    shots: shot_zeptest_left_loop, shot_zeptest_left_standup_rightramp, shot_zeptest_right_standup_rightramp, shot_zeptest_right_loop, shot_zeptest_right_standup, shot_zeptest_left_standup, shot_zeptest_middle_standup, shot_zeptest_inner_loop, shot_zeptest_left_ramp, shot_zeptest_right_ramp
+    shots: shot_zeptest_left_loop, shot_zeptest_left_standup_rightramp, shot_zeptest_right_standup_rightramp, shot_zeptest_right_loop, shot_zeptest_right_standup, shot_zeptest_left_standup, shot_zeptest_middle_standup, shot_zeptest_inner_loop, shot_zeptest_left_ramp, shot_zeptest_right_ramp, shot_zeptest_drop_bank, shot_zeptest_top_drop
 
 timers:
   60s_zeptest_timer:

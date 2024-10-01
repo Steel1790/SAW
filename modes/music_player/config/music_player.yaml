@@ -351,16 +351,16 @@ sound_pools:
     sounds:
       - LilBillySkillshot1
       - LilBillySkillshot2
-      - LilBillySkillshot3
+#      - LilBillySkillshot3
       - LilBillySkillshot4
-      - LilBillySkillshot5
-      - LilBillySkillshot6
-      - LilBillySkillshot7
-      - LilBillySkillshot8
+#      - LilBillySkillshot5
+#      - LilBillySkillshot6
+#      - LilBillySkillshot7
+#      - LilBillySkillshot8
       - LilBillySkillshot9
-      - LilBillySkillshot10
+#      - LilBillySkillshot10
       - LilBillySkillshot11
-      - LilBillySkillshot12
+#      - LilBillySkillshot12
       - LilBillySkillshot13
 
 sound_player:

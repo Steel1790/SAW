@@ -40,7 +40,8 @@ event_player:
 
   ball_started: mode_qualified_sidestep|0.8s
   single_player_ball_started: mode_qualified_sidestep|0.6s
-  ball_will_end{current_player.ball==3}: e_topper_trigger|3s
+  # ball_will_end{current_player.ball==3}: e_topper_trigger|3s
+  game_ending{current_player.ball==3 and is_extra_ball==False}: e_topper_trigger|3s
   mode_hostage_complete: e_mystery_workshop
   mode_puzzle_hurryup_stopped: e_saw_qualify_reset|0.3s
   # ball_starting{is_extra_ball==True}: e_shoot_again

@@ -351,6 +351,9 @@ variable_player:
     handguns_enabled:
       int: 1
       action: set
+    items_collected:
+      int: 1
+      action: add
   shot_drillchair_button_sp_drillchair_lit_hit:
     handguns_enabled:
       int: 0
@@ -367,6 +370,9 @@ variable_player:
     hacksaws_enabled:
       int: 1
       action: set
+    items_collected:
+      int: 1
+      action: add
   shot_razorwire_button_sp_razorwire_lit_hit:
     bonus_hacksaws:
       int: 0
@@ -382,6 +388,9 @@ variable_player:
     keys_enabled:
       int: 1
       action: set
+    items_collected:
+      int: 1
+      action: add
   shot_reversebeartrap_button_sp_reversebeartrap_lit_hit:
     bonus_keys:
       int: 0
@@ -397,6 +406,9 @@ variable_player:
     gears_enabled:
       int: 1
       action: set
+    items_collected:
+      int: 1
+      action: add
   shot_quadshotgun_button_sp_quadshotgun_lit_hit:
     gears_enabled:
       int: 0
@@ -412,6 +424,9 @@ variable_player:
     candles_enabled:
       int: 1
       action: set
+    items_collected:
+      int: 1
+      action: add
   shot_flammablejelly_button_sp_flammablejelly_lit_hit:
     candles_enabled:
       int: 0
@@ -430,6 +445,9 @@ variable_player:
     syringes_enabled:
       int: 1
       action: set
+    items_collected:
+      int: 1
+      action: add
   shot_zeptest_button_sp_zeptest_lit_hit:
     syringes_enabled:
       int: 0
@@ -448,7 +466,15 @@ variable_player:
     bonus_taperecorders:
       int: 0
       action: set
-
+# item count for slings + inlanes
+  minimode_slings_complete:
+    items_collected:
+      int: 1
+      action: add  
+  minimode_inlanes_complete:
+    items_collected:
+      int: 1
+      action: add  
  # track modes completed for wizard mode qualifications -- player_modes_completed
   mode_drillchair_complete:
     modes_completed:

@@ -400,6 +400,215 @@
       transition:
          type: fade
          duration: 0.2s
+- duration: 3
+  slides:
+    slide6:
+      widgets:
+      - type: text
+        text: HIGH SCORES
+        font_name: TrajanProRegular
+        font_size: 70
+        color: yellow
+        y: 90%              
+
+      - type: text
+        text: (machine|items_collected1_label)
+        number_grouping: true
+        min_digits: 2
+        font_size: 35
+        color: C2E3E0
+        x: 25%
+        y: 60%
+      - type: text
+        text: (machine|items_collected1_name)
+        number_grouping: true
+        min_digits: 2
+        font_size: 35
+        color: yellow
+        x: 25%
+        y: 53%    
+      - type: text
+        text: (machine|items_collected1_value) Items Collected
+        number_grouping: true
+        min_digits: 2
+        font_size: 35
+        color: C2E3E0
+        x: 25%
+        y: 46%           
+
+      - type: text
+        text: (machine|drillchair_points1_label)
+        number_grouping: true
+        min_digits: 2
+        font_size: 35
+        color: C2E3E0
+        x: 75%
+        y: 60%
+      - type: text
+        text: (machine|drillchair_points1_name)
+        number_grouping: true
+        min_digits: 2
+        font_size: 35
+        color: yellow
+        x: 75%
+        y: 53%       
+      - type: text
+        text: (machine|drillchair_points1_value) 
+        number_grouping: true
+        min_digits: 2
+        font_size: 35
+        color: C2E3E0
+        x: 75%
+        y: 46%    
+        
+      - type: text
+        text: (machine|flammablejelly_points1_label)
+        number_grouping: true
+        min_digits: 2
+        font_size: 35
+        color: C2E3E0
+        x: 25%
+        y: 33% 
+      - type: text
+        text: (machine|flammablejelly_points1_name)
+        number_grouping: true
+        min_digits: 2
+        font_size: 35
+        color: yellow
+        x: 25%
+        y: 26%    
+      - type: text
+        text: (machine|flammablejelly_points1_value)
+        number_grouping: true
+        min_digits: 2
+        font_size: 35
+        color: C2E3E0
+        x: 25%
+        y: 19%         
+
+      - type: text
+        text: (machine|quadshotgun_points1_label)
+        number_grouping: true
+        min_digits: 2
+        font_size: 35
+        color: C2E3E0
+        x: 75%
+        y: 33% 
+      - type: text
+        text: (machine|quadshotgun_points1_name)
+        number_grouping: true
+        min_digits: 2
+        font_size: 35
+        color: yellow
+        x: 75%
+        y: 26%   
+      - type: text
+        text: (machine|quadshotgun_points1_value)
+        number_grouping: true
+        min_digits: 2
+        font_size: 35
+        color: C2E3E0
+        x: 75%
+        y: 19%           
+
+      - type: image
+        opacity: 0.65
+        image: lastgamescores
+      transition:
+         type: fade
+         duration: 0.2s
+- duration: 3
+  slides:
+    slide7:
+      widgets:
+      - type: text
+        text: HIGH SCORES
+        font_name: TrajanProRegular
+        font_size: 70
+        color: yellow
+        y: 90%              
+
+      - type: text
+        text: (machine|razorwire_points1_label)
+        number_grouping: true
+        min_digits: 2
+        font_size: 35
+        color: C2E3E0
+        x: 25%
+        y: 60%
+      - type: text
+        text: (machine|razorwire_points1_name)
+        number_grouping: true
+        min_digits: 2
+        font_size: 35
+        color: yellow
+        x: 25%
+        y: 53%    
+      - type: text
+        text: (machine|razorwire_points1_value)
+        number_grouping: true
+        min_digits: 2
+        font_size: 35
+        color: C2E3E0
+        x: 25%
+        y: 46%           
+
+      - type: text
+        text: (machine|reversebeartrap_points1_label)
+        number_grouping: true
+        min_digits: 2
+        font_size: 35
+        color: C2E3E0
+        x: 75%
+        y: 60%
+      - type: text
+        text: (machine|reversebeartrap_points1_name)
+        number_grouping: true
+        min_digits: 2
+        font_size: 35
+        color: yellow
+        x: 75%
+        y: 53%       
+      - type: text
+        text: (machine|reversebeartrap_points1_value) 
+        number_grouping: true
+        min_digits: 2
+        font_size: 35
+        color: C2E3E0
+        x: 75%
+        y: 46%    
+        
+      - type: text
+        text: (machine|zeptest_points1_label)
+        number_grouping: true
+        min_digits: 2
+        font_size: 35
+        color: C2E3E0
+        x: 25%
+        y: 33% 
+      - type: text
+        text: (machine|zeptest_points1_name)
+        number_grouping: true
+        min_digits: 2
+        font_size: 35
+        color: yellow
+        x: 25%
+        y: 26%    
+      - type: text
+        text: (machine|zeptest_points1_value)
+        number_grouping: true
+        min_digits: 2
+        font_size: 35
+        color: C2E3E0
+        x: 25%
+        y: 19%         
+ 
+      - type: image
+        opacity: 0.65
+        image: lastgamescores
+      transition:
+         type: fade
+         duration: 0.2s
 - duration: 55s
   slides:
     slide8:

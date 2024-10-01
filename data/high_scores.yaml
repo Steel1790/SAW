@@ -1,26 +1,46 @@
 choice_hurryup_hits:
-- - ECC
-  - 3
-  - player_choice_hurryup_hits: 3
+- - TST
+  - 0
+drillchair_points:
+- - AAA
+  - 7500000
+  - player_drillchair_points: 7500000
+flammablejelly_points:
+- - TST
+  - 0
+items_collected:
+- - TST
+  - 0
 modes_attempted:
 - - AAA
-  - 2
-  - player_modes_attempted: 2
+  - 1
+  - player_modes_attempted: 1
 modes_completed:
 - - TST
   - 0
 puzzle_pieces:
-- - DLS
-  - 1
-  - player_puzzle_pieces: 1
+- - TST
+  - 0
+quadshotgun_points:
+- - TST
+  - 0
+razorwire_points:
+- - TST
+  - 0
+reversebeartrap_points:
+- - TST
+  - 0
 score:
-- - PRU
-  - 26879669
-- - DLS
-  - 20154090
-- - ''
-  - 19954894
-- - BDO
-  - 19660318
 - - AAA
-  - 18892274
+  - 8515000
+- - JWF
+  - 1000000
+- - ECK
+  - 900000
+- - ADC
+  - 800000
+- - SAW
+  - 700000
+zeptest_points:
+- - TST
+  - 0

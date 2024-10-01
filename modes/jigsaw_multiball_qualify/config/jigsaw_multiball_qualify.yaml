@@ -24,7 +24,8 @@ counters:
     count_complete_value: 3
     start_enabled: true
     persist_state: true
-    reset_on_complete: false
+    reset_on_complete: true
+    disable_on_complete: false
     count_events: logicblock_seq_jigsaw_mb_qualify_complete
     events_when_complete: logicblock_jigsaw_multiball_qualify_complete
     control_events:
@@ -38,6 +39,7 @@ counters:
     start_enabled: true
     persist_state: true
     reset_on_complete: true
+    disable_on_complete: false
     count_events: e_jigsaw_mb_qualify_hit_one, e_jigsaw_mb_qualify_hit_two 
     reset_events: logicblock_jigsaw_multiball_qualify_complete
     control_events:
@@ -50,6 +52,7 @@ counters:
     count_complete_value: 1
     start_enabled: true
     persist_state: true
+    enable_events: multiball_mb_jigsaw_started
     events_when_complete: e_jigsaw_lock1
     count_events: logicblock_cnt_jigsaw_mb_qualify_updated{value==1}
 
@@ -58,6 +61,7 @@ counters:
     count_complete_value: 1
     start_enabled: true
     persist_state: true
+    enable_events: multiball_mb_jigsaw_started
     events_when_complete: e_jigsaw_lock2
     count_events: logicblock_cnt_jigsaw_mb_qualify_updated{value==2}
 
