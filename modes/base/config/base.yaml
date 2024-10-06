@@ -1098,6 +1098,9 @@ show_player:
     disc_left_sparkle_red:
       loops: 0
       speed: 70
+    domes_collect_letter:
+      loops: 
+      speed: 30
   saw_pops_s:
     pops_on:
       loops: -1
@@ -1139,6 +1142,9 @@ show_player:
     disc_right_sparkle_red:
       loops: 0
       speed: 70    
+    domes_collect_letter:
+      loops: 
+      speed: 30  
   saw_pops_sa:
     pops_on:
       loops: -1
@@ -1180,6 +1186,9 @@ show_player:
     skillshot_color_wash:
       loops: 1
       speed: 8   
+    domes_collect_letter:
+      loops: 
+      speed: 30  
   saw_pops_saw:
     jet_bumpers_pulse:
       speed: 1.25
@@ -1274,6 +1283,9 @@ show_player:
     speaker_falling_glass:
       loops: 1
       speed: 30
+    domes_glitter_falling:
+      loops: 1
+      speed: 20   
 
 # end of ball 3
   #ball_will_end{current_player.ball==3}:

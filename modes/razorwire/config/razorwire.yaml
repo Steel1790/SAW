@@ -986,6 +986,9 @@ show_player:
       speaker_white_sweeps:
         loops: 2
         speed: 20
+      domes_white_sweeps:
+        loops: 2
+        speed: 20       
   #    flash_token:
   #      loops: 5
   #      speed: 20

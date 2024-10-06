@@ -309,7 +309,7 @@
         color1: beartrap
 
     domes_cylon:
-      speed: 4
+      speed: 10
       show_tokens:
         color1: beartrap
 
@@ -331,6 +331,8 @@
   shows:    
     colorwash_opposite_glitter:
       speed: 20
+    domes_colorwash_opposite_glitter:
+      speed: 20   
 
 - time: '+1000ms' #99.0s timestamp (glitter stop)
   shows:     

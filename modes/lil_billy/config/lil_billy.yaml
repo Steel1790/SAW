@@ -201,10 +201,16 @@ show_player:
     lil_billy_rainbow:
       loops: 1
       speed: 20
+    domes_little_billy_colorbomb:
+      loops: 1
+      speed: 40 
   lil_billy_flippers_flippers_lit_hit:
     lil_billy_rainbow:
       loops: 1
       speed: 40
+    domes_little_billy_colorbomb:
+      loops: 1
+      speed: 40 
   mode_lil_billy_stopped:
     skillshot_chase:
       loops: -1

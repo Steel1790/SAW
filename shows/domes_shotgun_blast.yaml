@@ -1,0 +1,93 @@
+#show_version=6
+- time: 0
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+- time: '+1'
+  lights:
+    l_dome_1_7: '080808'
+    l_dome_1_8: '020202'
+    
+- time: '+1'
+  lights:
+    l_dome_1_1: 'FFFCFD'
+    l_dome_1_2: 'FFFCFD'
+    l_dome_1_3: 'FFFCFD'
+    l_dome_1_4: 'FFFCFD'
+    l_dome_1_5: 'FFFCFD'
+    l_dome_1_6: 'FFFCFD'
+    l_dome_1_7: 'FFFCFD'
+    l_dome_1_8: 'FFFCFD'
+    
+- time: '+1'
+  lights:
+    l_dome_2_1: 'FFFCFD'
+    l_dome_2_2: 'FFFCFD'
+    l_dome_2_3: 'FFFCFD'
+    l_dome_2_4: 'FFFCFD'
+    l_dome_2_5: 'FFFCFD'
+    l_dome_2_6: '454444'
+    l_dome_2_7: '716F70'
+    l_dome_2_8: 'FFFCFD'
+    
+- time: '+1'
+  lights:
+    l_dome_2_6: 'FFFCFD'
+    l_dome_2_7: 'FFFCFD'
+    
+- time: '+1'
+  lights:
+    l_dome_3_1: 'FFFCFD'
+    l_dome_3_2: 'FFFCFD'
+    l_dome_3_3: 'FFFCFD'
+    l_dome_3_4: 'FFFCFD'
+    l_dome_3_5: 'FFFCFD'
+    l_dome_3_6: 'F5F2F3'
+    
+- time: '+1'
+  lights:
+    l_dome_3_6: 'FFFCFD'
+    l_dome_3_7: 'FFFCFD'
+    l_dome_3_8: 'FFFCFD'
+    
+- time: '+1'
+  lights:
+    l_dome_4_4: 'C8C6C7'
+    l_dome_4_5: '434242'
+    
+- time: '+1'
+  lights:
+    l_dome_4_1: 'FFFCFD'
+    l_dome_4_2: 'FFFCFD'
+    l_dome_4_3: 'FFFCFD'
+    l_dome_4_4: 'FFFCFD'
+    l_dome_4_5: 'FFFCFD'
+    l_dome_4_6: 'FFFCFD'
+    l_dome_4_7: 'FFFCFD'
+    l_dome_4_8: 'FFFCFD'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    

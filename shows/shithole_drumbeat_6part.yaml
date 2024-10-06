@@ -106,7 +106,7 @@
     leftspeaker: a605e6
     rightspeaker: ff8000
     left_disc: ff8000
-    dome_1: a605e6
+    dome_4: a605e6
 - time: '+100ms' 
   lights:
     shotgun_flasher: off -f500ms
@@ -119,7 +119,7 @@
     leftspeaker: off -f500ms
     rightspeaker: off -f500ms
     left_disc: off -f500ms
-    dome_1: off -f500ms
+    dome_4: off -f500ms
 
 - time: '+300ms' #(da-dum 5)
   lights:
@@ -136,7 +136,11 @@
     leftspeaker: ff8000
     rightspeaker: a605e6
     right_disc: a605e6
-    dome_2: a605e6
+    dome_1: a605e6
+    dome_2: ff8000
+    dome_3: a605e6
+    dome_4: ff8000
+
 - time: '+100ms' 
   lights:
     razorwire_flasher: off -f500ms 
@@ -149,7 +153,10 @@
     leftspeaker: off -f500ms
     rightspeaker: off -f500ms
     right_disc: off -f500ms
+    dome_1: off -f500ms
     dome_2: off -f500ms
+    dome_3: off -f500ms
+    dome_4: off -f500ms
 
 - time: '+200ms' #(da-dum 6)
   lights:
@@ -167,7 +174,11 @@
     leftspeaker: a605e6
     rightspeaker: ff8000
     middle_disc: a605e6  
-    dome_3: a605e6
+    dome_1: ff8000
+    dome_2: a605e6
+    dome_3: ff8000
+    dome_4: a605e6
+
 - time: '+100ms' 
   lights:
     discs: off -f500ms 
@@ -199,6 +210,9 @@
     leftspeaker: off -f500ms
     rightspeaker: off -f500ms
     middle_disc: off -f500ms
+    dome_1: off -f500ms
+    dome_2: off -f500ms
     dome_3: off -f500ms
+    dome_4: off -f500ms
 
 - time: '+1250ms' #(pause)
