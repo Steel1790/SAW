@@ -1,0 +1,380 @@
+#show_version=6
+- time: 0
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+- time: '+1'
+  lights:
+    l_dome_4_1: 'FFFFFF'
+    l_dome_4_2: 'FFFFFF'
+    l_dome_4_3: 'FFFFFF'
+    l_dome_4_4: 'C3C3C3'
+    l_dome_4_5: 'F6F6F6'
+    l_dome_4_6: 'FFFFFF'
+    l_dome_4_7: 'FFFFFF'
+    l_dome_4_8: 'FFFFFF'
+    
+- time: '+1'
+  lights:
+    l_dome_4_4: 'FFFFFF'
+    l_dome_4_5: 'FFFFFF'
+    
+- time: '+1'
+  lights:
+    l_dome_4_1: '505050'
+    l_dome_4_2: 'ECECEC'
+    l_dome_4_3: 'F8F8F8'
+    l_dome_4_5: 'FBFBFB'
+    l_dome_4_6: 'EFEFEF'
+    l_dome_4_7: '737373'
+    l_dome_4_8: '202020'
+    
+- time: '+1'
+  lights:
+    l_dome_3_1: 'FFFFFF'
+    l_dome_3_2: 'FFFFFF'
+    l_dome_3_3: 'FFFFFF'
+    l_dome_3_4: 'FFFFFF'
+    l_dome_3_5: 'FFFFFF'
+    l_dome_3_6: 'FFFFFF'
+    l_dome_3_7: 'FFFFFF'
+    l_dome_3_8: 'FFFFFF'
+    l_dome_4_1: '898989'
+    l_dome_4_2: '959595'
+    l_dome_4_3: '4E4E4E'
+    l_dome_4_4: '000000'
+    l_dome_4_5: '000000'
+    l_dome_4_6: '000000'
+    l_dome_4_7: '000000'
+    l_dome_4_8: '080808'
+    
+- time: '+1'
+  lights:
+    l_dome_4_1: 'FFFFFF'
+    l_dome_4_2: 'FFFFFF'
+    l_dome_4_3: 'FFFFFF'
+    l_dome_4_4: 'FFFFFF'
+    l_dome_4_5: 'FFFFFF'
+    l_dome_4_6: 'FFFFFF'
+    l_dome_4_7: 'FFFFFF'
+    l_dome_4_8: 'FFFFFF'
+    
+- time: '+1'
+  lights:
+    l_dome_3_1: '000000'
+    l_dome_3_2: '393939'
+    l_dome_3_3: 'EDEDED'
+    l_dome_3_4: 'F1F1F1'
+    l_dome_3_5: 'DDDDDD'
+    l_dome_3_6: '414141'
+    l_dome_3_7: '000000'
+    l_dome_3_8: '000000'
+    l_dome_4_1: 'F1F1F1'
+    l_dome_4_2: 'F0F0F0'
+    l_dome_4_3: 'F6F6F6'
+    l_dome_4_8: 'FAFAFA'
+    
+- time: '+1'
+  lights:
+    l_dome_3_2: '000000'
+    l_dome_3_3: '000000'
+    l_dome_3_4: '000000'
+    l_dome_3_5: '000000'
+    l_dome_3_6: '000000'
+    l_dome_4_1: '000000'
+    l_dome_4_2: '000000'
+    l_dome_4_3: '000000'
+    l_dome_4_4: '000000'
+    l_dome_4_5: '000000'
+    l_dome_4_6: '000000'
+    l_dome_4_7: '000000'
+    l_dome_4_8: '000000'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+- time: '+1'
+  lights:
+    l_dome_3_1: '2D2D2D'
+    l_dome_3_2: '232323'
+    
+- time: '+1'
+  lights:
+    l_dome_3_1: 'FFFFFF'
+    l_dome_3_2: 'FFFFFF'
+    l_dome_3_3: 'FFFFFF'
+    l_dome_3_4: 'FFFFFF'
+    l_dome_3_5: 'FFFFFF'
+    l_dome_3_6: 'FFFFFF'
+    l_dome_3_7: 'FFFFFF'
+    l_dome_3_8: 'FFFFFF'
+    
+- time: '+1'
+  lights:
+    l_dome_2_1: 'FFFFFF'
+    l_dome_2_2: 'FFFFFF'
+    l_dome_2_3: 'FFFFFF'
+    l_dome_2_4: 'FFFFFF'
+    l_dome_2_5: 'FFFFFF'
+    l_dome_2_6: 'FFFFFF'
+    l_dome_2_7: 'FFFFFF'
+    l_dome_2_8: 'FFFFFF'
+    l_dome_3_1: 'F8F8F8'
+    l_dome_3_2: 'F9F9F9'
+    
+- time: '+1'
+  lights:
+    l_dome_3_1: '000000'
+    l_dome_3_2: '000000'
+    l_dome_3_3: '000000'
+    l_dome_3_4: '000000'
+    l_dome_3_5: '000000'
+    l_dome_3_6: '000000'
+    l_dome_3_7: '000000'
+    l_dome_3_8: '000000'
+    
+- time: '+1'
+  lights:
+    l_dome_2_1: '000000'
+    l_dome_2_2: '000000'
+    l_dome_2_3: '6F6F6F'
+    l_dome_2_4: 'C1C1C1'
+    l_dome_2_5: '595959'
+    l_dome_2_6: '000000'
+    l_dome_2_7: '000000'
+    l_dome_2_8: '000000'
+    
+- time: '+1'
+  lights:
+    l_dome_2_3: '000000'
+    l_dome_2_4: '000000'
+    l_dome_2_5: '000000'
+    
+- time: '+1'
+  lights:
+    l_dome_2_1: '454545'
+    l_dome_2_2: '515151'
+    l_dome_4_1: 'FFFFFF'
+    l_dome_4_2: 'FFFFFF'
+    l_dome_4_3: 'FFFFFF'
+    l_dome_4_4: 'FFFFFF'
+    l_dome_4_5: 'FFFFFF'
+    l_dome_4_6: 'FFFFFF'
+    l_dome_4_7: 'FFFFFF'
+    l_dome_4_8: 'FFFFFF'
+    
+- time: '+1'
+  lights:
+    l_dome_2_1: 'FFFFFF'
+    l_dome_2_2: 'FFFFFF'
+    l_dome_2_3: 'FFFFFF'
+    l_dome_2_4: 'FFFFFF'
+    l_dome_2_5: 'FFFFFF'
+    l_dome_2_6: 'FFFFFF'
+    l_dome_2_7: 'FFFFFF'
+    l_dome_2_8: 'FFFFFF'
+    
+- time: '+1'
+  lights:
+    l_dome_2_1: 'F8F8F8'
+    l_dome_2_2: 'F7F7F7'
+    l_dome_3_1: '737373'
+    l_dome_3_7: '8A8A8A'
+    l_dome_3_8: 'E3E3E3'
+    
+- time: '+1'
+  lights:
+    l_dome_2_1: '000000'
+    l_dome_2_2: '000000'
+    l_dome_2_3: '000000'
+    l_dome_2_4: '000000'
+    l_dome_2_5: '000000'
+    l_dome_2_6: '000000'
+    l_dome_2_7: '000000'
+    l_dome_2_8: '000000'
+    l_dome_3_1: 'FFFFFF'
+    l_dome_3_2: 'FFFFFF'
+    l_dome_3_3: 'FFFFFF'
+    l_dome_3_4: 'FFFFFF'
+    l_dome_3_5: 'FFFFFF'
+    l_dome_3_6: 'FFFFFF'
+    l_dome_3_7: 'FFFFFF'
+    l_dome_3_8: 'FFFFFF'
+    
+- time: '+1'
+  lights:
+    l_dome_3_1: 'F7F7F7'
+    l_dome_3_7: 'F6F6F6'
+    l_dome_3_8: 'EFEFEF'
+    l_dome_4_1: '000000'
+    l_dome_4_2: '000000'
+    l_dome_4_3: '000000'
+    l_dome_4_4: '333333'
+    l_dome_4_5: 'ABABAB'
+    l_dome_4_6: 'B6B6B6'
+    l_dome_4_7: '737373'
+    l_dome_4_8: '000000'
+    
+- time: '+1'
+  lights:
+    l_dome_3_1: '000000'
+    l_dome_3_2: '000000'
+    l_dome_3_3: '000000'
+    l_dome_3_4: '000000'
+    l_dome_3_5: '000000'
+    l_dome_3_6: '000000'
+    l_dome_3_7: '000000'
+    l_dome_3_8: '000000'
+    l_dome_4_4: '000000'
+    l_dome_4_5: '000000'
+    l_dome_4_6: '000000'
+    l_dome_4_7: '000000'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+- time: '+1'
+  lights:
+    l_dome_3_1: 'FFFFFF'
+    l_dome_3_2: 'FFFFFF'
+    l_dome_3_3: 'FFFFFF'
+    l_dome_3_4: 'FFFFFF'
+    l_dome_3_5: '747474'
+    l_dome_3_6: '686868'
+    l_dome_3_7: 'EDEDED'
+    l_dome_3_8: 'FFFFFF'
+    
+- time: '+1'
+  lights:
+    l_dome_3_5: 'FFFFFF'
+    l_dome_3_6: 'FFFFFF'
+    l_dome_3_7: 'FFFFFF'
+    
+- time: '+1'
+  lights:
+    l_dome_2_1: 'FFFFFF'
+    l_dome_2_2: 'FFFFFF'
+    l_dome_2_3: 'FFFFFF'
+    l_dome_2_4: 'FFFFFF'
+    l_dome_2_5: 'FFFFFF'
+    l_dome_2_6: 'FFFFFF'
+    l_dome_2_7: 'FFFFFF'
+    l_dome_2_8: 'FFFFFF'
+    l_dome_3_1: '000000'
+    l_dome_3_2: '000000'
+    l_dome_3_3: '161616'
+    l_dome_3_4: 'C2C2C2'
+    l_dome_3_5: 'F4F4F4'
+    l_dome_3_6: 'F5F5F5'
+    l_dome_3_7: 'DEDEDE'
+    l_dome_3_8: '0E0E0E'
+    
+- time: '+1'
+  lights:
+    l_dome_3_3: '000000'
+    l_dome_3_4: '000000'
+    l_dome_3_5: '000000'
+    l_dome_3_6: '000000'
+    l_dome_3_7: '000000'
+    l_dome_3_8: '000000'
+    
+- time: '+1'
+  lights:
+    l_dome_2_1: '000000'
+    l_dome_2_2: '000000'
+    l_dome_2_3: '000000'
+    l_dome_2_4: '484848'
+    l_dome_2_5: '000000'
+    l_dome_2_6: '000000'
+    l_dome_2_7: '000000'
+    l_dome_2_8: '000000'
+    
+- time: '+1'
+  lights:
+    l_dome_2_4: '000000'
+    
+- time: '+1'
+  lights:
+    l_dome_2_1: 'FFFFFF'
+    l_dome_2_2: 'FFFFFF'
+    l_dome_2_3: 'FFFFFF'
+    l_dome_2_4: 'D5D5D5'
+    l_dome_2_5: '656565'
+    l_dome_2_6: '595959'
+    l_dome_2_7: 'B7B7B7'
+    l_dome_2_8: 'FFFFFF'
+    
+- time: '+1'
+  lights:
+    l_dome_2_4: 'FFFFFF'
+    l_dome_2_5: 'FFFFFF'
+    l_dome_2_6: 'FFFFFF'
+    l_dome_2_7: 'FFFFFF'
+    
+- time: '+1'
+  lights:
+    l_dome_2_1: '000000'
+    l_dome_2_2: '000000'
+    l_dome_2_3: '343434'
+    l_dome_2_4: 'EFEFEF'
+    l_dome_2_5: 'F7F7F7'
+    l_dome_2_6: 'F8F8F8'
+    l_dome_2_7: 'F1F1F1'
+    l_dome_2_8: '747474'
+    
+- time: '+1'
+  lights:
+    l_dome_2_3: '000000'
+    l_dome_2_4: '000000'
+    l_dome_2_5: '000000'
+    l_dome_2_6: '000000'
+    l_dome_2_7: '000000'
+    l_dome_2_8: '000000'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    

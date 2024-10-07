@@ -1,0 +1,89 @@
+#show_version=6
+
+#CHOOSE ONE OF THE TWO OPTIONS. COMMENT OUT THE OTHER.
+
+#OPTION 1 - CLOCKWISE CIRCLE REPEAT WITH FADE OUT
+# - time: 0
+#   lights:
+#     l_dome_1_1: (color1)
+# - time: '+1'
+#   lights:
+#     l_dome_1_2: (color1)
+# - time: '+1'
+#   lights:
+#     l_dome_1_3: (color1)
+# - time: '+1'
+#   lights:
+#     l_dome_1_4: (color1)
+# - time: '+1'
+#   lights:
+#     l_dome_1_5: (color1)
+# - time: '+1'
+#   lights:
+#     l_dome_1_6: (color1)
+# - time: '+1'
+#   lights:
+#     l_dome_1_7: (color1)
+# - time: '+1'
+#   lights:
+#     l_dome_1_8: (color1)
+# - time: '+1'
+#   lights:
+#     l_dome_1_1: off -f200ms
+#     l_dome_1_2: off -f200ms
+#     l_dome_1_3: off -f200ms
+#     l_dome_1_4: off -f200ms
+#     l_dome_1_5: off -f200ms
+#     l_dome_1_6: off -f200ms
+#     l_dome_1_7: off -f200ms
+#     l_dome_1_8: off -f200ms
+
+#OPTION 2 - OVERLAPS BETWEEN INSERTS CLOCKWISE AND THEN COUNTERCLOCKWISE CYLON STYLE
+- time: 0
+  lights:
+    l_dome_1_1: (color1)
+          
+- time: '+1'
+  lights:
+    l_dome_1_2: (color1)
+  
+- time: '+1'
+  lights:
+    l_dome_1_3: (color1)
+   
+- time: '+1'
+  lights:
+    l_dome_1_4: (color1)
+    l_dome_1_1: off
+   
+- time: '+1'
+  lights:
+    l_dome_1_5: (color1)
+    l_dome_1_2: off
+
+- time: '+1'
+  lights:
+    l_dome_1_6: (color1)
+    l_dome_1_3: off
+
+- time: '+1'
+  lights:
+    l_dome_1_7: (color1)    
+    l_dome_1_4: off
+  
+- time: '+1'
+  lights:
+    l_dome_1_8: (color1)  
+    l_dome_1_5: off
+      
+- time: '+1'
+  lights:
+    l_dome_1_6: off
+  
+- time: '+1'
+  lights:
+    l_dome_1_7: off
+     
+- time: '+1'
+  lights:
+    l_dome_1_8: off

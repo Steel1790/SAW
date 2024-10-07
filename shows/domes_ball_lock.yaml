@@ -1,0 +1,376 @@
+#show_version=6
+- time: 0
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+- time: '+1'
+  lights:
+    l_dome_1_3: '002500'
+    
+- time: '+1'
+  lights:
+    l_dome_1_2: '00FD00'
+    l_dome_1_3: '00FD00'
+    l_dome_1_4: '00FD00'
+    l_dome_1_5: '00FD00'
+    l_dome_1_6: '000200'
+    l_dome_2_6: '00BB00'
+    l_dome_2_7: '009000'
+    
+- time: '+1'
+  lights:
+    l_dome_1_1: '00FD00'
+    l_dome_1_6: '00FD00'
+    l_dome_1_7: '00FD00'
+    l_dome_1_8: '00FD00'
+    l_dome_2_1: '00E000'
+    l_dome_2_3: '00CC00'
+    l_dome_2_4: '00FD00'
+    l_dome_2_5: '00FD00'
+    l_dome_2_6: '00FD00'
+    l_dome_2_7: '00FD00'
+    l_dome_2_8: '00FD00'
+    
+- time: '+1'
+  lights:
+    l_dome_1_2: '000000'
+    l_dome_1_3: '000000'
+    l_dome_1_4: '000000'
+    l_dome_1_5: '000000'
+    l_dome_2_1: '00FD00'
+    l_dome_2_2: '00FD00'
+    l_dome_2_3: '00FD00'
+    l_dome_2_6: '009E00'
+    
+- time: '+1'
+  lights:
+    l_dome_1_1: '000000'
+    l_dome_1_6: '000000'
+    l_dome_1_7: '000000'
+    l_dome_1_8: '000000'
+    l_dome_2_1: '005400'
+    l_dome_2_2: '009E00'
+    l_dome_2_3: '000000'
+    l_dome_2_4: '000000'
+    l_dome_2_5: '000000'
+    l_dome_2_6: '000000'
+    l_dome_2_7: '000000'
+    l_dome_2_8: '000000'
+    
+- time: '+1'
+  lights:
+    l_dome_2_1: '000000'
+    l_dome_2_2: '000000'
+    
+- time: '+1'
+  lights:
+    l_dome_1_2: '73CD74'
+    l_dome_1_3: '8EFC8F'
+    l_dome_1_4: '8EFC8F'
+    l_dome_1_5: '060B06'
+    
+- time: '+1'
+  lights:
+    l_dome_1_1: '8FFC8F'
+    l_dome_1_2: '8FFC8F'
+    l_dome_1_3: '8FFC8F'
+    l_dome_1_4: '8FFC8F'
+    l_dome_1_5: '8FFC8F'
+    l_dome_1_6: '8FFC8F'
+    l_dome_1_7: '8AF38A'
+    l_dome_1_8: '2D502D'
+    l_dome_2_4: '8BF58B'
+    l_dome_2_5: '8FFC8F'
+    l_dome_2_6: '8FFC8F'
+    l_dome_2_7: '8FFC8F'
+    l_dome_2_8: '8FFC8F'
+    
+- time: '+1'
+  lights:
+    l_dome_1_7: '8FFC8F'
+    l_dome_1_8: '8FFC8F'
+    l_dome_2_1: '8FFC8F'
+    l_dome_2_2: '8FFC8F'
+    l_dome_2_3: '8FFC8F'
+    l_dome_2_4: '8FFC8F'
+    
+- time: '+1'
+  lights:
+    l_dome_1_1: '2B4C2B'
+    l_dome_1_2: '000000'
+    l_dome_1_3: '000000'
+    l_dome_1_4: '000000'
+    l_dome_1_5: '000000'
+    l_dome_1_6: '000000'
+    l_dome_2_4: '020402'
+    l_dome_2_5: '000000'
+    l_dome_2_6: '000000'
+    l_dome_2_7: '000000'
+    l_dome_2_8: '2B4C2B'
+    
+- time: '+1'
+  lights:
+    l_dome_1_1: '000000'
+    l_dome_1_7: '000000'
+    l_dome_1_8: '000000'
+    l_dome_2_1: '000000'
+    l_dome_2_2: '000000'
+    l_dome_2_3: '000000'
+    l_dome_2_4: '000000'
+    l_dome_2_8: '000000'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+- time: '+1'
+  lights:
+    l_dome_3_5: '00FD00'
+    l_dome_3_6: '00FD00'
+    l_dome_3_7: '00FD00'
+    
+- time: '+1'
+  lights:
+    l_dome_3_1: '00FD00'
+    l_dome_3_2: '00FD00'
+    l_dome_3_3: '00FD00'
+    l_dome_3_4: '00FD00'
+    l_dome_3_8: '00FD00'
+    
+- time: '+1'
+  lights:
+    l_dome_1_2: '00B000'
+    l_dome_1_3: '00FD00'
+    l_dome_1_4: '00FD00'
+    l_dome_1_5: '006100'
+    l_dome_3_5: '000000'
+    l_dome_3_6: '000000'
+    l_dome_3_7: '000000'
+    
+- time: '+1'
+  lights:
+    l_dome_1_1: '00FD00'
+    l_dome_1_2: '00FD00'
+    l_dome_1_5: '00FD00'
+    l_dome_1_6: '00FD00'
+    l_dome_1_7: '00FC00'
+    l_dome_1_8: '00F200'
+    l_dome_2_4: '004F00'
+    l_dome_2_5: '00FD00'
+    l_dome_2_6: '00FD00'
+    l_dome_2_7: '00FD00'
+    l_dome_2_8: '00FD00'
+    l_dome_3_1: '000000'
+    l_dome_3_2: '000000'
+    l_dome_3_3: '000000'
+    l_dome_3_4: '000000'
+    l_dome_3_8: '000000'
+    
+- time: '+1'
+  lights:
+    l_dome_1_3: '00EA00'
+    l_dome_1_4: '00EE00'
+    l_dome_1_7: '00FD00'
+    l_dome_1_8: '00FD00'
+    l_dome_2_1: '00FD00'
+    l_dome_2_2: '00FD00'
+    l_dome_2_3: '00FD00'
+    l_dome_2_4: '00FD00'
+    
+- time: '+1'
+  lights:
+    l_dome_1_1: '000400'
+    l_dome_1_2: '000000'
+    l_dome_1_3: '000000'
+    l_dome_1_4: '000000'
+    l_dome_1_5: '000000'
+    l_dome_1_6: '000000'
+    l_dome_1_7: '00C100'
+    l_dome_1_8: '00FC00'
+    l_dome_2_4: '006B00'
+    l_dome_2_5: '000000'
+    l_dome_2_6: '000000'
+    l_dome_2_7: '000000'
+    l_dome_2_8: '00F200'
+    l_dome_3_6: '5A9D5A'
+    
+- time: '+1'
+  lights:
+    l_dome_1_1: '000000'
+    l_dome_1_7: '000000'
+    l_dome_1_8: '000000'
+    l_dome_2_1: '000000'
+    l_dome_2_2: '000000'
+    l_dome_2_3: '000000'
+    l_dome_2_4: '000000'
+    l_dome_2_8: '000000'
+    l_dome_3_4: '91FC90'
+    l_dome_3_5: '91FC90'
+    l_dome_3_6: '91FC90'
+    l_dome_3_7: '91FC90'
+    l_dome_3_8: '91FC90'
+    
+- time: '+1'
+  lights:
+    l_dome_3_1: '91FC90'
+    l_dome_3_2: '91FC90'
+    l_dome_3_3: '91FC90'
+    
+- time: '+1'
+  lights:
+    l_dome_3_4: '0E190E'
+    l_dome_3_5: '000000'
+    l_dome_3_6: '000000'
+    l_dome_3_7: '000000'
+    l_dome_3_8: '223B22'
+    
+- time: '+1'
+  lights:
+    l_dome_3_1: '000000'
+    l_dome_3_2: '000000'
+    l_dome_3_3: '000000'
+    l_dome_3_4: '000000'
+    l_dome_3_8: '000000'
+    
+- time: '+1'
+  lights:
+    l_dome_4_5: '002800'
+    l_dome_4_6: '002D00'
+    
+- time: '+1'
+  lights:
+    l_dome_4_1: '00FD00'
+    l_dome_4_2: '00FD00'
+    l_dome_4_3: '00FD00'
+    l_dome_4_4: '00FD00'
+    l_dome_4_5: '00FD00'
+    l_dome_4_6: '00FD00'
+    l_dome_4_7: '00FD00'
+    l_dome_4_8: '00FD00'
+    
+- time: '+1'
+  lights:
+    l_dome_4_3: '003700'
+    l_dome_4_4: '000000'
+    l_dome_4_5: '000000'
+    l_dome_4_6: '000000'
+    l_dome_4_7: '000000'
+    l_dome_4_8: '003100'
+    
+- time: '+1'
+  lights:
+    l_dome_3_6: '003C00'
+    l_dome_4_1: '000000'
+    l_dome_4_2: '000000'
+    l_dome_4_3: '000000'
+    l_dome_4_8: '000000'
+    
+- time: '+1'
+  lights:
+    l_dome_3_4: '00FD00'
+    l_dome_3_5: '00FD00'
+    l_dome_3_6: '00FD00'
+    l_dome_3_7: '00FD00'
+    l_dome_3_8: '00FD00'
+    
+- time: '+1'
+  lights:
+    l_dome_3_1: '00FD00'
+    l_dome_3_2: '00FD00'
+    l_dome_3_3: '00FD00'
+    
+- time: '+1'
+  lights:
+    l_dome_3_4: '000000'
+    l_dome_3_5: '000000'
+    l_dome_3_6: '000000'
+    l_dome_3_7: '000000'
+    l_dome_3_8: '000400'
+    l_dome_4_4: '080E08'
+    l_dome_4_5: '93FB90'
+    l_dome_4_6: '93FC91'
+    l_dome_4_7: '4A7E48'
+    
+- time: '+1'
+  lights:
+    l_dome_3_1: '000000'
+    l_dome_3_2: '000000'
+    l_dome_3_3: '000000'
+    l_dome_3_8: '000000'
+    l_dome_4_1: '93FC91'
+    l_dome_4_2: '93FC91'
+    l_dome_4_3: '93FC91'
+    l_dome_4_4: '93FC91'
+    l_dome_4_5: '93FC91'
+    l_dome_4_7: '93FC91'
+    l_dome_4_8: '93FC91'
+    
+- time: '+1'
+  lights:
+    l_dome_4_3: '000000'
+    l_dome_4_4: '000000'
+    l_dome_4_5: '000000'
+    l_dome_4_6: '000000'
+    l_dome_4_7: '000000'
+    l_dome_4_8: '1C311C'
+    
+- time: '+1'
+  lights:
+    l_dome_4_1: '000000'
+    l_dome_4_2: '000000'
+    l_dome_4_8: '000000'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+- time: '+1'
+  lights:
+    l_dome_4_4: '00FD00'
+    l_dome_4_5: '00FD00'
+    l_dome_4_6: '00FD00'
+    l_dome_4_7: '00FD00'
+    
+- time: '+1'
+  lights:
+    l_dome_4_1: '00FD00'
+    l_dome_4_2: '00FD00'
+    l_dome_4_3: '00FD00'
+    l_dome_4_8: '00FD00'
+    
+- time: '+1'
+  lights:
+    l_dome_4_1: '000000'
+    l_dome_4_2: '000000'
+    l_dome_4_3: '000000'
+    l_dome_4_4: '000000'
+    l_dome_4_5: '000000'
+    l_dome_4_6: '000000'
+    l_dome_4_7: '000000'
+    l_dome_4_8: '000000'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
