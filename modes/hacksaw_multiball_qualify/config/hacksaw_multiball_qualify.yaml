@@ -17,13 +17,14 @@ accruals:
     reset_on_complete: false
     persist_state: true
     disable_on_complete: false
+    start_enabled: true
     reset_events: multiball_lock_mbl_hacksaw_locked_ball
 
 multiball_locks:
   mbl_hacksaw:
     balls_to_lock: 3
     lock_devices: bd_hacksaw
-    enable_events: logicblock_acc_hacksaw_mb_qualify_complete
+    enable_events: logicblock_cnt_hacksaw_mb_show_progress_updated{device.counters.cnt_hacksaw_mb_show_progress.value == 2}, logicblock_cnt_hacksaw_mb_show_progress_updated{device.counters.cnt_hacksaw_mb_show_progress.value == 5}, logicblock_cnt_hacksaw_mb_show_progress_updated{device.counters.cnt_hacksaw_mb_show_progress.value == 8}
     disable_events: multiball_lock_mbl_hacksaw_locked_ball 
 
 counters:
@@ -38,7 +39,16 @@ counters:
     disable_on_complete: false   
     count_events: multiball_lock_mbl_hacksaw_locked_ball
     events_when_complete: logicblock_hacksaw_multiball_qualify_complete
-
+  cnt_hacksaw_mb_show_progress:
+    starting_count: 0
+    count_complete_value: 9
+    enable_events: 
+    disable_events: 
+    start_enabled: true
+    persist_state: true
+    reset_on_complete: true
+    disable_on_complete: false   
+    count_events: logicblock_acc_hacksaw_mb_qualify_hit, multiball_lock_mbl_hacksaw_locked_ball
 #commented out physical ball lock section until future mpf fix.
 # multiball_locks:
 #   mbl_hacksaw:
@@ -121,33 +131,39 @@ sound_player:
       action: play
 
 show_player:
-  logicblock_acc_hacksaw_mb_qualify_complete{device.multiball_locks.mbl_hacksaw.locked_balls == 0}:
+  logicblock_cnt_hacksaw_mb_show_progress_updated{device.counters.cnt_hacksaw_mb_show_progress.value == 2}:
     sh_hacksaw_mb_qualify_hit_ready:
       show_tokens:
         leds: l_hmb_lock_1
-  multiball_lock_mbl_hacksaw_locked_ball{device.multiball_locks.mbl_hacksaw.locked_balls == 1}:
+  logicblock_cnt_hacksaw_mb_show_progress_updated{device.counters.cnt_hacksaw_mb_show_progress.value == 3}:
     sh_hacksaw_mb_qualify_hit_locked:
       show_tokens:
         leds: l_hmb_lock_1
     hacksaw_mb_lock:
       loops: 0
       speed: 30
-  logicblock_acc_hacksaw_mb_qualify_complete{device.multiball_locks.mbl_hacksaw.locked_balls == 1}:
+  logicblock_cnt_hacksaw_mb_show_progress_updated{device.counters.cnt_hacksaw_mb_show_progress.value == 5}:
     sh_hacksaw_mb_qualify_hit_ready:
       show_tokens:
         leds: l_hmb_lock_2
-  multiball_lock_mbl_hacksaw_locked_ball{device.multiball_locks.mbl_hacksaw.locked_balls == 2}:
+    sh_hacksaw_mb_qualify_hit_locked:
+      show_tokens:
+        leds: l_hmb_lock_1
+  logicblock_cnt_hacksaw_mb_show_progress_updated{device.counters.cnt_hacksaw_mb_show_progress.value == 6}:
     sh_hacksaw_mb_qualify_hit_locked:
       show_tokens:
         leds: l_hmb_lock_1, l_hmb_lock_2
     hacksaw_mb_lock:
       loops: 0
       speed: 30
-  logicblock_acc_hacksaw_mb_qualify_complete{device.multiball_locks.mbl_hacksaw.locked_balls == 2}:
+  logicblock_cnt_hacksaw_mb_show_progress_updated{device.counters.cnt_hacksaw_mb_show_progress.value == 8}:
     sh_hacksaw_mb_qualify_hit_ready:
       show_tokens:
         leds: l_hmb_lock_3
-  multiball_lock_mbl_hacksaw_lock_locked_ball{device.multiball_locks.mbl_hacksaw.locked_balls == 3}:
+    sh_hacksaw_mb_qualify_hit_locked:
+      show_tokens:
+        leds: l_hmb_lock_1, l_hmb_lock_2
+  logicblock_cnt_hacksaw_mb_show_progress_updated{device.counters.cnt_hacksaw_mb_show_progress.value == 9}:
     sh_hacksaw_mb_qualify_hit_locked:
       show_tokens:
         leds: l_hmb_lock_1, l_hmb_lock_2, l_hmb_lock_3

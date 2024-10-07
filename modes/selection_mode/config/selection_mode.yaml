@@ -8,6 +8,7 @@ mode:
 mode_settings:
   selectable_items: 
     - lilbilly{current_player.lil_billy_qualified==1}
+    - reawakening{current_player.reawakening_qualified==1 and current_player.reawakening_attempted==0}
     - thekeytofreedom{current_player.modes_completed>=4 and current_player.the_key_to_freedom_mode_attempted==0}
     - survivalinstinct{current_player.puzzle_pieces>=2 and current_player.survival_instinct_mode_attempted==0}
     - drillchair{current_player.drillchair_mode_complete==0}

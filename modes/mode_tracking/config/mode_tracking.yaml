@@ -628,6 +628,11 @@ variable_player:
     zeptest_attempted:
       int: 1
       action: set
+#reawakening mode flag
+  selection_mode_reawakening_selected:
+    reawakening_phaseone_attempted:
+      int: 1
+      action: set
 
   logicblock_acc_make_your_choice_qualify_hit:
     choice_hurryup_hits:
