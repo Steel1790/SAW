@@ -1,0 +1,142 @@
+#config_version=6                 
+mode:
+  start_events: selection_mode_reawakening_selected
+  stop_events: stop_mode_reawakening, mode_reawakening_complete, ball_ended, ball_will_end
+  priority: 184
+  restart_on_next_ball: true
+  code: mpf.modes.carousel.code.carousel.Carousel
+mode_settings:
+#two version of each slide. image split down middle. one side is highlighted. another copy is the right side highlighted.
+  selectable_items: 
+    - phaseone_apprentice{current_player.reawakening_phaseone_attempted==1}
+    - phaseone_survivor{current_player.reawakening_phaseone_attempted==1}
+    - phasetwo_left_apprentice{current_player.reawakening_phaseone_completed==1 and current_player.reawakening_apprentice_selected==1}
+    - phasetwo_right_apprentice{current_player.reawakening_phaseone_completed==1 and current_player.reawakening_apprentice_selected==1}
+    - phasetwo_left_survivor{current_player.reawakening_phaseone_completed==1 and current_player.reawakening_survivor_selected==1}
+    - phasetwo_right_survivor{current_player.reawakening_phaseone_completed==1 and current_player.reawakening_survivor_selected==1}
+    - phasethree_apprentice{current_player.reawakening_phasetwo_completed==1 and current_player.reawakening_apprentice_selected==1}
+    - phasethree_survivor{current_player.reawakening_phasetwo_completed==1 and current_player.reawakening_survivor_selected==1}
+  select_item_events: s_action_button_active
+  next_item_events: s_left_flipper_button_active
+  previous_item_events: s_right_flipper_button_active
+
+variable_player:
+  carousel_phaseone_apprentice_selected:
+    selected_mode:
+      action: set
+      string: 'selection_mode_phaseone_apprentice_highlighted'
+  carousel_phaseone_survivor_selected:
+    selected_mode:
+      action: set
+      string: 'selection_mode_phaseone_survivor_highlighted'
+  carousel_phasetwo_left_apprentice_selected:
+    selected_mode:
+      action: set
+      string: 'selection_mode_phasetwo_left_apprentice_highlighted'
+  carousel_phasetwo_right_apprentice_selected:
+    selected_mode:
+      action: set
+      string: 'selection_mode_phasetwo_right_apprentice_highlighted'
+  carousel_phasetwo_left_survivor_selected:
+    selected_mode:
+      action: set
+      string: 'selection_mode_phasetwo_left_survivor_highlighted'
+  carousel_phasetwo_right_survivor_selected:
+    selected_mode:
+      action: set
+      string: 'selection_mode_phasetwo_right_survivor_highlighted'
+  carousel_phasethree_apprentice_selected:
+    selected_mode:
+      action: set
+      string: 'selection_mode_phasethree_apprentice_highlighted'
+  carousel_phasethree_survivor_selected:
+    selected_mode:
+      action: set
+      string: 'selection_mode_phasethree_survivor_highlighted'
+# final wizard mode
+# 3 tier - choose your own adventure
+# back to scoop each tier completion to choose next path/decision
+
+# phase 1 - mode select
+# left = apprentice - revisit each of the traps and clean up potential evidence left behind.
+#                     Hit puzzle pieces left to right. 20 second timer after you hit each shot or it reverts back a step.
+#                     After collect 5th piece. Back to lit scoop to choose phase 2 options.
+# right = survivor  - you've survived the trap but now you must escape the building to find your "key to freedom". 
+#                     shoot stand ups left to right while alternating shots to X drop target to navigate out of the building. 
+#                     Upon hitting last X marks the spot, go back to lit scoop to choose phase 2 options.
+
+# phase 2 
+# apprentice left option - assist in abduncting next game subjects
+# apprentice right option - assist in staging next set of games
+
+# survivor left option - vengeance .. collect clues to track down jigsaw
+# survivor right option - assist in savings others
+
+# phase 3
+# apprentice - let the games begin.. dodge interuptions and see games go according to plan
+# survivor - showdown with confronting jigsaw
+
+# accruals:
+#   acc_apprentice_phaseone:
+#     events:
+#       - shot_reawakening_razorwire_sp_reawakening_phaseone_lit_hit
+#       - shot_reawakening_drillchair_sp_reawakening_phaseone_lit_hit
+#       - shot_reawakening_quadshotgun_sp_reawakening_phaseone_lit_hit
+#       - shot_reawakening_flammablejelly_sp_reawakening_phaseone_lit_hit
+#       - shot_reawakening_zeptest_sp_reawakening_phaseone_lit_hit
+#     reset_on_complete: false
+#     persist_state: true
+#     disable_on_complete: false
+
+timers:
+  phaseone_apprentice_timer:
+    start_value: 0
+    end_value: 20
+    direction: up
+    control_events:
+      - action: start
+#update to when opening slide ends  
+        event: mode_reawakening_started
+      - action: reset
+        event: shot_reawakening_razorwire_sp_reawakening_phaseone_lit_hit
+      - action: reset
+        event: shot_reawakening_drillchair_sp_reawakening_phaseone_lit_hit
+      - action: reset
+        event: shot_reawakening_quadshotgun_sp_reawakening_phaseone_lit_hit
+      - action: reset
+        event: shot_reawakening_flammablejelly_sp_reawakening_phaseone_lit_hit
+      - action: reset   
+        event: e_reawakening_phaseone_shot_reset
+      - action: stop
+        event: shot_reawakening_zeptest_sp_reawakening_phaseone_lit_hit  
+        
+event_player: 
+  player_reawakening_phaseone_apprentice_timer_tick{value==20}: e_reawakening_phaseone_shot_reset
+
+# shots:
+#   shot_reawakening_razorwire:
+#     switches: s_left_top_jet_bumper, s_right_top_jet_bumper, s_lower_top_jet_bumper
+#     profile: sp_reawakening_phaseone
+#     show_tokens:
+#       leds: razorwire_flasher
+#     control_events:
+#       - events: mode_reawakening_started
+#         state: 1
+#       - events: shot_reawakening_razorwire_sp_reawakening_phaseone_lit_hit
+#         state: 0
+slides:
+  test1:
+    widgets:
+    - type: video
+      video: thekeytofreedompuzzle
+  test2:
+    widgets:
+    - type: video
+      video: survivalinstinctpuzzle
+slide_player:
+  reawakening_phaseone_apprentice_highlighted: 
+    test1:        #placeholder for testing
+      priority: 400
+  reawakening_phaseone_survivor_highlighted:
+    test2:       #placeholder for testing
+      priority: 400    

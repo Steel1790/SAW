@@ -35,6 +35,7 @@ modes:
   - hostage
   - survival_instinct
   - the_key_to_freedom 
+#  - reawakening
   - mystery
   - saw_qualify
   - mode_tracking
@@ -54,7 +55,7 @@ window:
   height: 768
   title: Mission Pinball Framework - SAW
   resizable: true
-  fullscreen: false
+  fullscreen: true
   borderless: true
   exit_on_escape: true
   source_display: lcd
@@ -94,6 +95,10 @@ sounds:
   OrbitWoosh6:
     file: OrbitWoosh6.wav
     volume: 0.1
+# bonus sound adjusted
+  BonusCountdownWBass:
+    file: BonusCountdownWBass.wav
+    volume: 0.8
 # cher/amanda callouts volume lowered
   Antidote1:
     file: Antidote1.wav
@@ -376,76 +381,76 @@ sounds:
     volume: 0.2
   GetToTheBathroom:
     file: GetToTheBathroom.wav
-    volume: 0.9
+    volume: 0.7
   GetToTheBathroom2:
     file: GetToTheBathroom2.wav
-    volume: 0.9
+    volume: 0.7
   ShootTheRightScoopToStartATrap2:
     file: ShootTheRightScoopToStartATrap2.wav
-    volume: 0.9
+    volume: 0.7
   ShootTheRightScoopToStartATrap:
     file: ShootTheRightScoopToStartATrap.wav
-    volume: 0.9
+    volume: 0.7
   ShootWhiteArrows:
     file: ShootWhiteArrows.wav
-    volume: 0.9
+    volume: 0.7
   ShootWhiteArrows1:
     file: ShootWhiteArrows1.wav
-    volume: 0.9
+    volume: 0.7
   ToStartATrapShootTheRightScoop:
     file: ToStartATrapShootTheRightScoop.wav
-    volume: 0.9
+    volume: 0.7
   FirstDrillDestroyed:
     file: FirstDrillDestroyed.wav
-    volume: 0.9
+    volume: 0.7
   ShootLeftOrbit:
     file: ShootLeftOrbit.wav
-    volume: 0.9
+    volume: 0.7
   YouNeedTheLowerPops:
     file: YouNeedTheLowerPops.wav
-    volume: 0.9
+    volume: 0.7
   HitTheDropTargetNOW:
     file: HitTheDropTargetNOW.wav
-    volume: 0.9
+    volume: 0.7
   NiceShotNowTheOrbit:
     file: NiceShotNowTheOrbit.wav
-    volume: 0.9
+    volume: 0.7
   RipTheSpinner:
     file: RipTheSpinner.wav
-    volume: 0.9
+    volume: 0.7
   YouJustNeedTheLeftOrbit:
     file: YouJustNeedTheLeftOrbit.wav
-    volume: 0.9
+    volume: 0.7
   GetToTheUpperPops:
     file: GetToTheUpperPops.wav
-    volume: 0.9
+    volume: 0.7
   ShootTheLeftRampToLive:
     file: ShootTheLeftRampToLive.wav
-    volume: 0.9
+    volume: 0.7
   ShootAllTheStandupTargets:
     file: ShootAllTheStandupTargets.wav
-    volume: 0.9
+    volume: 0.8
   ShootTheCombos:
     file: ShootTheCombos.wav
-    volume: 0.9
+    volume: 0.7
   ShootTheCombos2:
     file: ShootTheCombos2.wav
-    volume: 0.9
+    volume: 0.7
   ShootTheDropTargetToEscape:
     file: ShootTheDropTargetToEscape.wav
-    volume: 0.9
+    volume: 0.7
   CompleteTheLowerDrops:
     file: CompleteTheLowerDrops.wav
-    volume: 0.9
+    volume: 0.7
   HitTheRightRamp:
     file: HitTheRightRamp.wav
-    volume: 0.9
+    volume: 0.7
   QuicklyShotTheDropTarget:
     file: QuicklyShotTheDropTarget.wav
-    volume: 0.9
+    volume: 0.7
   ShootTheLeftRamp:
     file: ShootTheLeftRamp.wav
-    volume: 0.9
+    volume: 0.7
 #drillchair mode balance
   DC1:
     file: DC1.wav
