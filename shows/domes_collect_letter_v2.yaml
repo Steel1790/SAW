@@ -1,0 +1,24 @@
+#show_version=6
+- time: 0
+  shows:     
+    dome_1_cycle:
+      speed: 40
+      loops: 0
+      show_tokens:
+        color1: white
+    
+- time: '+500ms' #.5s timestamp (note)
+  shows:     
+    dome_1_cycle: stop
+    dome_2_cycle:
+      speed: 40
+      show_tokens:
+        color1: white
+  
+- time: '+500ms' #.5s timestamp (note)
+  shows:     
+    dome_1_cycle: stop
+    dome_2_cycle:
+      speed: 40
+      show_tokens:
+        color1: white

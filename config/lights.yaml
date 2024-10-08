@@ -4,13 +4,13 @@ light_settings:
   default_fade_ms: 85
 
 named_colors:
-  razorwire: 41A317
-  drillchair: fd6500
-  drillchair_alt: 006eb8
+  razorwire: 41A317 #green
+  drillchair: fd6500 #orange
+  drillchair_alt: 006eb8 #
   zepstest: B200ED
   zeptest: B200ED
   beartrap: ff0900
-  shotgun: 174BE8
+  shotgun: 174BE8 #blue 2222b2
   shotgun_alt: e8b417
   jelly: fccd05
   color_jigsaw_mb: FFA500
@@ -359,13 +359,13 @@ lights:
     number: led128-2-17
     tags: insert, led128p2, ramp, right_ramp
   l_left_ramp_triangle1:
-    number: led128-3-16
+    number: led128-3-14
     tags: insert, led128p3, ramp, left_ramp
   l_left_ramp_triangle2:
-    number: led128-3-17
+    number: led128-3-15
     tags: insert, led128p3, ramp, left_ramp
   l_left_ramp_triangle3:
-    number: led128-3-18
+    number: led128-3-16
     tags: insert, led128p3, ramp, left_ramp
 
 # skillshot lights
@@ -388,7 +388,7 @@ lights:
     number: led128-3-3
     tags: insert, arrow, led128p3, standup
   l_inner_loop_arrow:
-    number: led128-3-19
+    number: led128-3-17
     tags: insert, arrow, led128p3, orbit
   l_left_standup_right_ramp_arrow:
     number: led128-2-16
@@ -450,11 +450,11 @@ lights:
     type: grb
     tags: gi, gi_left, gi_middle, led128p3
   l_gi_5:
-    number: led128-3-14
+    number: led128-3-12
     type: grb
     tags: gi, gi_left, gi_middle, led128p3
   l_gi_6:
-    number: led128-3-15
+    number: led128-3-13
     type: grb
     tags: gi, gi_left, gi_middle, led128p3
 
@@ -661,10 +661,10 @@ lights:
 
 # playfield toys
   l_tape_reel:
-    number: led128-3-12
+    number: led128-3-18
     tags: tape, toy, led128p3
   l_tape_speaker:
-    number: led128-3-13
+    number: led128-3-19
     tags: tape, toy, led128p3
   l_mode_scoop:
     number: c_mode_scoop
