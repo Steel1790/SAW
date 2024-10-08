@@ -155,7 +155,7 @@ event_player:
   minimode_spinners_complete: stop_items_widget|2.5s
   minimode_loops_complete: stop_items_widget|2.5s
   minimode_drops_complete: stop_items_widget|2.5s
-  mode_puzzle_hurryup_complete: stop_items_widget|2.5s
+  mode_puzzle_hurryup_complete: stop_items_widget|3s
 
 timers:
   t_playfield_multiplier_timer:
@@ -238,6 +238,10 @@ slide_player:
     saw_collect:
       priority: 400
       expire: 3s   
+  mode_puzzle_hurryup_complete:
+    puzzlecollected:
+      priority: 400
+      expire: 3s
   # e_shoot_again:
   #   ShootAgain:
   #     priority: 400
@@ -3808,7 +3812,7 @@ widget_player:
       action: add
   mode_puzzle_hurryup_complete:
     w_puzzle_collected:
-      slide: base_slide_main
+      slide: puzzlecollected
       action: add
     saw_letters:
       slide: base_slide_main
@@ -4236,7 +4240,7 @@ widget_player:
       slide: base_slide_main
       action: remove
     w_puzzle_collected:
-      slide: base_slide_main
+      slide: puzzlecollected
       action: remove
   slide_MysteryPlayfieldMultiplier_removed:
     w_playfield_multiplier:
@@ -4536,6 +4540,12 @@ slides:
     widgets:
     - type: video
       video: lilbillyqualify3
+      width: 1366
+      height: 768
+  puzzlecollected:
+    widgets:
+    - type: video
+      video: PuzzleCollected
       width: 1366
       height: 768
   # ShootAgain:

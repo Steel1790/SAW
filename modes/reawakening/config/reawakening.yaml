@@ -66,15 +66,15 @@ variable_player:
 #                     Upon hitting last X marks the spot, go back to lit scoop to choose phase 2 options.
 
 # phase 2 
-# apprentice left option - assist in abduncting next game subjects
-# apprentice right option - assist in staging next set of games
+# apprentice left option - abduction - assist in abduncting next game subjects
+# apprentice right option - stage the game - assist in staging next set of games
 
-# survivor left option - vengeance .. collect clues to track down jigsaw
-# survivor right option - assist in savings others
+# survivor left option - Clue .. collect clues to track down jigsaw
+# survivor right option - Aid - assist in savings others
 
 # phase 3
 # apprentice - let the games begin.. dodge interuptions and see games go according to plan
-# survivor - showdown with confronting jigsaw
+# survivor - final showdown - showdown with confronting jigsaw
 
 # accruals:
 #   acc_apprentice_phaseone:
