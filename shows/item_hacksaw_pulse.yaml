@@ -1,0 +1,9 @@
+#show_version=6
+
+#SLOW PULSE ON OFF
+- time: 0
+  lights:
+    l_jw_hacksaw: 39522f -f1500ms    # 50 percent razorwire green color 
+- time: '+2'
+  lights:
+    l_jw_hacksaw: off -f500ms    

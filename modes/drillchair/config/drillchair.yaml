@@ -943,6 +943,13 @@ shows:
     - duration: 0.5s
       lights:
         (leds): off -f500ms
+  # slingshots_flash:
+  #   - duration: 0.3s
+  #     lights:
+  #       (leds): drillchair_alt -f200ms
+  #   - duration: 0.1s
+  #     lights:
+  #       (leds): white -f200ms 
 
 show_player:
   mode_drillchair_started:     
@@ -974,6 +981,16 @@ show_player:
     drillchair_standups:
       show_tokens:
         leds: standup
+  # s_left_slingshot_active:
+  #   slingshots_flash:
+  #     loops: 0
+  #     show_tokens:
+  #       leds: l_gi_1, l_gi_2, l_gi_3
+  # s_right_slingshot_active:
+  #   slingshots_flash:
+  #     loops: 0
+  #     show_tokens:
+  #       leds: l_gi_20, l_gi_21, l_gi_22
 
   sw_top_pops: 
     drillchair_color_shot_hit_inserts:
