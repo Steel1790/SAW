@@ -192,7 +192,7 @@ show_player:
       loops: -1
       speed: 8
       show_tokens:
-        color1: red
+        color1: zeptest
     ballsave:
       show_tokens:
         leds: l_live_again

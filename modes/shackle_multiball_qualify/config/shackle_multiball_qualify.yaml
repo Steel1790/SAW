@@ -120,6 +120,9 @@ show_player:
     shackle_mb_lock:
       loops: 0
       speed: 30
+    domes_ball_lock:
+      loops: 0
+      speed: 30
   logicblock_acc_shackle_mb_qualify_complete{device.multiball_locks.mbl_shackle.locked_balls == 1}:
     sh_shackle_mb_qualify_hit_locked:
       show_tokens:
@@ -132,6 +135,9 @@ show_player:
       show_tokens:
         leds: l_right_ramp_triangle1, l_right_ramp_triangle2
     shackle_mb_lock:
+      loops: 0
+      speed: 30
+    domes_ball_lock:
       loops: 0
       speed: 30
   #logicblock_acc_shackle_mb_qualify_complete{device.multiball_locks.mbl_shackle.locked_balls == 2}:

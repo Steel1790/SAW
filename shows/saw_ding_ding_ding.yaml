@@ -3,7 +3,7 @@
 - time: 0 
 #SAW ding, ding, ding 1 # .24s timestamp 
   lights:
-    left_disc: red
+    left_disc: white
     left_bottom_bumper: red
     left_top_bumper: red  
     leftspeaker: red 
@@ -12,11 +12,11 @@
     post_a: white
     l_skill_shot1: red
     l_left_ramp_triangle1: red
-    dome_1: red
-    dome_2: red
+    dome_1: white
+    dome_2: white
 - time: '+120ms' # .36s timestamp 
   lights:
-    middle_disc: red  
+    middle_disc: white 
     right_bottom_bumper: red
     right_top_bumper: red
     rightspeaker: red
@@ -25,10 +25,10 @@
     post_b: white
     l_skill_shot2: red
     l_left_ramp_triangle2: red
-    dome_3: red
+    dome_3: white
 - time: '+120ms' # .48s timestamp 
   lights:
-    right_disc: red
+    right_disc: white
     top_bottom_bumper: red
     lower_top_bumper: red   
     l_quadshotgun_mode: red
@@ -38,7 +38,7 @@
     post_c: white
     l_skill_shot3: red
     l_left_ramp_triangle3: red
-    dome_4: red
+    dome_4: white
 - time: '+240ms' # 1.44s timestamp 
   lights:
     left_disc: off -f500ms
@@ -77,7 +77,7 @@
 #SAW ding, ding, ding 2 
 - time: '+720ms' #(pause) # 1.44s timestamp 
   lights:
-    left_disc: white
+    left_disc: red
     left_bottom_bumper: white
     left_top_bumper: white
     leftspeaker: white 
@@ -86,11 +86,11 @@
     l_left_ramp_triangle1: white
     l_quadshotgun_mode: white
     l_razorwire_mode: white
-    dome_1: white
-    dome_2: white
+    dome_1: red
+    dome_2: red
 - time: '+120ms' # 1.56s timestamp
   lights:
-    middle_disc: white
+    middle_disc: red
     right_bottom_bumper: white
     right_top_bumper: white
     rightspeaker: white
@@ -99,10 +99,10 @@
     l_left_ramp_triangle2: white
     l_zeptest_mode: white
     l_jelly_mode: white
-    dome_3: white
+    dome_3: red
 - time: '+120ms' # 1.68s timestamp
   lights:
-    right_disc: white
+    right_disc: red
     top_bottom_bumper: white
     lower_top_bumper: white
     topper: white
@@ -112,7 +112,7 @@
     l_left_ramp_triangle3: white
     l_drillchair_mode: white
     l_beartrap_mode: white
-    dome_4: white
+    dome_4: red
 - time: '+240ms' # 1.92s timestamp
   lights:
     left_disc: off -f500ms
@@ -152,7 +152,7 @@
 
 #SAW ding, ding, ding 3 # 2.88s timestamp 
   lights:
-    left_disc: red
+    left_disc: white
     left_bottom_bumper: red
     left_top_bumper: red      
     leftspeaker: red
@@ -162,11 +162,11 @@
     l_left_ramp_triangle1: red  
     l_zeptest_mode: red
     l_jelly_mode: red
-    dome_1: red
-    dome_2: red
+    dome_1: white
+    dome_2: white
 - time: '+120ms' # 2.76s timestamp 
   lights:
-    middle_disc: red  
+    middle_disc: white  
     right_bottom_bumper: red
     right_top_bumper: red 
     rightspeaker: red  
@@ -176,10 +176,10 @@
     l_left_ramp_triangle2: red
     l_beartrap_mode: red
     l_quadshotgun_mode: red
-    dome_3: red
+    dome_3: white
 - time: '+120ms' # 2.88s timestamp 
   lights:
-    right_disc: red
+    right_disc: white
     top_bottom_bumper: red
     lower_top_bumper: red  
     topper: red
@@ -190,7 +190,7 @@
     l_left_ramp_triangle3: red
     l_drillchair_mode: red
     l_razorwire_mode: red
-    dome_4: red
+    dome_4: white
 - time: '+240ms' # 3.12s timestamp 
   lights:
     left_disc: off -f500ms

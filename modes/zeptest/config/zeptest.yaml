@@ -1359,7 +1359,7 @@ widgets:
       x: 25%
       y: 29%
       z: 1
-      color: 00C190
+      color: zeptest_alt
       corner_radius: 10
       corner_segments: 10
    w_lit_hit_border02:
@@ -1369,7 +1369,7 @@ widgets:
       x: 53%
       y: 29%
       z: 1
-      color: 00C190
+      color: zeptest_alt
       corner_radius: 10
       corner_segments: 10
    w_lit_hit_border03:
@@ -1379,7 +1379,7 @@ widgets:
       x: 80%
       y: 29%
       z: 1
-      color: 00C190
+      color: zeptest_alt
       corner_radius: 10
       corner_segments: 10  
     
@@ -1551,7 +1551,7 @@ show_player:
         loops: 0
         speed: 20
         show_tokens:
-          color1: 00C190
+          color1: zeptest_alt
         priority: 182
       gi_flicker_one_time:
         loops: 1
@@ -1563,13 +1563,13 @@ show_player:
         loops: 1
         speed: 50
         show_tokens:
-          color1: 00C190
+          color1: zeptest_alt
         priority: 182
       speaker_right_cylon:
         loops: 1
         speed: 50
         show_tokens:
-          color1: 00C190
+          color1: zeptest_alt
         priority: 182
 
   sg_zeptest_zeptest_collected_hit:
@@ -1577,25 +1577,25 @@ show_player:
         loops: 1
         speed: 20
         show_tokens:
-          color1: 00C190
+          color1: zeptest_alt
         priority: 183
       attract_flash_all:
         loops: 1
         speed: 20
         show_tokens:
-          color1: 00C190
+          color1: zeptest_alt
         priority: 183
       jw_chase:
         loops: 2
         speed: 20
         show_tokens:
-          color1: 00C190
+          color1: zeptest_alt
         priority: 183
       disc_middle_cylon:
         loops: 1
         speed: 50
         show_tokens:
-          color1: 00C190
+          color1: zeptest_alt
         priority: 183
 
 

@@ -954,7 +954,7 @@ show_player:
         leds: l_drillchair_mode
     starpost_on:
       show_tokens:
-        color1: 6E6E6E   
+        color1: drillchair  
       priority: 169
     flipper_on:
       show_tokens:
@@ -975,13 +975,34 @@ show_player:
       show_tokens:
         leds: standup
 
-  sw_standup: #placeholder for now
-    flash_token:
-      loops: 1
-      speed: 10
+  sw_top_pops: 
+    drillchair_color_shot_hit_inserts:
+      loops: 0
+      speed: 30
       show_tokens:
-        led: gi 
+        color1: drillchair_alt
+    drillchair_color_shot_hit_discs:
+      loops: 0
+      speed: 30
+      show_tokens:
         color1: drillchair
+    drillchair_color_shot_hit_pops:
+      loops: 0
+      speed: 30
+      show_tokens:
+        color1: white
+    drillchair_color_shot_hit_starposts:
+      loops: 0
+      speed: 30
+      show_tokens:
+        color1: drillchair
+
+  sw_standup: #placeholder for now
+    domes_cylon:
+      loops: 2
+      speed: 50
+      show_tokens:
+        color1: drillchair_alt
 
   player_drillchair_drillchair_60s_timer_tick{value==62}:
     mystery_flash:

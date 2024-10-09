@@ -444,12 +444,12 @@ show_player:
        color1: beartrap
    speaker_left_chase:
      loops: 0
-     speed: 40
+     speed: 50
      show_tokens:
        color1: white
    speaker_right_chase:
      loops: 0
-     speed: 40
+     speed: 50
      show_tokens:
        color1: white
   display_syringes:
@@ -472,12 +472,12 @@ show_player:
        color1: white
    speaker_left_chase:
      loops: 0
-     speed: 40
+     speed: 50
      show_tokens:
        color1: beartrap
    speaker_right_chase:
      loops: 0
-     speed: 40
+     speed: 50
      show_tokens:
        color1: beartrap
   display_bathtubs:
@@ -500,12 +500,12 @@ show_player:
        color1: beartrap
    speaker_left_chase:
      loops: 0
-     speed: 40
+     speed: 50
      show_tokens:
        color1: white
    speaker_right_chase:
      loops: 0
-     speed: 40
+     speed: 50
      show_tokens:
        color1: white
   display_taperecorders:
@@ -528,12 +528,12 @@ show_player:
        color1: white
    speaker_left_chase:
      loops: 0
-     speed: 40
+     speed: 50
      show_tokens:
        color1: beartrap
    speaker_right_chase:
      loops: 0
-     speed: 40
+     speed: 50
      show_tokens:
        color1: beartrap
   display_candles:
@@ -556,12 +556,12 @@ show_player:
        color1: beartrap
    speaker_left_chase:
      loops: 0
-     speed: 40
+     speed: 50
      show_tokens:
        color1: white
    speaker_right_chase:
      loops: 0
-     speed: 40
+     speed: 50
      show_tokens:
        color1: white  
   display_hacksaws:
@@ -584,12 +584,12 @@ show_player:
        color1: white
    speaker_left_chase:
      loops: 0
-     speed: 40
+     speed: 50
      show_tokens:
        color1: beartrap
    speaker_right_chase:
      loops: 0
-     speed: 40
+     speed: 50
      show_tokens:
        color1: beartrap     
   display_handguns:
@@ -612,12 +612,12 @@ show_player:
        color1: beartrap
    speaker_left_chase:
      loops: 0
-     speed: 40
+     speed: 50
      show_tokens:
        color1: white
    speaker_right_chase:
      loops: 0
-     speed: 40
+     speed: 50
      show_tokens:
        color1: white   
   display_keys:
@@ -640,12 +640,12 @@ show_player:
        color1: white
    speaker_left_chase:
      loops: 0
-     speed: 40
+     speed: 50
      show_tokens:
        color1: beartrap
    speaker_right_chase:
      loops: 0
-     speed: 40
+     speed: 50
      show_tokens:
        color1: beartrap
   display_multiplierbonus:
@@ -663,12 +663,34 @@ show_player:
        color1: beartrap
    speaker_left_chase:
      loops: 0
-     speed: 40
+     speed: 50
      show_tokens:
        color1: beartrap
    speaker_right_chase:
      loops: 0
-     speed: 40
+     speed: 50
      show_tokens:
        color1: beartrap
-
+  display_totalscore:
+   flash_token:
+     loops: 0
+     speed: 8
+     show_tokens:
+       led: gi
+       color1: beartrap
+   flash_token_2:
+     loops: 0
+     speed: 8
+     show_tokens:
+       led: starpost
+       color1: beartrap
+   speaker_left_chase:
+     loops: 0
+     speed: 50
+     show_tokens:
+       color1: beartrap
+   speaker_right_chase:
+     loops: 0
+     speed: 50
+     show_tokens:
+       color1: beartrap
