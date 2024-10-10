@@ -6,7 +6,7 @@ mode:
 high_score:
   _overwrite: true
   enter_initials_timeout: 30s
-  award_slide_display_time: 4s
+  award_slide_display_time: 2s
   # define your high score categories and the awards
   categories:
     score:
@@ -96,7 +96,7 @@ high_score:
 slide_player:
   _overwrite: true   
   high_score_enter_initials: high_score_enter_initials
-
+  high_score_award_display: high_score_award_display
 
 slides:
   _overwrite: true   
@@ -142,6 +142,7 @@ slides:
       max_chars: 3
       x: center
       y: center - 150
+      z: 2
       shift_left_event: s_left_flipper_button_active
       shift_right_event: s_right_flipper_button_active
       select_event: s_action_button_active
@@ -154,6 +155,61 @@ slides:
       y: center
       color: C2E3E0 
       
+    - type: text
+      text: ''
+      key: high_score
+      font_size: 100
+      font_name: sawesome      
+      x: center
+      y: center
+      z: 2
+      color: C2E3E0   
+      animations:
+        show_slide:
+          - property: opacity
+            value: 1
+            duration: 0.3s
+            easing: in_out_quint
+          - property: opacity
+            value: 0
+            duration: 0.3s
+            repeat: true
+            easing: in_out_quint
+    - type: image            
+      image: billyskillshot
+      opacity: 0.8
+
+  high_score_award_display:
+    - type: text
+      font_size: 100
+      font_name: Skilt Gothic W04 Thin
+      text: PLAYER  (player_name)
+      color: C2E3E0 
+      x: center
+      y: center + 320
+      outline_color: black
+      outline_width: 9
+      
+    - type: text
+      font_size: 100
+      font_name: Skilt Gothic W04 Thin
+      text: (award)
+      color: red
+      x: center
+      y: center + 225
+      outline_color: black
+      outline_width: 9
+            
+    - type: text
+      font_name: sawesome
+      font_size: 100
+      text: (value)
+      color: C2E3E0 
+      number_grouping: true      
+      x: center
+      y: center + 130
+      outline_color: black
+      outline_width: 7      
     - type: text
       text: ''
       key: high_score

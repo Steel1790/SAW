@@ -1,0 +1,7 @@
+#show_version=6
+- time: 0
+  lights:
+    l_jw_candle: 807441    # 50 percent jelly yellow color 
+- time: '+1'
+  lights:
+    l_jw_candle: off 

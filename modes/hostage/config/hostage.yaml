@@ -1,7 +1,7 @@
 #config_version=6
 mode:
   start_events: logicblock_cnt_negative_shot_counter_updated{value==3}
-  stop_events: ball_ended, ball_ending, ball_will_end, mode_hacksaw_multiball_started, mode_shackle_multiball_started, mode_jigsaw_multiball_started, mode_hostage_complete, player_hostage_hostage_66s_timer_tick{value < 1}
+  stop_events: ball_ended, ball_ending, ball_will_end, mode_hacksaw_multiball_started, mode_shackle_multiball_started, mode_jigsaw_multiball_started, mode_hostage_complete, player_hostage_hostage_75s_timer_tick{value < 1}
   priority: 181
 
 timers:
@@ -253,7 +253,7 @@ slide_player:
   mode_hostage_started: 
     sl_mode_hostage01:
       priority: 500
-      expire: 66s
+      expire: 76s
      
 widgets:
    w_hostageUI:

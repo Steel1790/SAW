@@ -1,0 +1,8 @@
+#show_version=6
+
+- time: 0
+  lights:
+    l_jw_gun: 805940   # 50 percent drillchair orange color 
+- time: '+1'
+  lights:
+    l_jw_gun: off

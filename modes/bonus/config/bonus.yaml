@@ -62,13 +62,13 @@ slides:
       outline_color: black
       outline_width: 7
       y: 92%
-#    - type: image
-#      image: lastgamescores
-#      opacity: 0.5
-    - type: video
-      video: BonusCountdownVideo
-      width: 1366
-      height: 768        
+    - type: image
+      image: lastgamescores
+      opacity: 0.5
+    # - type: video
+    #   video: BonusCountdownVideo
+    #   width: 1366
+    #   height: 768        
 
 
 

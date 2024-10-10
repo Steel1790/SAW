@@ -354,7 +354,7 @@
 - time: '+1'
   lights:
     l_left_bottom_bumper_1: (color1)
-    l_left_bottom_bumper_11: (color1)'
+    l_left_bottom_bumper_11: (color1)
     l_left_bottom_bumper_12: (color1)
     l_left_bottom_bumper_13: (color1)
     l_left_bottom_bumper_14: (color1)

@@ -134,46 +134,46 @@ show_player:
   logicblock_cnt_hacksaw_mb_show_progress_updated{device.counters.cnt_hacksaw_mb_show_progress.value == 2}:
     sh_hacksaw_mb_qualify_hit_ready:
       show_tokens:
-        leds: l_hmb_lock_1
+        leds: l_hmb_lock_1, dome_2
   logicblock_cnt_hacksaw_mb_show_progress_updated{device.counters.cnt_hacksaw_mb_show_progress.value == 3}:
     sh_hacksaw_mb_qualify_hit_locked:
       show_tokens:
-        leds: l_hmb_lock_1
+        leds: l_hmb_lock_1, dome_2
     hacksaw_mb_lock:
       loops: 0
       speed: 30
   logicblock_cnt_hacksaw_mb_show_progress_updated{device.counters.cnt_hacksaw_mb_show_progress.value == 5}:
     sh_hacksaw_mb_qualify_hit_ready:
       show_tokens:
-        leds: l_hmb_lock_2
+        leds: l_hmb_lock_2, dome_3
     sh_hacksaw_mb_qualify_hit_locked:
       show_tokens:
-        leds: l_hmb_lock_1
+        leds: l_hmb_lock_1, dome_2
   logicblock_cnt_hacksaw_mb_show_progress_updated{device.counters.cnt_hacksaw_mb_show_progress.value == 6}:
     sh_hacksaw_mb_qualify_hit_locked:
       show_tokens:
-        leds: l_hmb_lock_1, l_hmb_lock_2
+        leds: l_hmb_lock_1, l_hmb_lock_2, dome_2, dome_3
     hacksaw_mb_lock:
       loops: 0
       speed: 30
   logicblock_cnt_hacksaw_mb_show_progress_updated{device.counters.cnt_hacksaw_mb_show_progress.value == 8}:
     sh_hacksaw_mb_qualify_hit_ready:
       show_tokens:
-        leds: l_hmb_lock_3
+        leds: l_hmb_lock_3, dome_4
     sh_hacksaw_mb_qualify_hit_locked:
       show_tokens:
-        leds: l_hmb_lock_1, l_hmb_lock_2
+        leds: l_hmb_lock_1, l_hmb_lock_2, dome_2, dome_3
   logicblock_cnt_hacksaw_mb_show_progress_updated{device.counters.cnt_hacksaw_mb_show_progress.value == 9}:
     sh_hacksaw_mb_qualify_hit_locked:
       show_tokens:
-        leds: l_hmb_lock_1, l_hmb_lock_2, l_hmb_lock_3
+        leds: l_hmb_lock_1, l_hmb_lock_2, l_hmb_lock_3, dome_2, dome_3, dome_4
     hacksaw_mb_lock:
       loops: 0
       speed: 30
   multiball_mb_hacksaw_ended:
     sh_hacksaw_mb_end:
       show_tokens:
-        leds: l_hmb_lock_1,l_hmb_lock_2,l_hmb_lock_3
+        leds: l_hmb_lock_1,l_hmb_lock_2,l_hmb_lock_3, dome_2, dome_3, dome_4
   logicblock_acc_hacksaw_mb_qualify_hit{step==0}:
     sh_hacksaw_mb_qualify_hit:
       show_tokens:

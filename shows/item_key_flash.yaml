@@ -1,0 +1,7 @@
+#show_version=6
+- time: 0
+  lights:
+    l_jw_key: 814141   # 50 percent beartrap red color 
+- time: '+1'
+  lights:
+    l_jw_key: off  

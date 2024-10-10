@@ -6,7 +6,7 @@ mode:
   
 ball_saves:
   default:
-    active_time: 10s
+    active_time: 12s
     hurry_up_time: 2s
 #    grace_period: 2s
 #    enable_events: mode_base_started
@@ -755,11 +755,11 @@ shows:
   minimode_slings_show_complete:    
     - duration: -1      
       lights:    
-        (leds): 00C190
+        (leds): 900C3F
   minimode_inlanes_show_complete:    
     - duration: -1      
       lights:    
-        (leds): 900C3F
+        (leds): 00C190
   minimode_spinners_show_complete:    
     - duration: -1      
       lights:    
@@ -837,7 +837,7 @@ shows:
   sh_multiplier_on:    
     - duration: 1s      
       lights:
-        (leds): red
+        (leds): zeptest_alt
 
 # EK testing lightshow on shot action
 show_player:
@@ -1290,6 +1290,20 @@ show_player:
     domes_glitter_falling:
       loops: 1
       speed: 20   
+
+# lil billy secret skill shot
+  lilbillyqualify1:
+    domes_little_billy_colorbomb: 
+      loops: 0
+      speed: 50
+  lilbillyqualify2:
+    domes_little_billy_colorbomb: 
+      loops: 0
+      speed: 50
+  lilbillyqualify3:
+    domes_little_billy_colorbomb: 
+      loops: 0
+      speed: 50
 
 # end of ball 3
   #ball_will_end{current_player.ball==3}:
@@ -1996,7 +2010,7 @@ widgets:
       outline_color: black
       outline_width: 3
       x: 12.9%
-      y: 46.7%
+      y: 46.6%
       z: 6  
     # - type: image
     #   image: SurveillanceCameraTrackingIcon
@@ -2286,8 +2300,8 @@ widgets:
       font_name: AeroMaticsDisplaRegular
       outline_color: black
       outline_width: 3
-      x: 6.6%
-      y: 30.9%
+      x: 7%
+      y: 31%
       z: 6  
     # - type: image
     #   image: IconPuzzlePiece
@@ -4610,10 +4624,10 @@ coil_player:
       action: enable
       hold_power: 0.5
   e_saw_disc1:
-    c_right_spin_disc:
-      action: off
-    c_middle_spin_disc:
-      action: off
+    # c_right_spin_disc:
+    #   action: off
+    # c_middle_spin_disc:
+    #   action: off
     c_left_spin_disc:
       action: off
   logicblock_cnt_saw_qualify_updated{value==2}:
@@ -4624,12 +4638,12 @@ coil_player:
       action: enable
       hold_power: 0.75
   e_saw_disc2:
-    c_right_spin_disc:
-      action: off
+    # c_right_spin_disc:
+    #   action: off
     c_middle_spin_disc:
       action: off
-    c_left_spin_disc:
-      action: off
+    # c_left_spin_disc:
+    #   action: off
   logicblock_cnt_saw_qualify_complete:
     c_left_spin_disc:
       action: enable

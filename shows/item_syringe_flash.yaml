@@ -1,0 +1,7 @@
+#show_version=6
+- time: 0
+  lights:
+    l_jw_syringe: 643973  # 50 percent zeptest purple color 
+- time: '+1'
+  lights:
+    l_jw_syringe: off -f500ms    

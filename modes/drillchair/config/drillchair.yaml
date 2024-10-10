@@ -1007,7 +1007,7 @@ show_player:
       loops: 0
       speed: 30
       show_tokens:
-        color1: white
+        color1: FFFFFF   #white since white isn't a saved tag in lights
     drillchair_color_shot_hit_starposts:
       loops: 0
       speed: 30
