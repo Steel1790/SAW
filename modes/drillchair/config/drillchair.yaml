@@ -647,7 +647,40 @@ widgets:
       x: 63%
       y: 35%
       z: 2
-
+#current player widget
+   w_current_player1:
+    - type: image
+      image: Player1Hacksaw
+      opacity: 1.0
+      y: 4
+      x: 35
+      z: 3
+      anchor_x: left
+      anchor_y: bottom
+   w_current_player2:
+    - type: image
+      image: Player2Hacksaw
+      opacity: 1.0
+      y: 4
+      x: left+515
+      z: 3
+      anchor_y: bottom  
+   w_current_player3:
+    - type: image
+      image: Player3Hacksaw
+      opacity: 1.0
+      y: 4
+      x: left+844
+      z: 3
+      anchor_y: bottom  
+   w_current_player4:
+    - type: image
+      image: Player4Hacksaw
+      opacity: 1.0
+      y: 4
+      x: left+1174
+      z: 3
+      anchor_y: bottom
    # dc_shot_update2: 
    #  - type: Text
    #    text: " Hit The Left Orbit"
@@ -799,6 +832,23 @@ widget_player:
    w_drillchairUI:
      slide: mode_drillchair01
      action: add
+ slide_drillchairvideo_removed{current_player.v_current_player==1}:
+   w_current_player1:
+     slide: mode_drillchair01
+     action: add
+ slide_drillchairvideo_removed{current_player.v_current_player==2}:
+   w_current_player2:
+     slide: mode_drillchair01
+     action: add
+ slide_drillchairvideo_removed{current_player.v_current_player==3}:
+   w_current_player3:
+     slide: mode_drillchair01
+     action: add
+ slide_drillchairvideo_removed{current_player.v_current_player==4}:
+   w_current_player4:
+     slide: mode_drillchair01
+     action: add
+
  # logicblock_drillchair_updated{value==1}: 
  #  dc_shot_update2:
  #    slide: drillchair_phase2
@@ -1397,6 +1447,7 @@ event_player:
   que_drillchair_complete:
     - mode_drillchair_complete|2s
     - stop_mode_drillchair|2s
+
   # shot_drillchair_button_sp_drillchair_lit_hit{device.counters.drillchair_pops_counter.value==6}:
   #   - sw_bottom_pops|0.1s
   #   - sw_bottom_pops|0.15s

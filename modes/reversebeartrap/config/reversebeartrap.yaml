@@ -512,7 +512,41 @@ widgets:
       y: 44.5%
       x: 30%
       z: 2
- 
+#current player widget
+   w_current_player1:
+    - type: image
+      image: Player1Hacksaw
+      opacity: 1.0
+      y: 4
+      x: 35
+      z: 3
+      anchor_x: left
+      anchor_y: bottom
+   w_current_player2:
+    - type: image
+      image: Player2Hacksaw
+      opacity: 1.0
+      y: 4
+      x: left+515
+      z: 3
+      anchor_y: bottom  
+   w_current_player3:
+    - type: image
+      image: Player3Hacksaw
+      opacity: 1.0
+      y: 4
+      x: left+844
+      z: 3
+      anchor_y: bottom  
+   w_current_player4:
+    - type: image
+      image: Player4Hacksaw
+      opacity: 1.0
+      y: 4
+      x: left+1174
+      z: 3
+      anchor_y: bottom
+      
 widget_player:
  player_reversebeartrap_120s_reversebeartrap_timer_tick{value==120}:
    w_reversebeartrap_spinner:
@@ -560,6 +594,87 @@ widget_player:
    w_reversebeartrapUI:
      slide: mode_rbt04
      action: add
+#current player widget
+ slide_reversebeartrapvideo_removed{current_player.v_current_player==1}:
+   w_current_player1:
+     slide: mode_rbt01
+     action: add
+ slide_mode_rbt01_removed{current_player.v_current_player==1}:
+   w_current_player1:
+     slide: mode_rbt02
+     action: add 
+ slide_mode_rbt02_removed{current_player.v_current_player==1}:
+   w_current_player1:
+     slide: mode_rbt03
+     action: add 
+ slide_mode_rbt03_removed{current_player.v_current_player==1}:
+   w_current_player1:
+     slide: mode_rbt04
+     action: add 
+ slide_mode_rbt03_active{current_player.v_current_player==1}:
+   w_current_player1:
+     slide: mode_rbt02
+     action: add 
+ slide_reversebeartrapvideo_removed{current_player.v_current_player==2}:
+   w_current_player2:
+     slide: mode_rbt01
+     action: add
+ slide_mode_rbt01_removed{current_player.v_current_player==2}:
+   w_current_player2:
+     slide: mode_rbt02
+     action: add 
+ slide_mode_rbt02_removed{current_player.v_current_player==2}:
+   w_current_player2:
+     slide: mode_rbt03
+     action: add 
+ slide_mode_rbt03_removed{current_player.v_current_player==2}:
+   w_current_player2:
+     slide: mode_rbt04
+     action: add 
+ slide_mode_rbt03_active{current_player.v_current_player==2}:
+   w_current_player2:
+     slide: mode_rbt02
+     action: add 
+ slide_reversebeartrapvideo_removed{current_player.v_current_player==3}:
+   w_current_player3:
+     slide: mode_rbt01
+     action: add
+ slide_mode_rbt01_removed{current_player.v_current_player==3}:
+   w_current_player3:
+     slide: mode_rbt02
+     action: add 
+ slide_mode_rbt02_removed{current_player.v_current_player==3}:
+   w_current_player3:
+     slide: mode_rbt03
+     action: add 
+ slide_mode_rbt03_removed{current_player.v_current_player==3}:
+   w_current_player3:
+     slide: mode_rbt04
+     action: add 
+ slide_mode_rbt03_active{current_player.v_current_player==3}:
+   w_current_player3:
+     slide: mode_rbt02
+     action: add 
+ slide_reversebeartrapvideo_removed{current_player.v_current_player==4}:
+   w_current_player4:
+     slide: mode_rbt01
+     action: add
+ slide_mode_rbt01_removed{current_player.v_current_player==4}:
+   w_current_player4:
+     slide: mode_rbt02
+     action: add 
+ slide_mode_rbt02_removed{current_player.v_current_player==4}:
+   w_current_player4:
+     slide: mode_rbt03
+     action: add 
+ slide_mode_rbt03_removed{current_player.v_current_player==4}:
+   w_current_player4:
+     slide: mode_rbt04
+     action: add 
+ slide_mode_rbt03_active{current_player.v_current_player==4}:
+   w_current_player4:
+     slide: mode_rbt02
+     action: add 
 #key widget
 #  e_reversebeartrap_action_button_ready:
 #    w_key_button:
@@ -880,7 +995,7 @@ show_player:
         speed: 5
         show_tokens:
           leds: standup
-          color1: beartrap_alt
+          color1: beartrap
       reversebeartrap_spinner:
         loops: -1
         show_tokens:

@@ -619,6 +619,40 @@ widgets:
       corner_radius: 20
       corner_segments: 20
       color: black
+#current player widget
+   w_current_player1:
+    - type: image
+      image: Player1Hacksaw
+      opacity: 1.0
+      y: 4
+      x: 35
+      z: 3
+      anchor_x: left
+      anchor_y: bottom
+   w_current_player2:
+    - type: image
+      image: Player2Hacksaw
+      opacity: 1.0
+      y: 4
+      x: left+515
+      z: 3
+      anchor_y: bottom  
+   w_current_player3:
+    - type: image
+      image: Player3Hacksaw
+      opacity: 1.0
+      y: 4
+      x: left+844
+      z: 3
+      anchor_y: bottom  
+   w_current_player4:
+    - type: image
+      image: Player4Hacksaw
+      opacity: 1.0
+      y: 4
+      x: left+1174
+      z: 3
+      anchor_y: bottom
 
    w_quadshotgun_phase1:
 #shotgun 1
@@ -844,6 +878,41 @@ widget_player:
    w_gears_button_pressed:
      slide: sl_mode_quadshotgun02
      action: add
+
+#current player widget
+ slide_quadshotgunvideo_removed{current_player.v_current_player==1}:
+   w_current_player1:
+     slide: sl_mode_quadshotgun01
+     action: add
+ slide_sl_mode_quadshotgun01_removed{current_player.v_current_player==1}:
+   w_current_player1:
+     slide: sl_mode_quadshotgun02
+     action: add
+ slide_quadshotgunvideo_removed{current_player.v_current_player==2}:
+   w_current_player2:
+     slide: sl_mode_quadshotgun01
+     action: add
+ slide_sl_mode_quadshotgun01_removed{current_player.v_current_player==2}:
+   w_current_player2:
+     slide: sl_mode_quadshotgun02
+     action: add
+ slide_quadshotgunvideo_removed{current_player.v_current_player==3}:
+   w_current_player3:
+     slide: sl_mode_quadshotgun01
+     action: add
+ slide_sl_mode_quadshotgun01_removed{current_player.v_current_player==3}:
+   w_current_player3:
+     slide: sl_mode_quadshotgun02
+     action: add
+ slide_quadshotgunvideo_removed{current_player.v_current_player==4}:
+   w_current_player4:
+     slide: sl_mode_quadshotgun01
+     action: add
+ slide_sl_mode_quadshotgun01_removed{current_player.v_current_player==4}:
+   w_current_player4:
+     slide: sl_mode_quadshotgun02
+     action: add
+
 # logicblock_quadshotgun_hit{step==2}: 
 #  quadshotgun_shot_update2:
 #    slide: quadshotgun_phase2

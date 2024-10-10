@@ -448,11 +448,62 @@ widgets:
       z: 2
       color: black
       corner_radius: 10
-      corner_segments: 10           
+      corner_segments: 10   
+#current player widget
+   w_current_player1:
+    - type: image
+      image: Player1Hacksaw
+      opacity: 1.0
+      y: 4
+      x: 35
+      z: 3
+      anchor_x: left
+      anchor_y: bottom
+   w_current_player2:
+    - type: image
+      image: Player2Hacksaw
+      opacity: 1.0
+      y: 4
+      x: left+515
+      z: 3
+      anchor_y: bottom  
+   w_current_player3:
+    - type: image
+      image: Player3Hacksaw
+      opacity: 1.0
+      y: 4
+      x: left+844
+      z: 3
+      anchor_y: bottom  
+   w_current_player4:
+    - type: image
+      image: Player4Hacksaw
+      opacity: 1.0
+      y: 4
+      x: left+1174
+      z: 3
+      anchor_y: bottom      
 
 widget_player:
  player_hostage_hostage_75s_timer_tick{value==75}:  
   w_hostageUI: 
+    slide: sl_mode_hostage01
+    action: add
+#current player widget
+ e_hostage_widget{current_player.v_current_player==1}:
+  w_current_player1: 
+    slide: sl_mode_hostage01
+    action: add
+ e_hostage_widget{current_player.v_current_player==2}:
+  w_current_player2: 
+    slide: sl_mode_hostage01
+    action: add
+ e_hostage_widget{current_player.v_current_player==3}:
+  w_current_player3: 
+    slide: sl_mode_hostage01
+    action: add
+ e_hostage_widget{current_player.v_current_player==4}:
+  w_current_player4: 
     slide: sl_mode_hostage01
     action: add
    
@@ -482,3 +533,4 @@ sound_player:
 
 event_player: 
   slide_sl_mode_hostage01_active: e_primary_mode_active
+  player_hostage_hostage_75s_timer_tick{value==75}: e_hostage_widget

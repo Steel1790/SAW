@@ -449,6 +449,28 @@ variable_player:
       int: 1
       action: add    
 
+# set current player for tracking in modes
+  single_player_ball_started:
+    v_current_player:
+      int: 1
+      action: set
+  player_1_ball_started:
+    v_current_player:
+      int: 1
+      action: set
+  player_2_ball_started:
+    v_current_player:
+      int: 2
+      action: set
+  player_3_ball_started:
+    v_current_player:
+      int: 3
+      action: set
+  player_4_ball_started:
+    v_current_player:
+      int: 4
+      action: set
+
 # jigsaw workshop tracking
 
   counter_minimode_pops_counter_hit:
