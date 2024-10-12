@@ -974,7 +974,7 @@ show_player:
         leds: l_beartrap_mode
     starpost_on:
       show_tokens:
-        color1: white  
+        color1: beartrap_alt
       priority: 169
     speaker_heartbeat:
       show_tokens:

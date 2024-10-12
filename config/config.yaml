@@ -98,7 +98,7 @@ sounds:
 # bonus sound adjusted
   BonusCountdownWBass:
     file: BonusCountdownWBass.wav
-    volume: 0.7
+    volume: 0.5
 # cher/amanda callouts volume lowered
   Antidote1:
     file: Antidote1.wav
@@ -213,7 +213,7 @@ sounds:
     volume: 0.2
   HeHelpedMe:
     file: HeHelpedMe.wav
-    volume: 0.2
+    volume: 0.4
   Jackpot1:
     file: Jackpot1.wav
     volume: 0.2
@@ -381,10 +381,10 @@ sounds:
     volume: 0.2
   GetToTheBathroom:
     file: GetToTheBathroom.wav
-    volume: 0.7
+    volume: 0.6
   GetToTheBathroom2:
     file: GetToTheBathroom2.wav
-    volume: 0.7
+    volume: 0.6
   ShootTheRightScoopToStartATrap2:
     file: ShootTheRightScoopToStartATrap2.wav
     volume: 0.7

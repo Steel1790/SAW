@@ -292,6 +292,12 @@ show_player:
       mode_fail:
         loops: 0
         speed: 30
+      flash_token_hurryup:
+        loops: 0
+        speed: 10
+        show_tokens:
+          leds: gi, starpost
+          color1: white
   e_gi_dim:
       gi_on:
         show_tokens:
@@ -307,12 +313,6 @@ show_player:
       sh_hurryup_ready:
         show_tokens:
           leds: orbit
-      flash_token_hurryup:
-        loops: 0
-        speed: 10
-        show_tokens:
-          leds: gi, starpost
-          color1: white
       topper_strobe_left_right:
         loops: -1
         speed: 50
