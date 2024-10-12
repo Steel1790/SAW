@@ -316,6 +316,8 @@ show_player:
       topper_strobe_left_right:
         loops: -1
         speed: 50
+        show_tokens:
+          color1: white
   logicblock_acc_make_your_choice_qualify_hit{step==1}:
       sh_hurryup_collected_hit:
         show_tokens:

@@ -362,6 +362,24 @@ sound_pools:
       - LilBillySkillshot11
 #      - LilBillySkillshot12
       - LilBillySkillshot13
+#drain audio
+  Drain:
+    load: preload
+    type: random_force_next
+    track: voice
+    sounds:
+      - Drain1
+      - Drain2
+      - Drain3
+      - Drain4
+      - Drain5
+      - Drain6
+      - Drain7
+      - Drain8
+      - Drain9
+      - Drain10
+      - YouCantDoThisToMe
+      - WhatWereYouThinking
 
 sound_player:
   mode_music_player_started:
@@ -527,11 +545,11 @@ sound_player:
   shot_left_outlane_hit{state=="ball_save_not_ready" and current_player.ball <= 2 }:
     #TortureScream:
     # refined_billy_laugh:
-    YouCantDoThisToMe:
+    Drain:
       action: play
       block: true
   shot_right_outlane_hit{state=="ball_save_not_ready" and current_player.ball <= 2 }:
-    YouCantDoThisToMe:
+    Drain:
       action: play
       block: true
   # ball_drain{current_player.ball <= 2 }:
@@ -681,11 +699,22 @@ sound_player:
       max_queue_time: 500ms
       action: play
 
+# saw blade sound effects
+  logicblock_cnt_negative_shot_counter_updated{value==1}:
+    SawBlade:
+      action: play
+  logicblock_cnt_saw_qualify_complete:
+    SawBlade:
+      action: play
 # trap modes are lit/qualified
   mode_trap_select_started:
     ModeLit:
       action: play
       priority: 201
+#scoop eject sound
+  ball_hold_bh_scoop_balls_released:
+    ScoopEject:
+      action: play
 
 # multiball audio
   multiball_mb_hacksaw_started:

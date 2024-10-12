@@ -5,19 +5,21 @@ light_settings:
 
 named_colors:
   razorwire: 41A317 #green
-  drillchair: fd6500 #orange
-  drillchair_alt: 006eb8 #blue
+  drillchair: c95f02 #fd6500 (original color) #orange
+  drillchair_alt: 0033ff #006eb8 (original color) #blue
   zepstest: B200ED #purple
   zeptest: B200ED #purple
   zeptest_alt: 00C190 #teal
   beartrap: ff0900 #red
-  beartrap_alt: 4cc7cc #teal
-  shotgun: 174BE8 #blue 2222b2
-  shotgun_alt: ecc345 #yellow gold
-  jelly: fccd05 #yellow
+  beartrap_alt: b59609 #gold-ish #4cc7cc (original color) #teal
+  shotgun: 0226b5 #174BE8 (original color) #blue 2222b2
+  shotgun_alt: 02a6b5 #light blue #ecc345 (original color) #yellow gold
+  jelly: e6a102 #fccd05 (original color) #yellow
+  jelly_alt: 6b2a01 #orange/red
   color_jigsaw_mb: FFA500 #orange
   color_hacksaw_mb: 2db83d #green
   color_shackle_mb: f62f2f #light red
+  white: ffffff
 
 lights:
   l_left_escape:

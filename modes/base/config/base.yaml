@@ -880,7 +880,15 @@ show_player:
       speed: 8
       # show_tokens:
       #   color1: white
-
+  ball_hold_bh_scoop_balls_released:
+    flash_token:
+      loops: 2
+      speed: 8
+      priority: 184
+      show_tokens:
+        led: dome_2
+        color1: white
+    
   s_left_ramp_score_bottom_active:
     gi_glitter_scratch: #placeholder. need to create new show
       loops: 0
@@ -1356,14 +1364,17 @@ show_player:
     domes_little_billy_colorbomb: 
       loops: 0
       speed: 75
+      priority: 184
   lilbillyqualify2:
     domes_little_billy_colorbomb: 
       loops: 0
       speed: 75
+      priority: 184
   lilbillyqualify3:
     domes_little_billy_colorbomb: 
       loops: 0
       speed: 75
+      priority: 184
 
 # end of ball 3
   #ball_will_end{current_player.ball==3}:

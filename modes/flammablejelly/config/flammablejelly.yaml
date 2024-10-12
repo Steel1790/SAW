@@ -968,7 +968,7 @@ show_player:
         color1: jelly
     starpost_on:
       show_tokens:
-        color1: 6E6E6E   
+        color1: jelly_alt   
       priority: 169  
     gi_on:
       show_tokens:
