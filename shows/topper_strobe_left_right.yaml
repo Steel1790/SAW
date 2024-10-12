@@ -1,0 +1,48 @@
+#show_version=6
+
+
+#OVERLAPS BETWEEN INSERTS LEFT TO RIGHT AND THEN RIGHT TO LEFT CYLON STYLE
+- time: 0
+  lights:
+    l_topper_1: (color1)
+    l_topper_2: (color1)
+    l_topper_3: (color1)
+    l_topper_4: (color1)
+    l_topper_5: (color1)
+    l_topper_6: (color1)
+    l_topper_7: (color1)
+    l_topper_8: (color1)    
+    l_topper_9: (color1)    
+    l_topper_10: (color1)   
+    l_topper_11: off    
+    l_topper_12: off   
+    l_topper_13: off   
+    l_topper_14: off    
+    l_topper_15: off   
+    l_topper_16: off    
+    l_topper_17: off   
+    l_topper_18: off    
+    l_topper_19: off    
+    l_topper_20: off
+- time: '+1'
+  lights:
+    l_topper_1: off
+    l_topper_2: off
+    l_topper_3: off
+    l_topper_4: off
+    l_topper_5: off
+    l_topper_6: off
+    l_topper_7: off
+    l_topper_8: off 
+    l_topper_9: off
+    l_topper_10: off 
+    l_topper_11: (color1)    
+    l_topper_12: (color1)    
+    l_topper_13: (color1)    
+    l_topper_14: (color1)    
+    l_topper_15: (color1)    
+    l_topper_16: (color1)    
+    l_topper_17: (color1)    
+    l_topper_18: (color1)    
+    l_topper_19: (color1)    
+    l_topper_20: (color1)

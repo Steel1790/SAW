@@ -307,6 +307,15 @@ show_player:
       sh_hurryup_ready:
         show_tokens:
           leds: orbit
+      flash_token_hurryup:
+        loops: 0
+        speed: 10
+        show_tokens:
+          leds: gi, starpost
+          color1: white
+      topper_strobe_left_right:
+        loops: -1
+        speed: 50
   logicblock_acc_make_your_choice_qualify_hit{step==1}:
       sh_hurryup_collected_hit:
         show_tokens:
