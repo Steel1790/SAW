@@ -3,7 +3,7 @@
 #SLOW PULSE ON OFF
 - time: 0
   lights:
-    l_jw_syringe: 643973 -f1500ms    # 50 percent zeptest purple color 
+    l_jw_syringe: 7f2d9c -f1500ms    # 50 percent zeptest purple color 
 - time: '+2'
   lights:
     l_jw_syringe: off -f500ms    
