@@ -427,6 +427,8 @@ drop_target_banks:
       mode_zeptest_started: 0
       mode_lil_billy_started: 0
       lil_billy_drops_hit: 0
+      mode_puzzle_hurryup_started: 0
+      mode_trap_select_started: 0
   upper_dropbank:
     drop_targets:
       - dt_upper_drop1

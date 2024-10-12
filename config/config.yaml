@@ -98,7 +98,7 @@ sounds:
 # bonus sound adjusted
   BonusCountdownWBass:
     file: BonusCountdownWBass.wav
-    volume: 0.5
+    volume: 0.3
 # cher/amanda callouts volume lowered
   Antidote1:
     file: Antidote1.wav

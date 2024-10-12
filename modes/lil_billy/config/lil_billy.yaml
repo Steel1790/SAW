@@ -18,13 +18,13 @@ multiballs:
 random_event_player:
   mode_lil_billy_started:
     events:
-      e_lilbilly_tricycle: 99
-      e_lilbilly_cubicle: 1
+#      e_lilbilly_tricycle: 0
+      e_lilbilly_cubicle: 100
   counter_cnt_lil_billy_drops_hit_hit:
     events:
       e_lil_billy_drops_hit1: 50
       e_lil_billy_drops_hit2: 50
-    force_all: true
+    # force_all: true
 
 event_player:
   e_lilbilly_tricycle: 
