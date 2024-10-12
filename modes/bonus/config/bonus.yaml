@@ -685,7 +685,7 @@ show_player:
      show_tokens:
        led: starpost
        color1: white
-   skillshot_colorwash: 
+   skillshot_color_wash: 
      loops: 0
      speed: 100
    speaker_left_chase:
