@@ -97,7 +97,7 @@ show_player:
   counter_minimode_pops_counter_hit{hits==1}:
     item_gears_pulse:
       loops: -1
-      speed: 10
+      speed: 1
       priority: 121
   counter_minimode_pops_counter_hit{hits==20}:
     item_gears_pulse: stop
@@ -124,7 +124,7 @@ show_player:
   counter_minimode_slings_counter_hit{hits==1}:
     item_bathtub_pulse:
       loops: -1
-      speed: 10
+      speed: 1
       priority: 121 
   counter_minimode_slings_counter_hit{hits==60}:
     item_bathtub_pulse: stop
@@ -137,7 +137,7 @@ show_player:
   counter_minimode_inlanes_counter_hit{hits==1}:
     item_taperecorder_pulse:
       loops: -1
-      speed: 10
+      speed: 1
       priority: 121 
   counter_minimode_inlanes_counter_hit{hits==9}:
     item_taperecorder_pulse: stop
@@ -150,7 +150,7 @@ show_player:
   counter_minimode_spinners_counter_hit{hits==1}:
     item_gun_pulse:
       loops: -1
-      speed: 10
+      speed: 1
       priority: 121 
   counter_minimode_spinners_counter_hit{hits==40}:
     item_gun_pulse: stop
@@ -163,7 +163,7 @@ show_player:
   counter_minimode_ramps_counter_hit{hits==1}:
     item_key_pulse:
       loops: -1
-      speed: 10
+      speed: 1
       priority: 121 
   counter_minimode_ramps_counter_hit{hits==5}:
     item_key_pulse: stop
@@ -176,7 +176,7 @@ show_player:
   counter_minimode_loops_counter_hit{hits==1}:
     item_hacksaw_pulse:
       loops: -1
-      speed: 10
+      speed: 1
       priority: 121 
   counter_minimode_loops_counter_hit{hits==5}:
     item_hacksaw_pulse: stop
@@ -189,7 +189,7 @@ show_player:
   counter_minimode_drops_counter_hit{hits==1}:
     item_syringe_pulse:
       loops: -1
-      speed: 10
+      speed: 1
       priority: 121 
   counter_minimode_drops_counter_hit{hits==8}:
     item_syringe_pulse: stop
