@@ -53,9 +53,10 @@ event_player:
   logicblock_cnt_saw_qualify_updated{value==2}: 
     - e_saw_disc2|1s
     - saw_pops_sa|0.3s
-  logicblock_cnt_saw_qualify_complete: 
+  mode_trap_select_started: 
     - e_saw_disc3|1s
     - saw_pops_saw|0.3s
+    - stop_saw_widget|0.2s
 
 # temporarily commented out mode stopping to trigger puzzle hurry up. As the delay was occuring the time to trigger into the next ball if it was drained
 # during a mode.
@@ -109,8 +110,6 @@ event_player:
   mode_make_your_choice_hurryup_stopping:
     - e_que_basemusic|0.5s
 
-
-  mode_trap_select_started: stop_saw_widget|0.2s
   logicblock_minimode_pops_counter_hit{count==1}: stop_pops_widget1|300ms
   logicblock_minimode_pops_counter_hit{count==2}: stop_pops_widget2|300ms
   logicblock_minimode_pops_counter_hit{count==3}: stop_pops_widget3|300ms
@@ -825,7 +824,7 @@ shows:
   sh_outlane_on:
     - duration: -1
       lights:
-        (leds): 8A0303
+        (leds): 900C3F
   sh_extraball_on:
     - duration: -1
       lights:
@@ -860,7 +859,19 @@ shows:
     - duration: 1s      
       lights:
         (leds): zeptest_alt
-
+# die progress letters
+  sh_die_d_letters:
+    - duration: -1
+      lights:
+        (leds): (color1)
+  sh_die_di_letters:
+    - duration: -1
+      lights:
+        (leds): (color1)
+  sh_die_die_letters:
+    - duration: -1
+      lights:
+        (leds): (color1)
 # EK testing lightshow on shot action
 show_player:
   mode_skillshot_complete:
@@ -1101,6 +1112,33 @@ show_player:
       loops: -1 
       priority: 119
 
+# die progress letters
+  logicblock_make_your_choice_qualify_updated{value==1}:
+    sh_die_d_letters:
+      speed: 1
+      show_tokens:
+        color1: zeptest
+        leds: l_skill_shot3
+  logicblock_make_your_choice_qualify_updated{value==2}:
+    sh_die_di_letters:
+      speed: 1
+      show_tokens:
+        color1: zeptest
+        leds: l_skill_shot2
+  logicblock_make_your_choice_qualify_updated{value==3}:
+    sh_die_die_letters:
+      speed: 1
+      show_tokens:
+        color1: zeptest
+        leds: l_skill_shot1
+  startmode_make_your_choice_hurryup:
+    sh_die_d_letters:
+      action: stop
+    sh_die_di_letters:
+      action: stop
+    sh_die_die_letters:
+      action: stop
+
 # saw letter light show
   logicblock_cnt_saw_qualify_updated{value==1}:
     collect_S:
@@ -1317,15 +1355,15 @@ show_player:
   lilbillyqualify1:
     domes_little_billy_colorbomb: 
       loops: 0
-      speed: 50
+      speed: 75
   lilbillyqualify2:
     domes_little_billy_colorbomb: 
       loops: 0
-      speed: 50
+      speed: 75
   lilbillyqualify3:
     domes_little_billy_colorbomb: 
       loops: 0
-      speed: 50
+      speed: 75
 
 # end of ball 3
   #ball_will_end{current_player.ball==3}:
@@ -2624,7 +2662,7 @@ widgets:
       font_name: sawesome
       outline_color: black
       outline_width: 5
-      color: red
+      color: zeptest
       x: 8.1%
       y: 63%
       z: 3
@@ -2635,7 +2673,7 @@ widgets:
       font_name: sawesome
       outline_color: black
       outline_width: 5
-      color: red
+      color: zeptest
       x: 8.1%
       y: 63%
       z: 3
@@ -2645,7 +2683,7 @@ widgets:
       font_name: sawesome
       outline_color: black
       outline_width: 5
-      color: red
+      color: zeptest
       x: 11.5%
       y: 63%
       z: 3   
@@ -2656,7 +2694,7 @@ widgets:
       font_name: sawesome
       outline_color: black
       outline_width: 5
-      color: red
+      color: zeptest
       x: 8.1%
       y: 63%
       z: 3
@@ -2666,7 +2704,7 @@ widgets:
       font_name: sawesome
       outline_color: black
       outline_width: 5
-      color: red
+      color: zeptest
       x: 11.5%
       y: 61%
       z: 3 
@@ -2676,7 +2714,7 @@ widgets:
       font_name: sawesome
       outline_color: black
       outline_width: 5
-      color: red
+      color: zeptest
       x: 14.9%
       y: 61%
       z: 3

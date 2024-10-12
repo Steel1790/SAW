@@ -1,7 +1,7 @@
 #show_version=6
 - time: 0
   lights:
-    l_jw_hacksaw: 39522f  # 50 percent razorwire green color 
+    l_jw_hacksaw: razorwire  # 100 percent razorwire green color 
 - time: '+1'
   lights:
     l_jw_hacksaw: off -f500ms    

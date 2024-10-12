@@ -1,7 +1,7 @@
 #show_version=6
 - time: 0
   lights:
-    l_jw_hacksaw: 306155    # 50 percent teal color 
+    l_jw_hacksaw: 00C190    # 100 percent teal color -add a ball during mb
 - time: '+1'
   lights:
     l_jw_hacksaw: off

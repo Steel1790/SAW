@@ -1,7 +1,7 @@
 #show_version=6
 - time: 0
   lights:
-    l_jw_bathtub: 472734  # 50 percent bathtub burgundy color 
+    l_jw_bathtub: 900C3F  # 100 percent bathtub burgundy color 
 - time: '+1'
   lights:
     l_jw_bathtub: off  

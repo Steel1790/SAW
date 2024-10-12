@@ -8,10 +8,10 @@ sequence_shots:
     sequence_timeout: 4s
   ssh_leftloop:
     switch_sequence: s_left_loop_bottom, s_left_loop_top
-    sequence_timeout: 3s
+    sequence_timeout: 4s
   ssh_rightloop:
     switch_sequence: s_right_loop_bottom, s_right_loop_top
-    sequence_timeout: 3s
+    sequence_timeout: 4s
   #combos
   ssh_leftloop_leftramp_combo:
     switch_sequence: s_left_loop_bottom, s_left_loop_top, s_enter_left_ramp, s_left_ramp_score_bottom, s_left_ramp_score_top

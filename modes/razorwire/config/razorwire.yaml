@@ -1303,7 +1303,7 @@ sound_player:
     razorwire_mode_sound_pool:
       action: play
       block: true
-  sw_slingshot:
+  s_left_slingshot_active:
     razorwire_mode_sound_pool:
       action: play
       block: true    

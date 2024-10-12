@@ -158,23 +158,12 @@ slides:
     - type: text
       text: ''
       key: high_score
-      font_size: 100
+      font_size: 150
       font_name: sawesome      
       x: center
       y: center
       z: 2
       color: C2E3E0   
-      animations:
-        show_slide:
-          - property: opacity
-            value: 1
-            duration: 0.3s
-            easing: in_out_quint
-          - property: opacity
-            value: 0
-            duration: 0.3s
-            repeat: true
-            easing: in_out_quint
     - type: image            
       image: billyskillshot
       opacity: 0.8

@@ -20,26 +20,498 @@ slides:
         - event: mode_skillshot_started
           action: play
           
-#  skillshotcomplete:
-#    widgets:
-#    - type: Text
-#      text: "Skillshot\nSuccess!"
-#      color: black
-#      font_name: TrajanProRegular
-#      font_size: 100
-#      x: 50%
-#      y: 50%
-#      animations:
-#       pre_show_slide:
-#        - property: rotation
-#          value: -360
-#          duration: 2s
-          
-#    - type: image
-#      image: spiralskillshot  
+widgets:
+   w_newgame_introUI:
+    - type: image
+      image: BottomFrame
+      y: 85
+      # x: 1
+      z: 2
+      animations:
+        show_slide:
+          - property: opacity
+            value: 1
+            duration: 1.5s
+#player 1 widget
+    - type: text
+      text: (player1|score)
+      number_grouping: true  
+   #   y: 36
+      y: 37
+      x: 252
+      z: 8
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      font_name: AeroMaticsDisplaRegular
+      color: black
+    - type: text
+      text: (player1|score)
+      number_grouping: true  
+      y: 36
+      x: 253
+      z: 8
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      font_name: AeroMaticsDisplaRegular
+      outline_color: f0cfab
+      outline_width: 2
+#player 2 widget     
+    - type: text
+      text: (player2|score)
+      number_grouping: true
+      y: 37
+      x: left+579
+      z: 8
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      font_name: AeroMaticsDisplaRegular
+      color: black
+    - type: text
+      text: (player2|score)
+      number_grouping: true
+      y: 36
+      x: left+580
+      z: 7
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      font_name: AeroMaticsDisplaRegular
+      outline_color: f0cfab
+      outline_width: 2
+#player 3 widget
+    - type: Text
+      text: (player3|score)
+      number_grouping: true   
+      font_name: AeroMaticsDisplaRegular
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      y: 37
+      x: left+908
+      z: 8
+      color: black
+    - type: Text
+      text: (player3|score)
+      number_grouping: true   
+      font_name: AeroMaticsDisplaRegular
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      y: 36
+      x: left+909
+      z: 7
+      outline_color: f0cfab
+      outline_width: 2
+#player 4 widget
+    - type: Text
+      text: (player4|score)
+      number_grouping: true       
+      font_name: AeroMaticsDisplaRegular
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      y: 37
+      x: left+1239
+      z: 8
+      color: black
+    - type: Text
+      text: (player4|score)
+      number_grouping: true       
+      font_name: AeroMaticsDisplaRegular
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      y: 36
+      x: left+1240
+      z: 7
+      outline_color: f0cfab
+      outline_width: 2  
+#skillshot display value
+   w_skillshot_value:
+    - type: text
+      text: (player|skillshot_value)
+      number_grouping: true 
+      x: 50%
+      y: 28%
+      z: 7
+      font_size: 90
+      font_name: Mustkill     
+      outline_color: black
+      outline_width: 7
+#player 1
+   1PlayerGame: 
+    - type: text
+      text: (player1|score)
+      number_grouping: true  
+   #   y: 36
+      y: 37
+      x: 252
+      z: 8
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      font_name: AeroMaticsDisplaRegular
+      color: black
+    - type: text
+      text: (player1|score)
+      number_grouping: true  
+      y: 36
+      x: 253
+      z: 8
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      font_name: AeroMaticsDisplaRegular
+      outline_color: f0cfab
+      outline_width: 2
+   2PlayerGame:       
+    - type: text
+      text: (player2|score)
+      number_grouping: true
+      y: 37
+      x: left+579
+      z: 8
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      font_name: AeroMaticsDisplaRegular
+      color: black
+    - type: text
+      text: (player2|score)
+      number_grouping: true
+      y: 36
+      x: left+580
+      z: 7
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      font_name: AeroMaticsDisplaRegular
+      outline_color: f0cfab
+      outline_width: 2
+   3PlayerGame:
+    - type: Text
+      text: (player3|score)
+      number_grouping: true   
+      font_name: AeroMaticsDisplaRegular
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      y: 37
+      x: left+908
+      z: 8
+      color: black
+    - type: Text
+      text: (player3|score)
+      number_grouping: true   
+      font_name: AeroMaticsDisplaRegular
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      y: 36
+      x: left+909
+      z: 7
+      outline_color: f0cfab
+      outline_width: 2
+   4PlayerGame:
+    - type: Text
+      text: (player4|score)
+      number_grouping: true       
+      font_name: AeroMaticsDisplaRegular
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      y: 37
+      x: left+1239
+      z: 8
+      color: black
+    - type: Text
+      text: (player4|score)
+      number_grouping: true       
+      font_name: AeroMaticsDisplaRegular
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      y: 36
+      x: left+1240
+      z: 7
+      outline_color: f0cfab
+      outline_width: 2
 
+#player active
+   Player1Active:
+    - type: text
+      text: (player1|score)
+      number_grouping: true  
+   #   y: 36
+      y: 37
+      # x: 253
+      x: 252
+      z: 8
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      font_name: AeroMaticsDisplaRegular
+      color: black
+      # outline_color: f0cfab
+      # outline_width: 2
+    - type: text
+      text: (player1|score)
+      number_grouping: true  
+      y: 36
+      x: 253
+      z: 7
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      font_name: AeroMaticsDisplaRegular
+      outline_color: f0cfab
+      outline_width: 2
+    - type: image
+      image: Player1Hacksaw
+      opacity: 1.0
+      y: 4
+      x: 35
+      z: 6
+      anchor_x: left
+      anchor_y: bottom  
+    - type: image
+      image: player1UI
+   Player2Active:
+    - type: text
+      text: (player2|score)
+      number_grouping: true
+      y: 37
+      x: left+579
+      z: 8
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      font_name: AeroMaticsDisplaRegular
+      color: black
+    - type: text
+      text: (player2|score)
+      number_grouping: true
+      y: 36
+      x: left+580
+      z: 7
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      font_name: AeroMaticsDisplaRegular
+      outline_color: f0cfab
+      outline_width: 2
+    - type: image
+      image: Player2Hacksaw
+      opacity: 1.0
+      y: 4
+      x: left+515
+      z: 6
+      anchor_y: bottom       
+    - type: image
+      image: player2UI
+   Player3Active:
+    - type: Text
+      text: (player3|score)
+      number_grouping: true   
+      font_name: AeroMaticsDisplaRegular
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      y: 37
+      x: left+908
+      z: 8
+      color: black
+    - type: Text
+      text: (player3|score)
+      number_grouping: true   
+      font_name: AeroMaticsDisplaRegular
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      y: 36
+      x: left+909
+      z: 7
+      outline_color: f0cfab
+      outline_width: 2
+    - type: image
+      image: Player3Hacksaw
+      opacity: 1.0
+      y: 4
+      x: left+844
+      z: 6
+      anchor_y: bottom  
+    - type: image
+      image: player3UI
+   Player4Active:
+    - type: Text
+      text: (player4|score)
+      number_grouping: true       
+      font_name: AeroMaticsDisplaRegular
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      y: 37
+      x: left+1239
+      z: 8
+      color: black
+    - type: Text
+      text: (player4|score)
+      number_grouping: true       
+      font_name: AeroMaticsDisplaRegular
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      y: 36
+      x: left+1240
+      z: 7
+      outline_color: f0cfab
+      outline_width: 2
+    - type: image
+      image: Player4Hacksaw
+      opacity: 1.0
+      y: 4
+      x: left+1174
+      z: 6
+      anchor_y: bottom
+    - type: image
+      image: player4UI
+
+        
+#player 2   
+   Player2Inactive: 
+     - type: Text
+       text: PRESS START
+       font_name: AeroMaticsDisplaRegular
+       font_size: 28
+       y: 60
+       x: left+490
+       z: 5
+       color: red
+       animations:
+         pre_show_slide:
+         - property: opacity
+           value: 0
+           duration: 1.5s
+         - property: opacity
+           value: 1
+           duration: 1.5s
+           repeat: true
+            
+#player 3   
+   Player3Inactive:
+     - type: Text
+       text: PRESS START
+       font_name: AeroMaticsDisplaRegular
+       font_size: 28
+       y: 60
+       x: left+820
+       z: 5
+       color: red
+       animations:
+         pre_show_slide:
+         - property: opacity
+           value: 0
+           duration: 1.5s
+         - property: opacity
+           value: 1
+           duration: 1.5s
+           repeat: true 
+       
+#player 4   
+   Player4Inactive:
+     - type: Text
+       text: PRESS START
+       font_name: AeroMaticsDisplaRegular
+       font_size: 28
+       y: 60
+       x: left+1150
+       z: 5     
+       color: red
+       animations:
+         pre_show_slide:
+         - property: opacity
+           value: 0
+           duration: 1.5s
+         - property: opacity
+           value: 1
+           duration: 1.5s
+           repeat: true 
+#current player widget
+   w_current_player1:
+    - type: image
+      image: Player1Hacksaw
+      opacity: 1.0
+      y: 4
+      x: 35
+      z: 3
+      anchor_x: left
+      anchor_y: bottom
+   w_current_player2:
+    - type: image
+      image: Player2Hacksaw
+      opacity: 1.0
+      y: 4
+      x: left+515
+      z: 3
+      anchor_y: bottom  
+   w_current_player3:
+    - type: image
+      image: Player3Hacksaw
+      opacity: 1.0
+      y: 4
+      x: left+844
+      z: 3
+      anchor_y: bottom  
+   w_current_player4:
+    - type: image
+      image: Player4Hacksaw
+      opacity: 1.0
+      y: 4
+      x: left+1174
+      z: 3
+      anchor_y: bottom
       
-
+widget_player:
+ mode_skillshot_started:
+  w_newgame_introUI:
+     slide: wanttoplayagame
+     action: add
+  Player2Inactive:
+      slide: wanttoplayagame
+      action: add    
+  Player3Inactive:  
+      slide: wanttoplayagame
+      action: add  
+  Player4Inactive:  
+      slide: wanttoplayagame
+      action: add   
+  w_current_player1:
+     slide: wanttoplayagame
+     action: add      
+ player_added{game.num_players==2}:
+  2PlayerGame:
+      slide: wanttoplayagame
+      action: add  
+  Player2Inactive:
+      slide: wanttoplayagame
+      action: remove        
+ player_added{game.num_players==3}:
+  3PlayerGame:
+      slide: wanttoplayagame
+      action: add 
+  Player3Inactive:
+      slide: wanttoplayagame
+      action: remove       
+ player_added{game.num_players==4}:
+  4PlayerGame:
+      slide: wanttoplayagame
+      action: add
+  Player4Inactive:
+      slide: wanttoplayagame
+      action: remove    
 
 timers:
   mode_timer:
@@ -76,12 +548,26 @@ shot_groups:
     #reset_events: mode_skillshot_started|1
 
 variable_player:
-  droptargets_skill_hit:
+  # droptargets_skill_hit:
+  #   score: 1000000 + (device.counters.cnt_skillshot_hit.value * 1000000)
+  #   skillshot_value:
+  #     int: 1000000 + (device.counters.cnt_skillshot_hit.value * 1000000)
+  #     action: set
+  dt_drop4_hit:
+    score: 3000000 + (device.counters.cnt_skillshot_hit.value * 1000000)
+    skillshot_value:
+      int: 3000000 + (device.counters.cnt_skillshot_hit.value * 1000000)
+      action: set
+  dt_drop3_hit:
+    score: 2000000 + (device.counters.cnt_skillshot_hit.value * 1000000)
+    skillshot_value:
+      int: 2000000 + (device.counters.cnt_skillshot_hit.value * 1000000)
+      action: set
+  dt_drop2_hit:
     score: 1000000 + (device.counters.cnt_skillshot_hit.value * 1000000)
     skillshot_value:
       int: 1000000 + (device.counters.cnt_skillshot_hit.value * 1000000)
       action: set
-
 event_player:
   dt_drop2_hit: mode_skillshot_complete
   dt_drop3_hit: mode_skillshot_complete
@@ -125,20 +611,6 @@ show_player:
       speed: 3
       show_tokens:
         color1: blue
-
-widgets:
-  w_skillshot_value:
-    - type: text
-      text: (player|skillshot_value)
-      number_grouping: true 
-      x: 50%
-      y: 28%
-      z: 7
-      font_size: 90
-      font_name: Mustkill     
-      outline_color: black
-      outline_width: 7
-
       
 #slide_player:
 #  mode_skillshot_complete:

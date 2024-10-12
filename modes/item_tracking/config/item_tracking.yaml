@@ -89,255 +89,107 @@ counters:
 
 show_player:
 # gear light progress - 20 pops
-  counter_minimode_pops_counter_hit{hits<=10}:
+  counter_minimode_pops_counter_hit{hits<20}:
     item_gears_flash:
       loops: 4
       speed: 10
-      priority: 121
-  counter_minimode_pops_counter_hit{hits==11}:
+      priority: 122
+  counter_minimode_pops_counter_hit{hits==1}:
     item_gears_pulse:
-      loops: 4
+      loops: -1
       speed: 10
       priority: 121
-  counter_minimode_pops_counter_hit{hits==12}:
-    item_gears_pulse:
-      loops: 4
-      speed: 10
-      priority: 121
-  counter_minimode_pops_counter_hit{hits==13}:
-    item_gears_pulse:
-      loops: 4
-      speed: 10
-      priority: 121
-  counter_minimode_pops_counter_hit{hits==14}:
-    item_gears_pulse:
-      loops: 4
-      speed: 10
-      priority: 121
-  counter_minimode_pops_counter_hit{hits==15}:
-    item_gears_pulse:
-      loops: 4
-      speed: 10
-      priority: 121
-  counter_minimode_pops_counter_hit{hits==16}:
-    item_gears_pulse:
-      loops: 4
-      speed: 10
-      priority: 121
-  counter_minimode_pops_counter_hit{hits==17}:
-    item_gears_pulse:
-      loops: 4
-      speed: 10
-      priority: 121
-  counter_minimode_pops_counter_hit{hits==18}:
-    item_gears_pulse:
-      loops: 4
-      speed: 10
-      priority: 121
-  counter_minimode_pops_counter_hit{hits==19}:
-    item_gears_pulse:
-      loops: 4
-      speed: 10
-      priority: 121
+  counter_minimode_pops_counter_hit{hits==20}:
+    item_gears_pulse: stop
+
 # candle light progress - 10 standups
-  counter_minimode_standups_counter_hit{hits<=5}:
+  counter_minimode_standups_counter_hit{hits<10}:
     item_candle_flash:
       loops: 4
       speed: 10
-      priority: 121
-  counter_minimode_standups_counter_hit{hits==6}:
+      priority: 122
+  counter_minimode_standups_counter_hit{hits==1}:
     item_candle_pulse:
-      loops: 0
+      loops: -1
       speed: 1
       priority: 121
-  counter_minimode_standups_counter_hit{hits==7}:
-    item_candle_pulse:
-      loops: 0
-      speed: 1
-      priority: 121
-  counter_minimode_standups_counter_hit{hits==8}:
-    item_candle_pulse:
-      loops: 0
-      speed: 1
-      priority: 121
-  counter_minimode_standups_counter_hit{hits==9}:
-    item_candle_pulse:
-      loops: 0
-      speed: 1
-      priority: 121
+  counter_minimode_standups_counter_hit{hits==10}:
+    item_candle_pulse: stop
 # bathtub light progress - 60 slings
-  counter_minimode_slings_counter_hit{hits<=50}:
+  counter_minimode_slings_counter_hit{hits<60}:
     item_bathtub_flash:
       loops: 4
       speed: 10
-      priority: 121 
-  counter_minimode_slings_counter_hit{hits==51}:
+      priority: 122
+  counter_minimode_slings_counter_hit{hits==1}:
     item_bathtub_pulse:
-      loops: 4
+      loops: -1
       speed: 10
       priority: 121 
-  counter_minimode_slings_counter_hit{hits==52}:
-    item_bathtub_pulse:
-      loops: 4
-      speed: 10
-      priority: 121 
-  counter_minimode_slings_counter_hit{hits==53}:
-    item_bathtub_pulse:
-      loops: 4
-      speed: 10
-      priority: 121 
-  counter_minimode_slings_counter_hit{hits==54}:
-    item_bathtub_pulse:
-      loops: 4
-      speed: 10
-      priority: 121 
-  counter_minimode_slings_counter_hit{hits==55}:
-    item_bathtub_pulse:
-      loops: 4
-      speed: 10
-      priority: 121 
-  counter_minimode_slings_counter_hit{hits==56}:
-    item_bathtub_pulse:
-      loops: 4
-      speed: 10
-      priority: 121 
-  counter_minimode_slings_counter_hit{hits==57}:
-    item_bathtub_pulse:
-      loops: 4
-      speed: 10
-      priority: 121 
-  counter_minimode_slings_counter_hit{hits==58}:
-    item_bathtub_pulse:
-      loops: 4
-      speed: 10
-      priority: 121 
-  counter_minimode_slings_counter_hit{hits==59}:
-    item_bathtub_pulse:
-      loops: 4
-      speed: 10
-      priority: 121 
+  counter_minimode_slings_counter_hit{hits==60}:
+    item_bathtub_pulse: stop
 # tape recorder light progress - 9 inlanes
-  counter_minimode_inlanes_counter_hit{hits<=5}:
+  counter_minimode_inlanes_counter_hit{hits<9}:
     item_taperecorder_flash:
       loops: 4
       speed: 10
-      priority: 121 
-  counter_minimode_inlanes_counter_hit{hits==6}:
+      priority: 122
+  counter_minimode_inlanes_counter_hit{hits==1}:
     item_taperecorder_pulse:
-      loops: 4
+      loops: -1
       speed: 10
       priority: 121 
-  counter_minimode_inlanes_counter_hit{hits==7}:
-    item_taperecorder_pulse:
-      loops: 4
-      speed: 10
-      priority: 121 
-  counter_minimode_inlanes_counter_hit{hits==8}:
-    item_taperecorder_pulse:
-      loops: 4
-      speed: 10
-      priority: 121 
+  counter_minimode_inlanes_counter_hit{hits==9}:
+    item_taperecorder_pulse: stop
 # gun light progress - 40 spinners
-  counter_minimode_spinners_counter_hit{hits<=30}:
+  counter_minimode_spinners_counter_hit{hits<40}:
     item_gun_flash:
       loops: 4
       speed: 10
-      priority: 121 
-  counter_minimode_spinners_counter_hit{hits==31}:
+      priority: 122
+  counter_minimode_spinners_counter_hit{hits==1}:
     item_gun_pulse:
-      loops: 4
+      loops: -1
       speed: 10
       priority: 121 
-  counter_minimode_spinners_counter_hit{hits==32}:
-    item_gun_pulse:
-      loops: 4
-      speed: 10
-      priority: 121 
-  counter_minimode_spinners_counter_hit{hits==33}:
-    item_gun_pulse:
-      loops: 4
-      speed: 10
-      priority: 121 
-  counter_minimode_spinners_counter_hit{hits==34}:
-    item_gun_pulse:
-      loops: 4
-      speed: 10
-      priority: 121 
-  counter_minimode_spinners_counter_hit{hits==35}:
-    item_gun_pulse:
-      loops: 4
-      speed: 10
-      priority: 121 
-  counter_minimode_spinners_counter_hit{hits==36}:
-    item_gun_pulse:
-      loops: 4
-      speed: 10
-      priority: 121 
-  counter_minimode_spinners_counter_hit{hits==37}:
-    item_gun_pulse:
-      loops: 4
-      speed: 10
-      priority: 121 
-  counter_minimode_spinners_counter_hit{hits==38}:
-    item_gun_pulse:
-      loops: 4
-      speed: 10
-      priority: 121 
-  counter_minimode_spinners_counter_hit{hits==39}:
-    item_gun_pulse:
-      loops: 4
-      speed: 10
-      priority: 121 
+  counter_minimode_spinners_counter_hit{hits==40}:
+    item_gun_pulse: stop
 # key light progress -5 ramps
-  counter_minimode_ramps_counter_hit{hits<=2}:
+  counter_minimode_ramps_counter_hit{hits<5}:
     item_key_flash:
       loops: 4
       speed: 10
-      priority: 121 
-  counter_minimode_ramps_counter_hit{hits==3}:
+      priority: 122 
+  counter_minimode_ramps_counter_hit{hits==1}:
     item_key_pulse:
-      loops: 4
+      loops: -1
       speed: 10
       priority: 121 
-  counter_minimode_ramps_counter_hit{hits==4}:
-    item_key_pulse:
-      loops: 4
-      speed: 10
-      priority: 121 
+  counter_minimode_ramps_counter_hit{hits==5}:
+    item_key_pulse: stop
 # hacksaw light progress -5 ramps
-  counter_minimode_loops_counter_hit{hits<=2}:
+  counter_minimode_loops_counter_hit{hits<5}:
     item_hacksaw_flash:
       loops: 4
       speed: 10
-      priority: 121 
-  counter_minimode_loops_counter_hit{hits==3}:
+      priority: 122
+  counter_minimode_loops_counter_hit{hits==1}:
     item_hacksaw_pulse:
-      loops: 4
+      loops: -1
       speed: 10
       priority: 121 
-  counter_minimode_loops_counter_hit{hits==4}:
-    item_hacksaw_pulse:
-      loops: 4
-      speed: 10
-      priority: 121 
+  counter_minimode_loops_counter_hit{hits==5}:
+    item_hacksaw_pulse: stop
 # syringe light progress -8 drops
-  counter_minimode_drops_counter_hit{hits<=4}:
+  counter_minimode_drops_counter_hit{hits<8}:
     item_syringe_flash:
       loops: 4
       speed: 10
-      priority: 121 
-  counter_minimode_drops_counter_hit{hits==5}:
+      priority: 122
+  counter_minimode_drops_counter_hit{hits==1}:
     item_syringe_pulse:
-      loops: 4
+      loops: -1
       speed: 10
       priority: 121 
-  counter_minimode_drops_counter_hit{hits==6}:
-    item_syringe_pulse:
-      loops: 4
-      speed: 10
-      priority: 121 
-  counter_minimode_drops_counter_hit{hits==7}:
-    item_syringe_pulse:
-      loops: 4
-      speed: 10
-      priority: 121 
+  counter_minimode_drops_counter_hit{hits==8}:
+    item_syringe_pulse: stop

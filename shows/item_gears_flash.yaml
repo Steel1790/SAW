@@ -1,7 +1,7 @@
 #show_version=6 
 - time: 0
   lights:
-    l_jw_gears: 3f4c73   # 50 percent shotgun green color 
+    l_jw_gears: shotgun   # 100 percent shotgun color 
 - time: '+1'
   lights:
     l_jw_gears: off  

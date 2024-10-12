@@ -965,6 +965,29 @@ sound_player:
       action: play
       loops: -1   
 
+#make your choice started
+  startmode_make_your_choice_hurryup:  
+    HurryUpMakeYourChoice:
+      action: play
+      loops: 0
+# sound effect when players 2,3,4 added
+  player_added{game.num_players==1}:
+    FleshSlash_03:
+      loops: 0
+      action: play
+  player_added{game.num_players==2}:
+    FleshSlash_03:
+      loops: 0
+      action: play
+  player_added{game.num_players==3}:
+    FleshSlash_03:
+      loops: 0
+      action: play   
+  player_added{game.num_players==4}:
+    FleshSlash_03:
+      loops: 0
+      action: play  
+
 # stop all mode music at beginning of mode_bonus
   mode_bonus_started:
     QuadShotgunModeStart:
