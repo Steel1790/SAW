@@ -922,6 +922,21 @@ show_player:
        loops: 1
        speed: 20
        priority: 170
+      fire_left_disc:
+       loops: 0
+       speed: 20      
+      fire_middle_disc:
+       loops: 0
+       speed: 20  
+      fire_right_disc:
+       loops: 0
+       speed: 20  
+      fire_top_pops:
+        loops: 0
+        speed: 30
+      fire_bottom_pops:
+        loops: 0
+        speed: 30
   logicblock_flammablejelly_updated{value==1}:
       top_drop_chase:
         loops: -1
@@ -935,9 +950,6 @@ show_player:
       speaker_flammable_jelly:
         loops: 1
         speed: 20
-      fire_top_pops:
-        loops: -1
-        speed: 30
       # flammablejelly_progress_p1:
       #   loops: -1
       #   show_tokens:

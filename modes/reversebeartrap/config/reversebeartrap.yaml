@@ -1021,6 +1021,9 @@ show_player:
         show_tokens:
           color1: beartrap
         priority: 170
+      beartrap_shot_hit_playfield:
+        loops: 0
+        speed: 20
   logicblock_reversebeartrap_updated{value==2}: 
       reversebeartrap_progress:
         loops: -1
@@ -1042,6 +1045,9 @@ show_player:
         show_tokens:
           color1: beartrap
         priority: 170
+      beartrap_shot_hit_playfield:
+        loops: 0
+        speed: 20
   logicblock_reversebeartrap_updated{value==3}:
       right_ramp_chase:
         loops: -1
@@ -1063,6 +1069,9 @@ show_player:
         show_tokens:
           color1: beartrap
         priority: 170
+      beartrap_shot_hit_playfield:
+        loops: 0
+        speed: 20
   logicblock_reversebeartrap_updated{value==4}: 
       reversebeartrap_progress:
         loops: -1
@@ -1084,6 +1093,9 @@ show_player:
         show_tokens:
           color1: beartrap
         priority: 170
+      beartrap_shot_hit_playfield:
+        loops: 0
+        speed: 20
   logicblock_reversebeartrap_updated{value==5}: 
       right_ramp_chase:
         loops: -1
@@ -1104,6 +1116,9 @@ show_player:
         show_tokens:
           color1: beartrap
         priority: 170
+      beartrap_shot_hit_playfield:
+        loops: 0
+        speed: 20
 
   player_reversebeartrap_120s_reversebeartrap_timer_tick{value < 1}:
       mode_fail:

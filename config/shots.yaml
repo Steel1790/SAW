@@ -34,3 +34,8 @@ sequence_shots:
   ssh_leftloop_leftramp_innerloop_combo:
     switch_sequence: s_left_loop_bottom, s_left_loop_top, s_enter_left_ramp, s_left_ramp_score_bottom, s_left_ramp_score_top, s_inner_loop
     sequence_timeout: 10s
+# saucer to inner orbit
+
+# saucer to inner orbit to left ramp
+
+# takes total to 8. reminder to upd on UI and counters

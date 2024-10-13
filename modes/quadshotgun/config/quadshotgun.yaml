@@ -1001,6 +1001,16 @@ show_player:
     topper_heartbeat:
       show_tokens:
         color1: shotgun
+    gi_white_360_sweep:
+      loops: -1
+      speed: 10
+      show_tokens:
+        color1: white
+    domes_color_360:
+      loops: -1
+      speed: 10
+      show_tokens:
+        color1: white
 
 #Shot hit test
   shot_quadshotgun_left_standup_hit:

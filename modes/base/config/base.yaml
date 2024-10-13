@@ -1140,7 +1140,28 @@ show_player:
       show_tokens:
         led: dome_1
         color1: off
-        
+# complete a puzzle piece
+  flammablejelly_puzzle_complete:
+    puzzle_collect_jelly:
+      loops: 0
+      speed: 20
+  razorwire_puzzle_complete:
+    puzzle_collect_razorwire:
+      loops: 0
+      speed: 20
+  drillchair_puzzle_complete:
+    puzzle_collect_drillchair:
+      loops: 0
+      speed: 20
+  quadshotgun_puzzle_complete:
+    puzzle_collect_shotgun:
+      loops: 0
+      speed: 20
+  zeptest_puzzle_complete:
+    puzzle_collect_zeptest:
+      loops: 0
+      speed: 20
+
 
 # die progress letters
   logicblock_make_your_choice_qualify_updated{value==1}:
