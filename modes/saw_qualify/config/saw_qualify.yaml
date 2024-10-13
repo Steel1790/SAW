@@ -274,7 +274,7 @@ shots:
     enable_events: modes_active_modes_changed{current_player.modes_attempted>=3}
     reset_events: slide_trapcomplete_removed, slide_trapfailed_removed, sg_saw_reset_a3_complete, mode_razorwire_stopped, mode_drillchair_stopped, mode_quadshotgun_stopped, mode_reversebeartrap_stopped, mode_zeptest_stopped, mode_flammablejelly_stopped, ball_started, e_mb_mode_stopping, e_saw_qualify_reset
     switches: s_left_standup
-    profile: sp_saw_qualify_a1
+    profile: sp_saw_qualify
     show_tokens:
       leds: l_left_standup_arrow
   shot_inner_loop_a3:
