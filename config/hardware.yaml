@@ -689,7 +689,7 @@ diverters:
     type: hold
     activation_time: 3s
     activation_switches: s_right_ramp_score_bottom
-    enable_events: logicblock_acc_hacksaw_mb_qualify_complete
+    enable_events: logicblock_acc_hacksaw_mb_qualify_complete, mode_hacksaw_diverter_carry_over_started
     disable_events: ball_ended, multiball_lock_mbl_hacksaw_locked_ball
                     #, mode_selection_mode_started
     targets_when_active: bd_hacksaw

@@ -1,0 +1,7 @@
+#config_version=6
+
+mode:
+  start_events: logicblock_acc_hacksaw_mb_qualify_complete
+  stop_events: multiball_lock_mbl_hacksaw_locked_ball
+  priority: 120
+  restart_on_next_ball: true

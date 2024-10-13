@@ -623,13 +623,13 @@ variable_player:
       int: 10
       action: set
     visual_slings_counter:
-      int: 60
+      int: 40
       action: set
     visual_inlanes_counter:
       int: 9
       action: set
     visual_spinners_counter:
-      int: 40
+      int: 25
       action: set
     visual_ramps_counter:
       int: 5
@@ -638,7 +638,7 @@ variable_player:
       int: 5
       action: set
     visual_drops_counter:
-      int: 8
+      int: 6
       action: set
   player_base_t_playfield_multiplier_timer_tick{value < 1}:
     pf_multiplier:
