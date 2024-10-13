@@ -47,7 +47,7 @@ counters:
     count_events: sw_inlane    
     
   minimode_spinners_counter:
-    starting_count: 25
+    starting_count: 40
     count_complete_value: 0
     direction: down
     start_enabled: true
@@ -55,6 +55,10 @@ counters:
     disable_on_complete: false    
     events_when_complete: minimode_spinners_complete 
     count_events: spinner_spinner_hit 
+    control_events:
+      - action: subtract
+        value: 1
+        event: sw_spinner
 
   minimode_ramps_counter:
     starting_count: 5
@@ -142,7 +146,7 @@ show_player:
   counter_minimode_inlanes_counter_hit{hits==9}:
     item_taperecorder_pulse: stop
 # gun light progress - 40 spinners
-  counter_minimode_spinners_counter_hit{hits<25}:
+  counter_minimode_spinners_counter_hit{hits<40}:
     item_gun_flash:
       loops: 4
       speed: 10
@@ -152,7 +156,7 @@ show_player:
       loops: -1
       speed: 1
       priority: 121 
-  counter_minimode_spinners_counter_hit{hits==25}:
+  counter_minimode_spinners_counter_hit{hits==40}:
     item_gun_pulse: stop
 # key light progress -5 ramps
   counter_minimode_ramps_counter_hit{hits<5}:

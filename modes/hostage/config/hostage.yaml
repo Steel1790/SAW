@@ -133,7 +133,7 @@ show_player:
         color1: beartrap
     sh_hostage_on:
       show_tokens:
-        leds: billy, jw_insert, jet_bumper, skillshot, arrow, trap, gi, flasher, trough, discs, hmb_locks, spotlights, cabinet
+        leds: billy, jw_insert, jet_bumper, skillshot, arrow, trap, gi, flasher, trough, discs, hmb_locks, spotlights, cabinet_minus_start
     sh_hostage_ramp_on:
       show_tokens:
         leds: right_ramp

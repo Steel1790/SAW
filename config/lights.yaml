@@ -887,19 +887,19 @@ lights:
     tags: cabinet
   l_left_flipper:
     number: ledneuron-1-1
-    tags: cabinet, flipper
+    tags: cabinet, flipper, cabinet_minus_start
   l_right_flipper:
     number: ledneuron-1-3
-    tags: cabinet, flipper
+    tags: cabinet, flipper, cabinet_minus_start
   l_action_button:
     number: ledneuron-1-2
-    tags: cabinet
+    tags: cabinet, cabinet_minus_start
   l_blade_1:
     number: ledneuron-1-4
-    tags: cabinet
+    tags: cabinet, cabinet_minus_start
   l_blade_2:
     number: ledneuron-1-5
-    tags: cabinet
+    tags: cabinet, cabinet_minus_start
 
 
 # topper

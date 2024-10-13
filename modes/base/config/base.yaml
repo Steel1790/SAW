@@ -419,7 +419,7 @@ variable_player:
   sw_ramp:
     score: 125000 * (current_player.pf_multiplier)
   spinner_spinner_hit:
-    score: 30000 * (current_player.pf_multiplier)
+    score: 60000 * (current_player.pf_multiplier)
   sw_drop_target:
     score: 95000 * (current_player.pf_multiplier)
   sw_loop:
@@ -629,7 +629,7 @@ variable_player:
       int: 9
       action: set
     visual_spinners_counter:
-      int: 25
+      int: 40
       action: set
     visual_ramps_counter:
       int: 5
@@ -2176,7 +2176,7 @@ widgets:
       font_name: AeroMaticsDisplaRegular
       outline_color: black
       outline_width: 3
-      x: 65.6%
+      x: 65.3%
       y: 26.6%
       z: 6  
     # - type: image
