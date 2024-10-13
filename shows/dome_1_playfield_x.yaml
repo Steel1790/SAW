@@ -1,0 +1,96 @@
+#show_version=6
+
+#CHOOSE ONE OF THE TWO OPTIONS. COMMENT OUT THE OTHER.
+
+# ROTATING ORANGE AND RED
+- time: 0
+  lights:
+    l_dome_1_1: beartrap
+    l_dome_1_2: beartrap
+    l_dome_1_3: beartrap
+    l_dome_1_4: beartrap
+    l_dome_1_5: drillchair
+    l_dome_1_6: drillchair
+    l_dome_1_7: drillchair
+    l_dome_1_8: drillchair
+      
+- time: '+1'
+    l_dome_1_1: drillchair
+    l_dome_1_2: beartrap
+    l_dome_1_3: beartrap
+    l_dome_1_4: beartrap
+    l_dome_1_5: beartrap
+    l_dome_1_6: drillchair
+    l_dome_1_7: drillchair
+    l_dome_1_8: drillchair
+  
+- time: '+1'
+    l_dome_1_1: drillchair
+    l_dome_1_2: drillchair
+    l_dome_1_3: beartrap
+    l_dome_1_4: beartrap
+    l_dome_1_5: beartrap
+    l_dome_1_6: beartrap
+    l_dome_1_7: drillchair
+    l_dome_1_8: drillchair
+
+- time: '+1'
+    l_dome_1_1: drillchair
+    l_dome_1_2: drillchair
+    l_dome_1_3: drillchair
+    l_dome_1_4: beartrap
+    l_dome_1_5: beartrap
+    l_dome_1_6: beartrap
+    l_dome_1_7: beartrap
+    l_dome_1_8: drillchair
+
+- time: '+1'
+    l_dome_1_1: drillchair
+    l_dome_1_2: drillchair
+    l_dome_1_3: drillchair
+    l_dome_1_4: drillchair
+    l_dome_1_5: beartrap
+    l_dome_1_6: beartrap
+    l_dome_1_7: beartrap
+    l_dome_1_8: beartrap
+
+- time: '+1'
+    l_dome_1_1: beartrap
+    l_dome_1_2: drillchair
+    l_dome_1_3: drillchair
+    l_dome_1_4: drillchair
+    l_dome_1_5: drillchair
+    l_dome_1_6: beartrap
+    l_dome_1_7: beartrap
+    l_dome_1_8: beartrap
+
+- time: '+1'
+    l_dome_1_1: beartrap
+    l_dome_1_2: beartrap
+    l_dome_1_3: drillchair
+    l_dome_1_4: drillchair
+    l_dome_1_5: drillchair
+    l_dome_1_6: drillchair
+    l_dome_1_7: beartrap
+    l_dome_1_8: beartrap
+
+- time: '+1'
+    l_dome_1_1: beartrap
+    l_dome_1_2: beartrap
+    l_dome_1_3: beartrap
+    l_dome_1_4: drillchair
+    l_dome_1_5: drillchair
+    l_dome_1_6: drillchair
+    l_dome_1_7: drillchair
+    l_dome_1_8: beartrap
+
+
+
+
+
+
+
+
+
+
+
