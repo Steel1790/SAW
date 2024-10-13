@@ -911,7 +911,7 @@ sound_player:
   timer_drillchair_60s_timer_tick{ticks==57}:
     YouNeedTheLowerPops:
       action: play
-      loops: 0
+      # loops: 0
   player_drillchair_drillchair_60s_timer_tick{value < 1}:
     DrillChairModeStart:
       action: stop      

@@ -4,7 +4,16 @@ mode:
   stop_events: stop_mode_skillshot, droptargets_skill_hit, mode_skillshot_complete, mode_super_skillshot_complete, e_lil_billy_progress
   priority: 100
 
-#sound_player:
+sound_player:
+  dt_drop2_hit:
+    SkillShot:
+      action: play  
+  dt_drop3_hit:
+    SkillShot:
+      action: play 
+  dt_drop4_hit:
+    SkillShot:
+      action: play 
 #  mode_skillshot_started:
 #    playagame:
 #      action: play

@@ -419,7 +419,7 @@ variable_player:
   sw_ramp:
     score: 125000 * (current_player.pf_multiplier)
   spinner_spinner_hit:
-    score: 60000 * (current_player.pf_multiplier)
+    score: 30000 * (current_player.pf_multiplier)
   sw_drop_target:
     score: 95000 * (current_player.pf_multiplier)
   sw_loop:

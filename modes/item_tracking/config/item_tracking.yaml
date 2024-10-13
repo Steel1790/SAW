@@ -55,10 +55,10 @@ counters:
     disable_on_complete: false    
     events_when_complete: minimode_spinners_complete 
     count_events: spinner_spinner_hit 
-    control_events:
-      - action: subtract
-        value: 1
-        event: sw_spinner
+    # control_events:
+    #   - action: subtract
+    #     value: 1
+    #     event: sw_spinner
 
   minimode_ramps_counter:
     starting_count: 5
