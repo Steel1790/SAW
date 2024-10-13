@@ -176,6 +176,15 @@ show_player:
     sh_shackle_mb_qualify_hit_locked:
       show_tokens:
         leds: l_right_ramp_triangle1, l_right_ramp_triangle2
+#ball lock dome 
+  e_shackle_lock1:
+    domes_ball_lock:
+      loops: 0
+      speed: 20
+  e_shackle_lock2:
+    domes_ball_lock:
+      loops: 0
+      speed: 20
 
 sound_player:
   e_shackle_mb_qualify_hit_one:

@@ -1119,6 +1119,28 @@ show_player:
         leds: l_jw_key
       loops: -1 
       priority: 119
+#playfield multiplier
+  saw_combo_collected:
+    dome_1_playfield_x:
+      loops: -1
+      speed: 10
+  player_base_t_playfield_multiplier_timer_tick{value== 11}:
+    dome_1_playfield_x: stop 
+  player_base_t_playfield_multiplier_timer_tick{value== 10}:
+    flash_token:
+      loops: -1
+      speed: 5
+      show_tokens:
+        led: dome_1
+        color1: white
+
+  player_base_t_playfield_multiplier_timer_tick{value<=1}:
+    flash_token:
+      loops: 0
+      show_tokens:
+        led: dome_1
+        color1: off
+        
 
 # die progress letters
   logicblock_make_your_choice_qualify_updated{value==1}:

@@ -15,6 +15,7 @@
     l_dome_1_8: drillchair
       
 - time: '+1'
+  lights:
     l_dome_1_1: drillchair
     l_dome_1_2: beartrap
     l_dome_1_3: beartrap
@@ -25,6 +26,7 @@
     l_dome_1_8: drillchair
   
 - time: '+1'
+  lights:
     l_dome_1_1: drillchair
     l_dome_1_2: drillchair
     l_dome_1_3: beartrap
@@ -35,6 +37,7 @@
     l_dome_1_8: drillchair
 
 - time: '+1'
+  lights:
     l_dome_1_1: drillchair
     l_dome_1_2: drillchair
     l_dome_1_3: drillchair
@@ -45,6 +48,7 @@
     l_dome_1_8: drillchair
 
 - time: '+1'
+  lights:
     l_dome_1_1: drillchair
     l_dome_1_2: drillchair
     l_dome_1_3: drillchair
@@ -55,6 +59,7 @@
     l_dome_1_8: beartrap
 
 - time: '+1'
+  lights:
     l_dome_1_1: beartrap
     l_dome_1_2: drillchair
     l_dome_1_3: drillchair
@@ -65,6 +70,7 @@
     l_dome_1_8: beartrap
 
 - time: '+1'
+  lights:
     l_dome_1_1: beartrap
     l_dome_1_2: beartrap
     l_dome_1_3: drillchair
@@ -75,6 +81,7 @@
     l_dome_1_8: beartrap
 
 - time: '+1'
+  lights:
     l_dome_1_1: beartrap
     l_dome_1_2: beartrap
     l_dome_1_3: beartrap

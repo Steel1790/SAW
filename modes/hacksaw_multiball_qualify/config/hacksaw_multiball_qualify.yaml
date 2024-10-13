@@ -186,6 +186,19 @@ show_player:
         leds: l_right_standup_right_ramp_arrow
       speed: 4
       loops: 5
+#dome ball lock
+  multiball_lock_mbl_hacksaw_locked_ball{device.multiball_locks.mbl_hacksaw.locked_balls == 1}:
+    domes_ball_lock:
+      loops: 0
+      speed: 20
+  multiball_lock_mbl_hacksaw_locked_ball{device.multiball_locks.mbl_hacksaw.locked_balls == 2}:
+    domes_ball_lock:
+      loops: 0
+      speed: 20
+  multiball_lock_mbl_hacksaw_lock_locked_ball{device.multiball_locks.mbl_hacksaw.locked_balls == 3}:
+    domes_ball_lock:
+      loops: 0
+      speed: 20
 
 slides:
   sl_Hacksaw_locked_1:

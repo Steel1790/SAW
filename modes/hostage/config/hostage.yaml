@@ -70,7 +70,7 @@ shows:
   sh_hostage_off:
     - duration: 0.2s
       lights:
-        (leds): off
+        (leds): white
 
 variable_player:
   sw_pops:
@@ -170,6 +170,9 @@ show_player:
       speed: 10
       show_tokens:
         color1: beartrap
+    hostage_phase_1:
+      loops: 0
+      speed: 10
   logicblock_cnt_hostage_updated{value==2}:
     disc_middle_chase: stop
     negative_A:
@@ -181,6 +184,9 @@ show_player:
       speed: 10
       show_tokens:
         color1: beartrap
+    hostage_phase_2:
+      loops: 0
+      speed: 10
     sh_hostage_off:
       show_tokens:
         leds: skillshot, arrow, trap, flasher
@@ -197,6 +203,10 @@ show_player:
     sh_hostage_off:
       show_tokens:
         leds: trough, discs, hmb_locks, spotlights, cabinet
+    hostage_phase_3:
+      loops: 0
+      speed: 10
+
 
 coil_player:
   mode_hostage_started:

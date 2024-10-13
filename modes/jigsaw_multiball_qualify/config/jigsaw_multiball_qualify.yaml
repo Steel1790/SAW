@@ -172,6 +172,16 @@ show_player:
       show_tokens:
         leds: l_left_ramp_triangle3, l_left_ramp_triangle2
 
+#ball lock dome 
+  e_jigsaw_lock1:
+    domes_ball_lock:
+      loops: 0
+      speed: 20
+  e_jigsaw_lock2:
+    domes_ball_lock:
+      loops: 0
+      speed: 20
+
 sound_player:
   e_jigsaw_mb_qualify_hit_one:
     LockIsLit:
