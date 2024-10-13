@@ -1123,7 +1123,7 @@ show_player:
   saw_combo_collected:
     dome_1_playfield_x:
       loops: -1
-      speed: 10
+      speed: 30
   player_base_t_playfield_multiplier_timer_tick{value== 11}:
     dome_1_playfield_x: stop 
   player_base_t_playfield_multiplier_timer_tick{value== 10}:

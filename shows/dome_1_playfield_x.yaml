@@ -9,50 +9,50 @@
     l_dome_1_2: beartrap
     l_dome_1_3: beartrap
     l_dome_1_4: beartrap
-    l_dome_1_5: drillchair
-    l_dome_1_6: drillchair
-    l_dome_1_7: drillchair
-    l_dome_1_8: drillchair
+    l_dome_1_5: zeptest_alt
+    l_dome_1_6: zeptest_alt
+    l_dome_1_7: zeptest_alt
+    l_dome_1_8: zeptest_alt
       
 - time: '+1'
   lights:
-    l_dome_1_1: drillchair
+    l_dome_1_1: zeptest_alt
     l_dome_1_2: beartrap
     l_dome_1_3: beartrap
     l_dome_1_4: beartrap
     l_dome_1_5: beartrap
-    l_dome_1_6: drillchair
-    l_dome_1_7: drillchair
-    l_dome_1_8: drillchair
+    l_dome_1_6: zeptest_alt
+    l_dome_1_7: zeptest_alt
+    l_dome_1_8: zeptest_alt
   
 - time: '+1'
   lights:
-    l_dome_1_1: drillchair
-    l_dome_1_2: drillchair
+    l_dome_1_1: zeptest_alt
+    l_dome_1_2: zeptest_alt
     l_dome_1_3: beartrap
     l_dome_1_4: beartrap
     l_dome_1_5: beartrap
     l_dome_1_6: beartrap
-    l_dome_1_7: drillchair
-    l_dome_1_8: drillchair
+    l_dome_1_7: zeptest_alt
+    l_dome_1_8: zeptest_alt
 
 - time: '+1'
   lights:
-    l_dome_1_1: drillchair
-    l_dome_1_2: drillchair
-    l_dome_1_3: drillchair
+    l_dome_1_1: zeptest_alt
+    l_dome_1_2: zeptest_alt
+    l_dome_1_3: zeptest_alt
     l_dome_1_4: beartrap
     l_dome_1_5: beartrap
     l_dome_1_6: beartrap
     l_dome_1_7: beartrap
-    l_dome_1_8: drillchair
+    l_dome_1_8: zeptest_alt
 
 - time: '+1'
   lights:
-    l_dome_1_1: drillchair
-    l_dome_1_2: drillchair
-    l_dome_1_3: drillchair
-    l_dome_1_4: drillchair
+    l_dome_1_1: zeptest_alt
+    l_dome_1_2: zeptest_alt
+    l_dome_1_3: zeptest_alt
+    l_dome_1_4: zeptest_alt
     l_dome_1_5: beartrap
     l_dome_1_6: beartrap
     l_dome_1_7: beartrap
@@ -61,10 +61,10 @@
 - time: '+1'
   lights:
     l_dome_1_1: beartrap
-    l_dome_1_2: drillchair
-    l_dome_1_3: drillchair
-    l_dome_1_4: drillchair
-    l_dome_1_5: drillchair
+    l_dome_1_2: zeptest_alt
+    l_dome_1_3: zeptest_alt
+    l_dome_1_4: zeptest_alt
+    l_dome_1_5: zeptest_alt
     l_dome_1_6: beartrap
     l_dome_1_7: beartrap
     l_dome_1_8: beartrap
@@ -73,10 +73,10 @@
   lights:
     l_dome_1_1: beartrap
     l_dome_1_2: beartrap
-    l_dome_1_3: drillchair
-    l_dome_1_4: drillchair
-    l_dome_1_5: drillchair
-    l_dome_1_6: drillchair
+    l_dome_1_3: zeptest_alt
+    l_dome_1_4: zeptest_alt
+    l_dome_1_5: zeptest_alt
+    l_dome_1_6: zeptest_alt
     l_dome_1_7: beartrap
     l_dome_1_8: beartrap
 
@@ -85,10 +85,10 @@
     l_dome_1_1: beartrap
     l_dome_1_2: beartrap
     l_dome_1_3: beartrap
-    l_dome_1_4: drillchair
-    l_dome_1_5: drillchair
-    l_dome_1_6: drillchair
-    l_dome_1_7: drillchair
+    l_dome_1_4: zeptest_alt
+    l_dome_1_5: zeptest_alt
+    l_dome_1_6: zeptest_alt
+    l_dome_1_7: zeptest_alt
     l_dome_1_8: beartrap
 
 
