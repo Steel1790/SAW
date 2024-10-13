@@ -3,7 +3,7 @@
 #SLOW PULSE ON OFF
 - time: 0
   lights:
-    l_jw_bathtub: 472734 -f1500ms    # 50 percent bathtub burgundy color 
+    l_jw_bathtub: 94214F -f1500ms    # 50 percent bathtub burgundy color 
 - time: '+2'
   lights:
     l_jw_bathtub: off -f500ms    

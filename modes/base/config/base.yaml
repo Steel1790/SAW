@@ -23,7 +23,7 @@ ball_saves:
     balls_to_save: 1
   fake_lil_billy_ball_save:
     enable_events:
-      - mode_lil_billy_ended
+      - mode_lil_billy_stopped
     auto_launch: false
     balls_to_save: 1
 

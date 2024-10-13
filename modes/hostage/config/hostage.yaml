@@ -172,7 +172,7 @@ show_player:
         color1: beartrap
     hostage_phase_1:
       loops: 0
-      speed: 10
+      speed: 30
   logicblock_cnt_hostage_updated{value==2}:
     disc_middle_chase: stop
     negative_A:
@@ -186,7 +186,7 @@ show_player:
         color1: beartrap
     hostage_phase_2:
       loops: 0
-      speed: 10
+      speed: 30
     sh_hostage_off:
       show_tokens:
         leds: skillshot, arrow, trap, flasher
@@ -205,7 +205,7 @@ show_player:
         leds: trough, discs, hmb_locks, spotlights, cabinet
     hostage_phase_3:
       loops: 0
-      speed: 10
+      speed: 30
 
 
 coil_player:
