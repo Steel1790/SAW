@@ -1299,6 +1299,11 @@ show_player:
       show_tokens:
         color1: beartrap
       priority: 170  
+    domes_pulse:
+      speed: 1.25
+      show_tokens:
+        color1: beartrap
+      priority: 170 
 
 
 # trap mode fail
