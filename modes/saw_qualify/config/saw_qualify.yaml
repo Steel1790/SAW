@@ -277,11 +277,6 @@ shots:
     profile: sp_saw_qualify_a1
     show_tokens:
       leds: l_left_standup_arrow
-    control_events:
-      - events: ball_starting
-        state: 0
-      - events: mode_puzzle_hurryup_started
-        state: 0
   shot_inner_loop_a3:
     advance_events: shot_inner_loop_a3_sp_saw_qualify_lit_hit
     enable_events: modes_active_modes_changed{current_player.modes_attempted>=3}

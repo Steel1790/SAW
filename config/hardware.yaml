@@ -354,6 +354,7 @@ coils:
   c_lower_droptargetreset:
     number: 1616_1-13
     default_pulse_ms: 20
+    default_pulse_power: .7
   c_upper_droptargetreset:
     number: 1616_1-0
     default_pulse_ms: 20
@@ -424,11 +425,10 @@ drop_target_banks:
       ball_started.2: 1s
       ball_started.3: 2s
       machine_reset_phase_3: 0 
-      mode_zeptest_started: 0
       mode_lil_billy_started: 0
-      lil_billy_drops_hit: 0
-      mode_puzzle_hurryup_started: 0
-      mode_trap_select_started: 0
+      lil_billy_drops_hit: 1s
+      mode_puzzle_hurryup_started: 1s
+      mode_trap_select_started: 1s
   upper_dropbank:
     drop_targets:
       - dt_upper_drop1
