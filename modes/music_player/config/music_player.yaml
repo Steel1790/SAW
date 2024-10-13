@@ -720,12 +720,28 @@ sound_player:
   multiball_mb_hacksaw_started:
     hacksaw_mb_start:
       action: play
+    Multiball3:
+      action: play
   multiball_mb_shackle_started:
     ShackleMultiball:
+      action: play
+    90SecondMultiballSong:
       action: play
   multiball_mb_jigsaw_started:
     JigsawMultiballStart1:
       action: play
+    Multiball2:
+      action: play
+# multiball stopped
+  multiball_mb_hacksaw_ended:
+    Multiball3:
+      action: stop
+  multiball_mb_shackle_ended:
+    90SecondMultiballSong:
+      action: stop
+  multiball_mb_jigsaw_ended:
+    Multiball2:
+      action: stop
 
  # razorwire mode
   mode_razorwire_complete:
