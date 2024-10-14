@@ -106,35 +106,35 @@ shows:
   sh_razorwire_hurryup:
     - duration: 0.5s
       lights:
-        (leds): beartrap
+        (leds): razorwire
     - duration: 0.5s
       lights:
         (leds): off
   sh_drillchair_hurryup:
     - duration: 0.5s
       lights:
-        (leds): beartrap
+        (leds): drillchair
     - duration: 0.5s
       lights:
         (leds): off
   sh_flammablejelly_hurryup:
     - duration: 0.5s
       lights:
-        (leds): beartrap
+        (leds): jelly
     - duration: 0.5s
       lights:
         (leds): off
   sh_zeptest_hurryup:
     - duration: 0.5s
       lights:
-        (leds): beartrap
+        (leds): zeptest
     - duration: 0.5s
       lights:
         (leds): off
   sh_quadshotgun_hurryup:
     - duration: 0.5s
       lights:
-        (leds): beartrap
+        (leds): shotgun
     - duration: 0.5s
       lights:
         (leds): off

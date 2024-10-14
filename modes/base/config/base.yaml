@@ -24,7 +24,7 @@ ball_saves:
   fake_lil_billy_ball_save:
     enable_events:
       - mode_lil_billy_stopped
-    auto_launch: false
+    auto_launch: true
     balls_to_save: 1
 
 event_player:
@@ -141,11 +141,11 @@ event_player:
   logicblock_minimode_pops_counter_hit{count==29}: stop_pops_widget29|300ms
   logicblock_minimode_pops_counter_hit{count==30}: stop_pops_widget30|300ms
   logicblock_cnt_leftloop_leftramp_combo_counter_hit: stop_combo_widget|1.5s
-  logicblock_cnt_rightramp_rightloop_combo_counter_hit: stop_combo_widget|1.5s
   logicblock_cnt_leftloop_innerloop_combo_counter_hit: stop_combo_widget|1.5s
-  logicblock_cnt_rightloop_rightramp_combo_counter_hit: stop_combo_widget|1.5s
-  logicblock_cnt_leftloop_leftramp_leftramp_combo_counter_hit: stop_previous_combo_widget|1ms, stop_combo_widget|1.5s
-  logicblock_cnt_leftloop_leftramp_innerloop_combo_counter_hit: stop_previous_combo_widget|1ms, stop_combo_widget|1.5s
+  logicblock_cnt_leftloop_innerloop_leftramp_combo_counter_hit: stop_combo_widget|1.5s
+  logicblock_cnt_rightramp_xdrop_combo_counter_hit: stop_combo_widget|1.5s
+  logicblock_cnt_saucer_innerloop_combo_counter_hit: stop_previous_combo_widget|1ms, stop_combo_widget|1.5s
+  logicblock_cnt_saucer_leftramp_combo_counter_hit: stop_previous_combo_widget|1ms, stop_combo_widget|1.5s
   minimode_ramps_complete: stop_items_widget|2.5s
   minimode_pops_complete: stop_items_widget|2.5s
   minimode_standups_complete: stop_items_widget|2.5s
@@ -155,6 +155,7 @@ event_player:
   minimode_loops_complete: stop_items_widget|2.5s
   minimode_drops_complete: stop_items_widget|2.5s
   mode_puzzle_hurryup_complete: stop_items_widget|3s
+  player_base_t_playfield_multiplier_timer_tick{value==1}: stop_multiplier_widget|1s
 
 timers:
   t_playfield_multiplier_timer:
@@ -165,6 +166,8 @@ timers:
       - action: start
         event: slide_MysteryPlayfieldMultiplier_removed
       - action: start
+        event: saw_combo_collected
+      - action: restart
         event: saw_combo_collected
 
 random_event_player:
@@ -629,7 +632,7 @@ variable_player:
       int: 9
       action: set
     visual_spinners_counter:
-      int: 40
+      int: 25
       action: set
     visual_ramps_counter:
       int: 5
@@ -716,14 +719,6 @@ counters:
     reset_on_complete: false
     events_when_complete: saw_combo_collected
     count_events: ssh_leftloop_leftramp_combo_hit
-  cnt_rightramp_rightloop_combo_counter:
-    starting_count: 0
-    count_complete_value: 1
-    start_enabled: true
-    persist_state: true
-    reset_on_complete: false
-    events_when_complete: saw_combo_collected
-    count_events: ssh_rightramp_rightloop_combo_hit
   cnt_leftloop_innerloop_combo_counter:
     starting_count: 0
     count_complete_value: 1
@@ -732,30 +727,38 @@ counters:
     reset_on_complete: false
     events_when_complete: saw_combo_collected
     count_events: ssh_leftloop_innerloop_combo_hit
-  cnt_rightloop_rightramp_combo_counter:
+  cnt_leftloop_innerloop_leftramp_combo_counter:
     starting_count: 0
     count_complete_value: 1
     start_enabled: true
     persist_state: true
     reset_on_complete: false
     events_when_complete: saw_combo_collected
-    count_events: ssh_rightloop_rightramp_combo_hit
-  cnt_leftloop_leftramp_leftramp_combo_counter:
+    count_events: ssh_leftloop_innerloop_leftramp_combo_hit
+  cnt_rightramp_xdrop_combo_counter:
     starting_count: 0
     count_complete_value: 1
     start_enabled: true
     persist_state: true
     reset_on_complete: false
     events_when_complete: saw_combo_collected
-    count_events: ssh_leftloop_leftramp_leftramp_combo_hit
-  cnt_leftloop_leftramp_innerloop_combo_counter:
+    count_events: ssh_rightramp_xdrop_combo_hit
+  cnt_saucer_innerloop_combo_counter:
     starting_count: 0
     count_complete_value: 1
     start_enabled: true
     persist_state: true
     reset_on_complete: false
     events_when_complete: saw_combo_collected
-    count_events: ssh_leftloop_leftramp_innerloop_combo_hit
+    count_events: ssh_saucer_innerloop_combo_hit
+  cnt_saucer_leftramp_combo_counter:
+    starting_count: 0
+    count_complete_value: 1
+    start_enabled: true
+    persist_state: true
+    reset_on_complete: false
+    events_when_complete: saw_combo_collected
+    count_events: ssh_saucer_leftramp_combo_hit
   cnt_combo_collected_counter:
     starting_count: 0
     count_complete_value: 6
@@ -858,7 +861,7 @@ shows:
   sh_multiplier_on:    
     - duration: 1s      
       lights:
-        (leds): zeptest_alt
+        (leds): beartrap
 # die progress letters
   sh_die_d_letters:
     - duration: -1
@@ -1027,98 +1030,98 @@ show_player:
     jw_chase_gears:
       loops: 0
       speed: 8
-      priority: 120
+      priority: 124
       show_tokens:
         color1: shotgun
     minimode_pops_show_complete:
       show_tokens:
         leds: l_jw_gears
       loops: -1   
-      priority: 119
+      priority: 123
   minimode_drops_complete:
     jw_chase_syringe:
       loops: 0
       speed: 8
-      priority: 120
+      priority: 124
       show_tokens:
         color1: zepstest
     minimode_drops_show_complete:
       show_tokens:
         leds: l_jw_syringe
       loops: -1  
-      priority: 119
+      priority: 123
   minimode_slings_complete:
     jw_chase_bathtub:
       loops: 0
       speed: 8
-      priority: 120
+      priority: 124
       show_tokens:
         color1: 00C190
     minimode_slings_show_complete:
       show_tokens:
         leds: l_jw_bathtub
       loops: -1  
-      priority: 119
+      priority: 123
   minimode_inlanes_complete:
     jw_chase_taperecorder:
       loops: 0
       speed: 8
-      priority: 120
+      priority: 124
       show_tokens:
         color1: 900C3F
     minimode_inlanes_show_complete:
       show_tokens:
         leds: l_jw_taperecorder
       loops: -1  
-      priority: 119
+      priority: 123
   minimode_standups_complete:
     jw_chase_candle:
       loops: 0
       speed: 8
-      priority: 120
+      priority: 124
       show_tokens:
         color1: jelly
     minimode_standups_show_complete:
       show_tokens:
         leds: l_jw_candle
       loops: -1  
-      priority: 119
+      priority: 123
   minimode_loops_complete:
     jw_chase_hacksaw:
       loops: 0
       speed: 8
-      priority: 120
+      priority: 124
       show_tokens:
         color1: razorwire
     minimode_loops_show_complete:
       show_tokens:
         leds: l_jw_hacksaw
       loops: -1  
-      priority: 119
+      priority: 123
   minimode_spinners_complete:
     jw_chase_gun:
       loops: 0
       speed: 8
-      priority: 120
+      priority: 124
       show_tokens:
         color1: drillchair
     minimode_spinners_show_complete:
       show_tokens:
         leds: l_jw_gun
       loops: -1  
-      priority: 119
+      priority: 123
   minimode_ramps_complete:
     jw_chase_key:
       loops: 0
       speed: 8
-      priority: 120
+      priority: 124
       show_tokens:
         color1: beartrap
     minimode_ramps_show_complete:
       show_tokens:
         leds: l_jw_key
       loops: -1 
-      priority: 119
+      priority: 123
 #playfield multiplier
   saw_combo_collected:
     dome_1_playfield_x:
@@ -1326,7 +1329,6 @@ show_player:
         color1: beartrap
       priority: 170 
 
-
 # trap mode fail
   player_drillchair_drillchair_60s_timer_tick{value < 1}:
       mode_fail:
@@ -1447,6 +1449,7 @@ show_player:
     trough_on: stop
     spotlight_on: stop
     speaker_heartbeat: stop
+    domes_pulse: stop
 
 # disc shows
   logicblock_cnt_negative_shot_counter_updated{value==1}:
@@ -4384,6 +4387,11 @@ widget_player:
       slide: base_slide_main
       action: add
   player_base_t_playfield_multiplier_timer_tick{value < 1}:
+    w_playfield_multiplier:
+      slide: base_slide_main
+      action: remove
+#additional check on removing playfield x timer widget
+  stop_multiplier_widget:
     w_playfield_multiplier:
       slide: base_slide_main
       action: remove

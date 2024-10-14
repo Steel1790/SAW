@@ -425,27 +425,27 @@ show_player:
   selection_mode_lilbilly_highlighted:
     reversebeartrap:
       show_tokens:
-        leds: l_action_button, l_beartrap_mode, standup, gi, groundeffects, flipper, topper, speaker
+        leds: l_action_button, l_beartrap_mode, standup, gi, groundeffects, flipper, topper, speaker, dome
       action: stop
     flammablejelly:
       show_tokens:
-        leds: l_action_button, l_jelly_mode, standup, orbit, gi, groundeffects, flipper, topper, speaker
+        leds: l_action_button, l_jelly_mode, standup, orbit, gi, groundeffects, flipper, topper, speaker, dome
       action: stop
     drillchair:
       show_tokens:
-        leds: l_action_button, l_drillchair_mode, jet_bumper, gi, groundeffects, flipper, topper, speaker
+        leds: l_action_button, l_drillchair_mode, jet_bumper, gi, groundeffects, flipper, topper, speaker, dome
       action: stop
     quadshotgun:
       show_tokens:
-        leds: l_action_button, l_quadshotgun_mode, standup, shotgun_flasher, gi, groundeffects, flipper, topper, speaker
+        leds: l_action_button, l_quadshotgun_mode, standup, shotgun_flasher, gi, groundeffects, flipper, topper, speaker, dome
       action: stop
     zeptest:
       show_tokens:
-        leds: l_action_button , l_zeptest_mode, standup, bear_flasher, orbit, ramp, billy, skillshot, gi, groundeffects, flipper, topper, speaker
+        leds: l_action_button , l_zeptest_mode, standup, bear_flasher, orbit, ramp, billy, skillshot, gi, groundeffects, flipper, topper, speaker, dome
       action: stop
     razorwire:
       show_tokens:
-        leds: l_action_button, l_razorwire_mode, top_bumper, gi, groundeffects, flipper, topper, speaker
+        leds: l_action_button, l_razorwire_mode, top_bumper, gi, groundeffects, flipper, topper, speaker, dome
       action: stop   
     survival_instinct:
       show_tokens:
@@ -454,263 +454,263 @@ show_player:
   selection_mode_thekeytofreedom_highlighted:
     reversebeartrap:
       show_tokens:
-        leds: l_action_button, l_beartrap_mode, standup, gi, groundeffects, flipper, topper, speaker
+        leds: l_action_button, l_beartrap_mode, standup, gi, groundeffects, flipper, topper, speaker, dome
       action: stop
     flammablejelly:
       show_tokens:
-        leds: l_action_button, l_jelly_mode, standup, orbit, gi, groundeffects, flipper, topper, speaker
+        leds: l_action_button, l_jelly_mode, standup, orbit, gi, groundeffects, flipper, topper, speaker, dome
       action: stop
     drillchair:
       show_tokens:
-        leds: l_action_button, l_drillchair_mode, jet_bumper, gi, groundeffects, flipper, topper, speaker
+        leds: l_action_button, l_drillchair_mode, jet_bumper, gi, groundeffects, flipper, topper, speaker, dome
       action: stop
     quadshotgun:
       show_tokens:
-        leds: l_action_button, l_quadshotgun_mode, standup, shotgun_flasher, gi, groundeffects, flipper, topper, speaker
+        leds: l_action_button, l_quadshotgun_mode, standup, shotgun_flasher, gi, groundeffects, flipper, topper, speaker, dome
       action: stop
     zeptest:
       show_tokens:
-        leds: l_action_button , l_zeptest_mode, standup, bear_flasher, orbit, ramp, billy, skillshot, gi, groundeffects, flipper, topper, speaker
+        leds: l_action_button , l_zeptest_mode, standup, bear_flasher, orbit, ramp, billy, skillshot, gi, groundeffects, flipper, topper, speaker, dome
       action: stop
     razorwire:
       show_tokens:
-        leds: l_action_button, l_razorwire_mode, top_bumper, gi, groundeffects, flipper, topper, speaker
+        leds: l_action_button, l_razorwire_mode, top_bumper, gi, groundeffects, flipper, topper, speaker, dome
       action: stop   
     survival_instinct:
       show_tokens:
-        leds: l_action_button 
+        leds: l_action_button
       loops: -1     
   selection_mode_survivalinstinct_highlighted:
     reversebeartrap:
       show_tokens:
-        leds: l_action_button, l_beartrap_mode, standup, gi, groundeffects, flipper, topper, speaker
+        leds: l_action_button, l_beartrap_mode, standup, gi, groundeffects, flipper, topper, speaker, dome
       action: stop
     flammablejelly:
       show_tokens:
-        leds: l_action_button, l_jelly_mode, standup, orbit, gi, groundeffects, flipper, topper, speaker
+        leds: l_action_button, l_jelly_mode, standup, orbit, gi, groundeffects, flipper, topper, speaker, dome
       action: stop
     drillchair:
       show_tokens:
-        leds: l_action_button, l_drillchair_mode, jet_bumper, gi, groundeffects, flipper, topper, speaker
+        leds: l_action_button, l_drillchair_mode, jet_bumper, gi, groundeffects, flipper, topper, speaker, dome
       action: stop
     quadshotgun:
       show_tokens:
-        leds: l_action_button, l_quadshotgun_mode, standup, shotgun_flasher, gi, groundeffects, flipper, topper, speaker
+        leds: l_action_button, l_quadshotgun_mode, standup, shotgun_flasher, gi, groundeffects, flipper, topper, speaker, dome
       action: stop
     zeptest:
       show_tokens:
-        leds: l_action_button , l_zeptest_mode, standup, bear_flasher, orbit, ramp, billy, skillshot, gi, groundeffects, flipper, topper, speaker
+        leds: l_action_button , l_zeptest_mode, standup, bear_flasher, orbit, ramp, billy, skillshot, gi, groundeffects, flipper, topper, speaker, dome
       action: stop
     razorwire:
       show_tokens:
-        leds: l_action_button, l_razorwire_mode, top_bumper, gi, groundeffects, flipper, topper, speaker
+        leds: l_action_button, l_razorwire_mode, top_bumper, gi, groundeffects, flipper, topper, speaker, dome
       action: stop   
     survival_instinct:
       show_tokens:
-        leds: l_action_button 
+        leds: l_action_button
       loops: -1    
   selection_mode_razorwire_highlighted:
     reversebeartrap:
       show_tokens:
-        leds: l_action_button, l_beartrap_mode, standup, gi, groundeffects, flipper, topper, speaker
+        leds: l_action_button, l_beartrap_mode, standup, gi, groundeffects, flipper, topper, speaker, dome
       action: stop
     flammablejelly:
       show_tokens:
-        leds: l_action_button, l_jelly_mode, standup, orbit, gi, groundeffects, flipper, topper, speaker
+        leds: l_action_button, l_jelly_mode, standup, orbit, gi, groundeffects, flipper, topper, speaker, dome
       action: stop
     drillchair:
       show_tokens:
-        leds: l_action_button, l_drillchair_mode, jet_bumper, gi, groundeffects, flipper, topper, speaker
+        leds: l_action_button, l_drillchair_mode, jet_bumper, gi, groundeffects, flipper, topper, speaker, dome
       action: stop
     quadshotgun:
       show_tokens:
-        leds: l_action_button, l_quadshotgun_mode, standup, shotgun_flasher, gi, groundeffects, flipper, topper, speaker
+        leds: l_action_button, l_quadshotgun_mode, standup, shotgun_flasher, gi, groundeffects, flipper, topper, speaker, dome
       action: stop
     zeptest:
       show_tokens:
-        leds: l_action_button , l_zeptest_mode, standup, bear_flasher, orbit, ramp, billy, skillshot, gi, groundeffects, flipper, topper, speaker
+        leds: l_action_button , l_zeptest_mode, standup, bear_flasher, orbit, ramp, billy, skillshot, gi, groundeffects, flipper, topper, speaker, dome
       action: stop
     survival_instinct:
       show_tokens:
-        leds: l_action_button 
+        leds: l_action_button, dome 
       action: stop
     razorwire:
       show_tokens:
-        leds: l_action_button, l_razorwire_mode, top_bumper, gi, groundeffects, flipper, topper, speaker
+        leds: l_action_button, l_razorwire_mode, top_bumper, gi, groundeffects, flipper, topper, speaker, dome
       loops: -1
   selection_mode_reversebeartrap_highlighted:
     razorwire:
       show_tokens:
-        leds: l_action_button, l_razorwire_mode, top_bumper, gi, groundeffects, flipper, topper, speaker
+        leds: l_action_button, l_razorwire_mode, top_bumper, gi, groundeffects, flipper, topper, speaker, dome
       action: stop
     flammablejelly:
       show_tokens:
-        leds: l_action_button, l_jelly_mode, standup, orbit, gi, groundeffects, flipper, topper, speaker
+        leds: l_action_button, l_jelly_mode, standup, orbit, gi, groundeffects, flipper, topper, speaker, dome
       action: stop
     drillchair:
       show_tokens:
-        leds: l_action_button, l_drillchair_mode, jet_bumper, gi, groundeffects, flipper, topper, speaker
+        leds: l_action_button, l_drillchair_mode, jet_bumper, gi, groundeffects, flipper, topper, speaker, dome
       action: stop
     quadshotgun:
       show_tokens:
-        leds: l_action_button, l_quadshotgun_mode, standup, shotgun_flasher, gi, groundeffects, flipper, topper, speaker
+        leds: l_action_button, l_quadshotgun_mode, standup, shotgun_flasher, gi, groundeffects, flipper, topper, speaker, dome
       action: stop
     zeptest:
       show_tokens:
-        leds: l_action_button , l_zeptest_mode, standup, bear_flasher, orbit, ramp, billy, skillshot, gi, groundeffects, flipper, topper, speaker
+        leds: l_action_button , l_zeptest_mode, standup, bear_flasher, orbit, ramp, billy, skillshot, gi, groundeffects, flipper, topper, speaker, dome
       action: stop
     survival_instinct:
       show_tokens:
-        leds: l_action_button 
+        leds: l_action_button, dome
       action: stop
     reversebeartrap:
       show_tokens:
-        leds: l_action_button, l_beartrap_mode, standup, gi, groundeffects, flipper, topper, speaker
+        leds: l_action_button, l_beartrap_mode, standup, gi, groundeffects, flipper, topper, speaker, dome
       loops: -1
   selection_mode_flammablejelly_highlighted:
     reversebeartrap:
       show_tokens:
-        leds: l_action_button, l_beartrap_mode, standup, gi, groundeffects, flipper, topper, speaker
+        leds: l_action_button, l_beartrap_mode, standup, gi, groundeffects, flipper, topper, speaker, dome
       action: stop
     razorwire:
       show_tokens:
-        leds: l_action_button, l_razorwire_mode, top_bumper, gi, groundeffects, flipper, topper, speaker
+        leds: l_action_button, l_razorwire_mode, top_bumper, gi, groundeffects, flipper, topper, speaker, dome
       action: stop
     drillchair:
       show_tokens:
-        leds: l_action_button, l_drillchair_mode, jet_bumper, gi, groundeffects, flipper, topper, speaker
+        leds: l_action_button, l_drillchair_mode, jet_bumper, gi, groundeffects, flipper, topper, speaker, dome
       action: stop
     quadshotgun:
       show_tokens:
-        leds: l_action_button, l_quadshotgun_mode, standup, shotgun_flasher, gi, groundeffects, flipper, topper, speaker
+        leds: l_action_button, l_quadshotgun_mode, standup, shotgun_flasher, gi, groundeffects, flipper, topper, speaker, dome
       action: stop
     zeptest:
       show_tokens:
-        leds: l_action_button , l_zeptest_mode, standup, bear_flasher, orbit, ramp, billy, skillshot, gi, groundeffects, flipper, topper, speaker
+        leds: l_action_button , l_zeptest_mode, standup, bear_flasher, orbit, ramp, billy, skillshot, gi, groundeffects, flipper, topper, speaker, dome
       action: stop
     survival_instinct:
       show_tokens:
-        leds: l_action_button 
+        leds: l_action_button, dome
       action: stop
     flammablejelly:
       show_tokens:
-        leds: l_action_button, l_jelly_mode, standup, orbit, gi, groundeffects, flipper, topper, speaker
+        leds: l_action_button, l_jelly_mode, standup, orbit, gi, groundeffects, flipper, topper, speaker, dome
       loops: -1
   selection_mode_drillchair_highlighted:
     reversebeartrap:
       show_tokens:
-        leds: l_action_button, l_beartrap_mode, standup, gi, groundeffects, flipper, topper, speaker
+        leds: l_action_button, l_beartrap_mode, standup, gi, groundeffects, flipper, topper, speaker, dome
       action: stop
     flammablejelly:
       show_tokens:
-        leds: l_action_button, l_jelly_mode, standup, orbit, gi, groundeffects, flipper, topper, speaker
+        leds: l_action_button, l_jelly_mode, standup, orbit, gi, groundeffects, flipper, topper, speaker, dome
       action: stop
     razorwire:
       show_tokens:
-        leds: l_action_button, l_razorwire_mode, top_bumper, gi, groundeffects, flipper, topper, speaker
+        leds: l_action_button, l_razorwire_mode, top_bumper, gi, groundeffects, flipper, topper, speaker, dome
       action: stop
     quadshotgun:
       show_tokens:
-        leds: l_action_button, l_quadshotgun_mode, standup, shotgun_flasher, gi, groundeffects, flipper, topper, speaker
+        leds: l_action_button, l_quadshotgun_mode, standup, shotgun_flasher, gi, groundeffects, flipper, topper, speaker, dome
       action: stop
     zeptest:
       show_tokens:
-        leds: l_action_button , l_zeptest_mode, standup, bear_flasher, orbit, ramp, billy, skillshot, gi, groundeffects, flipper, topper, speaker
+        leds: l_action_button , l_zeptest_mode, standup, bear_flasher, orbit, ramp, billy, skillshot, gi, groundeffects, flipper, topper, speaker, dome
       action: stop
     survival_instinct:
       show_tokens:
-        leds: l_action_button 
+        leds: l_action_button, dome
       action: stop
     drillchair:
       show_tokens:
-        leds: l_action_button, l_drillchair_mode, jet_bumper, gi, groundeffects, flipper, topper, speaker
+        leds: l_action_button, l_drillchair_mode, jet_bumper, gi, groundeffects, flipper, topper, speaker, dome
       loops: -1
   selection_mode_quadshotgun_highlighted:
     reversebeartrap:
       show_tokens:
-        leds: l_action_button, l_beartrap_mode, standup, gi, groundeffects, flipper, topper, speaker
+        leds: l_action_button, l_beartrap_mode, standup, gi, groundeffects, flipper, topper, speaker, dome
       action: stop
     flammablejelly:
       show_tokens:
-        leds: l_action_button, l_jelly_mode, standup, orbit, gi, groundeffects, flipper, topper, speaker
+        leds: l_action_button, l_jelly_mode, standup, orbit, gi, groundeffects, flipper, topper, speaker, dome
       action: stop
     drillchair:
       show_tokens:
-        leds: l_action_button, l_drillchair_mode, jet_bumper, gi, groundeffects, flipper, topper, speaker
+        leds: l_action_button, l_drillchair_mode, jet_bumper, gi, groundeffects, flipper, topper, speaker, dome
       action: stop
     razorwire:
       show_tokens:
-        leds: l_action_button, l_razorwire_mode, top_bumper, gi, groundeffects, flipper, topper, speaker
+        leds: l_action_button, l_razorwire_mode, top_bumper, gi, groundeffects, flipper, topper, speaker, dome
       action: stop
     zeptest:
       show_tokens:
-        leds: l_action_button , l_zeptest_mode, standup, bear_flasher, orbit, ramp, billy, skillshot, gi, groundeffects, flipper, topper, speaker
+        leds: l_action_button , l_zeptest_mode, standup, bear_flasher, orbit, ramp, billy, skillshot, gi, groundeffects, flipper, topper, speaker, dome
       action: stop
     survival_instinct:
       show_tokens:
-        leds: l_action_button 
+        leds: l_action_button, dome
       action: stop
     quadshotgun:
       show_tokens:
-        leds: l_action_button, l_quadshotgun_mode, standup, shotgun_flasher, gi, groundeffects, flipper, topper, speaker
+        leds: l_action_button, l_quadshotgun_mode, standup, shotgun_flasher, gi, groundeffects, flipper, topper, speaker, dome
       loops: -1
   selection_mode_zeptest_highlighted:
     reversebeartrap:
       show_tokens:
-        leds: l_action_button, l_beartrap_mode, standup, gi, groundeffects, flipper, topper, speaker
+        leds: l_action_button, l_beartrap_mode, standup, gi, groundeffects, flipper, topper, speaker, dome
       action: stop
     flammablejelly:
       show_tokens:
-        leds: l_action_button, l_jelly_mode, standup, orbit, gi, groundeffects, flipper, topper, speaker
+        leds: l_action_button, l_jelly_mode, standup, orbit, gi, groundeffects, flipper, topper, speaker, dome
       action: stop
     drillchair:
       show_tokens:
-        leds: l_action_button, l_drillchair_mode, jet_bumper, gi, groundeffects, flipper, topper, speaker
+        leds: l_action_button, l_drillchair_mode, jet_bumper, gi, groundeffects, flipper, topper, speaker, dome
       action: stop
     quadshotgun:
       show_tokens:
-        leds: l_action_button, l_quadshotgun_mode, standup, shotgun_flasher, gi, groundeffects, flipper, topper, speaker
+        leds: l_action_button, l_quadshotgun_mode, standup, shotgun_flasher, gi, groundeffects, flipper, topper, speaker, dome
       action: stop
     razorwire:
       show_tokens:
-        leds: l_action_button, l_razorwire_mode, top_bumper, gi, groundeffects, flipper, topper, speaker
+        leds: l_action_button, l_razorwire_mode, top_bumper, gi, groundeffects, flipper, topper, speaker, dome
       action: stop
     survival_instinct:
       show_tokens:
-        leds: l_action_button 
+        leds: l_action_button, dome
       action: stop
     zeptest:
       show_tokens:
-        leds: l_action_button , l_zeptest_mode, standup, bear_flasher, orbit, ramp, billy, skillshot, gi, groundeffects, flipper, topper, speaker
+        leds: l_action_button , l_zeptest_mode, standup, bear_flasher, orbit, ramp, billy, skillshot, gi, groundeffects, flipper, topper, speaker, dome
   selection_mode_razorwire_selected:
     ActionOff:
       show_tokens:
-        leds: l_action_button, top_bumper, l_razorwire_mode, l_beartrap_mode, l_jelly_mode, l_drillchair_mode, l_quadshotgun_mode, l_zeptest_mode, bottom_bumper, l_right_standup_arrow, shotgun_flasher, skillshot, standup, groundeffects, flipper, topper, speaker
+        leds: l_action_button, top_bumper, l_razorwire_mode, l_beartrap_mode, l_jelly_mode, l_drillchair_mode, l_quadshotgun_mode, l_zeptest_mode, bottom_bumper, l_right_standup_arrow, shotgun_flasher, skillshot, standup, groundeffects, flipper, topper, speaker, dome
       loops: -1
   selection_mode_reversebeartrap_selected:
     ActionOff:
       show_tokens:
-        leds: l_action_button, top_bumper, l_razorwire_mode, l_beartrap_mode, l_jelly_mode, l_drillchair_mode, l_quadshotgun_mode, l_zeptest_mode, bottom_bumper, l_right_standup_arrow, shotgun_flasher, skillshot, standup, groundeffects, flipper, topper, speaker
+        leds: l_action_button, top_bumper, l_razorwire_mode, l_beartrap_mode, l_jelly_mode, l_drillchair_mode, l_quadshotgun_mode, l_zeptest_mode, bottom_bumper, l_right_standup_arrow, shotgun_flasher, skillshot, standup, groundeffects, flipper, topper, speaker, dome
       loops: -1
   selection_mode_flammablejelly_selected:
     ActionOff:
       show_tokens:
-        leds: l_action_button, top_bumper, l_razorwire_mode, l_beartrap_mode, l_jelly_mode, l_drillchair_mode, l_quadshotgun_mode, l_zeptest_mode, bottom_bumper, standup, orbit, shotgun_flasher, skillshot, groundeffects, flipper, topper, speaker
+        leds: l_action_button, top_bumper, l_razorwire_mode, l_beartrap_mode, l_jelly_mode, l_drillchair_mode, l_quadshotgun_mode, l_zeptest_mode, bottom_bumper, standup, orbit, shotgun_flasher, skillshot, groundeffects, flipper, topper, speaker, dome
       loops: -1
   selection_mode_drillchair_selected:
     ActionOff:
       show_tokens:
-        leds: l_action_button, top_bumper, l_razorwire_mode, l_beartrap_mode, l_jelly_mode, l_drillchair_mode, l_quadshotgun_mode, l_zeptest_mode, bottom_bumper, l_right_standup_arrow, shotgun_flasher, skillshot, l_left_loop_arrow, groundeffects, flipper, topper, speaker
+        leds: l_action_button, top_bumper, l_razorwire_mode, l_beartrap_mode, l_jelly_mode, l_drillchair_mode, l_quadshotgun_mode, l_zeptest_mode, bottom_bumper, l_right_standup_arrow, shotgun_flasher, skillshot, l_left_loop_arrow, groundeffects, flipper, topper, speaker, dome
       loops: -1
   selection_mode_quadshotgun_selected:
     ActionOff:
       show_tokens:
-        leds: l_action_button, top_bumper, l_razorwire_mode, l_beartrap_mode, l_jelly_mode, l_drillchair_mode, l_quadshotgun_mode, l_zeptest_mode, bottom_bumper, l_right_standup_arrow, shotgun_flasher, skillshot, l_left_loop_arrow, groundeffects, flipper, topper, speaker
+        leds: l_action_button, top_bumper, l_razorwire_mode, l_beartrap_mode, l_jelly_mode, l_drillchair_mode, l_quadshotgun_mode, l_zeptest_mode, bottom_bumper, l_right_standup_arrow, shotgun_flasher, skillshot, l_left_loop_arrow, groundeffects, flipper, topper, speaker, dome
       loops: -1
   selection_mode_zeptest_selected:
     ActionOff:
       show_tokens:
-        leds: l_action_button, top_bumper, l_razorwire_mode, l_beartrap_mode, l_jelly_mode, l_drillchair_mode, l_quadshotgun_mode, l_zeptest_mode, bottom_bumper, l_right_standup_arrow, shotgun_flasher, skillshot, billy, l_left_loop_arrow, groundeffects, flipper, topper, speaker
+        leds: l_action_button, top_bumper, l_razorwire_mode, l_beartrap_mode, l_jelly_mode, l_drillchair_mode, l_quadshotgun_mode, l_zeptest_mode, bottom_bumper, l_right_standup_arrow, shotgun_flasher, skillshot, billy, l_left_loop_arrow, groundeffects, flipper, topper, speaker, dome
       loops: -1
   mode_selection_mode_started:
       disc_left_chase: stop

@@ -47,7 +47,7 @@ counters:
     count_events: sw_inlane    
     
   minimode_spinners_counter:
-    starting_count: 40
+    starting_count: 25
     count_complete_value: 0
     direction: down
     start_enabled: true
@@ -119,7 +119,7 @@ show_player:
       priority: 121
   counter_minimode_standups_counter_hit{hits==10}:
     item_candle_pulse: stop
-# bathtub light progress - 60 slings
+# bathtub light progress - 40 slings
   counter_minimode_slings_counter_hit{hits<40}:
     item_bathtub_flash:
       loops: 4
@@ -145,8 +145,8 @@ show_player:
       priority: 121 
   counter_minimode_inlanes_counter_hit{hits==9}:
     item_taperecorder_pulse: stop
-# gun light progress - 40 spinners
-  counter_minimode_spinners_counter_hit{hits<40}:
+# gun light progress - 25 spinners
+  counter_minimode_spinners_counter_hit{hits<25}:
     item_gun_flash:
       loops: 4
       speed: 10
@@ -156,7 +156,7 @@ show_player:
       loops: -1
       speed: 1
       priority: 121 
-  counter_minimode_spinners_counter_hit{hits==40}:
+  counter_minimode_spinners_counter_hit{hits==25}:
     item_gun_pulse: stop
 # key light progress -5 ramps
   counter_minimode_ramps_counter_hit{hits<5}:
@@ -184,7 +184,7 @@ show_player:
       priority: 121 
   counter_minimode_loops_counter_hit{hits==5}:
     item_hacksaw_pulse: stop
-# syringe light progress -8 drops
+# syringe light progress -6 drops
   counter_minimode_drops_counter_hit{hits<6}:
     item_syringe_flash:
       loops: 4

@@ -11,7 +11,8 @@ mode:
 
 multiballs:
   mb_hacksaw:
-    ball_count: 3
+    ball_count: 2
+    ball_count_type: add
     ball_locks: bd_hacksaw
     shoot_again: 10s
     start_events: start_hacksaw_multiball

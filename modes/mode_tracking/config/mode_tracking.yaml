@@ -983,69 +983,69 @@ show_player:
     razorwire_puzzle_piece_collected:
       show_tokens:
         leds: razorwire_flasher
-        color1: beartrap
+        color1: razorwire
       loops: -1
       priority: 100
   mode_base_started{current_player.razorwire_puzzle==1}: 
     razorwire_puzzle_piece_collected:
       show_tokens:
         leds: razorwire_flasher
-        color1: beartrap
+        color1: razorwire
       loops: -1
       priority: 100
   player_drillchair_puzzle{value==1}:
     drillchair_puzzle_piece_collected:
       show_tokens:
         leds: drill_flasher
-        color1: beartrap
+        color1: drillchair
       loops: -1
       priority: 100
   mode_base_started{current_player.drillchair_puzzle==1}: 
     drillchair_puzzle_piece_collected:
       show_tokens:
         leds: drill_flasher
-        color1: beartrap
+        color1: drillchair
       loops: -1
       priority: 100
   zeptest_puzzle_complete:
     zeptest_puzzle_piece_collected:
       show_tokens:
         leds: zep_flasher
-        color1: beartrap
+        color1: zeptest
       loops: -1
       priority: 100
   mode_base_started{current_player.zeptest_puzzle==1}: 
     zeptest_puzzle_piece_collected:
       show_tokens:
         leds: zep_flasher
-        color1: beartrap
+        color1: zeptest
       loops: -1
       priority: 100
   flammablejelly_puzzle_complete:
     flammablejelly_puzzle_piece_collected:
       show_tokens:
         leds: bear_flasher
-        color1: beartrap
+        color1: jelly
       loops: -1
       priority: 100
   mode_base_started{current_player.flammablejelly_puzzle==1}: 
     flammablejelly_puzzle_piece_collected:
       show_tokens:
         leds: bear_flasher
-        color1: beartrap
+        color1: jelly
       loops: -1
       priority: 100
   quadshotgun_puzzle_complete:
     quadshotgun_puzzle_piece_collected:
       show_tokens:
         leds: shotgun_flasher
-        color1: beartrap
+        color1: shotgun
       loops: -1
       priority: 100
   mode_base_started{current_player.quadshotgun_puzzle==1}: 
     quadshotgun_puzzle_piece_collected:
       show_tokens:
         leds: shotgun_flasher
-        color1: beartrap
+        color1: shotgun
       loops: -1
       priority: 100

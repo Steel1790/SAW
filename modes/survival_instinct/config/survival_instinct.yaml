@@ -46,11 +46,17 @@ variable_player:
       int: -10
       action: add
   counter_cnt_survival_instinct_jackpot_hit:
+    survival_instinct_jackpot:
+      int: 1
+      action: add
     survival_instinct_value:
-      int: 750000 * (current_player.pf_multiplier)
+      int: 1500000 * (current_player.pf_multiplier) * (current_player.survival_instinct_jackpot)
       action: add
   shot_survival_instinct_superjackpot_sp_survival_instinct_jackpot_hit:
     score: (current_player.survival_instinct_value)
+    survival_instinct_jackpot:
+      int: 0
+      action: set
     survival_instinct_value:
       int: 2000000 * (current_player.pf_multiplier)
       action: set
@@ -63,7 +69,7 @@ counters:
     reset_on_complete: true
     disable_on_complete: false   
     count_events: shot_survival_instinct_bottom_pops_sp_survival_instinct_lit_hit, shot_survival_instinct_top_pops_sp_survival_instinct_lit_hit, shot_survival_instinct_right_loop_sp_survival_instinct_lit_hit, shot_survival_instinct_middle_standup_sp_survival_instinct_lit_hit, shot_survival_instinct_drop_bank_sp_survival_instinct_lit_hit
-
+      
 slides:
   sl_survival_instinctUI:
     widgets:
@@ -512,7 +518,7 @@ widget_player:
   ball_ended:
     w_survival_instinct_value:
       action: remove  
-  sg_survival_instinct_lit_hit:
+  e_survival_instinct_widget:
     w_survival_instinct_value:
       slide: sl_survival_instinctUI
       action: add
@@ -536,3 +542,4 @@ widget_player:
 
 event_player: 
   slide_sl_survival_instinctUI_active: e_primary_mode_active
+  counter_cnt_survival_instinct_jackpot_hit: e_survival_instinct_widget|0.1s

@@ -893,7 +893,7 @@ lights:
     tags: cabinet, flipper, cabinet_minus_start
   l_action_button:
     number: ledneuron-1-2
-    tags: cabinet, cabinet_minus_start
+    tags: cabinet
   l_blade_1:
     number: ledneuron-1-4
     tags: cabinet, cabinet_minus_start
