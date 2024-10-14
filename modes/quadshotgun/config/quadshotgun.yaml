@@ -103,6 +103,13 @@ counters:
     persist_state: true
     reset_on_complete: false
     count_events: shot_quadshotgun_right_standup_sp_quadshotgun_lit_hit
+  quadshotgun_disc:
+    starting_count: 0
+    enable_events: mode_quadshotgun_started
+    start_enabled: false
+    persist_state: true
+    reset_on_complete: false
+    count_events: ssh_right_ramp_hit, ssh_left_ramp_hit, sw_middle_standup, ssh_leftloop_hit
 
 shots:
   shot_quadshotgun_left_standup:
@@ -1192,6 +1199,27 @@ show_player:
       shotgun_blast_top_pops:
         loops: 0
         speed: 30
+#disc activate on non mode shot
+  counter_quadshotgun_disc_hit:
+    disc_left_chase:
+      loops: -1
+      speed: 10
+      show_tokens:
+        color1: shotgun
+    disc_middle_chase:
+      loops: -1
+      speed: 10
+      show_tokens:
+        color1: shotgun
+    disc_right_chase:
+      loops: -1
+      speed: 10
+      show_tokens:
+        color1: shotgun
+  e_saw_disc_off:
+      disc_left_chase: stop
+      disc_middle_chase: stop
+      disc_right_chase: stop
 
 sound_pools:
   quadshotgun_mode_sound_pool:
@@ -1256,6 +1284,10 @@ sound_player:
     quadshotgun_mode_sound_pool:
       action: play
       block: true
+  counter_quadshotgun_disc_hit:
+    SawBlade:
+      action: play
+      block: true
 
    
 event_player: 
@@ -1270,3 +1302,23 @@ event_player:
     - mode_quadshotgun_complete|2s
     - stop_mode_quadshotgun|2s
   logicblock_acc_quadshotgun_phase1_complete: e_spinner_callout_delay|3s
+  counter_quadshotgun_disc_hit: e_saw_disc_off|3s 
+
+coil_player:
+  counter_quadshotgun_disc_hit:
+    c_left_spin_disc:
+      action: enable
+      hold_power: 1.0
+    c_middle_spin_disc:
+      action: enable
+      hold_power: 1.0
+    c_right_spin_disc:
+      action: enable
+      hold_power: 1.0
+  e_saw_disc_off:
+    c_right_spin_disc:
+      action: off
+    c_middle_spin_disc:
+      action: off
+    c_left_spin_disc:
+      action: off 

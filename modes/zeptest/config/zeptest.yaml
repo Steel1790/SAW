@@ -60,6 +60,13 @@ counters:
     reset_on_complete: false
     count_complete_value: 1
     count_events: logicblock_cnt_zeptest_collected_updated{value==3}
+  zeptest_disc:
+    starting_count: 0
+    enable_events: mode_zeptest_started
+    start_enabled: false
+    persist_state: true
+    reset_on_complete: false
+    count_events: sg_zeptest_zeptest_not_ready_hit
 
 shots:
   shot_zeptest_left_loop:
@@ -784,6 +791,19 @@ timers:
     control_events:
       - action: start
         event: mode_zeptest_started
+  zeptest_callout1_timer:
+    start_value: 0
+    end_value: 15
+    direction: up
+    control_events:
+      - action: start
+        event: counter_cnt_zeptest_lit_hit_hit{hits==1}
+      - action: restart
+        event: counter_cnt_zeptest_lit_hit_hit{hits==2}
+      - action: restart
+        event: counter_cnt_zeptest_lit_hit_hit{hits==3}
+      - action: stop
+        event: sg_zeptest_zeptest_collected_hit
         
 variable_player:
   sg_zeptest_zeptest_lit_hit:
@@ -1826,6 +1846,27 @@ show_player:
       speed: 9
       show_tokens:
         color1: zepstest
+#disc activate on non mode shot
+  counter_zeptest_disc_hit:
+    disc_left_chase:
+      loops: -1
+      speed: 10
+      show_tokens:
+        color1: zeptest
+    disc_middle_chase:
+      loops: -1
+      speed: 10
+      show_tokens:
+        color1: zeptest
+    disc_right_chase:
+      loops: -1
+      speed: 10
+      show_tokens:
+        color1: zeptest
+  e_saw_disc_off:
+      disc_left_chase: stop
+      disc_middle_chase: stop
+      disc_right_chase: stop
 
 sound_player:
   mode_zeptest_started:
@@ -1834,9 +1875,19 @@ sound_player:
   player_zeptest_60s_zeptest_timer_tick{value==60}:
     ZepsTestModeStart:
       action: play
+  timer_60s_zeptest_timer_tick{ticks==57}:       
+    HitTheLitShots:
+      action: play
+  timer_zeptest_callout1_timer_tick{ticks==10}:
+    HitItAgain:
+      action: play
   player_zeptest_60s_zeptest_timer_tick{value < 1}:
     ZepsTestModeStart:
       action: stop
+  counter_zeptest_disc_hit:
+    SawBlade:
+      action: play
+      block: true
 
 event_player: 
   slide_sl_mode_zeptest01_active: e_primary_mode_active
@@ -1856,3 +1907,23 @@ event_player:
   que_zeptest_complete:
     - mode_zeptest_complete|2s
     - stop_mode_zeptest|2s
+  counter_zeptest_disc_hit: e_saw_disc_off|3s 
+
+coil_player:
+  counter_zeptest_disc_hit:
+    c_left_spin_disc:
+      action: enable
+      hold_power: 1.0
+    c_middle_spin_disc:
+      action: enable
+      hold_power: 1.0
+    c_right_spin_disc:
+      action: enable
+      hold_power: 1.0
+  e_saw_disc_off:
+    c_right_spin_disc:
+      action: off
+    c_middle_spin_disc:
+      action: off
+    c_left_spin_disc:
+      action: off  

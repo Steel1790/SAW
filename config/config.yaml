@@ -511,7 +511,25 @@ sounds:
   RBT14:
     file: RBT14.wav
     volume: 0.2
-
+# oct 10 recording adjustment
+  HitItAgain:
+    file: HitItAgain.wav
+    volume: 0.7
+  HitAStandup:
+    file: HitAStandup.wav
+    volume: 0.7
+  FindTheCombination:
+    file: FindTheCombination.wav
+    volume: 0.7
+  HitTheLitShots:
+    file: HitTheLitShots.wav
+    volume: 0.7
+  ShootTheOrbits:
+    file: ShootTheOrbits.wav
+    volume: 0.7
+  ShootTheRamps:
+    file: ShootTheRamps.wav
+    volume: 0.7
 #spinner sound
   Spinner3:
     file: Spinner3.wav

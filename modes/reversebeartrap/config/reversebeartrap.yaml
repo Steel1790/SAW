@@ -49,18 +49,51 @@ timers:
       # - action: add
       #   value: 30
       #   event: shot_reversebeartrap_button_sp_reversebeartrap_lit_hit
-
-#counters:
-#  razorwire_spinner_counter:
-#    starting_count: 0
-#    count_complete_value: 30
-#    enable_events: enable_qualify
-#    disable_events: disable_qualify
-#    start_enabled: true
-#    reset_on_complete: false
-#    events_when_complete: mode_razorwire_complete, stop_mode_razorwire
-#    count_events: spinner_hit
-    
+  reversebeartrap_callout1_timer:
+    start_value: 0
+    end_value: 15
+    direction: up
+    control_events:
+      - action: start
+        event: logicblock_reversebeartrap_updated{value==1}
+      - action: stop
+        event: logicblock_reversebeartrap_updated{value==2}
+  reversebeartrap_callout2_timer:
+    start_value: 0
+    end_value: 15
+    direction: up
+    control_events:
+      - action: start
+        event: logicblock_reversebeartrap_updated{value==2}
+      - action: stop
+        event: logicblock_reversebeartrap_updated{value==3}
+  reversebeartrap_callout3_timer:
+    start_value: 0
+    end_value: 15
+    direction: up
+    control_events:
+      - action: start
+        event: logicblock_reversebeartrap_updated{value==3}
+      - action: stop
+        event: logicblock_reversebeartrap_updated{value==4}
+  reversebeartrap_callout4_timer:
+    start_value: 0
+    end_value: 15
+    direction: up
+    control_events:
+      - action: start
+        event: logicblock_reversebeartrap_updated{value==4}
+      - action: stop
+        event: logicblock_reversebeartrap_updated{value==5}
+  reversebeartrap_callout5_timer:
+    start_value: 0
+    end_value: 15
+    direction: up
+    control_events:
+      - action: start
+        event: logicblock_reversebeartrap_updated{value==5}
+      - action: stop
+        event: logicblock_reversebeartrap_updated{value==6}
 
 variable_player:
   logicblock_reversebeartrap_hit{step==1}:
@@ -153,6 +186,13 @@ counters:
 #    events_when_complete: 
     disable_events: sw_standup
     count_events: sw_spinner
+  reversebeartrap_disc:
+    starting_count: 0
+    enable_events: logicblock_reversebeartrap_updated{value==1}, logicblock_reversebeartrap_updated{value==2}, logicblock_reversebeartrap_updated{value==3}, logicblock_reversebeartrap_updated{value==4}, logicblock_reversebeartrap_updated{value==5}
+    start_enabled: false
+    persist_state: true
+    reset_on_complete: false
+    count_events: sw_standup
  
 slides:
   reversebeartrapvideo:
@@ -877,7 +917,26 @@ sound_player:
       action: play
       loops: 2
   timer_120s_reversebeartrap_timer_tick{ticks==118}:
-    ShootAllTheStandupTargets:
+    HitAStandup:
+      action: play
+  # e_rbt_shot2_callout:
+  timer_reversebeartrap_callout1_timer_tick{ticks==10}:
+    ShootTheOrbits:
+      action: play
+  # e_rbt_shot3_callout:
+  timer_reversebeartrap_callout2_timer_tick{ticks==10}:
+    ShootTheRamps:
+      action: play
+  # e_rbt_shot4_callout:
+  timer_reversebeartrap_callout3_timer_tick{ticks==10}:
+    ShootTheOrbits:
+      action: play
+  # e_rbt_shot5_callout:
+  timer_reversebeartrap_callout4_timer_tick{ticks==10}:
+    ShootTheRamps:
+      action: play
+  e_rbt_shot6_callout:
+    HitTheDropTargetNOW:
       action: play
   player_reversebeartrap_120s_reversebeartrap_timer_tick{value < 1}:
     ReverseBearTrapModeStart:
@@ -901,6 +960,11 @@ sound_player:
       block: true
   sw_lower_drop_target:
     reversebeartrap_mode_sound_pool:
+      action: play
+      block: true
+  counter_reversebeartrap_disc_hit:
+    SawBlade:
+      priority: 182
       action: play
       block: true
 
@@ -1201,6 +1265,27 @@ show_player:
       speed: 9
       show_tokens:
         color1: beartrap
+#disc activate on non mode shot
+  counter_reversebeartrap_disc_hit:
+    disc_left_chase:
+      loops: -1
+      speed: 10
+      show_tokens:
+        color1: beartrap
+    disc_middle_chase:
+      loops: -1
+      speed: 10
+      show_tokens:
+        color1: beartrap
+    disc_right_chase:
+      loops: -1
+      speed: 10
+      show_tokens:
+        color1: beartrap
+  e_saw_disc_off:
+      disc_left_chase: stop
+      disc_middle_chase: stop
+      disc_right_chase: stop
 
 event_player: 
   slide_mode_rbt01_active: e_primary_mode_active
@@ -1210,4 +1295,29 @@ event_player:
   que_reversebeartrap_complete:
     - mode_reversebeartrap_complete|2s
     - stop_mode_reversebeartrap|2s
+  logicblock_reversebeartrap_updated{value==1}: e_rbt_shot2_callout|4s
+  logicblock_reversebeartrap_updated{value==2}: e_rbt_shot3_callout|4s
+  logicblock_reversebeartrap_updated{value==3}: e_rbt_shot4_callout|4s
+  logicblock_reversebeartrap_updated{value==4}: e_rbt_shot5_callout|4s
+  logicblock_reversebeartrap_updated{value==5}: e_rbt_shot6_callout|3s
+  counter_reversebeartrap_disc_hit: e_saw_disc_off|3s 
   # player_shot_shot_reversebeartrap_button_enabled{change==1}: e_reversebeartrap_action_button_ready|1s
+
+coil_player:
+  counter_reversebeartrap_disc_hit:
+    c_left_spin_disc:
+      action: enable
+      hold_power: 1.0
+    c_middle_spin_disc:
+      action: enable
+      hold_power: 1.0
+    c_right_spin_disc:
+      action: enable
+      hold_power: 1.0
+  e_saw_disc_off:
+    c_right_spin_disc:
+      action: off
+    c_middle_spin_disc:
+      action: off
+    c_left_spin_disc:
+      action: off 

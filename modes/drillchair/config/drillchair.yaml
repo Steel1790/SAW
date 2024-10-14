@@ -82,6 +82,13 @@ counters:
 #    disable_events: drillchair_pops_complete
 #    events_when_complete: e_bottom_drill_complete 
     count_events: sw_standup   
+  drillchair_disc:
+    starting_count: 0
+    enable_events: mode_drillchair_started
+    start_enabled: false
+    persist_state: true
+    reset_on_complete: false
+    count_events: ssh_right_ramp_hit, ssh_left_ramp_hit, ssh_leftloop_hit, ssh_rightloop_hit
 
 shots:
   lower_l_pop:
@@ -936,6 +943,11 @@ sound_player:
     drillchair_gears_sound_pool:
       action: play
       block: true
+  counter_drillchair_disc_hit:
+    SawBlade:
+      action: play
+      block: true
+
 
 shows:
   #sh_drillchair_ready:
@@ -1413,6 +1425,27 @@ show_player:
       speed: 9
       show_tokens:
         color1: drillchair_alt
+#disc activate on non mode shot
+  counter_drillchair_disc_hit:
+    disc_left_chase:
+      loops: -1
+      speed: 10
+      show_tokens:
+        color1: drillchair
+    disc_middle_chase:
+      loops: -1
+      speed: 10
+      show_tokens:
+        color1: drillchair
+    disc_right_chase:
+      loops: -1
+      speed: 10
+      show_tokens:
+        color1: drillchair
+  e_saw_disc_off:
+      disc_left_chase: stop
+      disc_middle_chase: stop
+      disc_right_chase: stop
 
 event_player: 
   slide_mode_drillchair01_active: e_primary_mode_active
@@ -1450,6 +1483,7 @@ event_player:
   que_drillchair_complete:
     - mode_drillchair_complete|2s
     - stop_mode_drillchair|2s
+  counter_drillchair_disc_hit: e_saw_disc_off|3s 
 
   # shot_drillchair_button_sp_drillchair_lit_hit{device.counters.drillchair_pops_counter.value==6}:
   #   - sw_bottom_pops|0.1s
@@ -1474,3 +1508,22 @@ event_player:
   #   - sw_top_pops|0.15s
   #   - sw_top_pops|0.2s
   #   - sw_top_pops|0.25s
+
+coil_player:
+  counter_drillchair_disc_hit:
+    c_left_spin_disc:
+      action: enable
+      hold_power: 1.0
+    c_middle_spin_disc:
+      action: enable
+      hold_power: 1.0
+    c_right_spin_disc:
+      action: enable
+      hold_power: 1.0
+  e_saw_disc_off:
+    c_right_spin_disc:
+      action: off
+    c_middle_spin_disc:
+      action: off
+    c_left_spin_disc:
+      action: off 

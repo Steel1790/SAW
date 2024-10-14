@@ -83,6 +83,13 @@ counters:
     reset_on_complete: false
     events_when_complete: razorwire_add_a_ball_complete
     count_events: drop_target_dt_upper_drop1_down
+  razorwire_disc:
+    starting_count: 0
+    enable_events: mode_razorwire_started
+    start_enabled: false
+    persist_state: true
+    reset_on_complete: false
+    count_events: sw_standup, ssh_right_ramp_hit, ssh_left_ramp_hit, ssh_leftloop_hit, ssh_rightloop_hit
 
 shots:
   upper_l_pop:
@@ -1266,6 +1273,46 @@ show_player:
       speed: 9
       show_tokens:
         color1: razorwire
+#disc activate on non mode shot
+  counter_razorwire_disc_hit:
+    disc_left_chase:
+      loops: -1
+      speed: 10
+      show_tokens:
+        color1: razorwire
+    disc_middle_chase:
+      loops: -1
+      speed: 10
+      show_tokens:
+        color1: razorwire
+    disc_right_chase:
+      loops: -1
+      speed: 10
+      show_tokens:
+        color1: razorwire
+  e_saw_disc_off:
+      disc_left_chase: stop
+      disc_middle_chase: stop
+      disc_right_chase: stop
+
+coil_player:
+  counter_razorwire_disc_hit:
+    c_left_spin_disc:
+      action: enable
+      hold_power: 1.0
+    c_middle_spin_disc:
+      action: enable
+      hold_power: 1.0
+    c_right_spin_disc:
+      action: enable
+      hold_power: 1.0
+  e_saw_disc_off:
+    c_right_spin_disc:
+      action: off
+    c_middle_spin_disc:
+      action: off
+    c_left_spin_disc:
+      action: off
 
 sound_pools:
   razorwire_mode_sound_pool:
@@ -1322,6 +1369,10 @@ sound_player:
     razorwire_mode_sound_pool:
       action: play
       block: true
+  counter_razorwire_disc_hit:
+    SawBlade:
+      action: play
+      block: true
 
 event_player: 
   slide_mode_razorwire01_active: e_primary_mode_active
@@ -1333,3 +1384,4 @@ event_player:
   que_razorwire_complete:
     - mode_razorwire_complete|2s
     - stop_mode_razorwire|2s
+  counter_razorwire_disc_hit: e_saw_disc_off|3s

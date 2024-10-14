@@ -190,6 +190,14 @@ counters:
     reset_on_complete: false
     events_when_complete: flammablejelly_p1_complete
     count_events: shot_flammablejelly_right_standup_sp_jelly_jelly_lit_hit
+  flammablejelly_disc:
+    starting_count: 0
+    enable_events: mode_flammablejelly_started
+    start_enabled: false
+    persist_state: true
+    reset_on_complete: false
+    count_events: ssh_right_ramp_hit, ssh_left_ramp_hit, sw_middle_standup
+
 slides:
   flammablejellyvideo:
     widgets:
@@ -1043,6 +1051,27 @@ show_player:
     speaker_heartbeat: stop
     cabinet_heartbeat: stop
     topper_heartbeat: stop
+#disc activate on non mode shot
+  counter_flammablejelly_disc_hit:
+    disc_left_chase:
+      loops: -1
+      speed: 10
+      show_tokens:
+        color1: jelly
+    disc_middle_chase:
+      loops: -1
+      speed: 10
+      show_tokens:
+        color1: jelly
+    disc_right_chase:
+      loops: -1
+      speed: 10
+      show_tokens:
+        color1: jelly
+  e_saw_disc_off:
+      disc_left_chase: stop
+      disc_middle_chase: stop
+      disc_right_chase: stop
 
 sound_pools:
   flammablejelly_mode_sound_pool:
@@ -1066,6 +1095,9 @@ sound_player:
       action: play
   player_flammablejelly_60s_flammablejelly_timer_tick{value==61}:
     FlammableJellyModeStart:
+      action: play        
+  timer_60s_flammablejelly_timer_tick{ticks==56}:
+    FindTheCombination:
       action: play        
   player_flammablejelly_60s_flammablejelly_timer_tick{value < 1}:
     FlammableJellyModeStart:
@@ -1093,6 +1125,10 @@ sound_player:
       block: true
   sw_lower_drop_target:
     flammablejelly_mode_sound_pool:
+      action: play
+      block: true
+  counter_flammablejelly_disc_hit:
+    SawBlade:
       action: play
       block: true
 
@@ -1195,3 +1231,24 @@ event_player:
   que_flammablejelly_complete:
     - mode_flammablejelly_complete|2s
     - stop_mode_flammablejelly|2s
+  counter_flammablejelly_disc_hit: e_saw_disc_off|3s 
+
+
+coil_player:
+  counter_flammablejelly_disc_hit:
+    c_left_spin_disc:
+      action: enable
+      hold_power: 1.0
+    c_middle_spin_disc:
+      action: enable
+      hold_power: 1.0
+    c_right_spin_disc:
+      action: enable
+      hold_power: 1.0
+  e_saw_disc_off:
+    c_right_spin_disc:
+      action: off
+    c_middle_spin_disc:
+      action: off
+    c_left_spin_disc:
+      action: off 

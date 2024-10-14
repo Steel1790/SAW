@@ -1521,7 +1521,31 @@ show_player:
         show_tokens:
           led: l_top_drop_triangle
           color1: off
-
+#turn discs off from modes
+  mode_drillchair_stopped:
+      disc_left_chase: stop
+      disc_middle_chase: stop
+      disc_right_chase: stop
+  mode_flammablejelly_stopped:
+      disc_left_chase: stop
+      disc_middle_chase: stop
+      disc_right_chase: stop
+  mode_quadshotgun_stopped:
+      disc_left_chase: stop
+      disc_middle_chase: stop
+      disc_right_chase: stop
+  mode_razorwire_stopped:
+      disc_left_chase: stop
+      disc_middle_chase: stop
+      disc_right_chase: stop
+  mode_reversebeartrap_stopped:
+      disc_left_chase: stop
+      disc_middle_chase: stop
+      disc_right_chase: stop
+  mode_zeptest_stopped:
+      disc_left_chase: stop
+      disc_middle_chase: stop
+      disc_right_chase: stop
   #shot_left_outlane_hit{state=="ball_save_not_ready"}:
   #    billy_laugh:
   #      loops: 4
@@ -3802,6 +3826,79 @@ widget_player:
     saw_letters:
       slide: base_slide_main
       action: add
+#mode ends with MB carrying into base mode
+  mode_razorwire_stopped{mode.shackle_multiball.active==True}:
+    saw_letters:
+      slide: base_slide_main
+      action: remove
+  mode_razorwire_stopped{mode.jigsaw_multiball.active==True}:
+    saw_letters:
+      slide: base_slide_main
+      action: remove
+  mode_razorwire_stopped{mode.hacksaw_multiball.active==True}:
+    saw_letters:
+      slide: base_slide_main
+      action: remove
+  mode_drillchair_stopped{mode.shackle_multiball.active==True}:
+    saw_letters:
+      slide: base_slide_main
+      action: remove
+  mode_drillchair_stopped{mode.jigsaw_multiball.active==True}:
+    saw_letters:
+      slide: base_slide_main
+      action: remove
+  mode_drillchair_stopped{mode.hacksaw_multiball.active==True}:
+    saw_letters:
+      slide: base_slide_main
+      action: remove
+  mode_flammablejelly_stopped{mode.shackle_multiball.active==True}:
+    saw_letters:
+      slide: base_slide_main
+      action: remove
+  mode_flammablejelly_stopped{mode.jigsaw_multiball.active==True}:
+    saw_letters:
+      slide: base_slide_main
+      action: remove
+  mode_flammablejelly_stopped{mode.hacksaw_multiball.active==True}:
+    saw_letters:
+      slide: base_slide_main
+      action: remove
+  mode_quadshotgun_stopped{mode.shackle_multiball.active==True}:
+    saw_letters:
+      slide: base_slide_main
+      action: remove
+  mode_quadshotgun_stopped{mode.jigsaw_multiball.active==True}:
+    saw_letters:
+      slide: base_slide_main
+      action: remove
+  mode_quadshotgun_stopped{mode.hacksaw_multiball.active==True}:
+    saw_letters:
+      slide: base_slide_main
+      action: remove
+  mode_reversebeartrap_stopped{mode.shackle_multiball.active==True}:
+    saw_letters:
+      slide: base_slide_main
+      action: remove
+  mode_reversebeartrap_stopped{mode.jigsaw_multiball.active==True}:
+    saw_letters:
+      slide: base_slide_main
+      action: remove
+  mode_reversebeartrap_stopped{mode.hacksaw_multiball.active==True}:
+    saw_letters:
+      slide: base_slide_main
+      action: remove
+  mode_zeptest_stopped{mode.shackle_multiball.active==True}:
+    saw_letters:
+      slide: base_slide_main
+      action: remove
+  mode_zeptest_stopped{mode.jigsaw_multiball.active==True}:
+    saw_letters:
+      slide: base_slide_main
+      action: remove
+  mode_zeptest_stopped{mode.hacksaw_multiball.active==True}:
+    saw_letters:
+      slide: base_slide_main
+      action: remove
 
   logicblock_cnt_saw_qualify_complete:
     saw_letters:
@@ -3942,11 +4039,23 @@ widget_player:
       slide: base_slide_main
       action: add
 #puzzle piece
-  mode_puzzle_hurryup_stopped:
+  mode_puzzle_hurryup_stopped{mode.hacksaw_multiball.active==False and mode.shackle_multiball.active==False and mode.jigsaw_multiball.active==False}:
     saw_letters:
       slide: base_slide_main
       action: add
-  mode_puzzle_hurryup_complete:
+  mode_puzzle_hurryup_complete{mode.hacksaw_multiball.active==True}:
+    w_puzzle_collected:
+      slide: puzzlecollected
+      action: add
+  mode_puzzle_hurryup_complete{mode.shackle_multiball.active==True}:
+    w_puzzle_collected:
+      slide: puzzlecollected
+      action: add
+  mode_puzzle_hurryup_complete{mode.jigsaw_multiball.active==True}:
+    w_puzzle_collected:
+      slide: puzzlecollected
+      action: add
+  mode_puzzle_hurryup_complete{mode.hacksaw_multiball.active==False and mode.shackle_multiball.active==False and mode.jigsaw_multiball.active==False}:
     w_puzzle_collected:
       slide: puzzlecollected
       action: add
@@ -3955,7 +4064,15 @@ widget_player:
       action: add
 
 #reversebeartrap since no puzzle piece
-  mode_reversebeartrap_stopped:
+  mode_reversebeartrap_stopped{mode.hacksaw_multiball.active==False}:
+    saw_letters:
+      slide: base_slide_main
+      action: add
+  mode_reversebeartrap_stopped{mode.shackle_multiball.active==False}:
+    saw_letters:
+      slide: base_slide_main
+      action: add
+  mode_reversebeartrap_stopped{mode.jigsaw_multiball.active==False}:
     saw_letters:
       slide: base_slide_main
       action: add
@@ -4797,6 +4914,49 @@ coil_player:
     c_left_spin_disc:
       action: off
   ball_ending:
+    c_right_spin_disc:
+      action: off
+    c_middle_spin_disc:
+      action: off
+    c_left_spin_disc:
+      action: off
+#turn discs off from modes
+  mode_drillchair_stopped:
+    c_right_spin_disc:
+      action: off
+    c_middle_spin_disc:
+      action: off
+    c_left_spin_disc:
+      action: off
+  mode_flammablejelly_stopped:
+    c_right_spin_disc:
+      action: off
+    c_middle_spin_disc:
+      action: off
+    c_left_spin_disc:
+      action: off
+  mode_quadshotgun_stopped:
+    c_right_spin_disc:
+      action: off
+    c_middle_spin_disc:
+      action: off
+    c_left_spin_disc:
+      action: off
+  mode_razorwire_stopped:
+    c_right_spin_disc:
+      action: off
+    c_middle_spin_disc:
+      action: off
+    c_left_spin_disc:
+      action: off
+  mode_reversebeartrap_stopped:
+    c_right_spin_disc:
+      action: off
+    c_middle_spin_disc:
+      action: off
+    c_left_spin_disc:
+      action: off
+  mode_zeptest_stopped:
     c_right_spin_disc:
       action: off
     c_middle_spin_disc:

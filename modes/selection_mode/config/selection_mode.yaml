@@ -1017,3 +1017,195 @@ sound_player:
       action: stop
     SurvivalInstinctPreview:
       action: stop
+
+widgets:
+   w_hacksaw_button_qualified:
+    - type: image
+      image: HacksawButtonImg
+      x: 9%
+      y: 91%
+      z: 1   
+    - type: Text
+      text: QUALIFIED
+      font_size: 40
+      font_name: Mustkill
+      outline_color: black
+      outline_width: 7
+      color: razorwire
+      x: 20.5%
+      y: 92.5%   
+      z: 1         
+    - type: Text
+      text: 2x Pops
+      font_size: 40
+      font_name: Mustkill
+      outline_color: black
+      outline_width: 7
+      color: 65fe08
+      x: 21%
+      y: 87.5%    
+      z: 1
+   w_handgun_button_qualified:
+    - type: image
+      image: HandgunButtonImg
+      x: 9%
+      y: 91%
+      z: 2     
+    - type: Text
+      text: QUALIFIED
+      font_size: 40
+      font_name: Mustkill
+      outline_color: black
+      outline_width: 7
+      color: razorwire
+      x: 12.5%
+      y: 80.5% 
+      z: 1
+    - type: Text
+      text: Spot 1-4 Drill Hits
+      font_size: 40
+      font_name: Mustkill
+      outline_color: black
+      outline_width: 7
+      color: shotgun
+      x: 13.5%
+      y: 75.5%    
+      z: 1
+   w_key_button_qualified:
+    - type: image
+      image: KeyButtonImg
+      x: 11%
+      y: 92%
+      z: 2    
+    - type: Text
+      text: QUALIFIED
+      font_size: 40
+      font_name: Mustkill
+      outline_color: black
+      outline_width: 7
+      color: razorwire
+      x: 20.5%
+      y: 92.5%      
+      z: 2
+    - type: Text
+      text: 1.5X Shots
+      font_size: 40
+      font_name: Mustkill
+      outline_color: black
+      outline_width: 7
+      color: FFBF00
+      x: 21%
+      y: 87.5%       
+      z: 2
+   w_gears_button_qualified:
+    - type: image
+      image: GearsButtonImg
+      x: 9%
+      y: 91%
+      z: 3    
+    - type: Text
+      text: QUALIFIED
+      font_size: 40
+      font_name: Mustkill
+      outline_color: black
+      outline_width: 7
+      color: razorwire
+      x: 20.5%
+      y: 92.5%  
+      z: 3
+    - type: Text
+      text: 2x Spinner
+      font_size: 40
+      font_name: Mustkill
+      outline_color: black
+      outline_width: 7
+      color: shotgun
+      x: 21%
+      y: 87.5%   
+      z: 3
+   w_candle_button_qualified:
+    - type: image
+      image: CandleButtonImg
+      x: 9%
+      y: 91%
+      z: 3     
+    - type: Text
+      text: QUALIFIED
+      font_size: 40
+      font_name: Mustkill
+      outline_color: black
+      outline_width: 7
+      color: razorwire
+      x: 20.5%
+      y: 92.5%        
+      z: 3
+    - type: Text
+      text: 2X Lit Shots
+      font_size: 40
+      font_name: Mustkill
+      outline_color: black
+      outline_width: 7
+      color: FFBF00
+      x: 21%
+      y: 87.5%      
+      z: 3
+   w_syringe_button_qualified:
+    - type: image
+      image: SyringeButtonImg
+      x: 8%
+      y: 92%
+      z: 2      
+    - type: Text
+      text: QUALIFIED
+      font_size: 40
+      font_name: Mustkill
+      outline_color: black
+      outline_width: 7
+      color: razorwire
+      x: 20.5%
+      y: 92.5%   
+      z: 2
+    - type: Text
+      text: Spots A Lit Shot
+      font_size: 40
+      font_name: Mustkill
+      outline_color: black
+      outline_width: 7
+      color: BDD5E7
+      x: 21%
+      y: 87.5%    
+      z: 2    
+
+widget_player:
+ e_razorwire_item_qualified:
+  w_hacksaw_button_qualified:
+    slide: razorwire
+    action: add
+ e_drillchair_item_qualified:
+  w_handgun_button_qualified:
+    slide: drillchair
+    action: add
+ e_reversebeartrap_item_qualified:
+  w_key_button_qualified:
+    slide: reversebeartrap
+    action: add
+ e_quadshotgun_item_qualified:
+  w_gears_button_qualified:
+    slide: quadshotgun
+    action: add
+ e_flammablejelly_item_qualified:
+  w_candle_button_qualified:
+    slide: flammablejelly
+    action: add
+ e_zeptest_item_qualified:
+  w_syringe_button_qualified:
+    slide: zeptest
+    action: add
+
+event_player:
+  selection_mode_razorwire_highlighted{current_player.hacksaws_enabled==1}: e_razorwire_item_qualified 
+  selection_mode_drillchair_highlighted{current_player.handguns_enabled==1}: e_drillchair_item_qualified
+  selection_mode_reversebeartrap_highlighted{current_player.keys_enabled==1}: e_reversebeartrap_item_qualified
+  selection_mode_quadshotgun_highlighted{current_player.gears_enabled==1}: e_quadshotgun_item_qualified
+  selection_mode_flammablejelly_highlighted{current_player.candles_enabled==1}: e_flammablejelly_item_qualified
+  selection_mode_zeptest_highlighted{current_player.syringes_enabled==1}: e_zeptest_item_qualified
