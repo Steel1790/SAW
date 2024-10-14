@@ -2,49 +2,64 @@
 
 - time: 0
   lights:
-    (leds): (color1)
+    gi: (color1)
+    starpost: (color1)
 - time: '+1'
   lights:
-    (leds): off
+    gi: off
+    starpost: off
 
 - time: '+1'
   lights:
-    (leds): (color1)
+    gi: (color1)
+    starpost: (color1)
 - time: '+1'
   lights:
-    (leds): off
+    gi: off
+    starpost: off
 
 - time: '+.75'
   lights:
-    (leds): (color1)
+    gi: (color1)
+    starpost: (color1)
+    
 - time: '+.75'
   lights:
-    (leds): off
+    gi: off
+    starpost: off
 
 - time: '+.50'
   lights:
-    (leds): (color1)
+    gi: (color1)
+    starpost: (color1)
 - time: '+.50'
   lights:
-    (leds): off
+    gi: off
+    starpost: off
 
 - time: '+.25'
   lights:
-    (leds): (color1)
+    gi: (color1)
+    starpost: (color1)
 - time: '+.25'
   lights:
-    (leds): off
+    gi: off
+    starpost: off
 
 - time: '+.12'
   lights:
-    (leds): (color1)
+    gi: (color1)
+    starpost: (color1)
 - time: '+.12'
   lights:
-    (leds): off
+    gi: off
+    starpost: off
 
 - time: '+.05'
   lights:
-    (leds): (color1)
+    gi: (color1)
+    starpost: (color1)
 - time: '+.05'
   lights:
-    (leds): off
+    gi: off
+    starpost: off

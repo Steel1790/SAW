@@ -3,15 +3,19 @@
 - time: 0
   lights:
     act_billy: off
+    billyhead: off
 
 - time: '+1'
   lights:
     act_billy: on
+    billyhead: white
 
 - time: '+1'
   lights:
     act_billy: off
+    billyhead: off
 
 - time: '+1'
   lights:
     act_billy: on
+    billyhead: white

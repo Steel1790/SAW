@@ -1005,7 +1005,10 @@ show_player:
   mode_drillchair_started:     
     gi_on:
       show_tokens:
-        color1: drillchair_alt     
+        color1: drillchair_alt  
+    billy_on:    
+      show_tokens:
+        color1: drillchair_alt  
     drillchair_mode:
       show_tokens:
         leds: l_drillchair_mode

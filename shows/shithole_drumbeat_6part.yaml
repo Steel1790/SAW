@@ -178,6 +178,7 @@
     dome_2: a605e6
     dome_3: ff8000
     dome_4: a605e6
+    billyhead: ffffff
 
 - time: '+100ms' 
   lights:
@@ -214,5 +215,6 @@
     dome_2: off -f500ms
     dome_3: off -f500ms
     dome_4: off -f500ms
+    billyhead: off -f500ms
 
 - time: '+1250ms' #(pause)

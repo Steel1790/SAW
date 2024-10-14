@@ -1770,6 +1770,9 @@ show_player:
     gi_on:
       show_tokens:
         color1: zepstest
+    billy_on:
+      show_tokens:
+        color1: zepstest
     zeptest_mode:
       show_tokens:
         leds: l_zeptest_mode

@@ -346,6 +346,7 @@
     l_zep_flasher_7: 'CED0D0'
     l_zep_flasher_8: 'CED0D0'
     l_zeptest_mode: 'CED0D0'
+    billyhead: white
     
 - time: '+1'
   lights:

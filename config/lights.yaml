@@ -3562,6 +3562,16 @@ lights:
     number: led128-8-32
     tags: dome, dome_4
 
+  l_billy_1:
+    number: led256-7-1
+    tags: billyhead
+  l_billy_2:
+    number: led256-7-2
+    tags: billyhead
+  l_billy_3:
+    number: led256-7-3
+    tags: billyhead
+
 show_player:
     init_phase_1:
       backbox_on:

@@ -1,0 +1,6 @@
+#show_version=6
+- time: 0
+
+- time: '+1'
+  lights:
+    billyhead: (color1) -f200ms

@@ -6,70 +6,93 @@
 - time: '+0.2'
   lights:
     act_billy: on
+    billyhead: white
 - time: '+0.2'
   lights:
     act_billy: off
+    billyhead: off
 - time: '+0.2'
   lights:
     act_billy: on
+    billyhead: white
 - time: '+0.2'
   lights:
     act_billy: off
+    billyhead: off
 - time: '+0.2'
   lights:
     act_billy: on
+    billyhead: white
 - time: '+0.4'
   lights:
     act_billy: off
+    billyhead: off
 - time: '+0.2'
   lights:
     act_billy: on
+    billyhead: white
 - time: '+0.2'
   lights:
     act_billy: off
+    billyhead: off
 - time: '+0.2'
   lights:
     act_billy: on
+    billyhead: white
 - time: '+0.5'
   lights:
     act_billy: off
+    billyhead: off
 
 - time: '+0.2'
   lights:
     act_billy: on
+    billyhead: white
 - time: '+0.2'
   lights:
     act_billy: off
+    billyhead: off
 - time: '+0.2'
   lights:
     act_billy: on
+    billyhead: white
 - time: '+0.2'
   lights:
     act_billy: off
+    billyhead: off
 - time: '+0.2'
   lights:
     act_billy: on
+    billyhead: white
 - time: '+0.2'
   lights:
     act_billy: off
+    billyhead: off
 - time: '+0.2'
   lights:
     act_billy: on
+    billyhead: white
 - time: '+0.2'
   lights:
     act_billy: off
+    billyhead: off
 - time: '+0.2'
   lights:
     act_billy: on
+    billyhead: white
 - time: '+0.2'
   lights:
     act_billy: off
+    billyhead: off
 - time: '+0.2'
   lights:
     act_billy: on
+    billyhead: white
 - time: '+0.2'
   lights:
     act_billy: off
+    billyhead: off
 - time: '+0.2'
   lights:
     act_billy: on
+    billyhead: white

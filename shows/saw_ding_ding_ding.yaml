@@ -191,6 +191,7 @@
     l_drillchair_mode: red
     l_razorwire_mode: red
     dome_4: white
+    billyhead: white
 - time: '+240ms' # 3.12s timestamp 
   lights:
     left_disc: off -f500ms
@@ -228,6 +229,7 @@
     dome_2: off -f500ms
     dome_3: off -f500ms
     dome_4: off -f500ms    
+    billyhead: off -f500ms  
 
 - time: '+600ms' #(pause) 
 

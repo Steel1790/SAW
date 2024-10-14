@@ -1007,6 +1007,9 @@ show_player:
     gi_on:
       show_tokens:
         color1: razorwire
+    billy_on:
+      show_tokens:
+        color1: razorwire
     starpost_on:
       show_tokens:
         color1: 6E6E6E   
@@ -1103,13 +1106,13 @@ show_player:
     top_drop_chase: stop
     disc_middle_add_a_ball:
       loops: 3
-      speed: 10
+      speed: 20
     speaker_extra_ball_left:
       loops: 3
-      speed: 10
+      speed: 20
     speaker_extra_ball_right:
       loops: 3
-      speed: 10
+      speed: 20
 
   logicblock_razorwire_pops_counter_updated{value<12}:
     flash_token:

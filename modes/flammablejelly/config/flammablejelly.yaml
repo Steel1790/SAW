@@ -984,6 +984,9 @@ show_player:
       priority: 169  
     gi_on:
       show_tokens:
+        color1: jelly_alt
+    billy_on:    
+      show_tokens:
         color1: jelly
     flammablejelly_mode:
       show_tokens:

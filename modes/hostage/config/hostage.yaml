@@ -110,7 +110,7 @@ show_player:
   mode_hostage_started:
     gi_on:
       show_tokens:
-        color1: beartrap     
+        color1: beartrap    
     starpost_on:
       show_tokens:
         # color1: 6E6E6E   
