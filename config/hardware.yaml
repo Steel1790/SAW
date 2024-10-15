@@ -22,7 +22,7 @@ fast:
         model: FP-I/O-3208
         order: 4
   exp:
-   port: /dev/ttyACM1
+    port: /dev/ttyACM1
     boards:
       led256:
         model: FP-EXP-0081
