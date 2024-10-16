@@ -127,7 +127,7 @@ variable_player:
       int: (current_player.beartrap_timer_bonus + (current_player.keys_used * 1000000) + (current_player.spinner_value * 145750)) * (current_player.pf_multiplier)
       action: add
     reversebeartrap_complete_points:
-      int: (current_player.beartrap_timer_bonus + (current_player.keys_used * 1000000) + (current_player.spinner_value * 145750)) * (current_player.pf_multiplier)
+      int: (current_player.beartrap_timer_bonus + (current_player.keys_used * 1000000)) * (current_player.pf_multiplier)
       action: add      
     
   timer_your_timer_tick:
