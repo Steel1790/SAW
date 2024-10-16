@@ -134,6 +134,46 @@ variable_player:
       int: 0
       action: set
 
+  sw_pops:
+    flammablejelly_points:
+      int: 50000 * (current_player.pf_multiplier)
+      action: add
+  sw_slingshot:
+    flammablejelly_points:
+      int: 333 * (current_player.pf_multiplier)
+      action: add
+  sw_inlane:
+    flammablejelly_points:
+      int: 25000 * (current_player.pf_multiplier)
+      action: add
+  sw_outlane:
+    flammablejelly_points:
+      int: 100000 * (current_player.pf_multiplier)
+      action: add
+  sw_standup:
+    flammablejelly_points:
+      int: 75000 * (current_player.pf_multiplier)
+      action: add
+  sw_ramp:
+    flammablejelly_points:
+      int: 125000 * (current_player.pf_multiplier)
+      action: add
+  spinner_spinner_hit:
+    flammablejelly_points:
+      int: 30000 * (current_player.pf_multiplier)
+      action: add
+  sw_drop_target:
+    flammablejelly_points:
+      int: 95000 * (current_player.pf_multiplier)
+      action: add
+  sw_loop:
+    flammablejelly_points:
+      int: 115000 * (current_player.pf_multiplier)
+      action: add
+  sw_110:
+    flammablejelly_points:
+      int: 110 * (current_player.pf_multiplier)
+      action: add
 
 counters:
   flammablejelly_left_loop_counter:

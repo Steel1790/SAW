@@ -156,6 +156,48 @@ variable_player:
     drillchair_visual_pops2_counter:
       action: set
       int: (count)      
+
+  sw_pops:
+    drillchair_points:
+      int: 50000 * (current_player.pf_multiplier)
+      action: add
+  sw_slingshot:
+    drillchair_points:
+      int: 333 * (current_player.pf_multiplier)
+      action: add
+  sw_inlane:
+    drillchair_points:
+      int: 25000 * (current_player.pf_multiplier)
+      action: add
+  sw_outlane:
+    drillchair_points:
+      int: 100000 * (current_player.pf_multiplier)
+      action: add
+  sw_standup:
+    drillchair_points:
+      int: 75000 * (current_player.pf_multiplier)
+      action: add
+  sw_ramp:
+    drillchair_points:
+      int: 125000 * (current_player.pf_multiplier)
+      action: add
+  spinner_spinner_hit:
+    drillchair_points:
+      int: 30000 * (current_player.pf_multiplier)
+      action: add
+  sw_drop_target:
+    drillchair_points:
+      int: 95000 * (current_player.pf_multiplier)
+      action: add
+  sw_loop:
+    drillchair_points:
+      int: 115000 * (current_player.pf_multiplier)
+      action: add
+  sw_110:
+    drillchair_points:
+      int: 110 * (current_player.pf_multiplier)
+      action: add
+
        
   timer_your_timer_tick:
     drillchair_60s_timer:

@@ -1022,8 +1022,8 @@ widgets:
    w_hacksaw_button_qualified:
     - type: image
       image: HacksawButtonImg
-      x: 9%
-      y: 91%
+      x: 11%
+      y: 51%
       z: 1   
     - type: Text
       text: QUALIFIED
@@ -1032,8 +1032,8 @@ widgets:
       outline_color: black
       outline_width: 7
       color: razorwire
-      x: 20.5%
-      y: 92.5%   
+      x: 22.5%
+      y: 52.5%   
       z: 1         
     - type: Text
       text: 2x Pops
@@ -1042,14 +1042,14 @@ widgets:
       outline_color: black
       outline_width: 7
       color: 65fe08
-      x: 21%
-      y: 87.5%    
+      x: 23%
+      y: 47.5%    
       z: 1
    w_handgun_button_qualified:
     - type: image
       image: HandgunButtonImg
       x: 9%
-      y: 91%
+      y: 51%
       z: 2     
     - type: Text
       text: QUALIFIED
@@ -1059,7 +1059,7 @@ widgets:
       outline_width: 7
       color: razorwire
       x: 12.5%
-      y: 80.5% 
+      y: 40.5% 
       z: 1
     - type: Text
       text: Spot 1-4 Drill Hits
@@ -1069,13 +1069,13 @@ widgets:
       outline_width: 7
       color: shotgun
       x: 13.5%
-      y: 75.5%    
+      y: 35.5%    
       z: 1
    w_key_button_qualified:
     - type: image
       image: KeyButtonImg
       x: 11%
-      y: 92%
+      y: 52%
       z: 2    
     - type: Text
       text: QUALIFIED
@@ -1085,7 +1085,7 @@ widgets:
       outline_width: 7
       color: razorwire
       x: 20.5%
-      y: 92.5%      
+      y: 52.5%      
       z: 2
     - type: Text
       text: 1.5X Shots
@@ -1095,13 +1095,13 @@ widgets:
       outline_width: 7
       color: FFBF00
       x: 21%
-      y: 87.5%       
+      y: 47.5%       
       z: 2
    w_gears_button_qualified:
     - type: image
       image: GearsButtonImg
       x: 9%
-      y: 91%
+      y: 51%
       z: 3    
     - type: Text
       text: QUALIFIED
@@ -1111,7 +1111,7 @@ widgets:
       outline_width: 7
       color: razorwire
       x: 20.5%
-      y: 92.5%  
+      y: 52.5%  
       z: 3
     - type: Text
       text: 2x Spinner
@@ -1121,13 +1121,13 @@ widgets:
       outline_width: 7
       color: shotgun
       x: 21%
-      y: 87.5%   
+      y: 47.5%   
       z: 3
    w_candle_button_qualified:
     - type: image
       image: CandleButtonImg
       x: 9%
-      y: 91%
+      y: 51%
       z: 3     
     - type: Text
       text: QUALIFIED
@@ -1137,7 +1137,7 @@ widgets:
       outline_width: 7
       color: razorwire
       x: 20.5%
-      y: 92.5%        
+      y: 52.5%        
       z: 3
     - type: Text
       text: 2X Lit Shots
@@ -1147,13 +1147,13 @@ widgets:
       outline_width: 7
       color: FFBF00
       x: 21%
-      y: 87.5%      
+      y: 47.5%      
       z: 3
    w_syringe_button_qualified:
     - type: image
       image: SyringeButtonImg
       x: 8%
-      y: 92%
+      y: 52%
       z: 2      
     - type: Text
       text: QUALIFIED
@@ -1163,7 +1163,7 @@ widgets:
       outline_width: 7
       color: razorwire
       x: 20.5%
-      y: 92.5%   
+      y: 52.5%   
       z: 2
     - type: Text
       text: Spots A Lit Shot
@@ -1173,7 +1173,7 @@ widgets:
       outline_width: 7
       color: BDD5E7
       x: 21%
-      y: 87.5%    
+      y: 47.5%    
       z: 2    
 
 widget_player:

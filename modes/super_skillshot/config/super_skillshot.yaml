@@ -45,6 +45,7 @@ event_player:
   sh_skillshot_x_hit: mode_super_skillshot_complete
   playfield_active: stop_mode_super_skillshot|6.5s
   balldevice_bd_plunger_ball_eject_success: stop_mode_super_skillshot|8s
+  sw_switch_hit: stop_mode_super_skillshot|0.5s
  
 combo_switches:
   secret_billy_hold:

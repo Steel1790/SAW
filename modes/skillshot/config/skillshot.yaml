@@ -582,6 +582,7 @@ event_player:
   dt_drop3_hit: mode_skillshot_complete
   dt_drop4_hit: mode_skillshot_complete
   e_ballsave: stop_mode_skillshot|3s
+  sw_switch_hit: stop_mode_skillshot|0.5s
   balldevice_bd_plunger_ball_eject_success: stop_mode_skillshot|5s
  
   

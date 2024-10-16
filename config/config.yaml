@@ -89,6 +89,13 @@ sound_system:
           simultaneous_sounds: 10
           volume: 1.0
 sounds:
+  # adjust razorwire mode music & lil billy mode music to 1.0
+  RWModeStart:
+    file: RWModeStart.wav
+    volume: 1.0
+  PolkaBilly:
+    file: PolkaBilly.wav
+    volume: 1.0
   #music adjusted from 0.8 to 1.0 except Quad Shotgun Mode Music
   QuadShotgunModeStart:
     file: QuadShotgunModeStart.wav

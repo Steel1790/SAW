@@ -162,6 +162,47 @@ variable_player:
     razorwire_2x_timer:
       int: device.timers.your_timer.ticks_remaining
       action: set   
+
+  sw_pops:
+    razorwire_points:
+      int: 50000 * (current_player.pf_multiplier)
+      action: add
+  sw_slingshot:
+    razorwire_points:
+      int: 333 * (current_player.pf_multiplier)
+      action: add
+  sw_inlane:
+    razorwire_points:
+      int: 25000 * (current_player.pf_multiplier)
+      action: add
+  sw_outlane:
+    razorwire_points:
+      int: 100000 * (current_player.pf_multiplier)
+      action: add
+  sw_standup:
+    razorwire_points:
+      int: 75000 * (current_player.pf_multiplier)
+      action: add
+  sw_ramp:
+    razorwire_points:
+      int: 125000 * (current_player.pf_multiplier)
+      action: add
+  spinner_spinner_hit:
+    razorwire_points:
+      int: 30000 * (current_player.pf_multiplier)
+      action: add
+  sw_drop_target:
+    razorwire_points:
+      int: 95000 * (current_player.pf_multiplier)
+      action: add
+  sw_loop:
+    razorwire_points:
+      int: 115000 * (current_player.pf_multiplier)
+      action: add
+  sw_110:
+    razorwire_points:
+      int: 110 * (current_player.pf_multiplier)
+      action: add
  
 slides:
   razorwirevideo:

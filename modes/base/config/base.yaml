@@ -159,7 +159,7 @@ event_player:
 
 timers:
   t_playfield_multiplier_timer:
-    start_value: 60
+    start_value: 30
     end_value: 0
     direction: down
     control_events:
@@ -512,35 +512,59 @@ variable_player:
     #score: 3000000
     bonus_gears: 1
     value_type: int
+    visual_pops_counter:
+      int: 20
+      action: set
   minimode_standups_complete:
     #score: 3000000
     bonus_candles: 1
     value_type: int    
+    visual_standups_counter:
+      int: 10
+      action: set
   minimode_slings_complete:
     #score: 3000000   
     bonus_bathtubs: 1
-    value_type: int    
+    value_type: int  
+    visual_slings_counter:
+      int: 40
+      action: set    
   minimode_inlanes_complete:
     #score: 3000000   
     bonus_taperecorders: 1
-    value_type: int    
+    value_type: int 
+    visual_inlanes_counter:
+      int: 9
+      action: set    
   minimode_spinners_complete:
     #score: 3000000     
     bonus_handguns: 1
-    value_type: int    
+    value_type: int 
+    visual_spinners_counter:
+      int: 25
+      action: set    
   minimode_ramps_complete:
     #score: 3000000 
     bonus_keys: 1
-    value_type: int    
+    value_type: int 
+    visual_ramps_counter:
+      int: 5
+      action: set    
   minimode_loops_complete:
     #score: 3000000  
     bonus_hacksaws: 1
-    value_type: int    
+    value_type: int
+    visual_loops_counter:
+      int: 5
+      action: set    
   minimode_drops_complete:
     #score: 3000000       
     bonus_syringes: 1
     # called antidote
-    value_type: int    
+    value_type: int
+    visual_drops_counter:
+      int: 6
+      action: set    
   multiplier_progress_counter_complete:
     bonus_multiplier:
       int: 1
@@ -2298,7 +2322,7 @@ widgets:
       color: white
       x: 50%
       y: 70%
-      z: 5
+      z: 7
       font_size: 85
       font_name: Mustkill
       outline_color: black
@@ -2314,7 +2338,7 @@ widgets:
       color: white
       x: 50%
       y: 70%
-      z: 5
+      z: 7
       font_size: 85
       font_name: Mustkill
       outline_color: black
@@ -2330,7 +2354,7 @@ widgets:
       color: white
       x: 50%
       y: 70%
-      z: 5
+      z: 7
       font_size: 85
       font_name: Mustkill
       outline_color: black
@@ -2346,7 +2370,7 @@ widgets:
       color: white
       x: 50%
       y: 70%
-      z: 5
+      z: 7
       font_size: 85
       font_name: Mustkill
       outline_color: black
@@ -2362,7 +2386,7 @@ widgets:
       color: white
       x: 50%
       y: 70%
-      z: 5
+      z: 7
       font_size: 85
       font_name: Mustkill
       outline_color: black
@@ -2378,7 +2402,7 @@ widgets:
       color: white
       x: 50%
       y: 69.8%
-      z: 5
+      z: 7
       font_size: 85
       font_name: Mustkill
       outline_color: black
@@ -2394,7 +2418,7 @@ widgets:
       color: white
       x: 50%
       y: 70%
-      z: 5
+      z: 7
       font_size: 85
       font_name: Mustkill
       outline_color: black
@@ -2410,7 +2434,7 @@ widgets:
       color: white
       x: 50%
       y: 70%
-      z: 5
+      z: 7
       font_size: 85
       font_name: Mustkill
       outline_color: black

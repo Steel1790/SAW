@@ -178,6 +178,47 @@ variable_player:
       int: 0
       action: set
 
+  sw_pops:
+    reversebeartrap_points:
+      int: 50000 * (current_player.pf_multiplier)
+      action: add
+  sw_slingshot:
+    reversebeartrap_points:
+      int: 333 * (current_player.pf_multiplier)
+      action: add
+  sw_inlane:
+    reversebeartrap_points:
+      int: 25000 * (current_player.pf_multiplier)
+      action: add
+  sw_outlane:
+    reversebeartrap_points:
+      int: 100000 * (current_player.pf_multiplier)
+      action: add
+  sw_standup:
+    reversebeartrap_points:
+      int: 75000 * (current_player.pf_multiplier)
+      action: add
+  sw_ramp:
+    reversebeartrap_points:
+      int: 125000 * (current_player.pf_multiplier)
+      action: add
+  spinner_spinner_hit:
+    reversebeartrap_points:
+      int: 30000 * (current_player.pf_multiplier)
+      action: add
+  sw_drop_target:
+    reversebeartrap_points:
+      int: 95000 * (current_player.pf_multiplier)
+      action: add
+  sw_loop:
+    reversebeartrap_points:
+      int: 115000 * (current_player.pf_multiplier)
+      action: add
+  sw_110:
+    reversebeartrap_points:
+      int: 110 * (current_player.pf_multiplier)
+      action: add
+
 counters:
   cnt_reversebeartrap_spinner:
     starting_count: 0
