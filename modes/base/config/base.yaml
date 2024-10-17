@@ -21,11 +21,11 @@ ball_saves:
     enable_events: shot_left_outlane_hit{state=="lit"}, shot_right_outlane_hit{state=="lit"}
     auto_launch: true
     balls_to_save: 1
-  fake_lil_billy_ball_save:
-    enable_events:
-      - mode_lil_billy_stopped
-    auto_launch: true
-    balls_to_save: 1
+  # fake_lil_billy_ball_save:
+  #   enable_events:
+  #     - mode_lil_billy_stopped
+  #   auto_launch: true
+  #   balls_to_save: 1
 
 event_player:
   ball_will_end: stop_base_end_of_ball|0.3s
@@ -5097,3 +5097,5 @@ extra_balls:
     award_events: player_puzzle_pieces{value==4}
   combo_progress_extraball_award:
     award_events: player_combo_progress{value==4}
+  lil_billy_extraball_award:
+    award_events: e_lilbilly_cubicle 

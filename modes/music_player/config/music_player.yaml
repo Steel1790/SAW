@@ -368,18 +368,18 @@ sound_pools:
     type: random_force_next
     track: voice
     sounds:
-      - Drain1
-      - Drain2
-      - Drain3
-      - Drain4
-      - Drain5
-      - Drain6
-      - Drain7
-      - Drain8
-      - Drain9
-      - Drain10
-      - YouCantDoThisToMe
-      - WhatWereYouThinking
+      - Drain1|06
+      - Drain2|06
+      - Drain3|06
+      - Drain4|06
+      - Drain5|06
+      - Drain6|06
+      - Drain7|06
+      - Drain8|06
+      - Drain9|06
+      - Drain10|06
+      - YouCantDoThisToMe|3
+      - WhatWereYouThinking|06
 
 sound_player:
   mode_music_player_started:

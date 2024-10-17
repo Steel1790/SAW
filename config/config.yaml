@@ -106,7 +106,7 @@ sounds:
 # bonus sound adjusted
   BonusCountdownWBass:
     file: BonusCountdownWBass.wav
-    volume: 0.3
+    volume: 0.2
 # cher/amanda callouts volume lowered
   Antidote1:
     file: Antidote1.wav
@@ -618,7 +618,6 @@ show_player:
       loops: 0
       speed: 8
       priority: 205
-  e_topper_trigger:
     topper_trigger_on:
       loops: 0
       speed: 9
