@@ -15,7 +15,7 @@ mode_settings:
     - razorwire{current_player.razorwire_mode_complete==0}
     - quadshotgun{current_player.quadshotgun_mode_complete==0}
     - flammablejelly{current_player.flammablejelly_mode_complete==0}
-    - zeptest{current_player.zeptest_mode_complete==0}
+#    - zeptest{current_player.zeptest_mode_complete==0}
     - reversebeartrap{current_player.reversebeartrap_mode_complete==0}
   select_item_events: s_action_button_active
   next_item_events: s_left_flipper_button_active

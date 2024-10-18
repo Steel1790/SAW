@@ -362,6 +362,7 @@ sound_pools:
       - LilBillySkillshot11
 #      - LilBillySkillshot12
       - LilBillySkillshot13
+      - LionMan
 #drain audio
   Drain:
     load: preload
@@ -380,6 +381,26 @@ sound_pools:
       - Drain10|06
       - YouCantDoThisToMe|3
       - WhatWereYouThinking|06
+  Death:
+    load: preload
+    type: random_force_next
+    track: voice
+    sounds:
+      - EricDeath|05
+      - AustinDeath|05
+      - JoeDeath|05
+      - CameronDeath|05
+      - YouCantDoThisToMe|3     
+      - Drain1|05
+      - Drain2|05
+      - Drain3|05
+      - Drain4|05
+      - Drain5|05
+      - Drain6|05
+      - Drain7|05
+      - Drain8|05
+      - Drain9|05
+      - Drain10|05
 
 sound_player:
   mode_music_player_started:
@@ -545,11 +566,11 @@ sound_player:
   shot_left_outlane_hit{state=="ball_save_not_ready" and current_player.ball <= 2 }:
     #TortureScream:
     # refined_billy_laugh:
-    Drain:
+    Death:
       action: play
       block: true
   shot_right_outlane_hit{state=="ball_save_not_ready" and current_player.ball <= 2 }:
-    Drain:
+    Death:
       action: play
       block: true
   # ball_drain{current_player.ball <= 2 }:
