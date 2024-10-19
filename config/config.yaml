@@ -96,6 +96,9 @@ sounds:
   PolkaBilly:
     file: PolkaBilly.wav
     volume: 1.0
+  BaseMusic:
+    file: BaseMusic.wav
+    volume: 1.0
   #music adjusted from 0.8 to 1.0 except Quad Shotgun Mode Music
   QuadShotgunModeStart:
     file: QuadShotgunModeStart.wav

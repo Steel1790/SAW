@@ -402,6 +402,16 @@ sound_pools:
       - Drain9|05
       - Drain10|05
 
+  RightScoop:
+    load: preload
+    type: random_force_next
+    track: voice
+    sounds:
+      - GetToTheBathroom
+      - GetToTheBathroom2
+      - ShootTheRightScoopToStartATrap
+      - ShootTheRightScoopToStartATrap2
+
 sound_player:
   mode_music_player_started:
     Shithole:

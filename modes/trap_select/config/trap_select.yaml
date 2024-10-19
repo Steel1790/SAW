@@ -44,11 +44,11 @@ sound_player:
         action: play   
         loops: -1
         priority: 210
-    timer_scoop_lit_timer_tick{ticks==6}:
-      GetToTheBathroom:
-        action: play
-    timer_scoop_lit_timer_tick{ticks==21}:
-      GetToTheBathroom2:
+    # timer_scoop_lit_timer_tick{ticks==6}:
+    #   GetToTheBathroom:
+    #     action: play
+    timer_scoop_lit_timer_tick{ticks==10}:
+      RightScoop:
         action: play
     ball_ending:
       ModeQualifiedShootScoop:
