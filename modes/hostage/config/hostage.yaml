@@ -30,7 +30,7 @@ counters:
     count_complete_value: 1
     start_enabled: true
     # persist_state: true
-#    reset_on_complete: true
+    reset_on_complete: true
     disable_on_complete: false
     count_events: logicblock_cnt_hostage_updated{value==1}
 #disc 2 / right ramp 2
@@ -39,7 +39,7 @@ counters:
     count_complete_value: 1
     start_enabled: true
     # persist_state: true
-#    reset_on_complete: true
+    reset_on_complete: true
     disable_on_complete: false
     count_events: logicblock_cnt_hostage_updated{value==2}
 #disc3/ right ramp 3
@@ -48,7 +48,7 @@ counters:
     count_complete_value: 1
     start_enabled: true
     # persist_state: true
-#    reset_on_complete: true
+    reset_on_complete: true
     disable_on_complete: false
     count_events: logicblock_cnt_hostage_updated{value==3}
 
@@ -105,6 +105,16 @@ variable_player:
     cnt_hostage_right_ramp_3:
       action: set
       int: (count)*250
+  mode_hostage_started:
+    cnt_hostage_right_ramp_1:
+      int: 0
+      action: set
+    cnt_hostage_right_ramp_2:
+      int: 0
+      action: set
+    cnt_hostage_right_ramp_3:
+      int: 0
+      action: set
 
 show_player:
   mode_hostage_started:

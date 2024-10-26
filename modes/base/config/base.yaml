@@ -719,7 +719,7 @@ counters:
     reset_on_complete: true
     disable_on_complete: false
 #    events_when_complete: 
-    count_events: shot_left_return_lane_hit, shot_left_return_lane_a1_hit, shot_right_standup_a1_hit, shot_left_return_lane_a2_hit, shot_right_standup_a2_hit, shot_left_standup_rightramp_a2_hit, shot_left_return_lane_a3_hit, shot_right_standup_a3_hit, shot_left_standup_rightramp_a3_hit, shot_inner_loop_a3_hit
+    count_events: shot_left_return_lane_hit, shot_left_standup_hit, shot_left_return_lane_a1_hit, shot_left_standup_a1_hit, shot_right_standup_a1_hit, shot_left_return_lane_a2_hit, shot_left_standup_a2_hit,  shot_right_standup_a2_hit, shot_left_standup_rightramp_a2_hit, shot_left_return_lane_a3_hit, shot_left_standup_a3_hit, shot_right_standup_a3_hit, shot_left_standup_rightramp_a3_hit, shot_inner_loop_a3_hit
     control_events:
       - event: sg_saw_qualify_lit_hit
         action: subtract

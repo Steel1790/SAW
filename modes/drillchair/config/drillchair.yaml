@@ -89,6 +89,14 @@ counters:
     persist_state: true
     reset_on_complete: false
     count_events: ssh_right_ramp_hit, ssh_left_ramp_hit, ssh_leftloop_hit, ssh_rightloop_hit
+  drillchair_callout:
+    starting_count: 0
+    count_complete_value: 1
+    enable_events: mode_drillchair_started
+    start_enabled: false
+    persist_state: true
+    reset_on_complete: false
+    count_events: timer_drillchair_60s_timer_tick{ticks==57}
 
 shots:
   lower_l_pop:
@@ -957,7 +965,7 @@ sound_player:
     DrillChairModeStart:
       action: play   
       loops: 1
-  timer_drillchair_60s_timer_tick{ticks==57}:
+  logicblock_drillchair_callout_complete:
     YouNeedTheLowerPops:
       action: play
       # loops: 0
