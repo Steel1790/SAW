@@ -52,18 +52,22 @@ counters:
     count_complete_value: 1
     start_enabled: true
     persist_state: true
+    reset_on_complete: true
+    disable_on_complete: false
     enable_events: multiball_mb_jigsaw_started
     events_when_complete: e_jigsaw_lock1
-    count_events: logicblock_cnt_jigsaw_mb_qualify_updated{value==1}
+    count_events: counter_cnt_jigsaw_mb_qualify_hit{hits==1}
 
   cnt_jigsaw_mb_lock2:
     starting_count: 0
     count_complete_value: 1
     start_enabled: true
     persist_state: true
+    reset_on_complete: true
+    disable_on_complete: false
     enable_events: multiball_mb_jigsaw_started
     events_when_complete: e_jigsaw_lock2
-    count_events: logicblock_cnt_jigsaw_mb_qualify_updated{value==2}
+    count_events: counter_cnt_jigsaw_mb_qualify_hit{hits==2}
 
 variable_player:
   logicblock_cnt_jigsaw_mb_qualify_hit:

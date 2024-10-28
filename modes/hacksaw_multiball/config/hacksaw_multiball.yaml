@@ -14,7 +14,7 @@ multiballs:
     ball_count: 2
     ball_count_type: add
     ball_locks: bd_hacksaw
-    shoot_again: 10s
+    shoot_again: 17s
     start_events: start_hacksaw_multiball
     add_a_ball_events: shot_add_a_ball_button_sp_add_a_ball_button_lit_hit
     replace_balls_in_play: false
@@ -345,7 +345,7 @@ show_player:
       disc_right_chase: stop
   start_hacksaw_multiball:
     mb_ballsave:
-      loops: 9
+      loops: 14
   hacksaw_mb_jackpot_p1_complete:
       top_drop_chase:
         loops: -1

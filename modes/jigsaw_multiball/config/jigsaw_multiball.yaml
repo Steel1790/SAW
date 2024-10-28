@@ -10,7 +10,7 @@ mode:
 multiballs:
   mb_jigsaw:
     ball_count: 3
-    shoot_again: 10s
+    shoot_again: 17s
     start_events: start_jigsaw_multiball
     add_a_ball_events: shot_add_a_ball_button_sp_add_a_ball_button_lit_hit
 
@@ -165,7 +165,7 @@ show_player:
       colorwash_opposite_glitter: stop
   start_jigsaw_multiball:
     mb_ballsave:
-      loops: 9
+      loops: 14
 
   shot_add_a_ball_button_sp_add_a_ball_button_lit_hit:
       disc_middle_add_a_ball:

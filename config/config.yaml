@@ -665,3 +665,45 @@ track_player:
   mode_high_score_stopped:
     music:
       action: stop_all_sounds
+machine_vars:
+  AustinDeathCount:
+    initial_value: 0
+    persist: true
+    value_type: int
+  CameronDeathCount:
+    initial_value: 0
+    persist: true
+    value_type: int
+  EricDeathCount:
+    initial_value: 0
+    persist: true
+    value_type: int
+  GlennDeathCount:
+    initial_value: 0
+    persist: true
+    value_type: int
+  JoeDeathCount:  
+    initial_value: 0
+    persist: true
+    value_type: int
+variable_player:
+  e_AustinDeath:
+    AustinDeathCount:
+      action: add_machine
+      int: 1
+  e_CameronDeath:
+    CameronDeathCount:
+      action: add_machine
+      int: 1
+  e_EricDeath:
+    EricDeathCount:
+      action: add_machine
+      int: 1
+  e_GlennDeath:
+    GlennDeathCount:
+      action: add_machine
+      int: 1
+  e_JoeDeath:
+    JoeDeathCount:
+      action: add_machine
+      int: 1

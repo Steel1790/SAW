@@ -381,26 +381,26 @@ sound_pools:
       - Drain10|06
       - YouCantDoThisToMe|3
       - WhatWereYouThinking|06
-  Death:
-    load: preload
-    type: random_force_next
-    track: voice
-    sounds:
-      - EricDeath|05
-      - AustinDeath|05
-      - JoeDeath|05
-      - CameronDeath|05
-      - YouCantDoThisToMe|3     
-      - Drain1|05
-      - Drain2|05
-      - Drain3|05
-      - Drain4|05
-      - Drain5|05
-      - Drain6|05
-      - Drain7|05
-      - Drain8|05
-      - Drain9|05
-      - Drain10|05
+  # Death:
+  #   load: preload
+  #   type: random_force_next
+  #   track: voice
+  #   sounds:
+  #     - EricDeath|05
+  #     - AustinDeath|05
+  #     - JoeDeath|05
+  #     - CameronDeath|05
+  #     - YouCantDoThisToMe|3     
+  #     - Drain1|05
+  #     - Drain2|05
+  #     - Drain3|05
+  #     - Drain4|05
+  #     - Drain5|05
+  #     - Drain6|05
+  #     - Drain7|05
+  #     - Drain8|05
+  #     - Drain9|05
+  #     - Drain10|05
 
   RightScoop:
     load: preload
@@ -573,20 +573,83 @@ sound_player:
     rightrampexitaudio:
       action: play
       block: true
-  shot_left_outlane_hit{state=="ball_save_not_ready" and current_player.ball <= 2 }:
-    #TortureScream:
-    # refined_billy_laugh:
-    Death:
-      action: play
-      block: true
-  shot_right_outlane_hit{state=="ball_save_not_ready" and current_player.ball <= 2 }:
-    Death:
-      action: play
-      block: true
+  # shot_left_outlane_hit{state=="ball_save_not_ready" and current_player.ball <= 2 }:
+  #   Death:
+  #     action: play
+  #     block: true
+  # shot_right_outlane_hit{state=="ball_save_not_ready" and current_player.ball <= 2 }:
+  #   Death:
+  #     action: play
+  #     block: true
   # ball_drain{current_player.ball <= 2 }:
   #   YouCantDoThisToMe:
   #     action: play
   #     block: true
+#updated drain audio to count through events
+  e_EricDeath:
+    EricDeath:
+      action: play
+      block: true      
+  e_AustinDeath:
+    AustinDeath:
+      action: play
+      block: true 
+  e_JoeDeath:
+    JoeDeath:
+      action: play
+      block: true 
+  e_CameronDeath:
+    CameronDeath:
+      action: play
+      block: true 
+  e_GlennDeath:
+    GlennDeath:
+      action: play
+      block: true 
+  e_YouCantDoThisToMe:
+    YouCantDoThisToMe:
+      action: play
+      block: true 
+  e_Drain1:
+    Drain1:
+      action: play
+      block: true 
+  e_Drain2:
+    Drain2:
+      action: play
+      block: true 
+  e_Drain3:
+    Drain3:
+      action: play
+      block: true 
+  e_Drain4:
+    Drain4:
+      action: play
+      block: true 
+  e_Drain5:
+    Drain5:
+      action: play
+      block: true 
+  e_Drain6:
+    Drain6:
+      action: play
+      block: true 
+  e_Drain7:
+    Drain7:
+      action: play
+      block: true 
+  e_Drain8:
+    Drain8:
+      action: play
+      block: true 
+  e_Drain9:
+    Drain9:
+      action: play
+      block: true 
+  e_Drain10:
+    Drain10:
+      action: play
+      block: true 
 
   shot_left_outlane_hit{state=="lit"}:
     StillAlive:
@@ -1101,3 +1164,41 @@ sound_player:
 #event_player: 
 #  slide_base_slide_main_active: e_puzzle_music_off1|0.83s
 #  e_puzzle_music_off1: e_puzzle_music_off2|0.1s
+
+random_event_player:
+  shot_left_outlane_hit{state=="ball_save_not_ready" and current_player.ball <= 2 }:
+    events:
+      e_EricDeath: 04
+      e_AustinDeath: 04
+      e_JoeDeath: 04
+      e_CameronDeath: 04
+      e_GlennDeath: 04
+      e_YouCantDoThisToMe: 30    
+      e_Drain1: 05
+      e_Drain2: 05
+      e_Drain3: 05
+      e_Drain4: 05
+      e_Drain5: 05
+      e_Drain6: 05
+      e_Drain7: 05
+      e_Drain8: 05
+      e_Drain9: 05
+      e_Drain10: 05
+  shot_right_outlane_hit{state=="ball_save_not_ready" and current_player.ball <= 2 }:
+    events:
+      e_EricDeath: 04
+      e_AustinDeath: 04
+      e_JoeDeath: 04
+      e_CameronDeath: 04
+      e_GlennDeath: 04
+      e_YouCantDoThisToMe: 30    
+      e_Drain1: 05
+      e_Drain2: 05
+      e_Drain3: 05
+      e_Drain4: 05
+      e_Drain5: 05
+      e_Drain6: 05
+      e_Drain7: 05
+      e_Drain8: 05
+      e_Drain9: 05
+      e_Drain10: 05

@@ -609,6 +609,78 @@
       transition:
          type: fade
          duration: 0.2s
+- duration: 3
+  slides:
+    slide5:
+      widgets:
+      - type: text
+        text: DEATH COUNT
+        font_name: TrajanProRegular
+        font_size: 70
+        color: yellow
+        y: 90%
+      - type: text
+        text: Austin's Death Count
+        number_grouping: true
+        min_digits: 2
+        font_size: 50
+        color: C2E3E0
+        y: 80%
+      - type: text
+        text: (machine|AustinDeathCount)
+        number_grouping: true
+        min_digits: 2
+        font_size: 50
+        color: yellow
+        y: 73%        
+      - type: text
+        text: Eric's Death Count
+        number_grouping: true
+        min_digits: 2
+        font_size: 50
+        color: C2E3E0
+        y: 60%
+      - type: text
+        text: (machine|EricDeathCount)
+        number_grouping: true
+        min_digits: 2
+        font_size: 50
+        color: yellow
+        y: 53%        
+      - type: text
+        text: Glenn's Death Count
+        number_grouping: true
+        min_digits: 2
+        font_size: 50
+        color: C2E3E0
+        y: 40%
+      - type: text
+        text: (machine|GlennDeathCount)
+        number_grouping: true
+        min_digits: 2
+        font_size: 50
+        color: yellow
+        y: 33%        
+      - type: text
+        text: Joe's Death Count
+        number_grouping: true
+        min_digits: 2
+        font_size: 50
+        color: C2E3E0
+        y: 20% 
+      - type: text
+        text: (machine|JoeDeathCount)
+        number_grouping: true
+        min_digits: 2
+        font_size: 50
+        color: yellow
+        y: 13%           
+      - type: image
+        opacity: 0.65
+        image: lastgamescores
+      transition:
+         type: fade
+         duration: 0.2s
 - duration: 55s
   slides:
     slide8:

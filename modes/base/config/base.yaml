@@ -156,6 +156,8 @@ event_player:
   minimode_drops_complete: stop_items_widget|2.5s
   mode_puzzle_hurryup_complete: stop_items_widget|3s
   player_base_t_playfield_multiplier_timer_tick{value==1}: stop_multiplier_widget|1s
+  mode_hacksaw_multiball_stopped: e_reset_hacksaw|1s
+  mode_shackle_multiball_stopped: e_reset_shackle|1s
 
 timers:
   t_playfield_multiplier_timer:
@@ -719,7 +721,7 @@ counters:
     reset_on_complete: true
     disable_on_complete: false
 #    events_when_complete: 
-    count_events: shot_left_return_lane_hit, shot_left_standup_hit, shot_left_return_lane_a1_hit, shot_left_standup_a1_hit, shot_right_standup_a1_hit, shot_left_return_lane_a2_hit, shot_left_standup_a2_hit,  shot_right_standup_a2_hit, shot_left_standup_rightramp_a2_hit, shot_left_return_lane_a3_hit, shot_left_standup_a3_hit, shot_right_standup_a3_hit, shot_left_standup_rightramp_a3_hit, shot_inner_loop_a3_hit
+    count_events: shot_left_standup_hit, shot_left_return_lane_a1_hit, shot_left_standup_a1_hit, shot_left_return_lane_a2_hit, shot_left_standup_a2_hit,  shot_right_standup_a2_hit, shot_left_return_lane_a3_hit, shot_left_standup_a3_hit, shot_right_standup_a3_hit, shot_left_standup_rightramp_a3_hit, shot_left_return_lane_a4_hit, shot_left_standup_a4_hit, shot_right_standup_a4_hit, shot_left_standup_rightramp_a4_hit, shot_inner_loop_a4_hit
     control_events:
       - event: sg_saw_qualify_lit_hit
         action: subtract

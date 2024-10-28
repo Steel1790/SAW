@@ -1,3 +1,23 @@
+AustinDeathCount:
+  expire: null
+  expire_secs: null
+  value: 1
+CameronDeathCount:
+  expire: null
+  expire_secs: null
+  value: 1
+EricDeathCount:
+  expire: null
+  expire_secs: null
+  value: 1
+GlennDeathCount:
+  expire: null
+  expire_secs: null
+  value: 1
+JoeDeathCount:
+  expire: null
+  expire_secs: null
+  value: 0
 master_volume:
   expire: null
   expire_secs: null

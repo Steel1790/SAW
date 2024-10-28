@@ -26,6 +26,7 @@ multiball_locks:
     lock_devices: bd_hacksaw
     enable_events: logicblock_cnt_hacksaw_mb_show_progress_updated{device.counters.cnt_hacksaw_mb_show_progress.value == 2}, logicblock_cnt_hacksaw_mb_show_progress_updated{device.counters.cnt_hacksaw_mb_show_progress.value == 5}, logicblock_cnt_hacksaw_mb_show_progress_updated{device.counters.cnt_hacksaw_mb_show_progress.value == 8}
     disable_events: multiball_lock_mbl_hacksaw_locked_ball 
+    reset_count_for_current_player_events: e_reset_hacksaw
 
 counters:
   cnt_hacksaw_mb_counter:

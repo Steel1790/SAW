@@ -1,62 +1,62 @@
 events:
   game_ended: 98
-  game_started: 309
+  game_started: 310
 missing_switches:
-  s_action_button: 72
-  s_ball_shooter_lane: 83
-  s_enter_left_ramp: 84
-  s_inner_loop: 26
-  s_left_110_point: 84
-  s_left_bottom_jet_bumper: 83
-  s_left_flipper_button: 72
-  s_left_flipper_eos: 84
-  s_left_inlane: 83
-  s_left_lock_1: 68
-  s_left_lock_2: 68
-  s_left_lock_3: 68
-  s_left_loop_bottom: 43
-  s_left_loop_top: 43
-  s_left_outlane: 85
-  s_left_ramp_score_bottom: 55
-  s_left_ramp_score_top: 84
-  s_left_scoop: 84
-  s_left_standup: 7
-  s_left_top_jet_bumper: 14
-  s_lower_bank_drop_target_opto_lower: 19
-  s_lower_bank_drop_target_opto_middle: 1
-  s_lower_bank_drop_target_opto_upper: 2
-  s_lower_top_jet_bumper: 13
-  s_middle_standup: 84
-  s_plumb_bob_tilt: 83
-  s_right_110_point: 84
-  s_right_bottom_jet_bumper: 83
-  s_right_flipper_button: 72
-  s_right_flipper_eos: 84
-  s_right_inlane: 72
-  s_right_loop_bottom: 43
-  s_right_loop_top: 43
-  s_right_outlane: 83
-  s_right_ramp_down: 84
-  s_right_ramp_score_bottom: 68
-  s_right_ramp_score_top: 68
-  s_right_slingshot: 56
-  s_right_standup: 18
-  s_right_standup_right_ramp: 18
-  s_right_top_jet_bumper: 13
-  s_spinner: 18
-  s_start: 83
-  s_top_right_reject: 98
-  s_trough1: 83
-  s_trough2: 84
-  s_trough3: 84
-  s_trough4: 84
-  s_trough5: 84
-  s_trough6: 83
-  s_trough_jam: 83
-  s_upper_bank_drop_target_opto: 13
-  s_upper_bottom_jet_bumper: 83
-  s_upper_right_flipper_button: 84
-  s_upper_right_flipper_eos: 84
+  s_enter_left_ramp: 85
+  s_inner_loop: 27
+  s_left_110_point: 85
+  s_left_bottom_jet_bumper: 84
+  s_left_flipper_button: 73
+  s_left_flipper_eos: 85
+  s_left_inlane: 84
+  s_left_lock_1: 69
+  s_left_lock_2: 69
+  s_left_lock_3: 69
+  s_left_loop_bottom: 44
+  s_left_loop_top: 44
+  s_left_ramp_score_bottom: 56
+  s_left_ramp_score_top: 85
+  s_left_scoop: 85
+  s_left_slingshot: 1
+  s_left_standup: 8
+  s_left_standup_right_ramp: 1
+  s_left_top_jet_bumper: 15
+  s_lower_bank_drop_target_opto_lower: 20
+  s_lower_bank_drop_target_opto_middle: 2
+  s_lower_bank_drop_target_opto_upper: 3
+  s_lower_top_jet_bumper: 14
+  s_middle_standup: 85
+  s_plumb_bob_tilt: 84
+  s_right_110_point: 85
+  s_right_bottom_jet_bumper: 84
+  s_right_flipper_button: 73
+  s_right_flipper_eos: 85
+  s_right_inlane: 73
+  s_right_loop_bottom: 44
+  s_right_loop_top: 44
+  s_right_outlane: 84
+  s_right_ramp_down: 85
+  s_right_ramp_score_bottom: 69
+  s_right_ramp_score_top: 69
+  s_right_scoop: 1
+  s_right_slingshot: 57
+  s_right_standup: 19
+  s_right_standup_right_ramp: 19
+  s_right_top_jet_bumper: 14
+  s_spinner: 19
+  s_start: 84
+  s_top_right_reject: 99
+  s_trough1: 84
+  s_trough2: 85
+  s_trough3: 85
+  s_trough4: 85
+  s_trough5: 85
+  s_trough6: 84
+  s_trough_jam: 84
+  s_upper_bank_drop_target_opto: 14
+  s_upper_bottom_jet_bumper: 84
+  s_upper_right_flipper_button: 85
+  s_upper_right_flipper_eos: 85
 player:
   score:
     average: 8487762
@@ -78,6 +78,7 @@ shots:
   dt_drop4: 38
   lower_l_pop: 39
   lower_r_pop: 11
+  sh_left_outlane: 1
   sh_mystery: 42
   sh_select_mode: 159
   sh_skillshot_x: 25
@@ -86,7 +87,7 @@ shots:
   shot_inner_loop_hurryup: 32
   shot_left_loop: 342
   shot_left_loop_hurryup: 46
-  shot_left_outlane: 109
+  shot_left_outlane: 124
   shot_left_return_lane: 125
   shot_left_standup: 308
   shot_left_standup_rightramp: 257
@@ -95,7 +96,7 @@ shots:
   shot_multiplier3: 362
   shot_multiplier4: 362
   shot_multiplier5: 362
-  shot_outlane_button: 4
+  shot_outlane_button: 5
   shot_quadshotgun_left_standup: 7
   shot_quadshotgun_left_standup_right_ramp: 6
   shot_quadshotgun_right_standup: 6
@@ -110,8 +111,8 @@ shots:
   upper_l_pop: 105
   upper_r_pop: 236
 switches:
-  s_action_button: 483
-  s_ball_shooter_lane: 761
+  s_action_button: 484
+  s_ball_shooter_lane: 763
   s_enter_left_ramp: 200
   s_inner_loop: 250
   s_left_110_point: 1576
@@ -125,7 +126,7 @@ switches:
   s_left_lock_3: 68
   s_left_loop_bottom: 378
   s_left_loop_top: 286
-  s_left_outlane: 119
+  s_left_outlane: 134
   s_left_ramp_score_bottom: 34
   s_left_ramp_score_top: 53
   s_left_scoop: 956

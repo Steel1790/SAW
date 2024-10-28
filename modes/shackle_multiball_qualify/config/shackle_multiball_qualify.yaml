@@ -16,6 +16,7 @@ accruals:
     reset_on_complete: false
     persist_state: true
     disable_on_complete: false
+    start_enabled: true
     reset_events: multiball_lock_mbl_shackle_locked_ball
 
 counters:
@@ -30,31 +31,44 @@ counters:
     disable_on_complete: false   
     count_events: multiball_lock_mbl_shackle_locked_ball
     events_when_complete: logicblock_shackle_multiball_qualify_complete
+  cnt_shackle_mb_show_progress:
+    starting_count: 0
+    count_complete_value: 6
+    enable_events: 
+    disable_events: 
+    start_enabled: true
+    persist_state: true
+    reset_on_complete: true
+    disable_on_complete: false   
+    count_events: logicblock_acc_shackle_mb_qualify_hit, multiball_lock_mbl_shackle_locked_ball
 
   cnt_shackle_mb_lock1:
     starting_count: 0
     count_complete_value: 1
     start_enabled: true
     persist_state: true
+    reset_on_complete: true
+    disable_on_complete: false
     events_when_complete: e_shackle_lock1
-    count_events: logicblock_cnt_shackle_mb_counter_updated{value==1}
+    count_events: counter_cnt_shackle_mb_counter_hit{hits==1}
 
   cnt_shackle_mb_lock2:
     starting_count: 0
     count_complete_value: 1
     start_enabled: true
     persist_state: true
+    reset_on_complete: true
+    disable_on_complete: false
     events_when_complete: e_shackle_lock2
-    count_events: logicblock_cnt_shackle_mb_counter_updated{value==2}
+    count_events: counter_cnt_shackle_mb_counter_hit{hits==2}
 
 multiball_locks:
   mbl_shackle:
     #debug: true
     balls_to_lock: 2
     lock_devices: bd_top_saucer
-    enable_events: logicblock_acc_shackle_mb_qualify_complete 
-      #disable_events: sg_lockshot_complete{state=="unlit"}
-      #reset_count_for_current_player_events: multiball_lock_sword_multiball_lock_full
+    enable_events: logicblock_acc_shackle_mb_qualify_complete, logicblock_cnt_hacksaw_mb_show_progress_updated{device.counters.cnt_shackle_mb_show_progress.value == 2}, logicblock_cnt_hacksaw_mb_show_progress_updated{device.counters.cnt_shackle_mb_show_progress.value == 5}
+    reset_count_for_current_player_events: e_reset_shackle
 
 variable_player:
   logicblock_cnt_shackle_mb_counter_hit:
@@ -106,11 +120,11 @@ shows:
         (leds): off
 
 show_player:
-  logicblock_acc_shackle_mb_qualify_complete{device.multiball_locks.mbl_shackle.locked_balls == 0}:
+  logicblock_cnt_shackle_mb_show_progress_updated{device.counters.cnt_shackle_mb_show_progress.value == 2}:
     sh_shackle_mb_qualify_hit:
       show_tokens:
         leds: l_right_ramp_triangle1, l_right_ramp_triangle2
-  multiball_lock_mbl_shackle_locked_ball{device.multiball_locks.mbl_shackle.locked_balls == 1}:
+  logicblock_cnt_shackle_mb_show_progress_updated{device.counters.cnt_shackle_mb_show_progress.value == 3}:
     sh_shackle_mb_qualify_hit_locked:
       show_tokens:
         leds: l_right_ramp_triangle1
@@ -123,14 +137,14 @@ show_player:
     domes_ball_lock:
       loops: 0
       speed: 30
-  logicblock_acc_shackle_mb_qualify_complete{device.multiball_locks.mbl_shackle.locked_balls == 1}:
+  logicblock_cnt_shackle_mb_show_progress_updated{device.counters.cnt_shackle_mb_show_progress.value == 5}:
     sh_shackle_mb_qualify_hit_locked:
       show_tokens:
         leds: l_right_ramp_triangle1
     sh_shackle_mb_qualify_hit:
       show_tokens:
         leds: l_right_ramp_triangle2
-  multiball_lock_mbl_shackle_locked_ball{device.multiball_locks.mbl_shackle.locked_balls == 2}:
+  logicblock_cnt_shackle_mb_show_progress_updated{device.counters.cnt_shackle_mb_show_progress.value == 6}:
     sh_shackle_mb_qualify_hit_locked:
       show_tokens:
         leds: l_right_ramp_triangle1, l_right_ramp_triangle2
