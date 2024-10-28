@@ -489,7 +489,7 @@ shows:
           priority: 10     # higher priority as the shots
           show_tokens:
             color: red
-            leds: l_left_return_lane, l_left_standup_arrow, l_left_loop_arrow, l_inner_loop_arrow, l_left_standup_right_ramp_arrow, l_right_standup_right_ramp_arrow, l_right_loop, l_right_standup_arrow
+            leds: l_left_return_lane, l_left_standup_arrow, l_left_loop_arrow, l_inner_loop_arrow, l_left_standup_right_ramp_arrow, l_right_standup_right_ramp_arrow, l_right_loop_arrow, l_right_standup_arrow
           speed: 4
 
 
