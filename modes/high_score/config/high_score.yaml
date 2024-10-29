@@ -37,6 +37,8 @@ high_score:
       - REVERSE BEAR TRAP CHAMPION
     zeptest_points:
       - ZEP'S TEST CHAMPION
+    lil_billy_points:
+      - LIL BILLY CHAMPION
   defaults:
     score:
       - JWF: 1000000
@@ -67,6 +69,8 @@ high_score:
       - TST: 0
     zeptest_points:
       - TST: 0
+    lil_billy_points:
+      - TST: 0
   vars:
     puzzle_pieces:
       - player: puzzle_pieces
@@ -90,13 +94,21 @@ high_score:
       - player: reversebeartrap_points
     zeptest_points:
       - player: zeptest_points
+    lil_billy_points:
+      - player: lil_billy_points
  #   tilt_bonus:
  #     - TST: 250000
-# optional: change the slides (you can omit all the following)
 slide_player:
   _overwrite: true   
   high_score_enter_initials: high_score_enter_initials
   high_score_award_display: high_score_award_display
+  slide_high_score_award_display_active:
+    high_score_enter_initials:
+      action: remove
+  slide_high_score_enter_initials_active:
+    high_score_award_display:
+      action: remove
+
 
 slides:
   _overwrite: true   
@@ -125,7 +137,7 @@ slides:
     - type: text
       font_name: sawesome
       font_size: 80
-      text: (score)
+      text: (value)
       color: C2E3E0 
       number_grouping: true      
       x: center
@@ -142,7 +154,7 @@ slides:
       max_chars: 3
       x: center
       y: center - 150
-      z: 2
+      z: 3
       shift_left_event: s_left_flipper_button_active
       shift_right_event: s_right_flipper_button_active
       select_event: s_action_button_active
@@ -162,7 +174,7 @@ slides:
       font_name: sawesome      
       x: center
       y: center
-      z: 2
+      z: 3
       color: C2E3E0   
     - type: image            
       image: billyskillshot

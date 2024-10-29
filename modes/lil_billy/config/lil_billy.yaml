@@ -70,7 +70,50 @@ variable_player:
     lil_billy_flippers_value:
       int: 2000000 + (device.counters.cnt_lil_billy_flippers_value.value * 1000000)
       action: set
+    lil_billy_points:
+      int: 1000000 + (device.counters.cnt_lil_billy_flippers_value.value * 1000000)
+      action: add
 
+  sw_pops:
+    lil_billy_points:
+      int: 50000 * (current_player.pf_multiplier)
+      action: add
+  sw_slingshot:
+    lil_billy_points:
+      int: 333 * (current_player.pf_multiplier)
+      action: add
+  sw_inlane:
+    lil_billy_points:
+      int: 25000 * (current_player.pf_multiplier)
+      action: add
+  sw_outlane:
+    lil_billy_points:
+      int: 100000 * (current_player.pf_multiplier)
+      action: add
+  sw_standup:
+    lil_billy_points:
+      int: 75000 * (current_player.pf_multiplier)
+      action: add
+  sw_ramp:
+    lil_billy_points:
+      int: 125000 * (current_player.pf_multiplier)
+      action: add
+  spinner_spinner_hit:
+    lil_billy_points:
+      int: 30000 * (current_player.pf_multiplier)
+      action: add
+  sw_drop_target:
+    lil_billy_points:
+      int: 95000 * (current_player.pf_multiplier)
+      action: add
+  sw_loop:
+    lil_billy_points:
+      int: 115000 * (current_player.pf_multiplier)
+      action: add
+  sw_110:
+    lil_billy_points:
+      int: 110 * (current_player.pf_multiplier)
+      action: add
 
 shot_groups:
   lil_billy_drops:

@@ -601,7 +601,32 @@
         font_size: 35
         color: C2E3E0
         x: 25%
-        y: 19%         
+        y: 19%  
+        
+      - type: text
+        text: (machine|lil_billy_points1_label)
+        number_grouping: true
+        min_digits: 2
+        font_size: 35
+        color: C2E3E0
+        x: 75%
+        y: 33% 
+      - type: text
+        text: (machine|lil_billy_points1_name)
+        number_grouping: true
+        min_digits: 2
+        font_size: 35
+        color: yellow
+        x: 75%
+        y: 26%    
+      - type: text
+        text: (machine|lil_billy_points1_value)
+        number_grouping: true
+        min_digits: 2
+        font_size: 35
+        color: C2E3E0
+        x: 75%
+        y: 19%          
  
       - type: image
         opacity: 0.65
@@ -611,7 +636,7 @@
          duration: 0.2s
 - duration: 3
   slides:
-    slide5:
+    slide8:
       widgets:
       - type: text
         text: DEATH COUNT
@@ -681,9 +706,39 @@
       transition:
          type: fade
          duration: 0.2s
+- duration: 3
+  slides:
+    slide9:
+      widgets:
+      - type: text
+        text: DEATH COUNT
+        font_name: TrajanProRegular
+        font_size: 70
+        color: yellow
+        y: 90%
+      - type: text
+        text: Cameron's Death Count
+        number_grouping: true
+        min_digits: 2
+        font_size: 50
+        color: C2E3E0
+        y: 80%
+      - type: text
+        text: (machine|CameronDeathCount)
+        number_grouping: true
+        min_digits: 2
+        font_size: 50
+        color: yellow
+        y: 73%      
+      - type: image
+        opacity: 0.65
+        image: lastgamescores
+      transition:
+         type: fade
+         duration: 0.2s
 - duration: 55s
   slides:
-    slide8:
+    slide10:
       widgets:
       - type: video
         video: SawTrailer

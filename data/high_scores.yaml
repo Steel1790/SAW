@@ -11,6 +11,10 @@ flammablejelly_points:
 items_collected:
 - - TST
   - 0
+lil_billy_points:
+- - ABC
+  - 1126998
+  - player_lil_billy_points: 1126998
 modes_attempted:
 - - AAA
   - 1
@@ -31,6 +35,8 @@ reversebeartrap_points:
 - - TST
   - 0
 score:
+- - ABC
+  - 12201998
 - - AAA
   - 8515000
 - - JWF
@@ -39,8 +45,6 @@ score:
   - 900000
 - - ADC
   - 800000
-- - SAW
-  - 700000
 zeptest_points:
 - - TST
   - 0
