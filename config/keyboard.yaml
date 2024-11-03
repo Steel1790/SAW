@@ -17,11 +17,13 @@ keyboard:
     switch: s_trough4
     toggle: true
   5:
-    switch: s_trough5
-    toggle: true
+    switch: s_service_enter
+  8:
+    switch: s_service_esc
   6:
-    switch: s_trough6
-    toggle: true
+    switch: s_service_up
+  7:
+    switch: s_service_down
   p:
     switch: s_action_button
   s:

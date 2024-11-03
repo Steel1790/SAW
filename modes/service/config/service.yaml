@@ -1,0 +1,486 @@
+#config_version=6
+mode:
+  priority: 100000
+  game_mode: False
+  start_events: e_service_menu
+  stop_events: shutdown
+  stop_on_ball_end: False
+
+mode_settings:
+  sort_devices_by_number: false
+
+event_player:
+  service_volume_start{(is_platform and track!="write_to_firmware") or track=="music"}:
+    - play_test_music{focus_change=="enter"}
+    - stop_test_music{focus_change=="exit"}
+
+timed_switches:
+  trough_jammed:
+    switches: s_trough_jam
+    time: 10s
+
+slide_player:
+  # jam
+  show_trough_jammed_active:
+    trough_jammed:
+      action: play
+      priority: 100
+  show_trough_jammed_inactive:
+    trough_jammed:
+      action: remove
+  ball_search_started: ball_search_slide
+  ball_search_stopped:
+    ball_search_slide:
+      action: remove
+  ball_search_failed: missing_balls_slide
+  found_new_ball:
+    missing_balls_slide:
+      action: remove
+  # door open
+  service_door_opened:
+    saw_service_door_open:
+      action: play
+  service_door_closed:
+    saw_service_door_open:
+      action: remove
+
+  # menu
+  service_menu_show:
+    saw_service_menu:
+      action: play
+      priority: 10
+  service_menu_hide:
+    saw_service_menu:
+      action: remove
+
+  # New system
+  service_menu_selected:
+    saw_service_menu:
+      action: play
+
+  # switch test
+  service_switch_test_start:
+    saw_service_switch_test:
+      action: play
+      priority: 20
+  service_switch_test_stop:
+    saw_service_switch_test:
+      action: remove
+
+  # coil test:
+  service_coil_test_start:
+    saw_service_coil_test:
+      action: play
+      priority: 20
+  service_coil_test_stop:
+    saw_service_coil_test:
+      action: remove
+
+  # light test:
+  service_light_test_start:
+    saw_service_light_test:
+      action: play
+      priority: 20
+  service_light_test_stop:
+    saw_service_light_test:
+      action: remove
+
+  # settings:
+  service_settings_start:
+    saw_service_settings:
+      action: play
+      priority: 20
+    saw_service_settings_edit:
+      action: remove
+  service_settings_edit:
+    saw_service_settings_edit:
+      action: play
+      priority: 21
+  service_settings_stop:
+    saw_service_settings:
+      action: remove
+
+  # volume:
+  service_volume_start:
+    saw_service_settings:
+      action: play
+      priority: 20
+    saw_service_settings_edit:
+      action: remove
+  service_volume_edit:
+    saw_service_settings_edit:
+      action: play
+      priority: 21
+  service_volume_stop:
+    saw_service_settings:
+      action: remove
+
+  # audits:
+  service_audits_menu_show:
+    saw_service_audit_info:
+      action: play
+  service_audits_menu_hide:
+    saw_service_audit_info:
+      action: remove
+  service_options_slide_start:
+    saw_service_options:
+      action: play
+  service_options_slide_stop:
+    saw_service_options:
+      action: remove
+
+widget_player:
+  # power off
+  service_power_off:
+    saw_service_power_off_door_open:
+      action: add
+      slide: saw_service_door_open
+    saw_service_power_off_coil_test:
+      action: add
+      slide: saw_service_coil_test
+  service_power_on:
+    saw_service_power_off_door_open:
+      action: remove
+      slide: saw_service_door_open
+    saw_service_power_off_coil_test:
+      action: remove
+      slide: saw_service_coil_test
+
+  # menu items
+  service_menu_deselected:
+    saw_service_menu_item_switch:
+      action: remove
+      slide: saw_service_menu
+    saw_service_menu_item_coil:
+      action: remove
+      slide: saw_service_menu
+    saw_service_menu_item_light:
+      action: remove
+      slide: saw_service_menu
+    saw_service_menu_item_settings:
+      action: remove
+      slide: saw_service_menu
+  service_menu_selected_switch:
+    saw_service_menu_item_switch:
+      action: add
+      slide: saw_service_menu
+  service_menu_selected_coil:
+    saw_service_menu_item_coil:
+      action: add
+      slide: saw_service_menu
+  service_menu_selected_light:
+    saw_service_menu_item_light:
+      action: add
+      slide: saw_service_menu
+  service_menu_selected_settings:
+    saw_service_menu_item_settings:
+      action: add
+      slide: saw_service_menu
+
+slides:
+  trough_jammed:
+  - type: text
+    text: Ball Jam in Trough
+    font_name: TrajanProRegular
+    font_size: 40
+    y: center-100
+  - type: text
+    text: "Please power cycle the\nmachine to remedy."
+    font_name: TrajanProRegular
+    font_size: 40
+    y: center-200
+  ball_search_slide:
+  - type: text
+    text: Balls Missing
+    font_name: TrajanProRegular
+    font_size: 40
+    y: center-100
+  - type: text
+    text: Searching For Balls...
+    font_name: TrajanProRegular
+    font_size: 40
+  missing_balls_slide:
+  - type: text
+    text: Balls Missing
+    font_name: TrajanProRegular
+    font_size: 40
+    y: center-100
+  - type: text
+    text: "(Are there two in the plunger lane?)"
+    font_name: TrajanProRegular
+    font_size: 40
+    y: center-200
+  # door open
+  saw_service_door_open:
+  - type: text
+    text: Door Open
+    font_name: TrajanProRegular
+    font_size: 40
+    anchor_y: bottom
+    x: center
+    y: bottom+21
+  - type: text
+    text: Press enter for service
+    font_name: TrajanProRegular
+    font_size: 40
+    anchor_y: bottom
+    x: center
+    y: bottom+12
+  # menu
+  saw_service_menu:
+  - type: text
+    text: Service Menu
+    font_name: TrajanProRegular
+    font_size: 80
+  - type: text
+    text: (label)
+    font_name: TrajanProRegular
+    font_size: 40
+    y: center-100
+  # switch test
+  saw_service_switch_test:
+  - type: text
+    text: Switch Test
+    font_name: TrajanProRegular
+    font_size: 80
+  - type: text
+    text: (board_name)
+    font_name: TrajanProRegular
+    font_size: 40
+    y: center-100
+  - type: text
+    text: "Last: (switch_num)"
+    font_name: TrajanProRegular
+    font_size: 40
+    y: center-150
+  - type: text
+    text: "(switch_name)"
+    font_name: TrajanProRegular
+    font_size: 40
+    y: center-200
+  - type: text
+    text: "(switch_label)"
+    font_name: TrajanProRegular
+    font_size: 40
+    y: center-250
+  - type: text
+    text: (switch_state)
+    font_name: TrajanProRegular
+    font_size: 40
+    y: center-300
+  # coil test
+  saw_service_coil_test:
+  - type: text
+    text: "Coil Test"
+    font_name: TrajanProRegular
+    font_size: 80
+  - type: text
+    text: (board_name)
+    font_name: TrajanProRegular
+    font_size: 40
+    y: center-100
+  - type: text
+    text: "(coil_name)"
+    font_name: TrajanProRegular
+    font_size: 40
+    y: center-150
+  - type: text
+    text: "(coil_label)"
+    font_name: TrajanProRegular
+    font_size: 40
+    y: center-200
+  - type: text
+    text: "(coil_num)"
+    font_name: TrajanProRegular
+    font_size: 40
+    y: center-250
+  # coil test
+  saw_service_light_test:
+  - type: text
+    text: "Light Test"
+    font_name: TrajanProRegular
+    font_size: 80
+  - type: text
+    text: (board_name)
+    font_name: TrajanProRegular
+    font_size: 40
+    y: center-100
+  - type: text
+    text: "(light_name)"
+    font_name: TrajanProRegular
+    font_size: 40
+    y: center-150
+  - type: text
+    text: "(light_label)"
+    font_name: TrajanProRegular
+    font_size: 40
+    y: center-200
+  - type: text
+    text: "(light_num)/(test_color)"
+    font_name: TrajanProRegular
+    font_size: 40
+    y: center-250
+  # settings
+  saw_service_settings:
+  - type: text
+    text: "Settings"
+    font_name: TrajanProRegular
+    font_size: 80
+  - type: text
+    text: "(settings_label)"
+    font_name: TrajanProRegular
+    font_size: 40
+    y: center-100
+  - type: text
+    text: "(value_label)"
+    font_name: TrajanProRegular
+    font_size: 40
+    opacity: 0.5
+    y: center-150
+  saw_service_settings_edit:
+  - type: text
+    text: "Settings"
+    font_name: TrajanProRegular
+    font_size: 40
+    y: center-200
+  - type: text
+    text: "(settings_label)"
+    font_name: TrajanProRegular
+    font_size: 40
+    opacity: 0.5
+    y: center-250
+  - type: text
+    text: "(value_label)"
+    font_name: TrajanProRegular
+    font_size: 40
+    y: center-300
+  saw_service_audit_info:
+  - type: text
+    text: (audits_label)
+    font_name: TrajanProRegular
+    font_size: 40
+    y: center-100
+  - type: text
+    text: (value_label)
+    font_name: TrajanProRegular
+    font_size: 40
+    y: center-150
+  saw_service_options:
+  - type: text
+    text: (title)
+    font_name: TrajanProRegular
+    font_size: 80
+  - type: text
+    text: (question)
+    font_name: TrajanProRegular
+    font_size: 40
+    y: center-100
+  - type: text
+    text: (option)
+    font_name: TrajanProRegular
+    font_size: 40
+    y: center-150
+  - type: text
+    text: (warning)
+    font_name: TrajanProRegular
+    font_size: 40
+    y: center-200
+
+widgets:
+  # power off on door open slide
+  saw_service_power_off_door_open:
+    type: text
+    text: Coil Power Off
+    font_name: TrajanProRegular
+    font_size: 80
+    anchor_y: bottom
+    x: center
+    y: bottom+40
+    animations:
+      add_to_slide:
+      - property: opacity
+        value: 1
+        duration: 0.5s
+      - property: opacity
+        value: 0
+        duration: 0.5s
+        repeat: true
+  # power off on coil test slide
+  saw_service_power_off_coil_test:
+    type: text
+    text: Coil Power Off
+    font_name: TrajanProRegular
+    font_size: 40
+    anchor_y: bottom
+    y: bottom-2
+    animations:
+      add_to_slide:
+      - property: opacity
+        value: 1
+        duration: 0.5s
+      - property: opacity
+        value: 0
+        duration: 0.5s
+        repeat: true
+
+  # menu items
+  saw_service_menu_item_switch:
+    type: text
+    text: Switch Test
+    font_name: TrajanProRegular
+    font_size: 70
+    y: center+100
+  saw_service_menu_item_coil:
+    type: text
+    text: Coil Test
+    font_name: TrajanProRegular
+    font_size: 40
+    y: center+100
+  saw_service_menu_item_light:
+    type: text
+    text: Light Test
+    font_name: TrajanProRegular
+    font_size: 40
+    y: center+100
+  saw_service_menu_item_settings:
+    type: text
+    text: Settings
+    font_name: TrajanProRegular
+    font_size: 40
+    y: center+100
+
+sound_player:
+  play_test_music:
+    HelloZeppPt1:
+      track: music
+      fade_in: 0
+      fade_out: 500ms
+      mode_end_action: stop
+      loops: -1
+  service_volume_start{focus_change=="enter" and track=="sfx"}:
+    Gore_Bloody_Impact:
+      track: sfx
+      fade_in: 0
+      fade_out: 500ms
+      mode_end_action: stop
+      loops: -1
+  service_volume_edit{track=="voice"}:
+    AmostThere:
+      track: voice
+      fade_in: 0
+      fade_out: 0
+      max_queue_time: 100ms
+  service_volume_edit{track=="sfx"}:
+    LilBillyBikeHorn:
+      track: sfx
+      fade_in: 0
+      fade_out: 0
+      max_queue_time: 100ms
+  stop_test_music:
+    HelloZeppPt1:
+      action: stop
+      track: music
+  service_volume_start{focus_change=="exit" and track=="music"}:
+    HelloZeppPt1:
+      action: stop
+      track: music

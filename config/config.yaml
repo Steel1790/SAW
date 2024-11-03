@@ -49,6 +49,7 @@ modes:
   - shackle_multiball_qualify
   - high_score
   - bonus
+  - service
   - stop_game
 
 window:
@@ -707,3 +708,11 @@ variable_player:
     JoeDeathCount:
       action: add_machine
       int: 1
+ 
+combo_switches:
+  service_menu_hold:
+    switches_1: s_right_flipper_button
+    switches_2: s_action_button
+    hold_time: 5s
+    max_offset_time: 1s
+    events_when_both: e_service_menu

@@ -61,10 +61,10 @@ switches:
     type: 'NC'
   s_left_flipper_button:
     number: 0804-0
-    tags: left_flipper
+    tags: left_flipper, service_up
   s_right_flipper_button:
     number: 0804-7
-    tags: right_flipper   
+    tags: right_flipper, service_down
   s_upper_right_flipper_eos:
     number: 1616_2-8
     tags: upper_right_flipper
@@ -90,10 +90,10 @@ switches:
     type: 'NC'
   s_start:
     number: 0804-3
-    tags: start
+    tags: start, service_esc
   s_action_button:
     number: 0804-4
-    tags: action
+    tags: action, service_enter
   s_left_inlane:
     number: 3208-25
     tags: left_return_lane, playfield_active, inlane, switch_hit
@@ -227,6 +227,22 @@ switches:
   s_right_slingshot:
     number: 3208-2
     tags: slingshot
+#coin door placeholder and number placeholders
+  # s_door_open:
+  #   number: 1
+  #   tags: service_door_open, power_off
+  # s_service_enter:
+  #   number: 17
+  #   tags: service_enter
+  # s_service_esc:
+  #   number: 18
+  #   tags: service_esc
+  # s_service_up:
+  #   number: 19
+  #   tags: service_up
+  # s_service_down:
+  #   number: 20
+  #   tags: service_down  
 
 virtual_platform_start_active_switches:
   - s_trough1
