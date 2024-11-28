@@ -17,7 +17,7 @@ shots:
     switches: s_action_button
     profile: sp_drillchair
     disable_events: mode_drillchair_stopped, mode_drillchair_complete, ball_ended, ball_will_end, shot_drillchair_button_sp_drillchair_lit_hit
-    enable_events: mode_drillchair_started
+    enable_events: player_drillchair_drillchair_60s_timer_tick{value==60}
     show_tokens:
       leds: l_action_button
     control_events:
@@ -34,7 +34,7 @@ shots:
     switches: s_action_button
     profile: sp_razorwire
     disable_events: mode_razorwire_stopped, mode_razorwire_complete, ball_ended, ball_will_end, shot_razorwire_button_sp_razorwire_lit_hit
-    enable_events: mode_razorwire_started
+    enable_events: player_razorwire_60s_timer_tick{value==60}
     show_tokens:
       leds: l_action_button
     control_events:
@@ -51,7 +51,7 @@ shots:
     switches: s_action_button
     profile: sp_reversebeartrap
     disable_events: mode_reversebeartrap_stopped, mode_reversebeartrap_complete, ball_ended, ball_will_end, shot_reversebeartrap_button_sp_reversebeartrap_lit_hit
-    enable_events: mode_reversebeartrap_started
+    enable_events: player_reversebeartrap_120s_reversebeartrap_timer_tick{value==120}
     show_tokens:
       leds: l_action_button
     control_events:
@@ -68,7 +68,7 @@ shots:
     switches: s_action_button
     profile: sp_quadshotgun
     disable_events: mode_quadshotgun_stopped, mode_quadshotgun_complete, ball_ended, ball_will_end, shot_quadshotgun_button_sp_quadshotgun_lit_hit
-    enable_events: mode_quadshotgun_started
+    enable_events: player_quadshotgun_quadshotgun_60s_timer_tick{value==60}
     show_tokens:
       leds: l_action_button
     control_events:
@@ -85,7 +85,7 @@ shots:
     switches: s_action_button
     profile: sp_flammablejelly
     disable_events: mode_flammablejelly_stopped, mode_flammablejelly_complete, ball_ended, ball_will_end, shot_flammablejelly_button_sp_flammablejelly_lit_hit
-    enable_events: mode_flammablejelly_started
+    enable_events: player_flammablejelly_60s_flammablejelly_timer_tick{value==60}
     show_tokens:
       leds: l_action_button
     control_events:
@@ -102,7 +102,7 @@ shots:
     switches: s_action_button
     profile: sp_zeptest
     disable_events: mode_zeptest_stopped, mode_zeptest_complete, ball_ended, ball_will_end, shot_zeptest_button_sp_zeptest_lit_hit
-    enable_events: mode_zeptest_started
+    enable_events: player_zeptest_60s_zeptest_timer_tick{value==60}
     show_tokens:
       leds: l_action_button
     control_events:
@@ -143,6 +143,31 @@ shots:
       - events: mode_hacksaw_multiball_stopped
         state: 0
       - events: mode_shackle_multiball_stopped
+        state: 0
+  shot_full_workshop_button:
+    advance_events: minimode_full_workshop_complete, slide_sl_mode_zeptest01_active{current_player.syringes_enabled==1}
+    switches: s_action_button
+    profile: sp_full_workshop
+    disable_events: mode_drillchair_stopped, mode_flammablejelly_stopped, mode_quadshotgun_stopped, mode_razorwire_stopped, mode_reversebeartrap_stopped, mode_zeptest_stopped, ball_ended, ball_will_end, shot_full_workshop_button_sp_full_workshop_lit_hit
+    enable_events: player_drillchair_drillchair_60s_timer_tick{value==60}, player_flammablejelly_60s_flammablejelly_timer_tick{value==60}, player_quadshotgun_quadshotgun_60s_timer_tick{value==60}, player_razorwire_60s_timer_tick{value==60}, player_reversebeartrap_120s_reversebeartrap_timer_tick{value==120}, player_zeptest_60s_zeptest_timer_tick{value==60}
+    show_tokens:
+      leds: l_action_button
+    control_events:
+      - events: minimode_full_workshop_complete
+        state: 1
+      - events: shot_full_workshop_button_sp_full_workshop_lit_hit
+        state: 0
+      - events: mode_drillchair_stopped
+        state: 0
+      - events: mode_flammablejelly_stopped
+        state: 0
+      - events: mode_quadshotgun_stopped
+        state: 0
+      - events: mode_razorwire_stopped
+        state: 0
+      - events: mode_reversebeartrap_stopped
+        state: 0
+      - events: mode_zeptest_stopped
         state: 0
 
 shot_profiles:
@@ -210,6 +235,14 @@ shot_profiles:
       - name: lit
         show: "sh_add_a_ball_button_ready"    
         priority: 200
+  sp_full_workshop:
+    advance_on_hit: false
+    states:
+      - name: full_workshop_off
+        show: "off" 
+      - name: lit
+        show: "sh_full_workshop_ready"    
+        priority: 205
 
 shows:
   sh_drillchair_ready:
@@ -266,6 +299,43 @@ shows:
       lights:
         (leds): 00C190
     - duration: 0.3s
+      lights:
+        (leds): off
+  sh_full_workshop_ready:
+    - duration: 0.1s
+      lights:
+        (leds): drillchair
+    - duration: 0.1s
+      lights:
+        (leds): off
+    - duration: 0.1s
+      lights:
+        (leds): razorwire
+    - duration: 0.1s
+      lights:
+        (leds): off
+    - duration: 0.1s
+      lights:
+        (leds): beartrap
+    - duration: 0.1s
+      lights:
+        (leds): off
+    - duration: 0.1s
+      lights:
+        (leds): shotgun
+    - duration: 0.1s
+      lights:
+        (leds): off
+    - duration: 0.1s
+      lights:
+        (leds): jelly
+    - duration: 0.1s
+      lights:
+        (leds): off
+    - duration: 0.1s
+      lights:
+        (leds): zeptest
+    - duration: 0.1s
       lights:
         (leds): off
   sh_item_used:

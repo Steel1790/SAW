@@ -107,6 +107,14 @@ shots:
 variable_player:
   #razorwire_pops_complete:
   #  score: 1000000 + (current_player.hacksaws_used * 1500000)
+  shot_full_workshop_button_sp_full_workshop_lit_hit:
+    score: 25000000
+    razorwire_points:
+      int: 25000000  
+      action: add
+    razorwire_complete_points:
+      int: 25000000  
+      action: add
   mode_razorwire_complete:
     score: (current_player.razorwire_time_bonus + (current_player.hacksaws_used * 1500000)) * (current_player.pf_multiplier)
     razorwire_points:
@@ -1417,6 +1425,7 @@ sound_player:
 
 event_player: 
   slide_mode_razorwire01_active: e_primary_mode_active
+  shot_full_workshop_button_sp_full_workshop_lit_hit: que_razorwire_complete
   mode_razorwire_stopping{mode.shackle_multiball.active==True}: e_mode_qualify_disabled|0.5s
   mode_razorwire_stopping{mode.jigsaw_multiball.active==True}: e_mode_qualify_disabled|0.5s
   mode_razorwire_stopping{mode.hacksaw_multiball.active==True}: e_mode_qualify_disabled|0.5s

@@ -80,6 +80,14 @@ variable_player:
   #   score: (1000000 * current_player.candle_multiplier) * (current_player.pf_multiplier)
   #logicblock_flammablejelly_hit{step==4}:
   #  score: 1000000    
+  shot_full_workshop_button_sp_full_workshop_lit_hit:
+    score: 25000000
+    flammablejelly_points:
+      int: 25000000  
+      action: add
+    flammablejelly_complete_points:
+      int: 25000000  
+      action: add
   mode_flammablejelly_complete:
     score: (current_player.key_combination_bonus + (current_player.candles_used * 3000000)) * (current_player.pf_multiplier)   
     flammablejelly_points:
@@ -1255,6 +1263,7 @@ shot_groups:
 
 event_player: 
   slide_sl_mode_flammablejelly01_active: e_primary_mode_active
+  shot_full_workshop_button_sp_full_workshop_lit_hit: que_flammablejelly_complete
   mode_flammablejelly_stopping{mode.shackle_multiball.active==True}: e_mode_qualify_disabled|0.5s
   mode_flammablejelly_stopping{mode.jigsaw_multiball.active==True}: e_mode_qualify_disabled|0.5s
   mode_flammablejelly_stopping{mode.hacksaw_multiball.active==True}: e_mode_qualify_disabled|0.5s

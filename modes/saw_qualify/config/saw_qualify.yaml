@@ -543,6 +543,8 @@ show_player:
 event_player:
   sg_saw_qualify_subtract_hit{device.counters.cnt_saw_qualify.value > 0}:
     - e_subtract_a_saw_letter 
+  shot_left_standup_sp_saw_qualify_subtract_hit{device.counters.cnt_saw_qualify.value > 0}:
+    - e_subtract_a_saw_letter 
   shot_left_standup_a1_hit{device.counters.cnt_saw_qualify.value > 0}:
     - e_subtract_a_saw_letter 
   shot_left_return_lane_a1_hit{device.counters.cnt_saw_qualify.value > 0}:

@@ -91,6 +91,16 @@ counters:
     events_when_complete: minimode_drops_complete 
     count_events: sw_drop_target 
 
+  minimode_full_workshop_counter:
+    starting_count: 0
+    count_complete_value: 8
+    direction: up
+    start_enabled: true
+    reset_on_complete: true
+    disable_on_complete: false
+    events_when_complete: minimode_full_workshop_complete
+    count_events: minimode_pops_complete, minimode_standups_complete, minimode_slings_complete, minimode_inlanes_complete, minimode_spinners_complete, minimode_ramps_complete, minimode_loops_complete, minimode_drops_complete
+
 show_player:
 # gear light progress - 20 pops
   counter_minimode_pops_counter_hit{hits<20}:

@@ -134,6 +134,14 @@ variable_player:
   #  score: 1000000 + (current_player.handguns_used * 1250000)
   #logicblock_drillchair_hit{step==3}:
   #  score: 1000000 + (current_player.handguns_used * 1250000)
+  shot_full_workshop_button_sp_full_workshop_lit_hit:
+    score: 25000000
+    drillchair_points:
+      int: 25000000  
+      action: add
+    drillchair_complete_points:
+      int: 25000000  
+      action: add
   mode_drillchair_complete:
     score: (current_player.drillchair_timer_bonus + (current_player.handguns_used * 1000000)) * (current_player.pf_multiplier)
     drillchair_points:
@@ -1499,6 +1507,7 @@ show_player:
 
 event_player: 
   slide_mode_drillchair01_active: e_primary_mode_active
+  shot_full_workshop_button_sp_full_workshop_lit_hit: que_drillchair_complete
   mode_drillchair_stopping{mode.shackle_multiball.active==True}: e_mode_qualify_disabled|0.5s
   mode_drillchair_stopping{mode.jigsaw_multiball.active==True}: e_mode_qualify_disabled|0.5s
   mode_drillchair_stopping{mode.hacksaw_multiball.active==True}: e_mode_qualify_disabled|0.5s

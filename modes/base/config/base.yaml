@@ -158,6 +158,16 @@ event_player:
   player_base_t_playfield_multiplier_timer_tick{value==1}: stop_multiplier_widget|1s
   mode_hacksaw_multiball_stopped: e_reset_hacksaw|1s
   mode_shackle_multiball_stopped: e_reset_shackle|1s
+#full jigsaw workshop action item pressed creates events to set each item to 0 for bonus purposes
+  shot_full_workshop_button_sp_full_workshop_lit_hit:
+    - e_full_workshop_drillchair
+    - e_full_workshop_quadshotgun
+    - e_full_workshop_flammablejelly
+    - e_full_workshop_outlane
+    - e_full_workshop_addaball
+    - e_full_workshop_reversebeartrap
+    - e_full_workshop_razorwire
+    - e_full_workshop_zeptest
 
 timers:
   t_playfield_multiplier_timer:
@@ -510,6 +520,38 @@ variable_player:
       action: set
       int: (count)
 #minimode / jigsaw workshop
+  e_full_workshop_drillchair:
+    bonus_handguns:
+      action: set
+      int: 0
+  e_full_workshop_quadshotgun:
+    bonus_gears:
+      action: set
+      int: 0
+  e_full_workshop_flammablejelly:
+    bonus_candles:
+      action: set
+      int: 0
+  e_full_workshop_outlane:
+    bonus_bathtubs:
+      action: set
+      int: 0
+  e_full_workshop_addaball:
+    bonus_taperecorders:
+      action: set 
+      int: 0
+  e_full_workshop_reversebeartrap:
+    bonus_keys:
+      action: set
+      int: 0
+  e_full_workshop_razorwire:
+    bonus_hacksaws:
+      action: set
+      int: 0
+  e_full_workshop_zeptest:
+    bonus_syringes:
+      action: set
+      int: 0
   minimode_pops_complete:
     #score: 3000000
     bonus_gears: 1
@@ -826,6 +868,10 @@ shows:
     - duration: -1      
       lights:    
         (leds): zepstest
+  minimode_shot_workshop_show_used:
+    - duration: -1
+      lights:
+        (leds): off
  #ballsave   
   ballsave:
     - duration: 0.5s
@@ -1051,7 +1097,12 @@ show_player:
       loops: 0
       show_tokens:
         leds: left_bottom_bumper          
-
+  shot_full_workshop_button_sp_full_workshop_lit_hit:
+    minimode_shot_workshop_show_used:
+      show_tokens:
+        leds: l_jw_gears, l_jw_syringe, l_jw_bathtub, l_jw_taperecorder, l_jw_candle, l_jw_hacksaw, l_jw_gun, l_jw_key
+      priority: 123
+      loops: -1    
   minimode_pops_complete:
     jw_chase_gears:
       loops: 0
@@ -1220,6 +1271,13 @@ show_player:
       action: stop
 
 # saw letter light show
+  logicblock_cnt_saw_qualify_updated{value==0}:
+    pops_on:
+      loops: -1
+      show_tokens:
+        leds: right_bottom_bumper, lower_top_bumper
+        color1: off
+      priority: 169
   logicblock_cnt_saw_qualify_updated{value==1}:
     collect_S:
       loops: 0
@@ -3936,6 +3994,9 @@ widget_player:
     saw_saw_letters:
       slide: base_slide_main
       action: add     
+  shot_left_standup_sp_saw_qualify_subtract_hit{device.counters.cnt_saw_qualify.value==1}:
+    saw_s_letters:
+      action: remove    
   sg_saw_qualify_subtract_hit{device.counters.cnt_saw_qualify.value==1}:
     saw_s_letters:
       action: remove    
@@ -3966,6 +4027,9 @@ widget_player:
   shot_inner_loop_a3_hit{device.counters.cnt_saw_qualify.value==1}:
     saw_s_letters:
       action: remove  
+  shot_left_standup_sp_saw_qualify_subtract_hit{device.counters.cnt_saw_qualify.value==2}:
+    saw_sa_letters:
+      action: remove 
   sg_saw_qualify_subtract_hit{device.counters.cnt_saw_qualify.value==2}:
     saw_sa_letters:
       action: remove    

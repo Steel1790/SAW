@@ -166,6 +166,14 @@ shot_profiles:
 variable_player:
   #quadshotgun_spinner_complete:
   #  score: 2500000 + (current_player.gears_used * 2500000)
+  shot_full_workshop_button_sp_full_workshop_lit_hit:
+    score: 25000000
+    quadshotgun_points:
+      int: 25000000  
+      action: add
+    quadshotgun_complete_points:
+      int: 25000000  
+      action: add
   mode_quadshotgun_complete:
     score: (current_player.shotgun_timer_bonus + (current_player.gears_used * 1500000)) * (current_player.pf_multiplier)
     quadshotgun_points:
@@ -1333,6 +1341,7 @@ sound_player:
    
 event_player: 
   slide_sl_mode_quadshotgun01_active: e_primary_mode_active
+  shot_full_workshop_button_sp_full_workshop_lit_hit: que_quadshotgun_complete
   mode_quadshotgun_stopping{mode.shackle_multiball.active==True}: e_mode_qualify_disabled|0.5s
   mode_quadshotgun_stopping{mode.jigsaw_multiball.active==True}: e_mode_qualify_disabled|0.5s
   mode_quadshotgun_stopping{mode.hacksaw_multiball.active==True}: e_mode_qualify_disabled|0.5s

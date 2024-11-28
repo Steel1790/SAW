@@ -121,6 +121,14 @@ variable_player:
     reversebeartrap_points:
       int: (4500000 + (current_player.keys_used * 4500000) + (current_player.spinner_value * 145750)) * (current_player.pf_multiplier)
       action: add
+  shot_full_workshop_button_sp_full_workshop_lit_hit:
+    score: 25000000
+    reversebeartrap_points:
+      int: 25000000  
+      action: add
+    reversebeartrap_complete_points:
+      int: 25000000  
+      action: add
   mode_reversebeartrap_complete:
     score: (current_player.beartrap_timer_bonus + (current_player.keys_used * 1000000) + (current_player.spinner_value * 145750)) * (current_player.pf_multiplier)
     reversebeartrap_points:
@@ -1330,6 +1338,7 @@ show_player:
 
 event_player: 
   slide_mode_rbt01_active: e_primary_mode_active
+  shot_full_workshop_button_sp_full_workshop_lit_hit: que_reversebeartrap_complete
   mode_reversebeartrap_stopping{mode.shackle_multiball.active==True}: e_mode_qualify_disabled|0.5s
   mode_reversebeartrap_stopping{mode.jigsaw_multiball.active==True}: e_mode_qualify_disabled|0.5s
   mode_reversebeartrap_stopping{mode.hacksaw_multiball.active==True}: e_mode_qualify_disabled|0.5s
