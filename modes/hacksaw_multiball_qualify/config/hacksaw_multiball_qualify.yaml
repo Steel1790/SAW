@@ -92,8 +92,21 @@ variable_player:
     hacksaw_mb_lock_counter:
       action: set
       int: 0
-
-
+  logicblock_acc_hacksaw_mb_qualify_hit{step == 0}:
+    hacksaw_mb_left_lock_progress:
+      action: set
+      int: 1
+  logicblock_acc_hacksaw_mb_qualify_hit{step == 1}:
+    hacksaw_mb_right_lock_progress:
+      action: set
+      int: 1
+  multiball_lock_mbl_hacksaw_locked_ball:
+    hacksaw_mb_left_lock_progress:
+      action: set
+      int: 0
+    hacksaw_mb_right_lock_progress:
+      action: set
+      int: 0
 
 shows:
   sh_hacksaw_mb_qualify_hit_ready:
@@ -181,12 +194,45 @@ show_player:
         leds: l_left_standup_right_ramp_arrow
       speed: 4
       loops: 5
+      priority: 184
+    sh_hacksaw_mb_qualify_hit_locked:
+      show_tokens:
+        leds: l_left_standup_right_ramp_arrow
+      priority: 183
   logicblock_acc_hacksaw_mb_qualify_hit{step==1}:
     sh_hacksaw_mb_qualify_hit:
       show_tokens:
         leds: l_right_standup_right_ramp_arrow
       speed: 4
       loops: 5
+      priority: 184
+    sh_hacksaw_mb_qualify_hit_locked:
+      show_tokens:
+        leds: l_right_standup_right_ramp_arrow
+      priority: 183
+  logicblock_acc_hacksaw_mb_qualify_complete:
+    sh_hacksaw_mb_qualify_hit_locked:
+      show_tokens:
+        leds: l_left_standup_right_ramp_arrow, l_right_standup_right_ramp_arrow
+        action: off
+
+
+  mode_hacksaw_multiball_qualify_started{current_player.hacksaw_mb_left_lock_progress == 1 and current_player.hacksaw_mb_right_lock_progress == 1}:
+    sh_hacksaw_mb_qualify_hit_locked:
+      show_tokens:
+        leds: l_left_standup_right_ramp_arrow, l_right_standup_right_ramp_arrow
+      priority: 183
+  mode_hacksaw_multiball_qualify_started{current_player.hacksaw_mb_right_lock_progress == 0 and current_player.hacksaw_mb_right_lock_progress == 1}:
+    sh_hacksaw_mb_qualify_hit_locked:
+      show_tokens:
+        leds: l_right_standup_right_ramp_arrow
+      priority: 183
+  mode_hacksaw_multiball_qualify_started{current_player.hacksaw_mb_right_lock_progress == 1 and current_player.hacksaw_mb_right_lock_progress == 0}:
+    sh_hacksaw_mb_qualify_hit_locked:
+      show_tokens:
+        leds: l_left_standup_right_ramp_arrow
+      priority: 183
+
 #dome ball lock
   multiball_lock_mbl_hacksaw_locked_ball{device.multiball_locks.mbl_hacksaw.locked_balls == 1}:
     domes_ball_lock:
@@ -234,3 +280,64 @@ slide_player:
     sl_Hacksaw_locked_3:
       priority: 500
       expire: 3s
+
+blinkenlight_player:
+  mode_hacksaw_multiball_qualify_started{device.accruals.acc_hacksaw_mb_qualify.value[0]}:
+    blinkenlight_left_standup_right_ramp:
+      action: add
+      color: color_hacksaw_mb
+      key: hacksaw_qualify_left
+  mode_hacksaw_multiball_qualify_started{device.accruals.acc_hacksaw_mb_qualify.value[1]}:
+    blinkenlight_right_standup_right_ramp:
+      action: add
+      color: color_hacksaw_mb
+      key: hacksaw_qualify_right
+  shot_left_standup_rightramp_sp_saw_qualify_lit_hit:
+    blinkenlight_left_standup_right_ramp:
+      action: remove
+      key: hacksaw_qualify_left
+  shot_right_standup_rightramp_sp_saw_qualify_lit_hit:
+    blinkenlight_right_standup_right_ramp:
+      action: remove
+      key: hacksaw_qualify_right
+#mode attempt 1-4+ saw qualify setup
+  shot_left_standup_rightramp_a1_sp_saw_qualify_lit_hit:
+    blinkenlight_left_standup_right_ramp:
+      action: remove
+      key: hacksaw_qualify_left 
+  shot_left_standup_rightramp_a2_sp_saw_qualify_lit_hit:
+    blinkenlight_left_standup_right_ramp:
+      action: remove
+      key: hacksaw_qualify_left   
+  shot_left_standup_rightramp_a3_sp_saw_qualify_lit_hit:
+    blinkenlight_left_standup_right_ramp:
+      action: remove
+      key: hacksaw_qualify_left 
+  shot_left_standup_rightramp_a4_sp_saw_qualify_lit_hit:
+    blinkenlight_left_standup_right_ramp:
+      action: remove
+      key: hacksaw_qualify_left
+  shot_right_standup_rightramp_a1_sp_saw_qualify_lit_hit:
+    blinkenlight_right_standup_right_ramp:
+      action: remove
+      key: hacksaw_qualify_right
+  shot_right_standup_rightramp_a2_sp_saw_qualify_lit_hit:
+    blinkenlight_right_standup_right_ramp:
+      action: remove
+      key: hacksaw_qualify_right 
+  shot_right_standup_rightramp_a3_sp_saw_qualify_lit_hit:
+    blinkenlight_right_standup_right_ramp:
+      action: remove
+      key: hacksaw_qualify_right
+  shot_right_standup_rightramp_a4_sp_saw_qualify_lit_hit:
+    blinkenlight_right_standup_right_ramp:
+      action: remove
+      key: hacksaw_qualify_right
+#turn off blinkenlight rotation during SAW qualified
+  mode_trap_select_started:
+    blinkenlight_left_standup_right_ramp:
+      action: remove
+      key: hacksaw_qualify_left
+    blinkenlight_right_standup_right_ramp:
+      action: remove
+      key: hacksaw_qualify_right

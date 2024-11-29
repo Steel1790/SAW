@@ -716,3 +716,14 @@ combo_switches:
     hold_time: 5s
     max_offset_time: 1s
     events_when_both: e_service_menu
+blinkenlights:
+  blinkenlight_left_standup_right_ramp:
+    color_duration: 0.3s
+    off_when_multiple: false
+    light: l_left_standup_right_ramp_arrow
+    priority: 1000
+  blinkenlight_right_standup_right_ramp:
+    color_duration: 0.3s
+    off_when_multiple: false
+    light: l_right_standup_right_ramp_arrow
+    priority: 1000

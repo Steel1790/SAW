@@ -687,3 +687,54 @@ slide_player:
 #    SawLetterNegative:
 #      action: play
 #      block: true            
+blinkenlight_player:
+  mode_saw_qualify_started:
+    blinkenlight_left_standup_right_ramp:
+      action: add
+      color: white
+      key: hacksaw_left
+    blinkenlight_right_standup_right_ramp:
+      action: add
+      color: white
+      key: hacksaw_right
+  shot_left_standup_rightramp_sp_saw_qualify_lit_hit:
+    blinkenlight_left_standup_right_ramp:
+      action: remove
+      key: hacksaw_left
+  shot_right_standup_rightramp_sp_saw_qualify_lit_hit:
+    blinkenlight_right_standup_right_ramp:
+      action: remove
+      key: hacksaw_right
+#mode attempt 1-4+ saw qualify setup
+  shot_left_standup_rightramp_a1_sp_saw_qualify_lit_hit:
+    blinkenlight_left_standup_right_ramp:
+      action: remove
+      key: hacksaw_left    
+  shot_left_standup_rightramp_a2_sp_saw_qualify_lit_hit:
+    blinkenlight_left_standup_right_ramp:
+      action: remove
+      key: hacksaw_left   
+  shot_left_standup_rightramp_a3_sp_saw_qualify_lit_hit:
+    blinkenlight_left_standup_right_ramp:
+      action: remove
+      key: hacksaw_left    
+  shot_left_standup_rightramp_a4_sp_saw_qualify_lit_hit:
+    blinkenlight_left_standup_right_ramp:
+      action: remove
+      key: hacksaw_left    
+  shot_right_standup_rightramp_a1_sp_saw_qualify_lit_hit:
+    blinkenlight_right_standup_right_ramp:
+      action: remove
+      key: hacksaw_right   
+  shot_right_standup_rightramp_a2_sp_saw_qualify_lit_hit:
+    blinkenlight_right_standup_right_ramp:
+      action: remove
+      key: hacksaw_right      
+  shot_right_standup_rightramp_a3_sp_saw_qualify_lit_hit:
+    blinkenlight_right_standup_right_ramp:
+      action: remove
+      key: hacksaw_right     
+  shot_right_standup_rightramp_a4_sp_saw_qualify_lit_hit:
+    blinkenlight_right_standup_right_ramp:
+      action: remove
+      key: hacksaw_right      

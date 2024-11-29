@@ -1241,7 +1241,10 @@ show_player:
     puzzle_collect_zeptest:
       loops: 0
       speed: 20
-
+  reversebeartrap_puzzle_complete:
+    puzzle_collect_shotgun:
+      loops: 0
+      speed: 20
 
 # die progress letters
   logicblock_make_your_choice_qualify_updated{value==1}:
