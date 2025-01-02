@@ -13,7 +13,7 @@ sequences:
     reset_on_complete: false
 #    persist_state: true
     disable_events: mode_the_key_to_freedom_complete
-    events_when_complete: mode_the_key_to_freedom_complete, stop_mode_the_key_to_freedom
+    events_when_complete: que_thekeytofreedom_complete
 
 counters:
   cnt_key_to_freedom_p1_counter:
@@ -113,7 +113,37 @@ slides:
     - type: video
       video: mode_thekeytofreedom03
       width: 1366
-      height: 768     
+      height: 768   
+  thekeytofreedomp1:
+    widgets:
+    - type: video
+      video: thekeytofreedomp1
+      width: 1366
+      height: 768       
+  thekeytofreedomp2h1:
+    widgets:
+    - type: video
+      video: thekeytofreedomp2h1
+      width: 1366
+      height: 768  
+  thekeytofreedomp2h2:
+    widgets:
+    - type: video
+      video: thekeytofreedomp2h2
+      width: 1366
+      height: 768  
+  thekeytofreedomp3h1:
+    widgets:
+    - type: video
+      video: thekeytofreedomp3h1
+      width: 1366
+      height: 768  
+  thekeytofreedomp3h2:
+    widgets:
+    - type: video
+      video: thekeytofreedomp3h2
+      width: 1366
+      height: 768        
 
 widgets:
    w_thekeytofreedomUI:
@@ -608,6 +638,58 @@ slide_player:
 #      expire: 120s
     mode_thekeytofreedom02:
      action: remove
+  logicblock_cnt_key_to_freedom_p1_counter_updated{value==3}:
+    thekeytofreedomp1:
+      priority: 402
+      expire: 2.9s
+  logicblock_cnt_key_to_freedom_p1_counter_updated{value==6}:
+    thekeytofreedomp1:
+      priority: 402
+      expire: 2.9s
+  logicblock_cnt_key_to_freedom_p1_counter_updated{value==10}:
+    thekeytofreedomp1:
+      priority: 402
+      expire: 2.9s
+  logicblock_cnt_key_to_freedom_p2_counter_updated{value==10}:
+    thekeytofreedomp2h1:
+      priority: 402
+      expire: 2.4s
+  logicblock_cnt_key_to_freedom_p2_counter_updated{value==20}:
+    thekeytofreedomp2h2:
+      priority: 402
+      expire: 2.4s
+  logicblock_cnt_key_to_freedom_p2_counter_updated{value==30}:
+    thekeytofreedomp2h2:
+      priority: 402
+      expire: 2.4s
+  logicblock_cnt_key_to_freedom_p2_counter_updated{value==40}:
+    thekeytofreedomp2h2:
+      priority: 402
+      expire: 2.4s
+  logicblock_cnt_key_to_freedom_p2_counter_updated{value==50}:
+    thekeytofreedomp2h2:
+      priority: 402
+      expire: 2.4s
+  logicblock_cnt_key_to_freedom_p3_counter_updated{value==1}:
+    thekeytofreedomp3h1:
+      priority: 402
+      expire: 1s
+  logicblock_cnt_key_to_freedom_p3_counter_updated{value==2}:
+    thekeytofreedomp3h1:
+      priority: 402
+      expire: 1s
+  logicblock_cnt_key_to_freedom_p3_counter_updated{value==3}:
+    thekeytofreedomp3h1:
+      priority: 402
+      expire: 1s
+  logicblock_cnt_key_to_freedom_p3_counter_updated{value==4}:
+    thekeytofreedomp3h1:
+      priority: 402
+      expire: 1s
+  logicblock_cnt_key_to_freedom_p3_counter_updated{value==5}:
+    thekeytofreedomp3h2:
+      priority: 402
+      expire: 3.5s
 
 shows:
   sh_key_on:
@@ -881,3 +963,25 @@ show_player:
 
 event_player:
   slide_mode_thekeytofreedom01_active: e_primary_mode_active    
+  que_thekeytofreedom_complete:
+    - mode_the_key_to_freedom_complete|3.2s
+    - stop_mode_the_key_to_freedom|3.2s
+   
+sound_player:
+  mode_the_key_to_freedom_started:
+    BaseMusic:
+      action: stop
+    DrillAndTapp:
+      action: stop
+    OutOfTime:
+      action: stop
+    Jonas:
+      action: stop
+    FuckThisShit:
+      action: stop
+    TheRules:
+      action: play
+      loops: -1
+  mode_the_key_to_freedom_stopping:
+    TheRules:
+      action: stop

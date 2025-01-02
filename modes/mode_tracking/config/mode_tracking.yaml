@@ -703,6 +703,22 @@ variable_player:
     reawakening_phaseone_attempted:
       int: 1
       action: set
+  reawakening_phaseone_apprentice_selected:
+    reawakening_apprentice_selected:
+      int: 1
+      action: set
+  reawakening_phaseone_survivor_selected:
+    reawakening_survivor_selected:
+      int: 1
+      action: set
+  logicblock_apprentice_phaseone_complete:
+    reawakening_phaseone_completed:
+      int: 1
+      action: set
+  logicblock_survivor_phaseone_complete:
+    reawakening_phaseone_completed:
+      int: 1
+      action: set
 
   logicblock_acc_make_your_choice_qualify_hit:
     choice_hurryup_hits:

@@ -36,7 +36,7 @@ keyboard:
     event: mode_razorwire_complete
     # event: selection_mode_razorwire_selected
   h:
-    event: selection_mode_quadshotgun_selected
+    event: selection_mode_thekeytofreedom_selected
 #Trying to add a keyboard command to get to Puzzle Hurry Up. But not sure how to tell it which hurryup mode.
   # a:
   #   event: slide_trapcomplete_created

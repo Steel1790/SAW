@@ -35,7 +35,8 @@ modes:
   - hostage
   - survival_instinct
   - the_key_to_freedom 
-#  - reawakening
+  - reawakening
+  - reawakening_p2
   - mystery
   - saw_qualify
   - hacksaw_diverter_carry_over
@@ -57,7 +58,7 @@ window:
   height: 768
   title: Mission Pinball Framework - SAW
   resizable: true
-  fullscreen: true
+  fullscreen: false
   borderless: true
   exit_on_escape: true
   source_display: lcd

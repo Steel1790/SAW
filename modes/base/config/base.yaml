@@ -109,6 +109,8 @@ event_player:
     - e_que_basemusic|0.5s
   mode_make_your_choice_hurryup_stopping:
     - e_que_basemusic|0.5s
+  mode_the_key_to_freedom_stopping:
+    - e_que_basemusic|0.5s
 
   logicblock_minimode_pops_counter_hit{count==1}: stop_pops_widget1|300ms
   logicblock_minimode_pops_counter_hit{count==2}: stop_pops_widget2|300ms
@@ -4726,6 +4728,10 @@ widget_player:
       action: remove
     w_zeptest_complete_points:
       slide: trapcomplete
+      action: remove
+#remove base saw letter instruction in wiz mode
+  selection_mode_reawakening_selected:
+    saw_letters:
       action: remove
 
   # slide_HeHelpedMeVideo_created:

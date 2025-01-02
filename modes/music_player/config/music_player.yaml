@@ -1161,6 +1161,171 @@ sound_player:
   mode_bonus_stopped{current_player.ball==3}:
     BonusModeSong:
       action: stop
+# wiz mode music
+  selection_mode_reawakening_selected:
+    QuadShotgunModeStart:
+      action: stop
+    DrillChairModeStart:
+      action: stop
+    FlammableJellyModeStart:
+      action: stop
+    RWModeStart:
+      action: stop
+    ReverseBearTrapModeStart:
+      action: stop
+    ZepsTestModeStart:
+      action: stop      
+    BaseMusic:
+      action: stop
+    DrillAndTapp:
+      action: stop
+    OutOfTime:
+      action: stop
+    Jonas:
+      action: stop
+    FuckThisShit:
+      action: stop
+    LilBillyModeSongSkillshot:
+      action: stop   
+    TheRules:
+      action: play
+      priority: 205 
+# reawakening phase 1 complete. get to scoop
+  logicblock_apprentice_phaseone_complete:
+    ModeQualifiedShootScoop:
+      action: play   
+      loops: -1
+      priority: 210
+# reawakening phase 2 started
+  reawakening_p2_phasetwo_left_apprentice_highlighted:
+    ModeQualifiedShootScoop:
+      action: stop
+    QuadShotgunModeStart:
+      action: stop
+    DrillChairModeStart:
+      action: stop
+    FlammableJellyModeStart:
+      action: stop
+    RWModeStart:
+      action: stop
+    ReverseBearTrapModeStart:
+      action: stop
+    ZepsTestModeStart:
+      action: stop      
+    BaseMusic:
+      action: stop
+    DrillAndTapp:
+      action: stop
+    OutOfTime:
+      action: stop
+    Jonas:
+      action: stop
+    TheRules:
+      action: stop 
+    LilBillyModeSongSkillshot:
+      action: stop   
+    FuckThisShit:
+      action: play
+      priority: 205 
+# reawakening phase 1 complete. get to scoop
+  logicblock_survivor_phaseone_complete:
+    ModeQualifiedShootScoop:
+      action: play   
+      loops: -1
+      priority: 210
+# reawakening phase 2 started
+  reawakening_p2_phasetwo_right_apprentice_highlighted:
+    ModeQualifiedShootScoop:
+      action: stop
+    QuadShotgunModeStart:
+      action: stop
+    DrillChairModeStart:
+      action: stop
+    FlammableJellyModeStart:
+      action: stop
+    RWModeStart:
+      action: stop
+    ReverseBearTrapModeStart:
+      action: stop
+    ZepsTestModeStart:
+      action: stop      
+    BaseMusic:
+      action: stop
+    DrillAndTapp:
+      action: stop
+    OutOfTime:
+      action: stop
+    Jonas:
+      action: stop
+    TheRules:
+      action: stop 
+    LilBillyModeSongSkillshot:
+      action: stop   
+    FuckThisShit:
+      action: play
+      priority: 205
+ # reawakening phase 2 started     
+  reawakening_p2_phasetwo_left_survivor_highlighted:
+    ModeQualifiedShootScoop:
+      action: stop
+    QuadShotgunModeStart:
+      action: stop
+    DrillChairModeStart:
+      action: stop
+    FlammableJellyModeStart:
+      action: stop
+    RWModeStart:
+      action: stop
+    ReverseBearTrapModeStart:
+      action: stop
+    ZepsTestModeStart:
+      action: stop      
+    BaseMusic:
+      action: stop
+    DrillAndTapp:
+      action: stop
+    OutOfTime:
+      action: stop
+    Jonas:
+      action: stop
+    TheRules:
+      action: stop 
+    LilBillyModeSongSkillshot:
+      action: stop   
+    FuckThisShit:
+      action: play
+      priority: 205 
+# reawakening phase 2 started
+  reawakening_p2_phasetwo_right_survivor_highlighted:
+    ModeQualifiedShootScoop:
+      action: stop
+    QuadShotgunModeStart:
+      action: stop
+    DrillChairModeStart:
+      action: stop
+    FlammableJellyModeStart:
+      action: stop
+    RWModeStart:
+      action: stop
+    ReverseBearTrapModeStart:
+      action: stop
+    ZepsTestModeStart:
+      action: stop      
+    BaseMusic:
+      action: stop
+    DrillAndTapp:
+      action: stop
+    OutOfTime:
+      action: stop
+    Jonas:
+      action: stop
+    TheRules:
+      action: stop 
+    LilBillyModeSongSkillshot:
+      action: stop   
+    FuckThisShit:
+      action: play
+      priority: 205 
 #event_player: 
 #  slide_base_slide_main_active: e_puzzle_music_off1|0.83s
 #  e_puzzle_music_off1: e_puzzle_music_off2|0.1s
