@@ -1,7 +1,7 @@
 #config_version=6                 
 mode:
   start_events: selection_mode_flammablejelly_selected
-  stop_events: stop_mode_flammablejelly, ball_ended, ball_ending, ball_will_end, player_flammablejelly_60s_flammablejelly_timer_tick{value < 1}
+  stop_events: stop_mode_flammablejelly, ball_ended, ball_ending, ball_will_end, player_flammablejelly_flammablejelly_60s_timer_tick{value < 1}
   priority: 184
  
 ball_saves:
@@ -11,7 +11,7 @@ ball_saves:
 #    grace_period: 2s
 #    enable_events: mode_base_started
 #    disable_events2: ball_save_default_disabled
-    timer_start_events: player_flammablejelly_60s_flammablejelly_timer_tick{value==60}
+    timer_start_events: player_flammablejelly_flammablejelly_60s_timer_tick{value==60}
     early_ball_save_events: sw_outlane, s_trough6_active
     auto_launch: true
     balls_to_save: 1
@@ -37,7 +37,7 @@ sequences:
     events_when_complete: que_flammablejelly_complete
 
 timers:
-  60s_flammablejelly_timer:
+  flammablejelly_60s_timer:
     start_value: 70
     end_value: 0
     direction: down
@@ -96,12 +96,12 @@ variable_player:
     flammablejelly_complete_points:
       int: (current_player.key_combination_bonus + (current_player.candles_used * 3000000)) * (current_player.pf_multiplier)   
       action: add
-  timer_your_timer_tick:
-    60s_flammablejelly_timer:
-      int: device.timers.your_timer.ticks_remaining
-      action: set      
+  timer_flammablejelly_60s_timer_tick:
+    flammablejelly_timer_seconds:
+      int: device.timers.flammablejelly_60s_timer.ticks % 60
+      action: set  
     flammablejelly_2x_timer:
-      int: device.timers.your_timer.ticks_remaining
+      int: device.timers.flammablejelly_60s_timer.ticks_remaining
       action: set    
 # candle action button
   shot_flammablejelly_button_sp_flammablejelly_lit_hit:
@@ -113,27 +113,27 @@ variable_player:
       int: 1
       action: set
 #time bonus reward
-  player_flammablejelly_60s_flammablejelly_timer_tick{value==60}:
+  player_flammablejelly_flammablejelly_60s_timer_tick{value==60}:
     key_combination_bonus:
       int: 15000000
       action: set
-  player_flammablejelly_60s_flammablejelly_timer_tick{value==50}:
+  player_flammablejelly_flammablejelly_60s_timer_tick{value==50}:
     key_combination_bonus:
       int: 10000000
       action: set
-  player_flammablejelly_60s_flammablejelly_timer_tick{value==40}:
+  player_flammablejelly_flammablejelly_60s_timer_tick{value==40}:
     key_combination_bonus:
       int: 6000000
       action: set
-  player_flammablejelly_60s_flammablejelly_timer_tick{value==30}:
+  player_flammablejelly_flammablejelly_60s_timer_tick{value==30}:
     key_combination_bonus:
       int: 4500000
       action: set
-  player_flammablejelly_60s_flammablejelly_timer_tick{value==20}:
+  player_flammablejelly_flammablejelly_60s_timer_tick{value==20}:
     key_combination_bonus:
       int: 3000000
       action: set
-  player_flammablejelly_60s_flammablejelly_timer_tick{value==10}:
+  player_flammablejelly_flammablejelly_60s_timer_tick{value==10}:
     key_combination_bonus:
       int: 0
       action: set
@@ -314,7 +314,7 @@ slides:
   #     font_name: TrajanProRegular
   #     color: FFA500
   #   - type: Text
-  #     text: (player|flammablejelly_60s_flammablejelly_timer_tick) Seconds Left
+  #     text: (player|flammablejelly_flammablejelly_60s_timer_tick) Seconds Left
   #     font_size: 55
   #     font_name: TrajanProRegular
   #     color: FFF700
@@ -448,18 +448,28 @@ widgets:
       outline_color: f0cfab
       outline_width: 2
     - type: Text
-      text: 00:(player|flammablejelly_60s_flammablejelly_timer_tick)
-      font_size: 100
+      text: (player|flammablejelly_timer_seconds)
+      min_digits: 2
+      font_size: 50
       font_name: digitalclockfont
       color: red
-      x: 50%
-      y: 83.2%
-      z: 2
+      x: 54.2%
+      y: 94%
+      z: 3
+    - type: Text
+      text: '00:'
+      min_digits: 2
+      font_size: 50
+      font_name: digitalclockfont
+      color: red
+      x: 47.2%
+      y: 94%
+      z: 3
     - type: rectangle
-      width: 420
-      height: 130
+      width: 210
+      height: 65
       x: 50%
-      y: 84.5%
+      y: 94.5%
       z: 2
       corner_radius: 20
       corner_segments: 20
@@ -714,7 +724,7 @@ widgets:
     
  
 widget_player:
- player_flammablejelly_60s_flammablejelly_timer_tick{value==60}: 
+ player_flammablejelly_flammablejelly_60s_timer_tick{value==60}: 
   w_flammablejellyUI:
     slide: sl_mode_flammablejelly01
     action: add
@@ -894,7 +904,7 @@ shows:
         (leds): off
 
 show_player:
-  player_flammablejelly_60s_flammablejelly_timer_tick{value==62}:
+  player_flammablejelly_flammablejelly_60s_timer_tick{value==62}:
     mystery_flash:
       loops: 0
       speed: 5
@@ -902,7 +912,7 @@ show_player:
         led: l_mystery_scoop
         color1: white
 
-  player_flammablejelly_60s_flammablejelly_timer_tick{value==60}:
+  player_flammablejelly_flammablejelly_60s_timer_tick{value==60}:
     sh_flammablejelly_ballsave:
       show_tokens:
         leds: l_live_again
@@ -1060,38 +1070,38 @@ show_player:
       show_tokens:
         color1: jelly
 
-  player_flammablejelly_60s_flammablejelly_timer_tick{value==50}:
+  player_flammablejelly_flammablejelly_60s_timer_tick{value==50}:
     speaker_heartbeat:
       speed: 2
       show_tokens:
         color1: jelly
-  player_flammablejelly_60s_flammablejelly_timer_tick{value==40}:
+  player_flammablejelly_flammablejelly_60s_timer_tick{value==40}:
     speaker_heartbeat:
       speed: 3
       show_tokens:
         color1: jelly
-  player_flammablejelly_60s_flammablejelly_timer_tick{value==30}:
+  player_flammablejelly_flammablejelly_60s_timer_tick{value==30}:
     speaker_heartbeat:
       speed: 4
       show_tokens:
         color1: jelly
-  player_flammablejelly_60s_flammablejelly_timer_tick{value==20}:
+  player_flammablejelly_flammablejelly_60s_timer_tick{value==20}:
     speaker_heartbeat:
       speed: 5
       show_tokens:
         color1: jelly
-  player_flammablejelly_60s_flammablejelly_timer_tick{value==10}:
+  player_flammablejelly_flammablejelly_60s_timer_tick{value==10}:
     speaker_heartbeat:
       speed: 6
       show_tokens:
         color1: jelly
-  player_flammablejelly_60s_flammablejelly_timer_tick{value==5}:
+  player_flammablejelly_flammablejelly_60s_timer_tick{value==5}:
     speaker_heartbeat:
       speed: 9
       show_tokens:
         color1: jelly
 
-  player_flammablejelly_60s_flammablejelly_timer_tick{value < 1}:
+  player_flammablejelly_flammablejelly_60s_timer_tick{value < 1}:
     fire_starposts: stop
     fire_top_pops: stop
     fire_bottom_pops: stop
@@ -1141,13 +1151,13 @@ sound_player:
   mode_flammablejelly_started:
     FlammableJellyIntro:
       action: play
-  player_flammablejelly_60s_flammablejelly_timer_tick{value==61}:
+  player_flammablejelly_flammablejelly_60s_timer_tick{value==61}:
     FlammableJellyModeStart:
       action: play        
-  timer_60s_flammablejelly_timer_tick{ticks==56}:
+  timer_flammablejelly_60s_timer_tick{ticks==56}:
     FindTheCombination:
       action: play        
-  player_flammablejelly_60s_flammablejelly_timer_tick{value < 1}:
+  player_flammablejelly_flammablejelly_60s_timer_tick{value < 1}:
     FlammableJellyModeStart:
       action: stop
 

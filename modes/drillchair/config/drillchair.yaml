@@ -213,11 +213,14 @@ variable_player:
     drillchair_points:
       int: 110 * (current_player.pf_multiplier)
       action: add
-
-       
-  timer_your_timer_tick:
-    drillchair_60s_timer:
-      int: device.timers.your_timer.ticks_remaining
+      
+  # timer_your_timer_tick:
+  #   drillchair_60s_timer:
+  #     int: device.timers.your_timer.ticks_remaining
+  #     action: set
+  timer_drillchair_60s_timer_tick:
+    drillchair_timer_seconds:
+      int: device.timers.drillchair_60s_timer.ticks % 60
       action: set
 #time bonus reward
   player_drillchair_drillchair_60s_timer_tick{value==60}:
@@ -347,17 +350,29 @@ slides:
       color: ff6700
       
     - type: Text
-      text: 00:(player|drillchair_drillchair_60s_timer_tick)
-      font_size: 100
+      text: (player|drillchair_timer_seconds)
+      min_digits: 2
+      font_size: 50
       font_name: digitalclockfont
       color: red
-      x: 50%
-      y: 83.2%
+      x: 54.2%
+      y: 94%
+      z: 3
+    - type: Text
+      text: '00:'
+      min_digits: 2
+      font_size: 50
+      font_name: digitalclockfont
+      color: red
+      x: 47.2%
+      y: 94%
+      z: 3
     - type: rectangle
-      width: 420
-      height: 130
+      width: 210
+      height: 65
       x: 50%
-      y: 84.5%
+      y: 94.5%
+      z: 2
       corner_radius: 20
       corner_segments: 20
       color: black
@@ -473,17 +488,29 @@ slides:
       color: ff6700
       
     - type: Text
-      text: 00:(player|drillchair_drillchair_60s_timer_tick)
-      font_size: 100
+      text: (player|drillchair_timer_seconds)
+      min_digits: 2
+      font_size: 50
       font_name: digitalclockfont
       color: red
-      x: 50%
-      y: 83.2%
+      x: 54.2%
+      y: 94%
+      z: 3
+    - type: Text
+      text: '00:'
+      min_digits: 2
+      font_size: 50
+      font_name: digitalclockfont
+      color: red
+      x: 47.2%
+      y: 94%
+      z: 3
     - type: rectangle
-      width: 420
-      height: 130
+      width: 210
+      height: 65
       x: 50%
-      y: 84.5%
+      y: 94.5%
+      z: 2
       corner_radius: 20
       corner_segments: 20
       color: black
@@ -630,22 +657,32 @@ widgets:
       outline_color: f0cfab
       outline_width: 2   
     - type: Text
-      text: 00:(player|drillchair_drillchair_60s_timer_tick)
-      font_size: 100
+      text: (player|drillchair_timer_seconds)
+      min_digits: 2
+      font_size: 50
       font_name: digitalclockfont
       color: red
-      x: 50%
-      y: 83.2%
-      z: 2
+      x: 54.2%
+      y: 94%
+      z: 3
+    - type: Text
+      text: '00:'
+      min_digits: 2
+      font_size: 50
+      font_name: digitalclockfont
+      color: red
+      x: 47.2%
+      y: 94%
+      z: 3
     - type: rectangle
-      width: 420
-      height: 130
+      width: 210
+      height: 65
       x: 50%
-      y: 84.5%
+      y: 94.5%
       z: 2
       corner_radius: 20
       corner_segments: 20
-      color: black  
+      color: black
     - type: rectangle
       width: 0
       height: 45

@@ -3,7 +3,7 @@
 #SLOW PULSE ON OFF
 - time: 0
   lights:
-    l_jw_hacksaw: 306155 -f1500ms    # 50 percent teal color 
+    l_jw_taperecorder: 306155 -f1500ms    # 50 percent teal color 
 - time: '+2'
   lights:
-    l_jw_hacksaw: off -f500ms    
+    l_jw_taperecorder: off -f500ms    

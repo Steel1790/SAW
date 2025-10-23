@@ -63,19 +63,29 @@ counters:
 widgets:
   w_puzzle_UI:
     - type: Text
-      text: 00:(player|puzzle_hurryup_t_puzzle_timer_tick)
+      text: (player|puzzle_hurryup_t_puzzle_timer_tick)
+      min_digits: 2
       font_size: 50
       font_name: digitalclockfont
       color: red
-      x: 50%
-      y: 79.2%
-      z: 7
+      x: 54.2%
+      y: 80.2%
+      z: 4
+    - type: Text
+      text: '00:'
+      min_digits: 2
+      font_size: 50
+      font_name: digitalclockfont
+      color: red
+      x: 47.2%
+      y: 80.2%
+      z: 4
     - type: rectangle
       width: 210
       height: 65
       x: 50%
       y: 80.5%
-      z: 7
+      z: 3
       corner_radius: 20
       corner_segments: 20
       color: black        

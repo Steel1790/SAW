@@ -34,7 +34,7 @@ shots:
     switches: s_action_button
     profile: sp_razorwire
     disable_events: mode_razorwire_stopped, mode_razorwire_complete, ball_ended, ball_will_end, shot_razorwire_button_sp_razorwire_lit_hit
-    enable_events: player_razorwire_60s_timer_tick{value==60}
+    enable_events: player_razorwire_razorwire_60s_timer_tick{value==60}
     show_tokens:
       leds: l_action_button
     control_events:
@@ -51,7 +51,7 @@ shots:
     switches: s_action_button
     profile: sp_reversebeartrap
     disable_events: mode_reversebeartrap_stopped, mode_reversebeartrap_complete, ball_ended, ball_will_end, shot_reversebeartrap_button_sp_reversebeartrap_lit_hit
-    enable_events: player_reversebeartrap_120s_reversebeartrap_timer_tick{value==120}
+    enable_events: player_reversebeartrap_reversebeartrap_timer_tick{value==120}
     show_tokens:
       leds: l_action_button
     control_events:
@@ -85,7 +85,7 @@ shots:
     switches: s_action_button
     profile: sp_flammablejelly
     disable_events: mode_flammablejelly_stopped, mode_flammablejelly_complete, ball_ended, ball_will_end, shot_flammablejelly_button_sp_flammablejelly_lit_hit
-    enable_events: player_flammablejelly_60s_flammablejelly_timer_tick{value==60}
+    enable_events: player_flammablejelly_flammablejelly_60s_timer_tick{value==60}
     show_tokens:
       leds: l_action_button
     control_events:
@@ -102,7 +102,7 @@ shots:
     switches: s_action_button
     profile: sp_zeptest
     disable_events: mode_zeptest_stopped, mode_zeptest_complete, ball_ended, ball_will_end, shot_zeptest_button_sp_zeptest_lit_hit
-    enable_events: player_zeptest_60s_zeptest_timer_tick{value==60}
+    enable_events: player_zeptest_zeptest_60s_timer_tick{value==60}
     show_tokens:
       leds: l_action_button
     control_events:
@@ -145,11 +145,11 @@ shots:
       - events: mode_shackle_multiball_stopped
         state: 0
   shot_full_workshop_button:
-    advance_events: minimode_full_workshop_complete, slide_sl_mode_zeptest01_active{current_player.syringes_enabled==1}
+    advance_events: minimode_full_workshop_complete # , slide_sl_mode_zeptest01_active{current_player.syringes_enabled==1}
     switches: s_action_button
     profile: sp_full_workshop
     disable_events: mode_drillchair_stopped, mode_flammablejelly_stopped, mode_quadshotgun_stopped, mode_razorwire_stopped, mode_reversebeartrap_stopped, mode_zeptest_stopped, ball_ended, ball_will_end, shot_full_workshop_button_sp_full_workshop_lit_hit
-    enable_events: player_drillchair_drillchair_60s_timer_tick{value==60}, player_flammablejelly_60s_flammablejelly_timer_tick{value==60}, player_quadshotgun_quadshotgun_60s_timer_tick{value==60}, player_razorwire_60s_timer_tick{value==60}, player_reversebeartrap_120s_reversebeartrap_timer_tick{value==120}, player_zeptest_60s_zeptest_timer_tick{value==60}
+    enable_events: player_drillchair_drillchair_60s_timer_tick{value==60}, player_flammablejelly_flammablejelly_60s_timer_tick{value==60}, player_quadshotgun_quadshotgun_60s_timer_tick{value==60}, player_razorwire_razorwire_60s_timer_tick{value==60}, player_reversebeartrap_reversebeartrap_timer_tick{value==120}, player_zeptest_zeptest_60s_timer_tick{value==60}
     show_tokens:
       leds: l_action_button
     control_events:
@@ -750,7 +750,7 @@ counters:
     disable_on_complete: false
     events_when_complete: start_mystery_mode
     enable_events: mode_base_started, mode_drillchair_stopped, mode_flammablejelly_stopped, mode_quadshotgun_stopped, mode_razorwire_stopped, mode_reversebeartrap_stopped, mode_zeptest_stopped, mode_survival_instinct_stopped, mode_puzzle_hurryup_stopped, mode_make_your_choice_hurryup_stopped, mode_hacksaw_multiball_stopped, mode_jigsaw_multiball_stopped, mode_shackle_multiball_stopped, mode_hostage_stopped
-    disable_events: multiball_active, mode_selection_mode_started, mode_hacksaw_multiball_started, mode_jigsaw_multiball_started, mode_shackle_multiball_started, mode_hostage_started, e_primary_mode_active
+    disable_events: multiball_active, mode_selection_mode_started, mode_hacksaw_multiball_started, mode_jigsaw_multiball_started, mode_shackle_multiball_started, mode_hostage_started, e_primary_mode_active, logicblock_trap_select_qualify_counter_hit
     reset_events: sh_select_mode_hit
     count_events: sw_lower_drop_target
 

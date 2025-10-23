@@ -1,7 +1,7 @@
 #show_version=6
 - time: 0
   lights:
-    l_jw_hacksaw: 00C190    # 100 percent teal color -add a ball during mb
+    l_jw_taperecorder: 00C190    # 100 percent teal color -add a ball during mb
 - time: '+1'
   lights:
-    l_jw_hacksaw: off
+    l_jw_taperecorder: off

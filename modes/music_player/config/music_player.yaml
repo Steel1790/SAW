@@ -875,7 +875,7 @@ sound_player:
       delay: 10s
       action: play
       loops: -1   
-  player_razorwire_60s_timer_tick{value < 1}:
+  player_razorwire_razorwire_60s_timer_tick{value < 1}:
     RazorWireFail:
       action: play
 
@@ -964,7 +964,7 @@ sound_player:
       events_when_played: Que_BaseMusic_Progression
     FlammableJellyModeStart:
       action: stop
-  player_flammablejelly_60s_flammablejelly_timer_tick{value < 1}:
+  player_flammablejelly_flammablejelly_60s_timer_tick{value < 1}:
     FlammableJellyFail:
       action: play
 
