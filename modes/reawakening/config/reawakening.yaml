@@ -27,6 +27,10 @@ variable_player:
     score: 7500000
   logicblock_survivor_phaseone_hit:  
     score: 7500000
+  timer_phaseone_apprentice_timer_tick:
+    phaseone_apprentice_timer_seconds:
+      int: device.timers.phaseone_apprentice_timer.ticks % 60
+      action: set 
 # final wizard mode
 # 3 tier - choose your own adventure
 # back to scoop each tier completion to choose next path/decision
@@ -92,9 +96,9 @@ sequences:
 
 timers:
   phaseone_apprentice_timer:
-    start_value: 0
-    end_value: 22
-    direction: up
+    start_value: 20
+    end_value: 0
+    direction: down
     control_events:
       - action: start
 #update to when opening slide ends  
@@ -346,6 +350,10 @@ slides:
     widgets:
     - type: video
       video: mode_reawakening_p1s
+  mode_reawakening_p1s_selected:
+    widgets:
+    - type: video
+      video: mode_reawakening_apprentice_phaseone
 slide_player:
   reawakening_phaseone_apprentice_highlighted: 
     mode_reawakening_p1a:
@@ -358,8 +366,202 @@ slide_player:
       action: remove
     mode_reawakening_p1s:      
       action: remove
+    mode_reawakening_p1s_selected:
+      priority: 400
   reawakening_phaseone_survivor_selected: 
     mode_reawakening_p1s:      
       action: remove
     mode_reawakening_p1a:      
       action: remove
+  logicblock_apprentice_phaseone_complete:
+    mode_reawakening_p1s_selected:
+      action: remove
+
+widgets:
+   w_reawakeningUI:
+    - type: image
+      image: BottomFrame
+      y: 85
+      # x: 1
+      z: 2
+#player 1 widget
+    - type: text
+      text: (player1|score)
+      number_grouping: true  
+   #   y: 36
+      y: 37
+      x: 252
+      z: 8
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      font_name: AeroMaticsDisplaRegular
+      color: black
+    - type: text
+      text: (player1|score)
+      number_grouping: true  
+      y: 36
+      x: 253
+      z: 8
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      font_name: AeroMaticsDisplaRegular
+      outline_color: f0cfab
+      outline_width: 2
+#player 2 widget     
+    - type: text
+      text: (player2|score)
+      number_grouping: true
+      y: 37
+      x: left+579
+      z: 8
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      font_name: AeroMaticsDisplaRegular
+      color: black
+    - type: text
+      text: (player2|score)
+      number_grouping: true
+      y: 36
+      x: left+580
+      z: 7
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      font_name: AeroMaticsDisplaRegular
+      outline_color: f0cfab
+      outline_width: 2
+#player 3 widget
+    - type: Text
+      text: (player3|score)
+      number_grouping: true   
+      font_name: AeroMaticsDisplaRegular
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      y: 37
+      x: left+908
+      z: 8
+      color: black
+    - type: Text
+      text: (player3|score)
+      number_grouping: true   
+      font_name: AeroMaticsDisplaRegular
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      y: 36
+      x: left+909
+      z: 7
+      outline_color: f0cfab
+      outline_width: 2
+#player 4 widget
+    - type: Text
+      text: (player4|score)
+      number_grouping: true       
+      font_name: AeroMaticsDisplaRegular
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      y: 37
+      x: left+1239
+      z: 8
+      color: black
+    - type: Text
+      text: (player4|score)
+      number_grouping: true       
+      font_name: AeroMaticsDisplaRegular
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      y: 36
+      x: left+1240
+      z: 7
+      outline_color: f0cfab
+      outline_width: 2
+    - type: Text
+      text: (player|phaseone_apprentice_timer_seconds)
+      min_digits: 2
+      font_size: 50
+      font_name: digitalclockfont
+      color: red
+      x: 54.2%
+      y: 94%
+      z: 3
+    - type: Text
+      text: '00:'
+      min_digits: 2
+      font_size: 50
+      font_name: digitalclockfont
+      color: red
+      x: 47.2%
+      y: 94%
+      z: 3
+    - type: rectangle
+      width: 210
+      height: 65
+      x: 50%
+      y: 94.5%
+      z: 2
+      corner_radius: 20
+      corner_segments: 20
+      color: black
+
+#current player widget
+   w_current_player1:
+    - type: image
+      image: Player1Hacksaw
+      opacity: 1.0
+      y: 4
+      x: 35
+      z: 3
+      anchor_x: left
+      anchor_y: bottom
+   w_current_player2:
+    - type: image
+      image: Player2Hacksaw
+      opacity: 1.0
+      y: 4
+      x: left+515
+      z: 3
+      anchor_y: bottom  
+   w_current_player3:
+    - type: image
+      image: Player3Hacksaw
+      opacity: 1.0
+      y: 4
+      x: left+844
+      z: 3
+      anchor_y: bottom  
+   w_current_player4:
+    - type: image
+      image: Player4Hacksaw
+      opacity: 1.0
+      y: 4
+      x: left+1174
+      z: 3
+      anchor_y: bottom
+
+widget_player:
+ reawakening_phaseone_apprentice_selected:
+   w_reawakeningUI:
+     slide: mode_reawakening_p1s_selected
+     action: add
+ reawakening_phaseone_apprentice_selected{current_player.v_current_player==1}:
+   w_current_player1:
+     slide: mode_reawakening_p1s_selected
+     action: add
+ reawakening_phaseone_apprentice_selected{current_player.v_current_player==2}:
+   w_current_player2:
+     slide: mode_reawakening_p1s_selected
+     action: add
+ reawakening_phaseone_apprentice_selected{current_player.v_current_player==3}:
+   w_current_player3:
+     slide: mode_reawakening_p1s_selected
+     action: add
+ reawakening_phaseone_apprentice_selected{current_player.v_current_player==4}:
+   w_current_player4:
+     slide: mode_reawakening_p1s_selected
+     action: add

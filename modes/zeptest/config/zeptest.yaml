@@ -246,7 +246,7 @@ shots:
   shot_zeptest_right_loop:
     reset_events: mode_zeptest_stopped, player_turn_stopped, player_turn_ended
     disable_events: shot_zeptest_right_loop_sp_zep_zeptest_collected_hit
-    switches: s_right_loop_bottom, s_right_loop_top
+    switches: s_right_loop_top
     profile: sp_zep
     show_tokens:
       leds: l_right_loop_arrow

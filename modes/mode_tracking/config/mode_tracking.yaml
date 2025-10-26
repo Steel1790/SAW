@@ -698,6 +698,11 @@ variable_player:
     zeptest_attempted:
       int: 1
       action: set
+#reawakening mode qualified
+  player_modes_completed{value==6}:
+    reawakening_qualified:
+      int: 1
+      action: set
 #reawakening mode flag
   selection_mode_reawakening_selected:
     reawakening_phaseone_attempted:

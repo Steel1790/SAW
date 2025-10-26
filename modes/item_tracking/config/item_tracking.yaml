@@ -27,7 +27,7 @@ counters:
     count_events: sw_standup  
     
   minimode_slings_counter:
-    starting_count: 40
+    starting_count: 75
     count_complete_value: 0
     direction: down
     start_enabled: true
@@ -130,7 +130,7 @@ show_player:
   counter_minimode_standups_counter_hit{hits==10}:
     item_candle_pulse: stop
 # bathtub light progress - 40 slings
-  counter_minimode_slings_counter_hit{hits<40}:
+  counter_minimode_slings_counter_hit{hits<75}:
     item_bathtub_flash:
       loops: 4
       speed: 10
@@ -140,7 +140,7 @@ show_player:
       loops: -1
       speed: 1
       priority: 121 
-  counter_minimode_slings_counter_hit{hits==40}:
+  counter_minimode_slings_counter_hit{hits==75}:
     item_bathtub_pulse: stop
 # tape recorder light progress - 9 inlanes
   counter_minimode_inlanes_counter_hit{hits<9}:

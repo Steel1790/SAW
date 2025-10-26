@@ -573,7 +573,7 @@ variable_player:
     bonus_bathtubs: 1
     value_type: int  
     visual_slings_counter:
-      int: 40
+      int: 75
       action: set    
   minimode_inlanes_complete:
     #score: 3000000   
