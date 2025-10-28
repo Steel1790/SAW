@@ -103,26 +103,28 @@ timers:
       - action: start
 #update to when opening slide ends  
         event: reawakening_phaseone_apprentice_selected
-      - action: reset
+      - action: restart
         event: shot_reawakening_razorwire_sp_reawakening_phaseone_lit_hit
-      - action: reset
+      - action: restart
         event: shot_reawakening_drillchair_sp_reawakening_phaseone_lit_hit
-      - action: reset
+      - action: restart
         event: shot_reawakening_zeptest_sp_reawakening_phaseone_lit_hit
-      - action: reset
+      - action: restart
         event: shot_reawakening_flammablejelly_sp_reawakening_phaseone_lit_hit
-      - action: reset   
+      - action: restart 
         event: e_reawakening_phaseone_shot_reset
       - action: stop
         event: shot_reawakening_quadshotgun_sp_reawakening_phaseone_lit_hit
         
         
 event_player: 
-  player_reawakening_phaseone_apprentice_timer_tick{value==20}: e_reawakening_phaseone_shot_reset
+  player_reawakening_phaseone_apprentice_timer_tick{value==0}: e_reawakening_phaseone_shot_reset
   e_reawakening_phaseone_shot_reset{device.sequences.apprentice_phaseone.value==1}: e_reawakening_phaseone_a_zeptest_reset
   e_reawakening_phaseone_shot_reset{device.sequences.apprentice_phaseone.value==2}: e_reawakening_phaseone_a_razorwire_reset
   e_reawakening_phaseone_shot_reset{device.sequences.apprentice_phaseone.value==3}: e_reawakening_phaseone_a_flammablejelly_reset
   e_reawakening_phaseone_shot_reset{device.sequences.apprentice_phaseone.value==4}: e_reawakening_phaseone_a_quadshotgun_reset
+  reawakening_phaseone_apprentice_selected: e_reawakening_selected
+  reawakening_phaseone_survivor_selected: e_reawakening_selected
 
 
 
@@ -164,6 +166,70 @@ show_player:
       show_tokens:
         leds: l_mode_scoop
       loops: -1
+#apprentice phase 1 lighting when selected
+  reawakening_phaseone_apprentice_selected:
+    mystery_flash:
+      loops: 0
+      speed: 5
+      show_tokens:
+        led: l_mystery_scoop
+        color1: white
+    gi_on:
+      show_tokens:
+        color1: white
+    billy_on:
+      show_tokens:
+        color1: beartrap
+    starpost_on:
+      show_tokens:
+        color1: white
+    speaker_heartbeat:
+      show_tokens:
+        color1: beartrap
+    trough_on:
+      show_tokens:
+        color1: white
+    flipper_on:
+      show_tokens:
+        color1: beartrap
+    cabinet_heartbeat:
+      show_tokens:
+        color1: beartrap
+    topper_heartbeat:
+      show_tokens:
+        color1: beartrap
+#survivor phase 1 lighting when selected
+  reawakening_phaseone_survivor_selected:
+    mystery_flash:
+      loops: 0
+      speed: 5
+      show_tokens:
+        led: l_mystery_scoop
+        color1: white
+    gi_on:
+      show_tokens:
+        color1: zepstest
+    billy_on:
+      show_tokens:
+        color1: zepstest
+    starpost_on:
+      show_tokens:
+        color1: 007E5E
+    speaker_heartbeat:
+      show_tokens:
+        color1: zepstest
+    trough_on:
+      show_tokens:
+        color1: zepstest
+    flipper_on:
+      show_tokens:
+        color1: zepstest
+    cabinet_heartbeat:
+      show_tokens:
+        color1: zepstest
+    topper_heartbeat:
+      show_tokens:
+        color1: zepstest
 
   logicblock_apprentice_phaseone_complete:
     reawakening_mode_lit:
@@ -188,11 +254,24 @@ show_player:
         loops: 0
         speed: 45
         priority: 190
+      beartrap_shot_hit_playfield:
+        loops: 0
+        speed: 30
+      beartrap_shot_hit_discs:
+        loops: 0
+        speed: 30
   logicblock_survivor_phaseone_hit:  
       gi_die_hurryup_intro:
         loops: 0
         speed: 45
         priority: 190
+      beartrap_shot_hit_playfield:
+        loops: 0
+        speed: 30
+      beartrap_shot_hit_discs:
+        loops: 0
+        speed: 30
+  
 shots:
 #phase one apprentice
   shot_reawakening_drillchair:
@@ -350,10 +429,22 @@ slides:
     widgets:
     - type: video
       video: mode_reawakening_p1s
-  mode_reawakening_p1s_selected:
+  mode_reawakening_p1a_selected:
     widgets:
     - type: video
       video: mode_reawakening_apprentice_phaseone
+  mode_reawakening_p1s_selected:
+    widgets:
+    - type: video
+      video: mode_reawakening_survivor_phaseone
+  reawakening_p1a_scoop:
+    widgets:
+    - type: video
+      video: mode_reawakening_apprentice_phaseone_scoop
+  reawakening_p1s_scoop:
+    widgets:
+    - type: video
+      video: mode_reawakening_survivor_phaseone_scoop
 slide_player:
   reawakening_phaseone_apprentice_highlighted: 
     mode_reawakening_p1a:
@@ -362,23 +453,32 @@ slide_player:
     mode_reawakening_p1s:
       priority: 400   
   reawakening_phaseone_apprentice_selected: 
+    mode_reawakening_p1a_selected:
+      priority: 401
     mode_reawakening_p1a:      
       action: remove
     mode_reawakening_p1s:      
       action: remove
-    mode_reawakening_p1s_selected:
-      priority: 400
   reawakening_phaseone_survivor_selected: 
+    mode_reawakening_p1s_selected:
+      priority: 401
     mode_reawakening_p1s:      
       action: remove
     mode_reawakening_p1a:      
       action: remove
   logicblock_apprentice_phaseone_complete:
+    mode_reawakening_p1a_selected:
+      action: remove
+    reawakening_p1a_scoop:
+      priority: 400
+  logicblock_survivor_phaseone_complete:
     mode_reawakening_p1s_selected:
       action: remove
+    reawakening_p1s_scoop:
+      priority: 400
 
 widgets:
-   w_reawakeningUI:
+   w_reawakening_apprentice_phaseone_UI:
     - type: image
       image: BottomFrame
       y: 85
@@ -508,6 +608,110 @@ widgets:
       corner_radius: 20
       corner_segments: 20
       color: black
+#phase one survivor 
+   w_reawakening_survivor_phaseone_UI:
+    - type: image
+      image: BottomFrame
+      y: 85
+      # x: 1
+      z: 2
+#player 1 widget
+    - type: text
+      text: (player1|score)
+      number_grouping: true  
+   #   y: 36
+      y: 37
+      x: 252
+      z: 8
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      font_name: AeroMaticsDisplaRegular
+      color: black
+    - type: text
+      text: (player1|score)
+      number_grouping: true  
+      y: 36
+      x: 253
+      z: 8
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      font_name: AeroMaticsDisplaRegular
+      outline_color: f0cfab
+      outline_width: 2
+#player 2 widget     
+    - type: text
+      text: (player2|score)
+      number_grouping: true
+      y: 37
+      x: left+579
+      z: 8
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      font_name: AeroMaticsDisplaRegular
+      color: black
+    - type: text
+      text: (player2|score)
+      number_grouping: true
+      y: 36
+      x: left+580
+      z: 7
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      font_name: AeroMaticsDisplaRegular
+      outline_color: f0cfab
+      outline_width: 2
+#player 3 widget
+    - type: Text
+      text: (player3|score)
+      number_grouping: true   
+      font_name: AeroMaticsDisplaRegular
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      y: 37
+      x: left+908
+      z: 8
+      color: black
+    - type: Text
+      text: (player3|score)
+      number_grouping: true   
+      font_name: AeroMaticsDisplaRegular
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      y: 36
+      x: left+909
+      z: 7
+      outline_color: f0cfab
+      outline_width: 2
+#player 4 widget
+    - type: Text
+      text: (player4|score)
+      number_grouping: true       
+      font_name: AeroMaticsDisplaRegular
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      y: 37
+      x: left+1239
+      z: 8
+      color: black
+    - type: Text
+      text: (player4|score)
+      number_grouping: true       
+      font_name: AeroMaticsDisplaRegular
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      y: 36
+      x: left+1240
+      z: 7
+      outline_color: f0cfab
+      outline_width: 2
 
 #current player widget
    w_current_player1:
@@ -545,23 +749,86 @@ widgets:
       anchor_y: bottom
 
 widget_player:
+#phase one apprentice
  reawakening_phaseone_apprentice_selected:
-   w_reawakeningUI:
-     slide: mode_reawakening_p1s_selected
+   w_reawakening_apprentice_phaseone_UI:
+     slide: mode_reawakening_p1a_selected
      action: add
  reawakening_phaseone_apprentice_selected{current_player.v_current_player==1}:
    w_current_player1:
-     slide: mode_reawakening_p1s_selected
+     slide: mode_reawakening_p1a_selected
      action: add
  reawakening_phaseone_apprentice_selected{current_player.v_current_player==2}:
    w_current_player2:
-     slide: mode_reawakening_p1s_selected
+     slide: mode_reawakening_p1a_selected
      action: add
  reawakening_phaseone_apprentice_selected{current_player.v_current_player==3}:
    w_current_player3:
-     slide: mode_reawakening_p1s_selected
+     slide: mode_reawakening_p1a_selected
      action: add
  reawakening_phaseone_apprentice_selected{current_player.v_current_player==4}:
    w_current_player4:
+     slide: mode_reawakening_p1a_selected
+     action: add
+#phase one survivor
+ reawakening_phaseone_survivor_selected:
+   w_reawakening_survivor_phaseone_UI:
      slide: mode_reawakening_p1s_selected
+     action: add
+ reawakening_phaseone_survivor_selected{current_player.v_current_player==1}:
+   w_current_player1:
+     slide: mode_reawakening_p1s_selected
+     action: add
+ reawakening_phaseone_survivor_selected{current_player.v_current_player==2}:
+   w_current_player2:
+     slide: mode_reawakening_p1s_selected
+     action: add
+ reawakening_phaseone_survivor_selected{current_player.v_current_player==3}:
+   w_current_player3:
+     slide: mode_reawakening_p1s_selected
+     action: add
+ reawakening_phaseone_survivor_selected{current_player.v_current_player==4}:
+   w_current_player4:
+     slide: mode_reawakening_p1s_selected
+     action: add
+#phase two scoop lit
+ logicblock_apprentice_phaseone_complete:
+   w_reawakening_apprentice_phaseone_UI:
+     slide: reawakening_p1a_scoop
+     action: add
+ logicblock_apprentice_phaseone_complete{current_player.v_current_player==1}:
+   w_current_player1:
+     slide: reawakening_p1a_scoop
+     action: add
+ logicblock_apprentice_phaseone_complete{current_player.v_current_player==2}:
+   w_current_player2:
+     slide: reawakening_p1a_scoop
+     action: add
+ logicblock_apprentice_phaseone_complete{current_player.v_current_player==3}:
+   w_current_player3:
+     slide: reawakening_p1a_scoop
+     action: add
+ logicblock_apprentice_phaseone_complete{current_player.v_current_player==4}:
+   w_current_player4:
+     slide: reawakening_p1a_scoop
+     action: add
+ logicblock_survivor_phaseone_complete:
+   w_reawakening_survivor_phaseone_UI:
+     slide: reawakening_p1s_scoop
+     action: add
+ logicblock_survivor_phaseone_complete{current_player.v_current_player==1}:
+   w_current_player1:
+     slide: reawakening_p1s_scoop
+     action: add
+ logicblock_survivor_phaseone_complete{current_player.v_current_player==2}:
+   w_current_player2:
+     slide: reawakening_p1s_scoop
+     action: add
+ logicblock_survivor_phaseone_complete{current_player.v_current_player==3}:
+   w_current_player3:
+     slide: reawakening_p1s_scoop
+     action: add
+ logicblock_survivor_phaseone_complete{current_player.v_current_player==4}:
+   w_current_player4:
+     slide: reawakening_p1s_scoop
      action: add

@@ -606,7 +606,7 @@ widgets:
       z: 3
     - type: Text
       text: '(player|rbt_timer_minutes):'
-      min_digits: 2
+      min_digits: 3
       font_size: 50
       font_name: digitalclockfont
       color: red
@@ -1123,6 +1123,9 @@ show_player:
     speaker_heartbeat:
       show_tokens:
         color1: beartrap
+    trough_on:
+      show_tokens:
+        color1: beartrap_alt
     flipper_on:
       show_tokens:
         color1: beartrap

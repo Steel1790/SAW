@@ -1,7 +1,7 @@
 #config_version=6
 mode:
   start_events: start_mystery_mode
-  stop_events: ball_ended, e_release_mystery, sh_select_mode_hit, mode_hacksaw_multiball_started, mode_shackle_multiball_started, mode_jigsaw_multiball_started, mode_hostage_started, mode_make_your_choice_hurryup_started, mode_puzzle_hurryup_started, mode_survival_instinct_started, mode_lil_billy_started, e_primary_mode_active
+  stop_events: ball_ended, e_release_mystery, sh_select_mode_hit, mode_hacksaw_multiball_started, mode_shackle_multiball_started, mode_jigsaw_multiball_started, mode_hostage_started, mode_make_your_choice_hurryup_started, mode_puzzle_hurryup_started, mode_survival_instinct_started, mode_lil_billy_started, e_primary_mode_active, e_reawakening_selected
   priority: 182
 
 

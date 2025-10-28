@@ -696,7 +696,7 @@ variable_player:
       int: 10
       action: set
     visual_slings_counter:
-      int: 40
+      int: 75
       action: set
     visual_inlanes_counter:
       int: 9
@@ -4924,7 +4924,7 @@ ball_holds:
     hold_devices: bd_scoop
     enable_events: sh_select_mode_hit, e_enable_mystery
     disable_events: multiball_active, e_primary_mode_active, e_release_mystery
-    release_one_events: e_primary_mode_active, e_release_mystery
+    release_one_events: e_primary_mode_active, e_release_mystery, e_reawakening_selected
 
 coil_player:
   logicblock_cnt_negative_shot_counter_updated{value==0}:

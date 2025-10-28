@@ -18,6 +18,38 @@ mode_settings:
   next_item_events: s_left_flipper_button_active
   previous_item_events: s_right_flipper_button_active
 
+# phase 2 
+# apprentice left option - abduction - assist in abducting next game subjects. Disable the security cameras (left+mid+right standup) before moving in on the subject. Then both shackle stand ups then up the right up to restrain the subject (20sec resetting timer). Then get back to the lit scoop. (16M each lit shot)
+# apprentice right option - stage the game - assist in staging next set of games. Collect 1 of each shot to fill Jigsaw's Workshop in 45 seconds or completely restart. Upon completion the scoop will be lit. (8M each lit shot)
+
+accruals:
+#phase 2 apprentice abduction part 1
+  acc_phasetwo_apprentice_abduction_partone:
+    events:
+      - shot_reawakening_p2_apprentice_abduction_left_standup_sp_phasetwo_apprentice_abduction_lit_hit
+      - shot_reawakening_p2_apprentice_abduction_middle_standup_sp_phasetwo_apprentice_abduction_lit_hit
+      - shot_reawakening_p2_apprentice_abduction_right_standup_sp_phasetwo_apprentice_abduction_lit_hit
+    reset_on_complete: false
+    persist_state: true
+    disable_on_complete: false
+    enable_events: reawakening_p2_phasetwo_left_apprentice_selected
+    disable_events: e_phasetwo_apprentice_abduction_partone_complete
+    events_when_complete: e_phasetwo_apprentice_abduction_partone_complete
+
+#phase 2 apprentice abduction part 2
+  acc_phasetwo_apprentice_abduction_parttwo:
+    events:
+      - shot_reawakening_p2_apprentice_abduction_left_standup_right_ramp_sp_phasetwo_apprentice_abduction_lit_hit
+      - shot_reawakening_p2_apprentice_abduction_right_standup_right_ramp_sp_phasetwo_apprentice_abduction_lit_hit
+      - shot_reawakening_p2_apprentice_abduction_right_ramp_sp_phasetwo_apprentice_abduction_lit_hit
+    reset_on_complete: false
+    persist_state: true
+    disable_on_complete: false
+    reset_events: e_reawakening_phasetwo_left_apprentice_shot_reset
+    enable_events: e_phasetwo_apprentice_abduction_partone_complete
+    disable_events: e_phasetwo_apprentice_abduction_parttwo_complete
+    events_when_complete: e_phasetwo_apprentice_abduction_parttwo_complete
+
 variable_player:
   carousel_phasetwo_left_apprentice_selected:
     selected_mode:
@@ -43,18 +75,22 @@ variable_player:
     selected_mode:
       action: set
       string: 'selection_mode_phasethree_survivor_highlighted'
-  logicblock_apprentice_phasetwo_hit:
-    score: 11500000
+  logicblock_acc_phasetwo_apprentice_abduction_partone_hit:
+    score: 16000000
+  logicblock_acc_phasetwo_apprentice_abduction_parttwo_hit:
+    score: 16000000
   logicblock_survivor_phasetwo_hit:  
     score: 11500000
+#apprentice left/abduction timer for part two
+  timer_phasetwo_left_apprentice_timer_tick:
+    phasetwo_apprentice_left_timer_seconds:
+      int: device.timers.phasetwo_left_apprentice_timer.ticks % 60
+      action: set  
 sequences:
-  apprentice_phasetwo:
+  apprentice_abduction_phasetwo:
     events:
-      - shot_reawakening_p2_drillchair_sp_reawakening_phasetwo_lit_hit
-      - shot_reawakening_p2_zeptest_sp_reawakening_phasetwo_lit_hit  
-      - shot_reawakening_p2_razorwire_sp_reawakening_phasetwo_lit_hit
-      - shot_reawakening_p2_flammablejelly_sp_reawakening_phasetwo_lit_hit
-      - shot_reawakening_p2_quadshotgun_sp_reawakening_phasetwo_lit_hit
+      - e_phasetwo_apprentice_abduction_partone_complete
+      - e_phasetwo_apprentice_abduction_parttwo_complete
     reset_on_complete: false
     persist_state: true
     disable_on_complete: true
@@ -75,54 +111,45 @@ sequences:
 
 timers:
   phasetwo_left_apprentice_timer:
-    start_value: 0
-    end_value: 22
-    direction: up
+    start_value: 20
+    end_value: 0
+    direction: down
     control_events:
-      - action: start
-#update to when opening slide ends  
-        event: reawakening_phasetwo_left_apprentice_selected
-      - action: reset
-        event: shot_reawakening_p2_razorwire_sp_reawakening_phasetwo_lit_hit
-      - action: reset
-        event: shot_reawakening_p2_drillchair_sp_reawakening_phasetwo_lit_hit
-      - action: reset
-        event: shot_reawakening_p2_zeptest_sp_reawakening_phasetwo_lit_hit
-      - action: reset
-        event: shot_reawakening_p2_flammablejelly_sp_reawakening_phasetwo_lit_hit
-      - action: reset   
-        event: e_reawakening_phasetwo_shot_reset
+      - action: start 
+        event: e_phasetwo_apprentice_abduction_partone_complete
+      - action: restart 
+        event: e_reawakening_phasetwo_left_apprentice_shot_reset
       - action: stop
-        event: shot_reawakening_p2_quadshotgun_sp_reawakening_phasetwo_lit_hit
+        event: e_phasetwo_apprentice_abduction_parttwo_complete
         
         
 event_player: 
-  player_reawakening_phasetwo_left_apprentice_timer_tick{value==20}: e_reawakening_phasetwo_shot_reset
-  e_reawakening_phasetwo_shot_reset{device.sequences.apprentice_phasetwo.value==1}: e_reawakening_phasetwo_a_zeptest_reset
-  e_reawakening_phasetwo_shot_reset{device.sequences.apprentice_phasetwo.value==2}: e_reawakening_phasetwo_a_razorwire_reset
-  e_reawakening_phasetwo_shot_reset{device.sequences.apprentice_phasetwo.value==3}: e_reawakening_phasetwo_a_flammablejelly_reset
-  e_reawakening_phasetwo_shot_reset{device.sequences.apprentice_phasetwo.value==4}: e_reawakening_phasetwo_a_quadshotgun_reset
+  player_reawakening_p2_phasetwo_left_apprentice_timer_tick{value==0}: e_reawakening_phasetwo_left_apprentice_shot_reset
+  reawakening_p2_phasetwo_left_apprentice_selected: e_reawakening_selected
+  reawakening_p2_phasetwo_right_apprentice_selected: e_reawakening_selected
+  reawakening_p2_phasetwo_left_survivor_selected: e_reawakening_selected
+  reawakening_p2_phasetwo_right_survivor_selected: e_reawakening_selected
 
 
 
 shot_profiles:
- sp_reawakening_phasetwo:
-   advance_on_hit: false
-   states:
-     - name: reawakening_p2_off
-       show: "off"  
-     - name: lit
-       show: "sh_reawakening_p2a_ready"
+  sp_phasetwo_apprentice_abduction:
+    advance_on_hit: false
+    states:
+      - name: phasetwo_apprentice_abduction_not_ready
+        show: "off"
+      - name: lit
+        show: "sh_reawakening_p2a_abduction_ready"
 
 shows:
-  sh_reawakening_p2a_ready:
+  sh_reawakening_p2a_abduction_ready:
    - duration: 0.15s
      lights:
        (leds): beartrap
    - duration: 0.15s
      lights:
        (leds): off
-  sh_reawakening_p2a_ready_alt:
+  sh_reawakening_p2a_abduction_ready_alt:
    - duration: 0.15s
      lights:
        (leds): beartrap
@@ -138,12 +165,38 @@ shows:
         (leds): off
 
 show_player:
-  logicblock_apprentice_phasetwo_complete:
-    reawakening_p2_mode_lit:
+  reawakening_p2_phasetwo_left_apprentice_selected:
+    mystery_flash:
+      loops: 0
+      speed: 5
       show_tokens:
-        leds: l_mode_scoop
-      loops: -1
-  logicblock_survivor_phasetwo_complete:
+        led: l_mystery_scoop
+        color1: white
+    gi_on:
+      show_tokens:
+        color1: beartrap_alt
+    billy_on:
+      show_tokens:
+        color1: beartrap
+    starpost_on:
+      show_tokens:
+        color1: beartrap_alt
+    speaker_heartbeat:
+      show_tokens:
+        color1: beartrap
+    trough_on:
+      show_tokens:
+        color1: beartrap_alt
+    flipper_on:
+      show_tokens:
+        color1: beartrap
+    cabinet_heartbeat:
+      show_tokens:
+        color1: beartrap
+    topper_heartbeat:
+      show_tokens:
+        color1: beartrap
+  logicblock_apprentice_abduction_phasetwo_complete:
     reawakening_p2_mode_lit:
       show_tokens:
         leds: l_mode_scoop
@@ -156,168 +209,96 @@ show_player:
     off:
       show_tokens:
         leds: l_mode_scoop
-  logicblock_apprentice_phasetwo_hit:
+  logicblock_apprentice_abduction_phasetwo_hit:
       gi_die_hurryup_intro:
         loops: 0
         speed: 45
         priority: 190
-  logicblock_survivor_phasetwo_hit:
-      gi_die_hurryup_intro:
+#apprentice left/abduction lit hit
+  logicblock_acc_phasetwo_apprentice_abduction_partone_hit:
+      beartrap_shot_hit_playfield:
         loops: 0
-        speed: 45
-        priority: 190
+        speed: 30
+      beartrap_shot_hit_discs:
+        loops: 0
+        speed: 30
+  logicblock_acc_phasetwo_apprentice_abduction_parttwo_hit:
+      beartrap_shot_hit_playfield:
+        loops: 0
+        speed: 30
+      beartrap_shot_hit_discs:
+        loops: 0
+        speed: 30
 
 shots:
-#phase one apprentice
-  shot_reawakening_p2_drillchair:
-    switches: s_left_bottom_jet_bumper, s_right_bottom_jet_bumper, s_upper_bottom_jet_bumper
-    profile: sp_reawakening_phasetwo
-    show_tokens:
-      leds: drill_flasher
-    control_events:
-      - events: reawakening_p2_phasetwo_left_apprentice_selected
-        state: 1
-      - events: reawakening_p2_phasetwo_right_survivor_selected
-        state: 1
-      - events: shot_reawakening_p2_drillchair_sp_reawakening_phasetwo_lit_hit
-        state: 0
-      - events: e_reawakening_phasetwo_a_zeptest_reset
-        state: 1
-      - events: logicblock_quadshotgun_p2_reset_counter_hit{hits==4}
-        state: 1
-  shot_reawakening_p2_zeptest:
-    switches: s_lower_bank_drop_target_opto_upper, s_lower_bank_drop_target_opto_middle, s_lower_bank_drop_target_opto_lower
-    profile: sp_reawakening_phasetwo
-    show_tokens:
-      leds: zep_flasher
-    control_events:
-      - events: shot_reawakening_p2_drillchair_sp_reawakening_phasetwo_lit_hit
-        state: 1
-      - events: shot_reawakening_p2_zeptest_sp_reawakening_phasetwo_lit_hit
-        state: 0
-      - events: e_reawakening_phasetwo_a_zeptest_reset
-        state: 0
-      - events: e_reawakening_phasetwo_a_razorwire_reset
-        state: 1
-      - events: logicblock_quadshotgun_p2_reset_counter_hit{hits==3}
-        state: 1
-      - events: logicblock_quadshotgun_p2_reset_counter_hit{hits==4}
-        state: 0
-  shot_reawakening_p2_razorwire:
-    switches: s_left_top_jet_bumper, s_right_top_jet_bumper, s_lower_top_jet_bumper
-    profile: sp_reawakening_phasetwo
-    show_tokens:
-      leds: razorwire_flasher
-    control_events:
-      - events: shot_reawakening_p2_zeptest_sp_reawakening_phasetwo_lit_hit
-        state: 1
-      - events: shot_reawakening_p2_razorwire_sp_reawakening_phasetwo_lit_hit
-        state: 0
-      - events: e_reawakening_phasetwo_a_razorwire_reset
-        state: 0
-      - events: e_reawakening_phasetwo_a_flammablejelly_reset
-        state: 1
-      - events: logicblock_quadshotgun_p2_reset_counter_hit{hits==2}
-        state: 1
-      - events: logicblock_quadshotgun_p2_reset_counter_hit{hits==3}
-        state: 0
-  shot_reawakening_p2_flammablejelly:
-    switches: s_middle_standup
-    profile: sp_reawakening_phasetwo
-    show_tokens:
-      leds: bear_flasher
-    control_events:
-      - events: shot_reawakening_p2_razorwire_sp_reawakening_phasetwo_lit_hit
-        state: 1
-      - events: shot_reawakening_p2_flammablejelly_sp_reawakening_phasetwo_lit_hit
-        state: 0
-      - events: e_reawakening_phasetwo_a_flammablejelly_reset
-        state: 0
-      - events: logicblock_quadshotgun_p2_reset_counter_hit{hits==1}
-        state: 1
-      - events: logicblock_quadshotgun_p2_reset_counter_hit{hits==2}
-        state: 0
-  shot_reawakening_p2_quadshotgun:
-    switches: s_spinner
-    profile: sp_reawakening_phasetwo
-    show_tokens:
-      leds: shotgun_flasher
-    control_events:
-      - events: shot_reawakening_p2_flammablejelly_sp_reawakening_phasetwo_lit_hit
-        state: 1
-      - events: shot_reawakening_p2_quadshotgun_sp_reawakening_phasetwo_lit_hit
-        state: 0
-      - events: e_reawakening_phasetwo_a_quadshotgun_reset
-        state: 0
-#phase one survivor
-  shot_reawakening_p2_left_standup:
+#phase two apprentice abduction / left
+  shot_reawakening_p2_apprentice_abduction_left_standup:
     switches: s_left_standup
-    profile: sp_reawakening_phasetwo
+    profile: sp_phasetwo_apprentice_abduction
     show_tokens:
       leds: l_left_standup_arrow
     control_events:
-      - events: reawakening_p2_phasetwo_right_apprentice_selected
+      - events: reawakening_p2_phasetwo_left_apprentice_selected
         state: 1
-      - events: reawakening_p2_phasetwo_left_survivor_selected
-        state: 1
-      - events: shot_reawakening_p2_left_standup_sp_reawakening_phasetwo_lit_hit
+      - events: shot_reawakening_p2_apprentice_abduction_left_standup_sp_phasetwo_apprentice_abduction_lit_hit
         state: 0
-  shot_reawakening_p2_upper_drop:
-    switches: s_upper_bank_drop_target_opto
-    profile: sp_reawakening_phasetwo
+  shot_reawakening_p2_apprentice_abduction_middle_standup:
+    switches: s_middle_standup
+    profile: sp_phasetwo_apprentice_abduction
     show_tokens:
-      leds: billy
+      leds: bear_flasher
     control_events:
-      - events: logicblock_survivor_phasetwo_hit{step==1}
+      - events: reawakening_p2_phasetwo_left_apprentice_selected
         state: 1
-      - events: logicblock_survivor_phasetwo_hit{step==3}
-        state: 1
-      - events: logicblock_survivor_phasetwo_hit{step==5}
-        state: 1
-      - events: logicblock_survivor_phasetwo_hit{step==7}
-        state: 1
-      - events: shot_reawakening_p2_upper_drop_sp_reawakening_phasetwo_lit_hit 
+      - events: shot_reawakening_p2_apprentice_abduction_middle_standup_sp_phasetwo_apprentice_abduction_lit_hit
         state: 0
-  shot_reawakening_p2_left_standup_right_ramp:
-    switches: s_left_standup_right_ramp
-    profile: sp_reawakening_phasetwo
-    show_tokens:
-      leds: l_left_standup_right_ramp_arrow
-    control_events:
-      - events: logicblock_survivor_phasetwo_hit{step==2}
-        state: 1
-      - events: shot_reawakening_p2_left_standup_right_ramp_sp_reawakening_phasetwo_lit_hit
-        state: 0
-  shot_reawakening_p2_right_standup_right_ramp:
-    switches: s_right_standup_right_ramp
-    profile: sp_reawakening_phasetwo
-    show_tokens:
-      leds: l_right_standup_right_ramp_arrow
-    control_events:
-      - events: logicblock_survivor_phasetwo_hit{step==4}
-        state: 1
-      - events: shot_reawakening_p2_right_standup_right_ramp_sp_reawakening_phasetwo_lit_hit
-        state: 0
-  shot_reawakening_p2_right_standup:
+  shot_reawakening_p2_apprentice_abduction_right_standup:
     switches: s_right_standup
-    profile: sp_reawakening_phasetwo
+    profile: sp_phasetwo_apprentice_abduction
     show_tokens:
       leds: l_right_standup_arrow
     control_events:
-      - events: logicblock_survivor_phasetwo_hit{step==6}
+      - events: reawakening_p2_phasetwo_left_apprentice_selected
         state: 1
-      - events: shot_reawakening_p2_right_standup_sp_reawakening_phasetwo_lit_hit
+      - events: shot_reawakening_p2_apprentice_abduction_right_standup_sp_phasetwo_apprentice_abduction_lit_hit
         state: 0
-
-
-counters:
-  quadshotgun_p2_reset_counter:
-    starting_count: 0
-    count_complete_value: 6
-    start_enabled: true
-    persist_state: true
-    reset_on_complete: false
-    count_events: e_reawakening_phasetwo_a_quadshotgun_reset
+#first 3 standups shots done? onto shackle standups and then right ramp followed by either left or right orbit to complete with a 20sec reset timer.
+  shot_reawakening_p2_apprentice_abduction_left_standup_right_ramp:
+    switches: s_left_standup_right_ramp
+    profile: sp_phasetwo_apprentice_abduction
+    show_tokens:
+      leds: l_left_standup_right_ramp_arrow
+    control_events:
+      - events: e_phasetwo_apprentice_abduction_partone_complete
+        state: 1
+      - events: shot_reawakening_p2_apprentice_abduction_left_standup_right_ramp_sp_phasetwo_apprentice_abduction_lit_hit
+        state: 0
+      - events: e_reawakening_phasetwo_left_apprentice_shot_reset
+        state: 1
+  shot_reawakening_p2_apprentice_abduction_right_standup_right_ramp:
+    switches: s_right_standup_right_ramp
+    profile: sp_phasetwo_apprentice_abduction
+    show_tokens:
+      leds: l_right_standup_right_ramp_arrow
+    control_events:
+      - events: e_phasetwo_apprentice_abduction_partone_complete
+        state: 1
+      - events: shot_reawakening_p2_apprentice_abduction_right_standup_right_ramp_sp_phasetwo_apprentice_abduction_lit_hit
+        state: 0
+      - events: e_reawakening_phasetwo_left_apprentice_shot_reset
+        state: 1
+  shot_reawakening_p2_apprentice_abduction_right_ramp:
+    switches: s_right_ramp_score_top
+    profile: sp_phasetwo_apprentice_abduction
+    show_tokens:
+      leds: right_ramp
+    control_events:
+      - events: e_phasetwo_apprentice_abduction_partone_complete
+        state: 1
+      - events: shot_reawakening_p2_apprentice_abduction_right_ramp_sp_phasetwo_apprentice_abduction_lit_hit
+        state: 0
+      - events: e_reawakening_phasetwo_left_apprentice_shot_reset
+        state: 1
 
 slides:
   mode_reawakening_p2al:
@@ -336,6 +317,21 @@ slides:
     widgets:
     - type: video
       video: mode_reawakening_p2sr
+#active apprentice/abduction/left slide
+  mode_reawakening_apprentice_phasetwo_left_partone:
+    widgets:
+    - type: video
+      video: mode_reawakening_apprentice_phasetwo_left_partone
+  mode_reawakening_apprentice_phasetwo_left_parttwo:
+    widgets:
+    - type: video
+      video: mode_reawakening_apprentice_phasetwo_left_parttwo
+# apprentice/abduction/left scoop
+  reawakening_apprentice_phasetwo_left_scoop:
+    widgets:
+    - type: video
+      video: mode_reawakening_apprentice_p2_left_scoop
+
 slide_player:
   reawakening_p2_phasetwo_left_apprentice_highlighted: 
     mode_reawakening_p2al:
@@ -354,11 +350,23 @@ slide_player:
       action: remove
     mode_reawakening_p2ar:      
       action: remove
+    mode_reawakening_apprentice_phasetwo_left_partone:
+      priority: 400
   reawakening_p2_phasetwo_right_apprentice_selected: 
     mode_reawakening_p2ar:      
       action: remove
     mode_reawakening_p2al:      
       action: remove
+  e_phasetwo_apprentice_abduction_partone_complete:
+    mode_reawakening_apprentice_phasetwo_left_partone:
+      action: remove
+    mode_reawakening_apprentice_phasetwo_left_parttwo:
+      priority: 400
+  e_phasetwo_apprentice_abduction_parttwo_complete:
+    mode_reawakening_apprentice_phasetwo_left_parttwo:
+      action: remove
+    reawakening_apprentice_phasetwo_left_scoop:
+      priority: 400
   reawakening_p2_phasetwo_left_survivor_selected: 
     mode_reawakening_p2sl:      
       action: remove
@@ -369,3 +377,338 @@ slide_player:
       action: remove
     mode_reawakening_p2sl:      
       action: remove
+
+widgets:
+   w_reawakening_apprentice_phasetwo_partone_UI:
+    - type: image
+      image: BottomFrame
+      y: 85
+      # x: 1
+      z: 2
+#player 1 widget
+    - type: text
+      text: (player1|score)
+      number_grouping: true  
+   #   y: 36
+      y: 37
+      x: 252
+      z: 8
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      font_name: AeroMaticsDisplaRegular
+      color: black
+    - type: text
+      text: (player1|score)
+      number_grouping: true  
+      y: 36
+      x: 253
+      z: 8
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      font_name: AeroMaticsDisplaRegular
+      outline_color: f0cfab
+      outline_width: 2
+#player 2 widget     
+    - type: text
+      text: (player2|score)
+      number_grouping: true
+      y: 37
+      x: left+579
+      z: 8
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      font_name: AeroMaticsDisplaRegular
+      color: black
+    - type: text
+      text: (player2|score)
+      number_grouping: true
+      y: 36
+      x: left+580
+      z: 7
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      font_name: AeroMaticsDisplaRegular
+      outline_color: f0cfab
+      outline_width: 2
+#player 3 widget
+    - type: Text
+      text: (player3|score)
+      number_grouping: true   
+      font_name: AeroMaticsDisplaRegular
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      y: 37
+      x: left+908
+      z: 8
+      color: black
+    - type: Text
+      text: (player3|score)
+      number_grouping: true   
+      font_name: AeroMaticsDisplaRegular
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      y: 36
+      x: left+909
+      z: 7
+      outline_color: f0cfab
+      outline_width: 2
+#player 4 widget
+    - type: Text
+      text: (player4|score)
+      number_grouping: true       
+      font_name: AeroMaticsDisplaRegular
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      y: 37
+      x: left+1239
+      z: 8
+      color: black
+    - type: Text
+      text: (player4|score)
+      number_grouping: true       
+      font_name: AeroMaticsDisplaRegular
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      y: 36
+      x: left+1240
+      z: 7
+      outline_color: f0cfab
+      outline_width: 2
+
+   w_reawakening_apprentice_phasetwo_parttwo_UI:
+    - type: image
+      image: BottomFrame
+      y: 85
+      # x: 1
+      z: 2
+#player 1 widget
+    - type: text
+      text: (player1|score)
+      number_grouping: true  
+   #   y: 36
+      y: 37
+      x: 252
+      z: 8
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      font_name: AeroMaticsDisplaRegular
+      color: black
+    - type: text
+      text: (player1|score)
+      number_grouping: true  
+      y: 36
+      x: 253
+      z: 8
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      font_name: AeroMaticsDisplaRegular
+      outline_color: f0cfab
+      outline_width: 2
+#player 2 widget     
+    - type: text
+      text: (player2|score)
+      number_grouping: true
+      y: 37
+      x: left+579
+      z: 8
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      font_name: AeroMaticsDisplaRegular
+      color: black
+    - type: text
+      text: (player2|score)
+      number_grouping: true
+      y: 36
+      x: left+580
+      z: 7
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      font_name: AeroMaticsDisplaRegular
+      outline_color: f0cfab
+      outline_width: 2
+#player 3 widget
+    - type: Text
+      text: (player3|score)
+      number_grouping: true   
+      font_name: AeroMaticsDisplaRegular
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      y: 37
+      x: left+908
+      z: 8
+      color: black
+    - type: Text
+      text: (player3|score)
+      number_grouping: true   
+      font_name: AeroMaticsDisplaRegular
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      y: 36
+      x: left+909
+      z: 7
+      outline_color: f0cfab
+      outline_width: 2
+#player 4 widget
+    - type: Text
+      text: (player4|score)
+      number_grouping: true       
+      font_name: AeroMaticsDisplaRegular
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      y: 37
+      x: left+1239
+      z: 8
+      color: black
+    - type: Text
+      text: (player4|score)
+      number_grouping: true       
+      font_name: AeroMaticsDisplaRegular
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      y: 36
+      x: left+1240
+      z: 7
+      outline_color: f0cfab
+      outline_width: 2
+    - type: Text
+      text: (player|phasetwo_apprentice_left_timer_seconds)
+      min_digits: 2
+      font_size: 50
+      font_name: digitalclockfont
+      color: red
+      x: 54.2%
+      y: 94%
+      z: 3
+    - type: Text
+      text: '00:'
+      min_digits: 2
+      font_size: 50
+      font_name: digitalclockfont
+      color: red
+      x: 47.2%
+      y: 94%
+      z: 3
+    - type: rectangle
+      width: 210
+      height: 65
+      x: 50%
+      y: 94.5%
+      z: 2
+      corner_radius: 20
+      corner_segments: 20
+      color: black
+#current player widget
+   w_current_player1:
+    - type: image
+      image: Player1Hacksaw
+      opacity: 1.0
+      y: 4
+      x: 35
+      z: 3
+      anchor_x: left
+      anchor_y: bottom
+   w_current_player2:
+    - type: image
+      image: Player2Hacksaw
+      opacity: 1.0
+      y: 4
+      x: left+515
+      z: 3
+      anchor_y: bottom  
+   w_current_player3:
+    - type: image
+      image: Player3Hacksaw
+      opacity: 1.0
+      y: 4
+      x: left+844
+      z: 3
+      anchor_y: bottom  
+   w_current_player4:
+    - type: image
+      image: Player4Hacksaw
+      opacity: 1.0
+      y: 4
+      x: left+1174
+      z: 3
+      anchor_y: bottom
+
+widget_player:
+#phase two apprentice left/abduction part one
+ reawakening_p2_phasetwo_left_apprentice_selected:
+   w_reawakening_apprentice_phasetwo_partone_UI:
+     slide: mode_reawakening_apprentice_phasetwo_left_partone
+     action: add
+ reawakening_p2_phasetwo_left_apprentice_selected{current_player.v_current_player==1}:
+   w_current_player1:
+     slide: mode_reawakening_apprentice_phasetwo_left_partone
+     action: add
+ reawakening_p2_phasetwo_left_apprentice_selected{current_player.v_current_player==2}:
+   w_current_player2:
+     slide: mode_reawakening_apprentice_phasetwo_left_partone
+     action: add
+ reawakening_p2_phasetwo_left_apprentice_selected{current_player.v_current_player==3}:
+   w_current_player3:
+     slide: mode_reawakening_apprentice_phasetwo_left_partone
+     action: add
+ reawakening_p2_phasetwo_left_apprentice_selected{current_player.v_current_player==4}:
+   w_current_player4:
+     slide: mode_reawakening_apprentice_phasetwo_left_partone
+     action: add    
+#phase two apprentice left/abduction part two
+ e_phasetwo_apprentice_abduction_partone_complete:
+   w_reawakening_apprentice_phasetwo_parttwo_UI:
+     slide: mode_reawakening_apprentice_phasetwo_left_parttwo
+     action: add
+ e_phasetwo_apprentice_abduction_partone_complete{current_player.v_current_player==1}:
+   w_current_player1:
+     slide: mode_reawakening_apprentice_phasetwo_left_parttwo
+     action: add
+ e_phasetwo_apprentice_abduction_partone_complete{current_player.v_current_player==2}:
+   w_current_player2:
+     slide: mode_reawakening_apprentice_phasetwo_left_parttwo
+     action: add
+ e_phasetwo_apprentice_abduction_partone_complete{current_player.v_current_player==3}:
+   w_current_player3:
+     slide: mode_reawakening_apprentice_phasetwo_left_parttwo
+     action: add
+ e_phasetwo_apprentice_abduction_partone_complete{current_player.v_current_player==4}:
+   w_current_player4:
+     slide: mode_reawakening_apprentice_phasetwo_left_parttwo
+     action: add 
+# phase two apprentice left/abudction complete scoop
+ e_phasetwo_apprentice_abduction_parttwo_complete:
+   w_reawakening_apprentice_phasetwo_partone_UI:
+     slide: reawakening_apprentice_phasetwo_left_scoop
+     action: add
+ e_phasetwo_apprentice_abduction_parttwo_complete{current_player.v_current_player==1}:
+   w_current_player1:
+     slide: mode_reawakening_apprentice_phasetwo_left_parttwo
+     action: add
+ e_phasetwo_apprentice_abduction_parttwo_complete{current_player.v_current_player==2}:
+   w_current_player2:
+     slide: mode_reawakening_apprentice_phasetwo_left_parttwo
+     action: add
+ e_phasetwo_apprentice_abduction_parttwo_complete{current_player.v_current_player==3}:
+   w_current_player3:
+     slide: mode_reawakening_apprentice_phasetwo_left_parttwo
+     action: add
+ e_phasetwo_apprentice_abduction_parttwo_complete{current_player.v_current_player==4}:
+   w_current_player4:
+     slide: mode_reawakening_apprentice_phasetwo_left_parttwo
+     action: add 

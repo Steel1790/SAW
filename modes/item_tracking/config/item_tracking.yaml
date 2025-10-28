@@ -129,7 +129,7 @@ show_player:
       priority: 121
   counter_minimode_standups_counter_hit{hits==10}:
     item_candle_pulse: stop
-# bathtub light progress - 40 slings
+# bathtub light progress - 75 slings
   counter_minimode_slings_counter_hit{hits<75}:
     item_bathtub_flash:
       loops: 4

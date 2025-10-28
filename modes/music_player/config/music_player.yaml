@@ -1190,8 +1190,18 @@ sound_player:
     TheRules:
       action: play
       priority: 205 
+      loops: -1
 # reawakening phase 1 complete. get to scoop
   logicblock_apprentice_phaseone_complete:
+    TheRules:
+      action: stop
+    ModeQualifiedShootScoop:
+      action: play   
+      loops: -1
+      priority: 210
+  logicblock_survivor_phaseone_complete:
+    TheRules:
+      action: stop
     ModeQualifiedShootScoop:
       action: play   
       loops: -1
@@ -1227,13 +1237,38 @@ sound_player:
     FuckThisShit:
       action: play
       priority: 205 
-# reawakening phase 1 complete. get to scoop
-  logicblock_survivor_phaseone_complete:
-    ModeQualifiedShootScoop:
-      action: play   
-      loops: -1
-      priority: 210
 # reawakening phase 2 started
+  reawakening_p2_phasetwo_left_apprentice_selected:
+    ModeQualifiedShootScoop:
+      action: stop
+    QuadShotgunModeStart:
+      action: stop
+    DrillChairModeStart:
+      action: stop
+    FlammableJellyModeStart:
+      action: stop
+    RWModeStart:
+      action: stop
+    ReverseBearTrapModeStart:
+      action: stop
+    ZepsTestModeStart:
+      action: stop      
+    BaseMusic:
+      action: stop
+    DrillAndTapp:
+      action: stop
+    OutOfTime:
+      action: stop
+    Jonas:
+      action: stop
+    TheRules:
+      action: stop 
+    LilBillyModeSongSkillshot:
+      action: stop   
+    FuckThisShit:
+      action: play
+      priority: 205 
+      loops: -1
   reawakening_p2_phasetwo_right_apprentice_highlighted:
     ModeQualifiedShootScoop:
       action: stop
@@ -1326,6 +1361,15 @@ sound_player:
     FuckThisShit:
       action: play
       priority: 205 
+# reawakening phase 2 apprentice left/abduction complete
+  e_phasetwo_apprentice_abduction_parttwo_complete:
+    FuckThisShit:
+      action: stop
+    ModeQualifiedShootScoop:
+      action: play   
+      loops: -1
+      priority: 210
+
 #event_player: 
 #  slide_base_slide_main_active: e_puzzle_music_off1|0.83s
 #  e_puzzle_music_off1: e_puzzle_music_off2|0.1s
