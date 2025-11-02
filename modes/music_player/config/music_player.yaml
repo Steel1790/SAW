@@ -1442,6 +1442,40 @@ sound_player:
       action: play
       loops: -1    
       priority: 205 
+# reawakening phase 2 right survivor selected/started
+  reawakening_p2_phasetwo_right_survivor_selected:
+    ModeQualifiedShootScoop:
+      action: stop
+    QuadShotgunModeStart:
+      action: stop
+    DrillChairModeStart:
+      action: stop
+    FlammableJellyModeStart:
+      action: stop
+    RWModeStart:
+      action: stop
+    ReverseBearTrapModeStart:
+      action: stop
+    ZepsTestModeStart:
+      action: stop      
+    BaseMusic:
+      action: stop
+    DrillAndTapp:
+      action: stop
+    OutOfTime:
+      action: stop
+    Jonas:
+      action: stop
+    TheRules:
+      action: stop 
+    LilBillyModeSongSkillshot:
+      action: stop   
+    FuckThisShit:
+      action: stop
+    HelloZeppPt3:
+      action: play
+      loops: -1    
+      priority: 205 
 # reawakening phase 2 apprentice left/abduction complete
   e_phasetwo_apprentice_abduction_parttwo_complete:
     HelloZeppPt3:
@@ -1460,6 +1494,14 @@ sound_player:
       priority: 210
 # reawakening phase 2 survivor left/clue complete
   e_phasetwo_survivor_left_complete:
+    HelloZeppPt3:
+      action: stop
+    ModeQualifiedShootScoop:
+      action: play   
+      loops: -1
+      priority: 210
+# reawakening phase 2 survivor right/aid complete
+  e_phasetwo_survivor_right_complete:
     HelloZeppPt3:
       action: stop
     ModeQualifiedShootScoop:

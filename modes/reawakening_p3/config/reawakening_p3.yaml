@@ -1,0 +1,92 @@
+#config_version=6                 
+mode:
+  start_events: s_right_scoop_active{current_player.reawakening_phasetwo_completed==1 and current_player.reawakening_apprentice_selected==2}, s_right_scoop_active{current_player.reawakening_phasetwo_completed==1 and current_player.reawakening_survivor_selected==2}
+  stop_events: stop_mode_reawakening, mode_reawakening_p3_complete, ball_ended, ball_will_end
+  priority: 184
+  restart_on_next_ball: true
+  code: mpf.modes.carousel.code.carousel.Carousel
+mode_settings:
+  selectable_items: 
+    - phasethree_apprentice{current_player.reawakening_phasetwo_completed==1 and current_player.reawakening_apprentice_selected==2}
+    - phasethree_survivor{current_player.reawakening_phasetwo_completed==1 and current_player.reawakening_survivor_selected==2}
+  select_item_events: s_action_button_active
+  next_item_events: s_left_flipper_button_active
+  previous_item_events: s_right_flipper_button_active
+
+# Phase Three: Apprentice - Let the Games Begin (5m per lit shot. Each trap phase completion within this mode are worth 25m * the number of completed phases) - 6 ball MB with no ball save. Facilitate the same games as previously played in the modes. As you complete one trap, then you instantly progress into the next phased trap. The sequence is Drillchair, Razorwire, Flammable Jelly, Quad Shotgun Hallway, Reverse Bear Trap, and Zep's Test to ascend to becoming Jigsaw's apprentice.
+# Phase Three: Survivor - Final Showdown (65m each item collected)
+ #6 ball MB with no ball save. Gather all eight of Jigsaw's items, then use them to confront Jigsaw and end his legacy in the final showdown.
+ #20 pops = gear
+ #10 standup targets = candle
+ #75 slings = bathtub
+ #9 in-lanes = tape recorder
+ #50 spinners = handgun
+ #5 ramps = key
+ #5 orbits = hacksaw
+ #6 drop targets = antidote
+ #After collecting all of these items then hit X marks the spot for the fatal blow.
+
+# accruals:
+# #phase 2 apprentice abduction part 1
+#   acc_phasetwo_apprentice_abduction_partone:
+#     events:
+#       - shot_reawakening_p2_apprentice_abduction_left_standup_sp_phasetwo_apprentice_abduction_lit_hit
+#       - shot_reawakening_p2_apprentice_abduction_middle_standup_sp_phasetwo_apprentice_abduction_lit_hit
+#       - shot_reawakening_p2_apprentice_abduction_right_standup_sp_phasetwo_apprentice_abduction_lit_hit
+#     reset_on_complete: false
+#     persist_state: true
+#     disable_on_complete: false
+#     enable_events: reawakening_p2_phasetwo_left_apprentice_selected
+#     disable_events: e_phasetwo_apprentice_abduction_partone_complete
+#     events_when_complete: e_phasetwo_apprentice_abduction_partone_complete
+
+# #phase 2 apprentice abduction part 2
+#   acc_phasetwo_apprentice_abduction_parttwo:
+#     events:
+#       - shot_reawakening_p2_apprentice_abduction_left_standup_right_ramp_sp_phasetwo_apprentice_abduction_lit_hit
+#       - shot_reawakening_p2_apprentice_abduction_right_standup_right_ramp_sp_phasetwo_apprentice_abduction_lit_hit
+#       - shot_reawakening_p2_apprentice_abduction_right_ramp_sp_phasetwo_apprentice_abduction_lit_hit
+#     reset_on_complete: false
+#     persist_state: true
+#     disable_on_complete: false
+#     reset_events: e_reawakening_phasetwo_left_apprentice_shot_reset
+#     enable_events: e_phasetwo_apprentice_abduction_partone_complete
+#     disable_events: e_phasetwo_apprentice_abduction_parttwo_complete
+#     events_when_complete: e_phasetwo_apprentice_abduction_parttwo_complete
+
+# counters:
+#   cnt_apprentice_p2_stage:
+#     starting_count: 0
+#     count_complete_value: 8
+#     direction: up
+#     start_enabled: false
+#     reset_on_complete: true
+#     disable_on_complete: false
+#     reset_events: e_reawakening_phasetwo_right_apprentice_shot_reset
+#     enable_events: reawakening_p2_phasetwo_right_apprentice_selected
+#     disable_events: e_phasetwo_apprentice_right_complete
+#     events_when_complete: e_phasetwo_apprentice_right_complete
+#     count_events: shot_reawakening_p2_apprentice_stage_pops_sp_phasetwo_apprentice_stage_lit_hit, shot_reawakening_p2_apprentice_stage_standups_sp_phasetwo_apprentice_stage_lit_hit, shot_reawakening_p2_apprentice_stage_slings_sp_phasetwo_apprentice_stage_lit_hit, shot_reawakening_p2_apprentice_stage_inlanes_sp_phasetwo_apprentice_stage_lit_hit, shot_reawakening_p2_apprentice_stage_spinners_sp_phasetwo_apprentice_stage_lit_hit, shot_reawakening_p2_apprentice_stage_drops_sp_phasetwo_apprentice_stage_lit_hit, shot_reawakening_p2_apprentice_stage_ramps_sp_phasetwo_apprentice_stage_lit_hit, shot_reawakening_p2_apprentice_stage_loops_sp_phasetwo_apprentice_stage_lit_hit
+#   cnt_survivor_left_collected:
+#     starting_count: 0
+#     count_complete_value: 3
+#     persist_state: true
+#     events_when_complete: e_phasetwo_survivor_left_complete
+#     reset_events: e_reawakening_phasetwo_left_survivor_shot_reset
+#     count_events: shot_reawakening_p2_survivor_clue_shotgun_sp_phasetwo_survivor_clue_collected_hit, shot_reawakening_p2_survivor_clue_zep_sp_phasetwo_survivor_clue_collected_hit, shot_reawakening_p2_survivor_clue_bear_sp_phasetwo_survivor_clue_collected_hit, shot_reawakening_p2_survivor_clue_razorwire_sp_phasetwo_survivor_clue_collected_hit, shot_reawakening_p2_survivor_clue_drill_sp_phasetwo_survivor_clue_collected_hit
+#   cnt_survivor_left_lit:
+#     starting_count: 0
+#     count_complete_value: 3
+#     persist_state: true
+#     reset_events: e_reawakening_phasetwo_left_survivor_shot_reset
+#     count_events: shot_reawakening_p2_survivor_clue_shotgun_sp_phasetwo_survivor_clue_lit_hit, shot_reawakening_p2_survivor_clue_zep_sp_phasetwo_survivor_clue_lit_hit, shot_reawakening_p2_survivor_clue_bear_sp_phasetwo_survivor_clue_lit_hit, shot_reawakening_p2_survivor_clue_razorwire_sp_phasetwo_survivor_clue_lit_hit, shot_reawakening_p2_survivor_clue_drill_sp_phasetwo_survivor_clue_lit_hit
+
+variable_player:
+  carousel_phasethree_apprentice_selected:
+    selected_mode:
+      action: set
+      string: 'selection_mode_phasethree_apprentice_highlighted'
+  carousel_phasethree_survivor_selected:
+    selected_mode:
+      action: set
+      string: 'selection_mode_phasethree_survivor_highlighted'

@@ -704,6 +704,7 @@ variable_player:
       int: 1
       action: set
 #reawakening mode flag
+#phase one
   selection_mode_reawakening_selected:
     reawakening_phaseone_attempted:
       int: 1
@@ -722,6 +723,39 @@ variable_player:
       action: set
   logicblock_survivor_phaseone_complete:
     reawakening_phaseone_completed:
+      int: 1
+      action: set
+#phase two
+  reawakening_p2_phasetwo_left_apprentice_selected:
+    reawakening_apprentice_selected:
+      int: 2
+      action: set
+  reawakening_p2_phasetwo_right_apprentice_selected:
+    reawakening_apprentice_selected:
+      int: 2
+      action: set
+  reawakening_p2_phasetwo_left_survivor_selected:
+    reawakening_survivor_selected:
+      int: 2
+      action: set
+  reawakening_p2_phasetwo_right_survivor_selected:
+    reawakening_survivor_selected:
+      int: 2
+      action: set
+  e_phasetwo_apprentice_abduction_parttwo_complete:
+    reawakening_phasetwo_completed:
+      int: 1
+      action: set
+  e_phasetwo_apprentice_right_complete:
+    reawakening_phasetwo_completed:
+      int: 1
+      action: set
+  e_phasetwo_survivor_left_complete:
+    reawakening_phasetwo_completed:
+      int: 1
+      action: set
+  e_phasetwo_survivor_right_complete:
+    reawakening_phasetwo_completed:
       int: 1
       action: set
 
