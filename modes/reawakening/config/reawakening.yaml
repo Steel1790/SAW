@@ -256,10 +256,10 @@ show_player:
         priority: 190
       beartrap_shot_hit_playfield:
         loops: 0
-        speed: 30
+        speed: 45
       beartrap_shot_hit_discs:
         loops: 0
-        speed: 30
+        speed: 45
   logicblock_survivor_phaseone_hit:  
       gi_die_hurryup_intro:
         loops: 0
@@ -267,10 +267,10 @@ show_player:
         priority: 190
       beartrap_shot_hit_playfield:
         loops: 0
-        speed: 30
+        speed: 45
       beartrap_shot_hit_discs:
         loops: 0
-        speed: 30
+        speed: 45
   
 shots:
 #phase one apprentice

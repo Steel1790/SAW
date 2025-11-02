@@ -1188,25 +1188,27 @@ sound_player:
     LilBillyModeSongSkillshot:
       action: stop   
     TheRules:
+      action: stop
+    HelloZeppPt2:
       action: play
       priority: 205 
       loops: -1
 # reawakening phase 1 complete. get to scoop
   logicblock_apprentice_phaseone_complete:
-    TheRules:
+    HelloZeppPt2:
       action: stop
     ModeQualifiedShootScoop:
       action: play   
       loops: -1
       priority: 210
   logicblock_survivor_phaseone_complete:
-    TheRules:
+    HelloZeppPt2:
       action: stop
     ModeQualifiedShootScoop:
       action: play   
       loops: -1
       priority: 210
-# reawakening phase 2 started
+# reawakening phase 2 highlighted
   reawakening_p2_phasetwo_left_apprentice_highlighted:
     ModeQualifiedShootScoop:
       action: stop
@@ -1235,9 +1237,11 @@ sound_player:
     LilBillyModeSongSkillshot:
       action: stop   
     FuckThisShit:
+      action: stop
+    HelloZeppPt3:
       action: play
       priority: 205 
-# reawakening phase 2 started
+# reawakening phase 2 left apprentice started
   reawakening_p2_phasetwo_left_apprentice_selected:
     ModeQualifiedShootScoop:
       action: stop
@@ -1266,9 +1270,12 @@ sound_player:
     LilBillyModeSongSkillshot:
       action: stop   
     FuckThisShit:
+      action: stop
+    HelloZeppPt3:
       action: play
+      loops: -1    
       priority: 205 
-      loops: -1
+# reawakening phase 2 right apprentice highlighted
   reawakening_p2_phasetwo_right_apprentice_highlighted:
     ModeQualifiedShootScoop:
       action: stop
@@ -1297,9 +1304,45 @@ sound_player:
     LilBillyModeSongSkillshot:
       action: stop   
     FuckThisShit:
+      action: stop
+    HelloZeppPt3:
       action: play
-      priority: 205
- # reawakening phase 2 started     
+      priority: 205 
+# reawakening phase 2 right apprentice selected/started
+  reawakening_p2_phasetwo_right_apprentice_selected:
+    ModeQualifiedShootScoop:
+      action: stop
+    QuadShotgunModeStart:
+      action: stop
+    DrillChairModeStart:
+      action: stop
+    FlammableJellyModeStart:
+      action: stop
+    RWModeStart:
+      action: stop
+    ReverseBearTrapModeStart:
+      action: stop
+    ZepsTestModeStart:
+      action: stop      
+    BaseMusic:
+      action: stop
+    DrillAndTapp:
+      action: stop
+    OutOfTime:
+      action: stop
+    Jonas:
+      action: stop
+    TheRules:
+      action: stop 
+    LilBillyModeSongSkillshot:
+      action: stop   
+    FuckThisShit:
+      action: stop
+    HelloZeppPt3:
+      action: play
+      loops: -1    
+      priority: 205 
+ # reawakening phase 2 left survivor highlighted    
   reawakening_p2_phasetwo_left_survivor_highlighted:
     ModeQualifiedShootScoop:
       action: stop
@@ -1328,9 +1371,11 @@ sound_player:
     LilBillyModeSongSkillshot:
       action: stop   
     FuckThisShit:
-      action: play
+      action: stop
+    HelloZeppPt3:
+      action: play 
       priority: 205 
-# reawakening phase 2 started
+# reawakening phase 2 right survivor highlighted
   reawakening_p2_phasetwo_right_survivor_highlighted:
     ModeQualifiedShootScoop:
       action: stop
@@ -1359,17 +1404,68 @@ sound_player:
     LilBillyModeSongSkillshot:
       action: stop   
     FuckThisShit:
+      action: stop
+    HelloZeppPt3:
       action: play
+      priority: 205 
+# reawakening phase 2 left survivor selected/started
+  reawakening_p2_phasetwo_left_survivor_selected:
+    ModeQualifiedShootScoop:
+      action: stop
+    QuadShotgunModeStart:
+      action: stop
+    DrillChairModeStart:
+      action: stop
+    FlammableJellyModeStart:
+      action: stop
+    RWModeStart:
+      action: stop
+    ReverseBearTrapModeStart:
+      action: stop
+    ZepsTestModeStart:
+      action: stop      
+    BaseMusic:
+      action: stop
+    DrillAndTapp:
+      action: stop
+    OutOfTime:
+      action: stop
+    Jonas:
+      action: stop
+    TheRules:
+      action: stop 
+    LilBillyModeSongSkillshot:
+      action: stop   
+    FuckThisShit:
+      action: stop
+    HelloZeppPt3:
+      action: play
+      loops: -1    
       priority: 205 
 # reawakening phase 2 apprentice left/abduction complete
   e_phasetwo_apprentice_abduction_parttwo_complete:
-    FuckThisShit:
+    HelloZeppPt3:
       action: stop
     ModeQualifiedShootScoop:
       action: play   
       loops: -1
       priority: 210
-
+# reawakening phase 2 apprentice right/stage complete
+  e_phasetwo_apprentice_right_complete:
+    HelloZeppPt3:
+      action: stop
+    ModeQualifiedShootScoop:
+      action: play   
+      loops: -1
+      priority: 210
+# reawakening phase 2 survivor left/clue complete
+  e_phasetwo_survivor_left_complete:
+    HelloZeppPt3:
+      action: stop
+    ModeQualifiedShootScoop:
+      action: play   
+      loops: -1
+      priority: 210
 #event_player: 
 #  slide_base_slide_main_active: e_puzzle_music_off1|0.83s
 #  e_puzzle_music_off1: e_puzzle_music_off2|0.1s
