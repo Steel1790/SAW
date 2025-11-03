@@ -410,11 +410,10 @@ slide_player:
     HostageItemWorkshop:
       priority: 191
       expire: 3s
-  #ball_will_end{current_player.ball==3}:
-  #  gameovervideo:
-  #    action: play
-  #    priority: 600
-  #    expire: 2.5s
+  e_survivor_complete:
+    survivor_complete:
+      priority: 500
+      expire: 10.1s
       
 variable_player:
   logicblock_cnt_saw_qualify_complete:
@@ -1635,14 +1634,12 @@ show_player:
       disc_left_chase: stop
       disc_middle_chase: stop
       disc_right_chase: stop
-  #shot_left_outlane_hit{state=="ball_save_not_ready"}:
-  #    billy_laugh:
-  #      loops: 4
-  #      speed: 4
-  #shot_right_outlane_hit{state=="ball_save_not_ready"}:
-  #    billy_laugh:
-  #      loops: 4
-  #      speed: 4
+#lightshow for hitting end of survivor in wiz mode
+  e_survivor_complete:
+      top_drop_chase: stop
+      colorwash_opposite_glitter:
+        speed: 20
+        loops: 0
       
 widgets:
   saw_letters:
@@ -3501,6 +3498,28 @@ widgets:
       font_name: Mustkill     
       outline_color: black
       outline_width: 7
+#reawakening phase three points displayed    
+  w_phasethree_survivor_points:
+    - type: text
+      text: Survivor Phase Three Total 
+      number_grouping: true 
+      x: 33.6%
+      y: 19.2%
+      z: 7
+      font_size: 80
+      font_name: Mustkill     
+      outline_color: black
+      outline_width: 7
+    - type: text
+      text: (player|phasethree_survivor_points)
+      number_grouping: true 
+      x: 82.2%
+      y: 19%
+      z: 7
+      font_size: 80
+      font_name: Mustkill     
+      outline_color: black
+      outline_width: 7
 
 widget_player:
   single_player_ball_started:
@@ -4733,6 +4752,15 @@ widget_player:
   selection_mode_reawakening_selected:
     saw_letters:
       action: remove
+#reawakening phase 3 survivor total points displayed
+  e_survivor_complete:
+    w_phasethree_survivor_points:
+      slide: survivor_complete
+      action: add
+    saw_letters:
+      slide: base_slide_main
+      action: add
+
 
   # slide_HeHelpedMeVideo_created:
   #   w_HeHelpedMe_BallSave:
@@ -4905,18 +4933,12 @@ slides:
       video: PuzzleCollected
       width: 1366
       height: 768
-  # ShootAgain:
-  #   widgets:
-  #   - type: video
-  #     video: ShootAgain
-  #     width: 1366
-  #     height: 768
-  #gameovervideo:
-  #  widgets:
-  #  - type: video
-  #    video: GameOverVideo
-  #    width: 1366
-  #    height: 768
+  survivor_complete:
+    widgets:
+    - type: video
+      video: survivor_complete
+      width: 1366
+      height: 768
 
 ball_holds:
   bh_scoop:

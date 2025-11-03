@@ -742,6 +742,7 @@ variable_player:
     reawakening_survivor_selected:
       int: 2
       action: set
+#phase two flag for phase three
   e_phasetwo_apprentice_abduction_parttwo_complete:
     reawakening_phasetwo_completed:
       int: 1
@@ -758,7 +759,111 @@ variable_player:
     reawakening_phasetwo_completed:
       int: 1
       action: set
-
+# wizard mode complete. reset all flags
+  mode_reawakening_p3_complete:
+    drillchair_mode_complete:
+      int: 0
+      action: set
+    drillchair_complete:
+      int: 0
+      action: set
+    flammablejelly_mode_complete:
+      int: 0
+      action: set
+    quadshotgun_mode_complete:
+      int: 0
+      action: set
+    razorwire_mode_complete:
+      int: 0
+      action: set
+    reversebeartrap_mode_complete:
+      int: 0
+      action: set
+    modes_completed:
+      int: 0
+      action: set
+    zeptest_mode_complete:
+      int: 0
+      action: set
+    survival_instinct_mode_attempted:
+      int: 0
+      action: set
+    the_key_to_freedom_mode_attempted:
+      int: 0
+      action: set
+    puzzle_pieces:
+      int: 0
+      action: set
+    razorwire_puzzle:
+      int: 0
+      action: set
+    drillchair_puzzle:
+      int: 0
+      action: set
+    zeptest_puzzle:
+      int: 0
+      action: set
+    flammablejelly_puzzle:
+      int: 0
+      action: set
+    quadshotgun_puzzle:
+      int: 0
+      action: set
+    modes_attempted:
+      int: 0
+      action: set
+    drillchair_mode_attempted:
+      int: 0
+      action: set
+    drillchair_attempted:
+      int: 0
+      action: set
+    flammablejelly_mode_attempted:
+      int: 0
+      action: set
+    flammablejelly_attempted:
+      int: 0
+      action: set
+    quadshotgun_mode_attempted:
+      int: 0
+      action: set
+    quadshotgun_attempted:
+      int: 0
+      action: set
+    razorwire_mode_attempted:
+      int: 0
+      action: set
+    razorwire_attempted:
+      int: 0
+      action: set
+    reversebeartrap_mode_attempted:
+      int: 0
+      action: set
+    reversebeartrap_attempted:
+      int: 0
+      action: set
+    zeptest_mode_attempted:
+      int: 0
+      action: set
+    zeptest_attempted:
+      int: 0
+      action: set
+    reawakening_qualified:
+      int: 0
+      action: set
+    reawakening_phaseone_attempted:
+      int: 0
+      action: set
+    reawakening_apprentice_selected:
+      int: 0
+      action: set
+    reawakening_survivor_selected:
+      int: 0
+      action: set
+    reawakening_phasetwo_completed:
+      int: 0
+      action: set
+#
   logicblock_acc_make_your_choice_qualify_hit:
     choice_hurryup_hits:
       int: 1

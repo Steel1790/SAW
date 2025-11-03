@@ -2,7 +2,7 @@
 mode:
   start_events: selection_mode_reawakening_selected
   stop_events: stop_mode_reawakening, mode_reawakening_complete, ball_ended, ball_will_end, s_right_scoop_active{current_player.reawakening_phaseone_completed==1 and current_player.reawakening_apprentice_selected==1}, s_right_scoop_active{current_player.reawakening_phaseone_completed==1 and current_player.reawakening_survivor_selected==1}
-  priority: 184
+  priority: 190
   restart_on_next_ball: true
   code: mpf.modes.carousel.code.carousel.Carousel
 mode_settings:
@@ -24,9 +24,9 @@ variable_player:
       action: set
       string: 'selection_mode_phaseone_survivor_highlighted'
   logicblock_apprentice_phaseone_hit:
-    score: 7500000
+    score: (7500000 * (current_player.pf_multiplier))
   logicblock_survivor_phaseone_hit:  
-    score: 7500000
+    score: (7500000 * (current_player.pf_multiplier))
   timer_phaseone_apprentice_timer_tick:
     phaseone_apprentice_timer_seconds:
       int: device.timers.phaseone_apprentice_timer.ticks % 60
@@ -159,8 +159,27 @@ shows:
     - duration: .5s
       lights:
         (leds): off
-
+  sh_reawakening_highlighted:
+   - duration: 0.15s
+     lights:
+       (leds): beartrap
+   - duration: 0.15s
+     lights:
+       (leds): off
 show_player:
+#apprentice highlighted
+  reawakening_phaseone_apprentice_highlighted:
+    sh_reawakening_highlighted:
+      show_tokens:
+        leds: l_action_button, groundeffects, flipper, topper, speaker
+      loops: -1   
+#survivor highlighted
+  reawakening_phaseone_survivor_highlighted:
+    sh_reawakening_highlighted:
+      show_tokens:
+        leds: l_action_button, groundeffects, flipper, topper, speaker
+      loops: -1   
+
   logicblock_trap_select_qualify_counter_updated{enabled==True}:
     reawakening_mode_lit:
       show_tokens:
@@ -168,6 +187,7 @@ show_player:
       loops: -1
 #apprentice phase 1 lighting when selected
   reawakening_phaseone_apprentice_selected:
+    sh_reawakening_highlighted: stop
     mystery_flash:
       loops: 0
       speed: 5
@@ -200,6 +220,7 @@ show_player:
         color1: beartrap
 #survivor phase 1 lighting when selected
   reawakening_phaseone_survivor_selected:
+    sh_reawakening_highlighted: stop
     mystery_flash:
       loops: 0
       speed: 5
@@ -433,18 +454,26 @@ slides:
     widgets:
     - type: video
       video: mode_reawakening_apprentice_phaseone
+      width: 1366
+      height: 768     
   mode_reawakening_p1s_selected:
     widgets:
     - type: video
       video: mode_reawakening_survivor_phaseone
+      width: 1366
+      height: 768     
   reawakening_p1a_scoop:
     widgets:
     - type: video
       video: mode_reawakening_apprentice_phaseone_scoop
+      width: 1366
+      height: 768     
   reawakening_p1s_scoop:
     widgets:
     - type: video
       video: mode_reawakening_survivor_phaseone_scoop
+      width: 1366
+      height: 768     
 slide_player:
   reawakening_phaseone_apprentice_highlighted: 
     mode_reawakening_p1a:
@@ -491,7 +520,7 @@ widgets:
    #   y: 36
       y: 37
       x: 252
-      z: 8
+      z: 12
       font_size: 36
       anchor_x: right
       anchor_y: bottom
@@ -502,7 +531,7 @@ widgets:
       number_grouping: true  
       y: 36
       x: 253
-      z: 8
+      z: 11
       font_size: 36
       anchor_x: right
       anchor_y: bottom
@@ -515,7 +544,7 @@ widgets:
       number_grouping: true
       y: 37
       x: left+579
-      z: 8
+      z: 12
       font_size: 36
       anchor_x: right
       anchor_y: bottom
@@ -526,7 +555,7 @@ widgets:
       number_grouping: true
       y: 36
       x: left+580
-      z: 7
+      z: 11
       font_size: 36
       anchor_x: right
       anchor_y: bottom
@@ -543,7 +572,7 @@ widgets:
       anchor_y: bottom
       y: 37
       x: left+908
-      z: 8
+      z: 12
       color: black
     - type: Text
       text: (player3|score)
@@ -554,7 +583,7 @@ widgets:
       anchor_y: bottom
       y: 36
       x: left+909
-      z: 7
+      z: 11
       outline_color: f0cfab
       outline_width: 2
 #player 4 widget
@@ -567,7 +596,7 @@ widgets:
       anchor_y: bottom
       y: 37
       x: left+1239
-      z: 8
+      z: 12
       color: black
     - type: Text
       text: (player4|score)
@@ -578,7 +607,7 @@ widgets:
       anchor_y: bottom
       y: 36
       x: left+1240
-      z: 7
+      z: 11
       outline_color: f0cfab
       outline_width: 2
     - type: Text
@@ -720,7 +749,7 @@ widgets:
       opacity: 1.0
       y: 4
       x: 35
-      z: 3
+      z: 10
       anchor_x: left
       anchor_y: bottom
    w_current_player2:
@@ -729,7 +758,7 @@ widgets:
       opacity: 1.0
       y: 4
       x: left+515
-      z: 3
+      z: 10
       anchor_y: bottom  
    w_current_player3:
     - type: image
@@ -737,7 +766,7 @@ widgets:
       opacity: 1.0
       y: 4
       x: left+844
-      z: 3
+      z: 10
       anchor_y: bottom  
    w_current_player4:
     - type: image
@@ -745,7 +774,7 @@ widgets:
       opacity: 1.0
       y: 4
       x: left+1174
-      z: 3
+      z: 10
       anchor_y: bottom
 
 widget_player:
