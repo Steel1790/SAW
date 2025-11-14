@@ -33,6 +33,7 @@ sequences:
     enable_events: razorwire_pops_complete
     disable_events: mode_razorwire_complete
     events_when_complete: que_razorwire_complete
+    reset_events: player_modes_attempted{current_player.mode_progress_reset==1}
  
 timers:
   razorwire_60s_timer:
@@ -59,6 +60,7 @@ counters:
     start_enabled: true
     persist_state: true
     reset_on_complete: false
+    reset_events: mode_razorwire_started{current_player.mode_progress_reset==1}
 #    events_when_complete: mode_razorwire_complete, stop_mode_razorwire
     events_when_complete: razorwire_pops_complete   
     count_events: upper_l_pop_hit, upper_r_pop_hit, upper_b_pop_hit, logicblock_razorwire_item_pops_counter_hit
@@ -70,6 +72,7 @@ counters:
     start_enabled: false
     persist_state: true
     reset_on_complete: false
+    reset_events: mode_razorwire_started{current_player.mode_progress_reset==1}
 #    events_when_complete: mode_razorwire_complete, stop_mode_razorwire
     #events_when_complete: razorwire_pops_complete   
     count_events: upper_l_pop_hit, upper_r_pop_hit, upper_b_pop_hit
@@ -81,6 +84,7 @@ counters:
     start_enabled: false
     persist_state: true
     reset_on_complete: false
+    reset_events: mode_razorwire_started{current_player.mode_progress_reset==1}
     events_when_complete: razorwire_add_a_ball_complete
     count_events: drop_target_dt_upper_drop1_down
   razorwire_disc:
@@ -170,7 +174,11 @@ variable_player:
     razorwire_2x_timer:
       int: device.timers.razorwire_60s_timer.ticks_remaining
       action: set   
-
+#wiz mode reset
+  e_reload_mode_progress:
+    razorwire_visual_pops_counter:
+      action: set
+      int: (count)
   sw_pops:
     razorwire_points:
       int: 50000 * (current_player.pf_multiplier)
@@ -495,7 +503,7 @@ widgets:
    #   y: 36
       y: 37
       x: 252
-      z: 8
+      z: 12
       font_size: 36
       anchor_x: right
       anchor_y: bottom
@@ -506,7 +514,7 @@ widgets:
       number_grouping: true  
       y: 36
       x: 253
-      z: 8
+      z: 11
       font_size: 36
       anchor_x: right
       anchor_y: bottom
@@ -519,7 +527,7 @@ widgets:
       number_grouping: true
       y: 37
       x: left+579
-      z: 8
+      z: 12
       font_size: 36
       anchor_x: right
       anchor_y: bottom
@@ -530,7 +538,7 @@ widgets:
       number_grouping: true
       y: 36
       x: left+580
-      z: 7
+      z: 11
       font_size: 36
       anchor_x: right
       anchor_y: bottom
@@ -547,7 +555,7 @@ widgets:
       anchor_y: bottom
       y: 37
       x: left+908
-      z: 8
+      z: 12
       color: black
     - type: Text
       text: (player3|score)
@@ -558,7 +566,7 @@ widgets:
       anchor_y: bottom
       y: 36
       x: left+909
-      z: 7
+      z: 11
       outline_color: f0cfab
       outline_width: 2
 #player 4 widget
@@ -571,7 +579,7 @@ widgets:
       anchor_y: bottom
       y: 37
       x: left+1239
-      z: 8
+      z: 12
       color: black
     - type: Text
       text: (player4|score)
@@ -582,7 +590,7 @@ widgets:
       anchor_y: bottom
       y: 36
       x: left+1240
-      z: 7
+      z: 11
       outline_color: f0cfab
       outline_width: 2
     # - type: image
@@ -668,7 +676,7 @@ widgets:
    #   y: 36
       y: 37
       x: 252
-      z: 8
+      z: 12
       font_size: 36
       anchor_x: right
       anchor_y: bottom
@@ -679,7 +687,7 @@ widgets:
       number_grouping: true  
       y: 36
       x: 253
-      z: 8
+      z: 11
       font_size: 36
       anchor_x: right
       anchor_y: bottom
@@ -692,7 +700,7 @@ widgets:
       number_grouping: true
       y: 37
       x: left+579
-      z: 8
+      z: 12
       font_size: 36
       anchor_x: right
       anchor_y: bottom
@@ -703,7 +711,7 @@ widgets:
       number_grouping: true
       y: 36
       x: left+580
-      z: 7
+      z: 11
       font_size: 36
       anchor_x: right
       anchor_y: bottom
@@ -720,7 +728,7 @@ widgets:
       anchor_y: bottom
       y: 37
       x: left+908
-      z: 8
+      z: 12
       color: black
     - type: Text
       text: (player3|score)
@@ -731,7 +739,7 @@ widgets:
       anchor_y: bottom
       y: 36
       x: left+909
-      z: 7
+      z: 11
       outline_color: f0cfab
       outline_width: 2
 #player 4 widget
@@ -744,7 +752,7 @@ widgets:
       anchor_y: bottom
       y: 37
       x: left+1239
-      z: 8
+      z: 12
       color: black
     - type: Text
       text: (player4|score)
@@ -755,7 +763,7 @@ widgets:
       anchor_y: bottom
       y: 36
       x: left+1240
-      z: 7
+      z: 11
       outline_color: f0cfab
       outline_width: 2
     - type: Text
@@ -911,7 +919,7 @@ widgets:
       opacity: 1.0
       y: 4
       x: 35
-      z: 3
+      z: 10
       anchor_x: left
       anchor_y: bottom
    w_current_player2:
@@ -920,7 +928,7 @@ widgets:
       opacity: 1.0
       y: 4
       x: left+515
-      z: 3
+      z: 10
       anchor_y: bottom  
    w_current_player3:
     - type: image
@@ -928,7 +936,7 @@ widgets:
       opacity: 1.0
       y: 4
       x: left+844
-      z: 3
+      z: 10
       anchor_y: bottom  
    w_current_player4:
     - type: image
@@ -936,7 +944,7 @@ widgets:
       opacity: 1.0
       y: 4
       x: left+1174
-      z: 3
+      z: 10
       anchor_y: bottom
 
    #rw_shot_update3:
@@ -1038,6 +1046,22 @@ widget_player:
  slide_razorwirevideo_removed{current_player.v_current_player==4}:
    w_current_player4:
      slide: mode_razorwire01
+     action: add
+ slide_mode_razorwire02_active{current_player.v_current_player==1}:
+   w_current_player1:
+     slide: mode_razorwire02
+     action: add
+ slide_mode_razorwire02_active{current_player.v_current_player==2}:
+   w_current_player2:
+     slide: mode_razorwire02
+     action: add
+ slide_mode_razorwire02_active{current_player.v_current_player==3}:
+   w_current_player3:
+     slide: mode_razorwire02
+     action: add
+ slide_mode_razorwire02_active{current_player.v_current_player==4}:
+   w_current_player4:
+     slide: mode_razorwire02
      action: add
 
  #logicblock_razorwire_hit{step==2}: 
@@ -1468,6 +1492,7 @@ sound_player:
       block: true
 
 event_player: 
+  player_razorwire_razorwire_60s_timer_tick{value==60}: e_reload_mode_progress
   slide_mode_razorwire01_active: e_primary_mode_active
   shot_full_workshop_button_sp_full_workshop_lit_hit: que_razorwire_complete
   mode_razorwire_stopping{mode.shackle_multiball.active==True}: e_mode_qualify_disabled|0.5s

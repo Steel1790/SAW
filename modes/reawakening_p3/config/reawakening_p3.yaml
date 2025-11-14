@@ -13,7 +13,7 @@ mode_settings:
   next_item_events: s_left_flipper_button_active
   previous_item_events: s_right_flipper_button_active
 
-# Phase Three: Apprentice - Let the Games Begin (5m per lit shot. Each trap phase completion within this mode are worth 25m * the number of completed phases) - 6 ball MB with no ball save. Facilitate the same games as previously played in the modes. As you complete one trap, then you instantly progress into the next phased trap. The sequence is Drillchair, Razorwire, Flammable Jelly, Quad Shotgun Hallway, Reverse Bear Trap, and Zep's Test to ascend to becoming Jigsaw's apprentice.
+# Phase Three: Apprentice - Let the Games Begin (5m per lit shot. Each trap phase completion within this mode are worth 25m * the number of completed phases) - 6 ball MB with no ball save. Facilitate the same games as previously played in the modes. As you complete one trap, then you instantly progress into the next phased trap. The sequence is Drillchair, Razorwire, Flammable Jelly, Quad Shotgun Hallway, Zep's Test, and Reverse Bear Trap to ascend to becoming Jigsaw's apprentice.
 # Phase Three: Survivor - Final Showdown (65m each item collected)
  #6 ball MB with no ball save. Gather all eight of Jigsaw's items, then use them to confront Jigsaw and end his legacy in the final showdown.
  #20 pops = gear
@@ -28,13 +28,33 @@ mode_settings:
 event_player:
   reawakening_p3_phasethree_apprentice_selected: e_reawakening_selected
   reawakening_p3_phasethree_survivor_selected: e_reawakening_selected
+  ball_will_end: e_reset_game_flag
 multiballs:
+  apprentice_phasethree:
+    ball_count: 6
+    ball_count_type: total
+    shoot_again: 0s
+    start_events: reawakening_p3_phasethree_apprentice_selected
   survivor_phasethree:
     ball_count: 6
     ball_count_type: total
     shoot_again: 0s
     start_events: reawakening_p3_phasethree_survivor_selected
 accruals:
+#apprentice phase 3 part 4
+  acc_phasethree_apprentice_part4:
+    events:
+      - shot_reawakening_p3_apprentice_part4_left_standup_sp_phasethree_apprentice_part4_lit_hit
+      - shot_reawakening_p3_apprentice_part4_left_standup_right_ramp_sp_phasethree_apprentice_part4_lit_hit
+      - shot_reawakening_p3_apprentice_part4_right_standup_right_ramp_sp_phasethree_apprentice_part4_lit_hit
+      - shot_reawakening_p3_apprentice_part4_right_standup_sp_phasethree_apprentice_part4_lit_hit
+    reset_on_complete: false
+    persist_state: true
+    disable_on_complete: false
+    enable_events:  apprentice_p3_part3_complete
+    disable_events: apprentice_p3_part4_p1_complete
+    events_when_complete: apprentice_p3_part4_p1_complete
+
 #phase 3 survivor
   acc_phasethree_survivor:
     events:
@@ -54,6 +74,193 @@ accruals:
     events_when_complete: e_phasethree_survivor_items_complete
 
 counters:
+#apprentice part 1
+  apprentice_part1_counter:
+    starting_count: 0
+    count_complete_value: 2
+    direction: up
+    start_enabled: false
+    reset_on_complete: false
+    disable_on_complete: false    
+    disable_events: apprentice_p3_part1_complete 
+    enable_events: reawakening_p3_phasethree_apprentice_selected
+    events_when_complete: apprentice_p3_part1_complete 
+    count_events: apprentice_p3_part1_upper_pops_complete, apprentice_p3_part1_lower_pops_complete 
+  apprentice_part1_upper_counter:
+    starting_count: 0
+    count_complete_value: 6
+    direction: up
+    start_enabled: false
+    reset_on_complete: false
+    disable_on_complete: false    
+    disable_events: apprentice_p3_part1_upper_pops_complete 
+    enable_events: reawakening_p3_phasethree_apprentice_selected
+    events_when_complete: apprentice_p3_part1_upper_pops_complete 
+    count_events: sw_top_pops
+  apprentice_part1_lower_counter:
+    starting_count: 0
+    count_complete_value: 6
+    direction: up
+    start_enabled: false
+    reset_on_complete: false
+    disable_on_complete: false    
+    disable_events: apprentice_p3_part1_lower_pops_complete  
+    enable_events: reawakening_p3_phasethree_apprentice_selected
+    events_when_complete: apprentice_p3_part1_lower_pops_complete 
+    count_events: sw_bottom_pops
+#apprentice part 2
+  apprentice_part2_pops_counter:
+    starting_count: 0
+    count_complete_value: 8
+    direction: up
+    start_enabled: false
+    reset_on_complete: false
+    disable_on_complete: false    
+    disable_events: apprentice_p3_part2_pops_complete  
+    enable_events: apprentice_p3_part1_complete
+    events_when_complete: apprentice_p3_part2_pops_complete 
+    count_events: sw_top_pops
+  apprentice_part2_x_counter:
+    starting_count: 0
+    count_complete_value: 1
+    direction: up
+    start_enabled: false
+    reset_on_complete: false
+    disable_on_complete: false    
+    disable_events: apprentice_p3_part2_complete  
+    enable_events: apprentice_p3_part2_pops_complete
+    events_when_complete: apprentice_p3_part2_complete 
+    count_events: drop_target_dt_upper_drop1_down
+#apprentice part 3
+  apprentice_p3_left_loop_counter:
+    starting_count: 0
+    count_complete_value: 1
+    enable_events: e_apprentice_p3_hit1
+    persist_state: true
+    reset_on_complete: false
+    events_when_complete: apprentice_p3_part3_p1_complete
+    count_events: shot_reawakening_p3_apprentice_part3_left_loop_sp_phasethree_apprentice_part3_lit_hit
+  apprentice_p3_left_standup_counter:
+    starting_count: 0
+    count_complete_value: 1
+    enable_events: e_apprentice_p3_hit2
+    persist_state: true
+    reset_on_complete: false
+    events_when_complete: apprentice_p3_part3_p1_complete
+    count_events: shot_reawakening_p3_apprentice_part3_left_standup_sp_phasethree_apprentice_part3_lit_hit
+  apprentice_p3_left_standup_right_ramp_counter:
+    starting_count: 0
+    count_complete_value: 1
+    enable_events: e_apprentice_p3_hit3
+    persist_state: true
+    reset_on_complete: false
+    events_when_complete: apprentice_p3_part3_p1_complete
+    count_events: shot_reawakening_p3_apprentice_part3_left_standup_rightramp_sp_phasethree_apprentice_part3_lit_hit
+  apprentice_p3_right_standup_right_ramp_counter:
+    starting_count: 0
+    count_complete_value: 1
+    enable_events: e_apprentice_p3_hit4
+    persist_state: true
+    reset_on_complete: false
+    events_when_complete: apprentice_p3_part3_p1_complete
+    count_events: shot_reawakening_p3_apprentice_part3_right_standup_rightramp_sp_phasethree_apprentice_part3_lit_hit
+  apprentice_p3_right_loop_counter:
+    starting_count: 0
+    count_complete_value: 1
+    enable_events: e_apprentice_p3_hit5
+    persist_state: true
+    reset_on_complete: false
+    events_when_complete: apprentice_p3_part3_p1_complete
+    count_events: shot_reawakening_p3_apprentice_part3_right_loop_sp_phasethree_apprentice_part3_lit_hit
+  apprentice_p3_right_standup_counter:
+    starting_count: 0
+    count_complete_value: 1
+    enable_events: e_apprentice_p3_hit6
+    persist_state: true
+    reset_on_complete: false
+    events_when_complete: apprentice_p3_part3_p1_complete
+    count_events: shot_reawakening_p3_apprentice_part3_right_standup_sp_phasethree_apprentice_part3_lit_hit
+#apprentice part 4
+#shotgun 1
+  apprentice_p3_p4_left_standup_counter:
+    starting_count: 0
+    count_complete_value: 1
+    start_enabled: true
+    persist_state: true
+    reset_on_complete: false
+    count_events: shot_reawakening_p3_apprentice_part4_left_standup_sp_phasethree_apprentice_part4_lit_hit
+#shotgun 2
+  apprentice_p3_p4_left_standup_right_ramp_counter:
+    starting_count: 0
+    count_complete_value: 1
+    start_enabled: true
+    persist_state: true
+    reset_on_complete: false
+    count_events: shot_reawakening_p3_apprentice_part4_left_standup_right_ramp_sp_phasethree_apprentice_part4_lit_hit
+#shotgun 3
+  apprentice_p3_p4_right_standup_right_ramp_counter:
+    starting_count: 0
+    count_complete_value: 1
+    start_enabled: true
+    persist_state: true
+    reset_on_complete: false
+    count_events: shot_reawakening_p3_apprentice_part4_right_standup_right_ramp_sp_phasethree_apprentice_part4_lit_hit
+#shotgun 4
+  apprentice_p3_p4_right_standup_counter:
+    starting_count: 0
+    count_complete_value: 1
+    start_enabled: true
+    persist_state: true
+    reset_on_complete: false
+    count_events: shot_reawakening_p3_apprentice_part4_right_standup_sp_phasethree_apprentice_part4_lit_hit
+#spinner for part 4 part 2
+  apprentice_phasethree_p4_spinner_counter:
+    starting_count: 0
+    count_complete_value: 15
+    enable_events:  apprentice_p3_part4_p1_complete
+    disable_events: apprentice_p3_part4_complete
+    persist_state: true
+    reset_on_complete: false
+    events_when_complete: apprentice_p3_part4_complete
+    count_events: spinner_spinner_hit
+#apprentice part 5
+  cnt_apprentice_p3_p5_collected:
+    starting_count: 0
+    count_complete_value: 3
+    persist_state: true
+    events_when_complete: apprentice_p3_part5_complete
+    count_events: sg_apprentice_p5_part5_collected_hit
+  cnt_apprentice_p3_p5_collected_lit_hit:
+    persist_state: true
+    starting_count: 0
+    count_complete_value: 3
+    count_events: sg_apprentice_p5_part5_lit_hit
+  cnt_apprentice_p3_p5_collected_01:
+    persist_state: true
+    starting_count: 0
+    reset_on_complete: false
+    count_complete_value: 1
+    count_events: logicblock_cnt_apprentice_p3_p5_collected_updated{value==1}
+  cnt_apprentice_p3_p5_collected_02:
+    persist_state: true
+    starting_count: 0
+    reset_on_complete: false
+    count_complete_value: 1
+    count_events: logicblock_cnt_apprentice_p3_p5_collected_updated{value==2}
+  cnt_apprentice_p3_p5_collected_03:
+    persist_state: true
+    starting_count: 0
+    reset_on_complete: false
+    count_complete_value: 1
+    count_events: logicblock_cnt_apprentice_p3_p5_collected_updated{value==3}
+#apprentice part 6
+  cnt_apprentice_p3_part6_spinner:
+    starting_count: 0
+    start_enabled: false
+    disable_events: sw_standup
+    count_events: sw_spinner
+    enable_events: apprentice_p3_part5_complete
+#survivor
   survivor_pops_counter:
     starting_count: 0
     count_complete_value: 20
@@ -61,7 +268,7 @@ counters:
     start_enabled: false
     reset_on_complete: false
     disable_on_complete: false    
-    disable_events: survivor_pops_complete 
+    disable_events: survivor_pops_complete
     enable_events: reawakening_p3_phasethree_survivor_selected
     events_when_complete: survivor_pops_complete 
     count_events: sw_pops
@@ -162,6 +369,47 @@ counters:
     events_when_complete: e_survivor_complete, mode_reawakening_p3_complete, Que_BaseMusic_Progression_Lil_Billy
     count_events: s_upper_bank_drop_target_opto_active 
 
+random_event_player:
+  apprentice_p3_part2_complete:
+    events:
+      e_apprentice_p3_hit1: 20
+      e_apprentice_p3_hit2: 20
+      e_apprentice_p3_hit3: 20
+      e_apprentice_p3_hit4: 20
+      e_apprentice_p3_hit5: 20
+      e_apprentice_p3_hit6: 20
+    force_all: true
+sequences:
+  apprentice_p3_part3:
+    events:
+      - apprentice_p3_part3_p1_complete
+      - drop_target_dt_upper_drop1_down    
+    reset_on_complete: false
+    persist_state: true
+    disable_events: apprentice_p3_part3_complete
+    events_when_complete: apprentice_p3_part3_complete
+  apprentice_p3_part4:
+    events:
+      - quadshotgun_spinner_complete
+    reset_on_complete: false
+    persist_state: true
+    enable_events:  logicblock_acc_phasethree_apprentice_part4_complete
+    disable_events: apprentice_p3_part4_complete
+    events_when_complete: apprentice_p3_part4_complete
+  apprentice_p3_part6:
+    events:
+      - sw_standup
+      - sw_loop
+      - sw_ramp
+      - sw_loop
+      - sw_ramp
+      - drop_target_dt_upper_drop1_down
+    reset_on_complete: false
+    persist_state: true
+    enable_events: apprentice_p3_part5_complete
+    disable_events: mode_reawakening_p3_complete
+    events_when_complete: e_apprentice_complete, mode_reawakening_p3_complete, Que_BaseMusic_Progression_Lil_Billy
+
 variable_player:
   carousel_phasethree_apprentice_selected:
     selected_mode:
@@ -171,6 +419,167 @@ variable_player:
     selected_mode:
       action: set
       string: 'selection_mode_phasethree_survivor_highlighted'
+#apprentice
+  counter_apprentice_part1_upper_counter_hit:
+    score: 5000000 * (current_player.pf_multiplier)
+    phasethree_apprentice_points:
+      int: 5000000 * (current_player.pf_multiplier)
+      action: add
+    cnt_apprentice_part1_upper_pops_counter:
+      action: set
+      int: (count)
+  counter_apprentice_part1_lower_counter_hit:
+    score: 5000000 * (current_player.pf_multiplier)
+    phasethree_apprentice_points:
+      int: 5000000 * (current_player.pf_multiplier)
+      action: add
+    cnt_apprentice_part1_lower_pops_counter:
+      action: set
+      int: (count)
+  apprentice_p3_part1_complete:
+    score: 25000000 * (current_player.pf_multiplier)
+    phasethree_apprentice_points:
+      int: 25000000 * (current_player.pf_multiplier)
+      action: add
+  counter_apprentice_part2_pops_counter_hit:
+    score: 5000000 * (current_player.pf_multiplier)
+    phasethree_apprentice_points:
+      int: 5000000 * (current_player.pf_multiplier)
+      action: add
+    cnt_apprentice_part2_pops_counter:
+      action: set
+      int: (count)
+  apprentice_p3_part2_complete:
+    score: 50000000 * (current_player.pf_multiplier)
+    phasethree_apprentice_points:
+      int: 50000000 * (current_player.pf_multiplier)
+      action: add
+  sg_apprentice_p3_part3_part3_lit_hit:
+    score: 5000000 * (current_player.pf_multiplier)
+    phasethree_apprentice_points:
+      int: 5000000 * (current_player.pf_multiplier)
+      action: add
+  apprentice_p3_part3_complete:
+    score: 75000000 * (current_player.pf_multiplier)
+    phasethree_apprentice_points:
+      int: 75000000 * (current_player.pf_multiplier)
+      action: add
+#part 4
+  counter_apprentice_phasethree_p4_spinner_counter_hit:
+    score: 5000000 * (current_player.pf_multiplier)
+    phasethree_apprentice_points:
+      int: 5000000 * (current_player.pf_multiplier)
+      action: add
+    apprentice_p4_part2_spinner_counter:
+      action: set
+      int: (count)*46
+    apprentice_p4_part2_visual_spinner_counter:
+      action: set
+      int: (count)
+  counter_apprentice_p3_p4_left_standup_counter_hit:
+    apprentice_p3_p4_left_standup_counter:
+      action: set
+      int: (count)*250
+    score: 5000000 * (current_player.pf_multiplier)
+    phasethree_apprentice_points:
+      int: 5000000 * (current_player.pf_multiplier)
+      action: add
+  counter_apprentice_p3_p4_right_standup_counter_hit:
+    apprentice_p3_p4_right_standup_counter:
+      action: set
+      int: (count)*250
+    score: 5000000 * (current_player.pf_multiplier)
+    phasethree_apprentice_points:
+      int: 5000000 * (current_player.pf_multiplier)
+      action: add
+  counter_apprentice_p3_p4_left_standup_right_ramp_counter_hit:
+    apprentice_p3_p4_left_standup_right_ramp_counter:
+      action: set
+      int: (count)*250
+    score: 5000000 * (current_player.pf_multiplier)
+    phasethree_apprentice_points:
+      int: 5000000 * (current_player.pf_multiplier)
+      action: add
+  counter_apprentice_p3_p4_right_standup_right_ramp_counter_hit:
+    apprentice_p3_p4_right_standup_right_ramp_counter:
+      action: set
+      int: (count)*250
+    score: 5000000 * (current_player.pf_multiplier)
+    phasethree_apprentice_points:
+      int: 5000000 * (current_player.pf_multiplier)
+      action: add
+  apprentice_p3_part4_complete:
+    score: (100000000 * (current_player.pf_multiplier))
+    phasethree_apprentice_points:
+      int: 100000000 * (current_player.pf_multiplier)
+      action: add
+#part 5
+  counter_cnt_apprentice_p3_p5_collected_01_hit:
+    cnt_apprentice_p3_p5_collected_1:
+      action: set
+      int: (count)*250
+  counter_cnt_apprentice_p3_p5_collected_02_hit:
+    cnt_apprentice_p3_p5_collected_2:
+      action: set
+      int: (count)*250
+  counter_cnt_apprentice_p3_p5_collected_03_hit:
+    cnt_apprentice_p3_p5_collected_3:
+      action: set
+      int: (count)*250
+  sg_apprentice_p5_part5_lit_hit:
+    score: 5000000 * (current_player.pf_multiplier)
+    phasethree_apprentice_points:
+      int: 5000000 * (current_player.pf_multiplier)
+      action: add
+  sg_apprentice_p5_part5_collected_hit:
+    score: 5000000 * (current_player.pf_multiplier)
+    phasethree_apprentice_points:
+      int: 5000000 * (current_player.pf_multiplier)
+      action: add
+  apprentice_p3_part5_complete:
+    score: (125000000 * (current_player.pf_multiplier))
+    phasethree_apprentice_points:
+      int: 125000000 * (current_player.pf_multiplier)
+      action: add
+#part 6
+  logicblock_apprentice_p3_part6_hit{step==1}:
+    score: (5000000 + (current_player.part6_spinner_value * 145750)) * (current_player.pf_multiplier)
+    phasethree_apprentice_points:
+      int: (5000000 + (current_player.part6_spinner_value * 145750)) * (current_player.pf_multiplier)
+      action: add
+  logicblock_apprentice_p3_part6_hit{step==2}:
+    score: (5000000 + (current_player.part6_spinner_value * 145750)) * (current_player.pf_multiplier)
+    phasethree_apprentice_points:
+      int: (5000000 + (current_player.part6_spinner_value * 145750)) * (current_player.pf_multiplier)
+      action: add
+  logicblock_apprentice_p3_part6_hit{step==3}:
+    score: (5000000 + (current_player.part6_spinner_value * 145750)) * (current_player.pf_multiplier)
+    phasethree_apprentice_points:
+      int: (5000000 + (current_player.part6_spinner_value * 145750)) * (current_player.pf_multiplier)
+      action: add
+  logicblock_apprentice_p3_part6_hit{step==4}:
+    score: (5000000 + (current_player.part6_spinner_value * 145750)) * (current_player.pf_multiplier)
+    phasethree_apprentice_points:
+      int: (5000000 + (current_player.part6_spinner_value * 145750)) * (current_player.pf_multiplier)
+      action: add
+  logicblock_apprentice_p3_part6_hit{step==5}:
+    score: (5000000 + (current_player.part6_spinner_value * 145750)) * (current_player.pf_multiplier)
+    phasethree_apprentice_points:
+      int: (5000000 + (current_player.part6_spinner_value * 145750)) * (current_player.pf_multiplier)
+      action: add
+  apprentice_p3_part6_complete:
+    score: (150000000 * (current_player.pf_multiplier))
+    phasethree_apprentice_points:
+      int: (150000000 * (current_player.pf_multiplier))
+      action: add
+  counter_cnt_apprentice_p3_part6_spinner_hit:
+    part6_spinner_value:
+      action: set
+      int: (count)
+    part6_spinner_value_display:
+      action: set
+      int: (count) * 145750
+#survivor
   counter_survivor_pops_counter_hit:
     cnt_survivor_pops_counter:
       action: set
@@ -214,6 +623,31 @@ variable_player:
       int: (65000000 * (current_player.pf_multiplier))
       action: add
 shot_profiles:
+  sp_phasethree_apprentice:
+    advance_on_hit: false
+    states:
+      - name: phasethree_apprentice_not_ready
+        show: "off"
+      - name: part1_lit
+        show: "sh_phasethree_apprentice_part1_ready" 
+      - name: part2_lit
+        show: "sh_phasethree_apprentice_part2_ready"
+      - name: part3_lit
+        show: "sh_phasethree_apprentice_part3_ready"
+      - name: part4_lit
+        show: "sh_phasethree_apprentice_part4_ready"
+      - name: part5_lit
+        show: "sh_phasethree_apprentice_part5_ready"
+  sp_phasethree_apprentice_part5:
+    advance_on_hit: false
+    states:
+      - name: part5_not_ready
+        show: "off"
+      - name: part5_lit
+        show: "sh_phasethree_apprentice_part5_on"
+      - name: part5_collected
+        show: "sh_phasethree_apprentice_part5_enabled"
+
   sp_phasethree_survivor:
     advance_on_hit: false
     states:
@@ -229,6 +663,52 @@ shot_profiles:
       - name: lit
         show: "sh_reawakening_p3s_workshop_ready"
 shows:
+  sh_phasethree_apprentice_part1_ready:
+   - duration: 0.15s
+     lights:
+       (leds): drillchair
+   - duration: 0.15s
+     lights:
+       (leds): off  
+  sh_phasethree_apprentice_part2_ready:
+   - duration: 0.15s
+     lights:
+       (leds): razorwire
+   - duration: 0.15s
+     lights:
+       (leds): off 
+  sh_phasethree_apprentice_part3_ready:
+   - duration: 0.15s
+     lights:
+       (leds): jelly
+   - duration: 0.15s
+     lights:
+       (leds): off
+  sh_phasethree_apprentice_part4_ready:
+   - duration: 0.15s
+     lights:
+       (leds): shotgun
+   - duration: 0.15s
+     lights:
+       (leds): off
+  sh_phasethree_apprentice_part5_on:
+    - duration: 0.3s
+      lights:
+        (leds): zeptest
+    - duration: 0.3s
+      lights:
+        (leds): off
+  sh_phasethree_apprentice_part5_enabled:
+    - duration: 0.1s
+      lights:
+        (leds): zeptest
+    - duration: 0.1s
+      lights:
+        (leds): off
+  sh_phasethree_apprentice_part5_not_ready:
+    - duration: 0.3s
+      lights:
+        (leds): off
   sh_phasethree_survivor_ready:
    - duration: 0.15s
      lights:
@@ -247,6 +727,28 @@ shows:
    - duration: -1
      lights:
        (leds): beartrap_alt
+#apprentice part 6
+  apprentice_part6_progress:    
+    - duration: 1s
+      lights:
+        (leds): (color1)
+    - duration: 1s
+      lights:
+        (leds): off
+  apprentice_part6_progress_p1:    
+    - duration: 1s
+      lights:
+        (leds): (color1)
+    - duration: 1s
+      lights:
+        (leds): off
+  apprentice_part6_spinner:
+    - duration: 0.25s
+      lights:
+        (leds): shotgun
+    - duration: 0.25s
+      lights:
+        (leds): off
 show_player:
 #apprentice highlighted
   reawakening_p3_phasethree_apprentice_highlighted:
@@ -260,9 +762,530 @@ show_player:
       show_tokens:
         leds: l_action_button, groundeffects, flipper, topper, speaker
       loops: -1 
+#apprentice selected + started
+  reawakening_p3_phasethree_apprentice_selected:
+    sh_reawakening_p3_highlighted: stop
+    mystery_flash:
+      loops: 0
+      speed: 5
+      show_tokens:
+        led: l_mystery_scoop
+        color1: white
+    gi_on:
+      show_tokens:
+        color1: drillchair_alt  
+    billy_on:    
+      show_tokens:
+        color1: drillchair_alt  
+    starpost_on:
+      show_tokens:
+        color1: drillchair  
+    flipper_on:
+      show_tokens:
+        color1: drillchair_alt
+    speaker_heartbeat:
+      speed: 9
+      show_tokens:
+        color1: drillchair_alt
+    trough_on:
+      show_tokens:
+        color1: drillchair_alt
+    cabinet_heartbeat:
+      speed: 9
+      show_tokens:
+        color1: drillchair_alt
+    topper_heartbeat:
+      speed: 9
+      show_tokens:
+        color1: drillchair_alt
+#apprentice part 1 shots hit
+  counter_apprentice_part1_upper_counter_hit:
+    drillchair_color_shot_hit_inserts:
+      loops: 0
+      speed: 30
+      show_tokens:
+        color1: drillchair_alt
+    drillchair_color_shot_hit_discs:
+      loops: 0
+      speed: 30
+      show_tokens:
+        color1: drillchair
+    drillchair_color_shot_hit_pops:
+      loops: 0
+      speed: 30
+      show_tokens:
+        color1: FFFFFF   #white since white isn't a saved tag in lights
+    drillchair_color_shot_hit_starposts:
+      loops: 0
+      speed: 30
+      show_tokens:
+        color1: drillchair
+  counter_apprentice_part1_lower_counter_hit:
+    drillchair_color_shot_hit_inserts:
+      loops: 0
+      speed: 30
+      show_tokens:
+        color1: drillchair_alt
+    drillchair_color_shot_hit_discs:
+      loops: 0
+      speed: 30
+      show_tokens:
+        color1: drillchair
+    drillchair_color_shot_hit_pops:
+      loops: 0
+      speed: 30
+      show_tokens:
+        color1: FFFFFF   #white since white isn't a saved tag in lights
+    drillchair_color_shot_hit_starposts:
+      loops: 0
+      speed: 30
+      show_tokens:
+        color1: drillchair
+#apprentice part 1 complete / part 2 start
+  apprentice_p3_part1_complete:
+    gi_on:
+      show_tokens:
+        color1: razorwire
+    billy_on:
+      show_tokens:
+        color1: razorwire
+    starpost_on:
+      show_tokens:
+        color1: 6E6E6E   
+    speaker_heartbeat:
+      speed: 9
+      show_tokens:
+        color1: razorwire
+    flipper_on:
+      show_tokens:
+        color1: razorwire
+    trough_on:
+      show_tokens:
+        color1: razorwire
+    cabinet_heartbeat:
+      speed: 9
+      show_tokens:
+        color1: razorwire
+    topper_heartbeat:
+      speed: 9
+      show_tokens:
+        color1: razorwire
+ #apprentice part 2 shots hit
+  counter_apprentice_part2_pops_counter_hit:
+    attract_flash_all:
+      loops: 1
+      speed: 10
+      show_tokens:
+        color1: razorwire
+    speaker_white_sweeps:
+      loops: 2
+      speed: 20
+    domes_white_sweeps:
+      loops: 2
+      speed: 20      
+  apprentice_p3_part2_pops_complete:
+    top_drop_chase:
+      loops: -1
+      speed: 14
+      show_tokens:
+        color1: razorwire
+ #apprentice part 3 start
+  apprentice_p3_part2_complete:
+    top_drop_chase: stop
+    flipper_on:
+      show_tokens:
+        color1: jelly
+    starpost_on:
+      show_tokens:
+        color1: jelly_alt
+    gi_on:
+      show_tokens:
+        color1: jelly_alt
+    billy_on:    
+      show_tokens:
+        color1: jelly  
+    speaker_heartbeat:
+      speed: 9
+      show_tokens:
+        color1: jelly
+    trough_on:
+      show_tokens:
+        color1: jelly
+    cabinet_heartbeat:
+      speed: 9
+      show_tokens:
+        color1: jelly
+    topper_heartbeat:
+      speed: 9
+      show_tokens:
+        color1: jelly  
+  apprentice_p3_part3_p1_complete:
+    top_drop_chase:
+      loops: -1
+      speed: 14
+      show_tokens:
+        color1: jelly
+#apprentice part 3 shots hit
+  sg_apprentice_p3_part3_part3_lit_hit: 
+      fire_starposts:
+       loops: 1
+       speed: 20
+      fire_left_disc:
+       loops: 0
+       speed: 20      
+      fire_middle_disc:
+       loops: 0
+       speed: 20  
+      fire_right_disc:
+       loops: 0
+       speed: 20  
+      fire_top_pops:
+        loops: 0
+        speed: 30
+      fire_bottom_pops:
+        loops: 0
+        speed: 30
+ #apprentice part 4 start
+  apprentice_p3_part3_complete:
+    top_drop_chase: stop
+    flipper_on:
+      show_tokens:
+        color1: shotgun
+    starpost_on:
+      show_tokens:
+        color1: shotgun_alt
+    gi_on:
+      show_tokens:
+        color1: shotgun_alt
+    billy_on:    
+      show_tokens:
+        color1: shotgun  
+    speaker_heartbeat:
+      speed: 9
+      show_tokens:
+        color1: shotgun
+    trough_on:
+      show_tokens:
+        color1: shotgun
+    cabinet_heartbeat:
+      speed: 9
+      show_tokens:
+        color1: shotgun
+    topper_heartbeat:
+      speed: 9
+      show_tokens:
+        color1: shotgun  
+ #apprentice part 4 shots hit
+  shot_reawakening_p3_apprentice_part4_left_standup_sp_phasethree_apprentice_part4_lit_hit:
+    starpost_cycle:
+      loops: 1
+      speed: 20
+      show_tokens:
+        color1: shotgun_alt
+    speaker_shotgun_blast_left:
+      loops: 1
+      speed: 20
+    speaker_shotgun_blast_right:
+      loops: 1
+      speed: 20
+  shot_reawakening_p3_apprentice_part4_left_standup_right_ramp_sp_phasethree_apprentice_part4_lit_hit:
+    starpost_cycle:
+      loops: 1
+      speed: 20
+      show_tokens:
+        color1: shotgun_alt
+    speaker_shotgun_blast_left:
+      loops: 1
+      speed: 20
+    speaker_shotgun_blast_right:
+      loops: 1
+      speed: 20
+  shot_reawakening_p3_apprentice_part4_right_standup_right_ramp_sp_phasethree_apprentice_part4_lit_hit:
+    starpost_cycle:
+      loops: 1
+      speed: 20
+      show_tokens:
+        color1: shotgun_alt
+    speaker_shotgun_blast_left:
+      loops: 1
+      speed: 20
+    speaker_shotgun_blast_right:
+      loops: 1
+      speed: 20
+  shot_reawakening_p3_apprentice_part4_right_standup_sp_phasethree_apprentice_part4_lit_hit:
+    starpost_cycle:
+      loops: 1
+      speed: 20
+      show_tokens:
+        color1: shotgun_alt
+    speaker_shotgun_blast_left:
+      loops: 1
+      speed: 20
+    speaker_shotgun_blast_right:
+      loops: 1
+      speed: 20
+ #apprentice part 4 spinner hit
+  counter_apprentice_phasethree_p4_spinner_counter_hit:
+    flash_token:
+      loops: 2
+      speed: 8
+      show_tokens:
+        led: shotgun_flasher
+        color1: shotgun_alt
+  apprentice_p3_part4_p1_complete:
+     flash_token:
+      loops: -1
+      speed: 16
+      show_tokens:
+        led: l_right_loop_arrow
+        color1: shotgun
+ #apprentice part 5 start
+  apprentice_p3_part4_complete:
+    flash_token: stop
+    flipper_on:
+      show_tokens:
+        color1: zeptest
+    starpost_on:
+      show_tokens:
+        color1: zeptest_alt
+    gi_on:
+      show_tokens:
+        color1: zeptest_alt
+    billy_on:    
+      show_tokens:
+        color1: zeptest  
+    speaker_heartbeat:
+      speed: 9
+      show_tokens:
+        color1: zeptest
+    trough_on:
+      show_tokens:
+        color1: zeptest
+    cabinet_heartbeat:
+      speed: 9
+      show_tokens:
+        color1: zeptest
+    topper_heartbeat:
+      speed: 9
+      show_tokens:
+        color1: zeptest  
+#apprentice part 5 lit hit
+  sg_apprentice_p5_part5_lit_hit:
+      starpost_cycle:
+        loops: 0
+        speed: 20
+        show_tokens:
+          color1: zeptest_alt
+      gi_flicker_one_time:
+        loops: 1
+        speed: 20
+        show_tokens:
+          color1: zeptest
+      speaker_left_cylon:
+        loops: 1
+        speed: 50
+        show_tokens:
+          color1: zeptest_alt
+      speaker_right_cylon:
+        loops: 1
+        speed: 50
+        show_tokens:
+          color1: zeptest_alt
+  sg_apprentice_p5_part5_collected_hit:
+      starpost_cycle:
+        loops: 1
+        speed: 20
+        show_tokens:
+          color1: zeptest_alt
+      attract_flash_all:
+        loops: 1
+        speed: 20
+        show_tokens:
+          color1: zeptest_alt
+      jw_chase:
+        loops: 2
+        speed: 20
+        show_tokens:
+          color1: zeptest_alt
+      disc_middle_cylon:
+        loops: 1
+        speed: 50
+        show_tokens:
+          color1: zeptest_alt
+#apprentice part 6 initial lights
+  apprentice_p3_part5_complete:
+    flipper_on:
+      show_tokens:
+        color1: beartrap
+    starpost_on:
+      show_tokens:
+        color1: beartrap_alt
+    gi_on:
+      show_tokens:
+        color1: beartrap_alt
+    billy_on:    
+      show_tokens:
+        color1: beartrap  
+    speaker_heartbeat:
+      speed: 9
+      show_tokens:
+        color1: beartrap
+    trough_on:
+      show_tokens:
+        color1: beartrap
+    cabinet_heartbeat:
+      speed: 9
+      show_tokens:
+        color1: beartrap
+    topper_heartbeat:
+      speed: 9
+      show_tokens:
+        color1: beartrap  
+#apprentice part 6 progression
+  logicblock_apprentice_p3_part6_updated{value==0 and enabled==True}:
+      apprentice_part6_progress_p1:
+        loops: -1
+        speed: 5
+        show_tokens:
+          leds: standup
+          color1: beartrap
+      apprentice_part6_spinner:
+        loops: -1
+        show_tokens:
+          leds: shotgun_flasher
+  logicblock_apprentice_p3_part6_updated{value==1 and enabled==True}: 
+      apprentice_part6_progress_p1:
+        loops: -1
+        show_tokens:
+          color1: off
+      apprentice_part6_spinner:
+        loops: -1
+        show_tokens:
+          color1: off
+      apprentice_part6_progress:
+        loops: -1
+        speed: 5
+        show_tokens:
+          leds: orbit
+          color1: beartrap
+      starpost_cycle:
+        loops: 1
+        speed: 20
+        show_tokens:
+          color1: beartrap
+      beartrap_shot_hit_playfield:
+        loops: 0
+        speed: 30
+      beartrap_shot_hit_discs:
+        loops: 0
+        speed: 30
+  logicblock_apprentice_p3_part6_updated{value==2 and enabled==True}: 
+      apprentice_part6_progress:
+        loops: -1
+        show_tokens:
+          color1: off
+      right_ramp_chase:
+        loops: -1
+        speed: 5
+        show_tokens:
+          color1: beartrap
+      left_ramp_chase:
+        loops: -1
+        speed: 5
+        show_tokens:
+          color1: beartrap
+      starpost_cycle:
+        loops: 1
+        speed: 20
+        show_tokens:
+          color1: beartrap
+      beartrap_shot_hit_playfield:
+        loops: 0
+        speed: 30
+      beartrap_shot_hit_discs:
+        loops: 0
+        speed: 30
+  logicblock_apprentice_p3_part6_updated{value==3 and enabled==True}:
+      right_ramp_chase:
+        loops: -1
+        show_tokens:
+          color1: off
+      left_ramp_chase:
+        loops: -1
+        show_tokens:
+          color1: off
+      apprentice_part6_progress:
+        loops: -1
+        speed: 5
+        show_tokens:
+          leds: orbit
+          color1: beartrap
+      starpost_cycle:
+        loops: 1
+        speed: 20
+        show_tokens:
+          color1: beartrap
+      beartrap_shot_hit_playfield:
+        loops: 0
+        speed: 30
+      beartrap_shot_hit_discs:
+        loops: 0
+        speed: 30
+  logicblock_apprentice_p3_part6_updated{value==4 and enabled==True}: 
+      apprentice_part6_progress:
+        loops: -1
+        show_tokens:
+          color1: off
+      right_ramp_chase:
+        loops: -1
+        speed: 5
+        show_tokens:
+          color1: beartrap
+      left_ramp_chase:
+        loops: -1
+        speed: 5
+        show_tokens:
+          color1: beartrap
+      starpost_cycle:
+        loops: 1
+        speed: 20
+        show_tokens:
+          color1: beartrap
+      beartrap_shot_hit_playfield:
+        loops: 0
+        speed: 30
+      beartrap_shot_hit_discs:
+        loops: 0
+        speed: 30
+  logicblock_apprentice_p3_part6_updated{value==5 and enabled==True}: 
+      right_ramp_chase:
+        loops: -1
+        show_tokens:
+          color1: off
+      left_ramp_chase:
+        loops: -1
+        show_tokens:
+          color1: off
+      top_drop_chase:
+        loops: -1
+        speed: 14
+        show_tokens:
+          color1: beartrap
+      starpost_cycle:
+        loops: 1
+        speed: 20
+        show_tokens:
+          color1: beartrap
+      beartrap_shot_hit_playfield:
+        loops: 0
+        speed: 30
+      beartrap_shot_hit_discs:
+        loops: 0
+        speed: 30
+
 #survivor selected + started
   reawakening_p3_phasethree_survivor_selected:
-    sh_reawakening_p2_highlighted: stop
+    sh_reawakening_p3_highlighted: stop
     mystery_flash:
       loops: 0
       speed: 5
@@ -305,10 +1328,916 @@ show_player:
         speed: 14
         show_tokens:
           color1: beartrap
+#complete wizard mode end light show
+  e_apprentice_complete:
+    flipper_on: stop
+    starpost_on: stop
+    gi_on: stop
+    billy_on: stop
+    speaker_heartbeat: stop
+    trough_on: stop
+    cabinet_heartbeat: stop
+    topper_heartbeat: stop
+    top_drop_chase: stop
+  e_survivor_complete:
+    flipper_on: stop
+    starpost_on: stop
+    gi_on: stop
+    billy_on: stop
+    speaker_heartbeat: stop
+    trough_on: stop
+    cabinet_heartbeat: stop
+    topper_heartbeat: stop
 
 shots:
+#phase three apprentice part 1
+  shot_reawakening_p3_apprentice_part1_upper_pops:
+    enable_events: reawakening_p3_phasethree_apprentice_selected
+    disable_events: apprentice_p3_part1_complete
+    switches: s_left_top_jet_bumper, s_right_top_jet_bumper, s_lower_top_jet_bumper
+    profile: sp_phasethree_apprentice
+    show_tokens:
+      leds: top_bumper
+    control_events:
+      - events: reawakening_p3_phasethree_apprentice_selected
+        state: 1
+      - events: apprentice_p3_part1_upper_pops_complete
+        state: 0
+  shot_reawakening_p3_apprentice_part1_lower_pops:
+    enable_events: reawakening_p3_phasethree_apprentice_selected
+    disable_events: apprentice_p3_part1_complete
+    switches: s_left_bottom_jet_bumper, s_right_bottom_jet_bumper, s_upper_bottom_jet_bumper
+    profile: sp_phasethree_apprentice
+    show_tokens:
+      leds: bottom_bumper
+    control_events:
+      - events: reawakening_p3_phasethree_apprentice_selected
+        state: 1
+      - events: apprentice_p3_part1_lower_pops_complete
+        state: 0
+#phase three apprentice part 2
+  shot_reawakening_p3_apprentice_part2_pops:
+    enable_events: apprentice_p3_part1_complete
+    disable_events: apprentice_p3_part2_pops_complete
+    switches: s_left_bottom_jet_bumper, s_right_bottom_jet_bumper, s_upper_bottom_jet_bumper
+    profile: sp_phasethree_apprentice
+    show_tokens:
+      leds: top_bumper
+    control_events:
+      - events: reawakening_p3_phasethree_apprentice_selected
+        state: 0
+      - events: apprentice_p3_part1_complete
+        state: 2
+      - events: apprentice_p3_part2_pops_complete
+        state: 0
+#phase three apprentice part 3
+  shot_reawakening_p3_apprentice_part3_left_loop:
+    enable_events: apprentice_p3_part2_complete
+    disable_events: apprentice_p3_part3_p1_complete
+    switches: s_left_loop_bottom, s_left_loop_top
+    profile: sp_phasethree_apprentice
+    show_tokens:
+      leds: l_left_loop_arrow
+    control_events:
+      - events: reawakening_p3_phasethree_apprentice_selected
+        state: 0
+      - events: apprentice_p3_part2_complete
+        state: 3
+      - events: shot_reawakening_p3_apprentice_part3_left_loop_sp_phasethree_apprentice_part3_lit_hit
+        state: 0 
+      - events: apprentice_p3_part3_p1_complete
+        state: 0
+  shot_reawakening_p3_apprentice_part3_left_standup_rightramp:
+    enable_events: apprentice_p3_part2_complete
+    disable_events: apprentice_p3_part3_p1_complete
+    switches: s_left_standup_right_ramp
+    profile: sp_phasethree_apprentice
+    show_tokens:
+      leds: l_left_standup_right_ramp_arrow
+    control_events:
+      - events: reawakening_p3_phasethree_apprentice_selected
+        state: 0
+      - events: apprentice_p3_part2_complete
+        state: 3
+      - events: shot_reawakening_p3_apprentice_part3_left_standup_rightramp_sp_phasethree_apprentice_part3_lit_hit
+        state: 0 
+      - events: apprentice_p3_part3_p1_complete
+        state: 0
+  shot_reawakening_p3_apprentice_part3_right_standup_rightramp:
+    enable_events: apprentice_p3_part2_complete
+    disable_events: apprentice_p3_part3_p1_complete
+    switches: s_right_standup_right_ramp
+    profile: sp_phasethree_apprentice
+    show_tokens:
+      leds: l_right_standup_right_ramp_arrow
+    control_events:
+      - events: reawakening_p3_phasethree_apprentice_selected
+        state: 0
+      - events: apprentice_p3_part2_complete
+        state: 3
+      - events: shot_reawakening_p3_apprentice_part3_right_standup_rightramp_sp_phasethree_apprentice_part3_lit_hit
+        state: 0 
+      - events: apprentice_p3_part3_p1_complete
+        state: 0
+  shot_reawakening_p3_apprentice_part3_right_loop:
+    enable_events: apprentice_p3_part2_complete
+    disable_events: apprentice_p3_part3_p1_complete
+    switches: s_right_loop_bottom, s_right_loop_top
+    profile: sp_phasethree_apprentice
+    show_tokens:
+      leds: l_right_loop_arrow
+    control_events:
+      - events: reawakening_p3_phasethree_apprentice_selected
+        state: 0
+      - events: apprentice_p3_part2_complete
+        state: 3
+      - events: shot_reawakening_p3_apprentice_part3_right_loop_sp_phasethree_apprentice_part3_lit_hit
+        state: 0 
+      - events: apprentice_p3_part3_p1_complete
+        state: 0
+  shot_reawakening_p3_apprentice_part3_right_standup:
+    enable_events: apprentice_p3_part2_complete
+    disable_events: apprentice_p3_part3_p1_complete
+    switches: s_right_standup
+    profile: sp_phasethree_apprentice
+    show_tokens:
+      leds: l_right_standup_arrow
+    control_events:
+      - events: reawakening_p3_phasethree_apprentice_selected
+        state: 0
+      - events: apprentice_p3_part2_complete
+        state: 3
+      - events: shot_reawakening_p3_apprentice_part3_right_standup_sp_phasethree_apprentice_part3_lit_hit
+        state: 0 
+      - events: apprentice_p3_part3_p1_complete
+        state: 0
+  shot_reawakening_p3_apprentice_part3_left_standup:
+    enable_events: apprentice_p3_part2_complete
+    disable_events: apprentice_p3_part3_p1_complete
+    switches: s_left_standup
+    profile: sp_phasethree_apprentice
+    show_tokens:
+      leds: l_left_standup_arrow
+    control_events:
+      - events: reawakening_p3_phasethree_apprentice_selected
+        state: 0
+      - events: apprentice_p3_part2_complete
+        state: 3
+      - events: shot_reawakening_p3_apprentice_part3_left_standup_sp_phasethree_apprentice_part3_lit_hit
+        state: 0 
+      - events: apprentice_p3_part3_p1_complete
+        state: 0
+#phase three apprentice part 4
+  shot_reawakening_p3_apprentice_part4_left_standup:
+    enable_events: apprentice_p3_part3_complete
+    disable_events: apprentice_p3_part4_complete
+    switches: s_left_standup
+    profile: sp_phasethree_apprentice
+    show_tokens:
+      leds: l_left_standup_arrow
+    control_events:
+      - events: apprentice_p3_part3_complete
+        state: 4
+      - events: shot_reawakening_p3_apprentice_part4_left_standup_sp_phasethree_apprentice_part4_lit_hit
+        state: 0
+  shot_reawakening_p3_apprentice_part4_left_standup_right_ramp:
+    enable_events: apprentice_p3_part3_complete
+    disable_events: apprentice_p3_part4_complete
+    switches: s_left_standup_right_ramp
+    profile: sp_phasethree_apprentice
+    show_tokens:
+      leds: l_left_standup_right_ramp_arrow
+    control_events:
+      - events: apprentice_p3_part3_complete
+        state: 4
+      - events: shot_reawakening_p3_apprentice_part4_left_standup_right_ramp_sp_phasethree_apprentice_part4_lit_hit
+        state: 0
+  shot_reawakening_p3_apprentice_part4_right_standup_right_ramp:
+    enable_events: apprentice_p3_part3_complete
+    disable_events: apprentice_p3_part4_complete
+    switches: s_right_standup_right_ramp
+    profile: sp_phasethree_apprentice
+    show_tokens:
+      leds: l_right_standup_right_ramp_arrow
+    control_events:
+      - events: apprentice_p3_part3_complete
+        state: 4
+      - events: shot_reawakening_p3_apprentice_part4_right_standup_right_ramp_sp_phasethree_apprentice_part4_lit_hit
+        state: 0
+  shot_reawakening_p3_apprentice_part4_right_standup:
+    enable_events: apprentice_p3_part3_complete
+    disable_events: apprentice_p3_part4_complete
+    switches: s_right_standup
+    profile: sp_phasethree_apprentice
+    show_tokens:
+      leds: l_right_standup_arrow
+    control_events:
+      - events: apprentice_p3_part3_complete
+        state: 4
+      - events: shot_reawakening_p3_apprentice_part4_right_standup_sp_phasethree_apprentice_part4_lit_hit
+        state: 0
+ #phase three apprentice part 5
+  shot_reawakening_p3_apprentice_part5_left_loop:
+    enable_events: apprentice_p3_part4_complete
+    disable_events: shot_reawakening_p3_apprentice_part5_left_loop_sp_phasethree_apprentice_part5_part5_collected_hit, apprentice_p3_part5_complete
+    switches: s_left_loop_top
+    profile: sp_phasethree_apprentice_part5
+    show_tokens:
+      leds: l_left_loop_arrow
+    control_events:
+      - events: apprentice_p3_part4_complete
+        state: 1
+      - events: shot_reawakening_p3_apprentice_part5_left_loop_sp_phasethree_apprentice_part5_part5_lit_hit
+        state: 2
+      - events: shot_reawakening_p3_apprentice_part5_left_loop_sp_phasethree_apprentice_part5_part5_collected_hit
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_left_standup_rightramp_sp_phasethree_apprentice_part5_part5_lit_hit
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_left_standup_rightramp_sp_phasethree_apprentice_part5_part5_collected_hit
+        state: 1
+      - events: shot_reawakening_p3_apprentice_part5_right_standup_rightramp_sp_phasethree_apprentice_part5_part5_lit_hit
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_right_standup_rightramp_sp_phasethree_apprentice_part5_part5_collected_hit
+        state: 1
+      - events: shot_reawakening_p3_apprentice_part5_right_loop_sp_phasethree_apprentice_part5_part5_lit_hit
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_right_loop_sp_phasethree_apprentice_part5_part5_collected_hit
+        state: 1
+      - events: shot_reawakening_p3_apprentice_part5_right_standup_sp_phasethree_apprentice_part5_part5_lit_hit
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_right_standup_sp_phasethree_apprentice_part5_part5_collected_hit             
+        state: 1
+      - events: shot_reawakening_p3_apprentice_part5_left_standup_sp_phasethree_apprentice_part5_part5_lit_hit
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_left_standup_sp_phasethree_apprentice_part5_part5_collected_hit             
+        state: 1
+      - events: shot_reawakening_p3_apprentice_part5_middle_standup_sp_phasethree_apprentice_part5_part5_lit_hit             
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_middle_standup_sp_phasethree_apprentice_part5_part5_collected_hit             
+        state: 1
+      - events: shot_reawakening_p3_apprentice_part5_inner_loop_sp_phasethree_apprentice_part5_part5_lit_hit             
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_inner_loop_sp_phasethree_apprentice_part5_part5_collected_hit             
+        state: 1
+      - events: shot_reawakening_p3_apprentice_part5_left_ramp_sp_phasethree_apprentice_part5_part5_lit_hit             
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_left_ramp_sp_phasethree_apprentice_part5_part5_collected_hit             
+        state: 1
+      - events: shot_reawakening_p3_apprentice_part5_right_ramp_sp_phasethree_apprentice_part5_part5_lit_hit             
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_right_ramp_sp_phasethree_apprentice_part5_part5_collected_hit             
+        state: 1
+      - events: shot_reawakening_p3_apprentice_part5_drop_bank_sp_phasethree_apprentice_part5_part5_lit_hit             
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_drop_bank_sp_phasethree_apprentice_part5_part5_collected_hit             
+        state: 1  
+      - events: shot_reawakening_p3_apprentice_part5_top_drop_sp_phasethree_apprentice_part5_part5_lit_hit             
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_top_drop_sp_phasethree_apprentice_part5_part5_collected_hit             
+        state: 1  
+  shot_reawakening_p3_apprentice_part5_left_standup_rightramp:
+    enable_events: apprentice_p3_part4_complete
+    disable_events: shot_reawakening_p3_apprentice_part5_left_standup_rightramp_sp_phasethree_apprentice_part5_part5_collected_hit, apprentice_p3_part5_complete
+    switches: s_left_standup_right_ramp
+    profile: sp_phasethree_apprentice_part5
+    show_tokens:
+      leds: l_left_standup_right_ramp_arrow
+    control_events:
+      - events: apprentice_p3_part4_complete
+        state: 1
+      - events: shot_reawakening_p3_apprentice_part5_left_standup_rightramp_sp_phasethree_apprentice_part5_part5_lit_hit
+        state: 2
+      - events: shot_reawakening_p3_apprentice_part5_left_standup_rightramp_sp_phasethree_apprentice_part5_part5_collected_hit
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_left_loop_sp_phasethree_apprentice_part5_part5_lit_hit
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_left_loop_sp_phasethree_apprentice_part5_part5_collected_hit
+        state: 1
+      - events: shot_reawakening_p3_apprentice_part5_right_standup_rightramp_sp_phasethree_apprentice_part5_part5_lit_hit
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_right_standup_rightramp_sp_phasethree_apprentice_part5_part5_collected_hit
+        state: 1
+      - events: shot_reawakening_p3_apprentice_part5_right_loop_sp_phasethree_apprentice_part5_part5_lit_hit
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_right_loop_sp_phasethree_apprentice_part5_part5_collected_hit
+        state: 1
+      - events: shot_reawakening_p3_apprentice_part5_right_standup_sp_phasethree_apprentice_part5_part5_lit_hit
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_right_standup_sp_phasethree_apprentice_part5_part5_collected_hit             
+        state: 1
+      - events: shot_reawakening_p3_apprentice_part5_left_standup_sp_phasethree_apprentice_part5_part5_lit_hit
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_left_standup_sp_phasethree_apprentice_part5_part5_collected_hit             
+        state: 1
+      - events: shot_reawakening_p3_apprentice_part5_middle_standup_sp_phasethree_apprentice_part5_part5_lit_hit             
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_middle_standup_sp_phasethree_apprentice_part5_part5_collected_hit             
+        state: 1
+      - events: shot_reawakening_p3_apprentice_part5_inner_loop_sp_phasethree_apprentice_part5_part5_lit_hit             
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_inner_loop_sp_phasethree_apprentice_part5_part5_collected_hit             
+        state: 1
+      - events: shot_reawakening_p3_apprentice_part5_left_ramp_sp_phasethree_apprentice_part5_part5_lit_hit             
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_left_ramp_sp_phasethree_apprentice_part5_part5_collected_hit             
+        state: 1
+      - events: shot_reawakening_p3_apprentice_part5_right_ramp_sp_phasethree_apprentice_part5_part5_lit_hit             
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_right_ramp_sp_phasethree_apprentice_part5_part5_collected_hit             
+        state: 1
+      - events: shot_reawakening_p3_apprentice_part5_drop_bank_sp_phasethree_apprentice_part5_part5_lit_hit             
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_drop_bank_sp_phasethree_apprentice_part5_part5_collected_hit             
+        state: 1  
+      - events: shot_reawakening_p3_apprentice_part5_top_drop_sp_phasethree_apprentice_part5_part5_lit_hit             
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_top_drop_sp_phasethree_apprentice_part5_part5_collected_hit             
+        state: 1  
+  shot_reawakening_p3_apprentice_part5_right_standup_rightramp:
+    enable_events: apprentice_p3_part4_complete
+    disable_events: shot_reawakening_p3_apprentice_part5_right_standup_rightramp_sp_phasethree_apprentice_part5_part5_collected_hit, apprentice_p3_part5_complete
+    switches: s_right_standup_right_ramp
+    profile: sp_phasethree_apprentice_part5
+    show_tokens:
+      leds: l_right_standup_right_ramp_arrow
+    control_events:
+      - events: apprentice_p3_part4_complete
+        state: 1
+      - events: shot_reawakening_p3_apprentice_part5_right_standup_rightramp_sp_phasethree_apprentice_part5_part5_lit_hit
+        state: 2
+      - events: shot_reawakening_p3_apprentice_part5_right_standup_rightramp_sp_phasethree_apprentice_part5_part5_collected_hit
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_left_standup_rightramp_sp_phasethree_apprentice_part5_part5_lit_hit
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_left_standup_rightramp_sp_phasethree_apprentice_part5_part5_collected_hit
+        state: 1
+      - events: shot_reawakening_p3_apprentice_part5_left_loop_sp_phasethree_apprentice_part5_part5_lit_hit
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_left_loop_sp_phasethree_apprentice_part5_part5_collected_hit
+        state: 1
+      - events: shot_reawakening_p3_apprentice_part5_right_loop_sp_phasethree_apprentice_part5_part5_lit_hit
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_right_loop_sp_phasethree_apprentice_part5_part5_collected_hit
+        state: 1
+      - events: shot_reawakening_p3_apprentice_part5_right_standup_sp_phasethree_apprentice_part5_part5_lit_hit
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_right_standup_sp_phasethree_apprentice_part5_part5_collected_hit             
+        state: 1
+      - events: shot_reawakening_p3_apprentice_part5_left_standup_sp_phasethree_apprentice_part5_part5_lit_hit
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_left_standup_sp_phasethree_apprentice_part5_part5_collected_hit             
+        state: 1
+      - events: shot_reawakening_p3_apprentice_part5_middle_standup_sp_phasethree_apprentice_part5_part5_lit_hit             
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_middle_standup_sp_phasethree_apprentice_part5_part5_collected_hit             
+        state: 1
+      - events: shot_reawakening_p3_apprentice_part5_inner_loop_sp_phasethree_apprentice_part5_part5_lit_hit             
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_inner_loop_sp_phasethree_apprentice_part5_part5_collected_hit             
+        state: 1
+      - events: shot_reawakening_p3_apprentice_part5_left_ramp_sp_phasethree_apprentice_part5_part5_lit_hit             
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_left_ramp_sp_phasethree_apprentice_part5_part5_collected_hit             
+        state: 1
+      - events: shot_reawakening_p3_apprentice_part5_right_ramp_sp_phasethree_apprentice_part5_part5_lit_hit             
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_right_ramp_sp_phasethree_apprentice_part5_part5_collected_hit             
+        state: 1
+      - events: shot_reawakening_p3_apprentice_part5_drop_bank_sp_phasethree_apprentice_part5_part5_lit_hit             
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_drop_bank_sp_phasethree_apprentice_part5_part5_collected_hit             
+        state: 1  
+      - events: shot_reawakening_p3_apprentice_part5_top_drop_sp_phasethree_apprentice_part5_part5_lit_hit             
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_top_drop_sp_phasethree_apprentice_part5_part5_collected_hit             
+        state: 1  
+  shot_reawakening_p3_apprentice_part5_right_loop:
+    enable_events: apprentice_p3_part4_complete
+    disable_events: shot_reawakening_p3_apprentice_part5_right_loop_sp_phasethree_apprentice_part5_part5_collected_hit, apprentice_p3_part5_complete
+    switches: s_right_loop_top
+    profile: sp_phasethree_apprentice_part5
+    show_tokens:
+      leds: l_right_loop_arrow
+    control_events:
+      - events: apprentice_p3_part4_complete
+        state: 1
+      - events: shot_reawakening_p3_apprentice_part5_right_loop_sp_phasethree_apprentice_part5_part5_lit_hit
+        state: 2
+      - events: shot_reawakening_p3_apprentice_part5_right_loop_sp_phasethree_apprentice_part5_part5_collected_hit
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_left_standup_rightramp_sp_phasethree_apprentice_part5_part5_lit_hit
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_left_standup_rightramp_sp_phasethree_apprentice_part5_part5_collected_hit
+        state: 1
+      - events: shot_reawakening_p3_apprentice_part5_right_standup_rightramp_sp_phasethree_apprentice_part5_part5_lit_hit
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_right_standup_rightramp_sp_phasethree_apprentice_part5_part5_collected_hit
+        state: 1
+      - events: shot_reawakening_p3_apprentice_part5_left_loop_sp_phasethree_apprentice_part5_part5_lit_hit
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_left_loop_sp_phasethree_apprentice_part5_part5_collected_hit
+        state: 1
+      - events: shot_reawakening_p3_apprentice_part5_right_standup_sp_phasethree_apprentice_part5_part5_lit_hit
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_right_standup_sp_phasethree_apprentice_part5_part5_collected_hit             
+        state: 1
+      - events: shot_reawakening_p3_apprentice_part5_left_standup_sp_phasethree_apprentice_part5_part5_lit_hit
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_left_standup_sp_phasethree_apprentice_part5_part5_collected_hit             
+        state: 1
+      - events: shot_reawakening_p3_apprentice_part5_middle_standup_sp_phasethree_apprentice_part5_part5_lit_hit             
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_middle_standup_sp_phasethree_apprentice_part5_part5_collected_hit             
+        state: 1
+      - events: shot_reawakening_p3_apprentice_part5_inner_loop_sp_phasethree_apprentice_part5_part5_lit_hit             
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_inner_loop_sp_phasethree_apprentice_part5_part5_collected_hit             
+        state: 1
+      - events: shot_reawakening_p3_apprentice_part5_left_ramp_sp_phasethree_apprentice_part5_part5_lit_hit             
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_left_ramp_sp_phasethree_apprentice_part5_part5_collected_hit             
+        state: 1
+      - events: shot_reawakening_p3_apprentice_part5_right_ramp_sp_phasethree_apprentice_part5_part5_lit_hit             
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_right_ramp_sp_phasethree_apprentice_part5_part5_collected_hit             
+        state: 1
+      - events: shot_reawakening_p3_apprentice_part5_drop_bank_sp_phasethree_apprentice_part5_part5_lit_hit             
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_drop_bank_sp_phasethree_apprentice_part5_part5_collected_hit             
+        state: 1  
+      - events: shot_reawakening_p3_apprentice_part5_top_drop_sp_phasethree_apprentice_part5_part5_lit_hit             
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_top_drop_sp_phasethree_apprentice_part5_part5_collected_hit             
+        state: 1  
+  shot_reawakening_p3_apprentice_part5_right_standup:
+    enable_events: apprentice_p3_part4_complete
+    disable_events: shot_reawakening_p3_apprentice_part5_right_standup_sp_phasethree_apprentice_part5_part5_collected_hit, apprentice_p3_part5_complete 
+    switches: s_right_standup
+    profile: sp_phasethree_apprentice_part5
+    show_tokens:
+      leds: l_right_standup_arrow
+    control_events:
+      - events: apprentice_p3_part4_complete
+        state: 1
+      - events: shot_reawakening_p3_apprentice_part5_right_standup_sp_phasethree_apprentice_part5_part5_lit_hit
+        state: 2
+      - events: shot_reawakening_p3_apprentice_part5_right_standup_sp_phasethree_apprentice_part5_part5_collected_hit             
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_left_standup_rightramp_sp_phasethree_apprentice_part5_part5_lit_hit
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_left_standup_rightramp_sp_phasethree_apprentice_part5_part5_collected_hit
+        state: 1
+      - events: shot_reawakening_p3_apprentice_part5_right_standup_rightramp_sp_phasethree_apprentice_part5_part5_lit_hit
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_right_standup_rightramp_sp_phasethree_apprentice_part5_part5_collected_hit
+        state: 1
+      - events: shot_reawakening_p3_apprentice_part5_right_loop_sp_phasethree_apprentice_part5_part5_lit_hit
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_right_loop_sp_phasethree_apprentice_part5_part5_collected_hit
+        state: 1
+      - events: shot_reawakening_p3_apprentice_part5_left_loop_sp_phasethree_apprentice_part5_part5_lit_hit
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_left_loop_sp_phasethree_apprentice_part5_part5_collected_hit             
+        state: 1
+      - events: shot_reawakening_p3_apprentice_part5_left_standup_sp_phasethree_apprentice_part5_part5_lit_hit
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_left_standup_sp_phasethree_apprentice_part5_part5_collected_hit             
+        state: 1
+      - events: shot_reawakening_p3_apprentice_part5_middle_standup_sp_phasethree_apprentice_part5_part5_lit_hit             
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_middle_standup_sp_phasethree_apprentice_part5_part5_collected_hit             
+        state: 1
+      - events: shot_reawakening_p3_apprentice_part5_inner_loop_sp_phasethree_apprentice_part5_part5_lit_hit             
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_inner_loop_sp_phasethree_apprentice_part5_part5_collected_hit             
+        state: 1
+      - events: shot_reawakening_p3_apprentice_part5_left_ramp_sp_phasethree_apprentice_part5_part5_lit_hit             
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_left_ramp_sp_phasethree_apprentice_part5_part5_collected_hit             
+        state: 1
+      - events: shot_reawakening_p3_apprentice_part5_right_ramp_sp_phasethree_apprentice_part5_part5_lit_hit             
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_right_ramp_sp_phasethree_apprentice_part5_part5_collected_hit             
+        state: 1
+      - events: shot_reawakening_p3_apprentice_part5_drop_bank_sp_phasethree_apprentice_part5_part5_lit_hit             
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_drop_bank_sp_phasethree_apprentice_part5_part5_collected_hit             
+        state: 1  
+      - events: shot_reawakening_p3_apprentice_part5_top_drop_sp_phasethree_apprentice_part5_part5_lit_hit             
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_top_drop_sp_phasethree_apprentice_part5_part5_collected_hit             
+        state: 1  
+  shot_reawakening_p3_apprentice_part5_left_standup:
+    enable_events: apprentice_p3_part4_complete
+    disable_events: shot_reawakening_p3_apprentice_part5_left_standup_sp_phasethree_apprentice_part5_part5_collected_hit, apprentice_p3_part5_complete
+    switches: s_left_standup
+    profile: sp_phasethree_apprentice_part5
+    show_tokens:
+      leds: l_left_standup_arrow
+    control_events:
+      - events: apprentice_p3_part4_complete
+        state: 1
+      - events: shot_reawakening_p3_apprentice_part5_left_standup_sp_phasethree_apprentice_part5_part5_lit_hit
+        state: 2
+      - events: shot_reawakening_p3_apprentice_part5_left_standup_sp_phasethree_apprentice_part5_part5_collected_hit             
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_left_standup_rightramp_sp_phasethree_apprentice_part5_part5_lit_hit
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_left_standup_rightramp_sp_phasethree_apprentice_part5_part5_collected_hit
+        state: 1
+      - events: shot_reawakening_p3_apprentice_part5_right_standup_rightramp_sp_phasethree_apprentice_part5_part5_lit_hit
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_right_standup_rightramp_sp_phasethree_apprentice_part5_part5_collected_hit
+        state: 1
+      - events: shot_reawakening_p3_apprentice_part5_right_loop_sp_phasethree_apprentice_part5_part5_lit_hit
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_right_loop_sp_phasethree_apprentice_part5_part5_collected_hit
+        state: 1
+      - events: shot_reawakening_p3_apprentice_part5_right_standup_sp_phasethree_apprentice_part5_part5_lit_hit
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_right_standup_sp_phasethree_apprentice_part5_part5_collected_hit             
+        state: 1
+      - events: shot_reawakening_p3_apprentice_part5_left_loop_sp_phasethree_apprentice_part5_part5_lit_hit
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_left_loop_sp_phasethree_apprentice_part5_part5_collected_hit             
+        state: 1
+      - events: shot_reawakening_p3_apprentice_part5_middle_standup_sp_phasethree_apprentice_part5_part5_lit_hit             
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_middle_standup_sp_phasethree_apprentice_part5_part5_collected_hit             
+        state: 1
+      - events: shot_reawakening_p3_apprentice_part5_inner_loop_sp_phasethree_apprentice_part5_part5_lit_hit             
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_inner_loop_sp_phasethree_apprentice_part5_part5_collected_hit             
+        state: 1
+      - events: shot_reawakening_p3_apprentice_part5_left_ramp_sp_phasethree_apprentice_part5_part5_lit_hit             
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_left_ramp_sp_phasethree_apprentice_part5_part5_collected_hit             
+        state: 1
+      - events: shot_reawakening_p3_apprentice_part5_right_ramp_sp_phasethree_apprentice_part5_part5_lit_hit             
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_right_ramp_sp_phasethree_apprentice_part5_part5_collected_hit             
+        state: 1
+      - events: shot_reawakening_p3_apprentice_part5_drop_bank_sp_phasethree_apprentice_part5_part5_lit_hit             
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_drop_bank_sp_phasethree_apprentice_part5_part5_collected_hit             
+        state: 1  
+      - events: shot_reawakening_p3_apprentice_part5_top_drop_sp_phasethree_apprentice_part5_part5_lit_hit             
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_top_drop_sp_phasethree_apprentice_part5_part5_collected_hit             
+        state: 1  
+  shot_reawakening_p3_apprentice_part5_middle_standup:
+    enable_events: apprentice_p3_part4_complete
+    disable_events: shot_reawakening_p3_apprentice_part5_middle_standup_sp_phasethree_apprentice_part5_part5_collected_hit, apprentice_p3_part5_complete
+    switches: s_middle_standup
+    profile: sp_phasethree_apprentice_part5
+    show_tokens:
+      leds: bear_flasher
+    control_events:
+      - events: apprentice_p3_part4_complete
+        state: 1
+      - events: shot_reawakening_p3_apprentice_part5_middle_standup_sp_phasethree_apprentice_part5_part5_lit_hit             
+        state: 2
+      - events: shot_reawakening_p3_apprentice_part5_middle_standup_sp_phasethree_apprentice_part5_part5_collected_hit             
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_left_standup_rightramp_sp_phasethree_apprentice_part5_part5_lit_hit
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_left_standup_rightramp_sp_phasethree_apprentice_part5_part5_collected_hit
+        state: 1
+      - events: shot_reawakening_p3_apprentice_part5_right_standup_rightramp_sp_phasethree_apprentice_part5_part5_lit_hit
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_right_standup_rightramp_sp_phasethree_apprentice_part5_part5_collected_hit
+        state: 1
+      - events: shot_reawakening_p3_apprentice_part5_right_loop_sp_phasethree_apprentice_part5_part5_lit_hit
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_right_loop_sp_phasethree_apprentice_part5_part5_collected_hit
+        state: 1
+      - events: shot_reawakening_p3_apprentice_part5_right_standup_sp_phasethree_apprentice_part5_part5_lit_hit
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_right_standup_sp_phasethree_apprentice_part5_part5_collected_hit             
+        state: 1
+      - events: shot_reawakening_p3_apprentice_part5_left_standup_sp_phasethree_apprentice_part5_part5_lit_hit
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_left_standup_sp_phasethree_apprentice_part5_part5_collected_hit             
+        state: 1
+      - events: shot_reawakening_p3_apprentice_part5_left_loop_sp_phasethree_apprentice_part5_part5_lit_hit             
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_left_loop_sp_phasethree_apprentice_part5_part5_collected_hit             
+        state: 1
+      - events: shot_reawakening_p3_apprentice_part5_inner_loop_sp_phasethree_apprentice_part5_part5_lit_hit             
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_inner_loop_sp_phasethree_apprentice_part5_part5_collected_hit             
+        state: 1
+      - events: shot_reawakening_p3_apprentice_part5_left_ramp_sp_phasethree_apprentice_part5_part5_lit_hit             
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_left_ramp_sp_phasethree_apprentice_part5_part5_collected_hit             
+        state: 1
+      - events: shot_reawakening_p3_apprentice_part5_right_ramp_sp_phasethree_apprentice_part5_part5_lit_hit             
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_right_ramp_sp_phasethree_apprentice_part5_part5_collected_hit             
+        state: 1
+      - events: shot_reawakening_p3_apprentice_part5_drop_bank_sp_phasethree_apprentice_part5_part5_lit_hit             
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_drop_bank_sp_phasethree_apprentice_part5_part5_collected_hit             
+        state: 1  
+      - events: shot_reawakening_p3_apprentice_part5_top_drop_sp_phasethree_apprentice_part5_part5_lit_hit             
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_top_drop_sp_phasethree_apprentice_part5_part5_collected_hit             
+        state: 1  
+  shot_reawakening_p3_apprentice_part5_inner_loop:
+    enable_events: apprentice_p3_part4_complete
+    disable_events: shot_reawakening_p3_apprentice_part5_inner_loop_sp_phasethree_apprentice_part5_part5_collected_hit, apprentice_p3_part5_complete
+    switches: s_inner_loop
+    profile: sp_phasethree_apprentice_part5
+    show_tokens:
+      leds: l_inner_loop_arrow
+    control_events:
+      - events: apprentice_p3_part4_complete
+        state: 1
+      - events: shot_reawakening_p3_apprentice_part5_inner_loop_sp_phasethree_apprentice_part5_part5_lit_hit             
+        state: 2
+      - events: shot_reawakening_p3_apprentice_part5_inner_loop_sp_phasethree_apprentice_part5_part5_collected_hit             
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_left_standup_rightramp_sp_phasethree_apprentice_part5_part5_lit_hit
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_left_standup_rightramp_sp_phasethree_apprentice_part5_part5_collected_hit
+        state: 1
+      - events: shot_reawakening_p3_apprentice_part5_right_standup_rightramp_sp_phasethree_apprentice_part5_part5_lit_hit
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_right_standup_rightramp_sp_phasethree_apprentice_part5_part5_collected_hit
+        state: 1
+      - events: shot_reawakening_p3_apprentice_part5_right_loop_sp_phasethree_apprentice_part5_part5_lit_hit
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_right_loop_sp_phasethree_apprentice_part5_part5_collected_hit
+        state: 1
+      - events: shot_reawakening_p3_apprentice_part5_right_standup_sp_phasethree_apprentice_part5_part5_lit_hit
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_right_standup_sp_phasethree_apprentice_part5_part5_collected_hit             
+        state: 1
+      - events: shot_reawakening_p3_apprentice_part5_left_standup_sp_phasethree_apprentice_part5_part5_lit_hit
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_left_standup_sp_phasethree_apprentice_part5_part5_collected_hit             
+        state: 1
+      - events: shot_reawakening_p3_apprentice_part5_middle_standup_sp_phasethree_apprentice_part5_part5_lit_hit             
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_middle_standup_sp_phasethree_apprentice_part5_part5_collected_hit             
+        state: 1
+      - events: shot_reawakening_p3_apprentice_part5_left_loop_sp_phasethree_apprentice_part5_part5_lit_hit             
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_left_loop_sp_phasethree_apprentice_part5_part5_collected_hit             
+        state: 1
+      - events: shot_reawakening_p3_apprentice_part5_left_ramp_sp_phasethree_apprentice_part5_part5_lit_hit             
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_left_ramp_sp_phasethree_apprentice_part5_part5_collected_hit             
+        state: 1
+      - events: shot_reawakening_p3_apprentice_part5_right_ramp_sp_phasethree_apprentice_part5_part5_lit_hit             
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_right_ramp_sp_phasethree_apprentice_part5_part5_collected_hit             
+        state: 1
+      - events: shot_reawakening_p3_apprentice_part5_drop_bank_sp_phasethree_apprentice_part5_part5_lit_hit             
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_drop_bank_sp_phasethree_apprentice_part5_part5_collected_hit             
+        state: 1  
+      - events: shot_reawakening_p3_apprentice_part5_top_drop_sp_phasethree_apprentice_part5_part5_lit_hit             
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_top_drop_sp_phasethree_apprentice_part5_part5_collected_hit             
+        state: 1  
+  shot_reawakening_p3_apprentice_part5_left_ramp:
+    enable_events: apprentice_p3_part4_complete
+    disable_events: shot_reawakening_p3_apprentice_part5_left_ramp_sp_phasethree_apprentice_part5_part5_collected_hit, apprentice_p3_part5_complete
+    switches: s_left_ramp_score_top
+    profile: sp_phasethree_apprentice_part5
+    show_tokens:
+      leds: left_ramp
+    control_events:
+      - events: apprentice_p3_part4_complete
+        state: 1
+      - events: shot_reawakening_p3_apprentice_part5_left_ramp_sp_phasethree_apprentice_part5_part5_lit_hit             
+        state: 2
+      - events: shot_reawakening_p3_apprentice_part5_left_ramp_sp_phasethree_apprentice_part5_part5_collected_hit             
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_left_standup_rightramp_sp_phasethree_apprentice_part5_part5_lit_hit
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_left_standup_rightramp_sp_phasethree_apprentice_part5_part5_collected_hit
+        state: 1
+      - events: shot_reawakening_p3_apprentice_part5_right_standup_rightramp_sp_phasethree_apprentice_part5_part5_lit_hit
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_right_standup_rightramp_sp_phasethree_apprentice_part5_part5_collected_hit
+        state: 1
+      - events: shot_reawakening_p3_apprentice_part5_right_loop_sp_phasethree_apprentice_part5_part5_lit_hit
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_right_loop_sp_phasethree_apprentice_part5_part5_collected_hit
+        state: 1
+      - events: shot_reawakening_p3_apprentice_part5_right_standup_sp_phasethree_apprentice_part5_part5_lit_hit
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_right_standup_sp_phasethree_apprentice_part5_part5_collected_hit             
+        state: 1
+      - events: shot_reawakening_p3_apprentice_part5_left_standup_sp_phasethree_apprentice_part5_part5_lit_hit
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_left_standup_sp_phasethree_apprentice_part5_part5_collected_hit             
+        state: 1
+      - events: shot_reawakening_p3_apprentice_part5_middle_standup_sp_phasethree_apprentice_part5_part5_lit_hit             
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_middle_standup_sp_phasethree_apprentice_part5_part5_collected_hit             
+        state: 1
+      - events: shot_reawakening_p3_apprentice_part5_inner_loop_sp_phasethree_apprentice_part5_part5_lit_hit             
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_inner_loop_sp_phasethree_apprentice_part5_part5_collected_hit             
+        state: 1
+      - events: shot_reawakening_p3_apprentice_part5_left_loop_sp_phasethree_apprentice_part5_part5_lit_hit             
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_left_loop_sp_phasethree_apprentice_part5_part5_collected_hit             
+        state: 1
+      - events: shot_reawakening_p3_apprentice_part5_right_ramp_sp_phasethree_apprentice_part5_part5_lit_hit             
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_right_ramp_sp_phasethree_apprentice_part5_part5_collected_hit             
+        state: 1
+      - events: shot_reawakening_p3_apprentice_part5_drop_bank_sp_phasethree_apprentice_part5_part5_lit_hit             
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_drop_bank_sp_phasethree_apprentice_part5_part5_collected_hit             
+        state: 1  
+      - events: shot_reawakening_p3_apprentice_part5_top_drop_sp_phasethree_apprentice_part5_part5_lit_hit             
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_top_drop_sp_phasethree_apprentice_part5_part5_collected_hit             
+        state: 1  
+  shot_reawakening_p3_apprentice_part5_right_ramp:
+    enable_events: apprentice_p3_part4_complete
+    disable_events: shot_reawakening_p3_apprentice_part5_right_ramp_sp_phasethree_apprentice_part5_part5_collected_hit, apprentice_p3_part5_complete
+    switches: s_right_ramp_score_top
+    profile: sp_phasethree_apprentice_part5
+    show_tokens:
+      leds: right_ramp
+    control_events:
+      - events: apprentice_p3_part4_complete
+        state: 1
+      - events: shot_reawakening_p3_apprentice_part5_right_ramp_sp_phasethree_apprentice_part5_part5_lit_hit             
+        state: 2
+      - events: shot_reawakening_p3_apprentice_part5_right_ramp_sp_phasethree_apprentice_part5_part5_collected_hit             
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_left_standup_rightramp_sp_phasethree_apprentice_part5_part5_lit_hit
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_left_standup_rightramp_sp_phasethree_apprentice_part5_part5_collected_hit
+        state: 1
+      - events: shot_reawakening_p3_apprentice_part5_right_standup_rightramp_sp_phasethree_apprentice_part5_part5_lit_hit
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_right_standup_rightramp_sp_phasethree_apprentice_part5_part5_collected_hit
+        state: 1
+      - events: shot_reawakening_p3_apprentice_part5_right_loop_sp_phasethree_apprentice_part5_part5_lit_hit
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_right_loop_sp_phasethree_apprentice_part5_part5_collected_hit
+        state: 1
+      - events: shot_reawakening_p3_apprentice_part5_right_standup_sp_phasethree_apprentice_part5_part5_lit_hit
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_right_standup_sp_phasethree_apprentice_part5_part5_collected_hit             
+        state: 1
+      - events: shot_reawakening_p3_apprentice_part5_left_standup_sp_phasethree_apprentice_part5_part5_lit_hit
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_left_standup_sp_phasethree_apprentice_part5_part5_collected_hit             
+        state: 1
+      - events: shot_reawakening_p3_apprentice_part5_middle_standup_sp_phasethree_apprentice_part5_part5_lit_hit             
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_middle_standup_sp_phasethree_apprentice_part5_part5_collected_hit             
+        state: 1
+      - events: shot_reawakening_p3_apprentice_part5_inner_loop_sp_phasethree_apprentice_part5_part5_lit_hit             
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_inner_loop_sp_phasethree_apprentice_part5_part5_collected_hit             
+        state: 1
+      - events: shot_reawakening_p3_apprentice_part5_left_ramp_sp_phasethree_apprentice_part5_part5_lit_hit             
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_left_ramp_sp_phasethree_apprentice_part5_part5_collected_hit             
+        state: 1
+      - events: shot_reawakening_p3_apprentice_part5_left_loop_sp_phasethree_apprentice_part5_part5_lit_hit             
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_left_loop_sp_phasethree_apprentice_part5_part5_collected_hit             
+        state: 1
+      - events: shot_reawakening_p3_apprentice_part5_drop_bank_sp_phasethree_apprentice_part5_part5_lit_hit             
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_drop_bank_sp_phasethree_apprentice_part5_part5_collected_hit             
+        state: 1  
+      - events: shot_reawakening_p3_apprentice_part5_top_drop_sp_phasethree_apprentice_part5_part5_lit_hit             
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_top_drop_sp_phasethree_apprentice_part5_part5_collected_hit             
+        state: 1  
+  shot_reawakening_p3_apprentice_part5_drop_bank:
+    enable_events: apprentice_p3_part4_complete
+    disable_events: shot_reawakening_p3_apprentice_part5_drop_bank_sp_phasethree_apprentice_part5_part5_collected_hit, apprentice_p3_part5_complete
+    switches: s_lower_bank_drop_target_opto_upper, s_lower_bank_drop_target_opto_middle, s_lower_bank_drop_target_opto_lower
+    profile: sp_phasethree_apprentice_part5
+    show_tokens:
+      leds: skillshot
+    control_events:
+      - events: apprentice_p3_part4_complete
+        state: 1
+      - events: shot_reawakening_p3_apprentice_part5_drop_bank_sp_phasethree_apprentice_part5_part5_lit_hit             
+        state: 2
+      - events: shot_reawakening_p3_apprentice_part5_drop_bank_sp_phasethree_apprentice_part5_part5_collected_hit             
+        state: 0 
+      - events: shot_reawakening_p3_apprentice_part5_right_ramp_sp_phasethree_apprentice_part5_part5_lit_hit             
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_right_ramp_sp_phasethree_apprentice_part5_part5_collected_hit             
+        state: 1
+      - events: shot_reawakening_p3_apprentice_part5_left_standup_rightramp_sp_phasethree_apprentice_part5_part5_lit_hit
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_left_standup_rightramp_sp_phasethree_apprentice_part5_part5_collected_hit
+        state: 1
+      - events: shot_reawakening_p3_apprentice_part5_right_standup_rightramp_sp_phasethree_apprentice_part5_part5_lit_hit
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_right_standup_rightramp_sp_phasethree_apprentice_part5_part5_collected_hit
+        state: 1
+      - events: shot_reawakening_p3_apprentice_part5_right_loop_sp_phasethree_apprentice_part5_part5_lit_hit
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_right_loop_sp_phasethree_apprentice_part5_part5_collected_hit
+        state: 1
+      - events: shot_reawakening_p3_apprentice_part5_right_standup_sp_phasethree_apprentice_part5_part5_lit_hit
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_right_standup_sp_phasethree_apprentice_part5_part5_collected_hit             
+        state: 1
+      - events: shot_reawakening_p3_apprentice_part5_left_standup_sp_phasethree_apprentice_part5_part5_lit_hit
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_left_standup_sp_phasethree_apprentice_part5_part5_collected_hit             
+        state: 1
+      - events: shot_reawakening_p3_apprentice_part5_middle_standup_sp_phasethree_apprentice_part5_part5_lit_hit             
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_middle_standup_sp_phasethree_apprentice_part5_part5_collected_hit             
+        state: 1
+      - events: shot_reawakening_p3_apprentice_part5_inner_loop_sp_phasethree_apprentice_part5_part5_lit_hit             
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_inner_loop_sp_phasethree_apprentice_part5_part5_collected_hit             
+        state: 1
+      - events: shot_reawakening_p3_apprentice_part5_left_ramp_sp_phasethree_apprentice_part5_part5_lit_hit             
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_left_ramp_sp_phasethree_apprentice_part5_part5_collected_hit             
+        state: 1
+      - events: shot_reawakening_p3_apprentice_part5_left_loop_sp_phasethree_apprentice_part5_part5_lit_hit             
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_left_loop_sp_phasethree_apprentice_part5_part5_collected_hit             
+        state: 1   
+      - events: shot_reawakening_p3_apprentice_part5_top_drop_sp_phasethree_apprentice_part5_part5_lit_hit             
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_top_drop_sp_phasethree_apprentice_part5_part5_collected_hit             
+        state: 1   
+  shot_reawakening_p3_apprentice_part5_top_drop:
+    enable_events: apprentice_p3_part4_complete
+    disable_events: shot_reawakening_p3_apprentice_part5_top_drop_sp_phasethree_apprentice_part5_part5_collected_hit, apprentice_p3_part5_complete
+    switches: s_upper_bank_drop_target_opto
+    profile: sp_phasethree_apprentice_part5
+    show_tokens:
+      leds: billy
+    control_events:
+      - events: apprentice_p3_part4_complete
+        state: 1
+      - events: shot_reawakening_p3_apprentice_part5_top_drop_sp_phasethree_apprentice_part5_part5_lit_hit             
+        state: 2
+      - events: shot_reawakening_p3_apprentice_part5_top_drop_sp_phasethree_apprentice_part5_part5_collected_hit             
+        state: 0  
+      - events: shot_reawakening_p3_apprentice_part5_right_ramp_sp_phasethree_apprentice_part5_part5_lit_hit             
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_right_ramp_sp_phasethree_apprentice_part5_part5_collected_hit             
+        state: 1
+      - events: shot_reawakening_p3_apprentice_part5_left_standup_rightramp_sp_phasethree_apprentice_part5_part5_lit_hit
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_left_standup_rightramp_sp_phasethree_apprentice_part5_part5_collected_hit
+        state: 1
+      - events: shot_reawakening_p3_apprentice_part5_right_standup_rightramp_sp_phasethree_apprentice_part5_part5_lit_hit
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_right_standup_rightramp_sp_phasethree_apprentice_part5_part5_collected_hit
+        state: 1
+      - events: shot_reawakening_p3_apprentice_part5_right_loop_sp_phasethree_apprentice_part5_part5_lit_hit
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_right_loop_sp_phasethree_apprentice_part5_part5_collected_hit
+        state: 1
+      - events: shot_reawakening_p3_apprentice_part5_right_standup_sp_phasethree_apprentice_part5_part5_lit_hit
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_right_standup_sp_phasethree_apprentice_part5_part5_collected_hit             
+        state: 1
+      - events: shot_reawakening_p3_apprentice_part5_left_standup_sp_phasethree_apprentice_part5_part5_lit_hit
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_left_standup_sp_phasethree_apprentice_part5_part5_collected_hit             
+        state: 1
+      - events: shot_reawakening_p3_apprentice_part5_middle_standup_sp_phasethree_apprentice_part5_part5_lit_hit             
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_middle_standup_sp_phasethree_apprentice_part5_part5_collected_hit             
+        state: 1
+      - events: shot_reawakening_p3_apprentice_part5_inner_loop_sp_phasethree_apprentice_part5_part5_lit_hit             
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_inner_loop_sp_phasethree_apprentice_part5_part5_collected_hit             
+        state: 1
+      - events: shot_reawakening_p3_apprentice_part5_left_ramp_sp_phasethree_apprentice_part5_part5_lit_hit             
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_left_ramp_sp_phasethree_apprentice_part5_part5_collected_hit             
+        state: 1
+      - events: shot_reawakening_p3_apprentice_part5_left_loop_sp_phasethree_apprentice_part5_part5_lit_hit             
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_left_loop_sp_phasethree_apprentice_part5_part5_collected_hit             
+        state: 1  
+      - events: shot_reawakening_p3_apprentice_part5_drop_bank_sp_phasethree_apprentice_part5_part5_lit_hit             
+        state: 0
+      - events: shot_reawakening_p3_apprentice_part5_drop_bank_sp_phasethree_apprentice_part5_part5_collected_hit             
+        state: 1  
+
 #phase three survivor
   shot_reawakening_p3_survivor_pops:
+    enable_events: reawakening_p3_phasethree_survivor_selected
+    disable_events: e_survivor_complete
     switches: s_left_top_jet_bumper, s_right_top_jet_bumper, s_lower_top_jet_bumper, s_left_bottom_jet_bumper, s_right_bottom_jet_bumper, s_upper_bottom_jet_bumper
     profile: sp_phasethree_survivor
     show_tokens:
@@ -319,6 +2248,8 @@ shots:
       - events: survivor_pops_complete
         state: 0
   shot_reawakening_p3_survivor_standups:
+    enable_events: reawakening_p3_phasethree_survivor_selected
+    disable_events: e_survivor_complete
     switches: s_left_standup, s_right_standup, s_middle_standup, s_left_standup_right_ramp, s_right_standup_right_ramp 
     profile: sp_phasethree_survivor
     show_tokens:
@@ -329,6 +2260,8 @@ shots:
       - events: survivor_standups_complete
         state: 0
   shot_reawakening_p3_survivor_slings:
+    enable_events: reawakening_p3_phasethree_survivor_selected
+    disable_events: e_survivor_complete
     switches: s_left_standup, s_right_standup, s_middle_standup, s_left_standup_right_ramp, s_right_standup_right_ramp 
     profile: sp_phasethree_survivor
     show_tokens:
@@ -339,6 +2272,8 @@ shots:
       - events: survivor_slings_complete
         state: 0
   shot_reawakening_p3_survivor_inlanes:
+    enable_events: reawakening_p3_phasethree_survivor_selected
+    disable_events: e_survivor_complete
     switches: s_left_standup, s_right_standup, s_middle_standup, s_left_standup_right_ramp, s_right_standup_right_ramp 
     profile: sp_phasethree_survivor
     show_tokens:
@@ -349,6 +2284,8 @@ shots:
       - events: survivor_inlanes_complete
         state: 0
   shot_reawakening_p3_survivor_spinners:
+    enable_events: reawakening_p3_phasethree_survivor_selected
+    disable_events: e_survivor_complete
     switches: s_left_standup, s_right_standup, s_middle_standup, s_left_standup_right_ramp, s_right_standup_right_ramp 
     profile: sp_phasethree_survivor
     show_tokens:
@@ -359,6 +2296,8 @@ shots:
       - events: survivor_spinners_complete
         state: 0
   shot_reawakening_p3_survivor_ramps:
+    enable_events: reawakening_p3_phasethree_survivor_selected
+    disable_events: e_survivor_complete
     switches: s_left_standup, s_right_standup, s_middle_standup, s_left_standup_right_ramp, s_right_standup_right_ramp 
     profile: sp_phasethree_survivor
     show_tokens:
@@ -369,6 +2308,8 @@ shots:
       - events: survivor_ramps_complete
         state: 0
   shot_reawakening_p3_survivor_loops:
+    enable_events: reawakening_p3_phasethree_survivor_selected
+    disable_events: e_survivor_complete
     switches: s_left_standup, s_right_standup, s_middle_standup, s_left_standup_right_ramp, s_right_standup_right_ramp 
     profile: sp_phasethree_survivor
     show_tokens:
@@ -379,6 +2320,8 @@ shots:
       - events: survivor_loops_complete
         state: 0
   shot_reawakening_p3_survivor_drops:
+    enable_events: reawakening_p3_phasethree_survivor_selected
+    disable_events: e_survivor_complete
     switches: s_left_standup, s_right_standup, s_middle_standup, s_left_standup_right_ramp, s_right_standup_right_ramp 
     profile: sp_phasethree_survivor
     show_tokens:
@@ -390,6 +2333,8 @@ shots:
         state: 0
 # item tracking for survivor
   shot_reawakening_p3_survivor_pops_workshop:
+    enable_events: reawakening_p3_phasethree_survivor_selected
+    disable_events: e_survivor_complete
     switches: s_left_top_jet_bumper, s_right_top_jet_bumper, s_lower_top_jet_bumper, s_left_bottom_jet_bumper, s_right_bottom_jet_bumper, s_upper_bottom_jet_bumper
     profile: sp_phasethree_survivor_workshop
     show_tokens:
@@ -400,6 +2345,8 @@ shots:
       - events: survivor_pops_complete
         state: 1
   shot_reawakening_p3_survivor_standups_workshop:
+    enable_events: reawakening_p3_phasethree_survivor_selected
+    disable_events: e_survivor_complete
     switches: s_left_standup, s_right_standup, s_middle_standup, s_left_standup_right_ramp, s_right_standup_right_ramp 
     profile: sp_phasetwo_apprentice_stage_workshop
     show_tokens:
@@ -410,6 +2357,8 @@ shots:
       - events: survivor_standups_complete
         state: 1
   shot_reawakening_p3_survivor_slings_workshop:
+    enable_events: reawakening_p3_phasethree_survivor_selected
+    disable_events: e_survivor_complete
     switches: s_left_110_point, s_right_110_point, s_left_slingshot, s_right_slingshot 
     profile: sp_phasetwo_apprentice_stage_workshop
     show_tokens:
@@ -420,6 +2369,8 @@ shots:
       - events: survivor_slings_complete
         state: 1
   shot_reawakening_p3_survivor_inlanes_workshop:
+    enable_events: reawakening_p3_phasethree_survivor_selected
+    disable_events: e_survivor_complete
     switches: s_left_inlane, s_right_inlane
     profile: sp_phasetwo_apprentice_stage_workshop
     show_tokens:
@@ -430,6 +2381,8 @@ shots:
       - events: survivor_inlanes_complete
         state: 1
   shot_reawakening_p3_survivor_spinners_workshop:
+    enable_events: reawakening_p3_phasethree_survivor_selected
+    disable_events: e_survivor_complete
     switches: s_spinner
     profile: sp_phasetwo_apprentice_stage_workshop
     show_tokens:
@@ -440,6 +2393,8 @@ shots:
       - events: survivor_spinners_complete
         state: 1
   shot_reawakening_p3_survivor_drops_workshop:
+    enable_events: reawakening_p3_phasethree_survivor_selected
+    disable_events: e_survivor_complete
     switches: s_upper_bank_drop_target_opto,s_lower_bank_drop_target_opto_upper, s_lower_bank_drop_target_opto_middle, s_lower_bank_drop_target_opto_lower
     profile: sp_phasetwo_apprentice_stage_workshop
     show_tokens:
@@ -450,6 +2405,8 @@ shots:
       - events: survivor_drops_complete
         state: 1
   shot_reawakening_p3_survivor_ramps_workshop:
+    enable_events: reawakening_p3_phasethree_survivor_selected
+    disable_events: e_survivor_complete
     switches: s_left_ramp_score_top, s_right_ramp_score_top
     profile: sp_phasetwo_apprentice_stage_workshop
     show_tokens:
@@ -460,6 +2417,8 @@ shots:
       - events: survivor_ramps_complete
         state: 1
   shot_reawakening_p3_survivor_loops_workshop:
+    enable_events: reawakening_p3_phasethree_survivor_selected
+    disable_events: e_survivor_complete
     switches: s_inner_loop, s_left_loop_top, s_right_loop_top
     profile: sp_phasetwo_apprentice_stage_workshop
     show_tokens:
@@ -469,6 +2428,12 @@ shots:
         state: 0
       - events: survivor_loops_complete
         state: 1
+
+shot_groups:
+  sg_apprentice_p3_part3:
+    shots: shot_reawakening_p3_apprentice_part3_left_loop, shot_reawakening_p3_apprentice_part3_left_standup_rightramp, shot_reawakening_p3_apprentice_part3_right_standup_rightramp, shot_reawakening_p3_apprentice_part3_right_loop, shot_reawakening_p3_apprentice_part3_right_standup, shot_reawakening_p3_apprentice_part3_left_standup
+  sg_apprentice_p5:
+    shots: shot_reawakening_p3_apprentice_part5_left_loop, shot_reawakening_p3_apprentice_part5_left_standup_rightramp, shot_reawakening_p3_apprentice_part5_right_standup_rightramp, shot_reawakening_p3_apprentice_part5_right_loop, shot_reawakening_p3_apprentice_part5_right_standup, shot_reawakening_p3_apprentice_part5_left_standup, shot_reawakening_p3_apprentice_part5_middle_standup, shot_reawakening_p3_apprentice_part5_inner_loop, shot_reawakening_p3_apprentice_part5_left_ramp, shot_reawakening_p3_apprentice_part5_right_ramp, shot_reawakening_p3_apprentice_part5_drop_bank, shot_reawakening_p3_apprentice_part5_top_drop
 
 slides:
   mode_reawakening_p3a:
@@ -486,6 +2451,85 @@ slides:
       video: mode_reawakening_survivor_phasethree
       width: 1366
       height: 768
+#apprentice
+  mode_reawakening_apprentice_phasethree_p1:
+    widgets:
+    - type: video
+      video: mode_reawakening_apprentice_phasethree_p1
+      width: 1366
+      height: 768
+  mode_reawakening_apprentice_phasethree_p2:
+    widgets:
+    - type: video
+      video: mode_reawakening_apprentice_phasethree_p2
+      width: 1366
+      height: 768
+  mode_reawakening_apprentice_phasethree_p2_part2:
+    widgets:
+    - type: video
+      video: mode_reawakening_apprentice_phasethree_p2_part2
+      width: 1366
+      height: 768
+  mode_reawakening_apprentice_phasethree_p3:
+    widgets:
+    - type: video
+      video: mode_reawakening_apprentice_phasethree_p3
+      width: 1366
+      height: 768
+  mode_reawakening_apprentice_phasethree_p3_key:
+    widgets:
+    - type: video
+      video: FlammableJellyModeShot1 
+      width: 1366
+      height: 768
+  mode_reawakening_apprentice_phasethree_p3_part2:
+    widgets:
+    - type: video
+      video: mode_flammablejelly04
+      width: 1366
+      height: 768
+  mode_reawakening_apprentice_phasethree_p4:
+    widgets:
+    - type: video
+      video: mode_reawakening_apprentice_phasethree_p4
+      width: 1366
+      height: 768
+  mode_reawakening_apprentice_phasethree_p4_part2:
+    widgets:
+    - type: video
+      video: mode_reawakening_apprentice_phasethree_p4_part2
+      width: 1366
+      height: 768
+  mode_reawakening_apprentice_phasethree_p5:
+    widgets:
+    - type: video
+      video: mode_reawakening_apprentice_phasethree_p5
+      width: 1366
+      height: 768
+  mode_reawakening_apprentice_phasethree_p6_part1:
+    widgets:
+    - type: video
+      video: mode_rbt01
+      width: 1366
+      height: 768    
+  mode_reawakening_apprentice_phasethree_p6_part2:
+    widgets:
+    - type: video
+      video: mode_rbt02
+      width: 1366
+      height: 768       
+  mode_reawakening_apprentice_phasethree_p6_part3:
+    widgets:
+    - type: video
+      video: mode_rbt03
+      width: 1366
+      height: 768    
+  mode_reawakening_apprentice_phasethree_p6_part4:
+    widgets:
+    - type: video
+      video: mode_rbt04
+      width: 1366
+      height: 768 
 
 slide_player:
   reawakening_p3_phasethree_apprentice_highlighted: 
@@ -498,16 +2542,493 @@ slide_player:
     mode_reawakening_p3a:      
       action: remove
     mode_reawakening_p3s:      
-      action: remove    
+      action: remove  
+#apprentice p3 part 1
+    mode_reawakening_apprentice_phasethree_p1:
+      priority: 400
+#apprentice p3 part 2
+  apprentice_p3_part1_complete:
+    mode_reawakening_apprentice_phasethree_p1:
+      action: remove
+    mode_reawakening_apprentice_phasethree_p2:
+      priority: 400
+  apprentice_p3_part2_pops_complete:
+    mode_reawakening_apprentice_phasethree_p2:
+      action: remove
+    mode_reawakening_apprentice_phasethree_p2_part2:
+      priority: 400
+#apprentice p3 part 3
+  apprentice_p3_part2_complete:
+    mode_reawakening_apprentice_phasethree_p2_part2:
+      action: remove
+    mode_reawakening_apprentice_phasethree_p3:
+      priority: 400
+  sg_apprentice_p3_part3_part3_lit_hit:
+    mode_reawakening_apprentice_phasethree_p3_key:
+      action: play
+      priority: 401
+      expire: 2.4s
+  logicblock_apprentice_p3_part3_updated{value==1}:
+    mode_reawakening_apprentice_phasethree_p3:
+     action: remove   
+    mode_reawakening_apprentice_phasethree_p3_part2:
+      priority: 400
+#apprentice p3 part 4
+  apprentice_p3_part3_complete:
+    mode_reawakening_apprentice_phasethree_p3_part2:
+      action: remove
+    mode_reawakening_apprentice_phasethree_p4:
+      priority: 400
+  apprentice_p3_part4_p1_complete:
+    mode_reawakening_apprentice_phasethree_p4:
+      action: remove
+    mode_reawakening_apprentice_phasethree_p4_part2:
+      priority: 400
+#apprentice p3 part 5
+  apprentice_p3_part4_complete:
+    mode_reawakening_apprentice_phasethree_p4_part2:
+      action: remove
+    mode_reawakening_apprentice_phasethree_p5:
+      priority: 400
+#apprentice p3 part 6
+  apprentice_p3_part5_complete:
+    mode_reawakening_apprentice_phasethree_p5:
+      action: remove
+    mode_reawakening_apprentice_phasethree_p6_part1:
+      priority: 400
+  logicblock_apprentice_p3_part6_updated{value==1}:
+    mode_reawakening_apprentice_phasethree_p6_part1:
+      action: remove
+    mode_reawakening_apprentice_phasethree_p6_part2:
+      priority: 400
+  logicblock_apprentice_p3_part6_updated{value==2}:
+    mode_reawakening_apprentice_phasethree_p6_part2:
+      action: remove
+    mode_reawakening_apprentice_phasethree_p6_part3:
+      priority: 400
+  logicblock_apprentice_p3_part6_updated{value==3}:
+    mode_reawakening_apprentice_phasethree_p6_part3:
+      action: remove
+    mode_reawakening_apprentice_phasethree_p6_part2:
+      priority: 400
+  logicblock_apprentice_p3_part6_updated{value==4}:
+    mode_reawakening_apprentice_phasethree_p6_part2:
+      action: remove
+    mode_reawakening_apprentice_phasethree_p6_part3:
+      priority: 400
+  logicblock_apprentice_p3_part6_updated{value==5}:
+    mode_reawakening_apprentice_phasethree_p6_part3:
+      action: remove
+    mode_reawakening_apprentice_phasethree_p6_part4:
+      priority: 400
+
+#survivor
   reawakening_p3_phasethree_survivor_selected: 
     mode_reawakening_p3a:      
       action: remove
     mode_reawakening_p3s:      
       action: remove   
     mode_reawakening_survivor_phasethree:
-      priority: 400      
+      priority: 400   
 
 widgets:
+#apprentice widget
+   w_reawakening_apprentice_phasethree_UI:
+    - type: image
+      image: BottomFrame
+      y: 85
+      # x: 1
+      z: 2
+#player 1 widget
+    - type: text
+      text: (player1|score)
+      number_grouping: true  
+   #   y: 36
+      y: 37
+      x: 252
+      z: 12
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      font_name: AeroMaticsDisplaRegular
+      color: black
+    - type: text
+      text: (player1|score)
+      number_grouping: true  
+      y: 36
+      x: 253
+      z: 11
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      font_name: AeroMaticsDisplaRegular
+      outline_color: f0cfab
+      outline_width: 2
+#player 2 widget     
+    - type: text
+      text: (player2|score)
+      number_grouping: true
+      y: 37
+      x: left+579
+      z: 12
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      font_name: AeroMaticsDisplaRegular
+      color: black
+    - type: text
+      text: (player2|score)
+      number_grouping: true
+      y: 36
+      x: left+580
+      z: 11
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      font_name: AeroMaticsDisplaRegular
+      outline_color: f0cfab
+      outline_width: 2
+#player 3 widget
+    - type: Text
+      text: (player3|score)
+      number_grouping: true   
+      font_name: AeroMaticsDisplaRegular
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      y: 37
+      x: left+908
+      z: 12
+      color: black
+    - type: Text
+      text: (player3|score)
+      number_grouping: true   
+      font_name: AeroMaticsDisplaRegular
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      y: 36
+      x: left+909
+      z: 11
+      outline_color: f0cfab
+      outline_width: 2
+#player 4 widget
+    - type: Text
+      text: (player4|score)
+      number_grouping: true       
+      font_name: AeroMaticsDisplaRegular
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      y: 37
+      x: left+1239
+      z: 12
+      color: black
+    - type: Text
+      text: (player4|score)
+      number_grouping: true       
+      font_name: AeroMaticsDisplaRegular
+      font_size: 36
+      anchor_x: right
+      anchor_y: bottom
+      y: 36
+      x: left+1240
+      z: 11
+      outline_color: f0cfab
+      outline_width: 2
+# current count of part 1
+   w_apprentice_part1:
+    - type: text
+      text: (player|cnt_apprentice_part1_lower_pops_counter)
+      font_size: 50
+      font_name: JandaManateeSolid
+      outline_color: black
+      outline_width: 9
+      color: drillchair
+      x: 4%
+      y: 50%
+      z: 3   
+    - type: text
+      text: (player|cnt_apprentice_part1_upper_pops_counter)
+      font_size: 50
+      font_name: JandaManateeSolid
+      outline_color: black
+      outline_width: 9
+      color: drillchair
+      x: 58%
+      y: 50%
+      z: 3   
+# current count of part 2
+   w_apprentice_part2:
+    - type: text
+      text: (player|cnt_apprentice_part2_pops_counter)
+      font_size: 70
+      font_name: JandaManateeSolid
+      outline_color: black
+      outline_width: 9
+      color: razorwire
+      x: 32%
+      y: 35%
+      z: 3   
+   w_apprentice_part3:
+    - type: text
+      text: COMBINATION COLLECTED
+      number_grouping: true 
+      x: 50%
+      y: 60%
+      z: 7
+      font_size: 100
+      font_name: Mustkill     
+      outline_color: black
+      outline_width: 7
+#apprentice part 4
+   w_apprentice_part4:
+#shotgun 1
+    - type: rectangle
+      width: 0
+      height: 45
+      x: 22.7%
+      y: 40%
+      z: 3
+      anchor_x: left
+      corner_radius: 10
+      corner_segments: 10
+      color: shotgun
+      animations:
+        player_apprentice_p3_p4_left_standup_counter:
+         - property: width
+           value: (value)           
+    - type: rectangle
+      width: 250
+      height: 46
+      x: 32%
+      y: 40%
+      z: 2
+      color: black
+      corner_radius: 10
+      corner_segments: 10
+#shotgun 2
+    - type: rectangle
+      width: 0
+      height: 45
+      x: 61.7%
+      y: 40%
+      z: 3
+      anchor_x: left
+      corner_radius: 10
+      corner_segments: 10
+      color: shotgun
+      animations:
+        player_apprentice_p3_p4_left_standup_right_ramp_counter:
+         - property: width
+           value: (value)           
+    - type: rectangle
+      width: 250
+      height: 46
+      x: 71%
+      y: 40%
+      z: 2
+      color: black
+      corner_radius: 10
+      corner_segments: 10
+#shotgun 3
+    - type: rectangle
+      width: 0
+      height: 45
+      x: 22.7%
+      y: 24.5%
+      z: 3
+      anchor_x: left
+      corner_radius: 10
+      corner_segments: 10
+      color: shotgun
+      animations:
+        player_apprentice_p3_p4_right_standup_right_ramp_counter:
+         - property: width
+           value: (value)           
+    - type: rectangle
+      width: 250
+      height: 46
+      x: 32%
+      y: 24.5%
+      z: 2
+      color: black
+      corner_radius: 10
+      corner_segments: 10
+#shotgun 4
+    - type: rectangle
+      width: 0
+      height: 45
+      x: 61.7%
+      y: 24.5%
+      z: 3
+      anchor_x: left
+      corner_radius: 10
+      corner_segments: 10
+      color: shotgun
+      animations:
+        player_apprentice_p3_p4_right_standup_counter:
+         - property: width
+           value: (value)           
+    - type: rectangle
+      width: 250
+      height: 46
+      x: 71%
+      y: 24.5%
+      z: 2
+      color: black
+      corner_radius: 10
+      corner_segments: 10
+   w_apprentice_part4_part2:
+    - type: rectangle
+      width: 0
+      height: 45
+      x: 25%
+      y: 180
+      z: 2
+      anchor_x: left
+      corner_radius: 10
+      corner_segments: 10
+      color: shotgun
+      animations:
+        player_apprentice_p4_part2_spinner_counter:
+         - property: width
+           value: (value)           
+    - type: rectangle
+      width: 685
+      height: 46
+      x: 50%
+      y: 180
+      z: 2
+      color: black
+      corner_radius: 10
+      corner_segments: 10
+    - type: Text
+      text: (player|apprentice_p4_part2_visual_spinner_counter) / 15 spins
+      font_size: 60
+      font_name: Mustkill
+      outline_color: black
+      outline_width: 7
+      color: d8d8d8
+      y: 35%
+      z: 2
+#apprentice part 5
+   w_apprentice_part5:
+#visual / collected shot # 1
+    - type: rectangle
+      width: 0
+      height: 45
+      x: 15.7%
+      y: 29%
+      z: 4
+      anchor_x: left
+      corner_radius: 10
+      corner_segments: 10
+      color: zeptest
+      animations:
+        player_cnt_apprentice_p3_p5_collected_1:
+         - property: width
+           value: (value)           
+#visual / collected shot # 2
+    - type: rectangle
+      width: 0
+      height: 45
+      x: 43.7%
+      y: 29%
+      z: 4
+      anchor_x: left
+      corner_radius: 10
+      corner_segments: 10
+      color: zeptest
+      animations:
+        player_cnt_apprentice_p3_p5_collected_2:
+         - property: width
+           value: (value)           
+# visual / shot collected # 3
+    - type: rectangle
+      width: 0
+      height: 45
+      x: 70.7%
+      y: 29%
+      z: 4
+      anchor_x: left
+      corner_radius: 10
+      corner_segments: 10
+      color: zeptest
+      animations:
+        player_cnt_apprentice_p3_p5_collected_3:
+         - property: width
+           value: (value)    
+#boxes for visuals of shots 1,2,3
+    - type: rectangle
+      width: 250
+      height: 46
+      x: 25%
+      y: 29%
+      z: 3
+      color: black
+      corner_radius: 10
+      corner_segments: 10
+    - type: rectangle
+      width: 250
+      height: 46
+      x: 53%
+      y: 29%
+      z: 3
+      color: black
+      corner_radius: 10
+      corner_segments: 10
+    - type: rectangle
+      width: 250
+      height: 46
+      x: 80%
+      y: 29%
+      z: 3
+      color: black
+      corner_radius: 10
+      corner_segments: 10  
+   w_lit_hit_border1:
+    - type: rectangle
+      width: 265
+      height: 54
+      x: 25%
+      y: 29%
+      z: 2
+      color: zeptest_alt
+      corner_radius: 10
+      corner_segments: 10
+   w_lit_hit_border2:
+    - type: rectangle
+      width: 265
+      height: 54
+      x: 53%
+      y: 29%
+      z: 2
+      color: zeptest_alt
+      corner_radius: 10
+      corner_segments: 10
+   w_lit_hit_border3:
+    - type: rectangle
+      width: 265
+      height: 54
+      x: 80%
+      y: 29%
+      z: 2
+      color: zeptest_alt
+      corner_radius: 10
+      corner_segments: 10  
+#apprentice part 6
+   w_apprentice_part6_spinner:
+    - type: Text
+      text: (player|part6_spinner_value_display)
+      number_grouping: true
+      font_size: 80
+      font_name: badaboom_bb
+      color: ffffff
+      y: 44.5%
+      x: 30%
+      z: 2
+#survivor widget
    w_reawakening_survivor_phasethree_UI:
     - type: image
       image: BottomFrame
@@ -833,6 +3354,326 @@ widgets:
       z: 10
       anchor_y: bottom
 widget_player:
+#phase three apprentice part 1
+ reawakening_p3_phasethree_apprentice_selected:
+   w_reawakening_apprentice_phasethree_UI:
+     slide: mode_reawakening_apprentice_phasethree_p1
+     action: add
+   w_apprentice_part1:
+     slide: mode_reawakening_apprentice_phasethree_p1
+     action: add
+ reawakening_p3_phasethree_apprentice_selected{current_player.v_current_player==1}:
+   w_current_player1:
+     slide: mode_reawakening_apprentice_phasethree_p1
+     action: add
+ reawakening_p3_phasethree_apprentice_selected{current_player.v_current_player==2}:
+   w_current_player2:
+     slide: mode_reawakening_apprentice_phasethree_p1
+     action: add
+ reawakening_p3_phasethree_apprentice_selected{current_player.v_current_player==3}:
+   w_current_player3:
+     slide: mode_reawakening_apprentice_phasethree_p1
+     action: add
+ reawakening_p3_phasethree_apprentice_selected{current_player.v_current_player==4}:
+   w_current_player4:
+     slide: mode_reawakening_apprentice_phasethree_p1
+     action: add   
+#phase three apprentice part 2
+ apprentice_p3_part1_complete:
+   w_reawakening_apprentice_phasethree_UI:
+     slide: mode_reawakening_apprentice_phasethree_p2
+     action: add
+   w_apprentice_part2:
+     slide: mode_reawakening_apprentice_phasethree_p2
+     action: add
+ apprentice_p3_part1_complete{current_player.v_current_player==1}:
+   w_current_player1:
+     slide: mode_reawakening_apprentice_phasethree_p2
+     action: add
+ apprentice_p3_part1_complete{current_player.v_current_player==2}:
+   w_current_player2:
+     slide: mode_reawakening_apprentice_phasethree_p2
+     action: add
+ apprentice_p3_part1_complete{current_player.v_current_player==3}:
+   w_current_player3:
+     slide: mode_reawakening_apprentice_phasethree_p2
+     action: add
+ apprentice_p3_part1_complete{current_player.v_current_player==4}:
+   w_current_player4:
+     slide: mode_reawakening_apprentice_phasethree_p2
+     action: add  
+ apprentice_p3_part2_pops_complete:
+   w_reawakening_apprentice_phasethree_UI:
+     slide: mode_reawakening_apprentice_phasethree_p2_part2
+     action: add
+ apprentice_p3_part2_pops_complete{current_player.v_current_player==1}:
+   w_current_player1:
+     slide: mode_reawakening_apprentice_phasethree_p2_part2
+     action: add
+ apprentice_p3_part2_pops_complete{current_player.v_current_player==2}:
+   w_current_player2:
+     slide: mode_reawakening_apprentice_phasethree_p2_part2
+     action: add
+ apprentice_p3_part2_pops_complete{current_player.v_current_player==3}:
+   w_current_player3:
+     slide: mode_reawakening_apprentice_phasethree_p2_part2
+     action: add
+ apprentice_p3_part2_pops_complete{current_player.v_current_player==4}:
+   w_current_player4:
+     slide: mode_reawakening_apprentice_phasethree_p2_part2
+     action: add
+#phase three apprentice part 3
+ apprentice_p3_part2_complete:
+   w_reawakening_apprentice_phasethree_UI:
+     slide: mode_reawakening_apprentice_phasethree_p3
+     action: add
+ apprentice_p3_part2_complete{current_player.v_current_player==1}:
+   w_current_player1:
+     slide: mode_reawakening_apprentice_phasethree_p3
+     action: add
+ apprentice_p3_part2_complete{current_player.v_current_player==2}:
+   w_current_player2:
+     slide: mode_reawakening_apprentice_phasethree_p3
+     action: add
+ apprentice_p3_part2_complete{current_player.v_current_player==3}:
+   w_current_player3:
+     slide: mode_reawakening_apprentice_phasethree_p3
+     action: add
+ apprentice_p3_part2_complete{current_player.v_current_player==4}:
+   w_current_player4:
+     slide: mode_reawakening_apprentice_phasethree_p3
+     action: add  
+ apprentice_p3_part3_p1_complete:  
+   w_apprentice_part3:
+    slide: mode_reawakening_apprentice_phasethree_p3_key
+    action: add
+   w_reawakening_apprentice_phasethree_UI:
+     slide: mode_reawakening_apprentice_phasethree_p3_part2
+     action: add
+ apprentice_p3_part3_p1_complete{current_player.v_current_player==1}:
+   w_current_player1:
+     slide: mode_reawakening_apprentice_phasethree_p3_part2
+     action: add
+ apprentice_p3_part3_p1_complete{current_player.v_current_player==2}:
+   w_current_player2:
+     slide: mode_reawakening_apprentice_phasethree_p3_part2
+     action: add
+ apprentice_p3_part3_p1_complete{current_player.v_current_player==3}:
+   w_current_player3:
+     slide: mode_reawakening_apprentice_phasethree_p3_part2
+     action: add
+ apprentice_p3_part3_p1_complete{current_player.v_current_player==4}:
+   w_current_player4:
+     slide: mode_reawakening_apprentice_phasethree_p3_part2
+     action: add  
+#phase three apprentice part 4
+ apprentice_p3_part3_complete:
+   w_reawakening_apprentice_phasethree_UI:
+     slide: mode_reawakening_apprentice_phasethree_p4
+     action: add
+   w_apprentice_part4:
+     slide: mode_reawakening_apprentice_phasethree_p4
+     action: add     
+ apprentice_p3_part3_complete{current_player.v_current_player==1}:
+   w_current_player1:
+     slide: mode_reawakening_apprentice_phasethree_p4
+     action: add
+ apprentice_p3_part3_complete{current_player.v_current_player==2}:
+   w_current_player2:
+     slide: mode_reawakening_apprentice_phasethree_p4
+     action: add
+ apprentice_p3_part3_complete{current_player.v_current_player==3}:
+   w_current_player3:
+     slide: mode_reawakening_apprentice_phasethree_p4
+     action: add
+ apprentice_p3_part3_complete{current_player.v_current_player==4}:
+   w_current_player4:
+     slide: mode_reawakening_apprentice_phasethree_p4
+     action: add
+ apprentice_p3_part4_p1_complete:
+   w_reawakening_apprentice_phasethree_UI:
+     slide: mode_reawakening_apprentice_phasethree_p4_part2
+     action: add
+   w_apprentice_part4_part2:
+     slide: mode_reawakening_apprentice_phasethree_p4_part2
+     action: add 
+ apprentice_p3_part4_p1_complete{current_player.v_current_player==1}:
+   w_current_player1:
+     slide: mode_reawakening_apprentice_phasethree_p4_part2
+     action: add
+ apprentice_p3_part4_p1_complete{current_player.v_current_player==2}:
+   w_current_player2:
+     slide: mode_reawakening_apprentice_phasethree_p4_part2
+     action: add
+ apprentice_p3_part4_p1_complete{current_player.v_current_player==3}:
+   w_current_player3:
+     slide: mode_reawakening_apprentice_phasethree_p4_part2
+     action: add
+ apprentice_p3_part4_p1_complete{current_player.v_current_player==4}:
+   w_current_player4:
+     slide: mode_reawakening_apprentice_phasethree_p4_part2
+     action: add
+#phase three apprentice part 5
+ apprentice_p3_part4_complete:
+   w_reawakening_apprentice_phasethree_UI:
+     slide: mode_reawakening_apprentice_phasethree_p5
+     action: add
+   w_apprentice_part5:
+     slide: mode_reawakening_apprentice_phasethree_p5
+     action: add     
+ apprentice_p3_part4_complete{current_player.v_current_player==1}:
+   w_current_player1:
+     slide: mode_reawakening_apprentice_phasethree_p5
+     action: add
+ apprentice_p3_part4_complete{current_player.v_current_player==2}:
+   w_current_player2:
+     slide: mode_reawakening_apprentice_phasethree_p5
+     action: add
+ apprentice_p3_part4_complete{current_player.v_current_player==3}:
+   w_current_player3:
+     slide: mode_reawakening_apprentice_phasethree_p5
+     action: add
+ apprentice_p3_part4_complete{current_player.v_current_player==4}:
+   w_current_player4:
+     slide: mode_reawakening_apprentice_phasethree_p5
+     action: add
+ logicblock_cnt_apprentice_p3_p5_collected_lit_hit_updated{value==1}:
+  w_lit_hit_border1:
+    slide: mode_reawakening_apprentice_phasethree_p5
+    action: add  
+ logicblock_cnt_apprentice_p3_p5_collected_lit_hit_updated{value==2}:
+  w_lit_hit_border2:
+    slide: mode_reawakening_apprentice_phasethree_p5
+    action: add
+ logicblock_cnt_apprentice_p3_p5_collected_lit_hit_updated{value==3}:
+  w_lit_hit_border3:
+    slide: mode_reawakening_apprentice_phasethree_p5
+    action: add
+#phase three part 6
+ apprentice_p3_part5_complete:
+   w_reawakening_apprentice_phasethree_UI:
+     slide: mode_reawakening_apprentice_phasethree_p6_part1
+     action: add
+   w_apprentice_part6_spinner:
+     slide: mode_reawakening_apprentice_phasethree_p6_part1
+     action: add
+ apprentice_p3_part5_complete{current_player.v_current_player==1}:
+   w_current_player1:
+     slide: mode_reawakening_apprentice_phasethree_p6_part1
+     action: add
+ apprentice_p3_part5_complete{current_player.v_current_player==2}:
+   w_current_player2:
+     slide: mode_reawakening_apprentice_phasethree_p6_part1
+     action: add
+ apprentice_p3_part5_complete{current_player.v_current_player==3}:
+   w_current_player3:
+     slide: mode_reawakening_apprentice_phasethree_p6_part1
+     action: add
+ apprentice_p3_part5_complete{current_player.v_current_player==4}:
+   w_current_player4:
+     slide: mode_reawakening_apprentice_phasethree_p6_part1
+     action: add 
+ logicblock_apprentice_p3_part6_updated{value==1}:
+   w_reawakening_apprentice_phasethree_UI:
+     slide: mode_reawakening_apprentice_phasethree_p6_part2
+     action: add
+ logicblock_apprentice_p3_part6_updated{value==1 and current_player.v_current_player==1}:
+   w_current_player1:
+     slide: mode_reawakening_apprentice_phasethree_p6_part2
+     action: add
+ logicblock_apprentice_p3_part6_updated{value==1 and current_player.v_current_player==2}:
+   w_current_player2:
+     slide: mode_reawakening_apprentice_phasethree_p6_part2
+     action: add
+ logicblock_apprentice_p3_part6_updated{value==1 and current_player.v_current_player==3}:
+   w_current_player3:
+     slide: mode_reawakening_apprentice_phasethree_p6_part2
+     action: add
+ logicblock_apprentice_p3_part6_updated{value==1 and current_player.v_current_player==4}:
+   w_current_player4:
+     slide: mode_reawakening_apprentice_phasethree_p6_part2
+     action: add 
+ logicblock_apprentice_p3_part6_updated{value==2}:
+   w_reawakening_apprentice_phasethree_UI:
+     slide: mode_reawakening_apprentice_phasethree_p6_part3
+     action: add
+ logicblock_apprentice_p3_part6_updated{value==2 and current_player.v_current_player==1}:
+   w_current_player1:
+     slide: mode_reawakening_apprentice_phasethree_p6_part3
+     action: add
+ logicblock_apprentice_p3_part6_updated{value==2 and current_player.v_current_player==2}:
+   w_current_player2:
+     slide: mode_reawakening_apprentice_phasethree_p6_part3
+     action: add
+ logicblock_apprentice_p3_part6_updated{value==2 and current_player.v_current_player==3}:
+   w_current_player3:
+     slide: mode_reawakening_apprentice_phasethree_p6_part3
+     action: add
+ logicblock_apprentice_p3_part6_updated{value==2 and current_player.v_current_player==4}:
+   w_current_player4:
+     slide: mode_reawakening_apprentice_phasethree_p6_part3
+     action: add 
+ logicblock_apprentice_p3_part6_updated{value==3}:
+   w_reawakening_apprentice_phasethree_UI:
+     slide: mode_reawakening_apprentice_phasethree_p6_part2
+     action: add 
+ logicblock_apprentice_p3_part6_updated{value==3 and current_player.v_current_player==1}:
+   w_current_player1:
+     slide: mode_reawakening_apprentice_phasethree_p6_part2
+     action: add
+ logicblock_apprentice_p3_part6_updated{value==3 and current_player.v_current_player==2}:
+   w_current_player2:
+     slide: mode_reawakening_apprentice_phasethree_p6_part2
+     action: add
+ logicblock_apprentice_p3_part6_updated{value==3 and current_player.v_current_player==3}:
+   w_current_player3:
+     slide: mode_reawakening_apprentice_phasethree_p6_part2
+     action: add
+ logicblock_apprentice_p3_part6_updated{value==3 and current_player.v_current_player==4}:
+   w_current_player4:
+     slide: mode_reawakening_apprentice_phasethree_p6_part2
+     action: add 
+ logicblock_apprentice_p3_part6_updated{value==4}:
+   w_reawakening_apprentice_phasethree_UI:
+     slide: mode_reawakening_apprentice_phasethree_p6_part3
+     action: add
+ logicblock_apprentice_p3_part6_updated{value==4 and current_player.v_current_player==1}:
+   w_current_player1:
+     slide: mode_reawakening_apprentice_phasethree_p6_part3
+     action: add
+ logicblock_apprentice_p3_part6_updated{value==4 and current_player.v_current_player==2}:
+   w_current_player2:
+     slide: mode_reawakening_apprentice_phasethree_p6_part3
+     action: add
+ logicblock_apprentice_p3_part6_updated{value==4 and current_player.v_current_player==3}:
+   w_current_player3:
+     slide: mode_reawakening_apprentice_phasethree_p6_part3
+     action: add
+ logicblock_apprentice_p3_part6_updated{value==4 and current_player.v_current_player==4}:
+   w_current_player4:
+     slide: mode_reawakening_apprentice_phasethree_p6_part3
+     action: add 
+ logicblock_apprentice_p3_part6_updated{value==5}:
+   w_reawakening_apprentice_phasethree_UI:
+     slide: mode_reawakening_apprentice_phasethree_p6_part4
+     action: add
+ logicblock_apprentice_p3_part6_updated{value==5 and current_player.v_current_player==1}:
+   w_current_player1:
+     slide: mode_reawakening_apprentice_phasethree_p6_part4
+     action: add
+ logicblock_apprentice_p3_part6_updated{value==5 and current_player.v_current_player==2}:
+   w_current_player2:
+     slide: mode_reawakening_apprentice_phasethree_p6_part4
+     action: add
+ logicblock_apprentice_p3_part6_updated{value==5 and current_player.v_current_player==3}:
+   w_current_player3:
+     slide: mode_reawakening_apprentice_phasethree_p6_part4
+     action: add
+ logicblock_apprentice_p3_part6_updated{value==5 and current_player.v_current_player==4}:
+   w_current_player4:
+     slide: mode_reawakening_apprentice_phasethree_p6_part4
+     action: add 
+
 #phase three survivor
  reawakening_p3_phasethree_survivor_selected:
    w_reawakening_survivor_phasethree_UI:

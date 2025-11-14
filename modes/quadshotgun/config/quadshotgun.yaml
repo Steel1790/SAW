@@ -26,6 +26,7 @@ accruals:
     reset_on_complete: false
     persist_state: true
     disable_on_complete: false
+    reset_events: player_modes_attempted{current_player.mode_progress_reset==1}
 
 shot_groups:
   sg_quadshotgun_p1:
@@ -40,6 +41,7 @@ sequences:
     enable_events:  logicblock_acc_quadshotgun_phase1_complete
     disable_events: mode_quadshotgun_complete
     events_when_complete: que_quadshotgun_complete
+    reset_events: player_modes_attempted{current_player.mode_progress_reset==1}
  
 timers:
   quadshotgun_60s_timer:
@@ -59,6 +61,7 @@ counters:
 #    start_enabled: true
     persist_state: true
     reset_on_complete: false
+    reset_events: mode_quadshotgun_started{current_player.mode_progress_reset==1}
     events_when_complete: que_quadshotgun_complete
     count_events: spinner_spinner_hit
   quadshotgun_action_button_counter:
@@ -78,6 +81,8 @@ counters:
     start_enabled: true
     persist_state: true
     reset_on_complete: false
+    enable_events: mode_quadshotgun_started
+    reset_events: mode_quadshotgun_started{current_player.mode_progress_reset==1}
     count_events: shot_quadshotgun_left_standup_sp_quadshotgun_lit_hit
 #shotgun 2
   quadshotgun_left_standup_right_ramp_counter:
@@ -86,6 +91,8 @@ counters:
     start_enabled: true
     persist_state: true
     reset_on_complete: false
+    enable_events: mode_quadshotgun_started
+    reset_events: mode_quadshotgun_started{current_player.mode_progress_reset==1}
     count_events: shot_quadshotgun_left_standup_right_ramp_sp_quadshotgun_lit_hit
 #shotgun 3
   quadshotgun_right_standup_right_ramp_counter:
@@ -94,6 +101,8 @@ counters:
     start_enabled: true
     persist_state: true
     reset_on_complete: false
+    enable_events: mode_quadshotgun_started
+    reset_events: mode_quadshotgun_started{current_player.mode_progress_reset==1}
     count_events: shot_quadshotgun_right_standup_right_ramp_sp_quadshotgun_lit_hit
 #shotgun 4
   quadshotgun_right_standup_counter:
@@ -102,6 +111,8 @@ counters:
     start_enabled: true
     persist_state: true
     reset_on_complete: false
+    enable_events: mode_quadshotgun_started
+    reset_events: mode_quadshotgun_started{current_player.mode_progress_reset==1}
     count_events: shot_quadshotgun_right_standup_sp_quadshotgun_lit_hit
   quadshotgun_disc:
     starting_count: 0
@@ -259,6 +270,26 @@ variable_player:
     gears_used:
       int: 0
       action: set
+#wiz lap event reset
+  e_reload_mode_progress:
+    quadshotgun_spinner_counter:
+      action: set
+      int: (count)*46
+    quadshotgun_visual_spinner_counter:
+      action: set
+      int: (count)
+    quadshotgun_left_standup_counter:
+      action: set
+      int: (count)*250
+    quadshotgun_right_standup_counter:
+      action: set
+      int: (count)*250
+    quadshotgun_left_standup_right_ramp_counter:
+      action: set
+      int: (count)*250
+    quadshotgun_right_standup_right_ramp_counter:
+      action: set
+      int: (count)*250
 
   sw_pops:
     quadshotgun_points:
@@ -568,7 +599,7 @@ widgets:
    #   y: 36
       y: 37
       x: 252
-      z: 8
+      z: 12
       font_size: 36
       anchor_x: right
       anchor_y: bottom
@@ -579,7 +610,7 @@ widgets:
       number_grouping: true  
       y: 36
       x: 253
-      z: 8
+      z: 11
       font_size: 36
       anchor_x: right
       anchor_y: bottom
@@ -592,7 +623,7 @@ widgets:
       number_grouping: true
       y: 37
       x: left+579
-      z: 8
+      z: 12
       font_size: 36
       anchor_x: right
       anchor_y: bottom
@@ -603,7 +634,7 @@ widgets:
       number_grouping: true
       y: 36
       x: left+580
-      z: 7
+      z: 11
       font_size: 36
       anchor_x: right
       anchor_y: bottom
@@ -620,7 +651,7 @@ widgets:
       anchor_y: bottom
       y: 37
       x: left+908
-      z: 8
+      z: 12
       color: black
     - type: Text
       text: (player3|score)
@@ -631,7 +662,7 @@ widgets:
       anchor_y: bottom
       y: 36
       x: left+909
-      z: 7
+      z: 11
       outline_color: f0cfab
       outline_width: 2
 #player 4 widget
@@ -644,7 +675,7 @@ widgets:
       anchor_y: bottom
       y: 37
       x: left+1239
-      z: 8
+      z: 12
       color: black
     - type: Text
       text: (player4|score)
@@ -655,7 +686,7 @@ widgets:
       anchor_y: bottom
       y: 36
       x: left+1240
-      z: 7
+      z: 11
       outline_color: f0cfab
       outline_width: 2
     - type: Text
@@ -692,7 +723,7 @@ widgets:
       opacity: 1.0
       y: 4
       x: 35
-      z: 3
+      z: 10
       anchor_x: left
       anchor_y: bottom
    w_current_player2:
@@ -701,7 +732,7 @@ widgets:
       opacity: 1.0
       y: 4
       x: left+515
-      z: 3
+      z: 10
       anchor_y: bottom  
    w_current_player3:
     - type: image
@@ -709,7 +740,7 @@ widgets:
       opacity: 1.0
       y: 4
       x: left+844
-      z: 3
+      z: 10
       anchor_y: bottom  
    w_current_player4:
     - type: image
@@ -717,7 +748,7 @@ widgets:
       opacity: 1.0
       y: 4
       x: left+1174
-      z: 3
+      z: 10
       anchor_y: bottom
 
    w_quadshotgun_phase1:
@@ -1194,7 +1225,7 @@ show_player:
       loops: 2
       speed: 8
       show_tokens:
-        led: l_shotgun_flasher_4
+        led: shotgun_flasher
         color1: shotgun_alt
 
   quadshotgun_spinner_complete:
@@ -1350,6 +1381,7 @@ sound_player:
 
    
 event_player: 
+  player_quadshotgun_quadshotgun_60s_timer_tick{value==60}: e_reload_mode_progress
   slide_sl_mode_quadshotgun01_active: e_primary_mode_active
   shot_full_workshop_button_sp_full_workshop_lit_hit: que_quadshotgun_complete
   mode_quadshotgun_stopping{mode.shackle_multiball.active==True}: e_mode_qualify_disabled|0.5s

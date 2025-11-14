@@ -1,6 +1,6 @@
 #config_version=6
 mode:
-  start_events: logicblock_cnt_negative_shot_counter_updated{value==3}
+  start_events: logicblock_cnt_negative_shot_counter_updated{value==3 and enabled==True}
   stop_events: ball_ended, ball_ending, ball_will_end, mode_hacksaw_multiball_started, mode_shackle_multiball_started, mode_jigsaw_multiball_started, mode_hostage_complete, player_hostage_hostage_75s_timer_tick{value < 1}
   priority: 181
 
@@ -296,7 +296,7 @@ widgets:
    #   y: 36
       y: 37
       x: 252
-      z: 8
+      z: 12
       font_size: 36
       anchor_x: right
       anchor_y: bottom
@@ -307,7 +307,7 @@ widgets:
       number_grouping: true  
       y: 36
       x: 253
-      z: 8
+      z: 11
       font_size: 36
       anchor_x: right
       anchor_y: bottom
@@ -320,7 +320,7 @@ widgets:
       number_grouping: true
       y: 37
       x: left+579
-      z: 8
+      z: 12
       font_size: 36
       anchor_x: right
       anchor_y: bottom
@@ -331,7 +331,7 @@ widgets:
       number_grouping: true
       y: 36
       x: left+580
-      z: 7
+      z: 11
       font_size: 36
       anchor_x: right
       anchor_y: bottom
@@ -348,7 +348,7 @@ widgets:
       anchor_y: bottom
       y: 37
       x: left+908
-      z: 8
+      z: 12
       color: black
     - type: Text
       text: (player3|score)
@@ -359,7 +359,7 @@ widgets:
       anchor_y: bottom
       y: 36
       x: left+909
-      z: 7
+      z: 11
       outline_color: f0cfab
       outline_width: 2
 #player 4 widget
@@ -372,7 +372,7 @@ widgets:
       anchor_y: bottom
       y: 37
       x: left+1239
-      z: 8
+      z: 12
       color: black
     - type: Text
       text: (player4|score)
@@ -383,7 +383,7 @@ widgets:
       anchor_y: bottom
       y: 36
       x: left+1240
-      z: 7
+      z: 11
       outline_color: f0cfab
       outline_width: 2   
       
@@ -493,7 +493,7 @@ widgets:
       opacity: 1.0
       y: 4
       x: 35
-      z: 3
+      z: 10
       anchor_x: left
       anchor_y: bottom
    w_current_player2:
@@ -502,7 +502,7 @@ widgets:
       opacity: 1.0
       y: 4
       x: left+515
-      z: 3
+      z: 10
       anchor_y: bottom  
    w_current_player3:
     - type: image
@@ -510,7 +510,7 @@ widgets:
       opacity: 1.0
       y: 4
       x: left+844
-      z: 3
+      z: 10
       anchor_y: bottom  
    w_current_player4:
     - type: image
@@ -518,7 +518,7 @@ widgets:
       opacity: 1.0
       y: 4
       x: left+1174
-      z: 3
+      z: 10
       anchor_y: bottom      
 
 widget_player:

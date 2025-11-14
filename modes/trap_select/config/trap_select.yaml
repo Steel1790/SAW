@@ -2,7 +2,7 @@
 ##! mode: trap_select
 
 mode:
-  start_events: logicblock_cnt_saw_qualify_complete
+  start_events: logicblock_cnt_saw_qualify_complete, mode_hostage_complete
   stop_events: logicblock_trap_select_qualify_counter_complete
   priority: 120
   restart_on_next_ball: true

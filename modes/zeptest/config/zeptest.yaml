@@ -37,29 +37,39 @@ counters:
     persist_state: true
     events_when_complete: que_zeptest_complete
     count_events: sg_zeptest_zeptest_collected_hit
+    enable_events: mode_zeptest_started
+    reset_events: player_modes_attempted{current_player.mode_progress_reset==1}
   cnt_zeptest_lit_hit:
     persist_state: true
     starting_count: 0
     count_complete_value: 3
     count_events: sg_zeptest_zeptest_lit_hit
+    enable_events: mode_zeptest_started
+    reset_events: player_modes_attempted{current_player.mode_progress_reset==1}
   cnt_zeptest_collected_01:
     persist_state: true
     starting_count: 0
     reset_on_complete: false
     count_complete_value: 1
     count_events: logicblock_cnt_zeptest_collected_updated{value==1}
+    enable_events: mode_zeptest_started
+    reset_events: player_modes_attempted{current_player.mode_progress_reset==1}
   cnt_zeptest_collected_02:
     persist_state: true
     starting_count: 0
     reset_on_complete: false
     count_complete_value: 1
     count_events: logicblock_cnt_zeptest_collected_updated{value==2}
+    enable_events: mode_zeptest_started
+    reset_events: player_modes_attempted{current_player.mode_progress_reset==1}
   cnt_zeptest_collected_03:
     persist_state: true
     starting_count: 0
     reset_on_complete: false
     count_complete_value: 1
     count_events: logicblock_cnt_zeptest_collected_updated{value==3}
+    enable_events: mode_zeptest_started
+    reset_events: player_modes_attempted{current_player.mode_progress_reset==1}
   zeptest_disc:
     starting_count: 0
     enable_events: mode_zeptest_started
@@ -835,6 +845,7 @@ variable_player:
     cnt_zeptest_collected_3:
       action: set
       int: (count)*250
+ 
   # logicblock_zeptest_hit{step==1}:
   #   score: (4000000 + (current_player.syringes_used * 1000000)) * (current_player.pf_multiplier)
   # logicblock_zeptest_hit{step==2}:
@@ -863,6 +874,15 @@ variable_player:
     zeptest_complete_points:
       int: (current_player.zeptest_timer_bonus + (current_player.syringes_used * 1500000)) * (current_player.pf_multiplier)
       action: add
+    cnt_zeptest_collected_1:
+      action: set
+      int: 0
+    cnt_zeptest_collected_2:
+      action: set
+      int: 0
+    cnt_zeptest_collected_3:
+      action: set
+      int: 0
   timer_zeptest_60s_timer_tick:
     zeptest_timer_seconds:
       int: device.timers.zeptest_60s_timer.ticks % 60
@@ -1077,7 +1097,7 @@ widgets:
    #   y: 36
       y: 37
       x: 252
-      z: 8
+      z: 12
       font_size: 36
       anchor_x: right
       anchor_y: bottom
@@ -1088,7 +1108,7 @@ widgets:
       number_grouping: true  
       y: 36
       x: 253
-      z: 8
+      z: 11
       font_size: 36
       anchor_x: right
       anchor_y: bottom
@@ -1101,7 +1121,7 @@ widgets:
       number_grouping: true
       y: 37
       x: left+579
-      z: 8
+      z: 12
       font_size: 36
       anchor_x: right
       anchor_y: bottom
@@ -1112,7 +1132,7 @@ widgets:
       number_grouping: true
       y: 36
       x: left+580
-      z: 7
+      z: 11
       font_size: 36
       anchor_x: right
       anchor_y: bottom
@@ -1129,7 +1149,7 @@ widgets:
       anchor_y: bottom
       y: 37
       x: left+908
-      z: 8
+      z: 12
       color: black
     - type: Text
       text: (player3|score)
@@ -1140,7 +1160,7 @@ widgets:
       anchor_y: bottom
       y: 36
       x: left+909
-      z: 7
+      z: 11
       outline_color: f0cfab
       outline_width: 2
 #player 4 widget
@@ -1153,7 +1173,7 @@ widgets:
       anchor_y: bottom
       y: 37
       x: left+1239
-      z: 8
+      z: 12
       color: black
     - type: Text
       text: (player4|score)
@@ -1164,7 +1184,7 @@ widgets:
       anchor_y: bottom
       y: 36
       x: left+1240
-      z: 7
+      z: 11
       outline_color: f0cfab
       outline_width: 2
     # - type: image
@@ -1293,7 +1313,7 @@ widgets:
       opacity: 1.0
       y: 4
       x: 35
-      z: 3
+      z: 10
       anchor_x: left
       anchor_y: bottom
    w_current_player2:
@@ -1302,7 +1322,7 @@ widgets:
       opacity: 1.0
       y: 4
       x: left+515
-      z: 3
+      z: 10
       anchor_y: bottom  
    w_current_player3:
     - type: image
@@ -1310,7 +1330,7 @@ widgets:
       opacity: 1.0
       y: 4
       x: left+844
-      z: 3
+      z: 10
       anchor_y: bottom  
    w_current_player4:
     - type: image
@@ -1318,7 +1338,7 @@ widgets:
       opacity: 1.0
       y: 4
       x: left+1174
-      z: 3
+      z: 10
       anchor_y: bottom
 
    # zep_shot_update1:

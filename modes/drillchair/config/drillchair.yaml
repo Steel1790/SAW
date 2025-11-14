@@ -35,6 +35,7 @@ accruals:
     reset_on_complete: false
     persist_state: true
     disable_on_complete: false
+    reset_events: player_modes_attempted{current_player.mode_progress_reset==1}
     events_when_complete: que_drillchair_complete
  
 timers:
@@ -57,20 +58,23 @@ counters:
     starting_count: 0
     count_complete_value: 6
     start_enabled: true
+    enable_events: mode_drillchair_started
     persist_state: true
     reset_on_complete: false
     disable_events: drillchair_pops_complete
-    events_when_complete: e_bottom_drill_complete 
+    events_when_complete: e_bottom_drill_complete
+    reset_events: player_modes_attempted{current_player.mode_progress_reset==1}
     count_events: sw_bottom_pops
   drillchair_pops2_counter:
     starting_count: 0
     count_complete_value: 6
-    #enable_events: logicblock_drillchair_updated{value==2}
+    enable_events: mode_drillchair_started
     disable_events: drillchair_pops2_complete
     start_enabled: true
     persist_state: true
     reset_on_complete: false
     events_when_complete: e_upper_drill_complete
+    reset_events: mode_drillchair_started{current_player.mode_progress_reset==1}
     count_events: sw_top_pops
   drillchair_action_button_counter:
     starting_count: 0
@@ -172,7 +176,20 @@ variable_player:
     drillchair_visual_pops2_counter:
       action: set
       int: (count)      
-
+#wiz lap event reset
+  e_reload_mode_progress:
+    drillchair_visual_pops_counter:
+      action: set
+      int: (count)
+    drillchair_visual_pops2_counter:
+      action: set
+      int: (count)    
+    drillchair_pops_counter:
+      action: set
+      int: (count)*100
+    drillchair_pops2_counter:
+      action: set
+      int: (count)*100
   sw_pops:
     drillchair_points:
       int: 50000 * (current_player.pf_multiplier)
@@ -566,7 +583,7 @@ widgets:
    #   y: 36
       y: 37
       x: 252
-      z: 8
+      z: 12
       font_size: 36
       anchor_x: right
       anchor_y: bottom
@@ -577,7 +594,7 @@ widgets:
       number_grouping: true  
       y: 36
       x: 253
-      z: 8
+      z: 11
       font_size: 36
       anchor_x: right
       anchor_y: bottom
@@ -590,7 +607,7 @@ widgets:
       number_grouping: true
       y: 37
       x: left+579
-      z: 8
+      z: 12
       font_size: 36
       anchor_x: right
       anchor_y: bottom
@@ -601,7 +618,7 @@ widgets:
       number_grouping: true
       y: 36
       x: left+580
-      z: 7
+      z: 11
       font_size: 36
       anchor_x: right
       anchor_y: bottom
@@ -618,7 +635,7 @@ widgets:
       anchor_y: bottom
       y: 37
       x: left+908
-      z: 8
+      z: 12
       color: black
     - type: Text
       text: (player3|score)
@@ -629,7 +646,7 @@ widgets:
       anchor_y: bottom
       y: 36
       x: left+909
-      z: 7
+      z: 11
       outline_color: f0cfab
       outline_width: 2
 #player 4 widget
@@ -642,7 +659,7 @@ widgets:
       anchor_y: bottom
       y: 37
       x: left+1239
-      z: 8
+      z: 12
       color: black
     - type: Text
       text: (player4|score)
@@ -653,7 +670,7 @@ widgets:
       anchor_y: bottom
       y: 36
       x: left+1240
-      z: 7
+      z: 11
       outline_color: f0cfab
       outline_width: 2   
     - type: Text
@@ -756,7 +773,7 @@ widgets:
       opacity: 1.0
       y: 4
       x: 35
-      z: 3
+      z: 10
       anchor_x: left
       anchor_y: bottom
    w_current_player2:
@@ -765,7 +782,7 @@ widgets:
       opacity: 1.0
       y: 4
       x: left+515
-      z: 3
+      z: 10
       anchor_y: bottom  
    w_current_player3:
     - type: image
@@ -773,7 +790,7 @@ widgets:
       opacity: 1.0
       y: 4
       x: left+844
-      z: 3
+      z: 10
       anchor_y: bottom  
    w_current_player4:
     - type: image
@@ -781,7 +798,7 @@ widgets:
       opacity: 1.0
       y: 4
       x: left+1174
-      z: 3
+      z: 10
       anchor_y: bottom
    # dc_shot_update2: 
    #  - type: Text
@@ -1543,6 +1560,7 @@ show_player:
       disc_right_chase: stop
 
 event_player: 
+  player_drillchair_drillchair_60s_timer_tick{value==60}: e_reload_mode_progress
   slide_mode_drillchair01_active: e_primary_mode_active
   shot_full_workshop_button_sp_full_workshop_lit_hit: que_drillchair_complete
   mode_drillchair_stopping{mode.shackle_multiball.active==True}: e_mode_qualify_disabled|0.5s

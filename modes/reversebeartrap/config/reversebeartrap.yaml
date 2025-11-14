@@ -37,6 +37,8 @@ sequences:
     persist_state: true
     disable_events: mode_reversebeartrap_complete
     events_when_complete: que_reversebeartrap_complete
+    enable_events: mode_reversebeartrap_started
+    reset_events: player_modes_attempted{current_player.mode_progress_reset==1}
 
 timers:
   t_reversebeartrap_timer:

@@ -33,7 +33,9 @@ keyboard:
   v:
     event: selection_mode_reawakening_selected
   c:
-    event: selection_mode_reawakening_p2_selected
+    event: reawakening_p3_phasethree_apprentice_selected
+  w:
+    event: mode_reawakening_p3_started
   r:
     event: mode_razorwire_complete
     # event: selection_mode_razorwire_selected

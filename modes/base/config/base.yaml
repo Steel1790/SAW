@@ -42,7 +42,9 @@ event_player:
   single_player_ball_started: mode_qualified_sidestep|0.6s
   # ball_will_end{current_player.ball==3}: e_topper_trigger|3s
   game_ending{current_player.ball==3 and is_extra_ball==False}: e_topper_trigger|3s
-  mode_hostage_complete: e_mystery_workshop
+  mode_hostage_complete: 
+    - e_mystery_workshop
+    - e_hostage_disable_saw_qualify|0.2s
   mode_puzzle_hurryup_stopped: e_saw_qualify_reset|0.3s
   # ball_starting{is_extra_ball==True}: e_shoot_again
   mode_lil_billy_stopped: flippers_on
@@ -410,6 +412,10 @@ slide_player:
     HostageItemWorkshop:
       priority: 191
       expire: 3s
+  e_apprentice_complete:
+    apprentice_complete:
+      priority: 500
+      expire: 6s
   e_survivor_complete:
     survivor_complete:
       priority: 500
@@ -755,9 +761,9 @@ counters:
  
   cnt_negative_shot_counter:
     starting_count: 0
-    count_complete_value: 4
-    enable_events: mode_drillchair_stopped, mode_flammablejelly_stopped, mode_quadshotgun_stopped, mode_razorwire_stopped, mode_reversebeartrap_stopped, mode_zeptest_stopped
-    disable_events: e_primary_mode_active
+    count_complete_value: 3
+    enable_events: mode_drillchair_stopped, mode_flammablejelly_stopped, mode_quadshotgun_stopped, mode_razorwire_stopped, mode_reversebeartrap_stopped, mode_zeptest_stopped, mode_hostage_complete
+    disable_events: e_primary_mode_active, mode_hostage_started, e_reawakening_selected
     start_enabled: true
     reset_events: logicblock_cnt_negative_shot_counter_updated{value==-1}
 #    persist_state: true
@@ -1634,6 +1640,12 @@ show_player:
       disc_left_chase: stop
       disc_middle_chase: stop
       disc_right_chase: stop
+#lightshow for hitting end of apprentice in wiz mode
+  e_apprentice_complete:
+      top_drop_chase: stop
+      colorwash_opposite_glitter:
+        speed: 20
+        loops: 0
 #lightshow for hitting end of survivor in wiz mode
   e_survivor_complete:
       top_drop_chase: stop
@@ -3498,7 +3510,116 @@ widgets:
       font_name: Mustkill     
       outline_color: black
       outline_width: 7
-#reawakening phase three points displayed    
+#reawakening phase one points displayed   
+  w_phaseone_apprentice_points:
+    - type: text
+      text: Apprentice Phase One Total 
+      number_grouping: true 
+      x: 33.6%
+      y: 75.2%
+      z: 7
+      font_size: 80
+      font_name: Mustkill     
+      outline_color: black
+      outline_width: 7
+    - type: text
+      text: (player|phaseone_apprentice_points)
+      number_grouping: true 
+      x: 82.2%
+      y: 75%
+      z: 7
+      font_size: 80
+      font_name: Mustkill     
+      outline_color: black
+      outline_width: 7
+
+  w_phaseone_survivor_points:
+    - type: text
+      text: Apprentice Phase One Total 
+      number_grouping: true 
+      x: 33.6%
+      y: 75.2%
+      z: 7
+      font_size: 80
+      font_name: Mustkill     
+      outline_color: black
+      outline_width: 7
+    - type: text
+      text: (player|phaseone_survivor_points)
+      number_grouping: true 
+      x: 82.2%
+      y: 75%
+      z: 7
+      font_size: 80
+      font_name: Mustkill     
+      outline_color: black
+      outline_width: 7
+#reawakening phase two points displayed   
+  w_phasetwo_apprentice_points:
+    - type: text
+      text: Apprentice Phase Two Total 
+      number_grouping: true 
+      x: 33.6%
+      y: 75.2%
+      z: 7
+      font_size: 80
+      font_name: Mustkill     
+      outline_color: black
+      outline_width: 7
+    - type: text
+      text: (player|phasetwo_apprentice_points)
+      number_grouping: true 
+      x: 82.2%
+      y: 75%
+      z: 7
+      font_size: 80
+      font_name: Mustkill     
+      outline_color: black
+      outline_width: 7
+
+  w_phasetwo_survivor_points:
+    - type: text
+      text: Apprentice Phase Two Total 
+      number_grouping: true 
+      x: 33.6%
+      y: 75.2%
+      z: 7
+      font_size: 80
+      font_name: Mustkill     
+      outline_color: black
+      outline_width: 7
+    - type: text
+      text: (player|phasetwo_survivor_points)
+      number_grouping: true 
+      x: 82.2%
+      y: 75%
+      z: 7
+      font_size: 80
+      font_name: Mustkill     
+      outline_color: black
+      outline_width: 7
+#reawakening phase three points displayed   
+  w_phasethree_apprentice_points:
+    - type: text
+      text: Apprentice Phase Three Total 
+      number_grouping: true 
+      x: 33.6%
+      y: 19.2%
+      z: 7
+      font_size: 80
+      font_name: Mustkill     
+      outline_color: black
+      outline_width: 7
+    - type: text
+      text: (player|phasethree_apprentice_points)
+      number_grouping: true 
+      x: 82.2%
+      y: 19%
+      z: 7
+      font_size: 80
+      font_name: Mustkill     
+      outline_color: black
+      outline_width: 7
   w_phasethree_survivor_points:
     - type: text
       text: Survivor Phase Three Total 
@@ -4752,6 +4873,14 @@ widget_player:
   selection_mode_reawakening_selected:
     saw_letters:
       action: remove
+#reawakening phase 3 apprentice total points displayed
+  e_apprentice_complete:
+    w_phasethree_apprentice_points:
+      slide: apprentice_complete
+      action: add
+    saw_letters:
+      slide: base_slide_main
+      action: add
 #reawakening phase 3 survivor total points displayed
   e_survivor_complete:
     w_phasethree_survivor_points:
@@ -4931,6 +5060,12 @@ slides:
     widgets:
     - type: video
       video: PuzzleCollected
+      width: 1366
+      height: 768
+  apprentice_complete:
+    widgets:
+    - type: video
+      video: apprentice_complete
       width: 1366
       height: 768
   survivor_complete:

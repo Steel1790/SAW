@@ -24,9 +24,15 @@ variable_player:
       action: set
       string: 'selection_mode_phaseone_survivor_highlighted'
   logicblock_apprentice_phaseone_hit:
-    score: (7500000 * (current_player.pf_multiplier))
+    score: 7500000 * (current_player.pf_multiplier)
+    phaseone_apprentice_points:
+      int: 7500000 * (current_player.pf_multiplier)
+      action: add
   logicblock_survivor_phaseone_hit:  
-    score: (7500000 * (current_player.pf_multiplier))
+    score: 7500000 * (current_player.pf_multiplier)
+    phaseone_survivor_points:
+      int: 7500000 * (current_player.pf_multiplier)
+      action: add
   timer_phaseone_apprentice_timer_tick:
     phaseone_apprentice_timer_seconds:
       int: device.timers.phaseone_apprentice_timer.ticks % 60
@@ -125,7 +131,7 @@ event_player:
   e_reawakening_phaseone_shot_reset{device.sequences.apprentice_phaseone.value==4}: e_reawakening_phaseone_a_quadshotgun_reset
   reawakening_phaseone_apprentice_selected: e_reawakening_selected
   reawakening_phaseone_survivor_selected: e_reawakening_selected
-
+  ball_will_end: e_reset_game_flag
 
 
 shot_profiles:
@@ -651,7 +657,7 @@ widgets:
    #   y: 36
       y: 37
       x: 252
-      z: 8
+      z: 12
       font_size: 36
       anchor_x: right
       anchor_y: bottom
@@ -662,7 +668,7 @@ widgets:
       number_grouping: true  
       y: 36
       x: 253
-      z: 8
+      z: 11
       font_size: 36
       anchor_x: right
       anchor_y: bottom
@@ -675,7 +681,7 @@ widgets:
       number_grouping: true
       y: 37
       x: left+579
-      z: 8
+      z: 12
       font_size: 36
       anchor_x: right
       anchor_y: bottom
@@ -686,7 +692,7 @@ widgets:
       number_grouping: true
       y: 36
       x: left+580
-      z: 7
+      z: 11
       font_size: 36
       anchor_x: right
       anchor_y: bottom
@@ -703,7 +709,7 @@ widgets:
       anchor_y: bottom
       y: 37
       x: left+908
-      z: 8
+      z: 12
       color: black
     - type: Text
       text: (player3|score)
@@ -714,7 +720,7 @@ widgets:
       anchor_y: bottom
       y: 36
       x: left+909
-      z: 7
+      z: 11
       outline_color: f0cfab
       outline_width: 2
 #player 4 widget
@@ -727,7 +733,7 @@ widgets:
       anchor_y: bottom
       y: 37
       x: left+1239
-      z: 8
+      z: 12
       color: black
     - type: Text
       text: (player4|score)
@@ -738,7 +744,7 @@ widgets:
       anchor_y: bottom
       y: 36
       x: left+1240
-      z: 7
+      z: 11
       outline_color: f0cfab
       outline_width: 2
 
@@ -825,6 +831,9 @@ widget_player:
    w_reawakening_apprentice_phaseone_UI:
      slide: reawakening_p1a_scoop
      action: add
+   w_phaseone_apprentice_points:
+     slide: reawakening_p1a_scoop
+     action: add
  logicblock_apprentice_phaseone_complete{current_player.v_current_player==1}:
    w_current_player1:
      slide: reawakening_p1a_scoop
@@ -843,6 +852,9 @@ widget_player:
      action: add
  logicblock_survivor_phaseone_complete:
    w_reawakening_survivor_phaseone_UI:
+     slide: reawakening_p1s_scoop
+     action: add
+   w_phaseone_survivor_points:
      slide: reawakening_p1s_scoop
      action: add
  logicblock_survivor_phaseone_complete{current_player.v_current_player==1}:

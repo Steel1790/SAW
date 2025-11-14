@@ -1154,7 +1154,13 @@ sound_player:
     FuckThisShit:
       action: stop
     LilBillyModeSongSkillshot:
-      action: stop   
+      action: stop  
+    HelloZeppPt2:
+      action: stop
+    HelloZeppPt3:
+      action: stop
+    HelloZeppPt4:
+      action: stop
     BonusModeSong:
       action: play
       priority: 205
@@ -1492,6 +1498,73 @@ sound_player:
       action: play   
       loops: -1
       priority: 210
+# reawakening phase 3 apprentice highlighted
+  reawakening_p3_phasethree_apprentice_highlighted:
+    ModeQualifiedShootScoop:
+      action: stop
+    QuadShotgunModeStart:
+      action: stop
+    DrillChairModeStart:
+      action: stop
+    FlammableJellyModeStart:
+      action: stop
+    RWModeStart:
+      action: stop
+    ReverseBearTrapModeStart:
+      action: stop
+    ZepsTestModeStart:
+      action: stop      
+    BaseMusic:
+      action: stop
+    DrillAndTapp:
+      action: stop
+    OutOfTime:
+      action: stop
+    Jonas:
+      action: stop
+    TheRules:
+      action: stop 
+    LilBillyModeSongSkillshot:
+      action: stop   
+    FuckThisShit:
+      action: stop
+    HelloZeppPt4:
+      action: play
+      priority: 205 
+# reawakening phase 3 apprentice selected
+  reawakening_p3_phasethree_apprentice_selected:
+    ModeQualifiedShootScoop:
+      action: stop
+    QuadShotgunModeStart:
+      action: stop
+    DrillChairModeStart:
+      action: stop
+    FlammableJellyModeStart:
+      action: stop
+    RWModeStart:
+      action: stop
+    ReverseBearTrapModeStart:
+      action: stop
+    ZepsTestModeStart:
+      action: stop      
+    BaseMusic:
+      action: stop
+    DrillAndTapp:
+      action: stop
+    OutOfTime:
+      action: stop
+    Jonas:
+      action: stop
+    TheRules:
+      action: stop 
+    LilBillyModeSongSkillshot:
+      action: stop   
+    FuckThisShit:
+      action: stop
+    HelloZeppPt4:
+      action: play
+      loops: -1    
+      priority: 205 
 # reawakening phase 2 survivor left/clue complete
   e_phasetwo_survivor_left_complete:
     HelloZeppPt3:
