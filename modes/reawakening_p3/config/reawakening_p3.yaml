@@ -229,12 +229,12 @@ counters:
     count_complete_value: 3
     persist_state: true
     events_when_complete: apprentice_p3_part5_complete
-    count_events: sg_apprentice_p5_part5_collected_hit
+    count_events: sg_apprentice_p3_part5_collected_hit
   cnt_apprentice_p3_p5_collected_lit_hit:
     persist_state: true
     starting_count: 0
     count_complete_value: 3
-    count_events: sg_apprentice_p5_part5_lit_hit
+    count_events: sg_apprentice_p3_part5_lit_hit
   cnt_apprentice_p3_p5_collected_01:
     persist_state: true
     starting_count: 0
@@ -514,24 +514,36 @@ variable_player:
       int: 100000000 * (current_player.pf_multiplier)
       action: add
 #part 5
+  counter_cnt_apprentice_p3_p5_collected_lit_hit_hit{count==1}:
+    cnt_apprentice_p3_p5_collected_1:
+      action: set
+      int: 125
+  counter_cnt_apprentice_p3_p5_collected_lit_hit_hit{count==2}:
+    cnt_apprentice_p3_p5_collected_1:
+      action: set
+      int: 125
+  counter_cnt_apprentice_p3_p5_collected_lit_hit_hit{count==3}:
+    cnt_apprentice_p3_p5_collected_1:
+      action: set
+      int: 125  
   counter_cnt_apprentice_p3_p5_collected_01_hit:
     cnt_apprentice_p3_p5_collected_1:
       action: set
-      int: (count)*250
+      int: 250
   counter_cnt_apprentice_p3_p5_collected_02_hit:
     cnt_apprentice_p3_p5_collected_2:
       action: set
-      int: (count)*250
+      int: 250
   counter_cnt_apprentice_p3_p5_collected_03_hit:
     cnt_apprentice_p3_p5_collected_3:
       action: set
-      int: (count)*250
-  sg_apprentice_p5_part5_lit_hit:
+      int: 250
+  sg_apprentice_p3_part5_lit_hit:
     score: 5000000 * (current_player.pf_multiplier)
     phasethree_apprentice_points:
       int: 5000000 * (current_player.pf_multiplier)
       action: add
-  sg_apprentice_p5_part5_collected_hit:
+  sg_apprentice_p3_part5_collected_hit:
     score: 5000000 * (current_player.pf_multiplier)
     phasethree_apprentice_points:
       int: 5000000 * (current_player.pf_multiplier)
@@ -541,6 +553,13 @@ variable_player:
     phasethree_apprentice_points:
       int: 125000000 * (current_player.pf_multiplier)
       action: add
+  slide_mode_reawakening_apprentice_phasethree_p5_active:
+    cnt_apprentice_p3_p5_collected_1:
+      action: add
+      int: 1
+    cnt_apprentice_p3_p5_collected_2:
+      action: add
+      int: 1  
 #part 6
   logicblock_apprentice_p3_part6_hit{step==1}:
     score: (5000000 + (current_player.part6_spinner_value * 145750)) * (current_player.pf_multiplier)
@@ -1070,7 +1089,7 @@ show_player:
       show_tokens:
         color1: zeptest  
 #apprentice part 5 lit hit
-  sg_apprentice_p5_part5_lit_hit:
+  sg_apprentice_p3_part5_lit_hit:
       starpost_cycle:
         loops: 0
         speed: 20
@@ -1091,7 +1110,7 @@ show_player:
         speed: 50
         show_tokens:
           color1: zeptest_alt
-  sg_apprentice_p5_part5_collected_hit:
+  sg_apprentice_p3_part5_collected_hit:
       starpost_cycle:
         loops: 1
         speed: 20
@@ -2432,7 +2451,7 @@ shots:
 shot_groups:
   sg_apprentice_p3_part3:
     shots: shot_reawakening_p3_apprentice_part3_left_loop, shot_reawakening_p3_apprentice_part3_left_standup_rightramp, shot_reawakening_p3_apprentice_part3_right_standup_rightramp, shot_reawakening_p3_apprentice_part3_right_loop, shot_reawakening_p3_apprentice_part3_right_standup, shot_reawakening_p3_apprentice_part3_left_standup
-  sg_apprentice_p5:
+  sg_apprentice_p3:
     shots: shot_reawakening_p3_apprentice_part5_left_loop, shot_reawakening_p3_apprentice_part5_left_standup_rightramp, shot_reawakening_p3_apprentice_part5_right_standup_rightramp, shot_reawakening_p3_apprentice_part5_right_loop, shot_reawakening_p3_apprentice_part5_right_standup, shot_reawakening_p3_apprentice_part5_left_standup, shot_reawakening_p3_apprentice_part5_middle_standup, shot_reawakening_p3_apprentice_part5_inner_loop, shot_reawakening_p3_apprentice_part5_left_ramp, shot_reawakening_p3_apprentice_part5_right_ramp, shot_reawakening_p3_apprentice_part5_drop_bank, shot_reawakening_p3_apprentice_part5_top_drop
 
 slides:
@@ -3537,18 +3556,18 @@ widget_player:
    w_current_player4:
      slide: mode_reawakening_apprentice_phasethree_p5
      action: add
- logicblock_cnt_apprentice_p3_p5_collected_lit_hit_updated{value==1}:
-  w_lit_hit_border1:
-    slide: mode_reawakening_apprentice_phasethree_p5
-    action: add  
- logicblock_cnt_apprentice_p3_p5_collected_lit_hit_updated{value==2}:
-  w_lit_hit_border2:
-    slide: mode_reawakening_apprentice_phasethree_p5
-    action: add
- logicblock_cnt_apprentice_p3_p5_collected_lit_hit_updated{value==3}:
-  w_lit_hit_border3:
-    slide: mode_reawakening_apprentice_phasethree_p5
-    action: add
+ # logicblock_cnt_apprentice_p3_p5_collected_lit_hit_updated{value==1}:
+ #  w_lit_hit_border1:
+ #    slide: mode_reawakening_apprentice_phasethree_p5
+ #    action: add  
+ # logicblock_cnt_apprentice_p3_p5_collected_lit_hit_updated{value==2}:
+ #  w_lit_hit_border2:
+ #    slide: mode_reawakening_apprentice_phasethree_p5
+ #    action: add
+ # logicblock_cnt_apprentice_p3_p5_collected_lit_hit_updated{value==3}:
+ #  w_lit_hit_border3:
+ #    slide: mode_reawakening_apprentice_phasethree_p5
+ #    action: add
 #phase three part 6
  apprentice_p3_part5_complete:
    w_reawakening_apprentice_phasethree_UI:

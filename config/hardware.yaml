@@ -437,10 +437,12 @@ drop_target_banks:
       - dt_lower_drop3
     reset_on_complete: 1s
     reset_coils: c_lower_droptargetreset
+    max_reset_attempts: 10
     reset_events:
       ball_started.1: 0
       ball_started.2: 1s
       ball_started.3: 2s
+      e_primary_mode_active: 0
       machine_reset_phase_3: 0 
       mode_lil_billy_started: 0
       lil_billy_drops_hit: 1s
@@ -451,10 +453,13 @@ drop_target_banks:
       - dt_upper_drop1
     reset_on_complete: 1s
     reset_coils: c_upper_droptargetreset
+    max_reset_attempts: 10
     reset_events: 
       ball_started.1: 0
       ball_started.2: 1s
       ball_started.3: 2s
+      e_primary_mode_active: 0
+      mode_trap_select_started: 1s
       machine_reset_phase_3: 0 
       mode_make_your_choice_hurryup_started: 0
 
@@ -715,3 +720,10 @@ combo_switches:
     tag_2: right_flipper
     events_when_both: flipper_cancel_removed
     max_offset_time: 0ms
+#temp wiz mode testing
+  reawakening_test:
+    switches_1: s_right_flipper_button
+    switches_2: s_action_button
+    hold_time: 2s
+    max_offset_time: 1s
+    events_when_both: selection_mode_reawakening_selected

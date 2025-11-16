@@ -816,36 +816,54 @@ timers:
         event: sg_zeptest_zeptest_collected_hit
         
 variable_player:
+  counter_cnt_zeptest_lit_hit_hit{count==1}:
+    cnt_zeptest_collected_1:
+      action: set
+      int: 125
+  counter_cnt_zeptest_lit_hit_hit{count==2}:
+    cnt_zeptest_collected_2:
+      action: set
+      int: 125
+  counter_cnt_zeptest_lit_hit_hit{count==3}:
+    cnt_zeptest_collected_3:
+      action: set
+      int: 125
   sg_zeptest_zeptest_lit_hit:
     score: (500000 + (current_player.syringes_used * 1000000)) * (current_player.pf_multiplier)
     zeptest_points:
       int: (500000 + (current_player.syringes_used * 1000000)) * (current_player.pf_multiplier)
       action: add
-  counter_cnt_zeptest_collected_01_hit:
+  logicblock_cnt_zeptest_collected_updated{value==1}:
     score: (3000000 + (current_player.syringes_used * 1000000)) * (current_player.pf_multiplier)
     zeptest_points:
       int: (3000000 + (current_player.syringes_used * 1000000)) * (current_player.pf_multiplier)
       action: add
     cnt_zeptest_collected_1:
       action: set
-      int: (count)*250
-  counter_cnt_zeptest_collected_02_hit:
+      int: 250
+  logicblock_cnt_zeptest_collected_updated{value==2}:
     score: (4000000 + (current_player.syringes_used * 1000000)) * (current_player.pf_multiplier)
     zeptest_points:
       int: (4000000 + (current_player.syringes_used * 1000000)) * (current_player.pf_multiplier)
       action: add
     cnt_zeptest_collected_2:
       action: set
-      int: (count)*250
-  counter_cnt_zeptest_collected_03_hit:
+      int: 250
+  logicblock_cnt_zeptest_collected_updated{value==3}:
     score: (5000000 + (current_player.syringes_used * 1000000)) * (current_player.pf_multiplier)
     zeptest_points:
       int: (5000000 + (current_player.syringes_used * 1000000)) * (current_player.pf_multiplier)
       action: add
     cnt_zeptest_collected_3:
       action: set
-      int: (count)*250
- 
+      int: 250
+  slide_sl_mode_zeptest01_active:
+    cnt_zeptest_collected_1:
+      action: add
+      int: 1
+    cnt_zeptest_collected_2:
+      action: add
+      int: 1
   # logicblock_zeptest_hit{step==1}:
   #   score: (4000000 + (current_player.syringes_used * 1000000)) * (current_player.pf_multiplier)
   # logicblock_zeptest_hit{step==2}:
@@ -916,6 +934,15 @@ variable_player:
     syringes_used:
       int: 0
       action: set
+    # cnt_zeptest_collected_1:
+    #   action: set
+    #   int: 0
+    # cnt_zeptest_collected_2:
+    #   action: set
+    #   int: 0
+    # cnt_zeptest_collected_3:
+    #   action: set
+    #   int: 0
 
   sw_pops:
     zeptest_points:
@@ -1239,7 +1266,7 @@ widgets:
       height: 45
       x: 15.7%
       y: 29%
-      z: 3
+      z: 5
       anchor_x: left
       corner_radius: 10
       corner_segments: 10
@@ -1254,7 +1281,7 @@ widgets:
       height: 45
       x: 43.7%
       y: 29%
-      z: 3
+      z: 5
       anchor_x: left
       corner_radius: 10
       corner_segments: 10
@@ -1269,7 +1296,7 @@ widgets:
       height: 45
       x: 70.7%
       y: 29%
-      z: 3
+      z: 5
       anchor_x: left
       corner_radius: 10
       corner_segments: 10
@@ -1546,18 +1573,19 @@ widget_player:
     slide: sl_mode_zeptest01
     action: add
 
- logicblock_cnt_zeptest_lit_hit_updated{value==1}:
-  w_lit_hit_border01:
-    slide: sl_mode_zeptest01
-    action: add  
- logicblock_cnt_zeptest_lit_hit_updated{value==2}:
-  w_lit_hit_border02:
-    slide: sl_mode_zeptest01
-    action: add
- logicblock_cnt_zeptest_lit_hit_updated{value==3}:
-  w_lit_hit_border03:
-    slide: sl_mode_zeptest01
-    action: add
+# #temp commented out for random orange bar above 75%
+#  logicblock_cnt_zeptest_lit_hit_updated{value>=1}:
+#   w_lit_hit_border01:
+#     slide: sl_mode_zeptest01
+#     action: add  
+#  logicblock_cnt_zeptest_lit_hit_updated{value>=2}:
+#   w_lit_hit_border02:
+#     slide: sl_mode_zeptest01
+#     action: add
+#  logicblock_cnt_zeptest_lit_hit_updated{value==3}:
+#   w_lit_hit_border03:
+#     slide: sl_mode_zeptest01
+#     action: add
 #current player widget
  slide_zeptestvideo_removed{current_player.v_current_player==1}:
    w_current_player1:
