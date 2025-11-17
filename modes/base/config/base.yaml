@@ -3974,6 +3974,12 @@ widget_player:
       action: remove
     w_trap_select_start:
       action: remove
+    saw_s_letters:
+      action: remove
+    saw_sa_letters:
+      action: remove
+    saw_saw_letters:
+      action: remove 
   stop_mode_jigsaw_multiball:
     saw_letters:
       slide: base_slide_main
@@ -3991,6 +3997,12 @@ widget_player:
       action: remove
     w_trap_select_start:
       action: remove
+    saw_s_letters:
+      action: remove
+    saw_sa_letters:
+      action: remove
+    saw_saw_letters:
+      action: remove 
   stop_mode_shackle_multiball:
     saw_letters:
       slide: base_slide_main
@@ -4008,6 +4020,12 @@ widget_player:
       action: remove
     w_trap_select_start:
       action: remove
+    saw_s_letters:
+      action: remove
+    saw_sa_letters:
+      action: remove
+    saw_saw_letters:
+      action: remove 
   stop_mode_hacksaw_multiball:
     saw_letters:
       slide: base_slide_main
@@ -4045,6 +4063,12 @@ widget_player:
     saw_letters:
       slide: base_slide_main
       action: remove
+    saw_s_letters:
+      action: remove
+    saw_sa_letters:
+      action: remove
+    saw_saw_letters:
+      action: remove 
     razorwire_2ball_in_play:
       slide: base_slide_main
       action: add
@@ -5079,7 +5103,7 @@ ball_holds:
   bh_scoop:
     balls_to_hold: 1
     hold_devices: bd_scoop
-    enable_events: sh_select_mode_hit, e_enable_mystery
+    enable_events: sh_select_mode_hit, e_enable_mystery, e_reawakening_start
     disable_events: multiball_active, e_primary_mode_active, e_release_mystery
     release_one_events: e_primary_mode_active, e_release_mystery, e_reawakening_selected
 

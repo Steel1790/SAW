@@ -655,6 +655,12 @@ event_player:
   game_ending{current_player.ball==3 and is_extra_ball==False}: 
     - e_end_of_game
     - e_end_of_game_stopped|3.6s
+  mode_reawakening_will_start: e_reawakening_start
+  mode_reawakening_p2_will_start: e_reawakening_start
+  mode_reawakening_p3_will_start: e_reawakening_start
+  multiball_mb_hacksaw_ended: Que_BaseMusic_Progression
+  multiball_mb_shackle_ended: Que_BaseMusic_Progression
+  multiball_mb_jigsaw_ended: Que_BaseMusic_Progression
 
 queue_relay_player:
   game_ending:

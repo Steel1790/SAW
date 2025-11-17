@@ -529,50 +529,62 @@ sound_player:
     razorwirepops:
       action: play
       block: true
+      max_queue_time: 0.5s
   sw_bottom_pops:
     drillchairpops:
       action: play
       block: true
+      max_queue_time: 0.5s
   sw_slingshot:
     slingsaudio:
       action: play
       block: true    
+      max_queue_time: 0.5s
   spinner_spinner_hit:
     Spinner3:
       action: play
       block: true
+      max_queue_time: 0.5s
   sw_standup:
     standupaudio:
       action: play
       block: true
+      max_queue_time: 0.5s
   ssh_left_orbit_hit:
     LeftOrbit:
       action: play
       block: true
+      max_queue_time: 0.5s
   ssh_right_orbit_hit:
     RightOrbit:
       action: play
       block: true
+      max_queue_time: 0.5s
   sw_110:
     slingsaudio:
       action: play
       block: true   
+      max_queue_time: 0.5s
   s_left_ramp_score_bottom_active:
     leftrampentryaudio:
       action: play
       block: true
+      max_queue_time: 0.5s
   s_left_ramp_score_top_active:
     leftrampexitaudio:
       action: play
       block: true
+      max_queue_time: 0.5s
   s_right_ramp_score_bottom_active:
     rightrampentryaudio:
       action: play
       block: true
+      max_queue_time: 0.5s
   s_right_ramp_score_top_active:
     rightrampexitaudio:
       action: play
       block: true
+      max_queue_time: 0.5s
   # shot_left_outlane_hit{state=="ball_save_not_ready" and current_player.ball <= 2 }:
   #   Death:
   #     action: play
@@ -589,76 +601,94 @@ sound_player:
   e_EricDeath:
     EricDeath:
       action: play
-      block: true      
+      block: true
+      max_queue_time: 0.5s
   e_AustinDeath:
     AustinDeath:
       action: play
       block: true 
+      max_queue_time: 0.5s
   e_JoeDeath:
     JoeDeath:
       action: play
       block: true 
+      max_queue_time: 0.5s
   e_CameronDeath:
     CameronDeath:
       action: play
       block: true 
+      max_queue_time: 0.5s
   e_GlennDeath:
     GlennDeath:
       action: play
       block: true 
+      max_queue_time: 0.5s
   e_YouCantDoThisToMe:
     YouCantDoThisToMe:
       action: play
       block: true 
+      max_queue_time: 0.5s
   e_Drain1:
     Drain1:
       action: play
       block: true 
+      max_queue_time: 0.5s
   e_Drain2:
     Drain2:
       action: play
       block: true 
+      max_queue_time: 0.5s
   e_Drain3:
     Drain3:
       action: play
       block: true 
+      max_queue_time: 0.5s
   e_Drain4:
     Drain4:
       action: play
       block: true 
+      max_queue_time: 0.5s
   e_Drain5:
     Drain5:
       action: play
       block: true 
+      max_queue_time: 0.5s
   e_Drain6:
     Drain6:
       action: play
       block: true 
+      max_queue_time: 0.5s
   e_Drain7:
     Drain7:
       action: play
       block: true 
+      max_queue_time: 0.5s
   e_Drain8:
     Drain8:
       action: play
       block: true 
+      max_queue_time: 0.5s
   e_Drain9:
     Drain9:
       action: play
       block: true 
+      max_queue_time: 0.5s
   e_Drain10:
     Drain10:
       action: play
       block: true 
+      max_queue_time: 0.5s
 
   shot_left_outlane_hit{state=="lit"}:
     StillAlive:
       action: play
       block: true
+      max_queue_time: 0.5s
   shot_right_outlane_hit{state=="lit"}:
     StillAlive:
       action: play
       block: true
+      max_queue_time: 0.5s
 
   sw_right_return_lane:
     Gore_Neck_Break:
@@ -812,20 +842,107 @@ sound_player:
 
 # multiball audio
   multiball_mb_hacksaw_started:
+    ModeQualifiedShootScoop:
+      action: stop
+    QuadShotgunModeStart:
+      action: stop
+    DrillChairModeStart:
+      action: stop
+    FlammableJellyModeStart:
+      action: stop
+    RWModeStart:
+      action: stop
+    ReverseBearTrapModeStart:
+      action: stop
+    ZepsTestModeStart:
+      action: stop      
+    BaseMusic:
+      action: stop
+    DrillAndTapp:
+      action: stop
+    OutOfTime:
+      action: stop
+    Jonas:
+      action: stop
+    TheRules:
+      action: stop 
+    LilBillyModeSongSkillshot:
+      action: stop   
+    FuckThisShit:
+      action: stop
     hacksaw_mb_start:
       action: play
     Multiball3:
       action: play
+      loops: -1
   multiball_mb_shackle_started:
+    ModeQualifiedShootScoop:
+      action: stop
+    QuadShotgunModeStart:
+      action: stop
+    DrillChairModeStart:
+      action: stop
+    FlammableJellyModeStart:
+      action: stop
+    RWModeStart:
+      action: stop
+    ReverseBearTrapModeStart:
+      action: stop
+    ZepsTestModeStart:
+      action: stop      
+    BaseMusic:
+      action: stop
+    DrillAndTapp:
+      action: stop
+    OutOfTime:
+      action: stop
+    Jonas:
+      action: stop
+    TheRules:
+      action: stop 
+    LilBillyModeSongSkillshot:
+      action: stop   
+    FuckThisShit:
+      action: stop
     ShackleMultiball:
       action: play
     90SecondMultiballSong:
       action: play
+      loops: -1
   multiball_mb_jigsaw_started:
+    ModeQualifiedShootScoop:
+      action: stop
+    QuadShotgunModeStart:
+      action: stop
+    DrillChairModeStart:
+      action: stop
+    FlammableJellyModeStart:
+      action: stop
+    RWModeStart:
+      action: stop
+    ReverseBearTrapModeStart:
+      action: stop
+    ZepsTestModeStart:
+      action: stop      
+    BaseMusic:
+      action: stop
+    DrillAndTapp:
+      action: stop
+    OutOfTime:
+      action: stop
+    Jonas:
+      action: stop
+    TheRules:
+      action: stop 
+    LilBillyModeSongSkillshot:
+      action: stop   
+    FuckThisShit:
+      action: stop
     JigsawMultiballStart1:
       action: play
     Multiball2:
       action: play
+      loops: -1
 # multiball stopped
   multiball_mb_hacksaw_ended:
     Multiball3:
