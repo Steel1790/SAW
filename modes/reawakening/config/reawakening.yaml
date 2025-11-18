@@ -3,7 +3,7 @@ mode:
   start_events: selection_mode_reawakening_selected
   stop_events: stop_mode_reawakening, mode_reawakening_complete, ball_ended, ball_will_end, s_right_scoop_active{current_player.reawakening_phaseone_completed==1 and current_player.reawakening_apprentice_selected==1}, s_right_scoop_active{current_player.reawakening_phaseone_completed==1 and current_player.reawakening_survivor_selected==1}
   priority: 190
-  restart_on_next_ball: true
+  # restart_on_next_ball: true
   code: mpf.modes.carousel.code.carousel.Carousel
 mode_settings:
 #two version of each slide. image split down middle. one side is highlighted. another copy is the right side highlighted.
@@ -129,6 +129,8 @@ event_player:
   e_reawakening_phaseone_shot_reset{device.sequences.apprentice_phaseone.value==2}: e_reawakening_phaseone_a_razorwire_reset
   e_reawakening_phaseone_shot_reset{device.sequences.apprentice_phaseone.value==3}: e_reawakening_phaseone_a_flammablejelly_reset
   e_reawakening_phaseone_shot_reset{device.sequences.apprentice_phaseone.value==4}: e_reawakening_phaseone_a_quadshotgun_reset
+  reawakening_phaseone_apprentice_highlighted: e_reawakening_highlighted
+  reawakening_phaseone_survivor_highlighted: e_reawakening_highlighted
   reawakening_phaseone_apprentice_selected: e_reawakening_selected
   reawakening_phaseone_survivor_selected: e_reawakening_selected
   ball_will_end: e_reset_game_flag

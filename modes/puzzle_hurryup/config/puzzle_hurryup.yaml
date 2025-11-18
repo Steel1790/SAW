@@ -207,6 +207,7 @@ show_player:
         leds: razorwire_flasher, bear_flasher, shotgun_flasher, drill_flasher, zep_flasher
       loops: 120
       speed: 4
+      priority: 185
     puzzle_piece_hurryup:
       loops: 0
       speed: 1 

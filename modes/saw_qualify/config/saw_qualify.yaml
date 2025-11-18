@@ -14,6 +14,11 @@ shots:
     profile: sp_saw_qualify
     show_tokens:
       leds: l_left_return_lane
+    control_events:
+      - events: ball_starting
+        state: 0
+      - events: mode_puzzle_hurryup_started
+        state: 0
   shot_left_loop:
     advance_events: shot_left_loop_sp_saw_qualify_lit_hit
     disable_events: modes_active_modes_changed{current_player.modes_attempted>0}
@@ -23,6 +28,11 @@ shots:
     profile: sp_saw_qualify
     show_tokens:
       leds: l_left_loop_arrow
+    control_events:
+      - events: ball_starting
+        state: 0
+      - events: mode_puzzle_hurryup_started
+        state: 0
     #delay_switch:
       #s_right_loop_top: 3s
   shot_left_standup:
@@ -44,6 +54,11 @@ shots:
     profile: sp_saw_qualify
     show_tokens:
       leds: l_inner_loop_arrow
+    control_events:
+      - events: ball_starting
+        state: 0
+      - events: mode_puzzle_hurryup_started
+        state: 0
   shot_left_standup_rightramp:
     advance_events: shot_left_standup_rightramp_sp_saw_qualify_lit_hit 
     disable_events: modes_active_modes_changed{current_player.modes_attempted>0} 
@@ -52,6 +67,11 @@ shots:
     profile: sp_saw_qualify
     show_tokens:
       leds: l_left_standup_right_ramp_arrow
+    control_events:
+      - events: ball_starting
+        state: 0
+      - events: mode_puzzle_hurryup_started
+        state: 0
   shot_right_standup_rightramp:
     advance_events: shot_right_standup_rightramp_sp_saw_qualify_lit_hit
     disable_events: modes_active_modes_changed{current_player.modes_attempted>0}
@@ -60,6 +80,11 @@ shots:
     profile: sp_saw_qualify
     show_tokens:
       leds: l_right_standup_right_ramp_arrow
+    control_events:
+      - events: ball_starting
+        state: 0
+      - events: mode_puzzle_hurryup_started
+        state: 0
   shot_right_loop:
     advance_events: shot_right_loop_sp_saw_qualify_lit_hit
     disable_events: modes_active_modes_changed{current_player.modes_attempted>0}
@@ -69,6 +94,11 @@ shots:
     profile: sp_saw_qualify
     show_tokens:
       leds: l_right_loop_arrow
+    control_events:
+      - events: ball_starting
+        state: 0
+      - events: mode_puzzle_hurryup_started
+        state: 0
     #delay_switch:
       #s_left_loop_top: 3s
   shot_right_standup:
@@ -79,6 +109,11 @@ shots:
     profile: sp_saw_qualify
     show_tokens:
       leds: l_right_standup_arrow
+    control_events:
+      - events: ball_starting
+        state: 0
+      - events: mode_puzzle_hurryup_started
+        state: 0
 
 #modes attempted =1
   shot_left_return_lane_a1:
@@ -104,6 +139,11 @@ shots:
     profile: sp_saw_qualify
     show_tokens:
       leds: l_left_loop_arrow
+    control_events:
+      - events: ball_starting
+        state: 0
+      - events: mode_puzzle_hurryup_started
+        state: 0
   shot_left_standup_a1:
 #    advance_events: shot_left_standup_a1_sp_saw_qualify_lit_hit 
     enable_events: modes_active_modes_changed{current_player.modes_attempted==1}
@@ -127,6 +167,11 @@ shots:
     profile: sp_saw_qualify
     show_tokens:
       leds: l_inner_loop_arrow
+    control_events:
+      - events: ball_starting
+        state: 0
+      - events: mode_puzzle_hurryup_started
+        state: 0
   shot_left_standup_rightramp_a1:
     advance_events: shot_left_standup_rightramp_a1_sp_saw_qualify_lit_hit
     enable_events: modes_active_modes_changed{current_player.modes_attempted==1}
@@ -136,6 +181,11 @@ shots:
     profile: sp_saw_qualify
     show_tokens:
       leds: l_left_standup_right_ramp_arrow
+    control_events:
+      - events: ball_starting
+        state: 0
+      - events: mode_puzzle_hurryup_started
+        state: 0
   shot_right_standup_rightramp_a1:
     advance_events: shot_right_standup_rightramp_a1_sp_saw_qualify_lit_hit
     enable_events: modes_active_modes_changed{current_player.modes_attempted==1}
@@ -145,6 +195,11 @@ shots:
     profile: sp_saw_qualify
     show_tokens:
       leds: l_right_standup_right_ramp_arrow
+    control_events:
+      - events: ball_starting
+        state: 0
+      - events: mode_puzzle_hurryup_started
+        state: 0
   shot_right_loop_a1:
     advance_events: shot_right_loop_a1_sp_saw_qualify_lit_hit
     enable_events: modes_active_modes_changed{current_player.modes_attempted==1}
@@ -154,6 +209,11 @@ shots:
     profile: sp_saw_qualify
     show_tokens:
       leds: l_right_loop_arrow
+    control_events:
+      - events: ball_starting
+        state: 0
+      - events: mode_puzzle_hurryup_started
+        state: 0
   shot_right_standup_a1:
     advance_events: shot_right_standup_a1_sp_saw_qualify_lit_hit
     enable_events: modes_active_modes_changed{current_player.modes_attempted==1}
@@ -163,6 +223,11 @@ shots:
     profile: sp_saw_qualify
     show_tokens:
       leds: l_right_standup_arrow
+    control_events:
+      - events: ball_starting
+        state: 0
+      - events: mode_puzzle_hurryup_started
+        state: 0
 #modes attempted =2
   shot_left_return_lane_a2:
     advance_events: shot_left_return_lane_a2_sp_saw_qualify_lit_hit
@@ -186,6 +251,11 @@ shots:
     profile: sp_saw_qualify
     show_tokens:
       leds: l_left_loop_arrow
+    control_events:
+      - events: ball_starting
+        state: 0
+      - events: mode_puzzle_hurryup_started
+        state: 0
   shot_left_standup_a2:
 #    advance_events: shot_left_standup_a2_sp_saw_qualify_lit_hit 
     enable_events: modes_active_modes_changed{current_player.modes_attempted==2}
@@ -209,6 +279,11 @@ shots:
     profile: sp_saw_qualify
     show_tokens:
       leds: l_inner_loop_arrow
+    control_events:
+      - events: ball_starting
+        state: 0
+      - events: mode_puzzle_hurryup_started
+        state: 0
   shot_left_standup_rightramp_a2:
     advance_events: shot_left_standup_rightramp_a2_sp_saw_qualify_lit_hit
     enable_events: modes_active_modes_changed{current_player.modes_attempted==2}
@@ -218,6 +293,11 @@ shots:
     profile: sp_saw_qualify
     show_tokens:
       leds: l_left_standup_right_ramp_arrow
+    control_events:
+      - events: ball_starting
+        state: 0
+      - events: mode_puzzle_hurryup_started
+        state: 0
   shot_right_standup_rightramp_a2:
     advance_events: shot_right_standup_rightramp_a2_sp_saw_qualify_lit_hit
     enable_events: modes_active_modes_changed{current_player.modes_attempted==2}
@@ -227,6 +307,11 @@ shots:
     profile: sp_saw_qualify
     show_tokens:
       leds: l_right_standup_right_ramp_arrow
+    control_events:
+      - events: ball_starting
+        state: 0
+      - events: mode_puzzle_hurryup_started
+        state: 0
   shot_right_loop_a2:
     advance_events: shot_right_loop_a2_sp_saw_qualify_lit_hit
     enable_events: modes_active_modes_changed{current_player.modes_attempted==2}
@@ -236,6 +321,11 @@ shots:
     profile: sp_saw_qualify
     show_tokens:
       leds: l_right_loop_arrow
+    control_events:
+      - events: ball_starting
+        state: 0
+      - events: mode_puzzle_hurryup_started
+        state: 0
   shot_right_standup_a2:
     advance_events: shot_right_standup_a2_sp_saw_qualify_lit_hit
     enable_events: modes_active_modes_changed{current_player.modes_attempted==2}
@@ -272,6 +362,11 @@ shots:
     profile: sp_saw_qualify
     show_tokens:
       leds: l_left_loop_arrow
+    control_events:
+      - events: ball_starting
+        state: 0
+      - events: mode_puzzle_hurryup_started
+        state: 0
   shot_left_standup_a3:
 #    advance_events: shot_left_standup_a3_sp_saw_qualify_lit_hit 
     enable_events: modes_active_modes_changed{current_player.modes_attempted==3}
@@ -295,12 +390,18 @@ shots:
     profile: sp_saw_qualify
     show_tokens:
       leds: l_inner_loop_arrow
+    control_events:
+      - events: ball_starting
+        state: 0
+      - events: mode_puzzle_hurryup_started
+        state: 0
   shot_left_standup_rightramp_a3:
     advance_events: shot_left_standup_rightramp_a3_sp_saw_qualify_lit_hit
     enable_events: modes_active_modes_changed{current_player.modes_attempted==3}
     disable_events: modes_active_modes_changed{current_player.modes_attempted>3}
+    reset_events: slide_trapcomplete_removed, slide_trapfailed_removed, sg_saw_reset_a3_complete, mode_razorwire_stopped, mode_drillchair_stopped, mode_quadshotgun_stopped, mode_reversebeartrap_stopped, mode_zeptest_stopped, mode_flammablejelly_stopped, ball_started, e_mb_mode_stopping, e_saw_qualify_reset
     switches: s_left_standup_right_ramp
-    profile: sp_saw_qualify_a1
+    profile: sp_saw_qualify
     show_tokens:
       leds: l_left_standup_right_ramp_arrow
     control_events:
@@ -317,19 +418,30 @@ shots:
     profile: sp_saw_qualify
     show_tokens:
       leds: l_right_standup_right_ramp_arrow
+    control_events:
+      - events: ball_starting
+        state: 0
+      - events: mode_puzzle_hurryup_started
+        state: 0
   shot_right_loop_a3:
-    advance_events: shot_right_loop_a3_sp_saw_qualify_lit_hit
+    # advance_events: shot_right_loop_a3_sp_saw_qualify_a1_lit_hit
     enable_events: modes_active_modes_changed{current_player.modes_attempted==3}
     disable_events: modes_active_modes_changed{current_player.modes_attempted>3}
     reset_events: slide_trapcomplete_removed, slide_trapfailed_removed, sg_saw_reset_a3_complete, mode_razorwire_stopped, mode_drillchair_stopped, mode_quadshotgun_stopped, mode_reversebeartrap_stopped, mode_zeptest_stopped, mode_flammablejelly_stopped, ball_started, e_mb_mode_stopping, e_saw_qualify_reset
     hit_events: ssh_rightloop_hit
-    profile: sp_saw_qualify
+    profile: sp_saw_qualify_a1
     show_tokens:
       leds: l_right_loop_arrow
+    control_events:
+      - events: ball_starting
+        state: 0
+      - events: mode_puzzle_hurryup_started
+        state: 0
   shot_right_standup_a3:
-    advance_events: shot_right_standup_a3_sp_saw_qualify_lit_hit
+    advance_events: shot_right_standup_a3_sp_saw_qualify_a1_lit_hit
     enable_events: modes_active_modes_changed{current_player.modes_attempted==3}
     disable_events: modes_active_modes_changed{current_player.modes_attempted>3}
+    reset_events: slide_trapcomplete_removed, slide_trapfailed_removed, sg_saw_reset_a3_complete, mode_razorwire_stopped, mode_drillchair_stopped, mode_quadshotgun_stopped, mode_reversebeartrap_stopped, mode_zeptest_stopped, mode_flammablejelly_stopped, ball_started, e_mb_mode_stopping, e_saw_qualify_reset
     switches: s_right_standup
     profile: sp_saw_qualify_a1
     show_tokens:
@@ -343,6 +455,7 @@ shots:
   shot_left_return_lane_a4:
 #    advance_events: shot_left_return_lane_a4_sp_saw_qualify_lit_hit
     enable_events: modes_active_modes_changed{current_player.modes_attempted>=4}
+    reset_events: slide_trapcomplete_removed, slide_trapfailed_removed, sg_saw_reset_a4_complete, mode_razorwire_stopped, mode_drillchair_stopped, mode_quadshotgun_stopped, mode_reversebeartrap_stopped, mode_zeptest_stopped, mode_flammablejelly_stopped, ball_started, e_mb_mode_stopping, e_saw_qualify_reset
     switches: s_left_inlane
     profile: sp_saw_qualify_a1
     show_tokens:
@@ -353,16 +466,22 @@ shots:
       - events: mode_puzzle_hurryup_started
         state: 0
   shot_left_loop_a4:
-    advance_events: shot_left_loop_a4_sp_saw_qualify_lit_hit
+    # advance_events: shot_left_loop_a4_sp_saw_qualify_lit_hit
     enable_events: modes_active_modes_changed{current_player.modes_attempted>=4}
     reset_events: slide_trapcomplete_removed, slide_trapfailed_removed, sg_saw_reset_a4_complete, mode_razorwire_stopped, mode_drillchair_stopped, mode_quadshotgun_stopped, mode_reversebeartrap_stopped, mode_zeptest_stopped, mode_flammablejelly_stopped, ball_started, e_mb_mode_stopping, e_saw_qualify_reset
     hit_events: ssh_leftloop_hit
-    profile: sp_saw_qualify
+    profile: sp_saw_qualify_a1
     show_tokens:
       leds: l_left_loop_arrow
+    control_events:
+      - events: ball_starting
+        state: 0
+      - events: mode_puzzle_hurryup_started
+        state: 0
   shot_left_standup_a4:
 #    advance_events: shot_left_standup_a3_sp_saw_qualify_lit_hit 
     enable_events: modes_active_modes_changed{current_player.modes_attempted>=4}
+    reset_events: slide_trapcomplete_removed, slide_trapfailed_removed, sg_saw_reset_a4_complete, mode_razorwire_stopped, mode_drillchair_stopped, mode_quadshotgun_stopped, mode_reversebeartrap_stopped, mode_zeptest_stopped, mode_flammablejelly_stopped, ball_started, e_mb_mode_stopping, e_saw_qualify_reset
     switches: s_left_standup
     profile: sp_saw_qualify_a1
     show_tokens:
@@ -375,6 +494,7 @@ shots:
   shot_inner_loop_a4:
 #    advance_events: shot_inner_loop_a3_sp_saw_qualify_lit_hit
     enable_events: modes_active_modes_changed{current_player.modes_attempted>=4}
+    reset_events: slide_trapcomplete_removed, slide_trapfailed_removed, sg_saw_reset_a4_complete, mode_razorwire_stopped, mode_drillchair_stopped, mode_quadshotgun_stopped, mode_reversebeartrap_stopped, mode_zeptest_stopped, mode_flammablejelly_stopped, ball_started, e_mb_mode_stopping, e_saw_qualify_reset
     switches: s_inner_loop
     profile: sp_saw_qualify_a1
     show_tokens:
@@ -385,10 +505,11 @@ shots:
       - events: mode_puzzle_hurryup_started
         state: 0
   shot_left_standup_rightramp_a4:
-#    advance_events: shot_left_standup_rightramp_a4_sp_saw_qualify_lit_hit
+    advance_events: shot_left_standup_rightramp_a4_sp_saw_qualify_lit_hit
     enable_events: modes_active_modes_changed{current_player.modes_attempted>=4}
+    reset_events: slide_trapcomplete_removed, slide_trapfailed_removed, sg_saw_reset_a4_complete, mode_razorwire_stopped, mode_drillchair_stopped, mode_quadshotgun_stopped, mode_reversebeartrap_stopped, mode_zeptest_stopped, mode_flammablejelly_stopped, ball_started, e_mb_mode_stopping, e_saw_qualify_reset
     switches: s_left_standup_right_ramp
-    profile: sp_saw_qualify_a1
+    profile: sp_saw_qualify
     show_tokens:
       leds: l_left_standup_right_ramp_arrow
     control_events:
@@ -404,17 +525,28 @@ shots:
     profile: sp_saw_qualify
     show_tokens:
       leds: l_right_standup_right_ramp_arrow
+    control_events:
+      - events: ball_starting
+        state: 0
+      - events: mode_puzzle_hurryup_started
+        state: 0
   shot_right_loop_a4:
-    advance_events: shot_right_loop_a4_sp_saw_qualify_lit_hit
+    # advance_events: shot_right_loop_a4_sp_saw_qualify_lit_hit
     enable_events: modes_active_modes_changed{current_player.modes_attempted>=4}
     reset_events: slide_trapcomplete_removed, slide_trapfailed_removed, sg_saw_reset_a4_complete, mode_razorwire_stopped, mode_drillchair_stopped, mode_quadshotgun_stopped, mode_reversebeartrap_stopped, mode_zeptest_stopped, mode_flammablejelly_stopped, ball_started, e_mb_mode_stopping, e_saw_qualify_reset
     hit_events: ssh_rightloop_hit
-    profile: sp_saw_qualify
+    profile: sp_saw_qualify_a1
     show_tokens:
       leds: l_right_loop_arrow
+    control_events:
+      - events: ball_starting
+        state: 0
+      - events: mode_puzzle_hurryup_started
+        state: 0
   shot_right_standup_a4:
 #    advance_events: shot_right_standup_a3_sp_saw_qualify_lit_hit
     enable_events: modes_active_modes_changed{current_player.modes_attempted>=4}
+    reset_events: slide_trapcomplete_removed, slide_trapfailed_removed, sg_saw_reset_a4_complete, mode_razorwire_stopped, mode_drillchair_stopped, mode_quadshotgun_stopped, mode_reversebeartrap_stopped, mode_zeptest_stopped, mode_flammablejelly_stopped, ball_started, e_mb_mode_stopping, e_saw_qualify_reset
     switches: s_right_standup
     profile: sp_saw_qualify_a1
     show_tokens:
@@ -454,9 +586,9 @@ shot_groups:
   sg_saw_reset_a2:
     shots: shot_left_loop_a2, shot_inner_loop_a2, shot_left_standup_rightramp_a2, shot_right_standup_rightramp_a2, shot_right_loop_a2
   sg_saw_reset_a3:
-    shots: shot_left_loop_a3, shot_inner_loop_a3, shot_right_standup_rightramp_a3, shot_right_loop_a3
+    shots: shot_left_loop_a3, shot_inner_loop_a3, shot_left_standup_rightramp_a3, shot_right_standup_rightramp_a3 
   sg_saw_reset_a4:
-    shots: shot_left_loop_a4, shot_right_standup_rightramp_a4, shot_right_loop_a4
+    shots: shot_left_standup_rightramp_a4, shot_right_standup_rightramp_a4
 
 shows:
   sh_shot_on:    # define our show to indicate the state
@@ -555,22 +687,28 @@ event_player:
     - e_subtract_a_saw_letter
   shot_right_standup_a2_hit{device.counters.cnt_saw_qualify.value > 0}:
     - e_subtract_a_saw_letter
+  shot_right_loop_a3_hit{device.counters.cnt_saw_qualify.value > 0}:
+    - e_subtract_a_saw_letter  
   shot_left_standup_a3_hit{device.counters.cnt_saw_qualify.value > 0}:
     - e_subtract_a_saw_letter 
   shot_left_return_lane_a3_hit{device.counters.cnt_saw_qualify.value > 0}:
     - e_subtract_a_saw_letter
   shot_right_standup_a3_hit{device.counters.cnt_saw_qualify.value > 0}:
     - e_subtract_a_saw_letter
-  shot_left_standup_rightramp_a3_hit{device.counters.cnt_saw_qualify.value > 0}:
-    - e_subtract_a_saw_letter
+  # shot_left_standup_rightramp_a3_hit{device.counters.cnt_saw_qualify.value > 0}:
+  #   - e_subtract_a_saw_letter
+  shot_left_loop_a4_hit{device.counters.cnt_saw_qualify.value > 0}:
+    - e_subtract_a_saw_letter 
+  shot_right_loop_a4_hit{device.counters.cnt_saw_qualify.value > 0}:
+    - e_subtract_a_saw_letter  
   shot_left_standup_a4_hit{device.counters.cnt_saw_qualify.value > 0}:
     - e_subtract_a_saw_letter 
   shot_left_return_lane_a4_hit{device.counters.cnt_saw_qualify.value > 0}:
     - e_subtract_a_saw_letter
   shot_right_standup_a4_hit{device.counters.cnt_saw_qualify.value > 0}:
     - e_subtract_a_saw_letter
-  shot_left_standup_rightramp_a4_hit{device.counters.cnt_saw_qualify.value > 0}:
-    - e_subtract_a_saw_letter 
+  # shot_left_standup_rightramp_a4_hit{device.counters.cnt_saw_qualify.value > 0}:
+  #   - e_subtract_a_saw_letter 
   shot_inner_loop_a4_hit{device.counters.cnt_saw_qualify.value > 0}:
     - e_subtract_a_saw_letter   
 
@@ -591,7 +729,7 @@ counters:
     reset_events:
       slide_trapcomplete_removed, slide_trapfailed_removed, mode_razorwire_stopped, mode_drillchair_stopped, mode_quadshotgun_stopped, mode_reversebeartrap_stopped, mode_zeptest_stopped, mode_flammablejelly_stopped
     disable_on_complete: false
-    count_events: sg_saw_qualify_lit_hit, sg_saw_reset_a1_lit_hit, sg_saw_reset_a2_lit_hit, sg_saw_reset_a3_lit_hit
+    count_events: sg_saw_qualify_lit_hit, sg_saw_reset_a1_lit_hit, sg_saw_reset_a2_lit_hit, sg_saw_reset_a3_lit_hit, sg_saw_reset_a4_lit_hit
     control_events:
       - event: e_subtract_a_saw_letter
         action: subtract

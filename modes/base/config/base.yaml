@@ -770,7 +770,7 @@ counters:
     reset_on_complete: true
     disable_on_complete: false
 #    events_when_complete: 
-    count_events: shot_left_standup_hit, shot_left_return_lane_a1_hit, shot_left_standup_a1_hit, shot_left_return_lane_a2_hit, shot_left_standup_a2_hit,  shot_right_standup_a2_hit, shot_left_return_lane_a3_hit, shot_left_standup_a3_hit, shot_right_standup_a3_hit, shot_left_standup_rightramp_a3_hit, shot_left_return_lane_a4_hit, shot_left_standup_a4_hit, shot_right_standup_a4_hit, shot_left_standup_rightramp_a4_hit, shot_inner_loop_a4_hit
+    count_events: shot_left_standup_hit, shot_left_return_lane_a1_hit, shot_left_standup_a1_hit, shot_left_return_lane_a2_hit, shot_left_standup_a2_hit,  shot_right_standup_a2_hit, shot_left_return_lane_a3_hit, shot_left_standup_a3_hit, shot_right_standup_a3_hit, shot_right_loop_a3_hit, shot_left_return_lane_a4_hit, shot_left_standup_a4_hit, shot_right_standup_a4_hit, shot_right_loop_a4_hit, shot_left_loop_a4_hit, shot_inner_loop_a4_hit
     control_events:
       - event: sg_saw_qualify_lit_hit
         action: subtract
@@ -781,6 +781,9 @@ counters:
       - event: sg_saw_reset_a2_lit_hit
         action: subtract
         value: 1  
+      - event: sg_saw_reset_a3_lit_hit
+        action: subtract
+        value: 1 
       - event: sg_saw_reset_a3_lit_hit
         action: subtract
         value: 1 
@@ -986,10 +989,10 @@ show_player:
       loops: -1
       speed: 1 
     spotlight_taperecorder_on: stop
-    base_action_button:
-      loops: -1
-      show_tokens:
-        leds: l_action_button
+    # base_action_button:
+    #   loops: -1
+    #   show_tokens:
+    #     leds: l_action_button
     gi_on:
       show_tokens:
         color1: ffffff
@@ -5103,8 +5106,8 @@ ball_holds:
   bh_scoop:
     balls_to_hold: 1
     hold_devices: bd_scoop
-    enable_events: sh_select_mode_hit, e_enable_mystery, e_reawakening_start
-    disable_events: multiball_active, e_primary_mode_active, e_release_mystery
+    enable_events: sh_select_mode_hit, e_enable_mystery, e_reawakening_highlighted
+    disable_events: multiball_active, e_primary_mode_active, e_release_mystery, e_reawakening_selected
     release_one_events: e_primary_mode_active, e_release_mystery, e_reawakening_selected
 
 coil_player:

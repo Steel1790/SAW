@@ -3,7 +3,7 @@ mode:
   start_events: s_right_scoop_active{current_player.reawakening_phaseone_completed==1 and current_player.reawakening_apprentice_selected==1}, s_right_scoop_active{current_player.reawakening_phaseone_completed==1 and current_player.reawakening_survivor_selected==1}
   stop_events: stop_mode_reawakening, mode_reawakening_p2_complete, s_right_scoop_active{current_player.reawakening_phaseone_completed==1 and current_player.reawakening_apprentice_selected==2}, s_right_scoop_active{current_player.reawakening_phaseone_completed==1 and current_player.reawakening_survivor_selected==2}, ball_ended, ball_will_end
   priority: 190
-  restart_on_next_ball: true
+  # restart_on_next_ball: true
   code: mpf.modes.carousel.code.carousel.Carousel
 mode_settings:
 #two version of each slide. image split down middle. one side is highlighted. another copy is the right side highlighted.
@@ -247,6 +247,10 @@ event_player:
   player_reawakening_p2_phasetwo_right_apprentice_timer_tick{value==0}: e_reawakening_phasetwo_right_apprentice_shot_reset
   player_reawakening_p2_phasetwo_left_survivor_timer_tick{value==0}: e_reawakening_phasetwo_left_survivor_shot_reset
   player_reawakening_p2_phasetwo_right_survivor_timer_tick{value==0}: e_reawakening_phasetwo_right_survivor_shot_reset
+  reawakening_p2_phasetwo_left_apprentice_highlighted: e_reawakening_highlighted
+  reawakening_p2_phasetwo_right_apprentice_highlighted: e_reawakening_highlighted
+  reawakening_p2_phasetwo_left_survivor_highlighted: e_reawakening_highlighted
+  reawakening_p2_phasetwo_right_survivor_highlighted: e_reawakening_highlighted
   reawakening_p2_phasetwo_left_apprentice_selected: e_reawakening_selected
   reawakening_p2_phasetwo_right_apprentice_selected: e_reawakening_selected
   reawakening_p2_phasetwo_left_survivor_selected: e_reawakening_selected

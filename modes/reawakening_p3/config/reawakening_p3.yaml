@@ -3,7 +3,7 @@ mode:
   start_events: s_right_scoop_active{current_player.reawakening_phasetwo_completed==1 and current_player.reawakening_apprentice_selected==2}, s_right_scoop_active{current_player.reawakening_phasetwo_completed==1 and current_player.reawakening_survivor_selected==2}
   stop_events: stop_mode_reawakening, mode_reawakening_p3_complete, ball_ended, ball_will_end
   priority: 190
-  restart_on_next_ball: true
+  # restart_on_next_ball: true
   code: mpf.modes.carousel.code.carousel.Carousel
 mode_settings:
   selectable_items: 
@@ -26,6 +26,8 @@ mode_settings:
  #6 drop targets = antidote
  #After collecting all of these items then hit X marks the spot for the fatal blow.
 event_player:
+  reawakening_p3_phasethree_apprentice_highlighted: e_reawakening_highlighted
+  reawakening_p3_phasethree_survivor_highlighted: e_reawakening_highlighted
   reawakening_p3_phasethree_apprentice_selected: e_reawakening_selected
   reawakening_p3_phasethree_survivor_selected: e_reawakening_selected
   ball_will_end: e_reset_game_flag
