@@ -763,7 +763,7 @@ counters:
     starting_count: 0
     count_complete_value: 3
     enable_events: mode_drillchair_stopped, mode_flammablejelly_stopped, mode_quadshotgun_stopped, mode_razorwire_stopped, mode_reversebeartrap_stopped, mode_zeptest_stopped, mode_hostage_complete
-    disable_events: e_primary_mode_active, mode_hostage_started, e_reawakening_selected
+    disable_events: e_primary_mode_active, mode_hostage_started, e_reawakening_selected, mode_zeptest_started
     start_enabled: true
     reset_events: logicblock_cnt_negative_shot_counter_updated{value==-1}
 #    persist_state: true

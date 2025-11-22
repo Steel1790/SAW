@@ -112,6 +112,7 @@ switches:
   s_left_scoop:
     number: 1616_1-14
     tags: left_scoop, switch_hit
+    type: 'NC'
   s_left_standup:
     number: 1616_1-12
     tags: left_standup, playfield_active, standup, switch_hit
@@ -179,7 +180,8 @@ switches:
     type: 'NC'
   s_right_ramp_down:
     number: 1616_2-12
-    tags: right_ramp, ramp_hit, switch_hit, ramp
+    tags: playfield_active
+    #right_ramp, ramp_hit, switch_hit, ramp
   s_top_right_reject:
     number: 1616_2-13
     tags: right_ramp, ramp_hit, switch_hit
