@@ -485,7 +485,12 @@ ball_devices:
   bd_scoop:
     ball_switches: s_left_scoop
     eject_coil: c_mystery_eject
-    eject_timeouts: 4s
+    #eject_timeouts: 4s
+    confirm_eject_type: fake
+    exit_count_delay: 0.05s
+    entrance_count_delay: 0.05s
+    eject_timeouts: 0.1s
+    max_eject_attempts: 5
 
   #bd_bathroom:
   #  ball_switches: s_right_scoop
