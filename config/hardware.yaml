@@ -268,7 +268,7 @@ coils:
     tags: coils
   c_flipper_right_main:
     number: 3208-3
-    default_pulse_ms: 25
+    default_pulse_ms: 22
     default_hold_power: 0.3
     tags: coils
   c_flipper_right_hold:
@@ -291,7 +291,7 @@ coils:
   c_trough_eject:
     number: 3208-1
     default_pulse_ms: 20
-    default_pulse_power: 0.85
+    default_pulse_power: 0.75
   c_auto_plunger:
     number: 3208-0
     default_pulse_ms: 20
