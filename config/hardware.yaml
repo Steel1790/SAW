@@ -290,7 +290,7 @@ coils:
     tags: coils
   c_trough_eject:
     number: 3208-1
-    default_pulse_ms: 20
+    default_pulse_ms: 25
     default_pulse_power: 0.75
   c_auto_plunger:
     number: 3208-0
@@ -480,12 +480,16 @@ ball_devices:
     eject_coil: c_auto_plunger
     mechanical_eject: true
     eject_timeouts: 4s
+    eject_targets: playfield
+    exit_count_delay: 300ms
+    target_on_unexpected_ball: playfield
     player_controlled_eject_event: s_action_button_active
 
   bd_scoop:
     ball_switches: s_left_scoop
     eject_coil: c_mystery_eject
-    eject_timeouts: 4s
+    eject_timeouts: 2s
+    exit_count_delay: 300ms
 
   #bd_bathroom:
   #  ball_switches: s_right_scoop
